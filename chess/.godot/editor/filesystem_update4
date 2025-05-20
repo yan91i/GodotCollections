@@ -1,0 +1,7 @@
+res://ChessScenes/bishop.tscn
+res://ChessScenes/king.tscn
+res://ChessScenes/knight.tscn
+res://ChessScenes/pawn.tscn
+res://ChessScenes/queen.tscn
+res://ChessScenes/rook.tscn
+res://board.tscn

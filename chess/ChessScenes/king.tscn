@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://yqfgmt234xui"]
+
+[ext_resource type="Script" uid="uid://t8c7hjfrnavj" path="res://ChessScripts/king.gd" id="1_88uxw"]
+[ext_resource type="Texture2D" uid="uid://b8e8353pyae4l" path="res://ChessTextures/BKing.svg" id="2_xat25"]
+[ext_resource type="Texture2D" uid="uid://bgeifkewhw83q" path="res://ChessTextures/WKing.svg" id="3_rg8iu"]
+
+[node name="King" type="Sprite2D"]
+script = ExtResource("1_88uxw")
+Black = ExtResource("2_xat25")
+White = ExtResource("3_rg8iu")

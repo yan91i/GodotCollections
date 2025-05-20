@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl8ctpb4nx5b4"]
+
+[ext_resource type="Script" uid="uid://dc1aghlj0yyc" path="res://ChessScripts/pawn.gd" id="1_2dlbf"]
+[ext_resource type="Texture2D" uid="uid://1sql4pmy32c8" path="res://ChessTextures/BPawn.svg" id="2_ucadg"]
+[ext_resource type="Texture2D" uid="uid://dl5dp47xg34sb" path="res://ChessTextures/WPawn.svg" id="3_n7bwu"]
+
+[node name="Pawn" type="Sprite2D"]
+script = ExtResource("1_2dlbf")
+Black = ExtResource("2_ucadg")
+White = ExtResource("3_n7bwu")
