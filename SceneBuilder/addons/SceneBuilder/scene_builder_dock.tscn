@@ -1,0 +1,719 @@
+[gd_scene load_steps=2 format=3 uid="uid://18pjyynbqqci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rn2d1"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.211765, 0.239216, 0.290196, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Scene Builder" type="VBoxContainer"]
+custom_minimum_size = Vector2(352, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -800.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Collection" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="PanelContainer" parent="Collection"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rn2d1")
+
+[node name="Grid" type="GridContainer" parent="Collection/Panel"]
+layout_mode = 2
+columns = 6
+
+[node name="1" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+text = "1"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="2" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "2"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="3" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "3"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="4" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "4"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="5" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "5"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="6" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "6"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="7" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "7"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="8" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "8"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="9" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "9"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="10" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "10"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="11" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "11"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="12" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "12"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="13" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "13"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="14" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "14"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="15" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "15"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="16" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "16"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="17" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "17"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="18" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "18"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="19" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "19"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="20" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "20"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="21" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "21"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="22" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "22"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="23" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "23"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="24" type="Button" parent="Collection/Panel/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "24"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="HSeparator3" type="HSeparator" parent="Collection"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="Collection"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+tabs_visible = false
+
+[node name="1" type="ScrollContainer" parent="Collection/TabContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 0
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/1"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="2" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 1
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/2"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="3" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 2
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/3"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="4" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 3
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/4"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="5" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 4
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/5"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="6" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 5
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/6"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="7" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 6
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/7"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="8" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 7
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/8"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="9" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 8
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/9"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="10" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 9
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/10"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="11" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 10
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/11"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="12" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 11
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/12"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="13" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 12
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/13"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="14" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 13
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/14"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="15" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 14
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/15"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="16" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 15
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/16"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="17" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 16
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/17"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="18" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 17
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/18"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="19" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 18
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/19"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="20" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 19
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/20"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="21" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 20
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/21"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="22" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 21
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/22"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="23" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 22
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/23"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="24" type="ScrollContainer" parent="Collection/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+metadata/_tab_index = 23
+
+[node name="Grid" type="GridContainer" parent="Collection/TabContainer/24"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 4
+
+[node name="Settings" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Tab" type="TabContainer" parent="Settings"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+current_tab = 0
+
+[node name="Options" type="VBoxContainer" parent="Settings/Tab"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="SurfaceNormal" type="HBoxContainer" parent="Settings/Tab/Options"]
+layout_mode = 2
+
+[node name="UseSurfaceNormal" type="CheckButton" parent="Settings/Tab/Options/SurfaceNormal"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Surface normal"
+
+[node name="Oritentation" type="VBoxContainer" parent="Settings/Tab/Options/SurfaceNormal"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Settings/Tab/Options/SurfaceNormal/Oritentation"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Orientation"
+vertical_alignment = 1
+
+[node name="ButtonGroup" type="HBoxContainer" parent="Settings/Tab/Options/SurfaceNormal/Oritentation"]
+layout_mode = 2
+
+[node name="X" type="CheckBox" parent="Settings/Tab/Options/SurfaceNormal/Oritentation/ButtonGroup"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "X"
+
+[node name="Y" type="CheckBox" parent="Settings/Tab/Options/SurfaceNormal/Oritentation/ButtonGroup"]
+layout_mode = 2
+size_flags_horizontal = 6
+button_pressed = true
+text = "Y"
+
+[node name="Z" type="CheckBox" parent="Settings/Tab/Options/SurfaceNormal/Oritentation/ButtonGroup"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "-Z"
+
+[node name="HSeparator" type="HSeparator" parent="Settings/Tab/Options"]
+layout_mode = 2
+
+[node name="EmptySpace" type="Label" parent="Settings/Tab/Options"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Bottom" type="HBoxContainer" parent="Settings/Tab/Options"]
+layout_mode = 2
+
+[node name="FindWorld3D" type="Button" parent="Settings/Tab/Options/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+text = "Find world 3d"
+
+[node name="EmptySpace2" type="Label" parent="Settings/Tab/Options/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReloadAllItems" type="Button" parent="Settings/Tab/Options/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Reload all items"
+
+[node name="Path3D" type="VBoxContainer" parent="Settings/Tab"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Separation" type="HBoxContainer" parent="Settings/Tab/Path3D"]
+layout_mode = 2
+size_flags_horizontal = 5
+
+[node name="Label" type="Label" parent="Settings/Tab/Path3D/Separation"]
+layout_mode = 2
+text = "Separation Distance"
+
+[node name="SpinBox" type="SpinBox" parent="Settings/Tab/Path3D/Separation"]
+layout_mode = 2
+min_value = 0.25
+step = 0.25
+value = 1.0
+suffix = "m"
+
+[node name="Jitter" type="HBoxContainer" parent="Settings/Tab/Path3D"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Settings/Tab/Path3D/Jitter"]
+layout_mode = 2
+text = "Jitter"
+
+[node name="X" type="SpinBox" parent="Settings/Tab/Path3D/Jitter"]
+layout_mode = 2
+max_value = 360.0
+suffix = "deg"
+
+[node name="Y" type="SpinBox" parent="Settings/Tab/Path3D/Jitter"]
+layout_mode = 2
+max_value = 360.0
+suffix = "deg"
+
+[node name="Z" type="SpinBox" parent="Settings/Tab/Path3D/Jitter"]
+layout_mode = 2
+max_value = 360.0
+suffix = "deg"
+
+[node name="YOffset" type="HBoxContainer" parent="Settings/Tab/Path3D"]
+layout_mode = 2
+size_flags_horizontal = 5
+
+[node name="Label" type="Label" parent="Settings/Tab/Path3D/YOffset"]
+layout_mode = 2
+text = "Y-Offset"
+
+[node name="Value" type="SpinBox" parent="Settings/Tab/Path3D/YOffset"]
+layout_mode = 2
+max_value = 360.0
+suffix = "deg"
+
+[node name="PlaceFence" type="Button" parent="Settings/Tab/Path3D"]
+layout_mode = 2
+text = "Place Fence"
+
+[node name="VSeparator" type="VSeparator" parent="Settings"]
+layout_mode = 2
+
+[node name="Indicators" type="VBoxContainer" parent="Settings"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="1" type="Label" parent="Settings/Indicators"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 28
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="Settings/Indicators"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 28
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="Settings/Indicators"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 28
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="Settings/Indicators"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 28
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
