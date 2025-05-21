@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1747814329
+ball.png::CompressedTexture2D::6728826010553432764::1571189356::1747814330::1::::<><><>0<>0<>fcf951cc60ef219896fb992cca8fcd87<>res://.godot/imported/ball.png-9a4ca347acb7532f6ae347744a6b04f7.ctex::
+icon.png::CompressedTexture2D::3020729226777912643::1571189356::1747814330::1::::<><><>0<>0<>0a5521b0abe47f3da2e28acfc1928734<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
+left_pallete.png::CompressedTexture2D::4976412348616364144::1571189356::1747814330::1::::<><><>0<>0<>0ed9f4e64acbe7d3ce0730f8ac535f69<>res://.godot/imported/left_pallete.png-bc33611074a0f886142e37c77bd2545a.ctex::
+pong.tscn::PackedScene::9060060522512262863::1736843226::0::1::::<><><>0<>0<><>::res://scripts/paddle.gd<>uid://cc5u1ww4n1wcu::::res://left_pallete.png<>uid://57woy1r78ban::::res://right_pallete.png<>res://scripts/ball.gd<>uid://c24q1tghmg3sy::::res://ball.png<>uid://40djdv7f3pyo::::res://separator.png<>res://scripts/wall.gd<>res://scripts/ceiling_floor.gd
+right_pallete.png::CompressedTexture2D::2173087473768196537::1571189356::1747814330::1::::<><><>0<>0<>58b5e7e9d1fd447dfc07617b7d91ece1<>res://.godot/imported/right_pallete.png-fc6e4a6a7c8197834656482b94708e47.ctex::
+separator.png::CompressedTexture2D::2087284323950554090::1571189356::1747814330::1::::<><><>0<>0<>c0640a7d77420535c443cfc127e0e09e<>res://.godot/imported/separator.png-f981c8489b9148e2e1dc63398273da74.ctex::
+::res://scripts/::1736841893
+ball.gd::GDScript::8297798993084091209::1736843208::0::1::::<>Area2D<><>0<>0<><>::
+ceiling_floor.gd::GDScript::2695399822376035652::1736843208::0::1::::<>Area2D<><>0<>0<><>::
+paddle.gd::GDScript::864423000249035272::1736843208::0::1::::<>Area2D<><>0<>0<><>::
+wall.gd::GDScript::781733827574696967::1736843208::0::1::::<>Area2D<><>0<>0<><>::

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://8nlipuu0ceal"]
+
+[ext_resource type="Script" path="res://robot_3d.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://c2ad4ixc1eni0" path="res://robot.glb" id="2_jioss"]
+
+[node name="Robot3D" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.75)
+fov = 65.0
+near = 0.1
+
+[node name="Model" parent="." instance=ExtResource("2_jioss")]
+
+[node name="OmniLight1" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25091, 1.43155, 2.15467)
+light_color = Color(1, 0.915375, 0.816406, 1)
+
+[node name="OmniLight2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5788, 1.43155, 2.43657)
+light_color = Color(0.816406, 1, 0.995697, 1)

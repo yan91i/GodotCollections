@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Operating System Testing"
+config/description="This demo showcases various OS-specific features in Godot.
+It can be used to test Godot while porting it to a
+new platform or to check for regressions.
+
+In a nutshell, this demo shows how you can get information from the
+operating system, or interact with the operating system."
+config/tags=PackedStringArray("demo", "official", "porting")
+run/main_scene="res://os_test.tscn"
+config/features=PackedStringArray("4.3")
+run/low_processor_mode=true
+config/icon="res://icon.webp"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/int_as_enum_without_match=0
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

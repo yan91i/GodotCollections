@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1736843217
+ball.png::CompressedTexture2D::6728826010553432764::1571189356::1736843218::1::::<><>::
+icon.png::CompressedTexture2D::3020729226777912643::1571189356::1736843218::1::::<><>::
+left_pallete.png::CompressedTexture2D::4976412348616364144::1571189356::1736843218::1::::<><>::
+pong.tscn::PackedScene::-1::1736843208::0::1::::<><>::res://scripts/paddle.gd<>res://left_pallete.png<>res://right_pallete.png<>res://scripts/ball.gd<>res://ball.png<>res://separator.png<>res://scripts/wall.gd<>res://scripts/ceiling_floor.gd
+right_pallete.png::CompressedTexture2D::2173087473768196537::1571189356::1736843218::1::::<><>::
+separator.png::CompressedTexture2D::2087284323950554090::1571189356::1736843218::1::::<><>::
+::res://scripts/::1736841893
+ball.gd::GDScript::-1::1736843208::0::1::::<>Area2D<>::
+ceiling_floor.gd::GDScript::-1::1736843208::0::1::::<>Area2D<>::
+paddle.gd::GDScript::-1::1736843208::0::1::::<>Area2D<>::
+wall.gd::GDScript::-1::1736843208::0::1::::<>Area2D<>::

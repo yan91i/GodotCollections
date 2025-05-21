@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dye16x7udqrxg"]
+
+[ext_resource type="PackedScene" uid="uid://qvg4q16blgx5" path="res://server.tscn" id="1_0srxc"]
+[ext_resource type="PackedScene" uid="uid://ph5ghsflqegf" path="res://client.tscn" id="2_percb"]
+
+[node name="Combo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Box" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Server" parent="Box" instance=ExtResource("1_0srxc")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Client" parent="Box/VBoxContainer" instance=ExtResource("2_percb")]
+layout_mode = 2
+
+[node name="Client2" parent="Box/VBoxContainer" instance=ExtResource("2_percb")]
+layout_mode = 2
+
+[node name="Client3" parent="Box/VBoxContainer" instance=ExtResource("2_percb")]
+layout_mode = 2
