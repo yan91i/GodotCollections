@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MapIcon" load_steps=3 format=3 uid="uid://j0cv4f30bowp"]
+
+[ext_resource type="Script" uid="uid://dbvvf8t8dpowy" path="res://ui/minimap/map_icon.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cvxiyqn5vsk2f" path="res://ships/spike.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+texture = ExtResource("2")
+color = Color(0.0156863, 0.87451, 0.988235, 1)
+scale = 0.75

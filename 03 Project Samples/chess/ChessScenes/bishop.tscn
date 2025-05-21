@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu208w2aj6qnh"]
+
+[ext_resource type="Script" uid="uid://b4yj3nn71fdvl" path="res://ChessScripts/bishop.gd" id="1_b0tyd"]
+[ext_resource type="Texture2D" uid="uid://ca8t2shoassp2" path="res://ChessTextures/BBishop.svg" id="2_fvtue"]
+[ext_resource type="Texture2D" uid="uid://bal1cx2x7hk7l" path="res://ChessTextures/WBishop.svg" id="3_i6xfw"]
+
+[node name="Bishop" type="Sprite2D"]
+script = ExtResource("1_b0tyd")
+Black = ExtResource("2_fvtue")
+White = ExtResource("3_i6xfw")

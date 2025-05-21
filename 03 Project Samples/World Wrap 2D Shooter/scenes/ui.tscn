@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2sf3vajneomj"]
+
+[ext_resource type="Script" uid="uid://cw7whmsdl0hrk" path="res://scripts/ui.gd" id="1_6p12x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxwbb"]
+font_size = 40
+outline_color = Color(0.493595, 0.353894, 0.67583, 1)
+shadow_size = 3
+shadow_color = Color(0.244809, 0.136032, 0.436743, 0)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_6p12x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = 2.0
+offset_right = 52.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+
+[node name="Score" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0.901961, 0.701961, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+text = "0"
+label_settings = SubResource("LabelSettings_rxwbb")
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

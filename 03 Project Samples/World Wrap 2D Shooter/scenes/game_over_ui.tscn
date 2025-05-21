@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj3og3g4nb2cd"]
+
+[ext_resource type="Script" uid="uid://dhx15b5ejbmbn" path="res://scripts/game_over_ui.gd" id="1_i4ac6"]
+[ext_resource type="FontFile" uid="uid://v4ngqoekhcbj" path="res://assets/kenney_space-shooter-redux/Bonus/kenvector_future.ttf" id="2_4d1ub"]
+[ext_resource type="FontFile" uid="uid://c12dtypk5ib4y" path="res://assets/kenney_space-shooter-redux/Bonus/kenvector_future_thin.ttf" id="3_v8g5x"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+script = ExtResource("1_i4ac6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.227451, 0.180392, 0.247059, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -45.0
+offset_right = 186.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Game Over" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4d1ub")
+theme_override_font_sizes/font_size = 52
+text = "GAME OVER"
+
+[node name="Your Score" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v8g5x")
+theme_override_font_sizes/font_size = 23
+text = "Your score : 1234"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.5
+offset_top = -40.0
+offset_right = 77.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_v8g5x")
+theme_override_font_sizes/font_size = 30
+text = "Space to Start Again, ESC to quit"

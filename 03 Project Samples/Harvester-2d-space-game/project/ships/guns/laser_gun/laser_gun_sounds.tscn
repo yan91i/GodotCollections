@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://dusfn7sr4n7xa"]
+
+[ext_resource type="Script" uid="uid://c07h5mgf3435i" path="res://common/looping_audio_stream_player_2d.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://dh6ycaun817h2" path="res://ships/guns/laser_gun/weapons_beam_end.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://dm67xoxh8pgb5" path="res://ships/guns/laser_gun/weapons_beam_start.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://cntuf7rkahxd6" path="res://ships/guns/laser_gun/weapons_beam_loop.wav" id="4"]
+
+[node name="LaserGunSounds" type="AudioStreamPlayer2D"]
+script = ExtResource("1")
+__meta__ = {
+"_editor_description_": ""
+}
+sound_start = ExtResource("3")
+sound_loop = ExtResource("4")
+sound_tail = ExtResource("2")

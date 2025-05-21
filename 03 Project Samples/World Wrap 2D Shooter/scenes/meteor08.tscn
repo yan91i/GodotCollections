@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpewamejmu1o2"]
+
+[ext_resource type="Script" uid="uid://dpsrb750nh17i" path="res://scripts/meteor.gd" id="1_uq13y"]
+[ext_resource type="Texture2D" uid="uid://bioj0pvg0oel5" path="res://assets/kenney_space-shooter-redux/PNG/Meteors/meteorBrown_small2.png" id="2_aunup"]
+[ext_resource type="AudioStream" uid="uid://b84p7ub5p7ca" path="res://assets/kenney_space-shooter-redux/Bonus/asteroid_blownup.mp3" id="3_wb5n7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8aek6"]
+friction = 0.0
+
+[node name="Meteor08" type="RigidBody2D"]
+disable_mode = 2
+collision_layer = 2
+collision_mask = 27
+physics_material_override = SubResource("PhysicsMaterial_8aek6")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_uq13y")
+
+[node name="MeteorImage" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_aunup")
+
+[node name="MeteorBlownup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wb5n7")
+volume_db = -14.718
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(14, -35, 41, -1, 17, 35, -15, 32, -39, 11, -30, -28)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

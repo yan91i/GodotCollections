@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://53pcfgby5by6"]
+
+[sub_resource type="Gradient" id="Gradient_ut1r6"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="2"]
+gradient = SubResource("Gradient_ut1r6")
+width = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
+layer = -1
+
+[node name="BlackBackground" type="TextureRect" parent="SubViewport/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("2")
+expand_mode = 1
+stretch_mode = 1

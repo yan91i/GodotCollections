@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://2si83qrwd8ml"]
+
+[ext_resource type="Script" uid="uid://dyjra8x0xj4ng" path="res://scripts/player.gd" id="1_koeje"]
+[ext_resource type="Texture2D" uid="uid://4tboutrvsfm0" path="res://assets/kenney_space-shooter-redux/PNG/playerShip3_blue.png" id="1_m2rlm"]
+[ext_resource type="AudioStream" uid="uid://d3acmxhi3c3ya" path="res://assets/kenney_space-shooter-redux/Bonus/sfx_laser2.ogg" id="3_i6768"]
+[ext_resource type="AudioStream" uid="uid://bpf47d0vscjr2" path="res://assets/kenney_space-shooter-redux/Bonus/player_dead.mp3" id="4_ff4pd"]
+[ext_resource type="Script" uid="uid://bpx0qut021yju" path="res://scenes/player_camera_2d.gd" id="5_klotu"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tdoxc"]
+lifetime_randomness = 0.34
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_max = 10.98
+color = Color(0.47451, 1, 1, 1)
+hue_variation_min = -0.15
+hue_variation_max = 0.04
+turbulence_enabled = true
+turbulence_noise_speed_random = 1.27
+
+[node name="Player" type="RigidBody2D"]
+gravity_scale = 0.0
+can_sleep = false
+linear_velocity = Vector2(300, 0)
+script = ExtResource("1_koeje")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+texture = ExtResource("1_m2rlm")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="PlayerImage"]
+position = Vector2(-1, 37)
+process_material = SubResource("ParticleProcessMaterial_tdoxc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 2)
+polygon = PackedVector2Array(3, -37, 47, 21, 49, 28, 22, 28, 12, 39, -14, 39, -21, 29, -47, 28, -47, 19, -9, -23, -4, -36)
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i6768")
+
+[node name="PlayerHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ff4pd")
+
+[node name="PlayerCamera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("5_klotu")
+overridezoom = 1500.0
