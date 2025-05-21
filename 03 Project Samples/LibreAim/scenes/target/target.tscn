@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://uux8dcfhe1ob"]
+
+[ext_resource type="Script" uid="uid://dguvlnaoi8ut7" path="res://scenes/target/target.gd" id="1_nte11"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_do5mn"]
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkxxc"]
+albedo_color = Color(1, 0.74902, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.74902, 0, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xrxto"]
+material = SubResource("StandardMaterial3D_nkxxc")
+height = 1.0
+radial_segments = 16
+rings = 4
+
+[node name="Target" type="CharacterBody3D" groups=["Target"]]
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_nte11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_do5mn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_xrxto")
+skeleton = NodePath("../..")

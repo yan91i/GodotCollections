@@ -1,0 +1,289 @@
+[gd_scene load_steps=21 format=3 uid="uid://cdbhv0p0jfr75"]
+
+[ext_resource type="Script" uid="uid://bw403cdwa6w7u" path="res://scenes/game_world/game_world.gd" id="1_4pv4x"]
+[ext_resource type="PackedScene" uid="uid://dcd6yn8pmwkf" path="res://scenes/game_world/pause_ui/pause_ui.tscn" id="2_tp74x"]
+[ext_resource type="PackedScene" uid="uid://dkiet13jnna2m" path="res://scenes/game_world/player/player.tscn" id="4_50ilh"]
+[ext_resource type="Script" uid="uid://cf8557cuxp315" path="res://scenes/game_world/gameplay_ui/gameplay_ui.gd" id="5_of43n"]
+[ext_resource type="Texture2D" uid="uid://1xnrooyjmggn" path="res://assets/images/hit_marker.svg" id="6_efh5s"]
+[ext_resource type="PackedScene" uid="uid://cpoik4f7kx6aj" path="res://scenes/game_world/end_game_ui/end_game_ui.tscn" id="11_hrjw4"]
+[ext_resource type="AudioStream" uid="uid://c1ons03xoggga" path="res://assets/default_data/custom_resources/destroy_sounds/beep.ogg" id="12_xv1t2"]
+[ext_resource type="Script" uid="uid://d0234x8uu2y3k" path="res://scenes/game_world/destroyed_sound.gd" id="13_mss18"]
+
+[sub_resource type="Theme" id="Theme_agxdx"]
+Label/font_sizes/font_size = 42
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fembj"]
+bg_color = Color(0, 0, 0, 0.294118)
+
+[sub_resource type="Theme" id="Theme_p6jab"]
+Label/colors/font_color = Color(1, 1, 1, 0.470588)
+Label/font_sizes/font_size = 26
+
+[sub_resource type="Animation" id="Animation_8dsmr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameplayUI/GameplayUI/HitMarker:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameplayUI/GameplayUI/HitMarker:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jsqua"]
+resource_name = "kill"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameplayUI/GameplayUI/HitMarker:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameplayUI/GameplayUI/HitMarker:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0jl0"]
+_data = {
+&"RESET": SubResource("Animation_8dsmr"),
+&"kill": SubResource("Animation_jsqua")
+}
+
+[sub_resource type="Animation" id="Animation_ybjr1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8c12g"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y2pta"]
+_data = {
+&"RESET": SubResource("Animation_ybjr1"),
+&"idle": SubResource("Animation_8c12g")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gakb1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_i8euj"]
+sky_material = SubResource("ProceduralSkyMaterial_gakb1")
+
+[sub_resource type="Environment" id="Environment_pon8i"]
+background_mode = 1
+background_color = Color(0.0666667, 0.129412, 0.227451, 1)
+sky = SubResource("Sky_i8euj")
+
+[node name="World" type="Node3D" node_paths=PackedStringArray("_timer", "_gameplay_ui")]
+script = ExtResource("1_4pv4x")
+_timer = NodePath("Timer")
+_gameplay_ui = NodePath("GameplayUI")
+
+[node name="PauseUI" parent="." instance=ExtResource("2_tp74x")]
+visible = false
+
+[node name="EndGameUI" parent="." instance=ExtResource("11_hrjw4")]
+visible = false
+
+[node name="GameplayUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("_start_feedback")]
+script = ExtResource("5_of43n")
+_start_feedback = NodePath("GameplayUI/PressAny")
+
+[node name="GameplayUI" type="Control" parent="GameplayUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_agxdx")
+
+[node name="MarginContainer" type="MarginContainer" parent="GameplayUI/GameplayUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="GameplayUI/GameplayUI/MarginContainer"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fembj")
+
+[node name="MarginContainer" type="MarginContainer" parent="GameplayUI/GameplayUI/MarginContainer/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="time" type="HBoxContainer" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer/time"]
+layout_mode = 2
+theme = SubResource("Theme_p6jab")
+text = "Time "
+vertical_alignment = 1
+uppercase = true
+
+[node name="label2" type="Label" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer/time"]
+layout_mode = 2
+text = "60 s"
+
+[node name="score" type="HBoxContainer" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer/score"]
+layout_mode = 2
+theme = SubResource("Theme_p6jab")
+text = "Score "
+vertical_alignment = 1
+uppercase = true
+
+[node name="label2" type="Label" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer/score"]
+layout_mode = 2
+text = "0"
+
+[node name="accuracy" type="HBoxContainer" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer/accuracy"]
+layout_mode = 2
+theme = SubResource("Theme_p6jab")
+text = "Accuracy "
+vertical_alignment = 1
+uppercase = true
+
+[node name="label2" type="Label" parent="GameplayUI/GameplayUI/MarginContainer/Panel/MarginContainer/VBoxContainer/accuracy"]
+layout_mode = 2
+text = "100.0%"
+
+[node name="HitMarker" type="TextureRect" parent="GameplayUI/GameplayUI"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("6_efh5s")
+
+[node name="AnimationKill" type="AnimationPlayer" parent="GameplayUI/GameplayUI"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_s0jl0")
+}
+
+[node name="PressAny" type="Label" parent="GameplayUI/GameplayUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -269.5
+offset_top = -318.0
+offset_right = 269.5
+offset_bottom = -257.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(269, 30)
+text = "Shoot to start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameplayUI/GameplayUI/PressAny"]
+libraries = {
+&"": SubResource("AnimationLibrary_y2pta")
+}
+autoplay = "idle"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pon8i")
+
+[node name="LevelSpawner" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("4_50ilh")]
+
+[node name="DestroyedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_xv1t2")
+script = ExtResource("13_mss18")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
