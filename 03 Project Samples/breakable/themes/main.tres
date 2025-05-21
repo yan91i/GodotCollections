@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=2 format=2]
+
+[ext_resource path="res://fonts/ricasso_font.tres" type="DynamicFont" id=1]
+
+[resource]
+
+default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 0.303863, 0.839844, 0.299643, 1 )
+Button/colors/font_color_disabled = Color( 0.753906, 0.753906, 0.753906, 0.2 )
+Button/colors/font_color_hover = Color( 0.303711, 0.839844, 0.299561, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
+GridContainer/constants/hseparation = 4
+GridContainer/constants/vseparation = 4
+_sections_unfolded = [ "GridContainer", "GridContainer/constants" ]
+

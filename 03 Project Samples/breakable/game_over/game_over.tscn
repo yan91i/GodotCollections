@@ -1,0 +1,166 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://game_over/game_over.gd" type="Script" id=1]
+[ext_resource path="res://materials/background_material.tres" type="Material" id=2]
+[ext_resource path="res://textures/black.png" type="Texture" id=3]
+[ext_resource path="res://themes/main.tres" type="Theme" id=4]
+[ext_resource path="res://new_hi_score_dialog/new_hi_score_dialog.tscn" type="PackedScene" id=5]
+
+[node name="game_over" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="background" type="Sprite" parent="." index="0"]
+
+material = ExtResource( 2 )
+texture = ExtResource( 3 )
+offset = Vector2( 512, 384 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 768 )
+_sections_unfolded = [ "Material", "Transform" ]
+
+[node name="CenterContainer" type="CenterContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 960.0
+margin_bottom = 704.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 4 )
+use_top_left = false
+_sections_unfolded = [ "Theme" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 406.0
+margin_top = 323.0
+margin_right = 618.0
+margin_bottom = 444.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 15
+alignment = 0
+_sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
+
+[node name="title" type="Label" parent="CenterContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 212.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "GAME_OVER"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="score" type="Label" parent="CenterContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 31.0
+margin_right = 212.0
+margin_bottom = 47.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0.435294, 0, 1 )
+text = "Score: 0"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="play_again" type="Button" parent="CenterContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 62.0
+margin_right = 212.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BTN_PLAY_AGAIN"
+flat = false
+align = 1
+_sections_unfolded = [ "Margin", "Size Flags", "custom_constants" ]
+
+[node name="main_menu" type="Button" parent="CenterContainer/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 99.0
+margin_right = 212.0
+margin_bottom = 121.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BTN_MAIN_MENU"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="hi_score_dialog" parent="." index="2" instance=ExtResource( 5 )]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 218.0
+margin_top = 218.0
+margin_right = 718.0
+margin_bottom = 458.0
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/play_again" to="." method="_on_play_again_pressed"]
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
+
+
