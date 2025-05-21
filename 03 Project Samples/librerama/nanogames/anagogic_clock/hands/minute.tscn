@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://e4x77212s6nc"]
+
+[ext_resource type="Texture2D" uid="uid://h4h15kjderdl" path="res://nanogames/anagogic_clock/_assets/clock.png" id="1"]
+[ext_resource type="Script" path="res://nanogames/anagogic_clock/hands/hand.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://ddibcbarkyqoi" path="res://nanogames/anagogic_clock/hands/_assets/turn.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://diye0i7w77y1m" path="res://nanogames/anagogic_clock/hands/_assets/grab.wav" id="4"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 35.0
+
+[node name="Minute" type="Area2D"]
+monitoring = false
+monitorable = false
+script = ExtResource("2")
+
+[node name="Hand" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+offset = Vector2(0, -140)
+region_enabled = true
+region_rect = Rect2(1165, 370, 110, 300)
+
+[node name="Handle" type="CollisionShape2D" parent="."]
+position = Vector2(0, -247)
+shape = SubResource("1")
+
+[node name="Glow" type="Sprite2D" parent="Handle"]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("1")
+region_enabled = true
+region_rect = Rect2(1307, 360, 120, 104)
+
+[node name="Grab" type="AudioStreamPlayer2D" parent="Handle"]
+stream = ExtResource("4")
+bus = &"Effects"
+
+[node name="Turn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3")
+bus = &"Effects"
+
+[node name="TurnStop" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="TurnStop" to="Turn" method="stop"]

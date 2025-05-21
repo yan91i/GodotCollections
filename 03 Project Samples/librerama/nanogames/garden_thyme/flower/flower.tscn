@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpphwme37y10q"]
+
+[ext_resource type="Script" path="res://nanogames/garden_thyme/flower/flower.gd" id="1"]
+[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://bs0dvsq0hv044" path="res://nanogames/garden_thyme/flower/_assets/flower.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://deijf7ku17xgp" path="res://nanogames/garden_thyme/flower/_assets/blossom.wav" id="4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6yqe"]
+shader = ExtResource("2")
+shader_parameter/speed = Vector2(10, 10)
+shader_parameter/waves = Vector2(6, 6)
+shader_parameter/strength = Vector2(1, 1)
+shader_parameter/interval = 0.2
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(80, 68)
+
+[sub_resource type="Animation" id="4"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="3"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 1.4), Vector2(1.4, 0.6), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_csobh"]
+_data = {
+"RESET": SubResource("4"),
+"blossom": SubResource("3")
+}
+
+[node name="Flower" type="Area2D"]
+input_pickable = false
+monitorable = false
+script = ExtResource("1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n6yqe")
+texture = ExtResource("3")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("2")
+
+[node name="Blossom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4")
+volume_db = 8.0
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_csobh")
+}

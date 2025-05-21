@@ -1,0 +1,33 @@
+{
+    "name": "Void Avoider",
+    "kickoff": "AVOID!",
+    "description": "Space, the final frontier, and apparently filled with black holes that have no regard to the laws of physics. Make sure the spaceship stays out of their way!",
+    "author": "Librerama",
+    "input": "NAVIGATION",
+    "inputModifier": "NONE",
+    "timer": "SURVIVAL",
+    "tags": "Alien,Black Hole,Dodge,Space",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/avoid_enemies",
+    "thirdParty": [
+        {
+            "name": "MaevaDosimont_2012_03",
+            "author": "iut_Paris8",
+            "license": "CC0",
+            "source": "https://freesound.org/people/iut_Paris8/sounds/130252/"
+        },
+        {
+            "name": "Spacewoosh_07",
+            "author": "JordJV",
+            "license": "CC0",
+            "source": "https://freesound.org/people/JordJV/sounds/205192/"
+        },
+        {
+            "name": "SwooshWabble_E2",
+            "author": "Slanted",
+            "license": "CC0",
+            "source": "https://freesound.org/people/Slanted/sounds/472392/"
+        }
+    ]
+}

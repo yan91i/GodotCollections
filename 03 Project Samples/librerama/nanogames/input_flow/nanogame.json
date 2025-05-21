@@ -1,0 +1,45 @@
+{
+    "name": "Input Flow",
+    "kickoff": "REPEAT!",
+    "description": "Try to not get too distracted by the beat and pay attention to match the flow of inputs that appear in the screen.",
+    "author": "Librerama",
+    "input": "NAVIGATION_ACTION",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Match,Memory",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/input_flow",
+    "thirdParty": [
+        {
+            "name": "applause01",
+            "author": "LMMS Team",
+            "license": "GPL_2_LATER",
+            "source": "https://github.com/LMMS/lmms/tree/v1.2.2/data/samples/misc/applause01.ogg"
+        },
+        {
+            "name": "bassMeat",
+            "author": "igjop",
+            "license": "CC0",
+            "source": "https://freesound.org/people/igjop/sounds/128493/"
+        },
+        {
+            "name": "clap01",
+            "author": "LMMS Team",
+            "license": "GPL_2_LATER",
+            "source": "https://github.com/LMMS/lmms/tree/v1.2.2/data/samples/drums/clap01.ogg"
+        },
+        {
+            "name": "clap03",
+            "author": "LMMS Team",
+            "license": "GPL_2_LATER",
+            "source": "https://github.com/LMMS/lmms/tree/v1.2.2/data/samples/drums/clap03.ogg"
+        },
+        {
+            "name": "snare_electro01",
+            "author": "LMMS Team",
+            "license": "GPL_2_LATER",
+            "source": "https://github.com/LMMS/lmms/tree/v1.2.2/data/samples/drums/snare_electro01.ogg"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5frslx0xhpxc"]
+
+[ext_resource type="Script" path="res://modals/modal/modal.gd" id="1_dtcqs"]
+
+[node name="Modal" type="Window"]
+transparent_bg = true
+size = Vector2i(848, 608)
+unresizable = true
+borderless = true
+transparent = true
+unfocusable = true
+script = ExtResource("1_dtcqs")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 848.0
+offset_bottom = 608.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"Modal"
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+offset_left = 4.0
+offset_top = 573.0
+offset_right = 844.0
+offset_bottom = 604.0
+alignment = 1
+
+[node name="Cancel" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Cancel"
+
+[node name="Space" type="Control" parent="Buttons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseOK" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="Buttons/Cancel" to="." method="hide"]
+[connection signal="pressed" from="Buttons/CloseOK" to="." method="_on_close_ok_pressed"]

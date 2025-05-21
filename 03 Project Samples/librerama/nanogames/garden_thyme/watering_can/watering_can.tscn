@@ -1,0 +1,212 @@
+[gd_scene load_steps=14 format=3 uid="uid://costyv47tyfla"]
+
+[ext_resource type="Script" path="res://nanogames/garden_thyme/watering_can/watering_can.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://du38mx6hdepwm" path="res://nanogames/garden_thyme/watering_can/_assets/watering_can.png" id="2"]
+[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://cb55pth3t1t6p" path="res://nanogames/garden_thyme/watering_can/_assets/water.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bjeyab0ghv3l" path="res://nanogames/garden_thyme/watering_can/_assets/shadow.png" id="5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2bqh"]
+shader = ExtResource("3")
+shader_parameter/speed = Vector2(10, 10)
+shader_parameter/waves = Vector2(6, 6)
+shader_parameter/strength = Vector2(1, 1)
+shader_parameter/interval = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4t8v7"]
+shader = ExtResource("3")
+shader_parameter/speed = Vector2(10, 10)
+shader_parameter/waves = Vector2(4, 4)
+shader_parameter/strength = Vector2(1, 1)
+shader_parameter/interval = 0.2
+
+[sub_resource type="ShaderMaterial" id="3"]
+shader = ExtResource("3")
+shader_parameter/speed = Vector2(10, 10)
+shader_parameter/waves = Vector2(2, 2)
+shader_parameter/strength = Vector2(0.5, 0.5)
+shader_parameter/interval = 0.2
+
+[sub_resource type="ParticleProcessMaterial" id="4"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="RectangleShape2D" id="5"]
+size = Vector2(48, 40)
+
+[sub_resource type="Animation" id="7"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WateringCan:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WateringCan:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:self_modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles2D:self_modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WateringCan:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -23.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WateringCan:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:self_modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GPUParticles2D:self_modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jxkq6"]
+_data = {
+"RESET": SubResource("7"),
+"tilt": SubResource("6")
+}
+
+[node name="WateringCan" type="Area2D"]
+input_pickable = false
+monitoring = false
+script = ExtResource("1")
+
+[node name="WateringCan" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_t2bqh")
+position = Vector2(50, -320)
+texture = ExtResource("2")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_4t8v7")
+texture = ExtResource("5")
+metadata/_edit_lock_ = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+material = SubResource("3")
+position = Vector2(0, -302)
+emitting = false
+amount = 12
+process_material = SubResource("4")
+texture = ExtResource("4")
+lifetime = 1.6
+visibility_rect = Rect2(-100, -50, 200, 400)
+local_coords = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("5")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jxkq6")
+}
+autoplay = "tilt"

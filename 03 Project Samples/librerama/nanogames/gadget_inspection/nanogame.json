@@ -1,0 +1,39 @@
+{
+    "name": "Gadget Inspection",
+    "kickoff": "CALIBRATE!",
+    "description": "Machinery needs calibration from time to time, and this one is no different. Stop the pointer on the mark enough times, so this hunk of metal can go back to do... Whatever it's supposed to be doing.",
+    "author": "Librerama",
+    "input": "ACTION",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Machine,Timing",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/gadget_inspection",
+    "thirdParty": [
+        {
+            "name": "Glitchy Battle",
+            "author": "Harm-Jan Wiechers",
+            "license": "CC_BY_SA_3",
+            "source": "https://opengameart.org/content/glitchy-battle"
+        },
+        {
+            "name": "sfx_sounds_button5",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        },
+        {
+            "name": "sfx_sound_mechanicalnoise1",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        },
+        {
+            "name": "sfx_movement_portal4",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        }
+    ]
+}

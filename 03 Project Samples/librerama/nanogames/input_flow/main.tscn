@@ -1,0 +1,259 @@
+[gd_scene load_steps=18 format=3 uid="uid://bi0edi7g5f1f1"]
+
+[ext_resource type="Script" path="res://nanogames/input_flow/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cero272k8bwyn" path="res://nanogames/input_flow/input/input.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://m2crigdaa6rp" path="res://nanogames/input_flow/_assets/particle.svg" id="4"]
+[ext_resource type="AudioStream" uid="uid://cl2mmisbrj8wr" path="res://nanogames/input_flow/_assets/fail.wav" id="5"]
+[ext_resource type="AudioStream" uid="uid://x8wkikgp4smn" path="res://nanogames/input_flow/_assets/clap.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://b4mbr4ona4l6j" path="res://nanogames/input_flow/_assets/music.ogg" id="7"]
+[ext_resource type="AudioStream" uid="uid://t1451ekrrxar" path="res://nanogames/input_flow/_assets/win.wav" id="8"]
+
+[sub_resource type="Gradient" id="Gradient_80qml"]
+colors = PackedColorArray(1, 1, 1, 0.784314, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cm1l1"]
+gradient = SubResource("Gradient_80qml")
+width = 32
+
+[sub_resource type="ParticleProcessMaterial" id="3"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_cm1l1")
+
+[sub_resource type="Animation" id="15"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.309804, 0.27451, 0.384314, 1)]
+}
+
+[sub_resource type="Animation" id="10"]
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Color(0.713726, 0.341176, 0.341176, 1), Color(0.596078, 0.145098, 0.145098, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Effects")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="11"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.164706, 0.556863, 0.694118, 1), Color(0.392157, 0.670588, 0.764706, 1), Color(0.164706, 0.556863, 0.694118, 1)]
+}
+
+[sub_resource type="Animation" id="12"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.309804, 0.27451, 0.384314, 1), Color(0.423529, 0.380392, 0.513726, 1), Color(0.309804, 0.27451, 0.384314, 1)]
+}
+
+[sub_resource type="Animation" id="13"]
+length = 0.3
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Color(0.392157, 0.670588, 0.764706, 1), Color(0.164706, 0.556863, 0.694118, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Effects")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="14"]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.278431, 0.741176, 0.415686, 1), Color(0.168627, 0.568627, 0.286275, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Effects")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fslqv"]
+_data = {
+"RESET": SubResource("15"),
+"fail": SubResource("10"),
+"match_input": SubResource("11"),
+"show_input": SubResource("12"),
+"start": SubResource("13"),
+"win": SubResource("14")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="ParticlesTop" type="GPUParticles2D" parent="."]
+position = Vector2(480, -256)
+rotation = -3.14159
+amount = 4
+process_material = SubResource("3")
+texture = ExtResource("4")
+lifetime = 0.45
+preprocess = 1.0
+visibility_rect = Rect2(-100, -328, 200, 200)
+
+[node name="ParticlesBottom" type="GPUParticles2D" parent="."]
+position = Vector2(480, 976)
+amount = 4
+process_material = SubResource("3")
+texture = ExtResource("4")
+lifetime = 0.45
+preprocess = 1.0
+visibility_rect = Rect2(-100, -328, 200, 200)
+
+[node name="Inputs" type="VBoxContainer" parent="."]
+offset_right = 960.0
+offset_bottom = 720.0
+alignment = 1
+
+[node name="Top" type="HBoxContainer" parent="Inputs"]
+layout_mode = 2
+alignment = 1
+
+[node name="Input" parent="Inputs/Top" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Input2" parent="Inputs/Top" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Input3" parent="Inputs/Top" instance_placeholder="res://nanogames/input_flow/input/input.tscn"]
+layout_mode = 2
+
+[node name="Bottom" type="HBoxContainer" parent="Inputs"]
+layout_mode = 2
+alignment = 1
+
+[node name="Input4" parent="Inputs/Bottom" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Input5" parent="Inputs/Bottom" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Input6" parent="Inputs/Bottom" instance_placeholder="res://nanogames/input_flow/input/input.tscn"]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="ResizeDelay" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7")
+autoplay = true
+bus = &"Music"
+
+[node name="Effects" type="AudioStreamPlayer" parent="."]
+bus = &"Effects"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.309804, 0.27451, 0.384314, 1)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fslqv")
+}
+
+[connection signal="timeout" from="ResizeDelay" to="." method="_on_resize_delay_timeout"]

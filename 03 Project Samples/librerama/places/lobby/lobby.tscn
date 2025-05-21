@@ -1,0 +1,308 @@
+[gd_scene load_steps=21 format=3 uid="uid://cxr5icpsn7k6w"]
+
+[ext_resource type="Script" path="res://places/lobby/lobby.gd" id="1"]
+[ext_resource type="Theme" uid="uid://bhgiqje5djp63" path="res://themes/theme_lobby.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://cqte5obyei3ha" path="res://places/lobby/_assets/next.svg" id="7"]
+[ext_resource type="PackedScene" uid="uid://qexohkl4bnhi" path="res://places/lobby/buy_menu/buy_menu.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://b00ndcy4og3ig" path="res://modals/settings_modal/settings_modal.tscn" id="8_b8rf0"]
+[ext_resource type="Texture2D" uid="uid://c1yvo6nfksbbp" path="res://places/lobby/_assets/balcony.png" id="9"]
+[ext_resource type="PackedScene" uid="uid://bhtj7ynfm8h4r" path="res://places/lobby/about_modal/about_modal.tscn" id="9_5wryb"]
+[ext_resource type="Texture2D" uid="uid://ddt3p34088dey" path="res://places/lobby/_assets/skip.svg" id="10"]
+[ext_resource type="Texture2D" uid="uid://c4ckxokf51ufa" path="res://places/lobby/_assets/speech_bubble.png" id="11"]
+[ext_resource type="AudioStream" uid="uid://bhxcmk8hwb8xe" path="res://places/lobby/_assets/menu_noise.wav" id="12"]
+[ext_resource type="AudioStream" uid="uid://d2jpmv2fu7ynd" path="res://places/lobby/_assets/door.wav" id="13"]
+
+[sub_resource type="Gradient" id="7"]
+colors = PackedColorArray(0.308411, 0.385835, 0.484375, 1, 0.163361, 0.185196, 0.207031, 1)
+
+[sub_resource type="GradientTexture2D" id="8"]
+gradient = SubResource("7")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="CanvasItemMaterial" id="1"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="2"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+texture = ExtResource("11")
+texture_margin_left = 95.9022
+texture_margin_top = 47.1986
+texture_margin_right = 47.031
+texture_margin_bottom = 80.0928
+expand_margin_left = 72.0
+expand_margin_top = 24.0
+expand_margin_right = 24.0
+expand_margin_bottom = 40.0
+region_rect = Rect2(0, 0, 192, 168)
+
+[sub_resource type="AudioStreamRandomizer" id="6"]
+random_pitch = 1.5
+streams_count = 1
+
+[sub_resource type="Animation" id="Animation_llqej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7g1qy"]
+resource_name = "speak"
+length = 0.5
+loop_mode = 1
+step = 0.05
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(1.02, 0.98), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y8s4v"]
+resource_name = "speak_end"
+length = 0.25
+loop_mode = 1
+step = 0.05
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_57fnd"]
+_data = {
+"RESET": SubResource("Animation_llqej"),
+"speak": SubResource("Animation_7g1qy"),
+"speak_end": SubResource("Animation_y8s4v")
+}
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6")
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("8")
+expand_mode = 1
+
+[node name="Balcony" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -224.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9")
+
+[node name="Assistant" type="Sprite2D" parent="Balcony"]
+unique_name_in_owner = true
+position = Vector2(704, 12)
+
+[node name="DayColor" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.0980392)
+material = SubResource("1")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Speech" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -334.0
+offset_right = 454.0
+offset_bottom = 104.0
+
+[node name="Bubble" type="PanelContainer" parent="Speech"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Text" type="RichTextLabel" parent="Speech/Bubble"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_colors/default_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_constants/outline_size = 0
+bbcode_enabled = true
+visible_characters = 0
+visible_characters_behavior = 1
+
+[node name="Skip" type="Button" parent="Speech"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("10")
+icon_alignment = 1
+
+[node name="Next" type="Button" parent="Speech"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_type_variation = &"ButtonPositive"
+icon = ExtResource("7")
+icon_alignment = 1
+
+[node name="Buy" type="Button" parent="Speech"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_type_variation = &"ButtonPositive"
+text = "Buy"
+
+[node name="Talk" type="Button" parent="Speech"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Talk"
+
+[node name="Menu" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = -141.0
+offset_right = -76.0
+offset_bottom = -27.0
+grow_vertical = 0
+
+[node name="Play" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Arcade" type="Button" parent="Menu/Play"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonPositive"
+text = "Arcade"
+
+[node name="Backpack" type="Button" parent="Menu/Play"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonPositive"
+text = "Backpack"
+
+[node name="Space" type="Control" parent="Menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Quit" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"ButtonNegative"
+text = "Quit"
+
+[node name="Space2" type="Control" parent="Menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Misc" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Settings" type="Button" parent="Menu/Misc"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Settings"
+
+[node name="About" type="Button" parent="Menu/Misc"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "About"
+
+[node name="BuyMenu" parent="." instance=ExtResource("8")]
+visible = false
+layout_mode = 1
+
+[node name="SettingsModal" parent="." instance=ExtResource("8_b8rf0")]
+visible = false
+
+[node name="AboutModal" parent="." instance=ExtResource("9_5wryb")]
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="MenuNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12")
+bus = &"Effects"
+
+[node name="AssistantNoise" type="AudioStreamPlayer" parent="."]
+stream = SubResource("6")
+bus = &"Effects"
+
+[node name="Door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13")
+bus = &"Effects"
+
+[node name="DayStateUpdate" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="AssistantPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Balcony/Assistant")
+libraries = {
+"": SubResource("AnimationLibrary_57fnd")
+}
+
+[connection signal="meta_clicked" from="Speech/Bubble/Text" to="." method="_on_text_meta_clicked"]
+[connection signal="pressed" from="Speech/Skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="Speech/Buy" to="." method="_on_buy_pressed"]
+[connection signal="pressed" from="Speech/Talk" to="." method="_on_talk_pressed"]
+[connection signal="pressed" from="Menu/Play/Arcade" to="." method="_on_arcade_pressed"]
+[connection signal="pressed" from="Menu/Play/Backpack" to="." method="_on_backpack_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu/Misc/Settings" to="SettingsModal" method="popup_centered"]
+[connection signal="pressed" from="Menu/Misc/About" to="AboutModal" method="popup_centered"]
+[connection signal="hidden" from="BuyMenu" to="." method="_on_buy_menu_hidden"]
+[connection signal="finished" from="AssistantNoise" to="." method="_on_assistant_noise_finished"]
+[connection signal="timeout" from="DayStateUpdate" to="." method="_update_day_state"]

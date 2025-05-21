@@ -1,0 +1,162 @@
+[gd_scene load_steps=15 format=3 uid="uid://celcmdbaejijn"]
+
+[ext_resource type="Script" path="res://nanogames/void_avoider/spaceship/spaceship.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cpts4i7o84o10" path="res://nanogames/void_avoider/_assets/particle.svg" id="2"]
+[ext_resource type="Texture2D" uid="uid://td032tudx584" path="res://nanogames/void_avoider/spaceship/_assets/spaceship.svg" id="3"]
+[ext_resource type="AudioStream" uid="uid://yhavapj6r6le" path="res://nanogames/void_avoider/spaceship/_assets/die.wav" id="4"]
+
+[sub_resource type="Gradient" id="Gradient_wh2be"]
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(0.101961, 0.458824, 0.266667, 1, 0.101961, 0.458824, 0.266667, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_unysg"]
+gradient = SubResource("Gradient_wh2be")
+width = 32
+
+[sub_resource type="Curve" id="3"]
+max_value = 0.5
+_data = [Vector2(0, 0.5), 0.0, -0.5, 0, 1, Vector2(1, 0), -0.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="4"]
+width = 32
+curve = SubResource("3")
+
+[sub_resource type="ParticleProcessMaterial" id="5"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("4")
+color_ramp = SubResource("GradientTexture1D_unysg")
+
+[sub_resource type="CircleShape2D" id="6"]
+radius = 32.0
+
+[sub_resource type="Animation" id="9"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Trail:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="7"]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Trail:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="8"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 360.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jng35"]
+_data = {
+"RESET": SubResource("9"),
+"die": SubResource("7"),
+"idle": SubResource("8")
+}
+
+[node name="Spaceship" type="Area2D"]
+input_pickable = false
+monitorable = false
+script = ExtResource("1")
+metadata/_edit_group_ = true
+
+[node name="Trail" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 4
+process_material = SubResource("5")
+texture = ExtResource("2")
+lifetime = 0.25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("6")
+
+[node name="Die" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jng35")
+}
+autoplay = "idle"

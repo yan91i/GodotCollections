@@ -1,0 +1,39 @@
+{
+    "name": "Carnival Shootout",
+    "kickoff": "HIT!",
+    "description": "The carnival has come to town, and with it, the skill and completely not rigged game of hitting the targets! Sharp your aim and go for the good ones, while avoiding the bad.",
+    "author": "Librerama",
+    "input": "DRAG_DROP",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Target",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/carnival_shootout",
+    "thirdParty": [
+        {
+            "name": "Doorbell-old-tring",
+            "author": "Dub",
+            "license": "CC0",
+            "source": "https://commons.wikimedia.org/wiki/File:Doorbell-old-tring.ogg"
+        },
+        {
+            "name": "FootballTable",
+            "author": "LukeUPF",
+            "license": "CC0",
+            "source": "https://freesound.org/people/LukeUPF/sounds/233053/"
+        },
+        {
+            "name": "Impact-Misc_Tools-0002",
+            "author": "DWOBoyle",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/DWOBoyle/sounds/144263/"
+        },
+        {
+            "name": "Roll Up",
+            "author": "Yubatake",
+            "license": "CC_BY_3",
+            "source": "https://opengameart.org/content/roll-up"
+        }
+    ]
+}

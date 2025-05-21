@@ -1,0 +1,407 @@
+[gd_scene load_steps=16 format=3 uid="uid://bn36l0fb8oq7k"]
+
+[ext_resource type="Texture2D" uid="uid://crwtfqpt7g3hj" path="res://nanogames/gadget_inspection/_assets/meter.png" id="1"]
+[ext_resource type="Script" path="res://nanogames/gadget_inspection/main.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bv28kkv77rg4c" path="res://nanogames/gadget_inspection/_assets/panel.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cpkd2ptmdxm0m" path="res://nanogames/gadget_inspection/_assets/light.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bxryuucackcia" path="res://nanogames/gadget_inspection/_assets/pointer.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bqh4cst6rvf2c" path="res://nanogames/gadget_inspection/_assets/bolts.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bn433or34lelm" path="res://nanogames/gadget_inspection/_assets/indicators.png" id="7"]
+[ext_resource type="AudioStream" uid="uid://dbpye0jqgrtcl" path="res://nanogames/gadget_inspection/_assets/music.ogg" id="8"]
+[ext_resource type="AudioStream" uid="uid://nsxdpbyyonex" path="res://nanogames/gadget_inspection/_assets/shake.wav" id="9"]
+[ext_resource type="AudioStream" uid="uid://dlrpgxk8v4fbd" path="res://nanogames/gadget_inspection/_assets/victory.wav" id="11"]
+
+[sub_resource type="Animation" id="Animation_d5gk1"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Meter/Indicators/Pointer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lights/Border1/Light3D:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(0.101961, 0.101961, 0.101961, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lights/Border2/Light3D:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(0.101961, 0.101961, 0.101961, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lights/Border3/Light3D:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(0.101961, 0.101961, 0.101961, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [360.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background/DecorationLeft:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background/DecorationRight:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "light_dance"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lights/Border1/Light3D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1), Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1), Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lights/Border2/Light3D:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1), Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1), Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lights/Border3/Light3D:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1), Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1), Color(0, 1, 0.498039, 1), Color(0.101961, 0.101961, 0.101961, 1)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Effects")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="2"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [360.0, 340.0, 380.0, 360.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/DecorationLeft:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-20.0, 0.0, -40.0, -20.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/DecorationRight:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-20.0, 0.0, -40.0, -20.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Effects")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="3"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Meter/Indicators/Pointer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.0, 205.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0pfb"]
+_data = {
+"RESET": SubResource("Animation_d5gk1"),
+"light_dance": SubResource("1"),
+"machine_shake": SubResource("2"),
+"pointer_move": SubResource("3")
+}
+
+[node name="Main" type="Node2D"]
+texture_filter = 1
+script = ExtResource("2")
+metadata/_edit_lock_ = true
+
+[node name="Meter" type="NinePatchRect" parent="."]
+offset_top = 32.0
+offset_right = 240.0
+offset_bottom = 98.0
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 17
+patch_margin_top = 17
+patch_margin_right = 17
+patch_margin_bottom = 17
+
+[node name="Indicators" type="TextureRect" parent="Meter"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -35.0
+offset_right = -16.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7")
+stretch_mode = 1
+
+[node name="Target" type="ColorRect" parent="Meter/Indicators"]
+show_behind_parent = true
+layout_mode = 0
+offset_top = -16.0
+offset_right = 60.0
+offset_bottom = 20.0
+color = Color(0.172775, 0.660156, 0.339877, 0.784314)
+
+[node name="Pointer" type="Sprite2D" parent="Meter/Indicators"]
+position = Vector2(3, -4)
+texture = ExtResource("5")
+
+[node name="Lights" type="HBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 328.0
+offset_right = 256.0
+offset_bottom = 360.0
+scale = Vector2(4, 4)
+
+[node name="Border1" type="TextureRect" parent="Lights"]
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("4")
+
+[node name="Light3D" type="ColorRect" parent="Lights/Border1"]
+show_behind_parent = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="Border2" type="TextureRect" parent="Lights"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("4")
+
+[node name="Light3D" type="ColorRect" parent="Lights/Border2"]
+show_behind_parent = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="Border3" type="TextureRect" parent="Lights"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("4")
+
+[node name="Light3D" type="ColorRect" parent="Lights/Border3"]
+show_behind_parent = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="Panel" type="NinePatchRect" parent="."]
+offset_top = 488.0
+offset_right = 240.0
+offset_bottom = 551.0
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+draw_center = false
+region_rect = Rect2(0, 0, 48, 31)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+
+[node name="Center" type="TextureRect" parent="Panel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+texture = ExtResource("3")
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Effects" type="AudioStreamPlayer" parent="."]
+bus = &"Effects"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8")
+autoplay = true
+bus = &"Music"
+
+[node name="PointerCooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="CorrectPause" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.305882, 0.407843, 0.447059, 1)
+
+[node name="DecorationLeft" type="TextureRect" parent="Background"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -652.0
+offset_top = -380.0
+offset_right = -636.0
+offset_bottom = -190.0
+scale = Vector2(4, 4)
+texture = ExtResource("6")
+stretch_mode = 1
+
+[node name="DecorationRight" type="TextureRect" parent="Background"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 590.0
+offset_top = -380.0
+offset_right = 606.0
+offset_bottom = -190.0
+scale = Vector2(4, 4)
+texture = ExtResource("6")
+stretch_mode = 1
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l0pfb")
+}
+autoplay = "pointer_move"

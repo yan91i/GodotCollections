@@ -1,0 +1,57 @@
+{
+    "name": "Punchbag Wallop",
+    "kickoff": "PUNCH!",
+    "description": "Give those punching bags a good ol' pummeling by pressing the action button till they're torn apart! Careful though, some of them can swing in unexpected ways.",
+    "author": "Librerama",
+    "input": "ACTION",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Boxing,Old",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/boxing_training",
+    "thirdParty": [
+        {
+            "name": "Ale 'n' a Rag",
+            "author": "Joshua Stephen Kartes",
+            "license": "CC_BY_3",
+            "source": "https://opengameart.org/content/ale-n-a-rag"
+        },
+        {
+            "name": "Bag Punch",
+            "author": "Jerrell Suelto",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/swelltoe77/sounds/426983/"
+        },
+        {
+            "name": "hanging",
+            "author": "jameswrowles",
+            "license": "CC0",
+            "source": "https://freesound.org/people/jameswrowles/sounds/274138/"
+        },
+        {
+            "name": "RippingCloth8",
+            "author": "Jerrell Suelto",
+            "license": "CC0",
+            "source": "https://freesound.org/people/klangkonserve/sounds/172626/"
+        },
+        {
+            "name": "Punch-miss \"whoosh\"",
+            "author": "Louis Bartlett",
+            "license": "CC0",
+            "source": "https://freesound.org/people/DrMinky/sounds/174435/"
+        },
+        {
+            "name": "Applause short burst",
+            "author": "Mary Milton",
+            "license": "CC0",
+            "source": "https://freesound.org/people/soundmary/sounds/117592/"
+        },
+        {
+            "name": "Crowd gasp",
+            "author": "Adam_N",
+            "license": "CC0",
+            "source": "https://freesound.org/people/Adam_N/sounds/324895/"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0uxsqjutbdky"]
+
+[ext_resource type="PackedScene" uid="uid://b5frslx0xhpxc" path="res://modals/modal/modal.tscn" id="1_ispr8"]
+[ext_resource type="Script" path="res://modals/settings_modal/input_modal/input_modal.gd" id="2_synwl"]
+
+[node name="InputModal" instance=ExtResource("1_ispr8")]
+size = Vector2i(700, 300)
+script = ExtResource("2_synwl")
+confirmation_mode = true
+
+[node name="Panel" parent="." index="0"]
+offset_right = 700.0
+offset_bottom = 300.0
+
+[node name="Buttons" parent="." index="1"]
+offset_top = 265.0
+offset_right = 696.0
+offset_bottom = 296.0
+
+[node name="Cancel" parent="Buttons" index="0"]
+visible = true
+
+[node name="Space" parent="Buttons" index="1"]
+visible = true
+
+[node name="CloseOK" parent="Buttons" index="2"]
+text = "OK"
+
+[node name="InputStatus" type="RichTextLabel" parent="." index="2"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 696.0
+offset_bottom = 261.0
+bbcode_enabled = true

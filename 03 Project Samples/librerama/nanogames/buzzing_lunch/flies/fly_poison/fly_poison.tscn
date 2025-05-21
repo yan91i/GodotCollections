@@ -1,0 +1,80 @@
+[gd_scene load_steps=14 format=3 uid="uid://15aly4ru0euh"]
+
+[ext_resource type="Script" path="res://nanogames/buzzing_lunch/flies/fly.gd" id="1_87vad"]
+[ext_resource type="Animation" path="res://nanogames/buzzing_lunch/flies/_resources/lean_right.tres" id="2"]
+[ext_resource type="Animation" path="res://nanogames/buzzing_lunch/flies/_resources/lean_left.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://carfy5lcd0l75" path="res://nanogames/buzzing_lunch/flies/fly_poison/_assets/fly_poison.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cn6xkg1niiyjk" path="res://nanogames/buzzing_lunch/flies/fly_poison/_assets/wings.png" id="5"]
+[ext_resource type="Animation" path="res://nanogames/buzzing_lunch/flies/_resources/reset.tres" id="6"]
+
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("5")
+region = Rect2(0, 0, 84, 76)
+
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("5")
+region = Rect2(84, 0, 84, 76)
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("5")
+region = Rect2(168, 0, 84, 76)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("5")
+region = Rect2(252, 0, 84, 76)
+
+[sub_resource type="SpriteFrames" id="5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("1")
+}, {
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}],
+"loop": true,
+"name": &"flap",
+"speed": 40.0
+}]
+
+[sub_resource type="CircleShape2D" id="6"]
+radius = 32.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xy7t2"]
+_data = {
+"RESET": ExtResource("6"),
+"lean_left": ExtResource("3"),
+"lean_right": ExtResource("2")
+}
+
+[node name="FlyPoison" type="CharacterBody2D"]
+script = ExtResource("1_87vad")
+metadata/poison = true
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("4")
+
+[node name="Wings" type="AnimatedSprite2D" parent="Body"]
+show_behind_parent = true
+position = Vector2(-30, -16)
+sprite_frames = SubResource("5")
+animation = &"flap"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("6")
+
+[node name="MoveSwitch" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xy7t2")
+}
+
+[connection signal="timeout" from="MoveSwitch" to="." method="_on_move_switch_timeout"]

@@ -1,0 +1,122 @@
+[gd_scene load_steps=14 format=3 uid="uid://b5skoxd5ien0g"]
+
+[ext_resource type="Script" path="res://nanogames/ballkeep/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://vals7uoo71n5" path="res://nanogames/ballkeep/paddle/paddle.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://daocc88vbvjag" path="res://nanogames/ballkeep/ball/ball.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://dk2upicp6ice6" path="res://nanogames/ballkeep/_assets/track.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://drt58d4sbdjct" path="res://nanogames/ballkeep/_assets/background.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://brbhc1h8y23dd" path="res://nanogames/ballkeep/_assets/music.ogg" id="6"]
+[ext_resource type="AudioStream" uid="uid://b4kpdjp2wopse" path="res://nanogames/ballkeep/_assets/alarm.wav" id="7"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 310.0
+
+[sub_resource type="Gradient" id="Gradient_f1h4i"]
+offsets = PackedFloat32Array(0, 0.7)
+colors = PackedColorArray(0.843137, 0.14902, 0.14902, 0.588235, 0.843137, 0.14902, 0.14902, 0.294118)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5be8o"]
+gradient = SubResource("Gradient_f1h4i")
+height = 720
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 0.5)
+repeat = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="3"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Light/NinePatchRect:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "alarm"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Light/NinePatchRect:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnvlm"]
+_data = {
+"RESET": SubResource("3"),
+"alarm": SubResource("2")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Track" type="Sprite2D" parent="."]
+position = Vector2(480, 360)
+texture = ExtResource("4")
+
+[node name="Stay" type="Area2D" parent="."]
+position = Vector2(480, 360)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stay"]
+shape = SubResource("1")
+
+[node name="Paddle" parent="." instance=ExtResource("2")]
+position = Vector2(480, 360)
+
+[node name="Ball" parent="." instance=ExtResource("3")]
+position = Vector2(480, 360)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+autoplay = true
+bus = &"Music"
+
+[node name="Alarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7")
+bus = &"Effects"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("5")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Light" type="CanvasLayer" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Light"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("GradientTexture2D_5be8o")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nnvlm")
+}
+
+[connection signal="body_exited" from="Stay" to="." method="_on_stay_body_exited" unbinds=1]

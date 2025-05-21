@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://dttytxcily3d1"]
+
+[ext_resource type="Script" path="res://nanogames/swatter_swindler/main.gd" id="1_62dw7"]
+[ext_resource type="PackedScene" uid="uid://ctpiv7pgkrx3q" path="res://nanogames/swatter_swindler/fly/fly.tscn" id="2_ifvcb"]
+[ext_resource type="PackedScene" uid="uid://nqjl5erodhjp" path="res://nanogames/swatter_swindler/swatter/swatter.tscn" id="3_k2v21"]
+[ext_resource type="Texture2D" uid="uid://dh4rgx2xpastl" path="res://nanogames/swatter_swindler/_assets/tile.svg" id="3_wf2eb"]
+[ext_resource type="AudioStream" uid="uid://is1aujpfyafp" path="res://nanogames/swatter_swindler/_assets/music.ogg" id="4_b7qa0"]
+[ext_resource type="Texture2D" uid="uid://eiqvkhuc4li4" path="res://nanogames/swatter_swindler/_assets/tile_mirrored.svg" id="4_gg35j"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_62dw7")
+metadata/_edit_lock_ = true
+
+[node name="Fly" parent="." instance=ExtResource("2_ifvcb")]
+position = Vector2(480, 360)
+
+[node name="Swatter" parent="." instance=ExtResource("3_k2v21")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_b7qa0")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Accent" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.380392, 0.486275, 0.717647, 1)
+metadata/_edit_lock_ = true
+
+[node name="TilesOutsideLeft" type="TextureRect" parent="Background"]
+modulate = Color(1, 1, 1, 0.392157)
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_right = -480.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gg35j")
+stretch_mode = 1
+flip_h = true
+flip_v = true
+
+[node name="TilesOutsideRight" type="TextureRect" parent="Background"]
+modulate = Color(1, 1, 1, 0.392157)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 480.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wf2eb")
+stretch_mode = 1
+
+[node name="TilesMain" type="NinePatchRect" parent="Background"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_right = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wf2eb")
+region_rect = Rect2(0, 0, 120, 120)
+patch_margin_left = 120
+patch_margin_right = 120
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[connection signal="hit" from="Fly" to="." method="_on_fly_hit"]
+[connection signal="swat_ended" from="Swatter" to="." method="_swat"]

@@ -1,0 +1,246 @@
+[gd_scene load_steps=21 format=3 uid="uid://csu4jta1ukjpi"]
+
+[ext_resource type="Script" path="res://nanogames/suitcase_by_case/main.gd" id="1"]
+[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://c6rcbh7mlnlf7" path="res://nanogames/suitcase_by_case/_assets/conveyor.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://1llpp7ge5h1k" path="res://nanogames/suitcase_by_case/baggage/baggage.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://cal23ihoabpvv" path="res://nanogames/suitcase_by_case/_assets/door.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c55cqcgornjo2" path="res://nanogames/suitcase_by_case/_assets/base.png" id="6"]
+[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="8"]
+[ext_resource type="AudioStream" uid="uid://dbvk4jp28ageo" path="res://nanogames/suitcase_by_case/_assets/music.ogg" id="9"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("2")
+shader_parameter/direction_speed = Vector2(-12.1, 0)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+
+[sub_resource type="Gradient" id="Gradient_yweu4"]
+offsets = PackedFloat32Array(0.95, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_387pf"]
+gradient = SubResource("Gradient_yweu4")
+width = 32
+
+[sub_resource type="Curve" id="Curve_mprqf"]
+min_value = 0.7
+_data = [Vector2(0, 1), 0.0, -0.3, 0, 1, Vector2(1, 0.7), -0.3, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xfqh1"]
+width = 32
+curve = SubResource("Curve_mprqf")
+
+[sub_resource type="ParticleProcessMaterial" id="4"]
+spread = 180.0
+initial_velocity_min = 90.0
+initial_velocity_max = 90.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_xfqh1")
+color_ramp = SubResource("GradientTexture1D_387pf")
+
+[sub_resource type="Gradient" id="Gradient_xtlq1"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.8, 1)
+colors = PackedColorArray(0.862745, 0.862745, 0.862745, 1, 0.862745, 0.862745, 0.862745, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ko6c"]
+gradient = SubResource("Gradient_xtlq1")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.1)
+metadata/_snap_enabled = true
+
+[sub_resource type="ShaderMaterial" id="5"]
+shader = ExtResource("8")
+shader_parameter/speed = Vector2(5, 5)
+shader_parameter/waves = Vector2(0, 0)
+shader_parameter/strength = Vector2(12, 12)
+shader_parameter/interval = 0.0
+
+[sub_resource type="Animation" id="Animation_s0top"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ToughtBubble:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="6"]
+resource_name = "thought_transition"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ToughtBubble:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_55wh5"]
+_data = {
+"RESET": SubResource("Animation_s0top"),
+"thought_transition": SubResource("6")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Conveyor" type="TextureRect" parent="."]
+material = SubResource("1")
+offset_top = 380.0
+offset_right = 960.0
+offset_bottom = 570.0
+texture = ExtResource("3")
+stretch_mode = 1
+
+[node name="Base" type="TextureRect" parent="Conveyor"]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_right = 48.0
+offset_bottom = 100.0
+texture = ExtResource("6")
+stretch_mode = 1
+
+[node name="Entrance" type="TextureRect" parent="Conveyor"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -15.9999
+offset_top = -255.0
+offset_right = 64.0001
+offset_bottom = 111.0
+texture = ExtResource("5")
+
+[node name="Exit" type="TextureRect" parent="Conveyor"]
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -255.0
+offset_right = 16.0
+offset_bottom = 111.0
+texture = ExtResource("5")
+
+[node name="Baggages" type="Control" parent="Conveyor"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+mouse_filter = 2
+
+[node name="ToughtBubble" type="GPUParticles2D" parent="."]
+position = Vector2(480, 210)
+amount = 16
+process_material = SubResource("4")
+texture = SubResource("GradientTexture2D_5ko6c")
+lifetime = 1.5
+preprocess = 2.0
+local_coords = true
+
+[node name="BaggageShader" type="SubViewportContainer" parent="ToughtBubble"]
+self_modulate = Color(1, 1, 1, 0.784314)
+material = SubResource("5")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="ToughtBubble/BaggageShader"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(250, 250)
+render_target_update_mode = 4
+
+[node name="BaggageCorrect" parent="ToughtBubble/BaggageShader/SubViewport" instance=ExtResource("4")]
+position = Vector2(125, 125)
+input_pickable = false
+
+[node name="SpawnStart" type="Marker2D" parent="."]
+z_index = 1
+position = Vector2(1060, 460)
+
+[node name="SpawnEnd" type="Marker2D" parent="."]
+z_index = 1
+position = Vector2(-100, 460)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="BaggageSpawn" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ThoughtVanish" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9")
+autoplay = true
+bus = &"Music"
+
+[node name="Results" type="AudioStreamPlayer" parent="."]
+bus = &"Effects"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Walls" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.905882, 0.745098, 0.4, 1)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="ColorRect" parent="Background"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.0
+offset_top = -360.0
+offset_right = 528.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.92549, 0.87451, 0.6, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_55wh5")
+}
+
+[connection signal="timeout" from="BaggageSpawn" to="." method="_spawn_baggage"]
+[connection signal="timeout" from="ThoughtVanish" to="AnimationPlayer" method="play" binds= ["thought_transition"]]

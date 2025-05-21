@@ -1,0 +1,33 @@
+{
+    "name": "Swatter Swindler",
+    "kickoff": "DODGE!",
+    "description": "Finding difficult to hit the target when swatting flies? Then be the little nuisance for a change, and fly around to avoid the incoming swatter. Wait, this place feels kinda familiar.",
+    "author": "Librerama",
+    "input": "NAVIGATION",
+    "inputModifier": "NONE",
+    "timer": "SURVIVAL",
+    "tags": "Fly",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/swatter_swindler",
+    "thirdParty": [
+        {
+            "name": "Flight of the Bumblebee",
+            "author": "Nikolai Andreyevich Rimsky-Korsakov",
+            "license": "PUBLIC_DOMAIN",
+            "source": "https://archive.org/details/FlightOfTheBumblebee"
+        },
+        {
+            "name": "Flying Mosquito",
+            "author": "Zywx",
+            "license": "CC0",
+            "source": "https://freesound.org/people/Zywx/sounds/188708/"
+        },
+        {
+            "name": "Slap - Cartoony",
+            "author": "AdminMP",
+            "license": "CC0",
+            "source": "https://freesound.org/people/AdminMP/sounds/383201/"
+        }
+    ]
+}

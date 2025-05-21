@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Name=Librerama
+GenericName=Mini-Game Collection
+GenericName[de]=Minispielsammlung
+GenericName[nl]=Minispelverzameling
+GenericName[pt_BR]=Coleção de Mini Jogos
+Comment=A free/libre fast-paced arcade collection of mini-games
+Comment[de]=Eine freie hektische Arkadesammlung von Minispielen
+Comment[nl]=Een gratis, vrije verzameling minispellen boordebol vermaak
+Comment[pt_BR]=Uma livre coleção de mini games de ritmo acelerado
+Exec=librerama
+Icon=librerama
+Terminal=false
+Categories=Game;ArcadeGame;
+PrefersNonDefaultGPU=true
+SingleMainWindow=true

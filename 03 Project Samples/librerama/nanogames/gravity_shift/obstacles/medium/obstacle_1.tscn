@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://c85fp2wqw2yif"]
+
+[ext_resource type="Script" path="res://nanogames/gravity_shift/obstacles/obstacle.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bea0jmyu7vsw1" path="res://nanogames/gravity_shift/obstacles/_assets/obstacle.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://biq52ivlr1aqs" path="res://nanogames/gravity_shift/obstacles/_assets/lift.wav" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(200, 450)
+
+[sub_resource type="Animation" id="3"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/NinePatchRect:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [225.0]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "activate"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/NinePatchRect:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [225.0, -225.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwuki"]
+_data = {
+"RESET": SubResource("3"),
+"activate": SubResource("2")
+}
+
+[node name="Obstacle1" type="Area2D"]
+texture_filter = 1
+input_pickable = false
+monitoring = false
+script = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 135)
+shape = SubResource("1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CollisionShape2D"]
+show_behind_parent = true
+offset_left = -100.0
+offset_top = 225.0
+offset_right = -33.0
+offset_bottom = 375.0
+scale = Vector2(3, 3)
+texture = ExtResource("2")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+axis_stretch_vertical = 1
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="CollisionShape2D"]
+show_behind_parent = true
+rect = Rect2(-100, -225, 200, 450)
+
+[node name="Lift" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pwuki")
+}
+
+[connection signal="screen_exited" from="CollisionShape2D/VisibleOnScreenNotifier2D" to="." method="queue_free"]

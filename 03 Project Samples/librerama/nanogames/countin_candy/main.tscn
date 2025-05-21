@@ -1,0 +1,376 @@
+[gd_scene load_steps=21 format=3 uid="uid://4kmw1pa5r8sj"]
+
+[ext_resource type="Script" path="res://nanogames/countin_candy/main.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ct6f1ev03hf58" path="res://nanogames/countin_candy/_assets/jar.png" id="2"]
+[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://c5i2n0313k1fw" path="res://nanogames/countin_candy/_assets/lid.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://wnbfnooxr056" path="res://nanogames/countin_candy/_assets/music.ogg" id="6"]
+[ext_resource type="FontFile" uid="uid://c3ok5jf8a42y0" path="res://fonts/noto_sans_regular.ttf" id="7_l83wx"]
+[ext_resource type="Texture2D" uid="uid://berdb6f4y5spk" path="res://nanogames/countin_candy/_assets/lid_shadow.png" id="8"]
+[ext_resource type="FontFile" uid="uid://kimyjbsdhjdf" path="res://fonts/noto_sans_bold.ttf" id="8_xm0ws"]
+[ext_resource type="Texture2D" uid="uid://d0vrkwmvi0xry" path="res://nanogames/countin_candy/_assets/background.png" id="9"]
+[ext_resource type="AudioStream" uid="uid://cucebph8xcpsu" path="res://nanogames/countin_candy/_assets/lid_screw.wav" id="10"]
+[ext_resource type="AudioStream" uid="uid://cn6nv0yvrrp7i" path="res://nanogames/countin_candy/_assets/lid_open.wav" id="11"]
+[ext_resource type="AudioStream" uid="uid://d322y2ft1y3e" path="res://nanogames/countin_candy/_assets/jar_shake.wav" id="12"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("3")
+shader_parameter/direction_speed = Vector2(0, 0)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.870588, 0.603922, 0.686275, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.956863, 0.941176, 0.717647, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(150, 110)
+
+[sub_resource type="Animation" id="7"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jar:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [56.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jar/Lid:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-32.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Jar/Lid:material:shader_parameter/direction_speed:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GUI/Fade:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jar:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [56.0, 72.0]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jar/Noises")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="5"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jar/Lid:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-32.0, 28.0, 800.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jar/Lid:material:shader_parameter/direction_speed:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-3.0, 0.0]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Jar/Noises")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11")
+}],
+"times": PackedFloat32Array(0, 0.7)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="6"]
+resource_name = "show_answers"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GUI/Fade:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_seupr"]
+_data = {
+"RESET": SubResource("7"),
+"jar_shake": SubResource("4"),
+"lid_open": SubResource("5"),
+"show_answers": SubResource("6")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Jar" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(480, 56)
+texture = ExtResource("2")
+
+[node name="Lid" type="TextureRect" parent="Jar"]
+material = SubResource("1")
+offset_left = -404.0
+offset_top = -32.0
+offset_right = 405.0
+offset_bottom = 80.0003
+texture = ExtResource("4")
+stretch_mode = 1
+
+[node name="ShadowLeft" type="Sprite2D" parent="Jar/Lid"]
+position = Vector2(-4, 56)
+texture = ExtResource("8")
+
+[node name="ShadowRight" type="Sprite2D" parent="Jar/Lid"]
+position = Vector2(813, 56)
+texture = ExtResource("8")
+flip_h = true
+
+[node name="Noises" type="AudioStreamPlayer2D" parent="Jar"]
+bus = &"Effects"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+autoplay = true
+bus = &"Music"
+
+[node name="Result" type="AudioStreamPlayer" parent="."]
+bus = &"Effects"
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Fade" type="ColorRect" parent="GUI"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.294118, 0.294118, 0.294118, 0.588235)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CandyCounter" type="VBoxContainer" parent="GUI/Fade"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_right = 256.0
+offset_bottom = 6.10352e-05
+mouse_filter = 2
+alignment = 1
+
+[node name="Result" type="HBoxContainer" parent="GUI/Fade/CandyCounter"]
+layout_mode = 2
+alignment = 1
+
+[node name="Type" type="TextureRect" parent="GUI/Fade/CandyCounter/Result"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Quantity" type="Label" parent="GUI/Fade/CandyCounter/Result"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l83wx")
+theme_override_font_sizes/font_size = 64
+text = "× ??"
+
+[node name="Answers" type="HBoxContainer" parent="GUI/Fade/CandyCounter"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="GUI/Fade/CandyCounter/Answers"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("8_xm0ws")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("2")
+horizontal_alignment = 1
+
+[node name="Anchor" type="Control" parent="GUI/Fade/CandyCounter/Answers/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Answer" type="Area2D" parent="GUI/Fade/CandyCounter/Answers/Label/Anchor"]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Fade/CandyCounter/Answers/Label/Anchor/Answer"]
+shape = SubResource("3")
+
+[node name="Label2" type="Label" parent="GUI/Fade/CandyCounter/Answers"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("8_xm0ws")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("2")
+horizontal_alignment = 1
+
+[node name="Anchor" type="Control" parent="GUI/Fade/CandyCounter/Answers/Label2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Answer" type="Area2D" parent="GUI/Fade/CandyCounter/Answers/Label2/Anchor"]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Fade/CandyCounter/Answers/Label2/Anchor/Answer"]
+shape = SubResource("3")
+
+[node name="Label3" type="Label" parent="GUI/Fade/CandyCounter/Answers"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("8_xm0ws")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("2")
+horizontal_alignment = 1
+
+[node name="Anchor" type="Control" parent="GUI/Fade/CandyCounter/Answers/Label3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Answer" type="Area2D" parent="GUI/Fade/CandyCounter/Answers/Label3/Anchor"]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Fade/CandyCounter/Answers/Label3/Anchor/Answer"]
+shape = SubResource("3")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_seupr")
+}
+autoplay = "lid_open"
+
+[connection signal="input_event" from="GUI/Fade/CandyCounter/Answers/Label/Anchor/Answer" to="." method="_on_answer_input_event" unbinds=1]
+[connection signal="mouse_entered" from="GUI/Fade/CandyCounter/Answers/Label/Anchor/Answer" to="." method="_on_answer_mouse_entered" binds= [0]]
+[connection signal="input_event" from="GUI/Fade/CandyCounter/Answers/Label2/Anchor/Answer" to="." method="_on_answer_input_event" unbinds=1]
+[connection signal="mouse_entered" from="GUI/Fade/CandyCounter/Answers/Label2/Anchor/Answer" to="." method="_on_answer_mouse_entered" binds= [1]]
+[connection signal="input_event" from="GUI/Fade/CandyCounter/Answers/Label3/Anchor/Answer" to="." method="_on_answer_input_event" unbinds=1]
+[connection signal="mouse_entered" from="GUI/Fade/CandyCounter/Answers/Label3/Anchor/Answer" to="." method="_on_answer_mouse_entered" binds= [2]]

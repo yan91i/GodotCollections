@@ -1,0 +1,33 @@
+{
+    "name": "Buzzing Lunch",
+    "kickoff": "EAT!",
+    "description": "Did you know that large frogs, such as the Bullfrog, can eat small marsupials and even other frogs? This one is small however, so just worry about eating those tasty flies, and avoiding the more indigestible ones.",
+    "author": "Librerama",
+    "input": "NAVIGATION_ACTION",
+    "inputModifier": "HORIZONTAL",
+    "timer": "OBJECTIVE",
+    "tags": "Flies,Frog,Swamp",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/buzzing_lunch",
+    "thirdParty": [
+        {
+            "name": "Lick",
+            "author": "velvetine_01",
+            "license": "CC0",
+            "source": "https://freesound.org/people/velvetine_01/sounds/456852/"
+        },
+        {
+            "name": "R01-47-Frog Ribbits",
+            "author": "Craig Smith",
+            "license": "CC0",
+            "source": "https://freesound.org/people/egomassive/sounds/536759/"
+        },
+        {
+            "name": "Swamp 02",
+            "author": "Fantasy Musica",
+            "license": "CC_BY_4",
+            "source": "https://opengameart.org/content/swamp-02"
+        }
+    ]
+}

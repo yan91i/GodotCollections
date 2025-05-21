@@ -1,0 +1,170 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsk3gcmo2ybty"]
+
+[ext_resource type="Script" path="res://places/arcade_machine/statistics/statistics.gd" id="2"]
+
+[node name="Statistics" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2")
+
+[node name="Contents" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+
+[node name="BestScores" type="Label" parent="Contents"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "Best Scores"
+horizontal_alignment = 1
+
+[node name="Scores" type="HBoxContainer" parent="Contents"]
+layout_mode = 2
+
+[node name="Labels" type="VBoxContainer" parent="Contents/Scores"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="First" type="Label" parent="Contents/Scores/Labels"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "1º:"
+
+[node name="Second" type="Label" parent="Contents/Scores/Labels"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "2º:"
+
+[node name="Third" type="Label" parent="Contents/Scores/Labels"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "3º:"
+
+[node name="Values" type="VBoxContainer" parent="Contents/Scores"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="First" type="Label" parent="Contents/Scores/Values"]
+layout_mode = 2
+text = "-"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="Second" type="Label" parent="Contents/Scores/Values"]
+layout_mode = 2
+text = "-"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="Third" type="Label" parent="Contents/Scores/Values"]
+layout_mode = 2
+text = "-"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="Space" type="Control" parent="Contents/Scores"]
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+
+[node name="Labels2" type="VBoxContainer" parent="Contents/Scores"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Fourth" type="Label" parent="Contents/Scores/Labels2"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "4º:"
+
+[node name="Fifth" type="Label" parent="Contents/Scores/Labels2"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "5º:"
+
+[node name="Sixth" type="Label" parent="Contents/Scores/Labels2"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "6º:"
+
+[node name="Values2" type="VBoxContainer" parent="Contents/Scores"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Fourth" type="Label" parent="Contents/Scores/Values2"]
+layout_mode = 2
+text = "-"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="Fifth" type="Label" parent="Contents/Scores/Values2"]
+layout_mode = 2
+text = "-"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="Sixth" type="Label" parent="Contents/Scores/Values2"]
+layout_mode = 2
+text = "-"
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="NanogamesPlayed" type="Label" parent="Contents"]
+layout_mode = 2
+size_flags_horizontal = 5
+theme_type_variation = &"LabelBold"
+text = "Nanogames Played"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Nanogames" type="HBoxContainer" parent="Contents"]
+layout_mode = 2
+
+[node name="Labels" type="VBoxContainer" parent="Contents/Nanogames"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Total" type="Label" parent="Contents/Nanogames/Labels"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "Total:"
+
+[node name="WonLost" type="Label" parent="Contents/Nanogames/Labels"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "Won / Lost:"
+
+[node name="BestWinStreak" type="Label" parent="Contents/Nanogames/Labels"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "Best Win Streak:"
+
+[node name="Values" type="VBoxContainer" parent="Contents/Nanogames"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Total" type="Label" parent="Contents/Nanogames/Values"]
+layout_mode = 2
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="WonLost" type="Label" parent="Contents/Nanogames/Values"]
+layout_mode = 2
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="BestWinStreak" type="Label" parent="Contents/Nanogames/Values"]
+layout_mode = 2
+horizontal_alignment = 2
+clip_text = true
+text_overrun_behavior = 1

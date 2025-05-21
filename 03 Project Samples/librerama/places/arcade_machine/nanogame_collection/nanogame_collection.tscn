@@ -1,0 +1,205 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhw0p5o4kjvfm"]
+
+[ext_resource type="Texture2D" uid="uid://bvbpoo82ptuei" path="res://places/_assets/pagination/last_page.svg" id="2"]
+[ext_resource type="Texture2D" uid="uid://bu7lp4s66p63a" path="res://places/_assets/pagination/previous_page.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://caheu8b8drqvb" path="res://places/arcade_machine/_assets/spot.svg" id="4"]
+[ext_resource type="Script" path="res://places/arcade_machine/nanogame_collection/nanogame_collection.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://cm7bkf4nyxfyf" path="res://places/_assets/pagination/first_page.svg" id="7"]
+[ext_resource type="Texture2D" uid="uid://d4csqaw6ukmfi" path="res://places/_assets/pagination/next_page.svg" id="8"]
+[ext_resource type="Texture2D" uid="uid://dgy53vkkxmily" path="res://places/arcade_machine/nanogame_collection/_assets/randomize.svg" id="9"]
+[ext_resource type="Texture2D" uid="uid://dui7ibkvpcq02" path="res://places/arcade_machine/_assets/help.svg" id="10"]
+[ext_resource type="PackedScene" uid="uid://4y3abds4vyia" path="res://places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn" id="10_4vyvs"]
+[ext_resource type="PackedScene" uid="uid://b5frslx0xhpxc" path="res://modals/modal/modal.tscn" id="11"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[node name="NanogameCollection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="NanogameSelector" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/NanogameSelector"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TopBar" type="HBoxContainer" parent="HBoxContainer/NanogameSelector/VBoxContainer"]
+layout_mode = 2
+
+[node name="Search" type="LineEdit" parent="HBoxContainer/NanogameSelector/VBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_right = NodePath("Help")
+placeholder_text = "Search"
+context_menu_enabled = false
+clear_button_enabled = true
+caret_blink = true
+
+[node name="Help" type="Button" parent="HBoxContainer/NanogameSelector/VBoxContainer/TopBar/Search"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+grow_horizontal = 0
+focus_neighbor_left = NodePath("..")
+theme_override_styles/hover = SubResource("1")
+theme_override_styles/pressed = SubResource("1")
+theme_override_styles/normal = SubResource("1")
+icon = ExtResource("10")
+flat = true
+
+[node name="Filter" type="MenuButton" parent="HBoxContainer/NanogameSelector/VBoxContainer/TopBar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Search/Help")
+focus_mode = 2
+text = "Filter"
+flat = false
+clip_text = true
+
+[node name="Randomize" type="Button" parent="HBoxContainer/NanogameSelector/VBoxContainer/TopBar"]
+layout_mode = 2
+tooltip_text = "Select random nanogames based on filtered results.
+Available spots will be taken, but if it's full, everything
+is randomized."
+icon = ExtResource("9")
+
+[node name="Panel" type="Panel" parent="HBoxContainer/NanogameSelector/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NanogamesAvailable" type="GridContainer" parent="HBoxContainer/NanogameSelector/VBoxContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = -8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EmptyMessage" type="RichTextLabel" parent="HBoxContainer/NanogameSelector/VBoxContainer/Panel"]
+visible = false
+layout_mode = 0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="PageButtons" type="HBoxContainer" parent="HBoxContainer/NanogameSelector/VBoxContainer"]
+layout_mode = 2
+
+[node name="First" type="Button" parent="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons"]
+layout_mode = 2
+tooltip_text = "Go to first page."
+disabled = true
+icon = ExtResource("7")
+
+[node name="Previous" type="Button" parent="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons"]
+layout_mode = 2
+tooltip_text = "Go to previous page."
+focus_neighbor_right = NodePath("../Next")
+disabled = true
+icon = ExtResource("3")
+
+[node name="Pages" type="Label" parent="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0 / 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Next" type="Button" parent="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons"]
+layout_mode = 2
+tooltip_text = "Go to next page."
+focus_neighbor_left = NodePath("../Previous")
+disabled = true
+icon = ExtResource("8")
+
+[node name="Last" type="Button" parent="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons"]
+layout_mode = 2
+tooltip_text = "Go to last page."
+disabled = true
+icon = ExtResource("2")
+
+[node name="NanogamesSelected" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/NanogamesSelected"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NanogamesActive" type="VBoxContainer" parent="HBoxContainer/NanogamesSelected/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -4.0
+theme_override_constants/separation = 0
+
+[node name="NanogameSpots" type="TextureRect" parent="HBoxContainer/NanogamesSelected/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_right = 48.0
+offset_bottom = 96.0
+grow_horizontal = 2
+texture = ExtResource("4")
+stretch_mode = 1
+
+[node name="SearchHelp" parent="." instance=ExtResource("11")]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SearchHelp"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 844.0
+offset_bottom = 569.0
+focus_mode = 2
+bbcode_enabled = true
+text = "[center][b]Search Help[/b][/center]
+
+[b]•[/b] Nanogames will be filtered from the keywords typed. A result is valid if the name, kickoff, tags, or author matches it.
+
+[b]•[/b] Multiple keywords can be used by separating words with \"[b],[/b]\". Any result that contains at least one of them will be valid by default.
+
+[b]•[/b] Putting \"[b]-[/b]\" at the start of a keyword will make results containing it be ignored.
+
+[b]•[/b] Putting \"[b]*[/b]\" at the start of a keyword will make so that all results must contain it to be valid."
+
+[node name="AboutNanogameModal" parent="." instance=ExtResource("10_4vyvs")]
+visible = false
+
+[connection signal="text_changed" from="HBoxContainer/NanogameSelector/VBoxContainer/TopBar/Search" to="." method="_on_search_text_changed"]
+[connection signal="pressed" from="HBoxContainer/NanogameSelector/VBoxContainer/TopBar/Search/Help" to="SearchHelp" method="popup_centered"]
+[connection signal="pressed" from="HBoxContainer/NanogameSelector/VBoxContainer/TopBar/Randomize" to="." method="_on_randomize_pressed"]
+[connection signal="resized" from="HBoxContainer/NanogameSelector/VBoxContainer/Panel/NanogamesAvailable" to="." method="_update_column_quantity"]
+[connection signal="meta_clicked" from="HBoxContainer/NanogameSelector/VBoxContainer/Panel/EmptyMessage" to="." method="_on_empty_message_meta_clicked"]
+[connection signal="pressed" from="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/First" to="." method="_on_first_pressed"]
+[connection signal="pressed" from="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Last" to="." method="_on_last_pressed"]
+[connection signal="practice_mode_started" from="AboutNanogameModal" to="." method="_on_about_nanogame_modal_practice_mode_started"]

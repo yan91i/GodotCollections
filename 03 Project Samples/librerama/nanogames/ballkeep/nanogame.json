@@ -1,0 +1,33 @@
+{
+    "name": "Ballkeep",
+    "kickoff": "KEEP IN!",
+    "description": "That metal ball really wants to get out this place. Why is that? I would worry more about keeping it within the paddle area until the timer runs out if I were you.",
+    "author": "Librerama",
+    "input": "NAVIGATION",
+    "inputModifier": "HORIZONTAL",
+    "timer": "SURVIVAL",
+    "tags": "Paddle",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/ballkeep",
+    "thirdParty": [
+        {
+            "name": "Alarm Siren",
+            "author": "mirkosukovic",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/mirkosukovic/sounds/435666/"
+        },
+        {
+            "name": "metal_clang_cut_03",
+            "author": "Department64",
+            "license": "CC0",
+            "source": "https://freesound.org/people/Department64/sounds/95271/"
+        },
+        {
+            "name": "Metallic Mistress",
+            "author": "FoxSynergy",
+            "license": "CC_BY_3",
+            "source": "https://opengameart.org/content/metallic-mistress"
+        }
+    ]
+}

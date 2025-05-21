@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://7lwlyogg8nef"]
+
+[ext_resource type="Script" uid="uid://b8px7aoqc1xgy" path="res://places/intro/intro.gd" id="1"]
+[ext_resource type="Theme" uid="uid://bhgiqje5djp63" path="res://themes/theme_lobby.tres" id="2"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2")
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.101961, 0.101961, 0.101961, 1)
+metadata/_edit_lock_ = true
+
+[node name="Contents" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Warning" type="RichTextLabel" parent="Contents"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+
+[node name="OK" type="Button" parent="Contents"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ButtonPositive"
+text = "OK"
+
+[connection signal="pressed" from="Contents/OK" to="." method="_on_ok_pressed"]

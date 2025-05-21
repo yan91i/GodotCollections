@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhtj7ynfm8h4r"]
+
+[ext_resource type="PackedScene" uid="uid://buutl05rvbhox" path="res://modals/tab_modal/tab_modal.tscn" id="1_gmuv2"]
+[ext_resource type="Script" path="res://places/lobby/about_modal/about_modal.gd" id="2_dorbn"]
+
+[node name="AboutModal" instance=ExtResource("1_gmuv2")]
+script = ExtResource("2_dorbn")
+
+[node name="TabBar" parent="." index="2"]
+current_tab = 0
+tab_count = 4
+tab_0/title = "About"
+tab_1/title = "Donate"
+tab_2/title = "Contributors"
+tab_3/title = "Thirdparty"
+
+[node name="About" type="RichTextLabel" parent="." index="3"]
+auto_translate_mode = 2
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+focus_mode = 2
+bbcode_enabled = true
+
+[node name="Donate" type="RichTextLabel" parent="." index="4"]
+auto_translate_mode = 2
+visible = false
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+focus_mode = 2
+bbcode_enabled = true
+
+[node name="Contributors" type="RichTextLabel" parent="." index="5"]
+auto_translate_mode = 2
+visible = false
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+focus_mode = 2
+bbcode_enabled = true
+
+[node name="Thirdparty" type="RichTextLabel" parent="." index="6"]
+auto_translate_mode = 2
+visible = false
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+focus_mode = 2
+bbcode_enabled = true
+
+[connection signal="meta_clicked" from="About" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="Donate" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="Contributors" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="Thirdparty" to="." method="_on_rich_text_label_meta_clicked"]

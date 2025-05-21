@@ -1,0 +1,39 @@
+{
+    "name": "Gravity Shift",
+    "kickoff": "SHIFT!",
+    "description": "The law of gravity may dictate that objects with mass attract each other, unless you have the power of [insert technobabble here]! So make sure to use it to evade the lifting pillars, as the laws of motion are still very much in place.",
+    "author": "Librerama",
+    "input": "ACTION",
+    "inputModifier": "NONE",
+    "timer": "SURVIVAL",
+    "tags": "Robot",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/gravity_shift",
+    "thirdParty": [
+        {
+            "name": "burgers",
+            "author": "Jan125",
+            "license": "CC_BY_4",
+            "source": "https://opengameart.org/content/burgers"
+        },
+        {
+            "name": "sfx_exp_medium5",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        },
+        {
+            "name": "sfx_movement_jump15",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        },
+        {
+            "name": "sfx_sounds_impact11",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        }
+    ]
+}

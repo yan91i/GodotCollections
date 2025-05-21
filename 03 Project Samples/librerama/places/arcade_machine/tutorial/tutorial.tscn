@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7bsjh2hispi1"]
+
+[ext_resource type="Script" path="res://places/arcade_machine/tutorial/tutorial.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bu7lp4s66p63a" path="res://places/_assets/pagination/previous_page.svg" id="2"]
+[ext_resource type="Texture2D" uid="uid://d4csqaw6ukmfi" path="res://places/_assets/pagination/next_page.svg" id="3"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[node name="Tutorial" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="Contents" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Pages" type="TabContainer" parent="Contents"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("1")
+current_tab = 0
+tabs_visible = false
+
+[node name="Introduction" type="RichTextLabel" parent="Contents/Pages"]
+auto_translate_mode = 1
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+text = "[b]Welcome to Librerama![/b] This tutorial will show you the basics on how play your nanogames (our special nickname for \"mini-games\").
+
+[b]Use the buttons below to navigate between pages[/b], and let's get started!"
+metadata/_tab_index = 0
+
+[node name="PlayModes" type="RichTextLabel" parent="Contents/Pages"]
+auto_translate_mode = 1
+visible = false
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+text = "On the arcade menu, you have two ways to start playing:
+
+[ul]
+ [b]Quickplay:[/b] Immediately start playing with whatever nanogames are available.
+ [b]Collection:[/b] Will show you a menu with all nanogames that are currently available to you to choose manually.
+[/ul]
+
+[b]It's recommended to go with \"Quickplay\" at first[/b], but whichever option you prefer, will later take you to the game screen..."
+metadata/_tab_index = 1
+
+[node name="Kickoff" type="RichTextLabel" parent="Contents/Pages"]
+auto_translate_mode = 1
+visible = false
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+text = "...And now the game truly begins! Each time [b]you will be shown what nanogame is coming next and its objective[/b]. The nanogames only last for a few seconds, so you need to think on your feet!
+
+[center][img]res://places/arcade_machine/tutorial/_assets/kickoff.png[/img][/center]"
+metadata/_tab_index = 2
+
+[node name="StatusIndicators" type="RichTextLabel" parent="Contents/Pages"]
+auto_translate_mode = 1
+visible = false
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+text = "After winning (or losing) a nanogame, keep an eye at those indicators on the top. They indicate respectively: the [b]difficulty[/b], [b]speed[/b], and [b]energy[/b].
+
+Difficulty and speed increase as you win nanogames, and that means higher scores. Speed and energy decrease when you lose nanogames, and [b]if your energy reaches 0, the game is over[/b].
+
+[center][img]res://places/arcade_machine/tutorial/_assets/status_indicators.png[/img][/center]"
+metadata/_tab_index = 3
+
+[node name="Ending" type="RichTextLabel" parent="Contents/Pages"]
+auto_translate_mode = 1
+visible = false
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+text = "Once the inevitable happens and you get a game over (or just quit), [b]your score will be converted into tickets[/b]. They can be used to buy lots of stuff, including more nanogames for you to play!
+
+So what are you waiting for? [b]Go play some nanogames![/b]
+
+[center][img]res://places/arcade_machine/tutorial/_assets/ending.png[/img][/center]"
+metadata/_tab_index = 4
+
+[node name="PageButtons" type="HBoxContainer" parent="Contents"]
+layout_mode = 2
+
+[node name="Previous" type="Button" parent="Contents/PageButtons"]
+layout_mode = 2
+icon = ExtResource("2")
+
+[node name="Pages" type="Label" parent="Contents/PageButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Next" type="Button" parent="Contents/PageButtons"]
+layout_mode = 2
+icon = ExtResource("3")
+
+[connection signal="pressed" from="Contents/PageButtons/Previous" to="." method="_on_Previous_pressed"]
+[connection signal="pressed" from="Contents/PageButtons/Next" to="." method="_on_Next_pressed"]

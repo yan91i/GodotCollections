@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://bktjltisohtfg"]
+
+[ext_resource type="Script" path="res://nanogames/woozy_chomper/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b67p4o108lnqn" path="res://nanogames/woozy_chomper/woozy/woozy.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://b5nj5u1c4ko0t" path="res://nanogames/woozy_chomper/_assets/ground.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bt12v7gg54yli" path="res://nanogames/woozy_chomper/_assets/edge.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cvid1s0fbjate" path="res://nanogames/woozy_chomper/_assets/dirt.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c3vq084fdgn5a" path="res://nanogames/woozy_chomper/_assets/arrow.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://5pltj80fu81i" path="res://nanogames/woozy_chomper/_assets/wall.png" id="7"]
+[ext_resource type="AudioStream" uid="uid://b8qn6clg07d6e" path="res://nanogames/woozy_chomper/_assets/music.ogg" id="8"]
+
+[sub_resource type="CanvasItemMaterial" id="1"]
+blend_mode = 2
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="TextureRect" parent="."]
+offset_right = 960.0
+offset_bottom = 720.0
+texture = ExtResource("3")
+stretch_mode = 1
+
+[node name="ArrowUp" type="Sprite2D" parent="."]
+material = SubResource("1")
+position = Vector2(480, 60)
+rotation = 1.57079
+texture = ExtResource("6")
+
+[node name="ArrowDown" type="Sprite2D" parent="."]
+material = SubResource("1")
+position = Vector2(480, 660)
+rotation = -1.5708
+texture = ExtResource("6")
+
+[node name="ArrowLeft" type="Sprite2D" parent="."]
+material = SubResource("1")
+position = Vector2(64, 360)
+texture = ExtResource("6")
+
+[node name="ArrowRight" type="Sprite2D" parent="."]
+material = SubResource("1")
+position = Vector2(896, 360)
+texture = ExtResource("6")
+flip_h = true
+
+[node name="Woozy" parent="." instance=ExtResource("2")]
+position = Vector2(480, 600)
+
+[node name="EdgeLeft" type="TextureRect" parent="."]
+z_index = 2
+offset_left = -260.0
+offset_right = 82.0
+offset_bottom = 720.0
+texture = ExtResource("4")
+stretch_mode = 1
+
+[node name="EdgeRight" type="TextureRect" parent="."]
+z_index = 2
+offset_left = 876.0
+offset_right = 1218.0
+offset_bottom = 720.0
+texture = ExtResource("4")
+stretch_mode = 1
+flip_h = true
+flip_v = true
+
+[node name="WallUp" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_top = 16.0
+offset_right = 126.0
+offset_bottom = 976.0
+rotation = 4.71239
+texture = ExtResource("7")
+stretch_mode = 1
+flip_h = true
+
+[node name="WallDown" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_top = 830.0
+offset_right = 126.0
+offset_bottom = 1790.0
+rotation = 4.71239
+texture = ExtResource("7")
+stretch_mode = 1
+
+[node name="WallLeft" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_left = -100.0
+offset_right = 26.0
+offset_bottom = 720.0
+texture = ExtResource("7")
+stretch_mode = 1
+
+[node name="WallRight" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_left = 934.0
+offset_right = 1060.0
+offset_bottom = 720.0
+texture = ExtResource("7")
+stretch_mode = 1
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8")
+autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Dirt" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("5")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[connection signal="damaged" from="Woozy" to="." method="_on_woozy_damaged"]
+[connection signal="eat" from="Woozy" to="." method="_on_woozy_eat"]

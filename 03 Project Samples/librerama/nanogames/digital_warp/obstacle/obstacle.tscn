@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://ck8wy4obmyrr8"]
+
+[ext_resource type="Script" path="res://nanogames/digital_warp/obstacle/obstacle.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ccd18hd1csyg" path="res://nanogames/digital_warp/obstacle/_assets/obstacle.svg" id="2"]
+
+[sub_resource type="Gradient" id="Gradient_glf21"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5ygon"]
+gradient = SubResource("Gradient_glf21")
+width = 32
+
+[sub_resource type="Curve" id="3"]
+_data = [Vector2(0, 1), 0.0, -1.02336, 0, 1, Vector2(0.977169, 0), -1.02336, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="4"]
+width = 32
+curve = SubResource("3")
+
+[sub_resource type="ParticleProcessMaterial" id="5"]
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("4")
+color_ramp = SubResource("GradientTexture1D_5ygon")
+
+[sub_resource type="CircleShape2D" id="6"]
+radius = 48.0
+
+[sub_resource type="Animation" id="8"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="7"]
+resource_name = "travel"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.5),
+"transitions": PackedFloat32Array(0.5, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.1, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p18yx"]
+_data = {
+"RESET": SubResource("8"),
+"travel": SubResource("7")
+}
+
+[node name="Obstacle" type="Area2D"]
+input_pickable = false
+monitoring = false
+script = ExtResource("1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2")
+
+[node name="Trail" type="GPUParticles2D" parent="Sprite2D"]
+amount = 4
+process_material = SubResource("5")
+texture = ExtResource("2")
+local_coords = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("6")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_p18yx")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished" unbinds=1]

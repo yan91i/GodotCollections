@@ -1,0 +1,3 @@
+Librerama bevat een verzameling minispellen. Het doel is om zoveel mogelijk
+spellen achter elkaar te spelen. Na elke winst nemen de snelheid en
+moeilijkheidsgraad toe.

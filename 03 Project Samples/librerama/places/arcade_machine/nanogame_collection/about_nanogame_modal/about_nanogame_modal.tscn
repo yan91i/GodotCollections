@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://4y3abds4vyia"]
+
+[ext_resource type="PackedScene" uid="uid://buutl05rvbhox" path="res://modals/tab_modal/tab_modal.tscn" id="1_nkd3q"]
+[ext_resource type="Script" path="res://places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd" id="2_7btm8"]
+
+[node name="AboutNanogameModal" instance=ExtResource("1_nkd3q")]
+script = ExtResource("2_7btm8")
+
+[node name="TabBar" parent="." index="2"]
+current_tab = 0
+tab_count = 3
+tab_0/title = "About"
+tab_1/title = "PracticeMode"
+tab_2/title = "Thirdparty"
+
+[node name="About" type="RichTextLabel" parent="." index="3"]
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+focus_mode = 2
+bbcode_enabled = true
+
+[node name="PracticeMode" type="VBoxContainer" parent="." index="4"]
+visible = false
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+
+[node name="Label" type="Label" parent="PracticeMode" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "The practice mode lets your sharpen your skills on a particular nanogame, without needing to worry about energy points.
+
+Be aware that tickets will not be given, and statistics will not be updated."
+autowrap_mode = 3
+clip_text = true
+
+[node name="Practice" type="MenuButton" parent="PracticeMode" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 2
+theme_type_variation = &"ButtonPositive"
+text = "Choose Start Difficulty"
+flat = false
+item_count = 3
+popup/item_0/text = "Difficulty 1"
+popup/item_0/id = 1
+popup/item_1/text = "Difficulty 2"
+popup/item_1/id = 2
+popup/item_2/text = "Difficulty 3"
+popup/item_2/id = 3
+
+[node name="Thirdparty" type="RichTextLabel" parent="." index="5"]
+visible = false
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+focus_mode = 2
+bbcode_enabled = true
+
+[connection signal="meta_clicked" from="About" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="Thirdparty" to="." method="_on_rich_text_label_meta_clicked"]

@@ -1,0 +1,131 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1p06mkdldnyj"]
+
+[ext_resource type="Texture2D" uid="uid://bme5pp1fy6bay" path="res://places/_assets/unknown.svg" id="1"]
+[ext_resource type="Script" path="res://places/lobby/buy_menu/submenus/nanogames/nanogames.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bjhsg04wig6lm" path="res://places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn" id="5_7ys08"]
+[ext_resource type="Texture2D" uid="uid://ci8ifpdhhiolv" path="res://places/lobby/buy_menu/submenus/nanogames/_assets/specific_nanogame.svg" id="6"]
+[ext_resource type="PackedScene" uid="uid://dcemrtgwt5l3i" path="res://places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn" id="6_e3i70"]
+[ext_resource type="Texture2D" uid="uid://bgufbkuya4424" path="res://places/lobby/buy_menu/submenus/nanogames/_assets/type_nanogame.svg" id="7"]
+
+[node name="Nanogames" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="BuyRandom" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(860, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons/BuyRandom"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="Icon" type="TextureRect" parent="Buttons/BuyRandom/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1")
+stretch_mode = 4
+
+[node name="Info" type="RichTextLabel" parent="Buttons/BuyRandom/HBoxContainer"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+bbcode_enabled = true
+scroll_active = false
+
+[node name="BuyType" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(860, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons/BuyType"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="Icon" type="TextureRect" parent="Buttons/BuyType/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("7")
+stretch_mode = 4
+
+[node name="Info" type="RichTextLabel" parent="Buttons/BuyType/HBoxContainer"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+bbcode_enabled = true
+scroll_active = false
+
+[node name="BuySpecific" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(860, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons/BuySpecific"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="Icon" type="TextureRect" parent="Buttons/BuySpecific/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6")
+stretch_mode = 4
+
+[node name="Info" type="RichTextLabel" parent="Buttons/BuySpecific/HBoxContainer"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+bbcode_enabled = true
+scroll_active = false
+
+[node name="AllNanogamesBought" type="Label" parent="Buttons"]
+visible = false
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Congratulations! You have all nanogames (currently) available! If you want more, go check out some community nanogames."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TypeModal" parent="." instance=ExtResource("5_7ys08")]
+visible = false
+
+[node name="SpecificModal" parent="." instance=ExtResource("6_e3i70")]
+visible = false
+
+[connection signal="pressed" from="Buttons/BuyRandom" to="." method="_on_buy_random_pressed"]
+[connection signal="pressed" from="Buttons/BuyType" to="TypeModal" method="popup_centered"]
+[connection signal="pressed" from="Buttons/BuySpecific" to="SpecificModal" method="popup_centered"]
+[connection signal="ok_pressed" from="TypeModal" to="." method="_on_type_modal_ok_pressed"]
+[connection signal="nanogame_selected" from="SpecificModal" to="." method="_on_specific_modal_nanogame_selected"]

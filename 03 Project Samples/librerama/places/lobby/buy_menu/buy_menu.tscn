@@ -1,0 +1,154 @@
+[gd_scene load_steps=10 format=3 uid="uid://qexohkl4bnhi"]
+
+[ext_resource type="Script" path="res://places/lobby/buy_menu/buy_menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://5et01c4w7eab" path="res://themes/_assets/back.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://log4u1l5ccxu" path="res://places/_assets/ticket.svg" id="4"]
+[ext_resource type="PackedScene" uid="uid://c1p06mkdldnyj" path="res://places/lobby/buy_menu/submenus/nanogames/nanogames.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://b5frslx0xhpxc" path="res://modals/modal/modal.tscn" id="7"]
+[ext_resource type="AudioStream" uid="uid://c461aubadof2h" path="res://places/lobby/buy_menu/_assets/buy_noise.wav" id="9"]
+
+[sub_resource type="Animation" id="2"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/TopBar/Space/Tickets/Quantity:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "tickets_spent"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/TopBar/Space/Tickets/Quantity:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(0.862745, 0.0784314, 0.239216, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dpyf"]
+_data = {
+"RESET": SubResource("2"),
+"tickets_spent": SubResource("1")
+}
+
+[node name="BuyMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+
+[node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+tooltip_text = "Go back."
+icon = ExtResource("3")
+
+[node name="Title" type="Label" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelTitle"
+text = "Buy"
+horizontal_alignment = 1
+
+[node name="Space" type="Control" parent="VBoxContainer/TopBar"]
+layout_mode = 2
+
+[node name="Tickets" type="HBoxContainer" parent="VBoxContainer/TopBar/Space"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+grow_horizontal = 0
+tooltip_text = "Ticket quantity."
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/TopBar/Space/Tickets"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4")
+stretch_mode = 5
+
+[node name="Quantity" type="Label" parent="VBoxContainer/TopBar/Space/Tickets"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_type_variation = &"LabelBold"
+vertical_alignment = 1
+
+[node name="Shadow" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"DropShadow"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/Shadow"]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 0
+all_tabs_in_front = true
+
+[node name="Nanogames" parent="VBoxContainer/Shadow/TabContainer" instance=ExtResource("6")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Prizes" type="VBoxContainer" parent="VBoxContainer/Shadow/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Themes" type="VBoxContainer" parent="VBoxContainer/Shadow/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="ConfirmPurchase" parent="." instance=ExtResource("7")]
+visible = false
+confirmation_mode = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmPurchase"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 844.0
+offset_bottom = 569.0
+bbcode_enabled = true
+
+[node name="BuyNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6dpyf")
+}
+
+[connection signal="pressed" from="VBoxContainer/TopBar/Back" to="." method="hide"]
+[connection signal="purchase_requested" from="VBoxContainer/Shadow/TabContainer/Nanogames" to="." method="_on_purchase_requested"]
+[connection signal="ok_pressed" from="ConfirmPurchase" to="." method="_on_confirm_purchase_ok_pressed"]

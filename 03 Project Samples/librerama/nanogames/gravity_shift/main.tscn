@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://b302om51yx1wv"]
+
+[ext_resource type="Script" path="res://nanogames/gravity_shift/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bioqbu4ur7xgc" path="res://nanogames/gravity_shift/robot/robot.tscn" id="2"]
+[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://bm1cvcvw3b5ar" path="res://nanogames/gravity_shift/_assets/background.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bgjcmnsr4mw11" path="res://nanogames/gravity_shift/_assets/floor.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cnfemahdbl3m3" path="res://nanogames/gravity_shift/_assets/cables.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://c62u37f63ob5" path="res://nanogames/gravity_shift/_assets/music.ogg" id="7"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("3")
+shader_parameter/direction_speed = Vector2(-1.25, 0)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("3")
+shader_parameter/direction_speed = Vector2(-2.5, 0)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+
+[node name="Main" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Robot" parent="." instance=ExtResource("2")]
+position = Vector2(42, 562)
+
+[node name="ObstaclePosition" type="Marker2D" parent="."]
+position = Vector2(1100, 360)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="ObstacleSpawn" type="Timer" parent="."]
+wait_time = 1.9
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Full" type="TextureRect" parent="Background"]
+texture_filter = 1
+material = SubResource("1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+offset_bottom = -480.0
+scale = Vector2(3, 3)
+texture = ExtResource("4")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Center" type="NinePatchRect" parent="Background"]
+texture_filter = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -180.0
+offset_right = -640.0
+offset_bottom = -60.0
+scale = Vector2(3, 3)
+texture = ExtResource("4")
+region_rect = Rect2(4, 0, 72, 60)
+patch_margin_top = 2
+patch_margin_bottom = 2
+
+[node name="Cables" type="TextureRect" parent="Background"]
+texture_filter = 1
+material = SubResource("1")
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -45.0
+offset_right = -640.0
+offset_bottom = -15.0
+scale = Vector2(3, 3)
+texture = ExtResource("6")
+stretch_mode = 1
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+
+[node name="Floor" type="TextureRect" parent="Foreground"]
+texture_filter = 1
+material = SubResource("2")
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_right = -640.0
+offset_bottom = -30.0
+scale = Vector2(3, 3)
+texture = ExtResource("5")
+stretch_mode = 1
+
+[node name="Ceiling" type="TextureRect" parent="Foreground"]
+texture_filter = 1
+material = SubResource("2")
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -640.0
+offset_bottom = 15.0
+scale = Vector2(3, 3)
+texture = ExtResource("5")
+stretch_mode = 1
+flip_v = true
+
+[node name="RobotPivot" type="Control" parent="Foreground"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -360.0
+offset_right = -440.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="hit" from="Robot" to="." method="_on_robot_hit" flags=3]
+[connection signal="timeout" from="ObstacleSpawn" to="." method="_spawn_obstacle"]

@@ -1,0 +1,127 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3vkg7nbn0ru6"]
+
+[ext_resource type="Script" path="res://nanogames/hop_for_love/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dvv4n4cxc8ek1" path="res://nanogames/hop_for_love/hopper/hopper.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cplrph58googo" path="res://nanogames/hop_for_love/bunbun/bunbun.tscn" id="3"]
+[ext_resource type="Shape2D" path="res://nanogames/hop_for_love/_resources/land_hitbox.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://0f04qoyud6wt" path="res://nanogames/hop_for_love/_assets/platforms.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cy7v7865x2s13" path="res://nanogames/hop_for_love/_assets/water.png" id="6"]
+[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="7"]
+[ext_resource type="Texture2D" uid="uid://bts6oya301m6x" path="res://nanogames/hop_for_love/_assets/cliff.png" id="8"]
+[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="9"]
+[ext_resource type="Texture2D" uid="uid://2620kmtpi40x" path="res://nanogames/hop_for_love/_assets/clouds.png" id="10"]
+[ext_resource type="AudioStream" uid="uid://rdcq3y3o2ybm" path="res://nanogames/hop_for_love/_assets/music.ogg" id="11"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("7")
+shader_parameter/speed = Vector2(5, 0)
+shader_parameter/waves = Vector2(2, 0)
+shader_parameter/strength = Vector2(3, 0)
+shader_parameter/interval = null
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("9")
+shader_parameter/direction_speed = Vector2(-0.1, 0)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Hopper" parent="." instance=ExtResource("2")]
+position = Vector2(0, 500)
+
+[node name="Bunbun" parent="." instance=ExtResource("3")]
+position = Vector2(960, 500)
+
+[node name="HopperLimit" type="Marker2D" parent="Bunbun"]
+position = Vector2(-125, 0)
+
+[node name="PlatformPosition" type="Marker2D" parent="."]
+position = Vector2(280, 500)
+
+[node name="Platform" type="Area2D" parent="PlatformPosition"]
+input_pickable = false
+monitoring = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformPosition/Platform"]
+position = Vector2(0, 32)
+texture = ExtResource("5")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformPosition/Platform"]
+shape = ExtResource("4")
+
+[node name="MovingPlatform" parent="PlatformPosition" instance_placeholder="res://nanogames/hop_for_love/moving_platform/moving_platform.tscn"]
+
+[node name="PlatformPosition2" type="Marker2D" parent="."]
+position = Vector2(580, 500)
+
+[node name="Platform" type="Area2D" parent="PlatformPosition2"]
+input_pickable = false
+monitoring = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformPosition2/Platform"]
+position = Vector2(0, 32)
+texture = ExtResource("5")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformPosition2/Platform"]
+shape = ExtResource("4")
+
+[node name="MovingPlatform" parent="PlatformPosition2" instance_placeholder="res://nanogames/hop_for_love/moving_platform/moving_platform.tscn"]
+
+[node name="Lake" type="NinePatchRect" parent="."]
+material = SubResource("1")
+offset_left = 20.0
+offset_top = 530.0
+offset_right = 830.0
+offset_bottom = 722.0
+texture = ExtResource("6")
+patch_margin_top = 24
+axis_stretch_horizontal = 1
+
+[node name="Cliff" type="Sprite2D" parent="."]
+position = Vector2(-120, 614)
+texture = ExtResource("8")
+
+[node name="Cliff2" type="NinePatchRect" parent="."]
+offset_left = 1276.0
+offset_top = 482.0
+offset_right = 1774.0
+offset_bottom = 746.0
+scale = Vector2(-1, 1)
+texture = ExtResource("8")
+patch_margin_left = 168
+patch_margin_right = 176
+axis_stretch_horizontal = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sky" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.447059, 0.592157, 0.662745, 1)
+metadata/_edit_lock_ = true
+
+[node name="Clouds" type="TextureRect" parent="Background"]
+material = SubResource("2")
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -12.0
+offset_bottom = 140.0
+texture = ExtResource("10")
+stretch_mode = 1
+
+[connection signal="landed" from="Hopper" to="." method="_on_hopper_landed"]

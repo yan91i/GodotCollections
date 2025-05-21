@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>page.codeberg.yeldham.Librerama</id>
+    <metadata_license>CC-BY-SA-4.0</metadata_license>
+    <name>Librerama</name>
+    <summary>A free/libre collection of fast-paced mini-games</summary>
+    <description>
+        <p>Librerama is an arcade compilation of very small, fast-paced mini-games (nicknamed "nanogames"), with the main objective being to rack up the highest score possible by winning the most nanogames you can before getting a game over, while they progressively increase in both speed and difficulty.</p>
+        <p>While the game itself comes with its own collection of nanogames, custom ones can also be made and played.</p>
+        <p>This game is a work-in-progress! Which means that a lot of things are missing, and what is present can change at any moment.</p>
+    </description>
+    <categories>
+        <category>Game</category>
+        <category>ArcadeGame</category>
+    </categories>
+    <branding>
+        <color type="primary" scheme_preference="light">#6c5d53</color>
+        <color type="primary" scheme_preference="dark">#241f1c</color>
+    </branding>
+    <keywords>
+        <keyword>game</keyword>
+        <keyword>godot</keyword>
+    </keywords>
+    <url type="homepage">https://librerama.codeberg.page/</url>
+    <url type="bugtracker">https://codeberg.org/Librerama/librerama/issues</url>
+    <url type="help">https://codeberg.org/Librerama/librerama/wiki</url>
+    <url type="donation">https://liberapay.com/Yeldham</url>
+    <url type="translate">https://translate.codeberg.org/projects/librerama/</url>
+    <url type="vcs-browser">https://codeberg.org/Librerama/librerama</url>
+    <launchable type="desktop-id">page.codeberg.yeldham.Librerama.desktop</launchable>
+    <releases>
+        <release version="0.6.1" date="2023-05-06">
+            <description>
+                <p><em>Fixed</em></p>
+                <ul>
+                    <li>Fix focus and visibility problems with the speech buttons in the lobby.</li>
+                    <li>Fix "Quit" button being shown in the lobby when playing on the browser.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.6.0" date="2023-04-25">
+            <description>
+                <p><em>Added</em></p>
+                <ul>
+                    <li>Add lobby! This will be the entrance point to the rest of the game, and where you will be able to buy nanogames (and more in the future), or just talk with the staff (position that for now is solely occupied by a lovable placeholder).</li>
+                    <li>Add option to pick a specific control type in the control settings.</li>
+                    <li>Add tutorial section to the arcade menu.</li>
+                    <li>Add help button to the search bar in the nanogame selection screen, which shows a popup explaining the search features. This should hopefully make them more discoverable.</li>
+                    <li>Add asynchronous shader compilation for the desktop. This will help avoid the micro-stutters that occur when particles appear for the first time.</li>
+                    <li>Add Dutch translation (thanks to Vistaus).</li>
+                    <li>Add keyboard shortcut ("/") to quickly focus the search bar across menus.</li>
+                </ul>
+                <p><em>Changed</em></p>
+                <ul>
+                    <li>Change the initial quantity of nanogames given at the start to 6. More can be bought with tickets in the new lobby.</li>
+                    <li>Allow binding the joysticks in the control settings.</li>
+                    <li>Make nanogame inputs use the left joystick by default when using a joypad.</li>
+                    <li>Nanogames:</li>
+                    <li>- Anagogic Clock: Allow a margin of error of 1 minute in both hour and minute hands on all difficulties.</li>
+                    <li>- Buzzing Lunch: Vertically increase the tongue's hitbox to avoid potential cases where collisions won't register on higher speeds.</li>
+                    <li>Take into account the joystick deadzone on some areas.</li>
+                    <li>Make use of multithreading when switching scenes and loading nanogames (if the platform allows it).</li>
+                    <li>Hide pause button when using a joypad.</li>
+                    <li>Add best scores that haven't beat any previous ones if there's still space in the statistics screen.</li>
+                    <li>Keep popup dialogs centered when the screen size is changed.</li>
+                    <li>Stop the community nanogames warning from appearing at the start when community nanogames were enabled before.</li>
+                    <li>Better center status icons in the nanogame HUD.</li>
+                    <li>Give a more subtle appearance to the nanogame description panel in the pause screen.</li>
+                </ul>
+                <p><em>Fixed</em></p>
+                <ul>
+                    <li>Fix overuse of VRAM.</li>
+                    <li>Nanogames:</li>
+                    <li>- Countin' Candy: Fix one of the answers sometimes showing a less than 1 value in difficulty 3.</li>
+                    <li>- Woozy Chomper: Fix Woozy's body segments still moving once the nanogame is over.</li>
+                    <li>Fix actions from joypad inputs and touch buttons not triggering if they were held before a nanogame is listening for inputs.</li>
+                    <li>Fix cases where a selected nanogame button couldn't be pressed when using the randomize feature in the nanogame selection screen.</li>
+                    <li>Fix search bars with text changing size when the window is resized.</li>
+                    <li>Fix rare, yet insistent bug in the nanogame selection screen when typing too fast, again...</li>
+                    <li>Fix best scores not being updated if a new one has the same points as the others.</li>
+                    <li>Fix being able to pause just as the gates in the nanogame HUD close at the start, which caused problems with the music.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.5.0" date="2021-11-20">
+            <description>
+                <p><em>Added</em></p>
+                <ul>
+                    <li>Add joypad support for nanogames with the input type "Screen" (now called "Drag and Drop"), making the game fully playable through a controller!</li>
+                    <li>Add nanogames:</li>
+                    <li>- Digital Warp</li>
+                    <li>- Garden Thyme</li>
+                    <li>- Gravity Shift</li>
+                    <li>- Hop for Love</li>
+                    <li>Add current nanogame summary to the pause screen.</li>
+                    <li>Add some eye candy to the arcade menu.</li>
+                </ul>
+                <p><em>Changed</em></p>
+                <ul>
+                    <li>Rename the "Screen" input type for nanogames to "Drag and Drop".</li>
+                    <li>Keep pause button visible during nanogame intermissions.</li>
+                    <li>Nanogames:</li>
+                    <li>- Countin' Candy: Slightly decrease max possible quantity of candy.</li>
+                    <li>- Gadget Inspection: Tone down target area size decrease on later difficulty levels.</li>
+                    <li>- Punchbag Wallop: Make difficulty 1 punching bag swing away after 3 hits and decrease punches needed from 12 to 9, to better exemplify how later difficulty levels work. Also increase hits needed from 5 to 6 for the difficulty 3 bag.</li>
+                    <li>- Thing Factory: Change some visuals to better indicate the objective.</li>
+                    <li>Allow wrapping around when switching tabs with the joypad triggers.</li>
+                </ul>
+                <p><em>Fixed</em></p>
+                <ul>
+                    <li>Fix weird resolution in nanogames while in windowed mode if the window size is never changed.</li>
+                    <li>Fix crash when using the joypad triggers while changing the controls in the settings dialog.</li>
+                    <li>Fix nanogame buttons in the selection screen not being reorganized on language change.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.4.1" date="2021-04-26">
+            <description>
+                <p><em>Changed</em></p>
+                <ul>
+                    <li>Nanogames:</li>
+                    <li>- Punchbag Wallop: Reduce length of the "punch missed" animation.</li>
+                </ul>
+                <p><em>Fixed</em></p>
+                <ul>
+                    <li>Fix "Randomize" button picking official nanogames on community mode in the selection screen.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.4.0" date="2021-04-21">
+            <description>
+                <p><em>Added</em></p>
+                <ul>
+                    <li>Add music! A menu theme and various jingles all composed by Francesco Corrado.</li>
+                    <li>Add control settings. With options to change nanogame controls, and to mirror the positions of touch buttons.</li>
+                    <li>Add nanogames:</li>
+                    <li>- Buzzing Lunch</li>
+                    <li>- Countin' Candy</li>
+                    <li>- Shuffle Dance</li>
+					<li>- Suitcase-by-Case</li>
+                    <li>- Woozy Chomper</li>
+                    <li>Add labels showing how much was gained on score and tickets counters.</li>
+                    <li>Add "Contributors" tab to the "About" dialog.</li>
+                    <li>Add new phrases to the nanogame intermissions.</li>
+                </ul>
+                <p><em>Changed</em></p>
+                <ul>
+                    <li>Unify the nanogame selection and random screens.</li>
+                    <li>Improve the directional touch controls. Now allowing diagonal inputs.</li>
+                    <li>Nanogames:</li>
+                    <li>- Anagogic Clock: Add a "x" mark to empty slots in the time display, to better convey that any number is acceptable for them.</li>
+                    <li>- Ballkeep: Slow down the ball at the start, but raise the speed further after the first bounce. Also add arrows on the dominant paddle that disappear after moving it.</li>
+					<li>- Rope Hop: Slightly increase jump distance of enemies.</li>
+                    <li>- Punchbag Wallop: Make punching bags translucent when they flinch away and can't be hit.</li>
+                    <li>- Thing Factory: Make "things" spawn indefinitely instead of a fixed amount. Also increase size of their touch area.</li>
+					<li>- Void Avoider: Increase minimum distance between the player and black hole spawns.</li>
+                    <li>Allow choosing which difficulty to start from in practice mode.</li>
+                    <li>It's now possible to pause/quit at the very start of nanogame playing.</li>
+                    <li>Double best score slots in the statistics screen from 3 to 6.</li>
+                    <li>Allow for search terms in the selection screen to only contain negatives.</li>
+                    <li>Disable "Mute When the Game Loses Focus" option by default, as it doesn't work correctly on some cases.</li>
+                    <li>Make status icons on the pause menu in the nanogame HUD have the same color as their unpaused counterparts.</li>
+                    <li>Make small visual improvements to the nanogame selection button and the "About Nanogame" dialog.</li>
+                    <li>Change style of unselected tabs on dialogs.</li>
+                </ul>
+                <p><em>Fixed</em></p>
+                <ul>
+                    <li>Fix occasions where one could start playing with less nanogames selected than necessary in the selection screen.</li>
+                    <li>Fix bug in nanogame selection screen when typing too fast in the search bar. Turns out that it wasn't Android only.</li>
+                    <li>Nanogames:</li>
+                    <li>- Papercuts: Fix cutting very close to the inner cutout area making the nanogame unwinnable instead of triggering the failure state in rare occasions.</li>
+                    <li>- Void Avoider: Fix black hole spawns being wrongfully offset, leading to some cases where it could spawn inside the player.</li>
+                    <li>Fix ellipsis on cutoff names in nanogame buttons glitching on window resize.</li>
+                    <li>Fix "Start" button's tooltip in the arcade menu appearing even when hidden.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.3.0" date="2020-08-15">
+            <description>
+                <p><em>Added</em></p>
+                <ul>
+                    <li>Add nanogames:</li>
+                    <li>- Gadget Inspection</li>
+                    <li>- Gem Enchantment</li>
+                    <li>- Papercuts</li>
+                    <li>Add visual reference to the number of nanogames needed to be selected to start playing.</li>
+                    <li>Show tooltips to cutoff labels on nanogame buttons in the selection screen.</li>
+                    <li>Make possible to access the "community_nanogames" directory via the choose/random screens.</li>
+                </ul>
+                <p><em>Changed</em></p>
+                <ul>
+                    <li>Heavily improve the joypad experience when navigating the interface. With a visual indicator of the current UI element focused, better navigation from one element to another, and the possibility to change tabs which the shoulder buttons.</li>
+                    <li>Nanogames:</li>
+                    <li>- Anagogic Clock: Change the ambiance sound effect to piano music.</li>
+                    <li>- Ballkeep: Make paddle rotation be from the top one's perspective, and the bottom paddle be the one to disappear in difficulty 3.</li>
+                    <li>Reposition the "Randomize" button and enable its text clearing functionality in the random selection screen.</li>
+                    <li>Make touch buttons in nanogame HUD update immediately on joypad (dis)connection and toggle of showing them by force.</li>
+                    <li>Make language names be shown in their respective languages in the settings dialog.</li>
+                </ul>
+                <p><em>Fixed</em></p>
+                <ul>
+                    <li>Fix volume sliders looking unthemed when focused.</li>
+                    <li>Nanogames:</li>
+                    <li>- Anagogic Clock: Fix hands listening to any input other than the left mouse button on the desktop.</li>
+                    <li>Fix difficulty up message appearing on nanogame transition while it's already maxed.</li>
+                    <li>Fix contents of the random selection screen overflowing on the minimal window width.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.2.0" date="2020-06-26">
+            <description>
+                <p><em>Added</em></p>
+                <ul>
+                    <li>Add nanogames:</li>
+                    <li>- Ballkeep</li>
+                    <li>- Rope Hop</li>
+                    <li>- Thing Factory</li>
+                    <li>Add practice mode. Sharpen your skills on a specific nanogame without worrying about energy points.</li>
+                    <li>Add German translation (thanks to Wuzzy).</li>
+                </ul>
+                <p><em>Changed</em></p>
+                <ul>
+                    <li>Revamp touch buttons. Adding pass-through functionality, and lightly changed appearance.</li>
+                    <li>Nanogames:</li>
+                    <li>- Anagogic Clock: Allow for an margin of error of 1 minute on the last difficulty.</li>
+                    <li>- Input Flow: Remove number system, and make difficulty 2 have 5 inputs.</li>
+                    <li>- Punchbag Wallop: At difficulty 3, make the bag need 5 punches instead of 4 to be destroyed.</li>
+                    <li>- Void Avoider: Make the no-spawn area of black holes slightly bigger.</li>
+                    <li>Remove vertical borders in the arcade interface. Giving it a more clear look.</li>
+                    <li>Apply small cosmetic change to vertical scrollbar.</li>
+                </ul>
+                <p><em>Fixed</em></p>
+                <ul>
+                    <li>Fix previously played nanogames never actually being cleared.</li>
+                    <li>Fix crash for nanogames that fire the 'ended' signal when something vanishes.</li>
+                    <li>Fix nanogame filtering not taking into account other languages.</li>
+                    <li>Fix audio speed not quite matching the game speed.</li>
+                    <li>Fix menu noise being played when pressing the shortcut while no sub-menus are open.</li>
+                    <li>Fix item on "Inputs" list in the random selection screen being cutoff.</li>
+                    <li>Fix difficulty and speed icon bugs related to their colors.</li>
+                    <li>Fix text alignment in "Community Nanogames" toggle when changing from certain languages.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.1.1" date="2020-04-24">
+            <description>
+                <p><em>Fixed</em></p>
+                <ul>
+                    <li>Fix bug in nanogame selection screen when typing too fast in the filter bar. This error is very easy to encounter on Android.</li>
+                    <li>Fix error when changing the language while playing a nanogame.</li>
+                    <li>Fix some areas not updating their texts when changing the language.</li>
+                    <li>Fix incorrect source link in "Anagogic Clock" nanogame.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.1.0" date="2020-04-19">
+            <description>
+                <p>First initial release.</p>
+            </description>
+        </release>
+    </releases>
+    <project_license>GPL-3.0-or-later</project_license>
+    <developer_name>Michael Alexsander</developer_name>
+    <requires>
+        <display_length compare="ge">360</display_length>
+        <internet>offline-only</internet>
+    </requires>
+    <recommends>
+        <control>gamepad</control>
+        <control>pointing</control>
+        <control>keyboard</control>
+        <control>touch</control>
+    </recommends>
+    <screenshots>
+        <screenshot type="default" width="1024" height="600">
+            <image type="source">https://codeberg.org/Librerama/librerama/raw/branch/master/distribution/screenshots/punchbag_wallop.png</image>
+            <caption>The nanogame "Punchbag Wallop"</caption>
+            <caption xml:lang="de">Das Nanospiel „Sandsackrüpel“</caption>
+            <caption xml:lang="nl">Het minispel ‘Boksbalmoes’</caption>
+            <caption xml:lang="pt_BR">O nanojogo "Saco de Pancadaria"</caption>
+        </screenshot>
+        <screenshot type="default" width="1024" height="600">
+            <image type="source">https://codeberg.org/Librerama/librerama/raw/branch/master/distribution/screenshots/carnival_shootout.png</image>
+            <caption>The nanogame "Carnival Shootout"</caption>
+            <caption xml:lang="de">Das Nanospiel „Kirmes-Schießbude“</caption>
+            <caption xml:lang="nl">Het minispel ‘Schiettent’</caption>
+            <caption xml:lang="pt_BR">O nanojogo "Tiro ao Alvo no Festival"</caption>
+        </screenshot>
+        <screenshot type="default" width="1024" height="600">
+            <image type="source">https://codeberg.org/Librerama/librerama/raw/branch/master/distribution/screenshots/rope_hop.png</image>
+            <caption>The nanogame "Rope Hop"</caption>
+            <caption xml:lang="de">Das Nanospiel „Seilhüpfen“</caption>
+            <caption xml:lang="nl">Het minispel ‘Touwtjespringen’</caption>
+            <caption xml:lang="pt_BR">O nanojogo "Pulo Hop"</caption>
+        </screenshot>
+        <screenshot type="default" width="1024" height="600">
+            <image type="source">https://codeberg.org/Librerama/librerama/raw/branch/master/distribution/screenshots/neo_highway.png</image>
+            <caption>The nanogame "Neo Highway"</caption>
+            <caption xml:lang="de">Das Nanospiel „Neoautobahn“</caption>
+            <caption xml:lang="nl">Het minispel ‘Neon snelweg’</caption>
+            <caption xml:lang="pt_BR">O nanojogo "Neo Rodovia"</caption>
+        </screenshot>
+        <screenshot type="default" width="1024" height="600">
+            <image type="source">https://codeberg.org/Librerama/librerama/raw/branch/master/distribution/screenshots/anagogic_clock.png</image>
+            <caption>The nanogame "Anagogic Clock"</caption>
+            <caption xml:lang="de">Das Nanospiel „Anagoguhr“</caption>
+            <caption xml:lang="nl">Het minispel ‘Analoge klok’</caption>
+            <caption xml:lang="pt_BR">O nanojogo "Relógio Anagógico.</caption>
+        </screenshot>
+        <screenshot type="default" width="1024" height="600">
+            <image type="source">https://codeberg.org/Librerama/librerama/raw/branch/master/distribution/screenshots/void_avoider.png</image>
+            <caption>The nanogame "Void Avoider"</caption>
+            <caption xml:lang="de">Das Nanospiel „Leerenausweicher“</caption>
+            <caption xml:lang="nl">Het minispel ‘Geen lege leegte’</caption>
+            <caption xml:lang="pt_BR">O nanojogo "Desvio no Vazio"</caption>
+        </screenshot>
+    </screenshots>
+    <content_rating type="oars-1.1">
+        <content_attribute id="money-purchasing">mild</content_attribute>
+    </content_rating>
+</component>

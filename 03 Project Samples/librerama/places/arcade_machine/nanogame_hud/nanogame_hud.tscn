@@ -1,0 +1,1277 @@
+[gd_scene load_steps=36 format=3 uid="uid://dvn0ccbgksfbn"]
+
+[ext_resource type="AudioStream" uid="uid://bc86t80mxpk4b" path="res://places/arcade_machine/nanogame_hud/_assets/gate_noise.wav" id="2"]
+[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://bw6ufn1y6raq0" path="res://places/arcade_machine/nanogame_hud/_assets/input_elements/action.svg" id="3_3tny8"]
+[ext_resource type="AudioStream" uid="uid://cw7kwptfc56q" path="res://places/arcade_machine/nanogame_hud/_assets/player_start.ogg" id="4"]
+[ext_resource type="Texture2D" uid="uid://imiiteqyebnt" path="res://places/arcade_machine/nanogame_hud/_assets/input_elements/joycursor.svg" id="5"]
+[ext_resource type="Script" path="res://places/arcade_machine/nanogame_hud/nanogame_hud.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://b6ueywe4b30pr" path="res://places/arcade_machine/nanogame_hud/_assets/gate.svg" id="9"]
+[ext_resource type="Texture2D" uid="uid://dhh3v7aqw2efg" path="res://places/arcade_machine/nanogame_hud/_assets/status_difficulty.svg" id="10"]
+[ext_resource type="Texture2D" uid="uid://bfpmt8xvx63nk" path="res://places/arcade_machine/nanogame_hud/_assets/status_speed.svg" id="11"]
+[ext_resource type="Texture2D" uid="uid://de77tgb6d6fu1" path="res://places/arcade_machine/nanogame_hud/_assets/pause.svg" id="12"]
+[ext_resource type="Texture2D" uid="uid://cjuradn5c1ea2" path="res://places/arcade_machine/nanogame_hud/_assets/status_energy.svg" id="13"]
+[ext_resource type="Texture2D" uid="uid://b8qkoovev6ig4" path="res://places/arcade_machine/nanogame_hud/_assets/input_elements/navigation_full.svg" id="14"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_pa1dj"]
+points = PackedVector2Array(-173, -15, -143, -55, -101, -87, -52, -107, 0, -114, 52, -107, 101, -87, 143, -55, 173, -15, 24, 72, 24, 72, 24, 110, -24, 110, -24, 72, -24, 72)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sab5a"]
+radius = 140.0
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("3")
+shader_parameter/direction_speed = Vector2(0, -0.5)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+
+[sub_resource type="ShaderMaterial" id="3"]
+shader = ExtResource("3")
+shader_parameter/direction_speed = Vector2(0, -0.5)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.405
+
+[sub_resource type="StyleBoxFlat" id="15"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+
+[sub_resource type="StyleBoxFlat" id="18"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 12.0
+bg_color = Color(0.352941, 0.352941, 0.352941, 1)
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0.235294, 0.235294, 0.235294, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="19"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 12.0
+bg_color = Color(0.470588, 0.470588, 0.470588, 1)
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0.313726, 0.313726, 0.313726, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="20"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 12.0
+bg_color = Color(0.27451, 0.27451, 0.27451, 1)
+border_width_right = 2
+border_width_bottom = 4
+border_color = Color(0.196078, 0.196078, 0.196078, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="16"]
+content_margin_left = 16.0
+content_margin_top = 2.0
+content_margin_right = 16.0
+content_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="17"]
+RichTextLabel/styles/normal = SubResource("15")
+VScrollBar/styles/grabber = SubResource("18")
+VScrollBar/styles/grabber_highlight = SubResource("19")
+VScrollBar/styles/grabber_pressed = SubResource("20")
+VScrollBar/styles/scroll = SubResource("16")
+
+[sub_resource type="Animation" id="13"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KickoffScreen:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Timer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GateTop:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-360.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GateTop/Icon:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GateBottom:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [720.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GateBottom/VBoxContainer/State:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GateBottom/VBoxContainer/Message:modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Pause:self_modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GateTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -360), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GateBottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(0, 360)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["gates_changed"],
+"method": &"emit_signal"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GateNoise")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="5"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KickoffScreen:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GateTop/Icon:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GateBottom/VBoxContainer/State:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GateBottom/VBoxContainer/Message:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"update_status_labels"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Music")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="7"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KickoffScreen:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GateTop/Icon:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GateBottom/VBoxContainer/State:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GateBottom/VBoxContainer/Message:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_prepare_nanogame_start"
+}]
+}
+
+[sub_resource type="Animation" id="8"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GateTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GateBottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 360), Vector2(0, 720)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["gates_changed"],
+"method": &"emit_signal"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GateNoise")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="9"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Timer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pause:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GateTop/Icon:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GateBottom/VBoxContainer/State:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GateBottom/VBoxContainer/Message:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 1.0, 0.0]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Music")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
+
+[sub_resource type="Animation" id="10"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Timer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pause:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pause:self_modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TouchNavigation:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TouchAction:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Joycursor:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GateTop:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("GateTop/Icon:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("GateBottom:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 360)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("GateBottom/VBoxContainer/State:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("GateBottom/VBoxContainer/Message:modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_prepare_player_stop"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_13fax"]
+_data = {
+"RESET": SubResource("13"),
+"close_gates": SubResource("4"),
+"hide_kickoff": SubResource("5"),
+"nanogame_result": SubResource("6"),
+"nanogame_start": SubResource("7"),
+"open_gates": SubResource("8"),
+"player_start": SubResource("9"),
+"player_stop": SubResource("10")
+}
+
+[sub_resource type="Animation" id="14"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Joycursor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Joycursor:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="11"]
+resource_name = "blink"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Joycursor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Joycursor:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="12"]
+resource_name = "stop"
+length = 0.2
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Joycursor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Joycursor:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stadp"]
+_data = {
+"RESET": SubResource("14"),
+"blink": SubResource("11"),
+"stop": SubResource("12")
+}
+
+[node name="NanogameHUD" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8")
+metadata/_edit_lock_ = true
+
+[node name="TouchNavigation" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.490196)
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = -304.0
+offset_right = 416.0
+texture = ExtResource("14")
+
+[node name="Up" type="TouchScreenButton" parent="TouchNavigation"]
+visible = false
+position = Vector2(152, 64)
+shape = SubResource("ConvexPolygonShape2D_pa1dj")
+shape_centered = false
+passby_press = true
+action = "nanogame_up"
+
+[node name="Left" type="TouchScreenButton" parent="TouchNavigation"]
+visible = false
+position = Vector2(66, 150)
+rotation = -1.5708
+shape = SubResource("ConvexPolygonShape2D_pa1dj")
+shape_centered = false
+passby_press = true
+action = "nanogame_left"
+
+[node name="Right" type="TouchScreenButton" parent="TouchNavigation"]
+visible = false
+position = Vector2(238, 150)
+rotation = 1.5708
+shape = SubResource("ConvexPolygonShape2D_pa1dj")
+shape_centered = false
+passby_press = true
+action = "nanogame_right"
+
+[node name="Down" type="TouchScreenButton" parent="TouchNavigation"]
+visible = false
+position = Vector2(152, 236)
+rotation = 3.14159
+shape = SubResource("ConvexPolygonShape2D_pa1dj")
+shape_centered = false
+passby_press = true
+action = "nanogame_down"
+
+[node name="ExpandTouch" type="TouchScreenButton" parent="TouchNavigation"]
+position = Vector2(152, 150)
+shape = SubResource("CircleShape2D_sab5a")
+passby_press = true
+
+[node name="TouchAction" type="Control" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.490196)
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = -246.0
+offset_right = -252.0
+offset_bottom = -206.0
+
+[node name="Action" type="TouchScreenButton" parent="TouchAction"]
+texture_normal = ExtResource("3_3tny8")
+passby_press = true
+action = "nanogame_action"
+
+[node name="Joycursor" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("5")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Joycursor"]
+modulate = Color(1, 1, 1, 0.745098)
+show_behind_parent = true
+
+[node name="SnapLine" type="Line2D" parent="Joycursor/CanvasGroup"]
+points = PackedVector2Array(0, 0, 0.001, 0)
+width = 31.0
+default_color = Color(0.2, 0.2, 0.2, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 12
+
+[node name="JoycursorSnapped" type="Sprite2D" parent="Joycursor/CanvasGroup"]
+visible = false
+texture = ExtResource("5")
+
+[node name="KickoffScreen" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.2, 0.184314, 0.184314, 0.607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KickoffScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -9.0
+offset_bottom = 9.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Input" type="TextureRect" parent="KickoffScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+stretch_mode = 4
+
+[node name="Kickoff" type="Label" parent="KickoffScreen/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Timer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 38.0
+offset_bottom = 44.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Timer"]
+layout_mode = 2
+
+[node name="Type" type="TextureRect" parent="Timer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Time" type="Label" parent="Timer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+
+[node name="Margin" type="Control" parent="Timer/HBoxContainer"]
+layout_mode = 2
+
+[node name="GateTop" type="TextureRect" parent="."]
+material = SubResource("2")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -360.0
+grow_horizontal = 2
+texture = ExtResource("9")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Status" type="HBoxContainer" parent="GateTop"]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 80.0
+alignment = 1
+
+[node name="DifficultyIcon" type="TextureRect" parent="GateTop/Status"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Difficulty"
+texture = ExtResource("10")
+
+[node name="Difficulty" type="Label" parent="GateTop/Status"]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+tooltip_text = "Difficulty"
+mouse_filter = 1
+theme_type_variation = &"LabelBold"
+
+[node name="Space" type="Control" parent="GateTop/Status"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="SpeedIcon" type="TextureRect" parent="GateTop/Status"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Speed"
+texture = ExtResource("11")
+
+[node name="Speed" type="Label" parent="GateTop/Status"]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+tooltip_text = "Speed"
+mouse_filter = 1
+theme_type_variation = &"LabelBold"
+
+[node name="Space2" type="Control" parent="GateTop/Status"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="EnergyIcon" type="TextureRect" parent="GateTop/Status"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Energy"
+texture = ExtResource("13")
+
+[node name="Energy" type="Label" parent="GateTop/Status"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+tooltip_text = "Energy"
+mouse_filter = 1
+theme_type_variation = &"LabelBold"
+
+[node name="Icon" type="TextureRect" parent="GateTop"]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -136.0
+offset_right = 64.0
+offset_bottom = -8.0
+
+[node name="GateBottom" type="TextureRect" parent="."]
+material = SubResource("3")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("9")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GateBottom"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_right = -6.10352e-05
+offset_bottom = -16.0
+
+[node name="State" type="Label" parent="GateBottom/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Message" type="Label" parent="GateBottom/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Space" type="Control" parent="GateBottom/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScoreGain" type="Label" parent="GateBottom/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+theme_override_colors/font_color = Color(0.2, 0.8, 0.2, 1)
+horizontal_alignment = 1
+clip_text = true
+
+[node name="ScoreLabel" type="Label" parent="GateBottom/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "Score:"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="ScoreValue" type="Label" parent="GateBottom/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Pause" type="Button" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 86.0
+grow_horizontal = 0
+tooltip_text = "Pause the nanogame."
+focus_mode = 0
+icon = ExtResource("12")
+
+[node name="PauseScreen" type="ColorRect" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.0
+offset_top = -344.0
+offset_right = 464.0
+offset_bottom = 344.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Status" type="HBoxContainer" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="DifficultyIconPause" type="TextureRect" parent="PauseScreen/VBoxContainer/Status"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Difficulty"
+texture = ExtResource("10")
+
+[node name="Difficulty" type="Label" parent="PauseScreen/VBoxContainer/Status"]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+tooltip_text = "Difficulty"
+mouse_filter = 1
+theme_type_variation = &"LabelBold"
+
+[node name="Space" type="Control" parent="PauseScreen/VBoxContainer/Status"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="SpeedIcon" type="TextureRect" parent="PauseScreen/VBoxContainer/Status"]
+layout_mode = 2
+tooltip_text = "Speed"
+texture = ExtResource("11")
+
+[node name="Speed" type="Label" parent="PauseScreen/VBoxContainer/Status"]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+tooltip_text = "Speed"
+mouse_filter = 1
+theme_type_variation = &"LabelBold"
+
+[node name="Space2" type="Control" parent="PauseScreen/VBoxContainer/Status"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="EnergyIconPause" type="TextureRect" parent="PauseScreen/VBoxContainer/Status"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Energy"
+texture = ExtResource("13")
+
+[node name="Energy" type="Label" parent="PauseScreen/VBoxContainer/Status"]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+tooltip_text = "Energy"
+mouse_filter = 1
+theme_type_variation = &"LabelBold"
+
+[node name="Space" type="Control" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"LabelTitle"
+text = "Paused"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Menu" type="HBoxContainer" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Settings" type="Button" parent="PauseScreen/VBoxContainer/Menu"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Settings"
+
+[node name="Continue" type="Button" parent="PauseScreen/VBoxContainer/Menu"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonPositive"
+text = "Continue"
+expand_icon = true
+
+[node name="Stop" type="Button" parent="PauseScreen/VBoxContainer/Menu"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonNegative"
+text = "Stop"
+expand_icon = true
+
+[node name="Space2" type="Control" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NanogameInfo" type="HBoxContainer" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Icon" type="TextureRect" parent="PauseScreen/VBoxContainer/NanogameInfo"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="PauseScreen/VBoxContainer/NanogameInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+clip_text = true
+
+[node name="Kickoff" type="Label" parent="PauseScreen/VBoxContainer/NanogameInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+horizontal_alignment = 2
+clip_text = true
+
+[node name="Input" type="TextureRect" parent="PauseScreen/VBoxContainer/NanogameInfo"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NanogameDescription" type="RichTextLabel" parent="PauseScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+focus_mode = 2
+theme = SubResource("17")
+
+[node name="Space3" type="Control" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Score" type="VBoxContainer" parent="PauseScreen/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseScreen/VBoxContainer/Score"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "Score:"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Value" type="Label" parent="PauseScreen/VBoxContainer/Score"]
+layout_mode = 2
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="GateNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2")
+bus = &"Effects"
+
+[node name="HUDAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_13fax")
+}
+
+[node name="JoycursorBlink" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_stadp")
+}
+
+[connection signal="pressed" from="TouchNavigation/ExpandTouch" to="." method="_on_expand_touch_pressed"]
+[connection signal="released" from="TouchNavigation/ExpandTouch" to="." method="_on_expand_touch_released"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_changed" binds= [true]]
+[connection signal="pressed" from="PauseScreen/VBoxContainer/Menu/Settings" to="." method="emit_signal" binds= ["settings_requested"]]
+[connection signal="pressed" from="PauseScreen/VBoxContainer/Menu/Continue" to="." method="_on_pause_changed" binds= [false]]
+[connection signal="pressed" from="PauseScreen/VBoxContainer/Menu/Stop" to="." method="_on_stop_pressed"]
+[connection signal="animation_finished" from="HUDAnimations" to="." method="_on_hud_animations_animation_finished" unbinds=1]

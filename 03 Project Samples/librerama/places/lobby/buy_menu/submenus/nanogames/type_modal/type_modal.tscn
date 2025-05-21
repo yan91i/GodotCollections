@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjhsg04wig6lm"]
+
+[ext_resource type="PackedScene" uid="uid://b5frslx0xhpxc" path="res://modals/modal/modal.tscn" id="1_4cqsg"]
+[ext_resource type="Script" path="res://places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.gd" id="2_sd0iw"]
+[ext_resource type="Texture2D" uid="uid://bf0jub0pje6vm" path="res://places/_assets/input_types_small/navigation.svg" id="3_oxd0r"]
+[ext_resource type="Texture2D" uid="uid://c8epp55bc7co4" path="res://places/_assets/input_types_small/action.svg" id="4_07rs5"]
+[ext_resource type="Texture2D" uid="uid://cqk0lfos1dcm4" path="res://places/_assets/input_types_small/navigation_action.svg" id="5_qccgt"]
+[ext_resource type="Texture2D" uid="uid://cv28dvh5ccr2n" path="res://places/_assets/input_types_small/drag_drop.svg" id="6_3r2tg"]
+[ext_resource type="Texture2D" uid="uid://6v0b8ldob8pp" path="res://places/_assets/timer_objective.svg" id="7_r0wbn"]
+[ext_resource type="Texture2D" uid="uid://dxg1j853d6n" path="res://places/_assets/timer_survival.svg" id="8_3li1i"]
+
+[node name="TypeModal" instance=ExtResource("1_4cqsg")]
+script = ExtResource("2_sd0iw")
+confirmation_mode = true
+
+[node name="Cancel" parent="Buttons" index="0"]
+visible = true
+
+[node name="Space" parent="Buttons" index="1"]
+visible = true
+
+[node name="CloseOK" parent="Buttons" index="2"]
+text = "OK"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="2"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 844.0
+offset_bottom = 569.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "Input:"
+horizontal_alignment = 1
+
+[node name="Inputs" type="OptionButton" parent="VBoxContainer" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+item_count = 4
+selected = 0
+popup/item_0/text = "Navigation"
+popup/item_0/icon = ExtResource("3_oxd0r")
+popup/item_0/id = 0
+popup/item_1/text = "Action"
+popup/item_1/icon = ExtResource("4_07rs5")
+popup/item_1/id = 1
+popup/item_2/text = "Navigation and Action"
+popup/item_2/icon = ExtResource("5_qccgt")
+popup/item_2/id = 2
+popup/item_3/text = "Drag and Drop"
+popup/item_3/icon = ExtResource("6_3r2tg")
+popup/item_3/id = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer" index="2"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+text = "Timer:"
+horizontal_alignment = 1
+
+[node name="Timers" type="OptionButton" parent="VBoxContainer" index="3"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+item_count = 2
+selected = 0
+popup/item_0/text = "Objective"
+popup/item_0/icon = ExtResource("7_r0wbn")
+popup/item_0/id = 0
+popup/item_1/text = "Survival"
+popup/item_1/icon = ExtResource("8_3li1i")
+popup/item_1/id = 1
+
+[connection signal="item_selected" from="VBoxContainer/Inputs" to="." method="_update_timer_items" unbinds=1]

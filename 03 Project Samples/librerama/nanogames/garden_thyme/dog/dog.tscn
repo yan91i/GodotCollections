@@ -1,0 +1,306 @@
+[gd_scene load_steps=23 format=3 uid="uid://d7wqn6einr4o"]
+
+[ext_resource type="Script" path="res://nanogames/garden_thyme/dog/dog.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b8vcfwvhitk2j" path="res://nanogames/garden_thyme/dog/_assets/dog.png" id="2"]
+[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://bvr3xut36n7kl" path="res://nanogames/garden_thyme/dog/_assets/sleep.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://631s5t4g6r0h" path="res://nanogames/garden_thyme/dog/_assets/growl.wav" id="5"]
+[ext_resource type="AudioStream" uid="uid://dr3pdj8ki1ajo" path="res://nanogames/garden_thyme/dog/_assets/snore.wav" id="7"]
+[ext_resource type="AudioStream" uid="uid://guiwebfhso5p" path="res://nanogames/garden_thyme/dog/_assets/bark.wav" id="7_nlcj6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1mxe"]
+shader = ExtResource("3")
+shader_parameter/speed = Vector2(10, 10)
+shader_parameter/waves = Vector2(8, 8)
+shader_parameter/strength = Vector2(1, 1)
+shader_parameter/interval = 0.2
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("3")
+shader_parameter/speed = Vector2(10, 10)
+shader_parameter/waves = Vector2(4, 4)
+shader_parameter/strength = Vector2(1, 1)
+shader_parameter/interval = 0.2
+
+[sub_resource type="Gradient" id="Gradient_nctdy"]
+offsets = PackedFloat32Array(0, 0.5, 0.9, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x16mx"]
+gradient = SubResource("Gradient_nctdy")
+width = 32
+
+[sub_resource type="Curve" id="5"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="6"]
+width = 32
+curve = SubResource("5")
+
+[sub_resource type="ParticleProcessMaterial" id="7"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 32.0
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angular_velocity_min = -6.0
+angular_velocity_max = 6.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("6")
+color_ramp = SubResource("GradientTexture1D_x16mx")
+
+[sub_resource type="RectangleShape2D" id="9"]
+size = Vector2(200, 92)
+
+[sub_resource type="Animation" id="15"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sleep:self_modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="10"]
+length = 1.1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [-12.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(0.8, 1.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sleep:self_modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_show_growl_frame"
+}]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Noises")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="AudioStreamRandomizer" id="11"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("7")
+
+[sub_resource type="Animation" id="12"]
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -4.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.95, 1.05)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Noises")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("11")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AudioStreamRandomizer" id="13"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("7_nlcj6")
+
+[sub_resource type="Animation" id="14"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-6.0, 0.0, -6.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 1.1), Vector2(1, 1), Vector2(0.9, 1.1), Vector2(1, 1)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Noises")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("13")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3pvj"]
+_data = {
+"RESET": SubResource("15"),
+"growl": SubResource("10"),
+"sleep": SubResource("12"),
+"walk": SubResource("14")
+}
+
+[node name="Dog" type="Area2D"]
+input_pickable = false
+monitorable = false
+script = ExtResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_r1mxe")
+position = Vector2(0, -24)
+texture = ExtResource("2")
+hframes = 4
+
+[node name="Sleep" type="GPUParticles2D" parent="."]
+material = SubResource("2")
+amount = 3
+process_material = SubResource("7")
+texture = ExtResource("4")
+lifetime = 4.0
+preprocess = 4.0
+metadata/_edit_lock_ = true
+
+[node name="Noises" type="AudioStreamPlayer2D" parent="."]
+bus = &"Effects"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("9")
+metadata/_edit_lock_ = true
+
+[node name="ChangeDirection" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q3pvj")
+}
+autoplay = "sleep"
+
+[connection signal="timeout" from="ChangeDirection" to="." method="_on_change_direction_timeout"]

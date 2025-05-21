@@ -1,0 +1,170 @@
+[gd_scene load_steps=20 format=3 uid="uid://dmfnkrrgdidos"]
+
+[ext_resource type="Texture2D" uid="uid://cpts4i7o84o10" path="res://nanogames/void_avoider/_assets/particle.svg" id="2"]
+[ext_resource type="Script" path="res://nanogames/void_avoider/black_holes/small_hole/small_hole.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://mff3q1qhdr7h" path="res://nanogames/void_avoider/black_holes/small_hole/_assets/wave.svg" id="4"]
+[ext_resource type="Texture2D" uid="uid://uas0gdgw44lb" path="res://nanogames/void_avoider/black_holes/_resources/shrink_curve.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://cseeiyr6tev7x" path="res://nanogames/void_avoider/black_holes/_resources/expand_curve.tres" id="6"]
+[ext_resource type="AudioStream" uid="uid://drll51po2o0j" path="res://nanogames/void_avoider/black_holes/small_hole/_assets/spawn.wav" id="7"]
+[ext_resource type="Animation" uid="uid://dqbtlm83hv0nl" path="res://nanogames/void_avoider/black_holes/_resources/reset.tres" id="8"]
+
+[sub_resource type="Gradient" id="Gradient_4w55s"]
+colors = PackedColorArray(1, 0.164706, 0.164706, 1, 1, 0.164706, 0.164706, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iqeef"]
+gradient = SubResource("Gradient_4w55s")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.1)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_p61aq"]
+offsets = PackedFloat32Array(0, 0.2)
+colors = PackedColorArray(1, 0.164706, 0.164706, 0, 1, 0.164706, 0.164706, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l4icu"]
+gradient = SubResource("Gradient_p61aq")
+width = 32
+
+[sub_resource type="ParticleProcessMaterial" id="3"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_curve = ExtResource("5")
+color_ramp = SubResource("GradientTexture1D_l4icu")
+
+[sub_resource type="Gradient" id="Gradient_qqqfd"]
+offsets = PackedFloat32Array(0.8, 1)
+colors = PackedColorArray(0.341176, 0.0784314, 0.0784314, 1, 0.341176, 0.0784314, 0.0784314, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oeaht"]
+gradient = SubResource("Gradient_qqqfd")
+width = 32
+
+[sub_resource type="ParticleProcessMaterial" id="6"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.5
+orbit_velocity_max = 0.5
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_max = 0.25
+scale_curve = ExtResource("6")
+color_ramp = SubResource("GradientTexture1D_oeaht")
+
+[sub_resource type="CircleShape2D" id="7"]
+radius = 32.0
+
+[sub_resource type="Animation" id="8"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Center:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.75, 0.75), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="9"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Aura:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Center:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x22bu"]
+_data = {
+"RESET": ExtResource("8"),
+"pulse": SubResource("8"),
+"start": SubResource("9")
+}
+
+[node name="SmallHole" type="Area2D"]
+z_index = 1
+script = ExtResource("3")
+metadata/_edit_group_ = true
+
+[node name="Aura" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+texture = SubResource("GradientTexture2D_iqeef")
+
+[node name="Center" type="Sprite2D" parent="."]
+self_modulate = Color(0.341176, 0.0784314, 0.0784314, 1)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2")
+
+[node name="Waves" type="GPUParticles2D" parent="."]
+amount = 2
+process_material = SubResource("3")
+texture = ExtResource("4")
+visibility_rect = Rect2(-64, -64, 128, 128)
+local_coords = true
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+amount = 12
+process_material = SubResource("6")
+texture = ExtResource("2")
+visibility_rect = Rect2(-64, -64, 128, 128)
+local_coords = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-64, -64, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("7")
+disabled = true
+
+[node name="Spawn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7")
+autoplay = true
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x22bu")
+}
+autoplay = "start"
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="queue_free"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished" flags=6 unbinds=1]

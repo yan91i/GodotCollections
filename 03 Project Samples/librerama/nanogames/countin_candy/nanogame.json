@@ -1,0 +1,45 @@
+{
+    "name": "Countin' Candy",
+    "kickoff": "COUNT!",
+    "description": "Oh, the horror! Look at all those sweets being dumped right into the floor! HOW MANY DELICIOUS TREATS WERE MERCILESSLY WASTED?! Well, that's up to you to answer.",
+    "author": "Librerama",
+    "input": "DRAG_DROP",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Counting,Numbers,Sweet",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/countin_candy",
+    "thirdParty": [
+        {
+            "name": "Eat_Crunchy",
+            "author": "schoman3",
+            "license": "CC0",
+            "source": "https://freesound.org/people/schoman3/sounds/507453/"
+        },
+        {
+            "name": "Male cough",
+            "author": "aldenroth2",
+            "license": "CC0",
+            "source": "https://freesound.org/people/aldenroth2/sounds/272029/"
+        },
+        {
+            "name": "One",
+            "author": "pheonton",
+            "license": "CC_BY_3",
+            "source": "https://opengameart.org/content/one"
+        },
+        {
+            "name": "Plastic Lid Open and Close",
+            "author": "Kodack",
+            "license": "CC0",
+            "source": "https://freesound.org/people/Kodack/sounds/256313/"
+        },
+        {
+            "name": "Shake, Pepples, Short Scurry Low",
+            "author": "bbrocer",
+            "license": "CC0",
+            "source": "https://freesound.org/people/bbrocer/sounds/398693/"
+        }
+    ]
+}

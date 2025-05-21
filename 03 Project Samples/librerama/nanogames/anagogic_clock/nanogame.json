@@ -1,0 +1,39 @@
+{
+    "name": "Anagogic Clock",
+    "kickoff": "ADJUST!",
+    "description": "This peculiar clock seems broken, but its center panel can help you put the hands where they should be, as long as you know how analog clocks work. You DO know, right?",
+    "author": "Librerama",
+    "input": "DRAG_DROP",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Analog,Time",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/anagogic_clock",
+    "thirdParty": [
+        {
+            "name": "Gong 001",
+            "author": "T.E.C. Studios",
+            "license": "CC0",
+            "source": "https://freesound.org/people/tec_studio/sounds/361495/"
+        },
+        {
+            "name": "ghost piano 3",
+            "author": "amliebsch",
+            "license": "CC0",
+            "source": "https://freesound.org/people/amliebsch/sounds/324958/"
+        },
+        {
+            "name": "Menu FX 03 (normal)",
+            "author": "Nightflame",
+            "license": "CC0",
+            "source": "https://freesound.org/people/Nightflame/sounds/422514/"
+        },
+        {
+            "name": "Wind Up Toy",
+            "author": "lmbubec",
+            "license": "CC0",
+            "source": "https://freesound.org/people/lmbubec/sounds/118816/"
+        }
+    ]
+}

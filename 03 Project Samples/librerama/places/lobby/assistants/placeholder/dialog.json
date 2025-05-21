@@ -1,0 +1,84 @@
+{
+    "cameBack": [
+        [
+            "This hopes that the time you've currently spent was enjoyable!"
+        ],
+        [
+            "This is programmed to be happy in helping you at any time!"
+        ],
+        [
+            {
+                "text": "Remember to take breaks from time to time, about [color=#46323232][i]print(SUGGESTED_TIME)[/i][/color] [color=#c35e5e][shake rate=5 level=10]ERROR: Value is NaN.[/shake][/color] minutes is ideal.",
+                "sprite": "error"
+            }
+        ]
+    ],
+    "cutoffMidSpeech": [
+        [
+            "This also accepts rudeness as input for feedback. Thank you!"
+        ]
+    ],
+    "firstTimePlaying": [
+        [
+            "[color=#46323232][i]if not clients.has(client_new):\n\twelcome_new()[/i][/color]\nWelcome to the Librerama arcade, new customer! This will be your attendant for today.",
+            {
+                "text": "This is replacing our usual staff due to [color=#46323232][i]print(REPLACEMENT_REASON)[/i][/color] [color=#c35e5e][shake rate=5 level=10]ERROR: Value is Null.[/shake][/color]",
+                "sprite": "error"
+            },
+            {
+                "text": "We have a selection of multiple nanogames (mini-games) for you to enjoy, each a challenge of their own.",
+                "sprite": "idle"
+            },
+            "You'll be given completely free of charge [color=#46323232][i]print(nanogame_count)[/i][/color] [b]6[/b] nanogames to start with.",
+            "More nanogames and other niceties can be acquired through this at any time (extra costs apply).",
+            {
+                "text": "Please direct yourself to one of our arcade machines, so we can begin the [b][wave freq=3][rainbow freq=0.4]F U N[/rainbow][/wave][/b]!",
+                "sprite": "fun"
+            }
+        ]
+    ],
+    "goodbye": [
+        [
+            {
+                "text": "Comeback whenever your [b][wave freq=3][rainbow freq=0.4]F U N[/rainbow][/wave][/b] needs a recharge!",
+                "sprite": "fun"
+            }
+        ],
+        [
+            "This hopes its service were of decent quality."
+        ]
+    ],
+    "goingToPlay": [
+        [
+            {
+                "text": "Let the [b][wave freq=3][rainbow freq=0.4]F U N[/rainbow][/wave][/b] procedure commence!",
+                "sprite": "fun"
+            }
+        ]
+    ],
+    "purchaseMade": [
+        [
+            {
+                "text": "This hopes you enjoy the new [color=#46323232][i]print(product_name)[/i][/color] [color=#c35e5e][shake rate=5 level=10]ERROR: Value is Int.[/shake][/color] you purchased!",
+                "sprite": "error"
+            }
+        ]
+    ],
+    "replacedAssistant": [
+        [
+            "[color=#46323232][ [color=#98fb98]OK[/color] ] Started System.\n[ [color=#98fb98]OK[/color] ] Loaded Dialog.[/color]\nHello there, dear customer! This will be your attendant for today."
+        ]
+    ],
+    "talkGeneric": [
+        [
+            "This is programmed to inform and remind you that [b]Librerama[/b] is [b]free software[/b].",
+            "This means that its code and assets can be:\n[b]0.[/b] Used for any purpose.\n[b]1.[/b] Studied and changed.\n[b]2.[/b] Copied and redistributed.\n[b]3.[/b] Further improved.",
+            "Said code and assets can be viewed and acquired in its [url=https://codeberg.org/Librerama/librerama]online repository[/url]."
+        ]
+    ],
+    "welcomeGeneric": [
+        [
+            "[color=#46323232]if clients.has(client_new):\n\twelcome()[/color]\nWelcome once again to the Librerama arcade, dear customer! This will be your attendant for today."
+        ]
+    ]
+}

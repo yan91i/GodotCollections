@@ -1,0 +1,192 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Librerama"
+config/description="A free/libre fast-paced arcade collection of mini-games."
+config/version="0.7.0"
+run/main_scene="res://places/intro/intro.tscn"
+config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/bg_color=Color(0.101961, 0.101961, 0.101961, 1)
+config/icon="res://icon.svg"
+config/macos_native_icon="res://export/icons/icon.icns"
+config/windows_native_icon="res://export/icons/icon.ico"
+
+[autoload]
+
+GameManager="*res://managers/game_manager/game_manager.tscn"
+ArcadeManager="*res://managers/arcade_manager.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/unsafe_cast=1
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=720
+window/size/window_width_override=1024
+window/size/window_height_override=600
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
+[editor]
+
+script/search_in_file_extensions=PackedStringArray("gd", "gdshader", "json")
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/editor_plugins/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://nanogames/": "teal"
+}
+
+[filesystem]
+
+import/blender/enabled=false
+import/open_asset_import/use_fbx=false
+
+[game_settings]
+
+pause_focus_lost=true
+mute_focus_lost=false
+show_community_warning=true
+switch_touch_controls=false
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": true,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194310,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+ui_cancel={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+pause={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":6,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+nanogame_action={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+nanogame_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194319,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+nanogame_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194321,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+]
+}
+nanogame_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194320,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+nanogame_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194322,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+]
+}
+menu_back={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+menu_tab_left={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":9,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+menu_tab_right={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+menu_scroll_up={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":-1.0,"script":null)
+]
+}
+menu_scroll_down={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":1.0,"script":null)
+]
+}
+menu_search={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":47,"physical_keycode":0,"key_label":0,"unicode":47,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/de.po", "res://translations/nl.po", "res://translations/pt_BR.po", "res://translations/es.po", "res://translations/eo.po", "res://translations/pl.po", "res://translations/pt.po", "res://translations/tr.po")
+locale/translations_pot_files=PackedStringArray("res://modals/modal/modal.tscn", "res://modals/modal/modal.gd", "res://modals/settings_modal/settings_modal.tscn", "res://modals/settings_modal/settings_modal.gd", "res://modals/settings_modal/input_modal/input_modal.gd", "res://nanogames/anagogic_clock/nanogame.json", "res://nanogames/ballkeep/nanogame.json", "res://nanogames/buzzing_lunch/nanogame.json", "res://nanogames/carnival_shootout/nanogame.json", "res://nanogames/countin_candy/nanogame.json", "res://nanogames/digital_warp/nanogame.json", "res://nanogames/gadget_inspection/nanogame.json", "res://nanogames/garden_thyme/nanogame.json", "res://nanogames/gem_enchantment/nanogame.json", "res://nanogames/gravity_shift/nanogame.json", "res://nanogames/hop_for_love/nanogame.json", "res://nanogames/input_flow/nanogame.json", "res://nanogames/neo_highway/nanogame.json", "res://nanogames/papercuts/nanogame.json", "res://nanogames/punchbag_wallop/nanogame.json", "res://nanogames/rope_hop/nanogame.json", "res://nanogames/shuffle_dance/nanogame.json", "res://nanogames/suitcase_by_case/nanogame.json", "res://nanogames/thing_factory/nanogame.json", "res://nanogames/void_avoider/nanogame.json", "res://nanogames/woozy_chomper/nanogame.json", "res://places/arcade_machine/arcade_machine.tscn", "res://places/arcade_machine/arcade_machine.gd", "res://places/arcade_machine/nanogame_hud/nanogame_hud.tscn", "res://places/arcade_machine/nanogame_hud/nanogame_hud.gd", "res://places/arcade_machine/nanogame_collection/nanogame_collection.tscn", "res://places/arcade_machine/nanogame_collection/nanogame_collection.gd", "res://places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn", "res://places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd", "res://places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd", "res://places/arcade_machine/statistics/statistics.tscn", "res://places/arcade_machine/tutorial/tutorial.tscn", "res://places/intro/intro.tscn", "res://places/intro/intro.gd", "res://places/lobby/lobby.tscn", "res://places/lobby/lobby.gd", "res://places/lobby/about_modal/about_modal.gd", "res://places/lobby/assistants/placeholder/dialog.json", "res://places/lobby/buy_menu/buy_menu.tscn", "res://places/lobby/buy_menu/buy_menu.gd", "res://places/lobby/buy_menu/submenus/nanogames/nanogames.gd", "res://places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn", "res://places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn", "res://nanogames/swatter_swindler/nanogame.json", "res://modals/settings_modal/translation_extract.json", "res://nanogame_player/translation_extract.json")
+pseudolocalization/double_vowels=true
+pseudolocalization/fake_bidi=true
+
+[logging]
+
+file_logging/enable_file_logging=true
+file_logging/log_path="user://logs/log"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_2d=2
+anti_aliasing/quality/msaa_3d=2

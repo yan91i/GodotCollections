@@ -1,0 +1,1637 @@
+# LANGUAGE translation for Librerama for the following files:
+# res://modals/modal/modal.tscn
+# res://modals/modal/modal.gd
+# res://modals/settings_modal/settings_modal.tscn
+# res://modals/settings_modal/settings_modal.gd
+# res://modals/settings_modal/input_modal/input_modal.gd
+# res://nanogames/anagogic_clock/nanogame.json
+# res://nanogames/ballkeep/nanogame.json
+# res://nanogames/buzzing_lunch/nanogame.json
+# res://nanogames/carnival_shootout/nanogame.json
+# res://nanogames/countin_candy/nanogame.json
+# res://nanogames/digital_warp/nanogame.json
+# res://nanogames/gadget_inspection/nanogame.json
+# res://nanogames/garden_thyme/nanogame.json
+# res://nanogames/gem_enchantment/nanogame.json
+# res://nanogames/gravity_shift/nanogame.json
+# res://nanogames/hop_for_love/nanogame.json
+# res://nanogames/input_flow/nanogame.json
+# res://nanogames/neo_highway/nanogame.json
+# res://nanogames/papercuts/nanogame.json
+# res://nanogames/punchbag_wallop/nanogame.json
+# res://nanogames/rope_hop/nanogame.json
+# res://nanogames/shuffle_dance/nanogame.json
+# res://nanogames/suitcase_by_case/nanogame.json
+# res://nanogames/thing_factory/nanogame.json
+# res://nanogames/void_avoider/nanogame.json
+# res://nanogames/woozy_chomper/nanogame.json
+# res://places/arcade_machine/arcade_machine.tscn
+# res://places/arcade_machine/arcade_machine.gd
+# res://places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+# res://places/arcade_machine/nanogame_hud/nanogame_hud.gd
+# res://places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+# res://places/arcade_machine/nanogame_collection/nanogame_collection.gd
+# res://places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+# res://places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+# res://places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+# res://places/arcade_machine/statistics/statistics.tscn
+# res://places/arcade_machine/tutorial/tutorial.tscn
+# res://places/intro/intro.tscn
+# res://places/intro/intro.gd
+# res://places/lobby/lobby.tscn
+# res://places/lobby/lobby.gd
+# res://places/lobby/about_modal/about_modal.gd
+# res://places/lobby/assistants/placeholder/dialog.json
+# res://places/lobby/buy_menu/buy_menu.tscn
+# res://places/lobby/buy_menu/buy_menu.gd
+# res://places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+# res://places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn
+# res://places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+# res://nanogames/swatter_swindler/nanogame.json
+# res://modals/settings_modal/translation_extract.json
+# res://nanogame_player/translation_extract.json
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Librerama\n"
+"PO-Revision-Date: 2024-10-12 19:51+0000\n"
+"Last-Translator: furkanunsalan <furkanunsalan@users.noreply.translate."
+"codeberg.org>\n"
+"Language-Team: Turkish <https://translate.codeberg.org/projects/librerama/"
+"librerama/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.7.2\n"
+
+#: modals/modal/modal.tscn
+msgid "Cancel"
+msgstr "İptal"
+
+#: modals/modal/modal.tscn
+#: modals/modal/modal.gd
+msgid "Close"
+msgstr "Kapat"
+
+#: modals/modal/modal.gd
+#: places/intro/intro.tscn
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+msgid "OK"
+msgstr "Tamam"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Language:"
+msgstr "Dil:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "System Default"
+msgstr "Sistem Varsayılanı"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Fullscreen Window"
+msgstr "Tam Ekran Pencere"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Pause When the Game Loses Focus"
+msgstr "Oyun Odağını Kaybettiğinde Duraklat"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Mute When the Game Loses Focus"
+msgstr "Oyun Odağını Kaybettiğinde Sesi Kapat"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Show Warning About Community Nanogames"
+msgstr "Topluluk Nano Oyunları Hakkında Uyarı Göster"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Main Control:"
+msgstr "Ana Kontrol:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Automatic"
+msgstr "Otomatik"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Touchscreen"
+msgstr "Dokunmatik Ekran"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Joypad"
+msgstr "Oyun Kumandası"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Joypad and Touchscreen"
+msgstr "Oyun Kumandası ve Dokunmatik Ekran"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Keyboard and Mouse"
+msgstr "Klavye ve Fare"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Switch Touch Controls' Positions"
+msgstr "Dokunmatik Kontrol Pozisyonlarını Değiştir"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Up:"
+msgstr "Yukarı:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Down:"
+msgstr "Aşağı:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Left:"
+msgstr "Sol:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Right:"
+msgstr "Sağ:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Action:"
+msgstr "Eylem:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Everything:"
+msgstr "Her Şey:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Music:"
+msgstr "Müzik:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Effects:"
+msgstr "Efektler:"
+
+#: modals/settings_modal/settings_modal.gd
+#: modals/settings_modal/input_modal/input_modal.gd
+msgctxt "Keyboard"
+msgid "Space"
+msgstr "Boşluk"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Space"
+msgstr "Uzay"
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "Invalid input, try another."
+msgstr "Geçersiz girdi, başka bir tane deneyin."
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "Press the desired new input in your joypad."
+msgstr "Oyun kumandanızdan istediğiniz yeni girdiye basın."
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "Press the desired new input in your keyboard."
+msgstr "Klavyenizden istediğiniz yeni girdiye basın."
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "Is this the new desired input?"
+msgstr "Bu istediğiniz yeni girdi mi?"
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "[Invalid Input]"
+msgstr "[Geçersiz Girdi]"
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "[None Selected]"
+msgstr "[Hiçbiri Seçilmedi]"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "Anagogic Clock"
+msgstr "Anagogik Saat"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "ADJUST!"
+msgstr "AYARLA!"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "This peculiar clock seems broken, but its center panel can help you put the hands where they should be, as long as you know how analog clocks work. You DO know, right?"
+msgstr ""
+"Bu tuhaf saat bozuk görünüyor ama merkezi paneli, kolları yerinde "
+"ayarlamanıza yardımcı olabilir; yeter ki analog saatlerin nasıl çalıştığını "
+"biliyor olun. Biliyorsunuz, değil mi?"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "Analog"
+msgstr "Analog"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "Time"
+msgstr "Zaman"
+
+#: nanogames/ballkeep/nanogame.json
+msgid "Ballkeep"
+msgstr "Top tutucu"
+
+#: nanogames/ballkeep/nanogame.json
+msgid "KEEP IN!"
+msgstr "İÇERDE TUT!"
+
+#: nanogames/ballkeep/nanogame.json
+msgid "That metal ball really wants to get out this place. Why is that? I would worry more about keeping it within the paddle area until the timer runs out if I were you."
+msgstr ""
+"O metal top gerçekten buradan çıkmak istiyor. Bunun sebebi ne? Eğer ben "
+"senin yerinde olsaydım, zaman dolana kadar onu vuruş alanı içinde tutmaya "
+"daha çok endişelenirdim."
+
+#: nanogames/ballkeep/nanogame.json
+msgid "Paddle"
+msgstr "Vuruş"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Buzzing Lunch"
+msgstr "Vızıldayan Öğle Yemeği"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "EAT!"
+msgstr "YE!"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Did you know that large frogs, such as the Bullfrog, can eat small marsupials and even other frogs? This one is small however, so just worry about eating those tasty flies, and avoiding the more indigestible ones."
+msgstr ""
+"Biliyor muydun büyük kurbağalar, örneğin Boğa Kurbağası, küçük marsupialar "
+"ve hatta diğer kurbağaları yiyebilir? Ancak bu küçük, bu yüzden sadece o "
+"lezzetli sinekleri yakalamak ve daha sindirilmesi zor olanlardan kaçınmakla "
+"ilgilen."
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Flies"
+msgstr "Sinekler"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Frog"
+msgstr "Kurbağa"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Swamp"
+msgstr "Bataklık"
+
+#: nanogames/carnival_shootout/nanogame.json
+msgid "Carnival Shootout"
+msgstr "Karnaval Atış Yarışı"
+
+#: nanogames/carnival_shootout/nanogame.json
+msgid "HIT!"
+msgstr "VUR!"
+
+#: nanogames/carnival_shootout/nanogame.json
+msgid "The carnival has come to town, and with it, the skill and completely not rigged game of hitting the targets! Sharp your aim and go for the good ones, while avoiding the bad."
+msgstr ""
+"Karnaval şehre geldi ve beraberinde hedefleri vurma becerisi gerektiren "
+"tamamen hileli olmayan bir oyun getirdi! Nişanını keskinleştir ve iyi "
+"olanları vururken kötü olanlardan kaçın."
+
+#: nanogames/carnival_shootout/nanogame.json
+msgid "Target"
+msgstr "Hedef"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Countin' Candy"
+msgstr "Pamuk Şeker"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "COUNT!"
+msgstr "SAY!"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Oh, the horror! Look at all those sweets being dumped right into the floor! HOW MANY DELICIOUS TREATS WERE MERCILESSLY WASTED?! Well, that's up to you to answer."
+msgstr ""
+"Ah, dehşet! Tüm o şekerlerin yere nasıl döküldüğüne bak! NE KADAR LEZZETLİ "
+"İKRAM KORKUNÇ BİR ŞEKİLDE ZİYAN OLDU?! Cevabı vermek tamamen sana kalmış."
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Counting"
+msgstr "Sayma"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Numbers"
+msgstr "Sayılar"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Sweet"
+msgstr "Tatlı"
+
+#: nanogames/digital_warp/nanogame.json
+msgid "Digital Warp"
+msgstr "Dijital Çözgü"
+
+#: nanogames/digital_warp/nanogame.json
+msgid "EVADE!"
+msgstr "KAÇ!"
+
+#: nanogames/digital_warp/nanogame.json
+msgid "The digital world is a place without the limitations of the real one, but only represented in basic shapes for some reason. Circumvent the incoming obstacles (Corrupt data? Hackers?) approaching your vessel (Spaceship? Avatar? Whatever)."
+msgstr ""
+"Dijital dünya gerçek dünyanın sınırlarının olmadığı bir yer, ama nedense "
+"yalnızca basit şekillerle temsil ediliyor. Karşıdan gelen engelleri (Bozuk "
+"veri mi? Hackerlar mı?) aş ve gemine (Uzay gemisi mi? Avatar mı? Her neyse) "
+"yaklaşan tehlikelerden kaçın."
+
+#: nanogames/digital_warp/nanogame.json
+msgid "Synth"
+msgstr "Sentez"
+
+#: nanogames/digital_warp/nanogame.json
+msgid "Virtual"
+msgstr "Sanal"
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "Gadget Inspection"
+msgstr "Cihaz İncelemesi"
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "CALIBRATE!"
+msgstr "KALİBRE ET!"
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "Machinery needs calibration from time to time, and this one is no different. Stop the pointer on the mark enough times, so this hunk of metal can go back to do... Whatever it's supposed to be doing."
+msgstr ""
+"Makinelerin zamandan zamana kalibrasyona ihtiyacı vardır ve bu da farklı "
+"değil. Göstergeyi işaretin üzerine yeterince kez durdur, böylece bu metal "
+"yığını geri dönüp… Ne yapması gerekiyorsa onu yapmaya devam edebilsin."
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "Machine"
+msgstr "Makine"
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "Timing"
+msgstr "Zamanlama"
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "Garden Thyme"
+msgstr "Bahçe Kekiği"
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "WATER!"
+msgstr "SU!"
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "What a beautiful day outside! Perfect timing to give those thirsty flowers some well deserved water. Just watch out for your, erm, dog(?)... He really does not like being wet."
+msgstr ""
+"Ne kadar güzel bir gün! Susamış çiçeklere hak ettikleri suyu vermek için "
+"mükemmel bir zaman. Sadece, şey, köpeğine(?) dikkat et… Islanmayı gerçekten "
+"hiç sevmiyor."
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "Dog"
+msgstr "Köpek"
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "Flowers"
+msgstr "Çiçekler"
+
+#: nanogames/gem_enchantment/nanogame.json
+msgid "Gem Enchantment"
+msgstr "Mücevher Büyüsü"
+
+#: nanogames/gem_enchantment/nanogame.json
+msgid "ENCHANT!"
+msgstr "BÜYÜLE!"
+
+#: nanogames/gem_enchantment/nanogame.json
+msgid "The gems of Katrak, follow the pattern to make them reveal their true magic power and- No, for the last time, grandpa, those are NOT demonic symbols!"
+msgstr ""
+"Katrak’ın mücevherleri, gerçek sihir gücünü ortaya çıkarmaları için deseni "
+"takip et ve- Hayır, son kez söylüyorum, dede, bunlar ŞEYTANİ SİMGE DEĞİL!"
+
+#: nanogames/gem_enchantment/nanogame.json
+msgid "Magic"
+msgstr "Büyü"
+
+#: nanogames/gem_enchantment/nanogame.json
+#: nanogames/input_flow/nanogame.json
+msgid "Match"
+msgstr "Eşleşme"
+
+#: nanogames/gem_enchantment/nanogame.json
+#: nanogames/input_flow/nanogame.json
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "Memory"
+msgstr "Hafıza"
+
+#: nanogames/gravity_shift/nanogame.json
+msgid "Gravity Shift"
+msgstr "Yerçekimi Değişimi"
+
+#: nanogames/gravity_shift/nanogame.json
+msgid "SHIFT!"
+msgstr "HAREKET ET!"
+
+#: nanogames/gravity_shift/nanogame.json
+msgid "The law of gravity may dictate that objects with mass attract each other, unless you have the power of [insert technobabble here]! So make sure to use it to evade the lifting pillars, as the laws of motion are still very much in place."
+msgstr ""
+"Yerçekimi yasası, kütleye sahip nesnelerin birbirini çekmesini "
+"belirleyebilir, ama [buraya teknobabble ekleyin] gücüne sahipseniz durum "
+"farklı olabilir! Bu yüzden, hareket yasalarının hala geçerli olduğunu "
+"unutmadan, kaldıran sütunlardan kaçınmak için bu gücü kullanmayı ihmal "
+"etmeyin."
+
+#: nanogames/gravity_shift/nanogame.json
+msgid "Robot"
+msgstr "Robot"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Hop for Love"
+msgstr "Aşk için Zıpla"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "CROSS!"
+msgstr "GEÇ!"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Love can make you conquer anything, \"anything\" being a small stream of water in this case. Help this little rabbit hop across to unite these lovebunnies."
+msgstr ""
+"Aşk, seni her şeyi fethetmeye yönlendirebilir; bu durumda “her şey”, küçük "
+"bir su akıntısıdır. Bu küçük tavşana, bu aşk tavşanlarını birleştirmek için "
+"zıplamasına yardımcı ol."
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Bunny"
+msgstr "Tavşancık"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Rabbit"
+msgstr "Tavşan"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Water"
+msgstr "Su"
+
+#: nanogames/input_flow/nanogame.json
+msgid "Input Flow"
+msgstr "Girdi Akışı"
+
+#: nanogames/input_flow/nanogame.json
+msgid "REPEAT!"
+msgstr "TEKRARLA!"
+
+#: nanogames/input_flow/nanogame.json
+msgid "Try to not get too distracted by the beat and pay attention to match the flow of inputs that appear in the screen."
+msgstr ""
+"Ritme fazla kapılmamaya çalış ve ekranda beliren girişlerin akışını "
+"eşleştirmeye dikkat et."
+
+#: nanogames/neo_highway/nanogame.json
+msgid "Neo Highway"
+msgstr "Neo Otoyol"
+
+#: nanogames/neo_highway/nanogame.json
+#: nanogames/swatter_swindler/nanogame.json
+msgid "DODGE!"
+msgstr "SAVUŞTUR!"
+
+#: nanogames/neo_highway/nanogame.json
+msgid "The future is now, old man! Get in your hover car and drive away in the neo highway. Just be aware of your fellow drivers, which are so reckless that you could swear they are aiming at you."
+msgstr ""
+"Gelecek şimdi, yaşlı adam! Hover aracına bin ve yeni otoyolda uzaklaş. "
+"Sadece diğer sürücülerine dikkat et, o kadar dikkatsizler ki onlara "
+"baktığında seni hedef alıyormuş gibi hissedebilirsin."
+
+#: nanogames/neo_highway/nanogame.json
+msgid "Car"
+msgstr "Araba"
+
+#: nanogames/neo_highway/nanogame.json
+msgid "City"
+msgstr "Şehir"
+
+#: nanogames/neo_highway/nanogame.json
+msgid "Future"
+msgstr "Gelecek"
+
+#: nanogames/papercuts/nanogame.json
+msgid "Papercuts"
+msgstr "Kağıt Kesikleri"
+
+#: nanogames/papercuts/nanogame.json
+msgid "CUTOUT!"
+msgstr "KESTİR!"
+
+#: nanogames/papercuts/nanogame.json
+msgid "How about letting your inner child artist express themselves by cutting a piece of paper into something barely recognizable? So grab a pair of scissors and get crafty! Just try to avoid running with them, alright?"
+msgstr ""
+"İçindeki çocuk sanatçının, bir parça kağıdı neredeyse tanınmaz hale getirene "
+"kadar kesmesine izin vermeye ne dersin? O yüzden bir makas al ve "
+"yaratıcılığını konuştur! Sadece, onlarla koşmamaya çalış, tamam mı?"
+
+#: nanogames/papercuts/nanogame.json
+msgid "Crafts"
+msgstr "El İşleri"
+
+#: nanogames/papercuts/nanogame.json
+msgid "Precision"
+msgstr "Hassasiyet"
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "Punchbag Wallop"
+msgstr "Vurmalı Torba"
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "PUNCH!"
+msgstr "YUMRUKLA!"
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "Give those punching bags a good ol' pummeling by mashing the action button till they're torn apart! Careful though, some of them can swing in unexpected ways."
+msgstr ""
+"O yumruk torbalarına iyi bir dayak atmak için aksiyon butonuna basarak "
+"onları parçalayana kadar sıkıştır! Ama dikkatli ol, bazıları beklenmedik "
+"şekillerde sallanabilir."
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "Boxing"
+msgstr "Boks"
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "Old"
+msgstr "Yaşlı"
+
+#: nanogames/rope_hop/nanogame.json
+msgid "Rope Hop"
+msgstr "İp Atlama"
+
+#: nanogames/rope_hop/nanogame.json
+msgid "JUMP!"
+msgstr "ZIPLA!"
+
+#: nanogames/rope_hop/nanogame.json
+msgid "What a better combination than rope jumping and the freestyle dancing of hip hop? Just worry about the rope first, but get ready for some challengers later."
+msgstr ""
+"İp atlama ile hip hop’un serbest dansının daha iyi bir kombinasyonu ne "
+"olabilir ki? Öncelikle ipinle ilgilen, ama daha sonra bazı rakiplere "
+"hazırlıklı ol."
+
+#: nanogames/rope_hop/nanogame.json
+msgid "Hip Hop"
+msgstr "Hip Hop"
+
+#: nanogames/rope_hop/nanogame.json
+msgid "Jump Rope"
+msgstr "Atlama İpi"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "Shuffle Dance"
+msgstr "Shuffle Dansı"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "PAY ATTENTION!"
+msgstr "DİKKATİNİ VER!"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "Eyes on the prize, baby! Follow where the first flipped card goes, and select it when all the shuffling is done. The thrill of testing basic attention span without losing your money!"
+msgstr ""
+"Ödülün üzerine odaklan, bebeğim! İlk çevrilen kartın nereye gittiğini takip "
+"et ve tüm karıştırma işlemi bittiğinde onu seç. Temel dikkat süresini test "
+"etmenin heyecanı, paranın kaybedilmeden!"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "Cards"
+msgstr "Kartlar"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "Deck"
+msgstr "Deste"
+
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "Suitcase-by-Case"
+msgstr "Valiz Valiz"
+
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "FIND!"
+msgstr "BUL!"
+
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "Now, where is that baggage? It was certainly blue, or maybe red? It was a briefcase, or was it actually a backpack?! It seems that your memory looks as good as the chances that your luggage was treated carefully."
+msgstr ""
+"Şimdi, o bagaj nerede? Kesinlikle mavi, yoksa kırmızı mıydı? Bir evrak "
+"çantasıydı, yoksa aslında bir sırt çantası mıydı?! Görünüşe göre, hafızan "
+"bagajının dikkatli bir şekilde taşınma şansı kadar iyi."
+
+#: nanogames/suitcase_by_case/nanogame.json
+#: nanogames/thing_factory/nanogame.json
+msgid "Attention"
+msgstr "Dikkat"
+
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "Baggage"
+msgstr "Bagaj"
+
+#: nanogames/thing_factory/nanogame.json
+msgid "Thing Factory"
+msgstr "Şey Fabrikası"
+
+#: nanogames/thing_factory/nanogame.json
+msgid "VALIDATE!"
+msgstr "GEÇERLİ KIL!"
+
+#: nanogames/thing_factory/nanogame.json
+msgid "The thing is, things let's us do all sort of things. Our thing is to make things, so help eliminate the wrong things, because correctness is our kind of thing."
+msgstr ""
+"Durum şu ki, şeyler bize her türlü şeyi yapma imkanı tanıyor. Bizim işimiz "
+"şeyler yapmak, bu yüzden yanlış şeyleri ortadan kaldırmaya yardımcı ol, "
+"çünkü doğruluk bizim tarzımız."
+
+#: nanogames/thing_factory/nanogame.json
+msgid "Conveyor"
+msgstr "Taşıyıcı"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Void Avoider"
+msgstr "Boşluktan Kaçınan"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "AVOID!"
+msgstr "SAKIN!"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Space, the final frontier, and apparently filled with black holes that have no regard to the laws of physics. Make sure the spaceship stays out of their way!"
+msgstr ""
+"Uzay, son sınır ve görünüşe göre fizik yasalarına aldırış etmeyen kara "
+"deliklerle dolu. Uzay gemisinin onların yolundan uzak durduğundan emin ol!"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Alien"
+msgstr "Uzaylı"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Black Hole"
+msgstr "Kara Delik"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Dodge"
+msgstr "Savuşturmak"
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "Woozy Chomper"
+msgstr "Sersemlemiş Dişli"
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "CHOMP!"
+msgstr "ISIR!"
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "Woozy hungry. Help Woozy eat fruit, yummy! Help Woozy not eat Woozy, not yummy!"
+msgstr ""
+"Woozy aç. Woozy’ye meyve yemesinde yardımcı ol, lezzetli! Woozy’nin "
+"kendisini yemesine yardım etme, lezzetli değil!"
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "Creature"
+msgstr "Yaratık"
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "Fruit"
+msgstr "Meyve"
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Play"
+msgstr "Oyna"
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Quickplay"
+msgstr "Hızlı Oyun"
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Collection"
+msgstr "Koleksiyon"
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Customize"
+msgstr "Özelleştir"
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Statistics"
+msgstr "İstatistikler"
+
+#: places/arcade_machine/arcade_machine.tscn
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+#: places/lobby/lobby.tscn
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Back to Lobby"
+msgstr "Menüye Dön"
+
+#: places/arcade_machine/arcade_machine.tscn
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Go back."
+msgstr "Geri."
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Start playing."
+msgstr "Oyuna başla."
+
+#: places/arcade_machine/arcade_machine.tscn
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Ticket quantity."
+msgstr "Bilet sayısı."
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "See the basic tutorial."
+msgstr "Temel eğitimi gör."
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Switch from official to community made nanogames."
+msgstr "Resmi nano oyunlardan topluluk yapımı nano oyunlara geçin."
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Community Mode"
+msgstr "Topluluk Modu"
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid ""
+"[center][b]ATTENTION![/b][/center]\n"
+"\n"
+"Community nanogames are not sandboxed, so a misconfigured nanogame can crash the whole game, and a maliciously programmed one can do bad things to your device.\n"
+"\n"
+"[b]Make sure that the community nanogames you play come from a trusted source.[/b]\n"
+"\n"
+"Tickets will also not be awarded when playing them."
+msgstr ""
+"[center][b]DİKKAT![/b][/center]\n"
+"\n"
+"Topluluk yapımı nano oyunlar, izole edilmemiştir; bu nedenle yanlış "
+"yapılandırılmış bir nano oyun, tüm oyunu çökertilebilir ve kötü niyetle "
+"programlanmış bir nano oyun, cihazınıza zarar verebilir.\n"
+"\n"
+"[b]Oynadığınız topluluk yapımı nano oyun’un güvenilir bir kaynaktan "
+"geldiğinden emin olun.[/b]\n"
+"\n"
+"Ayrıca, bu oyunları oynarken bilet de verilmeyecektir."
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid ""
+"[center][b]Need Some Help?[/b][/center]\n"
+"\n"
+"Looks like it's your first time playing, you should probably [b]take a look at the tutorial[/b] first. You can access it anytime by clicking the [b]\"?\"[/b] button on the bottom-left."
+msgstr ""
+"[center][b]Yardıma mı İhtiyacınız Var?[/b][/center]\n"
+"\n"
+"Görünüşe göre bu, oyunu ilk kez oynuyorsunuz. Öncelikle [b]eğitime bir göz "
+"atmalısınız[/b]. Eğitime, sol alt köşedeki [b]”?”[/b] butonuna tıklayarak "
+"istediğiniz zaman erişebilirsiniz."
+
+#: places/arcade_machine/arcade_machine.gd
+#: places/lobby/lobby.gd
+#: places/lobby/buy_menu/buy_menu.gd
+msgid "Coming Soon"
+msgstr "Yakında"
+
+#: places/arcade_machine/arcade_machine.gd
+msgid "An error occured while attempting to load the nanogame \"%s\", likely caused by it not being properly configured."
+msgstr ""
+"“%s” nano oyun'u yüklenirken bir hata oluştu, muhtemelen düzgün bir şekilde "
+"yapılandırılmadığı için."
+
+#: places/arcade_machine/arcade_machine.gd
+msgid ""
+"\n"
+"\n"
+"Please open a bug report in the [url=%s]issue tracker[/url]."
+msgstr ""
+"\n"
+"\n"
+"Lütfen [url=%s]hata izleyicisinden[/url] bir hata raporu açın."
+
+#: places/arcade_machine/arcade_machine.gd
+msgid ""
+"\n"
+"\n"
+"[b]Do not open a bug report in the issue tracker[/b], this is a community nanogame, so the bug should be reported to its creator(s). Check the nanogame's \"About\" information."
+msgstr ""
+"\n"
+"\n"
+"[b]Hata izleyicisinden[/b] bir hata raporu açmayın, bu bir topluluk yapımı "
+"nano oyun’dur, bu nedenle hata, oluşturucu(lar)ına bildirilmelidir. Nano "
+"oyun’un “Hakkında” bilgilerini kontrol edin."
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Difficulty"
+msgstr "Zorluk"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Speed"
+msgstr "Hız"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Energy"
+msgstr "Enerji"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Score:"
+msgstr "Skor:"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Pause the nanogame."
+msgstr "Nano Oyun'u durdur."
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Paused"
+msgstr "Durduruldu"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Continue"
+msgstr "Devam"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Stop"
+msgstr "Durdur"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "[No Name]"
+msgstr "[İsim Yok]"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "[No Kickoff]"
+msgstr "[Başlama Yok]"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "Input: %s"
+msgstr "Girdi: %s"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[No Description]"
+msgstr "[Açıklama Yok]"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Starting"
+msgstr "Başlıyor"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Victory!"
+msgstr "Zafer!"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Failure!"
+msgstr "Başarısızlık!"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Up Next:"
+msgstr "Sıradaki:"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+msgid "Timer:"
+msgstr "Zamanlayıcı:"
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Game Over"
+msgstr "Oyun Bitti"
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+#: places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn
+msgid "Search"
+msgstr "Ara"
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Filter"
+msgstr "Filtre"
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid ""
+"Select random nanogames based on filtered results.\n"
+"Available spots will be taken, but if it's full, everything\n"
+"is randomized."
+msgstr ""
+"Filtrelenmiş sonuçlara dayalı olarak rastgele nano oyunlar seçin. \n"
+"Mevcut yerler alınacak, ancak eğer doluysa, her şey \n"
+"rastgele olacaktır."
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Go to first page."
+msgstr "İlk sayfaya git."
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Go to previous page."
+msgstr "Önceki sayfaya git."
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Go to next page."
+msgstr "Sıradaki sayfaya git."
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Go to last page."
+msgstr "Son sayfaya git."
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid ""
+"[center][b]Search Help[/b][/center]\n"
+"\n"
+"[b]•[/b] Nanogames will be filtered from the keywords typed. A result is valid if the name, kickoff, tags, or author matches it.\n"
+"\n"
+"[b]•[/b] Multiple keywords can be used by separating words with \"[b],[/b]\". Any result that contains at least one of them will be valid by default.\n"
+"\n"
+"[b]•[/b] Putting \"[b]-[/b]\" at the start of a keyword will make results containing it be ignored.\n"
+"\n"
+"[b]•[/b] Putting \"[b]*[/b]\" at the start of a keyword will make so that all results must contain it to be valid."
+msgstr ""
+"[center][b]Arama Yardımı[/b][/center]\n"
+"\n"
+"[b]•[/b] Nano oyunlar, yazılan anahtar kelimelerden filtrelenecektir. Bir "
+"sonuç, adı, başlangıcı, etiketleri veya yazar ile eşleşiyorsa geçerli kabul "
+"edilir.\n"
+"\n"
+"[b]•[/b] Birden fazla anahtar kelime, kelimeleri “[b],[/b]” ile ayırarak "
+"kullanılabilir. En az birini içeren her sonuç varsayılan olarak geçerli "
+"olacaktır.\n"
+"\n"
+"[b]•[/b] Bir anahtar kelimenin başına “[b]-[/b]” koymak, o anahtar kelimeyi "
+"içeren sonuçların göz ardı edilmesini sağlar.\n"
+"\n"
+"[b]•[/b] Bir anahtar kelimenin başına “[b]*[/b]” koymak, tüm sonuçların "
+"geçerli olması için o anahtar kelimeyi içermesi gerektiği anlamına gelir."
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+msgid "Inputs"
+msgstr "Girdiler"
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+msgid "Timers"
+msgstr "Zamanlayıcılar"
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+#: places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn
+msgid "No nanogames found."
+msgstr "Hiç Nano Oyun bulunamadı."
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+msgid "No nanogames available."
+msgstr "Mevcut nano oyun yok."
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+msgid ""
+"Place them in the \"[url=%s]%s[/url]\" directory,\n"
+"then restart the game."
+msgstr ""
+"Onları “[url=%s]%s[/url]” dizinine yerleştirin,\n"
+"ardından oyunu yeniden başlatın."
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid ""
+"The practice mode lets your sharpen your skills on a particular nanogame, without needing to worry about energy points.\n"
+"\n"
+"Be aware that tickets will not be given, and statistics will not be updated."
+msgstr ""
+"Pratik modu, belirli bir nano oyunda becerilerinizi geliştirmenizi sağlar ve "
+"enerji puanları hakkında endişelenmenize gerek kalmaz.\n"
+"\n"
+"Bilet verilmeyeceğini ve istatistiklerin güncellenmeyeceğini unutmayın."
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid "Choose Start Difficulty"
+msgstr "Başlangıç Zorluğunu Seçin"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid "Difficulty 1"
+msgstr "1. Zorluk"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid "Difficulty 2"
+msgstr "2. Zorluk"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid "Difficulty 3"
+msgstr "3. Zorluk"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "Practice Mode"
+msgstr "Pratik Modu"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "\"%s\""
+msgstr "\"%s\""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+#: places/lobby/about_modal/about_modal.gd
+msgid "By %s"
+msgstr "%s tarafından"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "[No Author]"
+msgstr "[Yazar Yok]"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/lobby/about_modal/about_modal.gd
+msgid "Source"
+msgstr "Kaynak"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[No Source]"
+msgstr "[Kaynak Yok]"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Input:[/b] %s"
+msgstr "[b]Giriş:[/b] %s"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Timer:[/b] %s"
+msgstr "[b]Zamanlayıcı:[/b] %s"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Tags:[/b] %s"
+msgstr "[b]Etiketler:[/b] %s"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[None]"
+msgstr "[Hiçbiri]"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Code License:[/b] %s"
+msgstr "[b]Kod Lisansı:[/b] %s"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Assets License:[/b] %s"
+msgstr "[b]Varlık Lisansı:[/b] %s"
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "No third-party resources used."
+msgstr "Üçüncü taraf kaynak kullanılmadı."
+
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "Timer: %s"
+msgstr "Zamanlayıcı: %s"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Best Scores"
+msgstr "En İyi Skorlar"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "1º:"
+msgstr "1º:"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "2º:"
+msgstr "2º:"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "3º:"
+msgstr "3º:"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "4º:"
+msgstr "4º:"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "5º:"
+msgstr "5º:"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "6º:"
+msgstr "6º:"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Nanogames Played"
+msgstr "Oynanan Nano Oyunlar"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Total:"
+msgstr "Toplam:"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Won / Lost:"
+msgstr "Kazanan / Kaybedilen:"
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Best Win Streak:"
+msgstr "En İyi Kazanma Serisi:"
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"[b]Welcome to Librerama![/b] This tutorial will show you the basics on how play your nanogames (our special nickname for \"mini-games\").\n"
+"\n"
+"[b]Use the buttons below to navigate between pages[/b], and let's get started!"
+msgstr ""
+"[b]Librerama’ya Hoş Geldiniz![/b] Bu eğitim, nano oyunlarınızı (mini oyunlar "
+"için özel lakabımız) nasıl oynayacağınıza dair temel bilgileri gösterecek.\n"
+"\n"
+"[b]Sayfalar arasında gezinmek için aşağıdaki butonları kullanın[/b], ve "
+"başlayalım!"
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"When you press the [b]\"Play\"[/b] button, this screen will appear. Here you will [b]pick the nanogames you want to play[/b] (all boxes on the right need to be filled), then press the top-right button to begin.\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/selecting_nanogames.png[/img][/center]"
+msgstr ""
+"[b]“Oyna”[/b] butonuna bastığınızda, bu ekran açılacaktır. Burada [b]oynamak "
+"istediğiniz nano oyunları seçeceksiniz[/b] (sağdaki tüm kutular "
+"doldurulmalıdır), ardından başlamak için sağ üstteki butona basın.\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/selecting_nanogames"
+".png[/img][/center]"
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"Now the game truly begins! Each time [b]you will be shown what nanogame is coming next and its objective[/b]. The nanogames only last for a few seconds, so you need to think on your feet!\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/kickoff.png[/img][/center]"
+msgstr ""
+"Artık oyun gerçekten başlıyor! Her seferinde [b]hangi nano oyunun geleceğini "
+"ve amacını göreceksiniz[/b]. Nano oyunlar sadece birkaç saniye sürer, bu "
+"yüzden hızlı düşünmeniz gerekiyor!\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/kickoff."
+"png[/img][/center]"
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"After winning (or losing) a nanogame, keep an eye at those indicators on the top. They indicate respectively: the [b]difficulty[/b], [b]speed[/b], and [b]energy[/b].\n"
+"\n"
+"Difficulty and speed increase as you win nanogames, and that means higher scores. Speed and energy decrease when you lose nanogames, and [b]if your energy reaches 0, the game is over[/b].\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/status_indicators.png[/img][/center]"
+msgstr ""
+"Bir nano oyunu kazandıktan (ya da kaybettikten) sonra, üstteki göstergelere "
+"dikkat edin. Bu göstergeler sırasıyla: [b]zoruluk[/b], [b]hız[/b] ve "
+"[b]enerji[/b] durumunu gösterir.\n"
+"\n"
+"Zorluk ve hız, nano oyunları kazandıkça artar ve bu daha yüksek puanlar "
+"anlamına gelir. Hız ve enerji, nano oyunları kaybettiğinizde azalır ve [b]"
+"eğer enerjiniz 0’a ulaşırsa, oyun sona erer[/b].\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/status_indicators."
+"png[/img][/center]"
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"Once the inevitable happens and you get a game over (or just quit), [b]your score will be converted into tickets[/b]. They can be used to buy lots of stuff, including more nanogames for you to play!\n"
+"\n"
+"So what are you waiting for? [b]Go play some nanogames![/b]\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/ending.png[/img][/center]"
+msgstr ""
+"İşte kaçınılmaz olan gerçekleştiğinde ve bir oyun sona erdiğinde (ya da "
+"sadece çıktığınızda), [b]puanınız biletlerle değiştirilir[/b]. Bu biletler, "
+"oynayabileceğiniz daha fazla nano oyun da dahil olmak üzere birçok şeyi "
+"satın almak için kullanılabilir!\n"
+"\n"
+"O halde neyi bekliyorsunuz? [b]Hadi birkaç nano oyunu oynayın![/b]\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/ending."
+"png[/img][/center]"
+
+#: places/intro/intro.gd
+msgid ""
+"[center][b]THIS IS A WORK IN PROGRESS![/b][/center]\n"
+"\n"
+"It's unfinished, has a very small catalog of nanogames, and it's rough around the edges. Please take this into consideration before judging it.\n"
+"\n"
+"...\n"
+"You are going to ignore everything I just wrote, aren’t you?"
+msgstr ""
+"[center][b]BU BİR GELİŞİM AŞAMASIDIR![/b][/center]\n"
+"\n"
+"Tamamlanmamıştır, çok küçük bir nano oyun kataloğuna sahiptir ve bazı "
+"yerlerde eksik veya pürüzlüdür. Lütfen bunu değerlendirmeden önce göz önünde "
+"bulundurun.\n"
+"\n"
+"…\n"
+"Şimdi, yazdıklarımı tamamen göz ardı edeceksiniz, değil mi?"
+
+#: places/intro/intro.gd
+msgid ""
+"[center][b]Can't Access User Data Directory![/b][/center]\n"
+"\n"
+"The user data directory is non-persistent, this means that [b]saving data will not be possible[/b]."
+msgstr ""
+"[center][b]Kullanıcı Veri Dizinine Erişim Sağlanamıyor![/b][/center]\n"
+"\n"
+"Kullanıcı veri dizini kalıcı değildir; bu, [b]veri kaydetmenin mümkün "
+"olmayacağı[/b] anlamına gelir."
+
+#: places/intro/intro.gd
+msgid "Make sure that you have third-party cookies enabled and that you're not in privacy mode."
+msgstr ""
+"Üçüncü taraf çerezlerinin etkin olduğundan ve gizlilik modunda "
+"olmadığınızdan emin olun."
+
+#: places/lobby/lobby.tscn
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Buy"
+msgstr "Satın Al"
+
+#: places/lobby/lobby.tscn
+msgid "Talk"
+msgstr "Konuş"
+
+#: places/lobby/lobby.tscn
+#: places/lobby/lobby.gd
+msgid "Arcade"
+msgstr "Oyun Salonu"
+
+#: places/lobby/lobby.tscn
+msgid "Backpack"
+msgstr "Sırt Çantası"
+
+#: places/lobby/lobby.tscn
+msgid "Quit"
+msgstr "Çıkış Yap"
+
+#: places/lobby/lobby.tscn
+msgid "About"
+msgstr "Hakkında"
+
+#: places/lobby/lobby.gd
+msgid "Locked"
+msgstr "Kilitli"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "A free/libre fast-paced arcade collection of mini-games."
+msgstr "Ücretsiz/özgür, hızlı tempolu bir mini oyunlar koleksiyonu."
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "This program is [url=%s]free software[/url]: you can redistribute it and/or modify it under the terms of the [url=%s]GNU General Public License[/url] as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version."
+msgstr ""
+"Bu program [url=%s]ücretsiz yazılımdır[/url]: bunu, Free Software Foundation "
+"tarafından yayımlanan [url=%s]GNU Genel Kamu Lisansı[/url] şartları altında "
+"yeniden dağıtabilir ve/veya değiştirebilirsiniz; lisansın 3. sürümü veya ("
+"seçiminize bağlı olarak) herhangi bir sonraki sürüm."
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "The source code and assets can be found in its [url=%s]repository[/url]."
+msgstr "Kaynak kodu ve varlıklar [url=%s]depo[/url] içinde bulunabilir."
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Librerama is not just free as in [i]freedom[/i], but also free as in [i]free of charge[/i], so donations are very much welcomed!"
+msgstr ""
+"Librerama sadece [i]özgürlük[/i] anlamında değil, aynı zamanda [i]ücret "
+"talep etmeyen[/i] anlamında da ücretsizdir, bu yüzden bağışlarınız çok "
+"memnuniyetle karşılanır!"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "You can donate to me via [url=%s]Liberapay[/url]. The money will be used to help me put more work not just into this game, but also my general work in free/libre gaming."
+msgstr ""
+"Bana [url=%s]Liberapay[/url] aracılığıyla bağış yapabilirsiniz. Bu para, "
+"yalnızca bu oyuna değil, aynı zamanda ücretsiz/özgür oyun alanındaki genel "
+"çalışmalarımı desteklemek için kullanılacaktır."
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "The wonderful people listed below offered sizable contributions to the game. Make sure to check them out."
+msgstr ""
+"Aşağıda listelenen harika insanlar, oyuna önemli katkılarda bulundular. "
+"Onları kontrol etmeyi unutmayın."
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Music"
+msgstr "Müzik"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "• %s: "
+msgstr "• %s: "
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Arcade Menu Theme and Jingles"
+msgstr "Oyun Salonu Menü Teması ve Melodiler"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Translation"
+msgstr "Çeviri"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Dutch"
+msgstr "Hollandalı"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "German"
+msgstr "Alman"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Portuguese, Brazil"
+msgstr "Portekiz, Brezilya"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Spanish"
+msgstr "İspanyolca"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "• %s"
+msgstr "• %s"
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "For the licenses of the third-party components used by the nanogames themselves, check their respective \"About\" information."
+msgstr ""
+"Nano oyunların kendilerinde kullanılan üçüncü taraf bileşenlerinin "
+"lisansları için, ilgili “Hakkında” bilgilerine bakın."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This hopes that the time you've currently spent was enjoyable!"
+msgstr "Umarım şu ana kadar geçirdiğiniz zaman keyifli olmuştur!"
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This is programmed to be happy in helping you at any time!"
+msgstr ""
+"Bu, size her zaman yardımcı olmaktan mutlu olacak şekilde programlanmıştır!"
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "Remember to take breaks from time to time, about [color=#46323232][i]print(SUGGESTED_TIME)[/i][/color] [color=#c35e5e][shake rate=5 level=10]ERROR: Value is NaN.[/shake][/color] minutes is ideal."
+msgstr ""
+"Ara sıra, yaklaşık [color=#46323232][i]print(SUGGESTED_TIME)[/i][/color] "
+"[color=#c35e5e][shake rate=5 level=10]HATA: Değer NaN.[/shake][/color] "
+"dakika kadar mola vermeyi unutmayın; bu idealdir."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This also accepts rudeness as input for feedback. Thank you!"
+msgstr ""
+"Bu, geri bildirim için kabalığı da girdi olarak kabul etmektedir. Teşekkür "
+"ederim!"
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"[color=#46323232][i]if not clients.has(client_new):\n"
+"\twelcome_new()[/i][/color]\n"
+"Welcome to the Librerama arcade, new customer! This will be your attendant for today."
+msgstr ""
+"[color=#46323232][i]if not clients.has(client_new):\n"
+"\twelcome_new()[/i][/color]\n"
+"Librerama oyun salonuna hoş geldiniz, yeni müşteri! Bugün size yardımcı "
+"olacak olan budur."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This is replacing our usual staff due to [color=#46323232][i]print(REPLACEMENT_REASON)[/i][/color] [color=#c35e5e][shake rate=5 level=10]ERROR: Value is Null.[/shake][/color]"
+msgstr ""
+"Bu, [color=#46323232][i]print(REPLACEMENT_REASON)[/i][/color] "
+"[color=#c35e5e][shake rate=5 level=10]HATA: Değer Null.[/shake][/color] "
+"nedeniyle mevcut personelimizi değiştirmektedir."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "We have a selection of multiple nanogames (mini-games) for you to enjoy, each a challenge of their own."
+msgstr ""
+"Keyif almanız için birçok nano oyun (mini oyun) seçeneğimiz var; her biri "
+"kendi zorluğuna sahip."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "You'll be given completely free of charge [color=#46323232][i]print(nanogame_count)[/i][/color] [b]6[/b] nanogames to start with."
+msgstr ""
+"Size tamamen ücretsiz olarak "
+"[color=#46323232][i]print(nanogame_count)[/i][/color] [b]6[/b] nano oyun "
+"verilecektir."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "More nanogames and other niceties can be acquired through this at any time (extra costs apply)."
+msgstr ""
+"Daha fazla nano oyun ve diğer güzellikler, bunun aracılığıyla herhangi bir "
+"zamanda edinilebilir (ek ücretler uygulanır)."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "Please direct yourself to one of our arcade machines, so we can begin the [b][wave freq=3][rainbow freq=0.4]F U N[/rainbow][/wave][/b]!"
+msgstr ""
+"Lütfen oyun makinelerimizden birine yönelin, böylece [b][wave freq=3]["
+"rainbow freq=0.4]E N J O Y[/rainbow][/wave][/b]’e başlayabiliriz!"
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "Comeback whenever your [b][wave freq=3][rainbow freq=0.4]F U N[/rainbow][/wave][/b] needs a recharge!"
+msgstr ""
+"İhtiyacın olduğunda [b][wave freq=3][rainbow freq=0.4]E N E R J "
+"İ[/rainbow][/wave][/b] yenilemek için geri dönebilirsin!"
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This hopes its service were of decent quality."
+msgstr "Bu, hizmetinin makul kalitede olduğunu umuyor."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "Let the [b][wave freq=3][rainbow freq=0.4]F U N[/rainbow][/wave][/b] procedure commence!"
+msgstr ""
+"[b][wave freq=3][rainbow freq=0.4]E N E R J İ[/rainbow][/wave][/b] süreci "
+"başlasın!"
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This hopes you enjoy the new [color=#46323232][i]print(product_name)[/i][/color] [color=#c35e5e][shake rate=5 level=10]ERROR: Value is Int.[/shake][/color] you purchased!"
+msgstr ""
+"Bu, satın aldığın yeni [color=#46323232][i]print(product_name)[/i][/color] "
+"[color=#c35e5e][shake rate=5 level=10]HATA: Değer tam sayı.[/shake][/color] "
+"ile ilgili umarız keyif alırsın!"
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"[color=#46323232][ [color=#98fb98]OK[/color] ] Started System.\n"
+"[ [color=#98fb98]OK[/color] ] Loaded Dialog.[/color]\n"
+"Hello there, dear customer! This will be your attendant for today."
+msgstr ""
+"[color=#46323232][ [color=#98fb98]TAMAM[/color] ] Sistemi Başlattı.\n"
+"[ [color=#98fb98]TAMAM[/color] ] Diyalog Yüklendi.[/color]\n"
+"Merhaba, değerli müşteri! Bugün size yardımcı olacak olan benim."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This is programmed to inform and remind you that [b]Librerama[/b] is [b]free software[/b]."
+msgstr ""
+"Bu, size [b]Librerama[/b]’nın [b]ücretsiz bir yazılım[/b] olduğunu bildirmek "
+"ve hatırlatmak üzere programlanmıştır."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"This means that its code and assets can be:\n"
+"[b]0.[/b] Used for any purpose.\n"
+"[b]1.[/b] Studied and changed.\n"
+"[b]2.[/b] Copied and redistributed.\n"
+"[b]3.[/b] Further improved."
+msgstr ""
+"Bu, kodunun ve varlıklarının şu şekilde kullanılabileceği anlamına gelir:\n"
+"[b]0.[/b] Herhangi bir amaç için kullanılabilir.\n"
+"[b]1.[/b] İncelenip değiştirilebilir.\n"
+"[b]2.[/b] Kopyalanıp dağıtılabilir.\n"
+"[b]3.[/b] Daha da geliştirilebilir."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "Said code and assets can be viewed and acquired in its [url=https://codeberg.org/Librerama/librerama]online repository[/url]."
+msgstr ""
+"Bu kod ve varlıklar, [url=https://codeberg.org/Librerama/librerama]çevrimiçi "
+"deposunda[/url] görüntülenebilir ve edinilebilir."
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"[color=#46323232]if clients.has(client_new):\n"
+"\twelcome()[/color]\n"
+"Welcome once again to the Librerama arcade, dear customer! This will be your attendant for today."
+msgstr ""
+"[color=#46323232]if clients.has(client_new):\n"
+"\twelcome()[/color]\n"
+"Bir kez daha Librerama oyun salonuna hoş geldiniz, değerli müşteri! Bugün "
+"size yardımcı olacak olan benim."
+
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Nanogames"
+msgstr "Nano Oyunlar"
+
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Prizes"
+msgstr "Ödüller"
+
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Themes"
+msgstr "Temalar"
+
+#: places/lobby/buy_menu/buy_menu.gd
+msgid ""
+"[center][b]Confirm Purchase[/b][/center]\n"
+"\n"
+"Do you want to buy [b]\"%s\"[/b] for the price of [b]%d[/b] tickets? This will leave you with [b]%s[/b] tickets to spare."
+msgstr ""
+"[center][b]Satın Alma Onayı[/b][/center]\n"
+"\n"
+"[b]”%s”[/b]Ürününü [b]%d[/b] bilet karşılığında satın almak istiyor musunuz? "
+"Bu, size [b]%s[/b] bilet bırakacak."
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Buy a Random Nanogame"
+msgstr "Rastgele bir nano oyun satın al"
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "For those who aren't picky."
+msgstr "Seçici olmayanlar için."
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Cost: [b]%d[/b]"
+msgstr "Maliyet: [b]%d[/b]"
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Buy a Type of Nanogame"
+msgstr "Bir tür nano oyun satın al"
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Everybody has a type, you know?"
+msgstr "Herkesin bir türü vardır, değil mi?"
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Buy a Specific Nanogame"
+msgstr "Spesifik bir nano oyun satın al"
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "But I want THAT one!"
+msgstr "Ama ben ONU istiyorum!"
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "A Random Nanogame"
+msgstr "Rastgele Bir Nano Oyun"
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "A Type of Nanogame"
+msgstr "Bir Tür Nano Oyun"
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+msgid "Input:"
+msgstr "Girdi:"
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Navigation"
+msgstr "Navigasyon"
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Action"
+msgstr "Aksiyon"
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Navigation and Action"
+msgstr "Navigasyon ve Eylem"
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Drag and Drop"
+msgstr "Tut ve Bırak"
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Objective"
+msgstr "Amaç"
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Survival"
+msgstr "Hayatta Kalma"
+
+#: nanogames/swatter_swindler/nanogame.json
+msgid "Swatter Swindler"
+msgstr "Sinek Avcısı Dolandırıcı"
+
+#: nanogames/swatter_swindler/nanogame.json
+msgid "Finding difficult to hit the target when swatting flies? Then be the little nuisance for a change, and fly around to avoid the incoming swatter. Wait, this place feels kinda familiar."
+msgstr ""
+"Sinekleri avlarken hedefi tutturmakta zorlanıyor musun? O halde bir "
+"değişiklik yap ve sinek gibi etrafta uçarak yaklaşan sineklikten kaç. Dur, "
+"bu yer bir şekilde tanıdık geliyor."
+
+#: nanogames/swatter_swindler/nanogame.json
+msgid "Fly"
+msgstr "Sinek"
+
+#: modals/settings_modal/translation_extract.json
+msgid "Bottom Action"
+msgstr "Alt Eylem"
+
+#: modals/settings_modal/translation_extract.json
+msgid "Down"
+msgstr "Aşağı"
+
+#: modals/settings_modal/translation_extract.json
+msgid "D-pad Down"
+msgstr "Aşağı Yön Tuşu"
+
+#: modals/settings_modal/translation_extract.json
+msgid "D-pad Left"
+msgstr "Sol Yön Tuşu"
+
+#: modals/settings_modal/translation_extract.json
+msgid "D-pad Right"
+msgstr "Sağ Yön Tuşu"
+
+#: modals/settings_modal/translation_extract.json
+msgid "D-pad Up"
+msgstr "Yukarı Yön Tuşu"
+
+#: modals/settings_modal/translation_extract.json
+msgid "Left"
+msgstr "Sol"
+
+#: modals/settings_modal/translation_extract.json
+msgid "Left Action"
+msgstr "Sol Eylem"
+
+#: modals/settings_modal/translation_extract.json
+msgid "Right"
+msgstr "Sağ"
+
+#: modals/settings_modal/translation_extract.json
+msgid "Right Action"
+msgstr "Sağ Eylem"
+
+#: modals/settings_modal/translation_extract.json
+msgid "Top Action"
+msgstr "Yukarı Eylem"
+
+#: modals/settings_modal/translation_extract.json
+msgid "Up"
+msgstr "Yukarı"
+
+#: nanogame_player/translation_extract.json
+msgid "Non-Free"
+msgstr "Sabit Olmayan"
+
+#: nanogame_player/translation_extract.json
+msgid "Public Domain"
+msgstr "Halka Açık Alan Adı"
+
+#: nanogame_player/translation_extract.json
+msgid "Unknown"
+msgstr "Bilinmeyen"

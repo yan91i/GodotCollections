@@ -1,0 +1,39 @@
+{
+    "name": "Papercuts",
+    "kickoff": "CUTOUT!",
+    "description": "How about letting your inner child artist express themselves by cutting a piece of paper into something barely recognizable? So grab a pair of scissors and get crafty! Just try to avoid running with them, alright?",
+    "author": "Librerama",
+    "input": "DRAG_DROP",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Crafts,Precision",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/papercuts",
+    "thirdParty": [
+        {
+            "name": "014-bad_news",
+            "author": "wertstahl",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/wertstahl/sounds/409269/"
+        },
+        {
+            "name": "Stationery_01",
+            "author": "OwlishMedia",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/202-more-sound-effects"
+        },
+        {
+            "name": "Buy something!",
+            "author": "Cleyton Kauffman",
+            "license": "CC_BY_SA_3",
+            "source": "https://opengameart.org/content/shop-theme"
+        },
+        {
+            "name": "Win 02",
+            "author": "Andy Rhode",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/rhodesmas/sounds/320775/"
+        }
+    ]
+}

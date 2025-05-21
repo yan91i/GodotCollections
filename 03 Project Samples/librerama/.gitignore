@@ -1,0 +1,11 @@
+# Godot
+.godot/
+addons/*
+
+# Librerama
+_export/*
+!_export/.gdignore
+!addons/editor_plugins/
+
+# GNU/Linux
+*.directory

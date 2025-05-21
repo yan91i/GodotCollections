@@ -1,0 +1,39 @@
+{
+    "name": "Gem Enchantment",
+    "kickoff": "ENCHANT!",
+    "description": "The gems of Katrak, follow the pattern to make them reveal their true magic power and- No, for the last time, grandpa, those are NOT demonic symbols!",
+    "author": "Librerama",
+    "input": "DRAG_DROP",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Magic,Match,Memory",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/gem_enchantment",
+    "thirdParty": [
+        {
+            "name": "Ancestral Magic",
+            "author": "Tausdei",
+            "license": "CC_BY_4",
+            "source": "https://opengameart.org/content/ancestral-magic"
+        },
+        {
+            "name": "Fantasy_ui_Button_6",
+            "author": "ZenithInfinitiveStudios",
+            "license": "CC0",
+            "source": "https://freesound.org/people/ZenithInfinitiveStudios/sounds/376748/"
+        },
+        {
+            "name": "Pencil Scribbles",
+            "author": "chancelombardo",
+            "license": "CC0",
+            "source": "https://freesound.org/people/chancelombardo/sounds/412155/"
+        },
+        {
+            "name": "the voice of light",
+            "author": "Taira Komori",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/Taira%20Komori/sounds/214047/"
+        }
+    ]
+}

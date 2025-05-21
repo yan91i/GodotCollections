@@ -1,0 +1,39 @@
+{
+    "name": "Neo Highway",
+    "kickoff": "DODGE!",
+    "description": "The future is now, old man! Get in your hover car and drive away in the neo highway. Just be aware of your fellow drivers, which are so reckless that you could swear they are aiming at you.",
+    "author": "Librerama",
+    "input": "NAVIGATION",
+    "inputModifier": "VERTICAL",
+    "timer": "SURVIVAL",
+    "tags": "Car,City,Future",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/neo_highway",
+    "thirdParty": [
+        {
+            "name": "On My Way",
+            "author": "DeltaBreaker",
+            "license": "CC_BY_4",
+            "source": "https://opengameart.org/content/on-my-way-8-bit-loop"
+        },
+        {
+            "name": "sfx_exp_medium3",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        },
+        {
+            "name": "sfx_lowhealth_alarmloop6",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        },
+        {
+            "name": "sfx_sounds_falling11",
+            "author": "Juhani Junkala",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/512-sound-effects-8-bit-style"
+        }
+    ]
+}

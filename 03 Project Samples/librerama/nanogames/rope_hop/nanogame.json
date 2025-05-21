@@ -1,0 +1,27 @@
+{
+    "name": "Rope Hop",
+    "kickoff": "JUMP!",
+    "description": "What a better combination than rope jumping and the freestyle dancing of hip hop? Just worry about the rope first, but get ready for some challengers later.",
+    "author": "Librerama",
+    "input": "NAVIGATION_ACTION",
+    "inputModifier": "HORIZONTAL",
+    "timer": "SURVIVAL",
+    "tags": "Hip Hop,Jump Rope",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/rope_hop",
+    "thirdParty": [
+        {
+            "name": "Itchy",
+            "author": "alleycat",
+            "license": "CC_BY_4",
+            "source": "https://opengameart.org/content/itchy"
+        },
+        {
+            "name": "Jacket/Cloth Rustle 4",
+            "author": "brandondelehoy",
+            "license": "CC0",
+            "source": "https://freesound.org/people/brandondelehoy/sounds/494788/"
+        }
+    ]
+}

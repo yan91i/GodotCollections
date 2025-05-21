@@ -1,0 +1,389 @@
+[gd_scene load_steps=25 format=3 uid="uid://bstyul0dwc1h"]
+
+[ext_resource type="Script" path="res://places/arcade_machine/arcade_machine.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bsk3gcmo2ybty" path="res://places/arcade_machine/statistics/statistics.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://b5frslx0xhpxc" path="res://modals/modal/modal.tscn" id="5"]
+[ext_resource type="Theme" uid="uid://bo8hqd7sq8q2o" path="res://themes/arcade/theme_default.tres" id="6"]
+[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="8"]
+[ext_resource type="Texture2D" uid="uid://dqp4cehf3qpca" path="res://places/arcade_machine/_assets/logo.svg" id="10"]
+[ext_resource type="Texture2D" uid="uid://dlsd3x8fyubea" path="res://places/arcade_machine/_assets/background.svg" id="11"]
+[ext_resource type="PackedScene" uid="uid://dvn0ccbgksfbn" path="res://places/arcade_machine/nanogame_hud/nanogame_hud.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://dhw0p5o4kjvfm" path="res://places/arcade_machine/nanogame_collection/nanogame_collection.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://cdefamk8oiv45" path="res://nanogame_player/nanogame_player.tscn" id="14"]
+[ext_resource type="Texture2D" uid="uid://log4u1l5ccxu" path="res://places/_assets/ticket.svg" id="15"]
+[ext_resource type="PackedScene" uid="uid://b00ndcy4og3ig" path="res://modals/settings_modal/settings_modal.tscn" id="15_iwtik"]
+[ext_resource type="Texture2D" uid="uid://5et01c4w7eab" path="res://themes/_assets/back.svg" id="16"]
+[ext_resource type="Texture2D" uid="uid://dui7ibkvpcq02" path="res://places/arcade_machine/_assets/help.svg" id="17"]
+[ext_resource type="AudioStream" uid="uid://d0kcrcoq67tme" path="res://places/arcade_machine/_assets/music.ogg" id="18"]
+[ext_resource type="Texture2D" uid="uid://bg3e0rjdhp0dl" path="res://places/arcade_machine/_assets/play.svg" id="19"]
+[ext_resource type="AudioStream" uid="uid://dfdshanclxkcl" path="res://places/arcade_machine/_assets/menu_noise.wav" id="20"]
+[ext_resource type="PackedScene" uid="uid://c7bsjh2hispi1" path="res://places/arcade_machine/tutorial/tutorial.tscn" id="22"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("8")
+shader_parameter/direction_speed = Vector2(0, -0.5)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+
+[sub_resource type="CanvasItemMaterial" id="2"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_2qvxh"]
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0.784314, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vfe5f"]
+gradient = SubResource("Gradient_2qvxh")
+width = 32
+
+[sub_resource type="ParticleProcessMaterial" id="5"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 360, 1)
+angle_max = 360.0
+spread = 10.0
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_vfe5f")
+anim_offset_max = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="6"]
+
+[node name="ArcadeMachine" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("6")
+script = ExtResource("2")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="NanogamePlayer" parent="." instance=ExtResource("14")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+yield_nanogame_swapping = true
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("1")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("11")
+stretch_mode = 1
+
+[node name="IconParticles" type="Control" parent="."]
+anchors_preset = 0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+metadata/_edit_group_ = true
+
+[node name="Left" type="GPUParticles2D" parent="IconParticles"]
+material = SubResource("2")
+position = Vector2(-100, 0)
+emitting = false
+process_material = SubResource("5")
+lifetime = 6.0
+visibility_rect = Rect2(100, -360, 550, 720)
+local_coords = true
+
+[node name="Anchor" type="Control" parent="IconParticles"]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="Right" type="GPUParticles2D" parent="IconParticles/Anchor"]
+material = SubResource("2")
+position = Vector2(100, 0)
+rotation = 3.14159
+emitting = false
+process_material = SubResource("5")
+lifetime = 6.0
+visibility_rect = Rect2(100, -360, 550, 720)
+local_coords = true
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="MainMenu"]
+layout_mode = 2
+texture = ExtResource("10")
+stretch_mode = 5
+
+[node name="Main" type="GridContainer" parent="MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 80
+columns = 2
+
+[node name="Play" type="PanelContainer" parent="MainMenu/Main"]
+layout_mode = 2
+
+[node name="Contents" type="VBoxContainer" parent="MainMenu/Main/Play"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainMenu/Main/Play/Contents"]
+layout_mode = 2
+text = "Play"
+horizontal_alignment = 1
+
+[node name="Quickplay" type="Button" parent="MainMenu/Main/Play/Contents"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonPositive"
+disabled = true
+text = "Quickplay"
+
+[node name="Collection" type="Button" parent="MainMenu/Main/Play/Contents"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_type_variation = &"ButtonPositive"
+text = "Collection"
+clip_text = true
+
+[node name="Other" type="VBoxContainer" parent="MainMenu/Main"]
+layout_mode = 2
+
+[node name="Customize" type="Button" parent="MainMenu/Main/Other"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Customize"
+
+[node name="Statistics" type="Button" parent="MainMenu/Main/Other"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Statistics"
+clip_text = true
+
+[node name="Settings" type="Button" parent="MainMenu/Main/Other"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "Settings"
+clip_text = true
+
+[node name="BackLobby" type="Button" parent="MainMenu"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ButtonNegative"
+text = "Back to Lobby"
+clip_text = true
+
+[node name="SubmenuContext" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+
+[node name="TopBar" type="HBoxContainer" parent="SubmenuContext"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="SubmenuContext/TopBar"]
+layout_mode = 2
+tooltip_text = "Go back."
+icon = ExtResource("16")
+
+[node name="Title" type="Label" parent="SubmenuContext/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelTitle"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="SubmenuContext/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Start playing."
+theme_type_variation = &"ButtonPositive"
+disabled = true
+icon = ExtResource("19")
+
+[node name="Submenus" type="TabContainer" parent="SubmenuContext"]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("6")
+current_tab = 0
+tabs_visible = false
+
+[node name="NanogameCollection" parent="SubmenuContext/Submenus" instance=ExtResource("13")]
+auto_translate_mode = 1
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Statistics" parent="SubmenuContext/Submenus" instance=ExtResource("4")]
+auto_translate_mode = 1
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Tutorial" parent="SubmenuContext/Submenus" instance=ExtResource("22")]
+auto_translate_mode = 1
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Tickets" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 170.0
+offset_bottom = 80.0
+tooltip_text = "Ticket quantity."
+
+[node name="Icon" type="TextureRect" parent="Tickets"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("15")
+
+[node name="Quantity" type="Label" parent="Tickets"]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"LabelBold"
+text = "0"
+
+[node name="Gain" type="Label" parent="Tickets/Quantity"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 45.0
+theme_type_variation = &"LabelBold"
+theme_override_colors/font_color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="Tutorial" type="Button" parent="."]
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -84.0
+offset_right = 88.0
+offset_bottom = -16.0
+tooltip_text = "See the basic tutorial."
+icon = ExtResource("17")
+
+[node name="CommunityMode" type="CheckButton" parent="."]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -409.0
+offset_top = -72.0
+grow_horizontal = 0
+tooltip_text = "Switch from official to community made nanogames."
+text = "Community Mode"
+
+[node name="NanogameHUD" parent="." instance=ExtResource("12")]
+layout_mode = 1
+
+[node name="SettingsModal" parent="." instance=ExtResource("15_iwtik")]
+visible = false
+
+[node name="CommunityWarning" parent="." instance=ExtResource("5")]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CommunityWarning"]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 830.0
+offset_bottom = 507.0
+bbcode_enabled = true
+text = "[center][b]ATTENTION![/b][/center]
+
+Community nanogames are not sandboxed, so a misconfigured nanogame can crash the whole game, and a maliciously programmed one can do bad things to your device.
+
+[b]Make sure that the community nanogames you play come from a trusted source.[/b]
+
+Tickets will also not be awarded when playing them."
+
+[node name="TutorialOffer" parent="." instance=ExtResource("5")]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TutorialOffer"]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 830.0
+offset_bottom = 507.0
+bbcode_enabled = true
+text = "[center][b]Need Some Help?[/b][/center]
+
+Looks like it's your first time playing, you should probably [b]take a look at the tutorial[/b] first. You can access it anytime by clicking the [b]\"?\"[/b] button on the bottom-left."
+
+[node name="NanogameError" parent="." instance=ExtResource("5")]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NanogameError"]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 830.0
+offset_bottom = 507.0
+bbcode_enabled = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18")
+autoplay = true
+bus = &"Music"
+
+[node name="MenuNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20")
+bus = &"Effects"
+
+[connection signal="error_occured" from="NanogamePlayer" to="." method="_on_nanogame_player_error_occured"]
+[connection signal="free_nanogame_yielded" from="NanogamePlayer" to="." method="_on_nanogame_player_free_nanogame_yielded"]
+[connection signal="kickoff_ended" from="NanogamePlayer" to="NanogameHUD" method="hide_kickoff"]
+[connection signal="kickoff_started" from="NanogamePlayer" to="." method="set_process" binds= [true]]
+[connection signal="nanogame_freed" from="NanogamePlayer" to="." method="_on_nanogame_player_nanogame_freed"]
+[connection signal="nanogame_lost" from="NanogamePlayer" to="." method="_on_nanogame_player_nanogame_lost"]
+[connection signal="nanogame_won" from="NanogamePlayer" to="." method="_on_nanogame_player_nanogame_won"]
+[connection signal="next_nanogame_yielded" from="NanogamePlayer" to="." method="_on_nanogame_player_next_nanogame_yielded"]
+[connection signal="stopped" from="NanogamePlayer" to="." method="_on_nanogame_player_stopped"]
+[connection signal="timer_stopped" from="NanogamePlayer" to="." method="_on_nanogame_player_timer_stopped"]
+[connection signal="pressed" from="MainMenu/Main/Play/Contents/Quickplay" to="." method="_on_quickplay_pressed"]
+[connection signal="pressed" from="MainMenu/Main/Play/Contents/Collection" to="." method="_show_submenu" binds= [0, "Collection", true]]
+[connection signal="pressed" from="MainMenu/Main/Other/Statistics" to="." method="_show_submenu" binds= [1, "Statistics"]]
+[connection signal="pressed" from="MainMenu/Main/Other/Settings" to="SettingsModal" method="popup_centered"]
+[connection signal="pressed" from="MainMenu/BackLobby" to="." method="_on_back_lobby_pressed"]
+[connection signal="pressed" from="SubmenuContext/TopBar/Back" to="." method="_hide_submenu"]
+[connection signal="pressed" from="SubmenuContext/TopBar/Start" to="." method="_on_start_pressed"]
+[connection signal="practice_mode_started" from="SubmenuContext/Submenus/NanogameCollection" to="." method="_on_nanogame_collection_practice_mode_started"]
+[connection signal="start_status_updated" from="SubmenuContext/Submenus/NanogameCollection" to="SubmenuContext/TopBar/Start" method="set_disabled"]
+[connection signal="pressed" from="Tutorial" to="." method="_show_submenu" binds= [2, "Tutorial"]]
+[connection signal="toggled" from="CommunityMode" to="." method="_on_community_mode_toggled"]
+[connection signal="settings_requested" from="NanogameHUD" to="SettingsModal" method="popup_centered"]
+[connection signal="stop_requested" from="NanogameHUD" to="NanogamePlayer" method="stop"]
+[connection signal="meta_clicked" from="NanogameError/RichTextLabel" to="." method="_on_nanogame_error_meta_clicked"]

@@ -1,0 +1,33 @@
+{
+    "name": "Suitcase-by-Case",
+    "kickoff": "FIND!",
+    "description": "Now, where is that baggage? It was certainly blue, or maybe red? It was a briefcase, or was it actually a backpack?! It seems that your memory looks as good as the chances that your luggage was treated carefully.",
+    "author": "Librerama",
+    "input": "DRAG_DROP",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Attention,Baggage,Memory",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/suitcase_by_case",
+    "thirdParty": [
+        {
+            "name": "Bossa Nova",
+            "author": "Joth",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/bossa-nova"
+        },
+        {
+            "name": "negative",
+            "author": "Lokif",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/gui-sound-effects"
+        },
+        {
+            "name": "positive",
+            "author": "Lokif",
+            "license": "CC0",
+            "source": "https://opengameart.org/content/gui-sound-effects"
+        }
+    ]
+}

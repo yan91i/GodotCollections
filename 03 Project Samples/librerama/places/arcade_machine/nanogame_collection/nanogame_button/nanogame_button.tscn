@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1rdtpjh7f4g3"]
+
+[ext_resource type="Script" path="res://places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://bax8nsgl8ai50" path="res://places/arcade_machine/nanogame_collection/nanogame_button/_assets/about.svg" id="4"]
+
+[node name="NanogameButton" type="Button"]
+offset_right = 365.0
+offset_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_right = NodePath("Contents/Information/Main/AboutNanogame")
+toggle_mode = true
+script = ExtResource("3")
+
+[node name="Contents" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="Icon" type="TextureRect" parent="Contents"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+stretch_mode = 4
+
+[node name="Information" type="VBoxContainer" parent="Contents"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Main" type="HBoxContainer" parent="Contents/Information"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Text" type="VBoxContainer" parent="Contents/Information/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Label" parent="Contents/Information/Main/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_type_variation = &"LabelBold"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Kickoff" type="Label" parent="Contents/Information/Main/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_type_variation = &"LabelItalic"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="AboutNanogame" type="Button" parent="Contents/Information/Main"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "Show more information about the nanogame.
+Practice Mode can also be accessed here."
+focus_neighbor_left = NodePath("../../../..")
+focus_neighbor_bottom = NodePath("../../../..")
+icon = ExtResource("4")
+
+[node name="Extra" type="HBoxContainer" parent="Contents/Information"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Author" type="Label" parent="Contents/Information/Extra"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Input" type="TextureRect" parent="Contents/Information/Extra"]
+layout_mode = 2
+size_flags_vertical = 8
+stretch_mode = 4
+
+[node name="Timer" type="TextureRect" parent="Contents/Information/Extra"]
+layout_mode = 2
+size_flags_vertical = 8
+stretch_mode = 4
+
+[connection signal="pressed" from="Contents/Information/Main/AboutNanogame" to="." method="emit_signal" binds= ["about_nanogame_pressed"]]

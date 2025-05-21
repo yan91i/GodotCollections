@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://daocc88vbvjag"]
+
+[ext_resource type="Script" path="res://nanogames/ballkeep/ball/ball.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://beo4w51xbmmb2" path="res://nanogames/ballkeep/ball/_assets/ball.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b2gr52njimvrp" path="res://nanogames/ballkeep/ball/_assets/spark.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://b271i6g8be7ul" path="res://nanogames/ballkeep/ball/_assets/bounce.wav" id="4"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 32.0
+
+[sub_resource type="ParticleProcessMaterial" id="2"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="AudioStreamRandomizer" id="3"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("4")
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Spark" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 6
+process_material = SubResource("2")
+texture = ExtResource("3")
+lifetime = 0.1
+one_shot = true
+explosiveness = 1.0
+
+[node name="Bounce" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("3")
+bus = &"Effects"

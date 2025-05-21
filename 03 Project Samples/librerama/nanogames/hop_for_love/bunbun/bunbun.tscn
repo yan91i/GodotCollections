@@ -1,0 +1,210 @@
+[gd_scene load_steps=16 format=3 uid="uid://cplrph58googo"]
+
+[ext_resource type="Texture2D" uid="uid://bf47siwnqo6yl" path="res://nanogames/hop_for_love/bunbun/_assets/bunbun.png" id="1"]
+[ext_resource type="Script" path="res://nanogames/hop_for_love/bunbun/bunbun.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://byr33wp16hwh1" path="res://nanogames/hop_for_love/_assets/blush.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c4h3cwtqvbf2x" path="res://nanogames/hop_for_love/bunbun/_assets/heart.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://xxu6kylkxj4o" path="res://nanogames/hop_for_love/bunbun/_assets/flourish.wav" id="5"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(350, 20)
+
+[sub_resource type="Gradient" id="Gradient_r0lhn"]
+offsets = PackedFloat32Array(0, 0.25, 0.9, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4dw0x"]
+gradient = SubResource("Gradient_r0lhn")
+width = 32
+
+[sub_resource type="Curve" id="Curve_q25pv"]
+_data = [Vector2(0, 0.7), 0.0, 0.3, 0, 1, Vector2(1, 1), 0.3, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_x5b0q"]
+width = 32
+curve = SubResource("Curve_q25pv")
+
+[sub_resource type="ParticleProcessMaterial" id="4"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_x5b0q")
+color_ramp = SubResource("GradientTexture1D_4dw0x")
+
+[sub_resource type="Animation" id="7"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-52.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/Blush:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hearts:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="5"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Blush:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hearts:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-52.0, -47.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv7km"]
+_data = {
+"RESET": SubResource("7"),
+"blush": SubResource("5"),
+"laugh": SubResource("6")
+}
+
+[node name="Bunbun" type="Area2D"]
+input_pickable = false
+monitoring = false
+script = ExtResource("2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -52)
+texture = ExtResource("1")
+hframes = 2
+
+[node name="Blush" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-38, -16)
+texture = ExtResource("3")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 0)
+shape = SubResource("1")
+
+[node name="Hearts" type="GPUParticles2D" parent="."]
+position = Vector2(-65, -110)
+emitting = false
+amount = 3
+process_material = SubResource("4")
+texture = ExtResource("4")
+
+[node name="Flourish" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qv7km")
+}

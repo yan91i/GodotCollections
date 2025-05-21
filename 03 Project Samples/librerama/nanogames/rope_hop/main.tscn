@@ -1,0 +1,633 @@
+[gd_scene load_steps=23 format=3 uid="uid://bvogg2rg12fh6"]
+
+[ext_resource type="Script" path="res://nanogames/rope_hop/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bbtwlmrga56xs" path="res://nanogames/rope_hop/jumper/jumper.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://dwu5ksgr6376h" path="res://nanogames/rope_hop/_assets/rope.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://p4or3fl2oq5s" path="res://nanogames/rope_hop/_assets/music.ogg" id="4"]
+[ext_resource type="Texture2D" uid="uid://b72ek3cwudk7s" path="res://nanogames/rope_hop/_assets/ropeman.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b3rvgk85sd4sf" path="res://nanogames/rope_hop/_assets/boombox.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://coppq1otaj6xs" path="res://nanogames/rope_hop/_assets/decoration.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://demrkuxyy1i3o" path="res://nanogames/rope_hop/_assets/arrow.png" id="8_777y1"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(960, 16)
+
+[sub_resource type="Animation" id="7"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rope:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-128, 352, -112, 448, -64, 560, 0, 624, 32, 640, 928, 640, 960, 624, 1008, 576, 1040, 528, 1072, 448, 1104, 464)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rope:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ropeman:offset:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ropeman:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RopeCollision/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ropeman:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -3.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ropeman:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.98, 1.02)]
+}
+
+[sub_resource type="Animation" id="3"]
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rope:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(-128, 352, -112, 448, -64, 560, 0, 624, 32, 640, 928, 640, 960, 624, 1008, 576, 1040, 528, 1072, 448, 1104, 464), PackedVector2Array(-128, 352, -112, 256, -64, 160, 0, 96, 32, 80, 944, 80, 976, 96, 1024, 176, 1056, 288, 1072, 432, 1088, 464)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rope:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, -1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RopeCollision/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03, 1.37),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ropeman:offset:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -7.5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ropeman:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.95, 1.05)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_make_enemies_jump"
+}]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "pre_idle"
+length = 0.2
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rope:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [PackedVector2Array(-128, 352, -112, 448, -64, 560, 0, 624, 32, 640, 928, 640, 960, 624, 1008, 576, 1040, 528, 1072, 448, 1104, 464)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ropeman:offset:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ropeman:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clau1"]
+_data = {
+"RESET": SubResource("7"),
+"idle": SubResource("2"),
+"move": SubResource("3"),
+"pre_idle": SubResource("4")
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoomBox:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoomBox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music:pitch_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="5"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoomBox:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoomBox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 0.95)]
+}
+
+[sub_resource type="Animation" id="6"]
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoomBox:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoomBox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music:pitch_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.1]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Music")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p2ys4"]
+_data = {
+"RESET": SubResource("8"),
+"idle": SubResource("5"),
+"stop": SubResource("6")
+}
+
+[sub_resource type="Animation" id="Animation_0ouyy"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowLeft:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArrowRight:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.4]
+}
+
+[sub_resource type="Animation" id="Animation_oiyxp"]
+resource_name = "animate"
+length = 0.5
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.25, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 2,
+"values": [-40.0, 0.0, -40.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowLeft:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [1.0, 1.0, 0.4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.25, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 2,
+"values": [40.0, 0.0, 40.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArrowRight:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [1.0, 1.0, 0.4]
+}
+
+[sub_resource type="Animation" id="Animation_5n5hn"]
+resource_name = "hide"
+length = 0.1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowLeft:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [-60.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowLeft:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArrowRight:offset:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [60.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArrowRight:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tv382"]
+_data = {
+"RESET": SubResource("Animation_0ouyy"),
+"animate": SubResource("Animation_oiyxp"),
+"hide": SubResource("Animation_5n5hn")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+metadata/_edit_vertical_guides_ = [480.0]
+metadata/_edit_horizontal_guides_ = [160.0]
+
+[node name="ScenaryLine" type="Line2D" parent="."]
+z_index = -1
+points = PackedVector2Array(-192, -16, -192, 640)
+width = 4.0
+default_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[node name="ScenaryLine2" type="Line2D" parent="."]
+z_index = -1
+points = PackedVector2Array(-336, 640, 1280, 640)
+width = 4.0
+default_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[node name="BoomBox" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(344, 587)
+texture = ExtResource("6")
+
+[node name="Jumper" parent="." instance=ExtResource("2")]
+position = Vector2(480, 510)
+
+[node name="Enemy" parent="." instance_placeholder="res://nanogames/rope_hop/enemy/enemy.tscn"]
+position = Vector2(280, 496)
+
+[node name="Enemy2" parent="." instance_placeholder="res://nanogames/rope_hop/enemy/enemy.tscn"]
+position = Vector2(680, 496)
+flipped = true
+
+[node name="Rope" type="Line2D" parent="."]
+points = PackedVector2Array(-128, 352, -112, 448, -64, 560, 0, 624, 32, 640, 928, 640, 960, 624, 1008, 576, 1040, 528, 1072, 448, 1104, 464)
+texture = ExtResource("3")
+texture_mode = 1
+antialiased = true
+
+[node name="RopeCollision" type="Area2D" parent="."]
+position = Vector2(480, 638)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeCollision"]
+shape = SubResource("1")
+disabled = true
+
+[node name="Decoration" type="Sprite2D" parent="."]
+position = Vector2(-186, 348)
+texture = ExtResource("7")
+
+[node name="Ropeman" type="Sprite2D" parent="."]
+position = Vector2(1155, 478)
+texture = ExtResource("5")
+
+[node name="ArrowLeft" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.4)
+position = Vector2(380, 160)
+texture = ExtResource("8_777y1")
+
+[node name="ArrowRight" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.4)
+position = Vector2(580, 160)
+texture = ExtResource("8_777y1")
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.92549, 0.92549, 1, 0.92549)
+metadata/_edit_lock_ = true
+
+[node name="RopeAnimation" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_clau1")
+}
+autoplay = "idle"
+
+[node name="BoomBoxAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p2ys4")
+}
+autoplay = "idle"
+
+[node name="ArrowsAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tv382")
+}
+
+[connection signal="first_movement_occurred" from="Jumper" to="." method="_hide_arrows"]
+[connection signal="hit" from="Jumper" to="." method="_on_jumper_hit"]
+[connection signal="jumped" from="Jumper" to="." method="_on_jumper_jumped"]

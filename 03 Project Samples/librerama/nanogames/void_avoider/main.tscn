@@ -1,0 +1,154 @@
+[gd_scene load_steps=19 format=3 uid="uid://b2o1g4ja6sw2a"]
+
+[ext_resource type="Script" path="res://nanogames/void_avoider/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://celcmdbaejijn" path="res://nanogames/void_avoider/spaceship/spaceship.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bmkf4eqgsjadg" path="res://nanogames/void_avoider/_assets/star.svg" id="3"]
+[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="3_bpiu1"]
+[ext_resource type="Texture2D" uid="uid://c4u5atberwa4f" path="res://nanogames/void_avoider/_assets/background.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://boebpkg2rtrdj" path="res://nanogames/void_avoider/_assets/music.ogg" id="5"]
+[ext_resource type="Texture2D" uid="uid://cpts4i7o84o10" path="res://nanogames/void_avoider/_assets/particle.svg" id="7_ds22n"]
+[ext_resource type="Texture2D" uid="uid://c1jymwdddkxw1" path="res://nanogames/void_avoider/_assets/void.svg" id="8_kb83j"]
+
+[sub_resource type="Curve" id="1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="2"]
+width = 32
+curve = SubResource("1")
+
+[sub_resource type="ParticleProcessMaterial" id="3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(480, 360, 1)
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("2")
+
+[sub_resource type="Gradient" id="Gradient_caqcf"]
+offsets = PackedFloat32Array(0.8, 1)
+colors = PackedColorArray(0.0862745, 0, 0.0862745, 1, 0.0862745, 0, 0.0862745, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g4tbm"]
+gradient = SubResource("Gradient_caqcf")
+
+[sub_resource type="Curve" id="Curve_4bpb1"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0535g"]
+width = 32
+curve = SubResource("Curve_4bpb1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_os38d"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 360, 1)
+spread = 20.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_0535g")
+color_ramp = SubResource("GradientTexture1D_g4tbm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k67ca"]
+shader = ExtResource("3_bpiu1")
+shader_parameter/speed = Vector2(0, 5)
+shader_parameter/waves = Vector2(0, 10)
+shader_parameter/strength = Vector2(0, 5)
+shader_parameter/interval = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sw2yt"]
+shader = ExtResource("3_bpiu1")
+shader_parameter/speed = Vector2(0, -5)
+shader_parameter/waves = Vector2(0, 10)
+shader_parameter/strength = Vector2(0, 5)
+shader_parameter/interval = 0.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Space" type="TextureRect" parent="."]
+offset_left = -30.0
+offset_right = 990.0
+offset_bottom = 720.0
+texture = ExtResource("4")
+stretch_mode = 1
+
+[node name="Stars" type="GPUParticles2D" parent="."]
+position = Vector2(480, 360)
+amount = 5
+process_material = SubResource("3")
+texture = ExtResource("3")
+preprocess = 1.0
+
+[node name="SmokeLeft" type="GPUParticles2D" parent="."]
+position = Vector2(-30, 360)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_os38d")
+texture = ExtResource("7_ds22n")
+lifetime = 1.5
+preprocess = 1.0
+
+[node name="SmokeRight" type="GPUParticles2D" parent="."]
+position = Vector2(990, 360)
+rotation = 3.14159
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_os38d")
+texture = ExtResource("7_ds22n")
+lifetime = 1.5
+preprocess = 1.0
+
+[node name="Spaceship" parent="." instance=ExtResource("2")]
+z_index = 2
+position = Vector2(480, 360)
+
+[node name="VoidLeft" type="NinePatchRect" parent="."]
+z_index = 3
+material = SubResource("ShaderMaterial_k67ca")
+offset_left = -300.0
+offset_right = 40.0
+offset_bottom = 720.0
+texture = ExtResource("8_kb83j")
+region_rect = Rect2(52, 0, 88, 16)
+patch_margin_left = 32
+patch_margin_right = 88
+
+[node name="VoidRight" type="NinePatchRect" parent="."]
+z_index = 3
+material = SubResource("ShaderMaterial_sw2yt")
+offset_left = 920.0
+offset_right = 1260.0
+offset_bottom = 720.0
+texture = ExtResource("8_kb83j")
+region_rect = Rect2(-8, 0, 88, 16)
+patch_margin_left = 56
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(480, 360)
+
+[node name="BlackHoleSpawn" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0, 0.0862745, 1)
+metadata/_edit_lock_ = true
+
+[connection signal="hit" from="Spaceship" to="." method="_on_spaceship_hit"]
+[connection signal="hit" from="Spaceship" to="Music" method="stop"]
+[connection signal="timeout" from="BlackHoleSpawn" to="." method="_spawn_black_hole"]

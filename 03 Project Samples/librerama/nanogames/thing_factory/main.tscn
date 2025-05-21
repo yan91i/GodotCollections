@@ -1,0 +1,149 @@
+[gd_scene load_steps=14 format=3 uid="uid://bukv0knepqgn6"]
+
+[ext_resource type="Script" path="res://nanogames/thing_factory/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://d00nnirqm3xhw" path="res://nanogames/thing_factory/conveyor/conveyor.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cgf4toiohp4mi" path="res://nanogames/thing_factory/_assets/sign.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://cc4kmixjxoqbv" path="res://nanogames/thing_factory/_assets/background.svg" id="4"]
+[ext_resource type="AudioStream" uid="uid://b1np12uo5r4kv" path="res://nanogames/thing_factory/_assets/music.ogg" id="5"]
+[ext_resource type="AudioStream" uid="uid://bt2th37eos63c" path="res://nanogames/thing_factory/_assets/alarm.wav" id="6"]
+[ext_resource type="Shader" path="res://shaders/texture_scroll_zigzag.gdshader" id="7"]
+[ext_resource type="PackedScene" uid="uid://bqsajlwwyx7bi" path="res://nanogames/thing_factory/thing/thing.tscn" id="8"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("7")
+shader_parameter/direction_speed = Vector2(0, 0.5)
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+
+[sub_resource type="Animation" id="Animation_g2new"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThingSign/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.568627, 0.784314, 0.729412, 1)]
+}
+
+[sub_resource type="Animation" id="2"]
+length = 0.6
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThingSign/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [Color(0.776471, 0.133333, 0.329412, 1), Color(0.811765, 0.447059, 0.556863, 1), Color(0.776471, 0.133333, 0.329412, 1)]
+}
+
+[sub_resource type="Animation" id="3"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThingSign/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.568627, 0.784314, 0.729412, 1), Color(0.168627, 0.717647, 0.584314, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsfu2"]
+_data = {
+"RESET": SubResource("Animation_g2new"),
+"fail": SubResource("2"),
+"idle": SubResource("3")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("4")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Conveyors" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -115.0
+offset_right = 480.0
+offset_bottom = 360.0
+theme_override_constants/separation = 110
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Conveyor" parent="CanvasLayer/Conveyors" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Conveyor2" parent="CanvasLayer/Conveyors" instance_placeholder="res://nanogames/thing_factory/conveyor/conveyor.tscn"]
+layout_mode = 2
+
+[node name="Conveyor3" parent="CanvasLayer/Conveyors" instance_placeholder="res://nanogames/thing_factory/conveyor/conveyor.tscn"]
+layout_mode = 2
+
+[node name="ThingSign" type="Sprite2D" parent="."]
+position = Vector2(480, 83)
+texture = ExtResource("3")
+
+[node name="ThingCorrect" parent="ThingSign" instance=ExtResource("8")]
+position = Vector2(-48, 0)
+input_pickable = false
+
+[node name="ColorRect" type="ColorRect" parent="ThingSign"]
+show_behind_parent = true
+offset_left = -118.0
+offset_top = -58.0
+offset_right = 118.0
+offset_bottom = 58.0
+color = Color(0.568627, 0.784314, 0.729412, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="ThingSpawn" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+autoplay = true
+bus = &"Music"
+
+[node name="Alarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fsfu2")
+}
+autoplay = "idle"
+
+[connection signal="end_reached" from="CanvasLayer/Conveyors/Conveyor" to="." method="_on_conveyor_end_reached"]
+[connection signal="timeout" from="ThingSpawn" to="." method="_spawn_things"]

@@ -1,0 +1,143 @@
+[gd_scene load_steps=12 format=3 uid="uid://b682bygnrgs6b"]
+
+[ext_resource type="Script" path="res://nanogames/digital_warp/spaceship/spaceship.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b4lpb478iblpf" path="res://nanogames/digital_warp/spaceship/_assets/spaceship.svg" id="2"]
+[ext_resource type="AudioStream" uid="uid://df86knej5xcca" path="res://nanogames/digital_warp/spaceship/_assets/alert.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://o4sire785oaj" path="res://nanogames/digital_warp/spaceship/_assets/move.wav" id="4"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(180, 80)
+
+[sub_resource type="Gradient" id="2"]
+offsets = PackedFloat32Array(0, 0.25, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.490196, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="3"]
+gradient = SubResource("2")
+width = 32
+
+[sub_resource type="ParticleProcessMaterial" id="4"]
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("3")
+
+[sub_resource type="Animation" id="6"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D/Trail:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.784314)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D/Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="5"]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, 450)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D/Trail:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.784314), Color(1, 0.517647, 0.486275, 1), Color(1, 1, 1, 0.784314), Color(1, 0.517647, 0.486275, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D/Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.517647, 0.486275, 1), Color(1, 1, 1, 1), Color(1, 0.517647, 0.486275, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_76flv"]
+_data = {
+"RESET": SubResource("6"),
+"die": SubResource("5")
+}
+
+[node name="Spaceship" type="Area2D"]
+z_index = 1
+input_pickable = false
+monitorable = false
+script = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 300)
+shape = SubResource("1")
+metadata/_edit_group_ = true
+
+[node name="Trail" type="GPUParticles2D" parent="CollisionShape2D"]
+self_modulate = Color(1, 1, 1, 0.784314)
+emitting = false
+amount = 2
+process_material = SubResource("4")
+texture = ExtResource("2")
+lifetime = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("2")
+
+[node name="Move" type="AudioStreamPlayer2D" parent="CollisionShape2D"]
+stream = ExtResource("4")
+volume_db = -80.0
+autoplay = true
+bus = &"Effects"
+
+[node name="Die" type="AudioStreamPlayer2D" parent="CollisionShape2D"]
+stream = ExtResource("3")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_76flv")
+}

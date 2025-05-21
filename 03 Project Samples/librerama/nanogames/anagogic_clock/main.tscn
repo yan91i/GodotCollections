@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw8ni4c31pfnv"]
+
+[ext_resource type="Script" path="res://nanogames/anagogic_clock/main.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://so50iip2e8rw" path="res://nanogames/anagogic_clock/_assets/music.ogg" id="2"]
+[ext_resource type="PackedScene" uid="uid://cs1twpwvkiciw" path="res://nanogames/anagogic_clock/hands/hour.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://h4h15kjderdl" path="res://nanogames/anagogic_clock/_assets/clock.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dlh7xiviq6hjb" path="res://nanogames/anagogic_clock/_assets/background.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://dqeynydf15v80" path="res://nanogames/anagogic_clock/_assets/gong.wav" id="6"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Clock" type="Sprite2D" parent="."]
+position = Vector2(480, 360)
+texture = ExtResource("4")
+region_enabled = true
+region_rect = Rect2(20, 20, 1130, 890)
+
+[node name="Minute" parent="." instance_placeholder="res://nanogames/anagogic_clock/hands/minute.tscn"]
+position = Vector2(480, 360)
+
+[node name="Hour" parent="." instance=ExtResource("3")]
+position = Vector2(480, 360)
+
+[node name="Goal" type="Sprite2D" parent="."]
+position = Vector2(480, 360)
+texture = ExtResource("4")
+region_enabled = true
+region_rect = Rect2(1176, 17, 240, 196)
+
+[node name="Hour" type="Sprite2D" parent="Goal"]
+position = Vector2(-61, 0)
+texture = ExtResource("4")
+hframes = 10
+region_enabled = true
+region_rect = Rect2(1176, 272, 313, 44)
+
+[node name="Hour2" type="Sprite2D" parent="Goal"]
+position = Vector2(-30, 0)
+texture = ExtResource("4")
+hframes = 10
+region_enabled = true
+region_rect = Rect2(1176, 272, 313, 44)
+
+[node name="Minute" type="Sprite2D" parent="Goal"]
+visible = false
+position = Vector2(29, 0)
+texture = ExtResource("4")
+hframes = 10
+region_enabled = true
+region_rect = Rect2(1176, 272, 313, 44)
+
+[node name="Minute2" type="Sprite2D" parent="Goal"]
+visible = false
+position = Vector2(60, 0)
+texture = ExtResource("4")
+hframes = 10
+region_enabled = true
+region_rect = Rect2(1176, 272, 313, 44)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2")
+autoplay = true
+bus = &"Music"
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+bus = &"Effects"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("5")
+stretch_mode = 1
+
+[connection signal="released" from="Hour" to="." method="_on_hand_released"]

@@ -1,0 +1,243 @@
+[gd_scene load_steps=17 format=3 uid="uid://dfyv5sttfp5ln"]
+
+[ext_resource type="Script" path="res://nanogames/garden_thyme/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://costyv47tyfla" path="res://nanogames/garden_thyme/watering_can/watering_can.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bpphwme37y10q" path="res://nanogames/garden_thyme/flower/flower.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://cab11uy0oh8lj" path="res://nanogames/garden_thyme/_assets/grass.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cu23ps3a2a8dc" path="res://nanogames/garden_thyme/_assets/fence.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b637of06y3dkw" path="res://nanogames/garden_thyme/_assets/rocks.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://cr07f4mvg7xee" path="res://nanogames/garden_thyme/_assets/music.ogg" id="9"]
+[ext_resource type="AudioStream" uid="uid://dra7ttr6a4mai" path="res://nanogames/garden_thyme/_assets/birds.wav" id="10"]
+
+[sub_resource type="Gradient" id="Gradient_um6bw"]
+colors = PackedColorArray(0.878431, 0.8, 0.568627, 0.784314, 0.878431, 0.8, 0.568627, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hlea8"]
+gradient = SubResource("Gradient_um6bw")
+width = 32
+height = 260
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_vg75f"]
+offsets = PackedFloat32Array(0, 0.6)
+colors = PackedColorArray(0.0980392, 0.0980392, 0.0980392, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_brifi"]
+gradient = SubResource("Gradient_vg75f")
+width = 32
+height = 760
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 0.5)
+repeat = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="3"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Foreground/Sunshine:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Foreground/Darkening:self_modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "lose"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Foreground/Darkening:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="Animation" id="2"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Foreground/Sunshine:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6oux"]
+_data = {
+"RESET": SubResource("3"),
+"lose": SubResource("1"),
+"win": SubResource("2")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="DecorationLeft" type="TextureRect" parent="."]
+offset_left = -104.0
+offset_top = 124.0
+offset_right = -20.0
+offset_bottom = 720.0
+texture = ExtResource("6")
+stretch_mode = 1
+
+[node name="DecorationRight" type="TextureRect" parent="."]
+offset_left = 980.0
+offset_top = 124.0
+offset_right = 1064.0
+offset_bottom = 720.0
+texture = ExtResource("6")
+stretch_mode = 1
+flip_h = true
+
+[node name="Flowers" type="Node2D" parent="."]
+
+[node name="Flower" parent="Flowers" instance=ExtResource("3")]
+
+[node name="Flower2" parent="Flowers" instance=ExtResource("3")]
+
+[node name="Flower3" parent="Flowers" instance=ExtResource("3")]
+
+[node name="Flower4" parent="Flowers" instance=ExtResource("3")]
+
+[node name="Flower5" parent="Flowers" instance=ExtResource("3")]
+
+[node name="Sort" type="Node2D" parent="."]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Dog" parent="Sort" instance_placeholder="res://nanogames/garden_thyme/dog/dog.tscn"]
+
+[node name="WateringCan" parent="Sort" instance=ExtResource("2")]
+position = Vector2(480, 640)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9")
+autoplay = true
+bus = &"Music"
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10")
+bus = &"Effects"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Grass" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("4")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Fence" type="TextureRect" parent="Background"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -8.0
+offset_bottom = 136.0
+texture = ExtResource("5")
+stretch_mode = 1
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+
+[node name="Sunshine" type="TextureRect" parent="Foreground"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 260.0
+grow_horizontal = 2
+texture = SubResource("GradientTexture2D_hlea8")
+
+[node name="Darkening" type="NinePatchRect" parent="Foreground"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("GradientTexture2D_brifi")
+draw_center = false
+patch_margin_top = 240
+patch_margin_bottom = 240
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g6oux")
+}
+
+[connection signal="area_entered" from="Flowers/Flower" to="." method="_on_flower_area_entered" unbinds=1]
+[connection signal="area_entered" from="Flowers/Flower2" to="." method="_on_flower_area_entered" unbinds=1]
+[connection signal="area_entered" from="Flowers/Flower3" to="." method="_on_flower_area_entered" unbinds=1]
+[connection signal="area_entered" from="Flowers/Flower4" to="." method="_on_flower_area_entered" unbinds=1]
+[connection signal="area_entered" from="Flowers/Flower5" to="." method="_on_flower_area_entered" unbinds=1]

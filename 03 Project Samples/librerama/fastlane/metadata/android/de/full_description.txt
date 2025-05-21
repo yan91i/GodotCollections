@@ -1,0 +1,3 @@
+Librerama ist eine Arkadesammlung aus kleinen schnellen Spielen, bei denen das
+übergeordnete Ziel ist, eine Serie von Minispielen zu spielen, die nach und
+nach hektischer und schwieriger werden.

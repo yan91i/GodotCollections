@@ -1,0 +1,252 @@
+[gd_scene load_steps=5 format=3 uid="uid://b00ndcy4og3ig"]
+
+[ext_resource type="PackedScene" uid="uid://buutl05rvbhox" path="res://modals/tab_modal/tab_modal.tscn" id="1_vlps4"]
+[ext_resource type="Script" path="res://modals/settings_modal/settings_modal.gd" id="2_0wwwk"]
+[ext_resource type="PackedScene" uid="uid://b0uxsqjutbdky" path="res://modals/settings_modal/input_modal/input_modal.tscn" id="3_snmab"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_vrodu"]
+
+[node name="SettingsModal" instance=ExtResource("1_vlps4")]
+script = ExtResource("2_0wwwk")
+
+[node name="TabBar" parent="." index="2"]
+current_tab = 0
+tab_count = 3
+tab_0/title = "General"
+tab_1/title = "Controls"
+tab_2/title = "Volume"
+
+[node name="General" type="VBoxContainer" parent="." index="3"]
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+
+[node name="Language" type="HBoxContainer" parent="General" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="General/Language" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Language:"
+
+[node name="Locales" type="OptionButton" parent="General/Language" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text_overrun_behavior = 1
+item_count = 2
+popup/item_0/text = "System Default"
+popup/item_1/id = 1
+popup/item_1/separator = true
+
+[node name="Fullscreen" type="CheckBox" parent="General" index="1"]
+layout_mode = 2
+text = "Fullscreen Window"
+
+[node name="PauseFocusLost" type="CheckBox" parent="General" index="2"]
+layout_mode = 2
+text = "Pause When the Game Loses Focus"
+
+[node name="MuteFocusLost" type="CheckBox" parent="General" index="3"]
+layout_mode = 2
+text = "Mute When the Game Loses Focus"
+
+[node name="CommunityWarning" type="CheckBox" parent="General" index="4"]
+layout_mode = 2
+text = "Show Warning About Community Nanogames"
+
+[node name="Controls" type="VBoxContainer" parent="." index="4"]
+visible = false
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+
+[node name="MainControl" type="HBoxContainer" parent="Controls" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controls/MainControl" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Main Control:"
+
+[node name="ControlTypes" type="OptionButton" parent="Controls/MainControl" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 6
+popup/item_0/text = "Automatic"
+popup/item_1/id = 1
+popup/item_1/separator = true
+popup/item_2/text = "Touchscreen"
+popup/item_2/id = 2
+popup/item_3/text = "Joypad"
+popup/item_3/id = 3
+popup/item_4/text = "Joypad and Touchscreen"
+popup/item_4/id = 4
+popup/item_5/text = "Keyboard and Mouse"
+popup/item_5/id = 5
+
+[node name="HSeparator" type="HSeparator" parent="Controls" index="1"]
+layout_mode = 2
+
+[node name="SwitchTouchControls" type="CheckBox" parent="Controls" index="2"]
+visible = false
+layout_mode = 2
+text = "Switch Touch Controls' Positions"
+
+[node name="InputsSection" type="GridContainer" parent="Controls" index="3"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="Controls/InputsSection" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Up:"
+
+[node name="Up" type="Button" parent="Controls/InputsSection" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vrodu")
+text_overrun_behavior = 1
+metadata/action = "nanogame_up"
+
+[node name="Label2" type="Label" parent="Controls/InputsSection" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Down:"
+
+[node name="Down" type="Button" parent="Controls/InputsSection" index="3"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vrodu")
+text_overrun_behavior = 1
+metadata/action = "nanogame_down"
+
+[node name="Label3" type="Label" parent="Controls/InputsSection" index="4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Left:"
+
+[node name="Left" type="Button" parent="Controls/InputsSection" index="5"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vrodu")
+text_overrun_behavior = 1
+metadata/action = "nanogame_left"
+
+[node name="Label4" type="Label" parent="Controls/InputsSection" index="6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Right:"
+
+[node name="Right" type="Button" parent="Controls/InputsSection" index="7"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vrodu")
+text_overrun_behavior = 1
+metadata/action = "nanogame_right"
+
+[node name="Label5" type="Label" parent="Controls/InputsSection" index="8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Action:"
+
+[node name="Action" type="Button" parent="Controls/InputsSection" index="9"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_vrodu")
+text_overrun_behavior = 1
+metadata/action = "nanogame_action"
+
+[node name="Volume" type="VBoxContainer" parent="." index="5"]
+visible = false
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 844.0
+offset_bottom = 569.0
+
+[node name="Everything" type="HBoxContainer" parent="Volume" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Volume/Everything" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Everything:"
+
+[node name="EverythingToggle" type="CheckButton" parent="Volume/Everything" index="1"]
+layout_mode = 2
+metadata/bus = 1
+
+[node name="EverythingSlider" type="HSlider" parent="Volume" index="1"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="Music" type="HBoxContainer" parent="Volume" index="2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Volume/Music" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Music:"
+
+[node name="MusicToggle" type="CheckButton" parent="Volume/Music" index="1"]
+layout_mode = 2
+metadata/bus = 2
+
+[node name="MusicSlider" type="HSlider" parent="Volume" index="3"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="Effects" type="HBoxContainer" parent="Volume" index="4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Volume/Effects" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"LabelBold"
+text = "Effects:"
+
+[node name="EffectsToggle" type="CheckButton" parent="Volume/Effects" index="1"]
+layout_mode = 2
+metadata/bus = 3
+
+[node name="EffectsSlider" type="HSlider" parent="Volume" index="5"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="InputModal" parent="." index="6" instance=ExtResource("3_snmab")]
+visible = false
+
+[connection signal="item_selected" from="General/Language/Locales" to="." method="_on_languages_item_selected"]
+[connection signal="toggled" from="General/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="General/PauseFocusLost" to="." method="_on_pause_focus_lost_toggled"]
+[connection signal="toggled" from="General/MuteFocusLost" to="." method="_on_mute_focus_lost_toggled"]
+[connection signal="toggled" from="General/CommunityWarning" to="." method="_on_community_warning_toggled"]
+[connection signal="item_selected" from="Controls/MainControl/ControlTypes" to="." method="_on_control_types_item_selected"]
+[connection signal="toggled" from="Controls/SwitchTouchControls" to="." method="_on_switch_touch_controls_toggled"]
+[connection signal="pressed" from="Controls/InputsSection/Up" to="InputModal" method="popup_centered"]
+[connection signal="pressed" from="Controls/InputsSection/Down" to="InputModal" method="popup_centered"]
+[connection signal="pressed" from="Controls/InputsSection/Left" to="InputModal" method="popup_centered"]
+[connection signal="pressed" from="Controls/InputsSection/Right" to="InputModal" method="popup_centered"]
+[connection signal="pressed" from="Controls/InputsSection/Action" to="InputModal" method="popup_centered"]
+[connection signal="closed" from="InputModal" to="." method="_on_input_modal_closed"]
+[connection signal="ok_pressed" from="InputModal" to="." method="_on_input_modal_ok_pressed"]

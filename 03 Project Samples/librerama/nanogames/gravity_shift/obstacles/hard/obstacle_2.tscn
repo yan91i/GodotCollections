@@ -1,0 +1,166 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqoqictkl37mh"]
+
+[ext_resource type="Script" path="res://nanogames/gravity_shift/obstacles/obstacle.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bea0jmyu7vsw1" path="res://nanogames/gravity_shift/obstacles/_assets/obstacle.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://biq52ivlr1aqs" path="res://nanogames/gravity_shift/obstacles/_assets/lift.wav" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(50, 250)
+
+[sub_resource type="Animation" id="3"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/NinePatchRect:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [125.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D2/NinePatchRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [125.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D3/NinePatchRect:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [125.0]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "activate"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/NinePatchRect:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [125.0, -125.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D2/NinePatchRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [125.0, -125.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D3/NinePatchRect:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [125.0, -125.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nyt21"]
+_data = {
+"RESET": SubResource("3"),
+"activate": SubResource("2")
+}
+
+[node name="Obstacle2" type="Area2D"]
+texture_filter = 1
+input_pickable = false
+monitoring = false
+script = ExtResource("1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-225, -360, 450, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-200, 235)
+shape = SubResource("1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CollisionShape2D"]
+offset_left = -25.0
+offset_top = 125.0
+offset_right = -8.0
+offset_bottom = 208.0
+scale = Vector2(3, 3)
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 9, 57)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -235)
+rotation = 3.14159
+shape = SubResource("1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CollisionShape2D2"]
+offset_left = -25.0
+offset_top = 125.0
+offset_right = -8.0
+offset_bottom = 208.0
+scale = Vector2(3, 3)
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 9, 57)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(200, 235)
+shape = SubResource("1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CollisionShape2D3"]
+offset_left = -25.0
+offset_top = 125.0
+offset_right = -8.0
+offset_bottom = 208.0
+scale = Vector2(3, 3)
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 9, 57)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+axis_stretch_vertical = 1
+
+[node name="Lift" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nyt21")
+}
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="queue_free"]

@@ -1,0 +1,51 @@
+{
+    "name": "Garden Thyme",
+    "kickoff": "WATER!",
+    "description": "What a beautiful day outside! Perfect timing to give those thirsty flowers some well deserved water. Just watch out for your, erm, dog(?)... He really does not like being wet.",
+    "author": "Librerama",
+    "input": "NAVIGATION",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Dog,Flowers",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/garden_thyme",
+    "thirdParty": [
+        {
+            "name": "Barking 2",
+            "author": "Daniel Noronha",
+            "license": "CC0",
+            "source": "https://freesound.org/people/Mrthenoronha/sounds/420449/"
+        },
+        {
+            "name": "Birds chirping in spring season",
+            "author": "mcmikai",
+            "license": "CC0",
+            "source": "https://freesound.org/people/mcmikai/sounds/532192/"
+        },
+        {
+            "name": "Dog Growl - Beast / Creature",
+            "author": "Frederick Bird and Harvey Bird",
+            "license": "CC0",
+            "source": "https://freesound.org/people/coldvet/sounds/404920/"
+        },
+        {
+            "name": "Dog_is_snoring_20130424T1140",
+            "author": "gurkboll and Atlas",
+            "license": "CC0",
+            "source": "https://freesound.org/people/gurkboll/sounds/185876/"
+        },
+        {
+            "name": "Four (Winter)",
+            "author": "pheonton",
+            "license": "CC_BY_SA_3",
+            "source": "https://opengameart.org/content/four-winter"
+        },
+        {
+            "name": "Wobble Board",
+            "author": "Jagadamba",
+            "license": "CC_BY_SA_3",
+            "source": "https://freesound.org/people/Jagadamba/sounds/254403/"
+        }
+    ]
+}

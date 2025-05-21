@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://nndxdgduk1cb"]
+
+[ext_resource type="Script" path="res://nanogames/shuffle_dance/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b8uc7507jed3d" path="res://nanogames/shuffle_dance/card/card.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://b2m1p1js72huu" path="res://nanogames/shuffle_dance/_assets/background.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://duawgcslkx40r" path="res://nanogames/shuffle_dance/_assets/move.wav" id="4"]
+[ext_resource type="AudioStream" uid="uid://bokeqcw35u63m" path="res://nanogames/shuffle_dance/_assets/music.ogg" id="5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Cards" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Card" parent="Cards" instance=ExtResource("2")]
+position = Vector2(150, 180)
+
+[node name="Card2" parent="Cards" instance=ExtResource("2")]
+position = Vector2(480, 180)
+
+[node name="Card3" parent="Cards" instance=ExtResource("2")]
+position = Vector2(810, 180)
+
+[node name="Card4" parent="Cards" instance=ExtResource("2")]
+position = Vector2(150, 540)
+
+[node name="Card5" parent="Cards" instance=ExtResource("2")]
+position = Vector2(480, 540)
+
+[node name="Card6" parent="Cards" instance=ExtResource("2")]
+position = Vector2(810, 540)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+autoplay = true
+bus = &"Music"
+
+[node name="Effects" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+bus = &"Effects"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3")
+stretch_mode = 1
+
+[connection signal="selected" from="Cards/Card" to="." method="_on_card_selected"]
+[connection signal="selected" from="Cards/Card2" to="." method="_on_card_selected"]
+[connection signal="selected" from="Cards/Card3" to="." method="_on_card_selected"]
+[connection signal="selected" from="Cards/Card4" to="." method="_on_card_selected"]
+[connection signal="selected" from="Cards/Card5" to="." method="_on_card_selected"]
+[connection signal="selected" from="Cards/Card6" to="." method="_on_card_selected"]

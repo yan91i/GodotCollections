@@ -1,0 +1,1615 @@
+# LANGUAGE translation for Librerama for the following files:
+# res://modals/modal/modal.tscn
+# res://modals/modal/modal.gd
+# res://modals/settings_modal/settings_modal.tscn
+# res://modals/settings_modal/settings_modal.gd
+# res://modals/settings_modal/input_modal/input_modal.gd
+# res://nanogames/anagogic_clock/nanogame.json
+# res://nanogames/ballkeep/nanogame.json
+# res://nanogames/buzzing_lunch/nanogame.json
+# res://nanogames/carnival_shootout/nanogame.json
+# res://nanogames/countin_candy/nanogame.json
+# res://nanogames/digital_warp/nanogame.json
+# res://nanogames/gadget_inspection/nanogame.json
+# res://nanogames/garden_thyme/nanogame.json
+# res://nanogames/gem_enchantment/nanogame.json
+# res://nanogames/gravity_shift/nanogame.json
+# res://nanogames/hop_for_love/nanogame.json
+# res://nanogames/input_flow/nanogame.json
+# res://nanogames/neo_highway/nanogame.json
+# res://nanogames/papercuts/nanogame.json
+# res://nanogames/punchbag_wallop/nanogame.json
+# res://nanogames/rope_hop/nanogame.json
+# res://nanogames/shuffle_dance/nanogame.json
+# res://nanogames/suitcase_by_case/nanogame.json
+# res://nanogames/thing_factory/nanogame.json
+# res://nanogames/void_avoider/nanogame.json
+# res://nanogames/woozy_chomper/nanogame.json
+# res://places/arcade_machine/arcade_machine.tscn
+# res://places/arcade_machine/arcade_machine.gd
+# res://places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+# res://places/arcade_machine/nanogame_hud/nanogame_hud.gd
+# res://places/arcade_machine/nanogame_selection/nanogame_selection.tscn
+# res://places/arcade_machine/nanogame_selection/nanogame_selection.gd
+# res://places/arcade_machine/nanogame_selection/about_nanogame_modal/about_nanogame_modal.tscn
+# res://places/arcade_machine/nanogame_selection/about_nanogame_modal/about_nanogame_modal.gd
+# res://places/arcade_machine/nanogame_selection/nanogame_button/nanogame_button.gd
+# res://places/arcade_machine/statistics/statistics.tscn
+# res://places/arcade_machine/tutorial/tutorial.tscn
+# res://places/intro/intro.tscn
+# res://places/intro/intro.gd
+# res://places/lobby/lobby.tscn
+# res://places/lobby/lobby.gd
+# res://places/lobby/about_modal/about_modal.gd
+# res://places/lobby/assistants/placeholder/dialog.json
+# res://places/lobby/buy_menu/buy_menu.tscn
+# res://places/lobby/buy_menu/buy_menu.gd
+# res://places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+# res://places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn
+# res://places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Librerama\n"
+"PO-Revision-Date: 2024-05-09 01:58+0000\n"
+"Last-Translator: N4ta <codeberg@n4ta.anonaddy.me>\n"
+"Language-Team: Portuguese <https://translate.codeberg.org/projects/librerama/"
+"librerama/pt/>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.5.2\n"
+
+#: modals/modal/modal.tscn
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: modals/modal/modal.tscn modals/modal/modal.gd
+msgid "Close"
+msgstr "Fechar"
+
+#: modals/modal/modal.gd places/intro/intro.tscn
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+msgid "OK"
+msgstr "OK"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Language:"
+msgstr "Língua:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "System Default"
+msgstr ""
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Fullscreen Window"
+msgstr "Janela Cheia"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Pause When the Game Loses Focus"
+msgstr "Pausar Quando o Jogo Perde Foco"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Mute When the Game Loses Focus"
+msgstr "Mutar Quando o Jogo Perde Foco"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Show Warning About Community Nanogames"
+msgstr "Mostrar Aviso Sobro Nanojogos da Comunidade"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Main Control:"
+msgstr "Controle Principal:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Automatic"
+msgstr ""
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Touchscreen"
+msgstr ""
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Joypad"
+msgstr ""
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Joypad and Touchscreen"
+msgstr ""
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Keyboard and Mouse"
+msgstr ""
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Switch Touch Controls' Positions"
+msgstr "Trocar Posições dos Controles de Toque"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Up:"
+msgstr "Cima:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Down:"
+msgstr "Baixo:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Left:"
+msgstr "Esquerda:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Right:"
+msgstr "Direita:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Action:"
+msgstr "Ação:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Everything:"
+msgstr "Tudo:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Music:"
+msgstr "Música:"
+
+#: modals/settings_modal/settings_modal.tscn
+msgid "Effects:"
+msgstr "Efeitos:"
+
+#: modals/settings_modal/settings_modal.gd
+#: modals/settings_modal/input_modal/input_modal.gd
+msgctxt "Keyboard"
+msgid "Space"
+msgstr "Espaço"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Space"
+msgstr "Espaço"
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "Invalid input, try another."
+msgstr "Controle inválido, tente outro."
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "Press the desired new input in your joypad."
+msgstr "Clique no novo controle desejado no seu joypad."
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "Press the desired new input in your keyboard."
+msgstr "Clique o novo controle desejado no seu teclado."
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "Is this the new desired input?"
+msgstr "Este é o novo input desejado?"
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "[Invalid Input]"
+msgstr "[Input Inválido]"
+
+#: modals/settings_modal/input_modal/input_modal.gd
+msgid "[None Selected]"
+msgstr "[Nenhum Selecionado]"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "Anagogic Clock"
+msgstr "Relógio Anagógico"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "ADJUST!"
+msgstr "AJUSTE!"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid ""
+"This peculiar clock seems broken, but its center panel can help you put the "
+"hands where they should be, as long as you know how analog clocks work. You "
+"DO know, right?"
+msgstr ""
+"Este relógio peculiar parece estar partido, mas o seu painel central pode-o "
+"ajudar a pôr os ponteiros no sítio, desde que saiba como relógios analógicos "
+"funcionam. Tu SABES, certo?"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "Analog"
+msgstr "Analógico"
+
+#: nanogames/anagogic_clock/nanogame.json
+msgid "Time"
+msgstr "Tempo"
+
+#: nanogames/ballkeep/nanogame.json
+msgid "Ballkeep"
+msgstr "Guardà-bola"
+
+#: nanogames/ballkeep/nanogame.json
+msgid "KEEP IN!"
+msgstr "MANTENHA!"
+
+#: nanogames/ballkeep/nanogame.json
+msgid ""
+"That metal ball really wants to get out this place. Why is that? I would "
+"worry more about keeping it within the paddle area until the timer runs out "
+"if I were you."
+msgstr ""
+"Esta bola de metal quer muito sair do sítio. Por quê? Se fosse a ti, estaria "
+"mais importado em mantê-la dentro da área das raquetes até o tempo acabar."
+
+#: nanogames/ballkeep/nanogame.json
+msgid "Paddle"
+msgstr "Raquete"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Buzzing Lunch"
+msgstr "Almoço Zumbindo"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "EAT!"
+msgstr "COME!"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid ""
+"Did you know that large frogs, such as the Bullfrog, can eat small "
+"marsupials and even other frogs? This one is small however, so just worry "
+"about eating those tasty flies, and avoiding the more indigestible ones."
+msgstr ""
+"Sabia que sapos grandes, como a Rã-Touro, podem comer pequenos marsupiais e "
+"até outros sapos? Este, no entanto, é pequeno, então preocupe-se apenas a "
+"comer aquelas moscas deliciosas e a evitar as mais indigestíveis."
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Flies"
+msgstr "Moscas"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Frog"
+msgstr "Sapo"
+
+#: nanogames/buzzing_lunch/nanogame.json
+msgid "Swamp"
+msgstr "Pântano"
+
+#: nanogames/carnival_shootout/nanogame.json
+msgid "Carnival Shootout"
+msgstr "Tiroteio de Festival"
+
+#: nanogames/carnival_shootout/nanogame.json
+msgid "HIT!"
+msgstr "ACERTE!"
+
+#: nanogames/carnival_shootout/nanogame.json
+msgid ""
+"The carnival has come to town, and with it, the skill and completely not "
+"rigged game of hitting the targets! Sharp your aim and go for the good ones, "
+"while avoiding the bad."
+msgstr ""
+"O festival chegou à aldeia, e com ele, o jogo de habilidade definitivamente "
+"não manipulado de tiro ao alvo! Melhore a sua mira e vá para os bons, "
+"enquanto evitando os maus."
+
+#: nanogames/carnival_shootout/nanogame.json
+msgid "Target"
+msgstr "Alvo"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Countin' Candy"
+msgstr "Contando Doces"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "COUNT!"
+msgstr "CONTE!"
+
+#: nanogames/countin_candy/nanogame.json
+msgid ""
+"Oh, the horror! Look at all those sweets being dumped right into the floor! "
+"HOW MANY DELICIOUS TREATS WERE MERCILESSLY WASTED?! Well, that's up to you "
+"to answer."
+msgstr ""
+"Ai, o horror! Olha todos estes doces a serem despejados para o chão! QUANTOS "
+"DOCES DELICIOSOS FORAM DESPERDIÇADOS SEM MISERICÓRDIA?! Bem, cabe-te a ti "
+"descobrir."
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Counting"
+msgstr "Contagem"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Numbers"
+msgstr "Números"
+
+#: nanogames/countin_candy/nanogame.json
+msgid "Sweet"
+msgstr "Doce"
+
+#: nanogames/digital_warp/nanogame.json
+msgid "Digital Warp"
+msgstr "Warpe Digital"
+
+#: nanogames/digital_warp/nanogame.json
+msgid "EVADE!"
+msgstr "ESQUIVE!"
+
+#: nanogames/digital_warp/nanogame.json
+msgid ""
+"The digital world is a place without the limitations of the real one, but "
+"only represented in basic shapes for some reason. Circumvent the incoming "
+"obstacles (Corrupt data? Hackers?) approaching your vessel (Spaceship? "
+"Avatar? Whatever)."
+msgstr ""
+"O mundo digital é um lugar sem as limitações do real, mas só representado em "
+"formas básicas por alguma razão. Circunda os obstáculos eminentes (Dados "
+"corrompidos? Hackers?) que se aproximam do teu veículo (Nave espacial? "
+"Avatar? Sei lá)."
+
+#: nanogames/digital_warp/nanogame.json
+msgid "Synth"
+msgstr "Synth"
+
+#: nanogames/digital_warp/nanogame.json
+msgid "Virtual"
+msgstr "Virtual"
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "Gadget Inspection"
+msgstr "Inspeção de Aparelhos"
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "CALIBRATE!"
+msgstr "CALIBRE!"
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid ""
+"Machinery needs calibration from time to time, and this one is no different. "
+"Stop the pointer on the mark enough times, so this hunk of metal can go back "
+"to do... Whatever it's supposed to be doing."
+msgstr ""
+"A Maquinaria precisa de calibração de vez em quando, e esta não é diferente. "
+"Para o ponteiro na marca vezes suficientes, para que este pedaço de metal "
+"possa voltar a... o que quer que seja suposto ele fazer."
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "Machine"
+msgstr "Máquina"
+
+#: nanogames/gadget_inspection/nanogame.json
+msgid "Timing"
+msgstr "Timing"
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "Garden Thyme"
+msgstr "Tomilhos de Jardim"
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "WATER!"
+msgstr "REGUE!"
+
+#: nanogames/garden_thyme/nanogame.json
+msgid ""
+"What a beautiful day outside! Perfect timing to give those thirsty flowers "
+"some well deserved water. Just watch out for your, erm, dog(?)... He really "
+"does not like being wet."
+msgstr ""
+"Que dia bonito que está lá fora! Clima perfeito para dar água merecida "
+"àquelas flores sedentas. Tem só cuidado com o teu, erm, cão(?)... Ele não "
+"gosta muito de estar molhado."
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "Dog"
+msgstr "Cão"
+
+#: nanogames/garden_thyme/nanogame.json
+msgid "Flowers"
+msgstr "Flores"
+
+#: nanogames/gem_enchantment/nanogame.json
+msgid "Gem Enchantment"
+msgstr "Encantamento de Joias"
+
+#: nanogames/gem_enchantment/nanogame.json
+msgid "ENCHANT!"
+msgstr "ENCANTA!"
+
+#: nanogames/gem_enchantment/nanogame.json
+msgid ""
+"The gems of Katrak, follow the pattern to make them reveal their true magic "
+"power and- No, for the last time, grandpa, those are NOT demonic symbols!"
+msgstr ""
+"As joias de Katrak, segue o padrão para fazê-las revelar o seu poder mágico "
+"verdadeiro e- Não, pela última vez avô, NÃO são símbolos satânicos!"
+
+#: nanogames/gem_enchantment/nanogame.json
+msgid "Magic"
+msgstr "Magia"
+
+#: nanogames/gem_enchantment/nanogame.json nanogames/input_flow/nanogame.json
+msgid "Match"
+msgstr "Combina"
+
+#: nanogames/gem_enchantment/nanogame.json nanogames/input_flow/nanogame.json
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "Memory"
+msgstr "Memória"
+
+#: nanogames/gravity_shift/nanogame.json
+msgid "Gravity Shift"
+msgstr "Mudança de Gravidade"
+
+#: nanogames/gravity_shift/nanogame.json
+msgid "SHIFT!"
+msgstr "MUDE!"
+
+#: nanogames/gravity_shift/nanogame.json
+msgid ""
+"The law of gravity may dictate that objects with mass attract each other, "
+"unless you have the power of [insert technobabble here]! So make sure to use "
+"it to evade the lifting pillars, as the laws of motion are still very much "
+"in place."
+msgstr ""
+"A lei da gravidade pode ditar que objetos com massa atraem-se, a menos que "
+"tu tenhas o poder de [inserir tecno-baboseira aqui]! Então tem a certeza que "
+"o usas para desviar de pilares ascendentes, como as leis do movimento ainda "
+"esão muito presentes."
+
+#: nanogames/gravity_shift/nanogame.json
+msgid "Robot"
+msgstr "Robô"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Hop for Love"
+msgstr "Saltar D'amor"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "CROSS!"
+msgstr "ATRAVESSA!"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid ""
+"Love can make you conquer anything, \"anything\" being a small stream of "
+"water in this case. Help this little rabbit hop across to unite these "
+"lovebunnies."
+msgstr ""
+"O amor pode-te fazer conquistar tudo, \"tudo\" sendo neste caso uma pequena "
+"corrente de água. Ajuda este pequeno coelho a saltitar para unir estes dois "
+"enamorados."
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Bunny"
+msgstr "Coelho"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Rabbit"
+msgstr "Coelho"
+
+#: nanogames/hop_for_love/nanogame.json
+msgid "Water"
+msgstr "Água"
+
+#: nanogames/input_flow/nanogame.json
+msgid "Input Flow"
+msgstr "Fluxo de Controle"
+
+#: nanogames/input_flow/nanogame.json
+msgid "REPEAT!"
+msgstr "REPETE!"
+
+#: nanogames/input_flow/nanogame.json
+msgid ""
+"Try to not get too distracted by the beat and pay attention to match the "
+"flow of inputs that appear in the screen."
+msgstr ""
+"Tenta não ficar muito distraído pela batida e presta atenção para imitar o "
+"fluxo de controles que aparecem no ecrã."
+
+#: nanogames/neo_highway/nanogame.json
+msgid "Neo Highway"
+msgstr "Autoestrada Neo"
+
+#: nanogames/neo_highway/nanogame.json nanogames/swatter_swindler/nanogame.json
+msgid "DODGE!"
+msgstr "ESQUIVA!"
+
+#: nanogames/neo_highway/nanogame.json
+msgid ""
+"The future is now, old man! Get in your hover car and drive away in the neo "
+"highway. Just be aware of your fellow drivers, which are so reckless that "
+"you could swear they are aiming at you."
+msgstr ""
+"O futuro é agora, velhinho! Entra no teu carro voador e conduz na "
+"autoestrada neo. Fica só atento para os teus colegas condutores, que são tão "
+"imprudentes que podes crer que estão a mirar em ti."
+
+#: nanogames/neo_highway/nanogame.json
+msgid "Car"
+msgstr "Carro"
+
+#: nanogames/neo_highway/nanogame.json
+msgid "City"
+msgstr "Cidade"
+
+#: nanogames/neo_highway/nanogame.json
+msgid "Future"
+msgstr "Futuro"
+
+#: nanogames/papercuts/nanogame.json
+msgid "Papercuts"
+msgstr "Cortes de Papel"
+
+#: nanogames/papercuts/nanogame.json
+msgid "CUTOUT!"
+msgstr "CORTA!"
+
+#: nanogames/papercuts/nanogame.json
+msgid ""
+"How about letting your inner child artist express themselves by cutting a "
+"piece of paper into something barely recognizable? So grab a pair of "
+"scissors and get crafty! Just try to avoid running with them, alright?"
+msgstr ""
+"E que tal deixar a tua criança artista interior se expressar por cortar um "
+"pedaço de papel para algo quase irreconhecível? Então pega numa tesoura e sê "
+"artístico! Tenta só não correr com elas, ok?"
+
+#: nanogames/papercuts/nanogame.json
+msgid "Crafts"
+msgstr "Trabalhos Manuais"
+
+#: nanogames/papercuts/nanogame.json
+msgid "Precision"
+msgstr "Precisão"
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "Punchbag Wallop"
+msgstr "Surra ao Saco"
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "PUNCH!"
+msgstr "DÁ MURROS!"
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid ""
+"Give those punching bags a good ol' pummeling by mashing the action button "
+"till they're torn apart! Careful though, some of them can swing in "
+"unexpected ways."
+msgstr ""
+"Dá a esses sacos de boxe um bom e velho sopapo por rapidamente pressionar o "
+"botão de ação até eles se rasgarem! Mas tem cuidado, alguns podem baloiçar "
+"de maneiras inesperadas."
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "Boxing"
+msgstr "Boxing"
+
+#: nanogames/punchbag_wallop/nanogame.json
+msgid "Old"
+msgstr "Antigo"
+
+#: nanogames/rope_hop/nanogame.json
+msgid "Rope Hop"
+msgstr "Saltar à Corda"
+
+#: nanogames/rope_hop/nanogame.json
+msgid "JUMP!"
+msgstr "SALTA!"
+
+#: nanogames/rope_hop/nanogame.json
+msgid ""
+"What a better combination than rope jumping and the freestyle dancing of hip "
+"hop? Just worry about the rope first, but get ready for some challengers "
+"later."
+msgstr ""
+"Há melhor combinação que saltar à corda e a dança livre hip-hop? Preocupa-te "
+"só primeiro com a corda, mas fica preparado para alguns desafios depois."
+
+#: nanogames/rope_hop/nanogame.json
+msgid "Hip Hop"
+msgstr "Hip-Hop"
+
+#: nanogames/rope_hop/nanogame.json
+msgid "Jump Rope"
+msgstr "Corda de Saltar"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "Shuffle Dance"
+msgstr "Dança Baralhante"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "PAY ATTENTION!"
+msgstr "PRESTA ATENÇÃO!"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid ""
+"Eyes on the prize, baby! Follow where the first flipped card goes, and "
+"select it when all the shuffling is done. The thrill of testing basic "
+"attention span without losing your money!"
+msgstr ""
+"Olhos no prémio, bebé! Foca-te donde vai a primeira carta virada, e "
+"seleciona-a quando acabar o baralhamento. A emoção de testar a atenção "
+"básica sem perder o teu dinheiro!"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "Cards"
+msgstr "Cartas"
+
+#: nanogames/shuffle_dance/nanogame.json
+msgid "Deck"
+msgstr "Baralho"
+
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "Suitcase-by-Case"
+msgstr "Mala por Capa"
+
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "FIND!"
+msgstr "ENCONTRA!"
+
+#: nanogames/suitcase_by_case/nanogame.json
+msgid ""
+"Now, where is that baggage? It was certainly blue, or maybe red? It was a "
+"briefcase, or was it actually a backpack?! It seems that your memory looks "
+"as good as the chances that your luggage was treated carefully."
+msgstr ""
+"E agora, onde está aquela mala? De certeza que era azul, ou se calhar "
+"vermelha? Era uma mala, ou era uma mochila?! Parece que a tua memória está "
+"tão boa como as tuas chances de que a bagagem foi tratada com cuidado."
+
+#: nanogames/suitcase_by_case/nanogame.json
+#: nanogames/thing_factory/nanogame.json
+msgid "Attention"
+msgstr "Atenção"
+
+#: nanogames/suitcase_by_case/nanogame.json
+msgid "Baggage"
+msgstr "Bagagem"
+
+#: nanogames/thing_factory/nanogame.json
+msgid "Thing Factory"
+msgstr "Fábrica de Cenas"
+
+#: nanogames/thing_factory/nanogame.json
+msgid "VALIDATE!"
+msgstr "VALIDA!"
+
+#: nanogames/thing_factory/nanogame.json
+msgid ""
+"The thing is, things let's us do all sort of things. Our thing is to make "
+"things, so help eliminate the wrong things, because correctness is our kind "
+"of thing."
+msgstr ""
+"A cena é, cenas deixam-nos fazer todo o tipo de cenas. A nossa cena é fazer "
+"cenas, então ajuda a eliminar as cenas erradas, porque correção é a nossa "
+"cena."
+
+#: nanogames/thing_factory/nanogame.json
+msgid "Conveyor"
+msgstr "Correia Transportadora"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Void Avoider"
+msgstr "Desvio do Vazio"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "AVOID!"
+msgstr "DESVIA!"
+
+#: nanogames/void_avoider/nanogame.json
+msgid ""
+"Space, the final frontier, and apparently filled with black holes that have "
+"no regard to the laws of physics. Make sure the spaceship stays out of their "
+"way!"
+msgstr ""
+"Espaço, a última fronteira e, aparentemente, enchido de buracos negros que "
+"não querem saber das leis da física. Garante que a nave fica fora do seu "
+"caminho!"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Alien"
+msgstr "Extraterrestre"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Black Hole"
+msgstr "Buraco Negro"
+
+#: nanogames/void_avoider/nanogame.json
+msgid "Dodge"
+msgstr "Desvie"
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "Woozy Chomper"
+msgstr "Mastigador Maluco"
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "CHOMP!"
+msgstr "MASTIGA!"
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid ""
+"Woozy hungry. Help Woozy eat fruit, yummy! Help Woozy not eat Woozy, not "
+"yummy!"
+msgstr ""
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "Creature"
+msgstr ""
+
+#: nanogames/woozy_chomper/nanogame.json
+msgid "Fruit"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Play"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Quickplay"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Collection"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Customize"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Statistics"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn places/lobby/lobby.tscn
+msgid "Settings"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Back to Lobby"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Go back."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Start playing."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Ticket quantity."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "See the basic tutorial."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Switch from official to community made nanogames."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid "Community Mode"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid ""
+"[center][b]ATTENTION![/b][/center]\n"
+"\n"
+"Community nanogames are not sandboxed, so a misconfigured nanogame can crash "
+"the whole game, and a maliciously programmed one can do bad things to your "
+"device.\n"
+"\n"
+"[b]Make sure that the community nanogames you play come from a trusted "
+"source.[/b]\n"
+"\n"
+"Tickets will also not be awarded when playing them."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.tscn
+msgid ""
+"[center][b]Need Some Help?[/b][/center]\n"
+"\n"
+"Looks like it's your first time playing, you should probably [b]take a look "
+"at the tutorial[/b] first. You can access it anytime by clicking the [b]\"?"
+"\"[/b] button on the bottom-left."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.gd places/lobby/lobby.gd
+#: places/lobby/buy_menu/buy_menu.gd
+msgid "Coming Soon"
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.gd
+msgid ""
+"An error occured while attempting to load the nanogame \"%s\", likely caused "
+"by it not being properly configured."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.gd
+msgid ""
+"\n"
+"\n"
+"Please open a bug report in the [url=%s]issue tracker[/url]."
+msgstr ""
+
+#: places/arcade_machine/arcade_machine.gd
+msgid ""
+"\n"
+"\n"
+"[b]Do not open a bug report in the issue tracker[/b], this is a community "
+"nanogame, so the bug should be reported to its creator(s). Check the "
+"nanogame's \"About\" information."
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Difficulty"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Speed"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Energy"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Score:"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Pause the nanogame."
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Paused"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Continue"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.tscn
+msgid "Stop"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "[No Name]"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "[No Kickoff]"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "Input: %s"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[No Description]"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Starting"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Victory!"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Failure!"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Up Next:"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+msgid "Timer:"
+msgstr ""
+
+#: places/arcade_machine/nanogame_hud/nanogame_hud.gd
+msgid "Game Over"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+#: places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn
+msgid "Search"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Filter"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid ""
+"Select random nanogames based on filtered results.\n"
+"Available spots will be taken, but if it's full, everything\n"
+"is randomized."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Go to first page."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Go to previous page."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Go to next page."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid "Go to last page."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.tscn
+msgid ""
+"[center][b]Search Help[/b][/center]\n"
+"\n"
+"[b]•[/b] Nanogames will be filtered from the keywords typed. A result is "
+"valid if the name, kickoff, tags, or author matches it.\n"
+"\n"
+"[b]•[/b] Multiple keywords can be used by separating words with \"[b],[/"
+"b]\". Any result that contains at least one of them will be valid by "
+"default.\n"
+"\n"
+"[b]•[/b] Putting \"[b]-[/b]\" at the start of a keyword will make results "
+"containing it be ignored.\n"
+"\n"
+"[b]•[/b] Putting \"[b]*[/b]\" at the start of a keyword will make so that "
+"all results must contain it to be valid."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+msgid "Inputs"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+msgid "Timers"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+#: places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn
+msgid "No nanogames found."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+msgid "No nanogames available."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_collection.gd
+msgid ""
+"Place them in the \"[url=%s]%s[/url]\" directory,\n"
+"then restart the game."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid ""
+"The practice mode lets your sharpen your skills on a particular nanogame, "
+"without needing to worry about energy points.\n"
+"\n"
+"Be aware that tickets will not be given, and statistics will not be updated."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid "Choose Start Difficulty"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid "Difficulty 1"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid "Difficulty 2"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.tscn
+msgid "Difficulty 3"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "Practice Mode"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "\"%s\""
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+#: places/lobby/about_modal/about_modal.gd
+msgid "By %s"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "[No Author]"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+#: places/lobby/about_modal/about_modal.gd
+msgid "Source"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[No Source]"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Input:[/b] %s"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Timer:[/b] %s"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Tags:[/b] %s"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[None]"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Code License:[/b] %s"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "[b]Assets License:[/b] %s"
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd
+msgid "No third-party resources used."
+msgstr ""
+
+#: places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd
+msgid "Timer: %s"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Best Scores"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "1º:"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "2º:"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "3º:"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "4º:"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "5º:"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "6º:"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Nanogames Played"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Total:"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Won / Lost:"
+msgstr ""
+
+#: places/arcade_machine/statistics/statistics.tscn
+msgid "Best Win Streak:"
+msgstr ""
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"[b]Welcome to Librerama![/b] This tutorial will show you the basics on how "
+"play your nanogames (our special nickname for \"mini-games\").\n"
+"\n"
+"[b]Use the buttons below to navigate between pages[/b], and let's get "
+"started!"
+msgstr ""
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"When you press the [b]\"Play\"[/b] button, this screen will appear. Here you "
+"will [b]pick the nanogames you want to play[/b] (all boxes on the right need "
+"to be filled), then press the top-right button to begin.\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/"
+"selecting_nanogames.png[/img][/center]"
+msgstr ""
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"Now the game truly begins! Each time [b]you will be shown what nanogame is "
+"coming next and its objective[/b]. The nanogames only last for a few "
+"seconds, so you need to think on your feet!\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/kickoff.png[/img][/"
+"center]"
+msgstr ""
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"After winning (or losing) a nanogame, keep an eye at those indicators on the "
+"top. They indicate respectively: the [b]difficulty[/b], [b]speed[/b], and "
+"[b]energy[/b].\n"
+"\n"
+"Difficulty and speed increase as you win nanogames, and that means higher "
+"scores. Speed and energy decrease when you lose nanogames, and [b]if your "
+"energy reaches 0, the game is over[/b].\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/status_indicators."
+"png[/img][/center]"
+msgstr ""
+
+#: places/arcade_machine/tutorial/tutorial.tscn
+msgid ""
+"Once the inevitable happens and you get a game over (or just quit), [b]your "
+"score will be converted into tickets[/b]. They can be used to buy lots of "
+"stuff, including more nanogames for you to play!\n"
+"\n"
+"So what are you waiting for? [b]Go play some nanogames![/b]\n"
+"\n"
+"[center][img]res://places/arcade_machine/tutorial/_assets/ending.png[/img][/"
+"center]"
+msgstr ""
+
+#: places/intro/intro.gd
+msgid ""
+"[center][b]THIS IS A WORK IN PROGRESS![/b][/center]\n"
+"\n"
+"It's unfinished, has a very small catalog of nanogames, and it's rough "
+"around the edges. Please take this into consideration before judging it.\n"
+"\n"
+"...\n"
+"You are going to ignore everything I just wrote, aren’t you?"
+msgstr ""
+
+#: places/intro/intro.gd
+msgid ""
+"[center][b]Can't Access User Data Directory![/b][/center]\n"
+"\n"
+"The user data directory is non-persistent, this means that [b]saving data "
+"will not be possible[/b]."
+msgstr ""
+
+#: places/intro/intro.gd
+msgid ""
+"Make sure that you have third-party cookies enabled and that you're not in "
+"privacy mode."
+msgstr ""
+
+#: places/lobby/lobby.tscn places/lobby/buy_menu/buy_menu.tscn
+msgid "Buy"
+msgstr ""
+
+#: places/lobby/lobby.tscn
+msgid "Talk"
+msgstr ""
+
+#: places/lobby/lobby.tscn places/lobby/lobby.gd
+msgid "Arcade"
+msgstr ""
+
+#: places/lobby/lobby.tscn
+msgid "Backpack"
+msgstr ""
+
+#: places/lobby/lobby.tscn
+msgid "Quit"
+msgstr ""
+
+#: places/lobby/lobby.tscn
+msgid "About"
+msgstr ""
+
+#: places/lobby/lobby.gd
+msgid "Locked"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "A free/libre fast-paced arcade collection of mini-games."
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid ""
+"This program is [url=%s]free software[/url]: you can redistribute it and/or "
+"modify it under the terms of the [url=%s]GNU General Public License[/url] as "
+"published by the Free Software Foundation, either version 3 of the License, "
+"or (at your option) any later version."
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid ""
+"The source code and assets can be found in its [url=%s]repository[/url]."
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid ""
+"Librerama is not just free as in [i]freedom[/i], but also free as in [i]free "
+"of charge[/i], so donations are very much welcomed!"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid ""
+"You can donate to me via [url=%s]Liberapay[/url]. The money will be used to "
+"help me put more work not just into this game, but also my general work in "
+"free/libre gaming."
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid ""
+"The wonderful people listed below offered sizable contributions to the game. "
+"Make sure to check them out."
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Music"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "• %s: "
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Arcade Menu Theme and Jingles"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Translation"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Dutch"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Esperanto"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "German"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Portuguese, Brazil"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "Spanish"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid "• %s"
+msgstr ""
+
+#: places/lobby/about_modal/about_modal.gd
+msgid ""
+"For the licenses of the third-party components used by the nanogames "
+"themselves, check their respective \"About\" information."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This hopes that the time you've currently spent was enjoyable!"
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This is programmed to be happy in helping you at any time!"
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"Remember to take breaks from time to time, about [color=#46323232]"
+"[i]print(SUGGESTED_TIME)[/i][/color] [color=#c35e5e][shake rate=5 "
+"level=10]ERROR: Value is NaN.[/shake][/color] minutes is ideal."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This also accepts rudeness as input for feedback. Thank you!"
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"[color=#46323232][i]if not clients.has(client_new):\n"
+"\twelcome_new()[/i][/color]\n"
+"Welcome to the Librerama arcade, new customer! This will be your attendant "
+"for today."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"This is replacing our usual staff due to [color=#46323232]"
+"[i]print(REPLACEMENT_REASON)[/i][/color] [color=#c35e5e][shake rate=5 "
+"level=10]ERROR: Value is Null.[/shake][/color]"
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"We have a selection of multiple nanogames (mini-games) for you to enjoy, "
+"each a challenge of their own."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"You'll be given completely free of charge [color=#46323232]"
+"[i]print(nanogame_count)[/i][/color] [b]6[/b] nanogames to start with."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"More nanogames and other niceties can be acquired through this at any time "
+"(extra costs apply)."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"Please direct yourself to one of our arcade machines, so we can begin the [b]"
+"[wave freq=3][rainbow freq=0.4]F U N[/rainbow][/wave][/b]!"
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"Comeback whenever your [b][wave freq=3][rainbow freq=0.4]F U N[/rainbow][/"
+"wave][/b] needs a recharge!"
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid "This hopes its service were of decent quality."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"Let the [b][wave freq=3][rainbow freq=0.4]F U N[/rainbow][/wave][/b] "
+"procedure commence!"
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"This hopes you enjoy the new [color=#46323232][i]print(product_name)[/i][/"
+"color] [color=#c35e5e][shake rate=5 level=10]ERROR: Value is Int.[/shake][/"
+"color] you purchased!"
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"[color=#46323232][ [color=#98fb98]OK[/color] ] Started System.\n"
+"[ [color=#98fb98]OK[/color] ] Loaded Dialog.[/color]\n"
+"Hello there, dear customer! This will be your attendant for today."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"This is programmed to inform and remind you that [b]Librerama[/b] is [b]free "
+"software[/b]."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"This means that its code and assets can be:\n"
+"[b]0.[/b] Used for any purpose.\n"
+"[b]1.[/b] Studied and changed.\n"
+"[b]2.[/b] Copied and redistributed.\n"
+"[b]3.[/b] Further improved."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"Said code and assets can be viewed and acquired in its [url=https://codeberg."
+"org/Librerama/librerama]online repository[/url]."
+msgstr ""
+
+#: places/lobby/assistants/placeholder/dialog.json
+msgid ""
+"[color=#46323232]if clients.has(client_new):\n"
+"\twelcome()[/color]\n"
+"Welcome once again to the Librerama arcade, dear customer! This will be your "
+"attendant for today."
+msgstr ""
+
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Nanogames"
+msgstr ""
+
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Prizes"
+msgstr ""
+
+#: places/lobby/buy_menu/buy_menu.tscn
+msgid "Themes"
+msgstr ""
+
+#: places/lobby/buy_menu/buy_menu.gd
+msgid ""
+"[center][b]Confirm Purchase[/b][/center]\n"
+"\n"
+"Do you want to buy [b]\"%s\"[/b] for the price of [b]%d[/b] tickets? This "
+"will leave you with [b]%s[/b] tickets to spare."
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Buy a Random Nanogame"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "For those who aren't picky."
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Cost: [b]%d[/b]"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Buy a Type of Nanogame"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Everybody has a type, you know?"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "Buy a Specific Nanogame"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "But I want THAT one!"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "A Random Nanogame"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/nanogames.gd
+msgid "A Type of Nanogame"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+msgid "Input:"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Navigation"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+#, fuzzy
+#| msgid "Action:"
+msgid "Action"
+msgstr "Ação:"
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Navigation and Action"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Drag and Drop"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Objective"
+msgstr ""
+
+#: places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn
+#: nanogame_player/translation_extract.json
+msgid "Survival"
+msgstr ""
+
+#: nanogames/swatter_swindler/nanogame.json
+msgid "Swatter Swindler"
+msgstr ""
+
+#: nanogames/swatter_swindler/nanogame.json
+msgid ""
+"Finding difficult to hit the target when swatting flies? Then be the little "
+"nuisance for a change, and fly around to avoid the incoming swatter. Wait, "
+"this place feels kinda familiar."
+msgstr ""
+
+#: nanogames/swatter_swindler/nanogame.json
+msgid "Fly"
+msgstr ""
+
+#: modals/settings_modal/translation_extract.json
+#, fuzzy
+#| msgid "Action:"
+msgid "Bottom Action"
+msgstr "Ação:"
+
+#: modals/settings_modal/translation_extract.json
+#, fuzzy
+#| msgid "Down:"
+msgid "Down"
+msgstr "Baixo:"
+
+#: modals/settings_modal/translation_extract.json
+msgid "D-pad Down"
+msgstr ""
+
+#: modals/settings_modal/translation_extract.json
+msgid "D-pad Left"
+msgstr ""
+
+#: modals/settings_modal/translation_extract.json
+msgid "D-pad Right"
+msgstr ""
+
+#: modals/settings_modal/translation_extract.json
+msgid "D-pad Up"
+msgstr ""
+
+#: modals/settings_modal/translation_extract.json
+#, fuzzy
+#| msgid "Left:"
+msgid "Left"
+msgstr "Esquerda:"
+
+#: modals/settings_modal/translation_extract.json
+#, fuzzy
+#| msgid "Action:"
+msgid "Left Action"
+msgstr "Ação:"
+
+#: modals/settings_modal/translation_extract.json
+#, fuzzy
+#| msgid "Right:"
+msgid "Right"
+msgstr "Direita:"
+
+#: modals/settings_modal/translation_extract.json
+#, fuzzy
+#| msgid "Action:"
+msgid "Right Action"
+msgstr "Ação:"
+
+#: modals/settings_modal/translation_extract.json
+#, fuzzy
+#| msgid "Action:"
+msgid "Top Action"
+msgstr "Ação:"
+
+#: modals/settings_modal/translation_extract.json
+#, fuzzy
+#| msgid "Up:"
+msgid "Up"
+msgstr "Cima:"
+
+#: nanogame_player/translation_extract.json
+msgid "Non-Free"
+msgstr ""
+
+#: nanogame_player/translation_extract.json
+msgid "Public Domain"
+msgstr ""
+
+#: nanogame_player/translation_extract.json
+msgid "Unknown"
+msgstr ""

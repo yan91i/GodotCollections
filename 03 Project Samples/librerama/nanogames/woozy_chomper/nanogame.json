@@ -1,0 +1,45 @@
+{
+    "name": "Woozy Chomper",
+    "kickoff": "CHOMP!",
+    "description": "Woozy hungry. Help Woozy eat fruit, yummy! Help Woozy not eat Woozy, not yummy!",
+    "author": "Librerama",
+    "input": "NAVIGATION",
+    "inputModifier": "HORIZONTAL",
+    "timer": "OBJECTIVE",
+    "tags": "Creature,Fruit",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/woozy_chomper",
+    "thirdParty": [
+        {
+            "name": "Alien bleep music",
+            "author": "cabled_mess",
+            "license": "CC0",
+            "source": "https://freesound.org/people/cabled_mess/sounds/332248/"
+        },
+        {
+            "name": "Big plants (crops) growing quickly",
+            "author": "Contant_aghony",
+            "license": "CC0",
+            "source": "https://freesound.org/people/Contant_aghony/sounds/479160/"
+        },
+        {
+            "name": "Concrete SMASH 2",
+            "author": "magnuswaker",
+            "license": "CC0",
+            "source": "https://freesound.org/people/magnuswaker/sounds/522099/"
+        },
+        {
+            "name": "Crunch and munch",
+            "author": "PapercutterJohn",
+            "license": "CC0",
+            "source": "https://freesound.org/people/PapercutterJohn/sounds/318608/"
+        },
+        {
+            "name": "free_skuzzle",
+            "author": "missburusdeer2011",
+            "license": "CC0",
+            "source": "https://freesound.org/people/missburusdeer2011/sounds/507127/"
+        }
+    ]
+}

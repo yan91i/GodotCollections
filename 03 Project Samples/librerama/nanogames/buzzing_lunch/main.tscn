@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3wtvhqq5t1sm"]
+
+[ext_resource type="Script" path="res://nanogames/buzzing_lunch/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b01up4l05d8a5" path="res://nanogames/buzzing_lunch/frog/frog.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bmnnk5xndhlt8" path="res://nanogames/buzzing_lunch/_assets/background.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://d2xpvm3hvm532" path="res://nanogames/buzzing_lunch/_assets/music.ogg" id="4"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Frog" parent="." instance=ExtResource("2")]
+position = Vector2(480, 602)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3")
+stretch_mode = 1
+
+[connection signal="eat" from="Frog" to="." method="_on_frog_eat"]

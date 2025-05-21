@@ -1,0 +1,275 @@
+[gd_scene load_steps=18 format=3 uid="uid://ek7qu7p6mlvm"]
+
+[ext_resource type="Script" path="res://nanogames/papercuts/main.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cp028pmarj0p2" path="res://nanogames/papercuts/_assets/scissors.svg" id="2"]
+[ext_resource type="Texture2D" uid="uid://dh1w7uvdb57ys" path="res://nanogames/papercuts/_assets/valid_area.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://cw58ap0j738ja" path="res://nanogames/papercuts/_assets/paper.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cse0eby8lrdfk" path="res://nanogames/papercuts/_assets/start.svg" id="5"]
+[ext_resource type="AudioStream" uid="uid://blexjuiiesrpr" path="res://nanogames/papercuts/_assets/scissors.wav" id="7"]
+[ext_resource type="AudioStream" uid="uid://x481yspp2o1t" path="res://nanogames/papercuts/_assets/music.ogg" id="8"]
+[ext_resource type="Texture2D" uid="uid://rbfh6hm87bx1" path="res://nanogames/papercuts/_assets/decoration_1.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bp5eor75jeje1" path="res://nanogames/papercuts/_assets/decoration_2.png" id="10"]
+[ext_resource type="AudioStream" uid="uid://dpkdtadll5ior" path="res://nanogames/papercuts/_assets/win.wav" id="11"]
+
+[sub_resource type="Gradient" id="Gradient_mo2xp"]
+offsets = PackedFloat32Array(0, 0.4, 0.85, 1)
+colors = PackedColorArray(0.133333, 0.12549, 0.121569, 0, 0.133333, 0.12549, 0.121569, 0.196078, 0.133333, 0.12549, 0.121569, 0.588235, 0.133333, 0.12549, 0.121569, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yapek"]
+gradient = SubResource("Gradient_mo2xp")
+width = 12
+height = 12
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 0.5)
+repeat = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="AudioStreamRandomizer" id="1"]
+streams_count = 1
+stream_0/stream = ExtResource("7")
+
+[sub_resource type="Animation" id="4"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScissorsIndicator:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Foreground/Flash:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Foreground/Center:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="2"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Foreground/Flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(0, 0, 0, 0.34902)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Foreground/Center:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1.05, 1.05)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EndNoise")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="3"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScissorsIndicator:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkekq"]
+_data = {
+"RESET": SubResource("4"),
+"cutout_popout": SubResource("2"),
+"indicator_blink": SubResource("3")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Decoration1" type="Sprite2D" parent="."]
+position = Vector2(-64, 608)
+texture = ExtResource("9")
+
+[node name="Decoration2" type="Sprite2D" parent="."]
+position = Vector2(976, 96)
+texture = ExtResource("10")
+
+[node name="AreaValidVisual" type="Polygon2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("3")
+
+[node name="ValidOutlineOut" type="Line2D" parent="AreaValidVisual"]
+width = 2.0
+default_color = Color(0.101961, 0.101961, 0.101961, 0.34902)
+
+[node name="ValidOutlineIn" type="Line2D" parent="AreaValidVisual"]
+width = 2.0
+default_color = Color(0.101961, 0.101961, 0.101961, 0.34902)
+
+[node name="CutMarks" type="Line2D" parent="."]
+width = 12.0
+texture = SubResource("GradientTexture2D_yapek")
+texture_mode = 2
+
+[node name="StartIndicator" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5")
+offset = Vector2(32, -20)
+
+[node name="ScissorsIndicator" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+
+[node name="AreaValid" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="Triangle" type="CollisionPolygon2D" parent="AreaValid"]
+visible = false
+polygon = PackedVector2Array(256, 576, 480, 144, 704, 576)
+disabled = true
+
+[node name="Square" type="CollisionPolygon2D" parent="AreaValid"]
+visible = false
+polygon = PackedVector2Array(256, 144, 704, 144, 704, 576, 256, 576)
+disabled = true
+
+[node name="Diamond" type="CollisionPolygon2D" parent="AreaValid"]
+visible = false
+polygon = PackedVector2Array(320, 96, 640, 96, 752, 256, 480, 624, 208, 256)
+disabled = true
+
+[node name="Librerama" type="CollisionPolygon2D" parent="AreaValid"]
+visible = false
+polygon = PackedVector2Array(320, 96, 320, 624, 640, 624, 640, 480, 464, 480, 464, 208)
+disabled = true
+
+[node name="Star" type="CollisionPolygon2D" parent="AreaValid"]
+visible = false
+polygon = PackedVector2Array(480, 96, 560, 280, 752, 360, 560, 440, 480, 624, 400, 440, 208, 360, 400, 280)
+disabled = true
+
+[node name="Aircraft" type="CollisionPolygon2D" parent="AreaValid"]
+visible = false
+polygon = PackedVector2Array(480, 96, 560, 336, 768, 528, 544, 560, 560, 624, 400, 624, 416, 560, 192, 528, 400, 336)
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="ScissorsNoise" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("1")
+bus = &"Effects"
+
+[node name="EndNoise" type="AudioStreamPlayer" parent="."]
+bus = &"Effects"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8")
+autoplay = true
+bus = &"Music"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("4")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+
+[node name="Flash" type="ColorRect" parent="Foreground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Center" type="Control" parent="Foreground"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -360.0
+offset_right = 480.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(480, 360)
+mouse_filter = 2
+
+[node name="Fallback" type="Polygon2D" parent="Foreground/Center"]
+texture_repeat = 2
+antialiased = true
+texture = ExtResource("4")
+
+[node name="Cutout" type="Polygon2D" parent="Foreground/Center"]
+texture_repeat = 2
+antialiased = true
+texture = ExtResource("4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jkekq")
+}
+autoplay = "indicator_blink"
+
+[connection signal="input_event" from="AreaValid" to="." method="_on_area_valid_input_event" unbinds=1]
+[connection signal="mouse_exited" from="AreaValid" to="." method="_miscut"]

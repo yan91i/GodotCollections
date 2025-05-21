@@ -1,0 +1,39 @@
+{
+    "name": "Hop for Love",
+    "kickoff": "CROSS!",
+    "description": "Love can make you conquer anything, \"anything\" being a small stream of water in this case. Help this little rabbit hop across to unite these lovebunnies.",
+    "author": "Librerama",
+    "input": "ACTION",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Bunny,Rabbit,Water",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/hop_for_love",
+    "thirdParty": [
+		{
+            "name": "harp flourish",
+            "author": "nathanmanaker",
+            "license": "CC0",
+            "source": "https://freesound.org/people/nathanmanaker/sounds/486952/"
+        },
+		{
+            "name": "Jump_C_05",
+            "author": "cabled_mess",
+            "license": "CC0",
+            "source": "https://freesound.org/people/cabled_mess/sounds/350905/"
+        },
+        {
+            "name": "Nature theme sketch",
+            "author": "remaxim",
+            "license": "CC_BY_SA_3",
+            "source": "https://opengameart.org/content/nature-theme-sketch"
+        },
+        {
+            "name": "splash1",
+            "author": "Michel Baradari",
+            "license": "CC_BY_3",
+            "source": "https://opengameart.org/content/water-splashes"
+        }
+    ]
+}

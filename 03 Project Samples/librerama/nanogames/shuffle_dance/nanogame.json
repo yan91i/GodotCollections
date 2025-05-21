@@ -1,0 +1,39 @@
+{
+    "name": "Shuffle Dance",
+    "kickoff": "PAY ATTENTION!",
+    "description": "Eyes on the prize, baby! Follow where the first flipped card goes, and select it when all the shuffling is done. The thrill of testing basic attention span without losing your money!",
+    "author": "Librerama",
+    "input": "DRAG_DROP",
+    "inputModifier": "NONE",
+    "timer": "OBJECTIVE",
+    "tags": "Cards,Deck",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/shuffle_dance",
+    "thirdParty": [
+        {
+            "name": "A Conversation with Saul (Jazz/Blues Shuffle)",
+            "author": "Matthew Pablo",
+            "license": "CC_BY_3",
+            "source": "https://opengameart.org/content/a-conversation-with-saul-jazzblues-shuffle"
+        },
+        {
+            "name": "Card Flip",
+            "author": "f4ngy",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/f4ngy/sounds/240776/"
+        },
+        {
+            "name": "Poker chip shuffle",
+            "author": "btherad2000",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/btherad2000/sounds/328086/"
+        },
+        {
+            "name": "sliding paper on table",
+            "author": "123jorre456",
+            "license": "CC0",
+            "source": "https://freesound.org/people/123jorre456/sounds/46631/"
+        }
+    ]
+}

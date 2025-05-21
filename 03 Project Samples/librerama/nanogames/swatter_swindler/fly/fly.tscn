@@ -1,0 +1,201 @@
+[gd_scene load_steps=13 format=3 uid="uid://ctpiv7pgkrx3q"]
+
+[ext_resource type="Script" path="res://nanogames/swatter_swindler/fly/fly.gd" id="1_m2cn7"]
+[ext_resource type="Texture2D" uid="uid://c1031xjdey28p" path="res://nanogames/swatter_swindler/fly/_assets/fly.svg" id="2_ujlxm"]
+[ext_resource type="AudioStream" uid="uid://cwa18gqvpnkl4" path="res://nanogames/swatter_swindler/fly/_assets/buzz.wav" id="3_mhewc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glim5"]
+atlas = ExtResource("2_ujlxm")
+region = Rect2(230, 0, 115, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkcpn"]
+atlas = ExtResource("2_ujlxm")
+region = Rect2(0, 0, 115, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lgom"]
+atlas = ExtResource("2_ujlxm")
+region = Rect2(115, 0, 115, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_al0ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glim5")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkcpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lgom")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntsuo"]
+radius = 20.0
+
+[sub_resource type="Animation" id="Animation_0gpgl"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_236ej"]
+resource_name = "fly"
+length = 0.2
+capture_included = true
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [1.0, 0.2],
+"method": &"_update_move_volume"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(1.2, 1.2)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"fly", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qg1ev"]
+resource_name = "land"
+length = 0.4
+capture_included = true
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0, 0.4],
+"method": &"_update_move_volume"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5t2mn"]
+_data = {
+"RESET": SubResource("Animation_0gpgl"),
+"fly": SubResource("Animation_236ej"),
+"land": SubResource("Animation_qg1ev")
+}
+
+[node name="Fly" type="Area2D"]
+script = ExtResource("1_m2cn7")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_al0ci")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ntsuo")
+
+[node name="Buzz" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mhewc")
+volume_db = -80.0
+autoplay = true
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5t2mn")
+}

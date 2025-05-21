@@ -1,0 +1,49 @@
+{
+    "start": [
+    	"And so it begins!",
+        "Better get ready!",
+        "Buckle up!",
+        "Here we go!",
+        "Let's begin!",
+        "Lock and load!",
+        "Showtime!"
+    ],
+    "win": [
+        "Don't get cocky!",
+        "Heck yes!",
+        "Keep it up!",
+        "Nailed it!",
+        "Nice one!",
+        "Now we're talking!",
+        "Piece of cake!",
+        "There we go!",
+        "You make it look easy!",
+        "You're a natural!"
+    ],
+    "winHarder": [
+        "Alright, time to really test those skills!",
+        "Fine, let's crank it up a notch!",
+        "Good job, but how about this!",
+        "Too easy? Let's change that then!"
+    ],
+    "lose": [
+        "Could have gone better...",
+        "Close, but no cigar...",
+        "I felt that one...",
+        "It happens...",
+        "I'm sure nobody saw that...",
+        "Keep it together...",
+        "Not your finest moment...",
+        "That gotta sting...",
+        "Too bad...",
+        "Welp, that sucks..."
+    ],
+    "stop": [
+    	"End of the line!",
+        "Good hustle!",
+        "See you next round!",
+        "Thanks for playing!",
+        "That's a wrap!",
+        "That's all, folks!"
+    ]
+}

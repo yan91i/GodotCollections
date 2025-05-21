@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbtwlmrga56xs"]
+
+[ext_resource type="Script" path="res://nanogames/rope_hop/jumper/jumper.gd" id="1"]
+[ext_resource type="Animation" uid="uid://c0gavco7xdjno" path="res://nanogames/rope_hop/_resources/jump.tres" id="2"]
+[ext_resource type="Animation" uid="uid://br7bbt7hib1rr" path="res://nanogames/rope_hop/_resources/fall.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://bh33366duxknn" path="res://nanogames/rope_hop/jumper/_assets/jumper.png" id="4"]
+[ext_resource type="Animation" uid="uid://g1pj4iwmbr8o" path="res://nanogames/rope_hop/_resources/idle.tres" id="5"]
+[ext_resource type="AudioStream" uid="uid://cxud1aftnd1ks" path="res://nanogames/rope_hop/_assets/hop.wav" id="6"]
+[ext_resource type="Animation" uid="uid://cvx21y7u8u7wc" path="res://nanogames/rope_hop/_resources/reset.tres" id="7"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(96, 256)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lk50h"]
+_data = {
+"RESET": ExtResource("7"),
+"fall": ExtResource("3"),
+"idle": ExtResource("5"),
+"jump": ExtResource("2")
+}
+
+[node name="Jumper" type="Area2D"]
+script = ExtResource("1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+show_behind_parent = true
+texture = ExtResource("4")
+offset = Vector2(8, 0)
+hframes = 3
+
+[node name="Hop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_lk50h")
+}
+autoplay = "idle"

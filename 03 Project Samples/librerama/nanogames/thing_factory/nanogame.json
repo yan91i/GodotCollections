@@ -1,0 +1,33 @@
+{
+    "name": "Thing Factory",
+    "kickoff": "VALIDATE!",
+    "description": "The thing is, things let's us do all sort of things. Our thing is to make things, so help eliminate the wrong things, because correctness is our kind of thing.",
+    "author": "Librerama",
+    "input": "DRAG_DROP",
+    "inputModifier": "NONE",
+    "timer": "SURVIVAL",
+    "tags": "Attention,Conveyor",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/thing_factory",
+    "thirdParty": [
+        {
+            "name": "Beep1: Resonant Error Beep",
+            "author": "tcpp",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/tcpp/sounds/151309/"
+        },
+        {
+            "name": "crate_break_3",
+            "author": "dxeyes",
+            "license": "CC_BY_3",
+            "source": "https://freesound.org/people/dxeyes/sounds/432669/"
+        },
+        {
+            "name": "Production=Life",
+            "author": "Paranautical",
+            "license": "CC_BY_3",
+            "source": "https://opengameart.org/content/productionlife"
+        }
+    ]
+}

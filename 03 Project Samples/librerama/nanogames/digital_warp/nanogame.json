@@ -1,0 +1,21 @@
+{
+    "name": "Digital Warp",
+    "kickoff": "EVADE!",
+    "description": "The digital world is a place without the limitations of the real one, but only represented in basic shapes for some reason. Circumvent the incoming obstacles (Corrupt data? Hackers?) approaching your vessel (Spaceship? Avatar? Whatever).",
+    "author": "Librerama",
+    "input": "NAVIGATION",
+    "inputModifier": "HORIZONTAL",
+    "timer": "SURVIVAL",
+    "tags": "Synth,Virtual",
+    "licenseCode": "GPL_3_LATER",
+    "licenseAssets": "CC_BY_SA_4",
+    "source": "https://codeberg.org/Librerama/librerama/src/master/nanogames/digital_warp",
+    "thirdParty": [
+        {
+            "name": "Darker Waves",
+            "author": "Zander Noriega",
+            "license": "CC_BY_3",
+            "source": "https://opengameart.org/content/darker-waves"
+        }
+    ]
+}

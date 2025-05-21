@@ -1,0 +1,109 @@
+[gd_scene load_steps=16 format=3 uid="uid://bu5mdikepevo"]
+
+[ext_resource type="Script" path="res://nanogames/gem_enchantment/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b2gkeuwyjqgkl" path="res://nanogames/gem_enchantment/gem/gem.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://dfgax1d3si5sx" path="res://nanogames/gem_enchantment/_assets/slate.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c3te7ndcmsh7y" path="res://nanogames/gem_enchantment/_assets/background.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://ddfk6c487x7yc" path="res://nanogames/gem_enchantment/_assets/trail.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://cclfqf4cno7qj" path="res://nanogames/gem_enchantment/_assets/music.ogg" id="6"]
+[ext_resource type="Texture2D" uid="uid://dsox4t0e1d76m" path="res://nanogames/gem_enchantment/_assets/trajectory.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://ninc22sa46dg" path="res://nanogames/gem_enchantment/_assets/magic.png" id="8"]
+[ext_resource type="AudioStream" uid="uid://dywo6nejn1u44" path="res://nanogames/gem_enchantment/_assets/scribble.wav" id="9"]
+[ext_resource type="AudioStream" uid="uid://82brsph75q2i" path="res://nanogames/gem_enchantment/_assets/victory.wav" id="10"]
+
+[sub_resource type="Gradient" id="1"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="2"]
+gradient = SubResource("1")
+width = 32
+
+[sub_resource type="Curve" id="3"]
+_data = [Vector2(0, 1), inf, -1.0, 1, 0, Vector2(1, 0), -1.0, inf, 0, 1]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="4"]
+width = 32
+curve = SubResource("3")
+
+[sub_resource type="ParticleProcessMaterial" id="5"]
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("4")
+color_ramp = SubResource("2")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Slate" type="Sprite2D" parent="."]
+position = Vector2(480, 360)
+texture = ExtResource("3")
+
+[node name="Gems" type="Node2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="Gem" parent="Gems" instance=ExtResource("2")]
+
+[node name="Gem2" parent="Gems" instance=ExtResource("2")]
+
+[node name="Gem3" parent="Gems" instance=ExtResource("2")]
+
+[node name="Gem4" parent="Gems" instance=ExtResource("2")]
+
+[node name="Gem5" parent="Gems" instance_placeholder="res://nanogames/gem_enchantment/gem/gem.tscn"]
+
+[node name="Gem6" parent="Gems" instance_placeholder="res://nanogames/gem_enchantment/gem/gem.tscn"]
+
+[node name="Trajectory" type="Line2D" parent="."]
+width = 16.0
+texture = ExtResource("7")
+texture_mode = 1
+antialiased = true
+
+[node name="Trail" type="Line2D" parent="."]
+width = 16.0
+texture = ExtResource("5")
+texture_mode = 1
+
+[node name="TrailEnd" type="GPUParticles2D" parent="."]
+z_index = 2
+emitting = false
+amount = 12
+process_material = SubResource("5")
+texture = ExtResource("8")
+lifetime = 0.5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 360)
+
+[node name="TrajectoryNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9")
+bus = &"Effects"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+autoplay = true
+bus = &"Music"
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10")
+bus = &"Effects"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[connection signal="touched" from="Gems/Gem" to="." method="_on_gem_touched"]
+[connection signal="touched" from="Gems/Gem2" to="." method="_on_gem_touched"]
+[connection signal="touched" from="Gems/Gem3" to="." method="_on_gem_touched"]
+[connection signal="touched" from="Gems/Gem4" to="." method="_on_gem_touched"]

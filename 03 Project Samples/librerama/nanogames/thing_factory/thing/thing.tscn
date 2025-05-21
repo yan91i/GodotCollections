@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqsajlwwyx7bi"]
+
+[ext_resource type="Script" path="res://nanogames/thing_factory/thing/thing.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://derpy1h1k358o" path="res://nanogames/thing_factory/thing/_assets/things.svg" id="2"]
+[ext_resource type="Texture2D" uid="uid://gig7urr5mxad" path="res://nanogames/thing_factory/thing/_assets/piece.svg" id="3"]
+[ext_resource type="AudioStream" uid="uid://bbgmdiibluc4r" path="res://nanogames/thing_factory/thing/_assets/destroy.wav" id="4_86oty"]
+
+[sub_resource type="Gradient" id="Gradient_hnkov"]
+offsets = PackedFloat32Array(0.35, 0.75, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.588235, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f22d4"]
+gradient = SubResource("Gradient_hnkov")
+width = 32
+
+[sub_resource type="ParticleProcessMaterial" id="3"]
+particle_flag_disable_z = true
+angle_max = 360.0
+spread = 180.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+angular_velocity_min = 300.0
+angular_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_f22d4")
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(144, 144)
+
+[sub_resource type="AudioStreamRandomizer" id="5"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("4_86oty")
+
+[node name="Thing" type="Area2D"]
+monitoring = false
+monitorable = false
+script = ExtResource("1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+hframes = 3
+
+[node name="Explosion" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 4
+process_material = SubResource("3")
+texture = ExtResource("3")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("4")
+
+[node name="Destroy" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("5")
+bus = &"Effects"

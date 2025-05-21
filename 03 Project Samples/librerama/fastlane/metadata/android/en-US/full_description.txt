@@ -1,0 +1,3 @@
+Librerama is an arcade compilation of small fast-paced games, with the overall
+objective being to play a series of mini-games which progressively increase in
+speed and difficulty.
