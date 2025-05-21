@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://br1a46uikyubt"]
+
+[ext_resource type="Script" path="res://scenes/ui/screen/starway_screen/starway_screen.gd" id="1_tsvyl"]
+[ext_resource type="PackedScene" uid="uid://3vcjyu7tgdii" path="res://scenes/component/control/basic_progress_bar/basic_progress_bar.tscn" id="2_73ey0"]
+[ext_resource type="PackedScene" uid="uid://k6nmnw4kjwjq" path="res://scenes/component/effect/label_effect_queue/label_effect_queue.tscn" id="3_v7344"]
+[ext_resource type="PackedScene" uid="uid://vlsdtpdj5gw0" path="res://template/scenes/node/game/spawner_buffer/spawner_buffer.tscn" id="4_i3pep"]
+[ext_resource type="PackedScene" uid="uid://cjscoqpiciat8" path="res://template/scenes/node/game/label_particle_tweens/label_particle_tween_substance/label_particle_tween_substance.tscn" id="5_056bl"]
+[ext_resource type="PackedScene" uid="uid://suojpe3fsjng" path="res://template/scenes/node/game/label_particle_tweens/label_particle_tween_singularity/label_particle_tween_singularity.tscn" id="6_n3say"]
+
+[node name="StarwayScreen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_tsvyl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="ProgressBarMarginContainer" parent="MarginContainer" instance=ExtResource("2_73ey0")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_top = 8
+
+[node name="TopLabel" type="Label" parent="MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Current: 00:12:34.56 | Fastest: 00:00:09.56"
+
+[node name="LabelEffectQueue2" parent="." instance=ExtResource("3_v7344")]
+unique_name_in_owner = true
+lifetime = 2.5
+force_delay = true
+
+[node name="LabelEffectQueue1" parent="." instance=ExtResource("3_v7344")]
+unique_name_in_owner = true
+delay = 0.1
+lifetime = 2.5
+
+[node name="SpawnerBufferParticles" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(34, 24)
+
+[node name="SpawnerBufferSubstance" parent="SpawnerBufferParticles" node_paths=PackedStringArray("entity_parent") instance=ExtResource("4_i3pep")]
+unique_name_in_owner = true
+entity_pck = ExtResource("5_056bl")
+entity_parent = NodePath("..")
+
+[node name="SpawnerBufferSingularity" parent="SpawnerBufferParticles" node_paths=PackedStringArray("entity_parent") instance=ExtResource("4_i3pep")]
+unique_name_in_owner = true
+entity_pck = ExtResource("6_n3say")
+entity_parent = NodePath("..")
+
+[node name="ResourceQueueTimer" type="Timer" parent="SpawnerBufferParticles"]
+unique_name_in_owner = true
+wait_time = 0.25
+autostart = true

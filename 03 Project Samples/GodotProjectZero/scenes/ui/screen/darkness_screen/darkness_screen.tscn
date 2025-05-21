@@ -1,0 +1,155 @@
+[gd_scene load_steps=12 format=3 uid="uid://ch7uxqklej1h6"]
+
+[ext_resource type="Script" path="res://scenes/ui/screen/darkness_screen/darkness_screen.gd" id="1_1yww0"]
+[ext_resource type="PackedScene" uid="uid://depe0hvgcbpoj" path="res://scenes/ui/screen/darkness_screen/darkness_mode_container/darkness_mode_container.tscn" id="2_0tk50"]
+[ext_resource type="PackedScene" uid="uid://ccpod48fjrcy1" path="res://scenes/component/control/label/label_shake/label_shake.tscn" id="2_juuhi"]
+[ext_resource type="Shader" path="res://resources/shader/wiggle/wiggle.gdshader" id="2_pwkjq"]
+[ext_resource type="PackedScene" uid="uid://d02um03stnk8y" path="res://scenes/ui/screen/darkness_screen/enemy/enemy_texture/enemy_texture.tscn" id="3_hlysm"]
+[ext_resource type="PackedScene" uid="uid://j5lcc7v7q03g" path="res://scenes/ui/screen/darkness_screen/enemy/enemy_progress_bar/enemy_progress_bar.tscn" id="4_jk10o"]
+[ext_resource type="PackedScene" uid="uid://k6nmnw4kjwjq" path="res://scenes/component/effect/label_effect_queue/label_effect_queue.tscn" id="6_q4ifr"]
+[ext_resource type="PackedScene" uid="uid://vlsdtpdj5gw0" path="res://template/scenes/node/game/spawner_buffer/spawner_buffer.tscn" id="8_535me"]
+[ext_resource type="PackedScene" uid="uid://cjoeeffphkuh7" path="res://template/scenes/node/game/label_particle_tweens/label_particle_tween_damage/label_particle_tween_damage.tscn" id="9_ltsxm"]
+[ext_resource type="PackedScene" uid="uid://c1speq0v1dhx2" path="res://template/scenes/node/game/label_particle_tweens/label_particle_tween_soul/label_particle_tween_soul.tscn" id="10_3ugfk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dwjo"]
+shader = ExtResource("2_pwkjq")
+shader_parameter/Strength = 1.5
+shader_parameter/RandomOffset = 1.0
+shader_parameter/offset = 0.0
+shader_parameter/offset_time = 0.0
+shader_parameter/enabled = 1
+
+[node name="DarknessScreen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1yww0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="ScreenMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="ScreenMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_top = 16
+
+[node name="DarknessModeContainer" parent="ScreenMarginContainer/TitleMarginContainer" instance=ExtResource("2_0tk50")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenMarginContainer/TitleMarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TitleLabel" parent="ScreenMarginContainer/TitleMarginContainer/VBoxContainer" instance=ExtResource("2_juuhi")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "The Ambassador Of Darkness"
+horizontal_alignment = 1
+
+[node name="LevelLabel" parent="ScreenMarginContainer/TitleMarginContainer/VBoxContainer" instance=ExtResource("2_juuhi")]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_6dwjo")
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "DCCCXXXVIII"
+horizontal_alignment = 1
+
+[node name="EnemyTexture" parent="ScreenMarginContainer" instance=ExtResource("3_hlysm")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EnemyProgressBar" parent="ScreenMarginContainer" instance=ExtResource("4_jk10o")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ChoiceHBoxContainer" type="HBoxContainer" parent="ScreenMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FirstMarginContainer" type="MarginContainer" parent="ScreenMarginContainer/ChoiceHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FirstChoiceButton" type="Button" parent="ScreenMarginContainer/ChoiceHBoxContainer/FirstMarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_type_variation = &"ProgressButton"
+text = "Execute"
+
+[node name="PaddingMarginContainer" type="MarginContainer" parent="ScreenMarginContainer/ChoiceHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+
+[node name="SecondMarginContainer" type="MarginContainer" parent="ScreenMarginContainer/ChoiceHBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"ProgressButton"
+
+[node name="SecondChoiceButton" type="Button" parent="ScreenMarginContainer/ChoiceHBoxContainer/SecondMarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_type_variation = &"ProgressButton"
+text = "Absolve"
+
+[node name="Effect" type="Node2D" parent="."]
+
+[node name="PassiveLabelEffectQueue" parent="Effect" instance=ExtResource("6_q4ifr")]
+unique_name_in_owner = true
+delay = 0.15
+
+[node name="ClickLabelEffectQueue" parent="Effect" instance=ExtResource("6_q4ifr")]
+unique_name_in_owner = true
+delay = 0.1
+
+[node name="SoulLabelEffectQueue" parent="Effect" instance=ExtResource("6_q4ifr")]
+unique_name_in_owner = true
+modulate = Color(0.878431, 0.878431, 0.392157, 1)
+delay = 0.1
+lifetime = 3.0
+
+[node name="ClickDamageBufferTimer" type="Timer" parent="Effect"]
+unique_name_in_owner = true
+
+[node name="SpawnerBufferParticles" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(34, 24)
+
+[node name="SpawnerBufferDamage" parent="SpawnerBufferParticles" node_paths=PackedStringArray("entity_parent") instance=ExtResource("8_535me")]
+unique_name_in_owner = true
+entity_pck = ExtResource("9_ltsxm")
+entity_parent = NodePath("..")
+max_count = 50
+
+[node name="SpawnerBufferSoul" parent="SpawnerBufferParticles" node_paths=PackedStringArray("entity_parent") instance=ExtResource("8_535me")]
+unique_name_in_owner = true
+entity_pck = ExtResource("10_3ugfk")
+entity_parent = NodePath("..")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://7jxqko2b2kal"]
+
+[ext_resource type="Script" path="res://scenes/component/effect/label_effect_queue/label_effect/label_effect.gd" id="1_1mfsl"]
+[ext_resource type="Material" uid="uid://bipuwgonuukev" path="res://resources/particle/resource_acquired_particle.tres" id="2_kw0de"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fgbql"]
+viewport_path = NodePath("SubViewport")
+
+[node name="LabelEffect" type="Node2D"]
+z_index = 4096
+z_as_relative = false
+script = ExtResource("1_1mfsl")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(200, 30)
+size_2d_override_stretch = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/CanvasLayer"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewport/CanvasLayer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+z_index = 4096
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"label_shadow"
+theme_override_constants/shadow_outline_size = 8
+text = "  +1 wood"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 4096
+amount = 1
+process_material = ExtResource("2_kw0de")
+texture = SubResource("ViewportTexture_fgbql")
+lifetime = 2.0

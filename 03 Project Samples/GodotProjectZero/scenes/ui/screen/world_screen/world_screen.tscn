@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp8ipef04gxux"]
+
+[ext_resource type="Script" path="res://scenes/ui/screen/world_screen/world_screen.gd" id="1_k268v"]
+[ext_resource type="PackedScene" uid="uid://bjroqyyfrvx70" path="res://scenes/ui/screen/world_screen/progress_button/progress_button.tscn" id="2_74b0p"]
+[ext_resource type="PackedScene" uid="uid://bn70fimjb1ac0" path="res://scenes/ui/screen/world_screen/npc_dialog/npc_dialog.tscn" id="3_q75w7"]
+[ext_resource type="PackedScene" uid="uid://cy8l70tvpbis8" path="res://scenes/ui/screen/world_screen/experience_tracker/experience_tracker.tscn" id="4_p5w24"]
+
+[node name="WorldScreen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k268v")
+progress_button_scene = ExtResource("2_74b0p")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="ProgressButtonMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ProgressButtonMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridContainer1" type="GridContainer" parent="ProgressButtonMarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ProgressButton1" parent="ProgressButtonMarginContainer/HBoxContainer/GridContainer1" instance=ExtResource("2_74b0p")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ProgressButton2" parent="ProgressButtonMarginContainer/HBoxContainer/GridContainer1" instance=ExtResource("2_74b0p")]
+layout_mode = 2
+
+[node name="PaddingMarginContainer1" type="MarginContainer" parent="ProgressButtonMarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 0
+
+[node name="GridContainer2" type="GridContainer" parent="ProgressButtonMarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProgressButton1" parent="ProgressButtonMarginContainer/HBoxContainer/GridContainer2" instance=ExtResource("2_74b0p")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ProgressButton2" parent="ProgressButtonMarginContainer/HBoxContainer/GridContainer2" instance=ExtResource("2_74b0p")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PaddingMarginContainer2" type="MarginContainer" parent="ProgressButtonMarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 0
+
+[node name="GridContainer3" type="GridContainer" parent="ProgressButtonMarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ProgressButton1" parent="ProgressButtonMarginContainer/HBoxContainer/GridContainer3" instance=ExtResource("2_74b0p")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ProgressButton2" parent="ProgressButtonMarginContainer/HBoxContainer/GridContainer3" instance=ExtResource("2_74b0p")]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="NpcDialog" parent="." instance=ExtResource("3_q75w7")]
+unique_name_in_owner = true
+layout_mode = 2
+_npc_id = "cat"
+
+[node name="ExperienceMarginContainer" parent="." instance=ExtResource("4_p5w24")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="AllButtonMarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+z_index = 4096
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+
+[node name="AllButton" type="Button" parent="AllButtonMarginContainer"]
+unique_name_in_owner = true
+z_as_relative = false
+custom_minimum_size = Vector2(80, 74)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Harvest
+Forest"

@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgdndojko6mlf"]
+
+[ext_resource type="Script" path="res://scenes/ui/screen/managment_screen/managment_screen.gd" id="1_q5dij"]
+[ext_resource type="PackedScene" uid="uid://84qyu2m2h55y" path="res://scenes/ui/screen/managment_screen/manager_button/manager_button.tscn" id="2_5bcli"]
+[ext_resource type="PackedScene" uid="uid://dj262a5wao0t7" path="res://scenes/ui/screen/managment_screen/manager_mode_container/manager_mode_container.tscn" id="3_7xtvm"]
+[ext_resource type="PackedScene" uid="uid://sovytoworxpp" path="res://scenes/ui/screen/managment_screen/manager_settings_container/manager_settings_container.tscn" id="3_dfjmv"]
+[ext_resource type="PackedScene" uid="uid://3vcjyu7tgdii" path="res://scenes/component/control/basic_progress_bar/basic_progress_bar.tscn" id="5_33ord"]
+
+[node name="ManagmentScreen" type="MarginContainer"]
+offset_right = 478.0
+offset_bottom = 125.0
+script = ExtResource("1_q5dij")
+manager_button_scene = ExtResource("2_5bcli")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ButtonMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ButtonMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GridContainer1" type="GridContainer" parent="VBoxContainer/ButtonMarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ManagerButton" parent="VBoxContainer/ButtonMarginContainer/HBoxContainer/GridContainer1" instance=ExtResource("2_5bcli")]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer/ButtonMarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ManagerButton" parent="VBoxContainer/ButtonMarginContainer/HBoxContainer/GridContainer2" instance=ExtResource("2_5bcli")]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+
+[node name="QOLMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/QOLMarginContainer"]
+layout_mode = 2
+
+[node name="MarginModeContainer" parent="VBoxContainer/QOLMarginContainer/VBoxContainer" instance=ExtResource("3_7xtvm")]
+layout_mode = 2
+
+[node name="ManagerSettingsContainer" parent="VBoxContainer/QOLMarginContainer/VBoxContainer" instance=ExtResource("3_dfjmv")]
+layout_mode = 2
+
+[node name="BasicProgressBar" parent="VBoxContainer" instance=ExtResource("5_33ord")]
+unique_name_in_owner = true
+layout_mode = 2

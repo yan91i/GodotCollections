@@ -1,0 +1,136 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn70fimjb1ac0"]
+
+[ext_resource type="Script" path="res://scenes/ui/screen/world_screen/npc_dialog/npc_dialog.gd" id="1_urym8"]
+[ext_resource type="PackedScene" uid="uid://ccm0lefdpacby" path="res://scenes/component/control/label/label_typing/label_typing.tscn" id="2_55et7"]
+[ext_resource type="PackedScene" uid="uid://bpq246h5ihhck" path="res://scenes/component/shake_shader_component/shake_shader_component.tscn" id="3_uxbm3"]
+[ext_resource type="Texture2D" uid="uid://b4wqq3rdroryo" path="res://assets/image/art/cat.png" id="4_0gon8"]
+[ext_resource type="PackedScene" uid="uid://b3awft3ugc6q3" path="res://scenes/component/tween/simple_tween/simple_tween.tscn" id="4_v2a86"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32d3w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8se0"]
+
+[node name="NpcDialog" type="MarginContainer"]
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+script = ExtResource("1_urym8")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="DialogMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/DialogMarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = -8
+theme_override_constants/margin_bottom = -8
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/DialogMarginContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"TextPanel"
+
+[node name="DialogLabel" parent="MarginContainer/VBoxContainer/DialogMarginContainer" instance=ExtResource("2_55et7")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+text = "I smelled you from a far. You look lost... "
+autowrap_mode = 3
+
+[node name="ShakeShaderComponent" parent="MarginContainer/VBoxContainer/DialogMarginContainer/DialogLabel" instance=ExtResource("3_uxbm3")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="YesMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ButtonsVBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="YesButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/ButtonsVBoxContainer/YesMarginContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_32d3w")
+layout_mode = 2
+theme_type_variation = &"ProgressButton"
+text = "Yes"
+
+[node name="NoMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/ButtonsVBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="NoButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/ButtonsVBoxContainer/NoMarginContainer"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_q8se0")
+layout_mode = 2
+theme_type_variation = &"ProgressButton"
+text = "No
+"
+
+[node name="NpcVBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="NpcMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/NpcVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="NpcTextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/NpcVBoxContainer/NpcMarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_0gon8")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="NpcButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/NpcVBoxContainer/NpcMarginContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Tween" type="Node" parent="."]
+
+[node name="EnterSimpleTween" parent="Tween" node_paths=PackedStringArray("target") instance=ExtResource("4_v2a86")]
+unique_name_in_owner = true
+target = NodePath("../..")
+duration = 3.0
+call_method = "_enter_simple_tween_method"

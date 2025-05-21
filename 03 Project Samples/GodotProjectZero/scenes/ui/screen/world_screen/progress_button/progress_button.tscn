@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjroqyyfrvx70"]
+
+[ext_resource type="PackedScene" uid="uid://bpq246h5ihhck" path="res://scenes/component/shake_shader_component/shake_shader_component.tscn" id="2_genxb"]
+[ext_resource type="PackedScene" uid="uid://bjmn4owp4lhaj" path="res://scenes/component/tween/new_unlock_tween/new_unlock_tween.tscn" id="2_gumta"]
+[ext_resource type="Script" path="res://scenes/ui/screen/world_screen/progress_button/progress_button.gd" id="2_rp5nm"]
+[ext_resource type="PackedScene" uid="uid://b3awft3ugc6q3" path="res://scenes/component/tween/simple_tween/simple_tween.tscn" id="2_v7ecv"]
+[ext_resource type="PackedScene" uid="uid://d4a6sfsyw5jie" path="res://scenes/component/effect/line_effect/line_effect.tscn" id="3_aqdv6"]
+[ext_resource type="PackedScene" uid="uid://k6nmnw4kjwjq" path="res://scenes/component/effect/label_effect_queue/label_effect_queue.tscn" id="4_ybk84"]
+[ext_resource type="PackedScene" uid="uid://vlsdtpdj5gw0" path="res://template/scenes/node/game/spawner_buffer/spawner_buffer.tscn" id="7_b3i14"]
+[ext_resource type="PackedScene" uid="uid://cjscoqpiciat8" path="res://template/scenes/node/game/label_particle_tweens/label_particle_tween_substance/label_particle_tween_substance.tscn" id="8_n02sk"]
+[ext_resource type="PackedScene" uid="uid://b07gshean130y" path="res://template/scenes/node/game/label_particle_tweens/label_particle_tween_resource/label_particle_tween_resource.tscn" id="9_rb8lw"]
+[ext_resource type="PackedScene" uid="uid://c1speq0v1dhx2" path="res://template/scenes/node/game/label_particle_tweens/label_particle_tween_soul/label_particle_tween_soul.tscn" id="10_1ta1j"]
+
+[node name="ProgressButton" type="MarginContainer"]
+anchors_preset = -1
+anchor_bottom = 0.001
+offset_right = 70.0
+offset_bottom = 40.46
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 3
+script = ExtResource("2_rp5nm")
+shake_shader_component_scene = ExtResource("2_genxb")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"ProgressButton"
+theme_override_font_sizes/font_size = 16
+text = "Button
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 2
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="RedColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Tween" type="Node" parent="."]
+
+[node name="ProgressBarSimpleTween" parent="Tween" node_paths=PackedStringArray("target") instance=ExtResource("2_v7ecv")]
+unique_name_in_owner = true
+target = NodePath("../..")
+call_method = "_progress_bar_simple_tween_method"
+
+[node name="RedColorRectSimpleTween" parent="Tween" node_paths=PackedStringArray("target") instance=ExtResource("2_v7ecv")]
+unique_name_in_owner = true
+target = NodePath("../..")
+duration = 0.3
+call_method = "_red_color_rect_simple_tween_method"
+
+[node name="NewUnlockTween" parent="Tween" node_paths=PackedStringArray("target") instance=ExtResource("2_gumta")]
+unique_name_in_owner = true
+target = NodePath("../..")
+
+[node name="Effect" type="Node2D" parent="."]
+
+[node name="LineEffect" parent="Effect" instance=ExtResource("3_aqdv6")]
+unique_name_in_owner = true
+color = Color(0.282353, 0.282353, 0.282353, 1)
+offset_a_x = 1
+offset_b_x = -14
+
+[node name="LabelEffectQueue" parent="Effect" instance=ExtResource("4_ybk84")]
+unique_name_in_owner = true
+
+[node name="SubstanceEffectQueue" parent="Effect" instance=ExtResource("4_ybk84")]
+unique_name_in_owner = true
+lifetime = 3.0
+
+[node name="SoulEffectQueue" parent="Effect" instance=ExtResource("4_ybk84")]
+unique_name_in_owner = true
+
+[node name="SpawnerBufferParticles" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(34, 24)
+
+[node name="SpawnerBufferSubstance" parent="SpawnerBufferParticles" node_paths=PackedStringArray("entity_parent") instance=ExtResource("7_b3i14")]
+unique_name_in_owner = true
+entity_pck = ExtResource("8_n02sk")
+entity_parent = NodePath("..")
+
+[node name="SpawnerBufferResource" parent="SpawnerBufferParticles" node_paths=PackedStringArray("entity_parent") instance=ExtResource("7_b3i14")]
+unique_name_in_owner = true
+entity_pck = ExtResource("9_rb8lw")
+entity_parent = NodePath("..")
+delay_time = 0.05
+
+[node name="SpawnerBufferSoul" parent="SpawnerBufferParticles" node_paths=PackedStringArray("entity_parent") instance=ExtResource("7_b3i14")]
+unique_name_in_owner = true
+entity_pck = ExtResource("10_1ta1j")
+entity_parent = NodePath("..")
+
+[node name="ResourceQueueTimer" type="Timer" parent="SpawnerBufferParticles"]
+unique_name_in_owner = true
+wait_time = 0.25
+autostart = true

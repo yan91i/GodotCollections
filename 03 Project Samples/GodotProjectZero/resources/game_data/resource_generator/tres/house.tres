@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ResourceGenerator" load_steps=3 format=3 uid="uid://bs8c8it6f6cs8"]
+
+[ext_resource type="Script" path="res://resources/game_data/resource_generator/resource_generator.gd" id="1_t0567"]
+[ext_resource type="AudioStream" uid="uid://b5bpgo7pkycuj" path="res://assets/audio/indie_friendly_sounds_survival/_resource/gate_close_3_2.wav" id="2_1btfv"]
+
+[resource]
+script = ExtResource("1_t0567")
+order = 1
+color = Color(0, 0, 0, 1)
+sort_value = 1001
+sort_value_override = 0.0
+id = "house"
+amount = 1
+cooldown = 40.0
+costs = {
+"brick": 10,
+"land": 2,
+"stone": 5,
+"wood": 20
+}
+cost_scales = {}
+worker_costs = {}
+random_drops = {}
+hidden = false
+max_amount = -1
+column = 2
+dynamic_efficiency_id = ""
+sfx_button_success = ExtResource("2_1btfv")

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="ResourceGenerator" load_steps=3 format=3 uid="uid://c13qt2v558c84"]
+
+[ext_resource type="Script" path="res://resources/game_data/resource_generator/resource_generator.gd" id="1_2ikhk"]
+[ext_resource type="AudioStream" uid="uid://chnlm5qq8ko2k" path="res://assets/audio/indie_friendly_sounds_survival/_resource/blacksmith_2_1.wav" id="2_84hvo"]
+
+[resource]
+script = ExtResource("1_2ikhk")
+order = 3
+color = Color(0, 0, 0, 1)
+sort_value = 1102
+sort_value_override = 0.0
+id = "sword"
+amount = 1
+cooldown = 5.0
+costs = {
+"iron": 3,
+"leather": 1,
+"wood": 2
+}
+cost_scales = {}
+worker_costs = {}
+random_drops = {}
+hidden = false
+max_amount = -1
+column = 2
+dynamic_efficiency_id = ""
+sfx_button_success = ExtResource("2_84hvo")

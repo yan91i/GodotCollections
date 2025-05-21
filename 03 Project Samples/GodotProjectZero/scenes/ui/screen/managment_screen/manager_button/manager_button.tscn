@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://84qyu2m2h55y"]
+
+[ext_resource type="Script" path="res://scenes/ui/screen/managment_screen/manager_button/manager_button.gd" id="1_w1awn"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="2_7uthi"]
+[ext_resource type="PackedScene" uid="uid://bjmn4owp4lhaj" path="res://scenes/component/tween/new_unlock_tween/new_unlock_tween.tscn" id="2_fy4is"]
+[ext_resource type="PackedScene" uid="uid://k6nmnw4kjwjq" path="res://scenes/component/effect/label_effect_queue/label_effect_queue.tscn" id="3_1dmc5"]
+[ext_resource type="PackedScene" uid="uid://vlsdtpdj5gw0" path="res://template/scenes/node/game/spawner_buffer/spawner_buffer.tscn" id="5_ftar4"]
+[ext_resource type="PackedScene" uid="uid://dctar6t4dughe" path="res://template/scenes/node/game/label_particle_tweens/label_particle_tween_passive/label_particle_tween_passive.tscn" id="6_qk52n"]
+
+[node name="ManagerButton" type="MarginContainer"]
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 2
+script = ExtResource("1_w1awn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="DelMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = -2
+
+[node name="DelButton" type="Button" parent="HBoxContainer/DelMarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_type_variation = &"ManagerButton"
+text = "<"
+
+[node name="AmountMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="Panel" type="Panel" parent="HBoxContainer/AmountMarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="AmountLabelMarginContainer" type="MarginContainer" parent="HBoxContainer/AmountMarginContainer"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="AmountLabel" type="Label" parent="HBoxContainer/AmountMarginContainer/AmountLabelMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+
+[node name="AddMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -2
+
+[node name="AddButton" type="Button" parent="HBoxContainer/AddMarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_type_variation = &"ManagerButton"
+text = ">"
+
+[node name="InfoMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/InfoMarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="InfoLabelMarginContainer" type="MarginContainer" parent="HBoxContainer/InfoMarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="Panel" type="Panel" parent="HBoxContainer/InfoMarginContainer/InfoLabelMarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="HBoxContainer/InfoMarginContainer/InfoLabelMarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 26)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Worker
+"
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("2_7uthi")
+_max_size = 16
+_current_font_size = 16
+_editor_defaults_set = true
+
+[node name="NewUnlockTween" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_fy4is")]
+unique_name_in_owner = true
+target = NodePath("..")
+
+[node name="LabelEffectQueue" parent="." instance=ExtResource("3_1dmc5")]
+unique_name_in_owner = true
+
+[node name="SpawnerBufferParticles" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(34, 24)
+
+[node name="SpawnerBufferPassive" parent="SpawnerBufferParticles" node_paths=PackedStringArray("entity_parent") instance=ExtResource("5_ftar4")]
+unique_name_in_owner = true
+entity_pck = ExtResource("6_qk52n")
+entity_parent = NodePath("..")

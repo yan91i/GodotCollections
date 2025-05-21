@@ -1,0 +1,348 @@
+[gd_scene load_steps=50 format=3 uid="uid://k0aqit1ex0lc"]
+
+[ext_resource type="Script" path="res://scenes/autostart/main/main.gd" id="1_u1kx3"]
+[ext_resource type="PackedScene" uid="uid://25a0pw7b7nky" path="res://scenes/controller/progress_button_controller/progress_button_controller.tscn" id="2_fcqyg"]
+[ext_resource type="PackedScene" uid="uid://1m8qthsffnq4" path="res://scenes/controller/worker_controller/worker_controller.tscn" id="2_i5w2f"]
+[ext_resource type="PackedScene" uid="uid://wp81uow6jtqm" path="res://scenes/manager/resource_manager/resource_manager.tscn" id="2_kjpbe"]
+[ext_resource type="PackedScene" uid="uid://bhk1hwatentfr" path="res://scenes/manager/event_manager/event_manager.tscn" id="3_3xmx2"]
+[ext_resource type="PackedScene" uid="uid://bsv77qs6o0g1j" path="res://scenes/controller/manager_button_controller/manager_button_controller.tscn" id="3_h1qmp"]
+[ext_resource type="PackedScene" uid="uid://c0b0inprunl4n" path="res://scenes/controller/event_controller/event_controller.tscn" id="3_q3mwm"]
+[ext_resource type="PackedScene" uid="uid://bke6i6lrn5qq2" path="res://scenes/manager/worker_manager/worker_manager.tscn" id="3_yhe1y"]
+[ext_resource type="PackedScene" uid="uid://ct7wm7cco1cpm" path="res://scenes/ui/event_tracker/event_tracker.tscn" id="4_cyhi7"]
+[ext_resource type="PackedScene" uid="uid://bp8ipef04gxux" path="res://scenes/ui/screen/world_screen/world_screen.tscn" id="4_xbehd"]
+[ext_resource type="PackedScene" uid="uid://dgdndojko6mlf" path="res://scenes/ui/screen/managment_screen/managment_screen.tscn" id="5_oa073"]
+[ext_resource type="PackedScene" uid="uid://4xkxivqhae3h" path="res://scenes/ui/resource_tracker/resource_tracker.tscn" id="5_y2bgo"]
+[ext_resource type="PackedScene" uid="uid://bkkan07rftdv8" path="res://scenes/ui/screen/unknown_screen/unknown_screen.tscn" id="6_1rr1e"]
+[ext_resource type="PackedScene" uid="uid://3iqi2w4katso" path="res://scenes/controller/unlock_controller/unlock_controller.tscn" id="6_albwn"]
+[ext_resource type="PackedScene" uid="uid://ctmnwgwxqwhd4" path="res://scenes/manager/tab_manager/tab_manager.tscn" id="7_0dsj8"]
+[ext_resource type="PackedScene" uid="uid://b7v7qyfc1edkj" path="res://scenes/controller/setting_controller/setting_controller.tscn" id="7_jgdlg"]
+[ext_resource type="AudioStream" uid="uid://c45r1h0snq0cs" path="res://assets/audio/custom_sfx/piano_1.wav" id="7_lojif"]
+[ext_resource type="PackedScene" uid="uid://dnnw7tt0fonnw" path="res://scenes/controller/npc_controller/npc_controller.tscn" id="8_4fvsv"]
+[ext_resource type="PackedScene" uid="uid://bltskwx6etd24" path="res://scenes/controller/enemy_controller/enemy_controller.tscn" id="8_337st"]
+[ext_resource type="PackedScene" uid="uid://dq0ehpx6uoiux" path="res://scenes/manager/screen_manager/screen_manager.tscn" id="8_q26bh"]
+[ext_resource type="PackedScene" uid="uid://c70gtxukmaco6" path="res://scenes/ui/tab_tracker/tab_tracker.tscn" id="8_vxtq8"]
+[ext_resource type="PackedScene" uid="uid://btrjtbe8ch6vy" path="res://scenes/controller/experience_controller/experience_controller.tscn" id="9_wl1uy"]
+[ext_resource type="PackedScene" uid="uid://bauwua6x5pgjh" path="res://scenes/ui/info_container/info_container.tscn" id="10_unxkl"]
+[ext_resource type="PackedScene" uid="uid://ixechckh2n74" path="res://scenes/controller/offline_controller/offline_controller.tscn" id="11_7wnoe"]
+[ext_resource type="PackedScene" uid="uid://bw1m1v1q01ix6" path="res://scenes/controller/prestige_controller/prestige_controller.tscn" id="13_ky45s"]
+[ext_resource type="PackedScene" uid="uid://o2s521j3hgp8" path="res://scenes/manager/setting_manager/setting_manager.tscn" id="13_yy02v"]
+[ext_resource type="Theme" uid="uid://d276arnrjws3i" path="res://resources/theme/dark/dark.tres" id="14_45bu4"]
+[ext_resource type="PackedScene" uid="uid://dt8uyfjegwwqf" path="res://scenes/manager/npc_manager/npc_manager.tscn" id="14_hfr4p"]
+[ext_resource type="PackedScene" uid="uid://wb81m2ajxuph" path="res://scenes/manager/substance_manager/substance_manager.tscn" id="14_xfgdc"]
+[ext_resource type="PackedScene" uid="uid://df1q2axgcf2yn" path="res://scenes/controller/substance_controller/substance_controller.tscn" id="14_yovas"]
+[ext_resource type="PackedScene" uid="uid://dv3bfta8ir0t" path="res://scenes/manager/enemy_manager/enemy_manager.tscn" id="16_6q8rb"]
+[ext_resource type="PackedScene" uid="uid://d1y5xyx63u3w0" path="res://scenes/ui/developer_console/developer_console.tscn" id="20_yijsf"]
+[ext_resource type="PackedScene" uid="uid://dn6hcp4hfxyic" path="res://scenes/ui/version_container/version_container.tscn" id="20_ynkq3"]
+[ext_resource type="PackedScene" uid="uid://ch7uxqklej1h6" path="res://scenes/ui/screen/darkness_screen/darkness_screen.tscn" id="21_324w1"]
+[ext_resource type="Texture2D" uid="uid://b4wqq3rdroryo" path="res://assets/image/art/cat.png" id="24_msvnv"]
+[ext_resource type="PackedScene" uid="uid://dfrws6lo2o7d0" path="res://scenes/autostart/soul_screen/soul_sprite/soul_sprite.tscn" id="25_jo8o4"]
+[ext_resource type="PackedScene" uid="uid://cnh5vhg0xefn6" path="res://scenes/ui/screen/soul_screen/soul_screen.tscn" id="26_pehc6"]
+[ext_resource type="PackedScene" uid="uid://br1a46uikyubt" path="res://scenes/ui/screen/starway_screen/starway_screen.tscn" id="27_d2ak1"]
+[ext_resource type="PackedScene" uid="uid://b5cknmluch23j" path="res://scenes/ui/screen/offline_screen/offline_screen.tscn" id="29_mta8x"]
+[ext_resource type="PackedScene" uid="uid://c26sb3v1ws0t5" path="res://scenes/ui/screen/substance_screen/substance_screen.tscn" id="29_sp6yy"]
+[ext_resource type="PackedScene" uid="uid://w5y4su4adpf4" path="res://scenes/ui/screen/settings_screen/settings_screen.tscn" id="31_y1j6b"]
+[ext_resource type="Shader" path="res://resources/shader/chromatic_abberation_radial/chromatic_abberation_radial.gdshader" id="37_xggnc"]
+[ext_resource type="PackedScene" uid="uid://b3awft3ugc6q3" path="res://scenes/component/tween/simple_tween/simple_tween.tscn" id="38_x6mfx"]
+[ext_resource type="PackedScene" uid="uid://b0iomctf5ruia" path="res://scenes/autostart/main/prestige_ui/prestige_ui.tscn" id="39_5hxeo"]
+[ext_resource type="PackedScene" uid="uid://b75kh4e41777c" path="res://scenes/autostart/main/reborn_ui/reborn_ui.tscn" id="40_cpuij"]
+[ext_resource type="Shader" path="res://resources/shader/cracked_glass/cracked_glass.gdshader" id="41_fakmo"]
+[ext_resource type="PackedScene" uid="uid://cm6aqijuc5f8t" path="res://scenes/language_selection/first_time_language_selection/first_time_language_selection.tscn" id="47_rkebu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgw6q"]
+shader = ExtResource("37_xggnc")
+shader_parameter/levels = 1
+shader_parameter/slice_factor = 1.0
+shader_parameter/amp = 0.002
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xrfi"]
+shader = ExtResource("41_fakmo")
+shader_parameter/animate_amp = true
+shader_parameter/crack_depth = 1.0
+shader_parameter/crack_scale = 10.0
+shader_parameter/crack_zebra_scale = 4.245
+shader_parameter/crack_zebra_amp = 4.279
+shader_parameter/crack_profile = 0.1
+shader_parameter/crack_slope = 45.8
+shader_parameter/crack_width = 0.001
+shader_parameter/refraction_offset = Vector2(25, 25)
+shader_parameter/reflection_offset = Vector2(1, 1)
+shader_parameter/reflection_color = Color(0.588, 0.588, 0.588, 0.5)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_u1kx3")
+
+[node name="Controllers" type="Node" parent="."]
+
+[node name="ProgressButtonController" parent="Controllers" node_paths=PackedStringArray("worker_controller") instance=ExtResource("2_fcqyg")]
+worker_controller = NodePath("../WorkerController")
+
+[node name="ManagerButtonController" parent="Controllers" node_paths=PackedStringArray("worker_controller") instance=ExtResource("3_h1qmp")]
+worker_controller = NodePath("../WorkerController")
+
+[node name="WorkerController" parent="Controllers" instance=ExtResource("2_i5w2f")]
+
+[node name="EventController" parent="Controllers" instance=ExtResource("3_q3mwm")]
+
+[node name="UnlockController" parent="Controllers" instance=ExtResource("6_albwn")]
+sfx_unlock = ExtResource("7_lojif")
+
+[node name="SettingController" parent="Controllers" instance=ExtResource("7_jgdlg")]
+
+[node name="NpcController" parent="Controllers" instance=ExtResource("8_4fvsv")]
+
+[node name="EnemyController" parent="Controllers" instance=ExtResource("8_337st")]
+
+[node name="ExperienceController" parent="Controllers" instance=ExtResource("9_wl1uy")]
+
+[node name="OfflineController" parent="Controllers" node_paths=PackedStringArray("worker_controller", "enemy_controller", "manager_button_controller") instance=ExtResource("11_7wnoe")]
+worker_controller = NodePath("../WorkerController")
+enemy_controller = NodePath("../EnemyController")
+manager_button_controller = NodePath("../ManagerButtonController")
+
+[node name="PrestigeController" parent="Controllers" instance=ExtResource("13_ky45s")]
+
+[node name="SubstanceController" parent="Controllers" instance=ExtResource("14_yovas")]
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="ResourceManager" parent="Managers" instance=ExtResource("2_kjpbe")]
+
+[node name="SubstanceManager" parent="Managers" instance=ExtResource("14_xfgdc")]
+
+[node name="WorkerManager" parent="Managers" instance=ExtResource("3_yhe1y")]
+
+[node name="EventManager" parent="Managers" instance=ExtResource("3_3xmx2")]
+
+[node name="TabManager" parent="Managers" instance=ExtResource("7_0dsj8")]
+
+[node name="ScreenManager" parent="Managers" instance=ExtResource("8_q26bh")]
+
+[node name="SettingManager" parent="Managers" instance=ExtResource("13_yy02v")]
+
+[node name="NpcManager" parent="Managers" instance=ExtResource("14_hfr4p")]
+
+[node name="EnemyManager" parent="Managers" instance=ExtResource("16_6q8rb")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainControl" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SoulUI" type="Control" parent="CanvasLayer/MainControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CatSprite2D" type="Sprite2D" parent="CanvasLayer/MainControl/SoulUI"]
+unique_name_in_owner = true
+z_index = 4096
+position = Vector2(475, 617)
+scale = Vector2(0.176, 0.195)
+texture = ExtResource("24_msvnv")
+
+[node name="SoulSprite" parent="CanvasLayer/MainControl/SoulUI" instance=ExtResource("25_jo8o4")]
+unique_name_in_owner = true
+
+[node name="MainUI" type="Control" parent="CanvasLayer/MainControl"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("14_45bu4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainControl/MainUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TabTracker" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("8_vxtq8")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="WatermarkMarginContainer" type="MarginContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/TabTracker"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 16
+
+[node name="WatermarkLabel" type="Label" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/TabTracker/WatermarkMarginContainer"]
+modulate = Color(1, 1, 1, 0.117647)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "tinytakinteller.itch.io"
+
+[node name="BodyMarginContainer" type="MarginContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer"]
+layout_mode = 2
+
+[node name="BorderMarginContainer" type="MarginContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="EventTracker" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer" instance=ExtResource("4_cyhi7")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ScreenMarginContainer" type="MarginContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UnknownScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" instance=ExtResource("6_1rr1e")]
+layout_mode = 2
+
+[node name="WorldScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" instance=ExtResource("4_xbehd")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ManagmentScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" node_paths=PackedStringArray("worker_controller") instance=ExtResource("5_oa073")]
+visible = false
+layout_mode = 2
+worker_controller = NodePath("../../../../../../../../../../Controllers/WorkerController")
+
+[node name="DarknessScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" instance=ExtResource("21_324w1")]
+visible = false
+layout_mode = 2
+
+[node name="SoulScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" instance=ExtResource("26_pehc6")]
+visible = false
+layout_mode = 2
+
+[node name="SubstanceScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" instance=ExtResource("29_sp6yy")]
+visible = false
+layout_mode = 2
+
+[node name="StarwayScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" node_paths=PackedStringArray("substance_controller") instance=ExtResource("27_d2ak1")]
+visible = false
+layout_mode = 2
+substance_controller = NodePath("../../../../../../../../../../Controllers/SubstanceController")
+
+[node name="OfflineScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" instance=ExtResource("29_mta8x")]
+visible = false
+layout_mode = 2
+
+[node name="SettingsScreen" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer/ScreenMarginContainer" instance=ExtResource("31_y1j6b")]
+visible = false
+layout_mode = 2
+
+[node name="ResourceTracker" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/BodyMarginContainer/HBoxContainer" instance=ExtResource("5_y2bgo")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_right = 4
+
+[node name="FooterHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="InfoContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/FooterHBoxContainer" instance=ExtResource("10_unxkl")]
+layout_mode = 2
+theme_override_constants/margin_right = 0
+
+[node name="VersionContainer" parent="CanvasLayer/MainControl/MainUI/MarginContainer/ScrollContainer/VBoxContainer/FooterHBoxContainer" instance=ExtResource("20_ynkq3")]
+layout_mode = 2
+
+[node name="DeveloperConsole" parent="CanvasLayer/MainControl/MainUI" instance=ExtResource("20_yijsf")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="PrestigeUI" parent="CanvasLayer/MainControl" instance=ExtResource("39_5hxeo")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="RebornUI" parent="CanvasLayer/MainControl" instance=ExtResource("40_cpuij")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="HeartOverlay" type="ColorRect" parent="CanvasLayer/MainControl"]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_pgw6q")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CrackOverlay" type="ColorRect" parent="CanvasLayer/MainControl"]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_1xrfi")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SwitchToPrestigeSimpleTween" parent="CanvasLayer/MainControl" node_paths=PackedStringArray("target") instance=ExtResource("38_x6mfx")]
+unique_name_in_owner = true
+target = NodePath("../../..")
+call_method = "_switch_to_prestige"
+
+[node name="SwitchFromPrestigeSimpleTween" parent="CanvasLayer/MainControl" node_paths=PackedStringArray("target") instance=ExtResource("38_x6mfx")]
+unique_name_in_owner = true
+target = NodePath("../../..")
+call_method = "_switch_from_prestige"
+
+[node name="PrestigeTransitionSimpleTween" parent="CanvasLayer/MainControl" node_paths=PackedStringArray("target") instance=ExtResource("38_x6mfx")]
+unique_name_in_owner = true
+target = NodePath("../../..")
+duration = 2.0
+call_method = "_prestige_transition"
+
+[node name="RebornTransitionSimpleTween" parent="CanvasLayer/MainControl" node_paths=PackedStringArray("target") instance=ExtResource("38_x6mfx")]
+unique_name_in_owner = true
+target = NodePath("../../..")
+call_method = "_reborn_transition"
+
+[node name="EnterSimpleTween" parent="CanvasLayer/MainControl" node_paths=PackedStringArray("target") instance=ExtResource("38_x6mfx")]
+unique_name_in_owner = true
+target = NodePath("../../..")
+call_method = "_enter_simple_tween"
+
+[node name="EnterSoulSimpleTween" parent="CanvasLayer/MainControl" node_paths=PackedStringArray("target") instance=ExtResource("38_x6mfx")]
+unique_name_in_owner = true
+target = NodePath("../../..")
+call_method = "_enter_soul_simple_tween"
+
+[node name="FirstTimeLanguageSelection" parent="CanvasLayer" instance=ExtResource("47_rkebu")]
+unique_name_in_owner = true
+visible = false
