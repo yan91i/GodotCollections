@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg4fnoy4fuji8"]
+
+[ext_resource type="Script" uid="uid://c45qn41y7imtp" path="res://MyFirstScene.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bxpt112x6k21k" path="res://icon.png" id="2"]
+
+[node name="MyFirstScene" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(503.338, 251.669)
+texture = ExtResource("2")
+
+[node name="Button" type="Button" parent="."]
+text = "Click Me!"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
