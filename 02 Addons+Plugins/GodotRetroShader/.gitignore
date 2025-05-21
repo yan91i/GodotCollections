@@ -1,0 +1,7 @@
+# Godot-specific ignores
+.godot/
+export_presets.cfg
+
+#My stuff
+Resources/
+GodotRetro/Object Shaders/PSX Shaders/Not Working/

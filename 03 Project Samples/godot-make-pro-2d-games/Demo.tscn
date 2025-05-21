@@ -1,0 +1,80 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://core/Game.gd" type="Script" id=1]
+[ext_resource path="res://audio/MusicPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://vfx/fog_background.material" type="Material" id=3]
+[ext_resource path="res://vfx/Fog.gd" type="Script" id=4]
+[ext_resource path="res://core/LevelLoader.gd" type="Script" id=5]
+[ext_resource path="res://actors/player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://vfx/fog_foreground.material" type="Material" id=7]
+[ext_resource path="res://vfx/TransitionColor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://interface/Interface.gd" type="Script" id=9]
+[ext_resource path="res://interface/gui/player/PlayerGUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://interface/menus/shop/ShopMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://interface/menus/pause/PauseMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://interface/gui/lifebar/LifebarsBuilder.tscn" type="PackedScene" id=13]
+
+[node name="Game" type="Node"]
+pause_mode = 1
+script = ExtResource( 1 )
+
+[node name="MusicPlayer" parent="." instance=ExtResource( 2 )]
+
+[node name="Background" type="CanvasLayer" parent="."]
+editor/display_folded = true
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0625, 0.0549316, 0.0549316, 1 )
+
+[node name="BackgroundFog" type="ColorRect" parent="Background"]
+visible = false
+material = ExtResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="LevelLoader" type="Node" parent="."]
+pause_mode = 1
+script = ExtResource( 5 )
+LEVEL_START = "res://levels/Grasslands.tscn"
+
+[node name="Player" parent="LevelLoader" instance=ExtResource( 6 )]
+
+[node name="Overlays" type="CanvasLayer" parent="."]
+pause_mode = 2
+editor/display_folded = true
+layer = 50
+
+[node name="ForegroundFog" type="ColorRect" parent="Overlays"]
+visible = false
+material = ExtResource( 7 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="TransitionColor" parent="Overlays" instance=ExtResource( 8 )]
+
+[node name="Interface" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 100
+script = ExtResource( 9 )
+
+[node name="PlayerGUI" parent="Interface" instance=ExtResource( 10 )]
+
+[node name="ShopMenu" parent="Interface" instance=ExtResource( 11 )]
+pause_mode = 2
+visible = false
+_sections_unfolded = [ "Pause", "Theme" ]
+
+[node name="PauseMenu" parent="Interface" instance=ExtResource( 12 )]
+visible = false
+_sections_unfolded = [ "Pause", "Theme" ]
+
+[node name="LifebarsBuilder" parent="Interface" instance=ExtResource( 13 )]
+
+[connection signal="loaded" from="LevelLoader" to="Interface" method="_on_Level_loaded"]
+[connection signal="loaded" from="LevelLoader" to="Background/BackgroundFog" method="_on_LevelLoader_loaded"]
+[connection signal="loaded" from="LevelLoader" to="Overlays/ForegroundFog" method="_on_LevelLoader_loaded"]
