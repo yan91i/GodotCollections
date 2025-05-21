@@ -1,0 +1,124 @@
+[gd_scene load_steps=19 format=3 uid="uid://q63lxc50ni31"]
+
+[ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_cy1ia"]
+[ext_resource type="Script" path="res://entities/enemies/enemy_fsm.gd" id="2_8ke4v"]
+[ext_resource type="Script" path="res://entities/enemies/states/move.gd" id="3_juveh"]
+[ext_resource type="Script" path="res://entities/enemies/states/idle.gd" id="4_vk1wn"]
+[ext_resource type="Script" path="res://entities/enemies/states/hit.gd" id="5_t30j3"]
+[ext_resource type="Script" path="res://entities/enemies/states/die.gd" id="6_70kam"]
+[ext_resource type="Texture2D" uid="uid://c2kw4wa37hx6d" path="res://entities/enemies/infantry/assets/textures/tier2/idle_00.png" id="6_ic7wi"]
+[ext_resource type="PackedScene" uid="uid://cre1uon7pnve1" path="res://interfaces/HUD/entity/entity_hud.tscn" id="7_dxylf"]
+[ext_resource type="Texture2D" uid="uid://qf1r4mreb4qp" path="res://entities/enemies/infantry/assets/textures/tier2/move_00.png" id="7_p5ao0"]
+[ext_resource type="Texture2D" uid="uid://b062p8m3h458m" path="res://entities/enemies/infantry/assets/textures/tier2/move_01.png" id="8_bl5vh"]
+[ext_resource type="Texture2D" uid="uid://b06tl5ljmiq8s" path="res://entities/enemies/infantry/assets/textures/tier2/move_02.png" id="9_j8c11"]
+[ext_resource type="Texture2D" uid="uid://donh5td74jb72" path="res://entities/enemies/infantry/assets/textures/tier2/move_03.png" id="10_irr8p"]
+[ext_resource type="Texture2D" uid="uid://kl7ls2paa0h8" path="res://entities/enemies/infantry/assets/textures/tier2/move_04.png" id="11_83b1a"]
+[ext_resource type="Texture2D" uid="uid://dvq2mk1c5pdhw" path="res://entities/enemies/infantry/assets/textures/tier2/move_05.png" id="12_7n4yk"]
+[ext_resource type="Texture2D" uid="uid://d15r580h16qdq" path="res://entities/enemies/infantry/assets/textures/tier2/move_06.png" id="13_ciwdb"]
+[ext_resource type="Texture2D" uid="uid://btghqfuy68bb2" path="res://entities/enemies/infantry/assets/textures/tier2/move_07.png" id="14_vd38d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6olqj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ic7wi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p5ao0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bl5vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j8c11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_irr8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_83b1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7n4yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ciwdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vd38d")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q2pkr"]
+resource_local_to_scene = true
+radius = 24.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_mask = 7
+motion_mode = 1
+script = ExtResource("1_cy1ia")
+metadata/_edit_group_ = true
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_8ke4v")
+START_STATE = NodePath("Move")
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("3_juveh")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_vk1wn")
+
+[node name="Hit" type="Node" parent="StateMachine"]
+script = ExtResource("5_t30j3")
+
+[node name="Die" type="Node" parent="StateMachine"]
+script = ExtResource("6_70kam")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6olqj")
+animation = &"move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q2pkr")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 100.0
+target_desired_distance = 100.0
+avoidance_enabled = true
+radius = 32.0
+time_horizon = 40.0
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 50
+z_as_relative = false
+
+[node name="EntityHUD" parent="UI" instance=ExtResource("7_dxylf")]
+offset_left = -48.0
+offset_top = -117.0
+offset_right = -48.0
+offset_bottom = -117.0
+
+[connection signal="state_changed" from="StateMachine" to="." method="_on_state_machine_state_changed"]
+[connection signal="animation_finished" from="Sprite2D" to="StateMachine" method="_on_Sprite_animation_finished"]
+[connection signal="target_reached" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

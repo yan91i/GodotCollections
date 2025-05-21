@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://8ja2wvw63xvb"]
+
+[ext_resource type="Script" path="res://entities/projectiles/projectile.gd" id="1_orxkc"]
+[ext_resource type="Texture2D" uid="uid://b344yuti171ff" path="res://entities/projectiles/assets/textures/bullet/idle_00.png" id="2_cyqn1"]
+[ext_resource type="Texture2D" uid="uid://bj70rjxc02p1v" path="res://entities/projectiles/assets/textures/bullet/idle_01.png" id="3_18gee"]
+[ext_resource type="Texture2D" uid="uid://bu8xd2cr206ig" path="res://entities/projectiles/assets/textures/bullet/idle_02.png" id="4_kdb4y"]
+[ext_resource type="Texture2D" uid="uid://bq8jlct5t46lx" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_00.png" id="5_hg75i"]
+[ext_resource type="Texture2D" uid="uid://cocdevj1ephxt" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_01.png" id="6_f5msy"]
+[ext_resource type="Texture2D" uid="uid://bjaungrya108h" path="res://entities/projectiles/assets/textures/bullet/hit_vfx_02.png" id="7_4o8dh"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_1wkj2"]
+frames = 3
+frame_0/texture = ExtResource("2_cyqn1")
+frame_1/texture = ExtResource("3_18gee")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_kdb4y")
+frame_2/duration = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_er61a"]
+radius = 3.0
+height = 9.99999
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6sp82"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hg75i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f5msy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4o8dh")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}]
+
+[node name="Projectile" type="Area2D"]
+z_index = 30
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_orxkc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AnimatedTexture_1wkj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_er61a")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(4, 4)
+
+[node name="HitVfx" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(40, 0)
+sprite_frames = SubResource("SpriteFrames_6sp82")
+animation = &"hit"
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_projectile_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_projectile_body_entered"]
+[connection signal="animation_finished" from="HitVfx" to="." method="_on_hit_vfx_animation_finished"]
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

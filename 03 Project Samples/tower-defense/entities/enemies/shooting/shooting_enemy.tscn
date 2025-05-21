@@ -1,0 +1,159 @@
+[gd_scene load_steps=16 format=3 uid="uid://bl2so1n5mvkym"]
+
+[ext_resource type="PackedScene" uid="uid://q63lxc50ni31" path="res://entities/enemies/enemy.tscn" id="1_tnaes"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/shooting_enemy.gd" id="2_ftlox"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/move.gd" id="3_sa0ih"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/hit.gd" id="4_qprvn"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/die.gd" id="5_ui7r8"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/shoot.gd" id="6_la5et"]
+[ext_resource type="Script" path="res://entities/enemies/shooting/states/shoot_still.gd" id="7_o658i"]
+[ext_resource type="PackedScene" uid="uid://r1b440sc0tkl" path="res://entities/shooter.tscn" id="8_dv8tr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tr4ns"]
+load_path = "res://.godot/imported/base_idle_00.png-66194b3c7a6a32f9a48297bf5df74c88.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54mwn"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_tr4ns")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"shoot",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"shoot_still",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2ixb"]
+resource_local_to_scene = true
+radius = 65.9697
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_awfie"]
+load_path = "res://.godot/imported/gun_idle_00.png-ba58bceb44646f214772dcf01eb532ca.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwnph"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_awfie")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"shoot",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6dea"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71c7q"]
+radius = 400.0
+
+[node name="ShootingEnemy" instance=ExtResource("1_tnaes")]
+input_pickable = true
+script = ExtResource("2_ftlox")
+
+[node name="Move" parent="StateMachine" index="0"]
+script = ExtResource("3_sa0ih")
+
+[node name="Hit" parent="StateMachine" index="2"]
+script = ExtResource("4_qprvn")
+
+[node name="Die" parent="StateMachine" index="3"]
+script = ExtResource("5_ui7r8")
+
+[node name="Shoot" type="Node" parent="StateMachine" index="4"]
+script = ExtResource("6_la5et")
+
+[node name="Shoot_Still" type="Node" parent="StateMachine" index="5"]
+script = ExtResource("7_o658i")
+
+[node name="Sprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_54mwn")
+animation = &"idle"
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_w2ixb")
+
+[node name="EntityHUD" parent="UI" index="0"]
+offset_top = -150.0
+offset_bottom = -150.0
+
+[node name="Shooter" parent="." index="5" instance=ExtResource("8_dv8tr")]
+
+[node name="Gun" parent="Shooter" index="0"]
+sprite_frames = SubResource("SpriteFrames_pwnph")
+
+[node name="MuzzleFlash" parent="Shooter" index="1"]
+sprite_frames = SubResource("SpriteFrames_e6dea")
+
+[node name="Detector" parent="Shooter" index="2"]
+collision_mask = 18
+
+[node name="CollisionShape2D" parent="Shooter/Detector" index="0"]
+shape = SubResource("CircleShape2D_71c7q")
+
+[node name="LookAhead" parent="Shooter" index="3"]
+collision_mask = 18
+collide_with_areas = true
+
+[connection signal="mouse_entered" from="." to="Shooter" method="_on_parent_mouse_entered"]
+[connection signal="mouse_exited" from="." to="Shooter" method="_on_parent_mouse_exited"]
+[connection signal="has_shot" from="Shooter" to="." method="_on_shooter_has_shot"]
+[connection signal="area_entered" from="Shooter/Detector" to="Shooter" method="_on_detector_area_entered"]
+[connection signal="area_exited" from="Shooter/Detector" to="Shooter" method="_on_detector_area_exited"]
+[connection signal="body_entered" from="Shooter/Detector" to="Shooter" method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Shooter/Detector" to="Shooter" method="_on_detector_body_exited"]
+
+[editable path="Shooter"]
