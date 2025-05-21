@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dhdjn6xyyfsrc"]
 
-[ext_resource type="Script" path="res://nanogames/digital_warp/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://b2gwdvl55ho8e" path="res://nanogames/digital_warp/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://b682bygnrgs6b" path="res://nanogames/digital_warp/spaceship/spaceship.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://gk5mghgg2igt" path="res://nanogames/digital_warp/_assets/tunnel.svg" id="4"]
 [ext_resource type="AudioStream" uid="uid://dl7ni8svdu0i0" path="res://nanogames/digital_warp/_assets/music.ogg" id="5"]
@@ -14,7 +14,7 @@ gradient = SubResource("1")
 width = 32
 
 [sub_resource type="Curve" id="3"]
-max_value = 3.0
+_limits = [0.0, 3.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 3.04167, 0, 1, Vector2(0.986301, 3), 3.04167, 0.0, 1, 0]
 point_count = 2
 
@@ -36,8 +36,7 @@ gradient = SubResource("Gradient_8n5x1")
 width = 32
 
 [sub_resource type="Curve" id="8"]
-min_value = 1.0
-max_value = 6.0
+_limits = [0.99, 6.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 5.0, 0, 1, Vector2(1, 6), 5.0, 0.0, 1, 0]
 point_count = 2
 

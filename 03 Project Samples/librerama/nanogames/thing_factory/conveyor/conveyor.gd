@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends TextureRect
 
@@ -39,7 +39,7 @@ func place_thing(thing: Area2D) -> void:
 
 	var tween: Tween = create_tween()
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	tween.tween_property(thing, "position:x",
+	tween.tween_property(thing, ^"position:x",
 			($SpawnEnd as Marker2D).position.x, THING_MOVE_DURATION)
 
 	tween.finished.connect(_on_tween_finished.bind(thing))

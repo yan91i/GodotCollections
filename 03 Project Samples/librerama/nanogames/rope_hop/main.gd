@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -48,7 +48,7 @@ func nanogame_prepare(difficulty: int, debug_code: int) -> void:
 
 
 func nanogame_start() -> void:
-	($RopeAnimation as AnimationPlayer).play("move")
+	($RopeAnimation as AnimationPlayer).play(&"move")
 
 
 func _make_enemies_jump() -> void:
@@ -92,17 +92,17 @@ func _make_enemies_jump() -> void:
 func _hide_arrows() -> void:
 	if _is_showing_arrows:
 		_is_showing_arrows = false
-		($ArrowsAnimation as AnimationPlayer).play("hide")
+		($ArrowsAnimation as AnimationPlayer).play(&"hide")
 
 
 func _on_jumper_hit() -> void:
 	# Defer it, to avoid error about flushing queries in physical objects.
-	($RopeCollision/CollisionShape2D).set_deferred("disabled", true)
+	($RopeCollision/CollisionShape2D).set_deferred(&"disabled", true)
 
-	($RopeAnimation as AnimationPlayer).play("pre_idle")
-	($RopeAnimation as AnimationPlayer).queue("idle")
+	($RopeAnimation as AnimationPlayer).play(&"pre_idle")
+	($RopeAnimation as AnimationPlayer).queue(&"idle")
 
-	($BoomBoxAnimation as AnimationPlayer).play("stop")
+	($BoomBoxAnimation as AnimationPlayer).play(&"stop")
 
 	_hide_arrows()
 
@@ -112,4 +112,4 @@ func _on_jumper_hit() -> void:
 func _on_jumper_jumped() -> void:
 	if _is_showing_arrows:
 		($ArrowsAnimation as AnimationPlayer).stop()
-		($ArrowsAnimation as AnimationPlayer).play("animate")
+		($ArrowsAnimation as AnimationPlayer).play(&"animate")

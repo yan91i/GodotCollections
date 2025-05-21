@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://4kmw1pa5r8sj"]
 
-[ext_resource type="Script" path="res://nanogames/countin_candy/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://dco1dhx7ebv1" path="res://nanogames/countin_candy/main.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ct6f1ev03hf58" path="res://nanogames/countin_candy/_assets/jar.png" id="2"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="3"]
+[ext_resource type="Shader" uid="uid://ssqs6hgihrcf" path="res://shaders/texture_scroll.gdshader" id="3"]
 [ext_resource type="Texture2D" uid="uid://c5i2n0313k1fw" path="res://nanogames/countin_candy/_assets/lid.png" id="4"]
 [ext_resource type="AudioStream" uid="uid://wnbfnooxr056" path="res://nanogames/countin_candy/_assets/music.ogg" id="6"]
 [ext_resource type="FontFile" uid="uid://c3ok5jf8a42y0" path="res://fonts/noto_sans_regular.ttf" id="7_l83wx"]
@@ -180,10 +180,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_seupr"]
 _data = {
-"RESET": SubResource("7"),
-"jar_shake": SubResource("4"),
-"lid_open": SubResource("5"),
-"show_answers": SubResource("6")
+&"RESET": SubResource("7"),
+&"jar_shake": SubResource("4"),
+&"lid_open": SubResource("5"),
+&"show_answers": SubResource("6")
 }
 
 [node name="Main" type="Node2D"]

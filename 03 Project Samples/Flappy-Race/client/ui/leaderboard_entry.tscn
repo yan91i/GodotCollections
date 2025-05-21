@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://client/ui/stopwatch.gd" type="Script" id=1]
+[ext_resource path="res://client/world/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://client/theme/flappy.theme" type="Theme" id=3]
+[ext_resource path="res://client/fonts/DelaGothicOne-32.tres" type="DynamicFont" id=4]
+[ext_resource path="res://client/ui/death-skull-64px.png" type="Texture" id=5]
+
+[node name="LeaderboardEntry" type="HBoxContainer"]
+margin_right = 407.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 0, 64 )
+custom_constants/separation = 20
+
+[node name="Place" type="Label" parent="."]
+margin_top = 8.0
+margin_right = 84.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 84, 0 )
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+text = "0th"
+align = 2
+
+[node name="Skull" type="TextureRect" parent="."]
+visible = false
+margin_left = 104.0
+margin_right = 188.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 84, 64 )
+texture = ExtResource( 5 )
+
+[node name="PlayerHolder" type="Control" parent="."]
+margin_left = 104.0
+margin_right = 168.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Player" parent="PlayerHolder" instance=ExtResource( 2 )]
+position = Vector2( 32, 32 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = 188.0
+margin_top = 8.0
+margin_right = 628.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 440, 0 )
+rect_clip_content = true
+size_flags_horizontal = 0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+text = "Player Name"
+clip_text = true
+
+[node name="Progress" type="Label" parent="."]
+margin_left = 648.0
+margin_top = 8.0
+margin_right = 753.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 105, 0 )
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+text = "100%"
+align = 2
+
+[node name="Time" type="Label" parent="."]
+margin_left = 773.0
+margin_top = 8.0
+margin_right = 1032.0
+margin_bottom = 56.0
+rect_clip_content = true
+size_flags_horizontal = 0
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
+text = "00:00:00.00"
+script = ExtResource( 1 )

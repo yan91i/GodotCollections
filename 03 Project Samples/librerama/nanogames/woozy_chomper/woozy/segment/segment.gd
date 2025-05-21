@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -28,11 +28,11 @@ func show_segment(is_skipping_animation:=false) -> void:
 
 		return
 
-	($AnimationPlayer as AnimationPlayer).play("show")
+	($AnimationPlayer as AnimationPlayer).play(&"show")
 
 
 func bloat() -> void:
-	($AnimationPlayer as AnimationPlayer).play("bloat")
+	($AnimationPlayer as AnimationPlayer).play(&"bloat")
 
 
 func get_hitbox_radius() -> float:

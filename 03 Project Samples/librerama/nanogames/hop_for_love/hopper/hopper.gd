@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -57,7 +57,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("nanogame_action"):
+	if not event.is_action_pressed(&"nanogame_action"):
 		return
 
 	### Jump ###
@@ -78,7 +78,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	_tween_hop.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 
 	_tween_hop.tween_property(
-			self, "position:x", position.x + distance, animation_length)
+			self, ^"position:x", position.x + distance, animation_length)
 
 	var land_area: Area2D
 	if not get_overlapping_areas().is_empty():
@@ -91,17 +91,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	tween.set_trans(Tween.TRANS_CIRC)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "position:y", position.y - distance / 2,
+	tween.tween_property(self, ^"position:y", position.y - distance / 2,
 			animation_length / 2)
 
 	tween.set_ease(Tween.EASE_IN)
-	tween.tween_property(self, "position:y",position.y, animation_length / 2)
+	tween.tween_property(self, ^"position:y",position.y, animation_length / 2)
 
 	($Noises as AudioStreamPlayer2D).play()
 
 	($AnimationPlayer as AnimationPlayer).speed_scale =\
 			JUMP_ANIMATION_LENGTH / animation_length
-	($AnimationPlayer as AnimationPlayer).play("jump")
+	($AnimationPlayer as AnimationPlayer).play(&"jump")
 
 	jumped.emit()
 
@@ -139,22 +139,22 @@ func _move_target() -> void:
 	_tween_target.set_parallel()
 	_tween_target.set_loops(-1)
 
-	_tween_target.tween_property(_target, "position:x", JUMP_DISTANCE_MAX,
+	_tween_target.tween_property(_target, ^"position:x", JUMP_DISTANCE_MAX,
 			TARGET_ANIMATION_LENGTH_HALF)
 
-	_tween_target.tween_property(self, "_target_arc_start_current",
+	_tween_target.tween_property(self, ^"_target_arc_start_current",
 			TARGET_ARC_START_MAX, TARGET_ANIMATION_LENGTH_HALF)
-	_tween_target.tween_property(self, "_target_arc_end_current",
+	_tween_target.tween_property(self, ^"_target_arc_end_current",
 			TARGET_ARC_END_MAX, TARGET_ANIMATION_LENGTH_HALF)
 
 	_tween_target.chain()
 
-	_tween_target.tween_property(_target, "position:x", JUMP_DISTANCE_MIN,
+	_tween_target.tween_property(_target, ^"position:x", JUMP_DISTANCE_MIN,
 			TARGET_ANIMATION_LENGTH_HALF)
 
-	_tween_target.tween_property(self, "_target_arc_start_current",
+	_tween_target.tween_property(self, ^"_target_arc_start_current",
 			TARGET_ARC_START_MIN, TARGET_ANIMATION_LENGTH_HALF)
-	_tween_target.tween_property(self, "_target_arc_end_current",
+	_tween_target.tween_property(self, ^"_target_arc_end_current",
 			TARGET_ARC_END_MIN, TARGET_ANIMATION_LENGTH_HALF)
 
 
@@ -163,7 +163,7 @@ func _land(area:Area2D=null) -> void:
 
 	if area != null or is_never_splashing:
 		if goal_area != null and area == goal_area:
-			($AnimationPlayer as AnimationPlayer).play("land_blush")
+			($AnimationPlayer as AnimationPlayer).play(&"land_blush")
 		else:
 			# Avoid showing the target's past position in the first frame.
 			_target.position.x = JUMP_DISTANCE_MIN
@@ -176,8 +176,8 @@ func _land(area:Area2D=null) -> void:
 
 			_move_target()
 
-			($AnimationPlayer as AnimationPlayer).play("land")
+			($AnimationPlayer as AnimationPlayer).play(&"land")
 	else:
-		($AnimationPlayer as AnimationPlayer).play("splash")
+		($AnimationPlayer as AnimationPlayer).play(&"splash")
 
 	landed.emit(area)

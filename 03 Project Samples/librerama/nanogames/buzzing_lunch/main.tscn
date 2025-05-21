@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3wtvhqq5t1sm"]
 
-[ext_resource type="Script" path="res://nanogames/buzzing_lunch/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://mxgfk6cispje" path="res://nanogames/buzzing_lunch/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://b01up4l05d8a5" path="res://nanogames/buzzing_lunch/frog/frog.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://bmnnk5xndhlt8" path="res://nanogames/buzzing_lunch/_assets/background.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://d2xpvm3hvm532" path="res://nanogames/buzzing_lunch/_assets/music.ogg" id="4"]

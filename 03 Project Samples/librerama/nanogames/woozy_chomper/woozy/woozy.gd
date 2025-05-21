@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -66,7 +66,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	# detected at once. Not directly placed in `_physics_process()` as to not
 	# capture inputs when it shouldn't.
 	_direction_speed = int(Input.get_axis(
-			"nanogame_left", "nanogame_right")) * SPEED_ROTATE
+			&"nanogame_left", &"nanogame_right")) * SPEED_ROTATE
 
 
 func _physics_process(delta: float) -> void:
@@ -100,7 +100,7 @@ func _physics_process(delta: float) -> void:
 				return
 
 			position = position_new
-			set_meta("teleport", true)
+			set_meta(&"teleport", true)
 	elif position.x <= _movement_area.size.x and\
 			position.x >= _movement_area.position.x and\
 			position.y <= _movement_area.size.y and\
@@ -131,16 +131,16 @@ func _die() -> void:
 	set_physics_process(false)
 
 	for i: Node in get_segments():
-		if i.has_meta("tween"):
-			i.get_meta("tween").kill()
+		if i.has_meta(&"tween"):
+			i.get_meta(&"tween").kill()
 
 	# Defer it, to avoid error about flushing queries in physical objects.
-	($CollisionShape2D as CollisionShape2D).set_deferred("disabled", true)
+	($CollisionShape2D as CollisionShape2D).set_deferred(&"disabled", true)
 
 	($SegmentsUpdate as Timer).stop()
 	($EyesAnimate as Timer).stop()
 
-	($AnimationPlayer as AnimationPlayer).play("die")
+	($AnimationPlayer as AnimationPlayer).play(&"die")
 
 	damaged.emit()
 
@@ -164,8 +164,8 @@ func _on_area_entered(area: Area2D) -> void:
 		set_physics_process(false)
 
 		for i: Node in get_segments():
-			if i.has_meta("tween"):
-				i.get_meta("tween").kill()
+			if i.has_meta(&"tween"):
+				i.get_meta(&"tween").kill()
 
 		($Noises as AudioStreamPlayer2D).stop()
 		($Noises as AudioStreamPlayer2D).stream =\
@@ -188,8 +188,8 @@ func _on_area_entered(area: Area2D) -> void:
 			segment_new.show_segment()
 
 	($AnimationPlayer as AnimationPlayer).stop()
-	($AnimationPlayer as AnimationPlayer).play("eat")
-	($AnimationPlayer as AnimationPlayer).queue("idle")
+	($AnimationPlayer as AnimationPlayer).play(&"eat")
+	($AnimationPlayer as AnimationPlayer).queue(&"idle")
 
 	eat.emit()
 
@@ -201,27 +201,27 @@ func _on_segments_update_timeout() -> void:
 	tween.set_parallel()
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	for i: Node in _segments.get_children():
-		if not segment_previous.has_meta("teleport"):
-			tween.tween_property(i, "position", segment_previous.position,
+		if not segment_previous.has_meta(&"teleport"):
+			tween.tween_property(i, ^"position", segment_previous.position,
 					SEGMENT_DELAY_BASE)
-			i.set_meta("tween", tween)
+			i.set_meta(&"tween", tween)
 		else:
-			segment_previous.remove_meta("teleport")
+			segment_previous.remove_meta(&"teleport")
 
-			if i.has_meta("tween"):
-				i.get_meta("tween").kill()
+			if i.has_meta(&"tween"):
+				i.get_meta(&"tween").kill()
 
 			# Defer it, so the following segments are teleported properly one
 			# at each update.
-			i.set_deferred("position", segment_previous.position)
-			i.call_deferred("set_meta", "teleport", true)
+			i.set_deferred(&"position", segment_previous.position)
+			i.call_deferred(&"set_meta", &"teleport", true)
 
 		segment_previous = i
 
 
 func _on_eyes_animate_timeout() -> void:
 	var tween: Tween = create_tween().set_parallel()
-	tween.tween_property($Head/EyeLeft as Sprite2D, "rotation",
+	tween.tween_property($Head/EyeLeft as Sprite2D, ^"rotation",
 			randf_range(-PI / 2, PI / 2), 0.5)
-	tween.tween_property($Head/EyeRight as Sprite2D, "rotation",
+	tween.tween_property($Head/EyeRight as Sprite2D, ^"rotation",
 			randf_range(-PI / 2, PI / 2), 0.5)

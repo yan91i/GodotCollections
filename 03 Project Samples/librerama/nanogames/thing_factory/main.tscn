@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://bukv0knepqgn6"]
 
-[ext_resource type="Script" path="res://nanogames/thing_factory/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://bji531ecq2po2" path="res://nanogames/thing_factory/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://d00nnirqm3xhw" path="res://nanogames/thing_factory/conveyor/conveyor.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cgf4toiohp4mi" path="res://nanogames/thing_factory/_assets/sign.svg" id="3"]
 [ext_resource type="Texture2D" uid="uid://cc4kmixjxoqbv" path="res://nanogames/thing_factory/_assets/background.svg" id="4"]
 [ext_resource type="AudioStream" uid="uid://b1np12uo5r4kv" path="res://nanogames/thing_factory/_assets/music.ogg" id="5"]
 [ext_resource type="AudioStream" uid="uid://bt2th37eos63c" path="res://nanogames/thing_factory/_assets/alarm.wav" id="6"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll_zigzag.gdshader" id="7"]
+[ext_resource type="Shader" uid="uid://c6xyengfe5j4q" path="res://shaders/texture_scroll_zigzag.gdshader" id="7"]
 [ext_resource type="PackedScene" uid="uid://bqsajlwwyx7bi" path="res://nanogames/thing_factory/thing/thing.tscn" id="8"]
 
 [sub_resource type="ShaderMaterial" id="1"]
@@ -64,49 +64,14 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fsfu2"]
 _data = {
-"RESET": SubResource("Animation_g2new"),
-"fail": SubResource("2"),
-"idle": SubResource("3")
+&"RESET": SubResource("Animation_g2new"),
+&"fail": SubResource("2"),
+&"idle": SubResource("3")
 }
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1")
 metadata/_edit_lock_ = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
-material = SubResource("1")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource("4")
-stretch_mode = 1
-metadata/_edit_lock_ = true
-
-[node name="Conveyors" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -480.0
-offset_top = -115.0
-offset_right = 480.0
-offset_bottom = 360.0
-theme_override_constants/separation = 110
-alignment = 1
-metadata/_edit_group_ = true
-
-[node name="Conveyor" parent="CanvasLayer/Conveyors" instance=ExtResource("2")]
-layout_mode = 2
-
-[node name="Conveyor2" parent="CanvasLayer/Conveyors" instance_placeholder="res://nanogames/thing_factory/conveyor/conveyor.tscn"]
-layout_mode = 2
-
-[node name="Conveyor3" parent="CanvasLayer/Conveyors" instance_placeholder="res://nanogames/thing_factory/conveyor/conveyor.tscn"]
-layout_mode = 2
 
 [node name="ThingSign" type="Sprite2D" parent="."]
 position = Vector2(480, 83)
@@ -124,6 +89,28 @@ offset_right = 118.0
 offset_bottom = 58.0
 color = Color(0.568627, 0.784314, 0.729412, 1)
 
+[node name="Conveyors" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 245.0
+offset_right = 960.0
+offset_bottom = 720.0
+theme_override_constants/separation = 110
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Conveyor" parent="Conveyors" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Conveyor2" parent="Conveyors" instance_placeholder="res://nanogames/thing_factory/conveyor/conveyor.tscn"]
+layout_mode = 2
+
+[node name="Conveyor3" parent="Conveyors" instance_placeholder="res://nanogames/thing_factory/conveyor/conveyor.tscn"]
+layout_mode = 2
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(480, 360)
 
@@ -139,11 +126,23 @@ bus = &"Music"
 stream = ExtResource("6")
 bus = &"Effects"
 
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+material = SubResource("1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("4")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fsfu2")
 }
 autoplay = "idle"
 
-[connection signal="end_reached" from="CanvasLayer/Conveyors/Conveyor" to="." method="_on_conveyor_end_reached"]
+[connection signal="end_reached" from="Conveyors/Conveyor" to="." method="_on_conveyor_end_reached"]
 [connection signal="timeout" from="ThingSpawn" to="." method="_spawn_things"]

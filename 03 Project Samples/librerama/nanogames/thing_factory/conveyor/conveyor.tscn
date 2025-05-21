@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d00nnirqm3xhw"]
 
-[ext_resource type="Script" path="res://nanogames/thing_factory/conveyor/conveyor.gd" id="1"]
+[ext_resource type="Script" uid="uid://d3mh2eeypj5bs" path="res://nanogames/thing_factory/conveyor/conveyor.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dda8ru2q82a5m" path="res://nanogames/thing_factory/conveyor/_assets/vent.svg" id="2"]
 [ext_resource type="Texture2D" uid="uid://cft2us7qx55y8" path="res://nanogames/thing_factory/conveyor/_assets/conveyor.svg" id="3"]
 

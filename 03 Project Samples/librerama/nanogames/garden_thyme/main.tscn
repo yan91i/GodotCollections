@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dfyv5sttfp5ln"]
 
-[ext_resource type="Script" path="res://nanogames/garden_thyme/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://b3d2gwj8if1h4" path="res://nanogames/garden_thyme/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://costyv47tyfla" path="res://nanogames/garden_thyme/watering_can/watering_can.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://bpphwme37y10q" path="res://nanogames/garden_thyme/flower/flower.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://cab11uy0oh8lj" path="res://nanogames/garden_thyme/_assets/grass.png" id="4"]
@@ -132,9 +132,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g6oux"]
 _data = {
-"RESET": SubResource("3"),
-"lose": SubResource("1"),
-"win": SubResource("2")
+&"RESET": SubResource("3"),
+&"lose": SubResource("1"),
+&"win": SubResource("2")
 }
 
 [node name="Main" type="Node2D"]

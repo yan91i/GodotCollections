@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -48,11 +48,11 @@ func jump(direction: int) -> void:
 
 	set_physics_process(true)
 
-	($AnimationPlayer as AnimationPlayer).play("jump")
-	($AnimationPlayer as AnimationPlayer).queue("idle")
+	($AnimationPlayer as AnimationPlayer).play(&"jump")
+	($AnimationPlayer as AnimationPlayer).queue(&"idle")
 
 
 func _on_area_entered() -> void:
 	set_physics_process(false)
 
-	($AnimationPlayer as AnimationPlayer).play("fall")
+	($AnimationPlayer as AnimationPlayer).play(&"fall")

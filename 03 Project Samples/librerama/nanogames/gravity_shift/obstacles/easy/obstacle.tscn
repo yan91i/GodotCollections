@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://rl5cr4rmnsjq"]
 
-[ext_resource type="Script" path="res://nanogames/gravity_shift/obstacles/obstacle.gd" id="1"]
+[ext_resource type="Script" uid="uid://urguq7af8xrt" path="res://nanogames/gravity_shift/obstacles/obstacle.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bea0jmyu7vsw1" path="res://nanogames/gravity_shift/obstacles/_assets/obstacle.png" id="2"]
 [ext_resource type="AudioStream" uid="uid://biq52ivlr1aqs" path="res://nanogames/gravity_shift/obstacles/_assets/lift.wav" id="3"]
 
@@ -41,8 +41,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gqmfq"]
 _data = {
-"RESET": SubResource("3"),
-"activate": SubResource("2")
+&"RESET": SubResource("3"),
+&"activate": SubResource("2")
 }
 
 [node name="Obstacle1" type="Area2D"]

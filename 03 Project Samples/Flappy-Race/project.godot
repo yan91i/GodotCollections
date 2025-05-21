@@ -1,0 +1,196 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "BotController",
+"language": "GDScript",
+"path": "res://common/world/bot/bot_controller.gd"
+}, {
+"base": "Node",
+"class": "ChunkTracker",
+"language": "GDScript",
+"path": "res://common/world/chunk_tracker.gd"
+}, {
+"base": "SceneHandler",
+"class": "ClientNetwork",
+"language": "GDScript",
+"path": "res://client/client_network.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "CommonPlayer",
+"language": "GDScript",
+"path": "res://common/world/player/player.gd"
+}, {
+"base": "Node2D",
+"class": "CommonWorld",
+"language": "GDScript",
+"path": "res://common/world/world.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://common/singletons/items/item.gd"
+}, {
+"base": "Node2D",
+"class": "LevelGenerator",
+"language": "GDScript",
+"path": "res://common/world/level_generator.gd"
+}, {
+"base": "Node",
+"class": "Logger",
+"language": "GDScript",
+"path": "res://common/utils/logger.gd"
+}, {
+"base": "Control",
+"class": "MenuControl",
+"language": "GDScript",
+"path": "res://client/menu/menu_control.gd"
+}, {
+"base": "Node2D",
+"class": "Obstacle",
+"language": "GDScript",
+"path": "res://common/world/obstacles/obstacle.gd"
+}, {
+"base": "Node2D",
+"class": "Powerup",
+"language": "GDScript",
+"path": "res://common/world/player/powerups/powerup.gd"
+}, {
+"base": "Node",
+"class": "SceneHandler",
+"language": "GDScript",
+"path": "res://common/scene_handler.gd"
+}, {
+"base": "SceneHandler",
+"class": "ServerNetwork",
+"language": "GDScript",
+"path": "res://server/server_network.gd"
+}, {
+"base": "Node",
+"class": "UpnpHandler",
+"language": "GDScript",
+"path": "res://server/upnp_handler.gd"
+} ]
+_global_script_class_icons={
+"BotController": "",
+"ChunkTracker": "",
+"ClientNetwork": "",
+"CommonPlayer": "",
+"CommonWorld": "",
+"Item": "",
+"LevelGenerator": "",
+"Logger": "",
+"MenuControl": "",
+"Obstacle": "",
+"Powerup": "",
+"SceneHandler": "",
+"ServerNetwork": "",
+"UpnpHandler": ""
+}
+
+[application]
+
+config/name="Flappy Race"
+config/description="Flappy Race is a free and open source 2D multiplayer game inspired by Flappy Bird and Mario Kart, created with Godot 3.
+
+Works on desktop (Windows, Linux, Mac) and HTML5 platforms. Use desktop for the best experience and to allow self-hosting multiplayer games!
+
+I started this project as a way to learn more about multiplayer game development in Godot and to learn about creating server backend code using Rust, Python and Docker."
+run/main_scene="res://common/main.tscn"
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
+config/version="v0.13.0"
+config/debug_tools=false
+config/debug_tools.editor=true
+
+[audio]
+
+default_bus_layout="res://client/audio/default_bus_layout.tres"
+
+[autoload]
+
+Network="*res://common/singletons/network.gd"
+Globals="*res://common/singletons/globals.gd"
+Items="*res://common/singletons/items.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[game]
+
+config/rpc_port=31400
+config/max_players=16
+config/server_domain_url="https://jibby.games"
+config/server_list_route="/api/list"
+config/server_manager_route="/api/manager"
+
+[gdnative]
+
+singletons=[  ]
+singletons_disabled=[  ]
+
+[gui]
+
+theme/custom="res://client/theme/flappy.theme"
+theme/custom_font="res://client/fonts/DelaGothicOne-24.tres"
+
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
+
+[input]
+
+pause_menu={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+flap={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+toggle_debug={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777244,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="walls"
+2d_physics/layer_3="score"
+2d_physics/layer_4="items"
+
+[locale]
+
+locale_filter=[ 0, [  ] ]
+
+[network]
+
+limits/debugger_stdout/max_chars_per_second=4096
+
+[physics]
+
+common/physics_jitter_fix=0.0
+common/physics_interpolation=true

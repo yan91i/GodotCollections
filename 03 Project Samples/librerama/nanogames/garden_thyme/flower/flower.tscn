@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bpphwme37y10q"]
 
-[ext_resource type="Script" path="res://nanogames/garden_thyme/flower/flower.gd" id="1"]
-[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="2"]
+[ext_resource type="Script" uid="uid://nfiagqhgiclt" path="res://nanogames/garden_thyme/flower/flower.gd" id="1"]
+[ext_resource type="Shader" uid="uid://diibp64jakhtf" path="res://shaders/texture_wave.gdshader" id="2"]
 [ext_resource type="Texture2D" uid="uid://bs0dvsq0hv044" path="res://nanogames/garden_thyme/flower/_assets/flower.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://deijf7ku17xgp" path="res://nanogames/garden_thyme/flower/_assets/blossom.wav" id="4"]
 
@@ -72,8 +72,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_csobh"]
 _data = {
-"RESET": SubResource("4"),
-"blossom": SubResource("3")
+&"RESET": SubResource("4"),
+&"blossom": SubResource("3")
 }
 
 [node name="Flower" type="Area2D"]

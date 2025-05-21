@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Button
 
@@ -31,6 +31,8 @@ var author_visible := true: set = set_author_visible
 
 var highlight := false: set = set_highlight
 
+var about_button_next_focus := NodePath(): set = set_about_button_next_focus
+
 var _is_ignoring_theme_notification := false
 
 
@@ -41,6 +43,10 @@ func _notification(what: int) -> void:
 				_update_styleboxes()
 		NOTIFICATION_TRANSLATION_CHANGED:
 			set_nanogame(nanogame)
+
+
+func does_about_button_have_focus() -> bool:
+	return ($Contents/Information/Main/AboutNanogame as Button).has_focus()
 
 
 func set_nanogame(new_nanogame: Nanogame) -> void:
@@ -56,20 +62,20 @@ func set_nanogame(new_nanogame: Nanogame) -> void:
 	($Contents/Information/Main/Text/Name as Label).text =\
 			new_nanogame.get_nanogame_name(true)\
 			if not new_nanogame.get_nanogame_name().is_empty() else\
-			tr("[No Name]")
+			tr(&"[No Name]")
 	($Contents/Information/Main/Text/Name as Label).modulate =\
 			Color.WHITE if not new_nanogame.get_nanogame_name().is_empty()\
 			else Color.SILVER
 
-	($Contents/Information/Main/Text/Kickoff as Label).text = tr('"%s"') %\
+	($Contents/Information/Main/Text/Kickoff as Label).text = tr(&'"%s"') %\
 			tr(new_nanogame.get_kickoff(true)) if not new_nanogame.\
-			get_kickoff().is_empty() else tr("[No Kickoff]")
+			get_kickoff().is_empty() else tr(&"[No Kickoff]")
 	($Contents/Information/Main/Text/Kickoff as Label).modulate =\
 			Color.WHITE if not new_nanogame.get_kickoff().is_empty()\
 			else Color.SILVER
 
-	(%Author as Label).text = (tr("By %s") % new_nanogame.get_author())\
-			if not new_nanogame.get_author().is_empty() else tr("[No Author]")
+	(%Author as Label).text = (tr(&"By %s") % new_nanogame.get_author())\
+			if not new_nanogame.get_author().is_empty() else tr(&"[No Author]")
 	(%Author as Label).modulate =\
 			Color.WHITE if not new_nanogame.get_author().is_empty()\
 			else Color.SILVER
@@ -93,7 +99,7 @@ func set_nanogame(new_nanogame: Nanogame) -> void:
 
 	($Contents/Information/Extra/Input as TextureRect).texture = input_icon
 	($Contents/Information/Extra/Input as TextureRect).tooltip_text =\
-			tr("Input: %s") % tr(Nanogame.get_input_name(
+			tr(&"Input: %s") % tr(Nanogame.get_input_name(
 					new_nanogame.get_input()))
 
 
@@ -108,19 +114,23 @@ func set_nanogame(new_nanogame: Nanogame) -> void:
 
 	($Contents/Information/Extra/Timer as TextureRect).texture = timer_icon
 	($Contents/Information/Extra/Timer as TextureRect).tooltip_text =\
-			tr("Timer: %s") % tr(Nanogame.get_timer_name(
+			tr(&"Timer: %s") % tr(Nanogame.get_timer_name(
 					new_nanogame.get_timer()))
 
 
 func set_author_visible(is_author_visible: bool) -> void:
 	author_visible = is_author_visible
-
 	(%Author as Label).visible = is_author_visible
 
 
 func set_highlight(is_highlighted: bool) -> void:
 	highlight = is_highlighted
 	_update_styleboxes()
+
+
+func set_about_button_next_focus(path: NodePath) -> void:
+	($Contents/Information/Main/AboutNanogame as Button).\
+			focus_neighbor_right = path
 
 
 func _update_styleboxes() -> void:

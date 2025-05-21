@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -32,7 +32,7 @@ func get_hitbox_extents() -> Vector2:
 
 func _on_area_entered(_area: Area2D) -> void:
 	# Defer it, to avoid error about flushing queries in physical objects.
-	($CollisionShape2D as CollisionShape2D).set_deferred("disabled", true)
+	($CollisionShape2D as CollisionShape2D).set_deferred(&"disabled", true)
 
 	($Blossom as AudioStreamPlayer2D).play()
-	($AnimationPlayer as AnimationPlayer).play("blossom")
+	($AnimationPlayer as AnimationPlayer).play(&"blossom")

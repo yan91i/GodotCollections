@@ -1,10 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7bsjh2hispi1"]
+[gd_scene load_steps=9 format=3 uid="uid://c7bsjh2hispi1"]
 
-[ext_resource type="Script" path="res://places/arcade_machine/tutorial/tutorial.gd" id="1"]
+[ext_resource type="Script" uid="uid://6oobjc8goxhg" path="res://places/arcade_machine/tutorial/tutorial.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bu7lp4s66p63a" path="res://places/_assets/pagination/previous_page.svg" id="2"]
 [ext_resource type="Texture2D" uid="uid://d4csqaw6ukmfi" path="res://places/_assets/pagination/next_page.svg" id="3"]
 
 [sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_8n2rj"]
+action = &"menu_page_previous"
+
+[sub_resource type="Shortcut" id="Shortcut_v6ke3"]
+events = [SubResource("InputEventAction_8n2rj")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ttst0"]
+action = &"menu_page_next"
+
+[sub_resource type="Shortcut" id="Shortcut_u3txf"]
+events = [SubResource("InputEventAction_ttst0")]
 
 [node name="Tutorial" type="PanelContainer"]
 anchors_preset = 15
@@ -94,6 +106,7 @@ layout_mode = 2
 
 [node name="Previous" type="Button" parent="Contents/PageButtons"]
 layout_mode = 2
+shortcut = SubResource("Shortcut_v6ke3")
 icon = ExtResource("2")
 
 [node name="Pages" type="Label" parent="Contents/PageButtons"]
@@ -102,6 +115,7 @@ size_flags_horizontal = 3
 
 [node name="Next" type="Button" parent="Contents/PageButtons"]
 layout_mode = 2
+shortcut = SubResource("Shortcut_u3txf")
 icon = ExtResource("3")
 
 [connection signal="pressed" from="Contents/PageButtons/Previous" to="." method="_on_Previous_pressed"]

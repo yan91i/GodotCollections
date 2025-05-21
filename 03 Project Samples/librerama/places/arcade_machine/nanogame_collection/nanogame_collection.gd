@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Control
 
@@ -50,12 +50,12 @@ func _ready() -> void:
 
 	var inputs_size: int = Nanogame.Inputs.size()
 
-	filter_popup.add_separator(tr("Inputs"))
+	filter_popup.add_separator(tr(&"Inputs"))
 	for i: int in inputs_size:
 		filter_popup.add_check_item(Nanogame.get_input_name(i))
 		filter_popup.set_item_checked(i + 1, true)
 
-	filter_popup.add_separator(tr("Timers"))
+	filter_popup.add_separator(tr(&"Timers"))
 	for i: int in Nanogame.Timers.size():
 		filter_popup.add_check_item(Nanogame.get_timer_name(i))
 		filter_popup.set_item_checked(i + inputs_size + 2, true)
@@ -95,18 +95,24 @@ func _notification(what: int) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("menu_search"):
+	if event.is_action_pressed(&"menu_search"):
 		# Delay focus grab to avoid entering the typed key into the search box.
 		await get_tree().process_frame
 		($HBoxContainer/NanogameSelector/VBoxContainer/TopBar/Search as
 				LineEdit).grab_focus()
+	elif event.is_action_pressed(&"menu_page_first"):
+		# Program the shortcut manually, as the `shortcut` property isn't
+		# working for this.
+		_on_first_pressed()
+	elif event.is_action_pressed(&"menu_page_last"):
+		_on_last_pressed() # Same as above.
 
 
 func clear_selected_highlight() -> void:
 	var has_highlight := false
 	for i: Nanogame in _nanogames_selected:
-		if i.has_meta("highlight"):
-			i.remove_meta("highlight")
+		if i.has_meta(&"highlight"):
+			i.remove_meta(&"highlight")
 
 			has_highlight = true
 
@@ -231,9 +237,9 @@ func update_filtered_nanogames() -> void:
 	empty_message.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER)
 
 	if has_nanogames:
-		empty_message.add_text(tr("No nanogames found."))
+		empty_message.add_text(tr(&"No nanogames found."))
 	else:
-		empty_message.add_text(tr("No nanogames available."))
+		empty_message.add_text(tr(&"No nanogames available."))
 		empty_message.newline()
 
 		if ArcadeManager.community_mode and OS.has_feature("pc"):
@@ -293,7 +299,7 @@ func _add_nanogame_selected(nanogame: Nanogame) -> void:
 			else preload("res://places/_assets/unknown.svg")
 	button.tooltip_text = nanogame.get_nanogame_name(true)\
 			if not nanogame.get_nanogame_name(true).is_empty() else\
-			tr("[No Name]")
+			tr(&"[No Name]")
 
 	# Make the button a perfect square.
 	button.custom_minimum_size.y = (%NanogamesActive as VBoxContainer).size.x
@@ -335,7 +341,7 @@ func _update_nanogame_available_buttons() -> void:
 
 	var nanogames_available := %NanogamesAvailable as GridContainer
 	for i: Node in nanogames_available.get_children():
-		if i.has_focus():
+		if i is Button and (i.has_focus() or i.does_about_button_have_focus()):
 			had_focus = true
 
 		nanogames_available.remove_child(i)
@@ -352,16 +358,16 @@ func _update_nanogame_available_buttons() -> void:
 		if page_max > 0:
 			_page_current -= 1
 
-	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/First\
+	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/First
 			as Button).disabled = _page_current == 0
-	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Previous\
+	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Previous
 			as Button).disabled = _page_current == 0
-	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Next\
+	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Next
 			as Button).disabled = _page_current >= page_max - 1
-	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Last\
+	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Last
 			as Button).disabled = _page_current >= page_max - 1
 
-	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Pages\
+	($HBoxContainer/NanogameSelector/VBoxContainer/PageButtons/Pages
 			as Label).text = str(_page_current + 1 if page_max > 0
 			else _page_current) + " / " + str(page_max)
 
@@ -374,6 +380,7 @@ func _update_nanogame_available_buttons() -> void:
 	var nanogame_index: int = _page_current * page_quantity
 	var nanogame_index_max := mini(_nanogames_filtered.size(),
 			(_page_current + 1) * page_quantity) - 1
+	var previous_button: Button
 	while true:
 		var new_button := NanogameButton.instantiate() as Button
 		var nanogame: Nanogame = _nanogames_filtered[nanogame_index]
@@ -382,7 +389,7 @@ func _update_nanogame_available_buttons() -> void:
 		if not ArcadeManager.community_mode:
 			new_button.author_visible = false
 
-		if nanogame.has_meta("highlight"):
+		if nanogame.has_meta(&"highlight"):
 			new_button.highlight = true
 
 		if _nanogames_selected.has(nanogame):
@@ -393,15 +400,32 @@ func _update_nanogame_available_buttons() -> void:
 
 		nanogames_available.add_child(new_button)
 
+		@warning_ignore("unassigned_variable")
+		if previous_button != null:
+			# Prevent the button from taking the focus back instead of passing
+			# it to the next one when pressing right.
+			@warning_ignore("unassigned_variable")
+			previous_button.about_button_next_focus = new_button.get_path()
+
+			@warning_ignore("unassigned_variable")
+			new_button.focus_neighbor_left = previous_button.get_path()
+		previous_button = new_button
+
 		new_button.toggled.connect(
 				_on_nanogame_available_button_toggled.bind(nanogame))
 		new_button.about_nanogame_pressed.connect(($AboutNanogameModal
 				as TabModal).popup_nanogame.bind(nanogame))
 
 		if nanogame_index == nanogame_index_max:
+			new_button.about_button_next_focus =\
+					nanogames_available.get_child(0).get_path()
+
 			break
 
 		nanogame_index += 1
+
+	nanogames_available.get_child(0).focus_neighbor_left =\
+			previous_button.get_path()
 
 	# Add spacers to keep the buttons aligned in the grid.
 	while nanogames_available.get_child_count() <= nanogames_available.columns:

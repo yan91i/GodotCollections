@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dmfnkrrgdidos"]
 
 [ext_resource type="Texture2D" uid="uid://cpts4i7o84o10" path="res://nanogames/void_avoider/_assets/particle.svg" id="2"]
-[ext_resource type="Script" path="res://nanogames/void_avoider/black_holes/small_hole/small_hole.gd" id="3"]
+[ext_resource type="Script" uid="uid://byubprqqiton8" path="res://nanogames/void_avoider/black_holes/small_hole/small_hole.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://mff3q1qhdr7h" path="res://nanogames/void_avoider/black_holes/small_hole/_assets/wave.svg" id="4"]
 [ext_resource type="Texture2D" uid="uid://uas0gdgw44lb" path="res://nanogames/void_avoider/black_holes/_resources/shrink_curve.tres" id="5"]
 [ext_resource type="Texture2D" uid="uid://cseeiyr6tev7x" path="res://nanogames/void_avoider/black_holes/_resources/expand_curve.tres" id="6"]
@@ -115,9 +115,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x22bu"]
 _data = {
-"RESET": ExtResource("8"),
-"pulse": SubResource("8"),
-"start": SubResource("9")
+&"RESET": ExtResource("8"),
+&"pulse": SubResource("8"),
+&"start": SubResource("9")
 }
 
 [node name="SmallHole" type="Area2D"]

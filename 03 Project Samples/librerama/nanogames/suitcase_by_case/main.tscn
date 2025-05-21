@@ -1,12 +1,12 @@
 [gd_scene load_steps=21 format=3 uid="uid://csu4jta1ukjpi"]
 
-[ext_resource type="Script" path="res://nanogames/suitcase_by_case/main.gd" id="1"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="2"]
+[ext_resource type="Script" uid="uid://dyyny6wvb0utc" path="res://nanogames/suitcase_by_case/main.gd" id="1"]
+[ext_resource type="Shader" uid="uid://ssqs6hgihrcf" path="res://shaders/texture_scroll.gdshader" id="2"]
 [ext_resource type="Texture2D" uid="uid://c6rcbh7mlnlf7" path="res://nanogames/suitcase_by_case/_assets/conveyor.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://1llpp7ge5h1k" path="res://nanogames/suitcase_by_case/baggage/baggage.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://cal23ihoabpvv" path="res://nanogames/suitcase_by_case/_assets/door.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://c55cqcgornjo2" path="res://nanogames/suitcase_by_case/_assets/base.png" id="6"]
-[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="8"]
+[ext_resource type="Shader" uid="uid://diibp64jakhtf" path="res://shaders/texture_wave.gdshader" id="8"]
 [ext_resource type="AudioStream" uid="uid://dbvk4jp28ageo" path="res://nanogames/suitcase_by_case/_assets/music.ogg" id="9"]
 
 [sub_resource type="ShaderMaterial" id="1"]
@@ -24,7 +24,7 @@ gradient = SubResource("Gradient_yweu4")
 width = 32
 
 [sub_resource type="Curve" id="Curve_mprqf"]
-min_value = 0.7
+_limits = [0.7, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, -0.3, 0, 1, Vector2(1, 0.7), -0.3, 0.0, 1, 0]
 point_count = 2
 
@@ -95,8 +95,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_55wh5"]
 _data = {
-"RESET": SubResource("Animation_s0top"),
-"thought_transition": SubResource("6")
+&"RESET": SubResource("Animation_s0top"),
+&"thought_transition": SubResource("6")
 }
 
 [node name="Main" type="Node2D"]

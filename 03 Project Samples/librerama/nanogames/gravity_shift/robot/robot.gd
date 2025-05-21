@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -34,7 +34,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("nanogame_action"):
+	if not event.is_action_pressed(&"nanogame_action"):
 		return
 
 	set_process_unhandled_input(false)
@@ -44,15 +44,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	($Noises as AudioStreamPlayer2D).play()
 
 	var animation_player := $AnimationPlayer as AnimationPlayer
-	animation_player.play("shift")
-	animation_player.queue("land")
-	animation_player.queue("idle")
+	animation_player.play(&"shift")
+	animation_player.queue(&"land")
+	animation_player.queue(&"idle")
 
 	var tween: Tween = create_tween()
 	# Shift between the floor and ceiling depeding where the player is.
-	tween.tween_property(self, "position:y", _floor_spacing if _is_on_floor
+	tween.tween_property(self, ^"position:y", _floor_spacing if _is_on_floor
 			else int(NanogamePlayer.VIEW_SIZE.y - _floor_spacing),
-			animation_player.get_animation("shift").length)
+			animation_player.get_animation(&"shift").length)
 	tween.tween_callback(set_process_unhandled_input.bind(true))
 
 	_is_on_floor = not _is_on_floor
@@ -69,11 +69,11 @@ func _on_area_entered(_area: Area2D) -> void:
 	($ShiftScaler/Explosion as GPUParticles2D).emitting = true
 
 	# Defer it, to avoid error about flushing queries in physical objects.
-	($CollisionShape2D as CollisionShape2D).set_deferred("disabled", true)
+	($CollisionShape2D as CollisionShape2D).set_deferred(&"disabled", true)
 
 	($Noises as AudioStreamPlayer2D).stream = preload("_assets/explosion.wav")
 	($Noises as AudioStreamPlayer2D).play()
 
-	($AnimationPlayer as AnimationPlayer).play("scale_smoke")
+	($AnimationPlayer as AnimationPlayer).play(&"scale_smoke")
 
 	hit.emit()

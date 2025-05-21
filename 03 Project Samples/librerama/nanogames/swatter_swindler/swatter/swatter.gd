@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -60,7 +60,7 @@ func swat(target_position: Vector2) -> void:
 
 	rotation = randf_range(-TILT_MAX, TILT_MAX)
 
-	($AnimationPlayer as AnimationPlayer).play("swat")
+	($AnimationPlayer as AnimationPlayer).play(&"swat")
 
 
 func _on_area_entered(_area: Area2D) -> void:

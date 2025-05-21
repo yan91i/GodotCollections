@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://e4x77212s6nc"]
 
 [ext_resource type="Texture2D" uid="uid://h4h15kjderdl" path="res://nanogames/anagogic_clock/_assets/clock.png" id="1"]
-[ext_resource type="Script" path="res://nanogames/anagogic_clock/hands/hand.gd" id="2"]
+[ext_resource type="Script" uid="uid://cah8fovdac8pl" path="res://nanogames/anagogic_clock/hands/hand.gd" id="2"]
 [ext_resource type="AudioStream" uid="uid://ddibcbarkyqoi" path="res://nanogames/anagogic_clock/hands/_assets/turn.wav" id="3"]
 [ext_resource type="AudioStream" uid="uid://diye0i7w77y1m" path="res://nanogames/anagogic_clock/hands/_assets/grab.wav" id="4"]
 

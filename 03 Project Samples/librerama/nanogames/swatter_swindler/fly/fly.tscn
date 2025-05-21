@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://ctpiv7pgkrx3q"]
 
-[ext_resource type="Script" path="res://nanogames/swatter_swindler/fly/fly.gd" id="1_m2cn7"]
+[ext_resource type="Script" uid="uid://dg7yddktxquo1" path="res://nanogames/swatter_swindler/fly/fly.gd" id="1_m2cn7"]
 [ext_resource type="Texture2D" uid="uid://c1031xjdey28p" path="res://nanogames/swatter_swindler/fly/_assets/fly.svg" id="2_ujlxm"]
 [ext_resource type="AudioStream" uid="uid://cwa18gqvpnkl4" path="res://nanogames/swatter_swindler/fly/_assets/buzz.wav" id="3_mhewc"]
 
@@ -173,9 +173,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5t2mn"]
 _data = {
-"RESET": SubResource("Animation_0gpgl"),
-"fly": SubResource("Animation_236ej"),
-"land": SubResource("Animation_qg1ev")
+&"RESET": SubResource("Animation_0gpgl"),
+&"fly": SubResource("Animation_236ej"),
+&"land": SubResource("Animation_qg1ev")
 }
 
 [node name="Fly" type="Area2D"]

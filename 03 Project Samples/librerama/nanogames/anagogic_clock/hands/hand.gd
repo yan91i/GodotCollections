@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -71,7 +71,7 @@ func _input_event(
 
 func energize() -> void:
 	create_tween().tween_property(
-			$Handle/Glow as Sprite2D, "self_modulate:a", 1, 0.1)
+			$Handle/Glow as Sprite2D, ^"self_modulate:a", 1, 0.1)
 
 
 func _switch_grab_effect() -> void:
@@ -82,5 +82,5 @@ func _switch_grab_effect() -> void:
 		_tween.kill()
 
 	_tween = create_tween()
-	_tween.tween_property($Handle/Glow as Sprite2D, "self_modulate:a",
+	_tween.tween_property($Handle/Glow as Sprite2D, ^"self_modulate:a",
 			float(_is_grabbed) / 2, 0.1)

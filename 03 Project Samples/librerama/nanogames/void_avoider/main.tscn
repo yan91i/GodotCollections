@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://b2o1g4ja6sw2a"]
 
-[ext_resource type="Script" path="res://nanogames/void_avoider/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://c2846mk1sxtap" path="res://nanogames/void_avoider/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://celcmdbaejijn" path="res://nanogames/void_avoider/spaceship/spaceship.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://bmkf4eqgsjadg" path="res://nanogames/void_avoider/_assets/star.svg" id="3"]
-[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="3_bpiu1"]
+[ext_resource type="Shader" uid="uid://diibp64jakhtf" path="res://shaders/texture_wave.gdshader" id="3_bpiu1"]
 [ext_resource type="Texture2D" uid="uid://c4u5atberwa4f" path="res://nanogames/void_avoider/_assets/background.png" id="4"]
 [ext_resource type="AudioStream" uid="uid://boebpkg2rtrdj" path="res://nanogames/void_avoider/_assets/music.ogg" id="5"]
 [ext_resource type="Texture2D" uid="uid://cpts4i7o84o10" path="res://nanogames/void_avoider/_assets/particle.svg" id="7_ds22n"]

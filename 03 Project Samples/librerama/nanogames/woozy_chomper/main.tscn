@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bktjltisohtfg"]
 
-[ext_resource type="Script" path="res://nanogames/woozy_chomper/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://etdi2kibhci" path="res://nanogames/woozy_chomper/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://b67p4o108lnqn" path="res://nanogames/woozy_chomper/woozy/woozy.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://b5nj5u1c4ko0t" path="res://nanogames/woozy_chomper/_assets/ground.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://bt12v7gg54yli" path="res://nanogames/woozy_chomper/_assets/edge.png" id="4"]

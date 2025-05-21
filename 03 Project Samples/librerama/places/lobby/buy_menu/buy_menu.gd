@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Control
 
@@ -43,7 +43,7 @@ func _ready() -> void:
 		($VBoxContainer/Shadow/TabContainer as TabContainer).set_tab_disabled(
 				1, true)
 		($VBoxContainer/Shadow/TabContainer as TabContainer).set_tab_title(
-				1, tr("Coming Soon"))
+				1, tr(&"Coming Soon"))
 
 	# Same as above.
 #	if nanogames_owned < ArcadeManager.THEMES_UNLOCK_NANOGAME_QUANTITY:
@@ -51,7 +51,7 @@ func _ready() -> void:
 		($VBoxContainer/Shadow/TabContainer as TabContainer).set_tab_disabled(
 				2, true)
 		($VBoxContainer/Shadow/TabContainer as TabContainer).set_tab_title(
-				2, tr("Coming Soon"))
+				2, tr(&"Coming Soon"))
 
 
 func _notification(what: int) -> void:
@@ -60,7 +60,7 @@ func _notification(what: int) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("menu_back"):
+	if event.is_action_pressed(&"menu_back"):
 		hide()
 
 
@@ -88,4 +88,4 @@ func _on_confirm_purchase_ok_pressed() -> void:
 	ArcadeManager.save_data()
 
 	($BuyNoise as AudioStreamPlayer).play()
-	($AnimationPlayer as AnimationPlayer).play("tickets_spent")
+	($AnimationPlayer as AnimationPlayer).play(&"tickets_spent")

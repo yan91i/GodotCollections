@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmthd4a8p1dqi"]
 
-[ext_resource type="Script" path="res://nanogames/hop_for_love/moving_platform/moving_platform.gd" id="1"]
+[ext_resource type="Script" uid="uid://t6l82kfflidr" path="res://nanogames/hop_for_love/moving_platform/moving_platform.gd" id="1"]
 [ext_resource type="Shape2D" path="res://nanogames/hop_for_love/_resources/land_hitbox.tres" id="2"]
 [ext_resource type="Texture2D" uid="uid://0f04qoyud6wt" path="res://nanogames/hop_for_love/_assets/platforms.png" id="3"]
 
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7mibg"]
 _data = {
-"RESET": SubResource("2"),
-"move": SubResource("1")
+&"RESET": SubResource("2"),
+&"move": SubResource("1")
 }
 
 [node name="MovingPlatform" type="Area2D"]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhw0p5o4kjvfm"]
+[gd_scene load_steps=18 format=3 uid="uid://dhw0p5o4kjvfm"]
 
 [ext_resource type="Texture2D" uid="uid://bvbpoo82ptuei" path="res://places/_assets/pagination/last_page.svg" id="2"]
 [ext_resource type="Texture2D" uid="uid://bu7lp4s66p63a" path="res://places/_assets/pagination/previous_page.svg" id="3"]
 [ext_resource type="Texture2D" uid="uid://caheu8b8drqvb" path="res://places/arcade_machine/_assets/spot.svg" id="4"]
-[ext_resource type="Script" path="res://places/arcade_machine/nanogame_collection/nanogame_collection.gd" id="5"]
+[ext_resource type="Script" uid="uid://tbt1vtm7mn2w" path="res://places/arcade_machine/nanogame_collection/nanogame_collection.gd" id="5"]
 [ext_resource type="Texture2D" uid="uid://cm7bkf4nyxfyf" path="res://places/_assets/pagination/first_page.svg" id="7"]
 [ext_resource type="Texture2D" uid="uid://d4csqaw6ukmfi" path="res://places/_assets/pagination/next_page.svg" id="8"]
 [ext_resource type="Texture2D" uid="uid://dgy53vkkxmily" path="res://places/arcade_machine/nanogame_collection/_assets/randomize.svg" id="9"]
@@ -12,6 +12,24 @@
 [ext_resource type="PackedScene" uid="uid://b5frslx0xhpxc" path="res://modals/modal/modal.tscn" id="11"]
 
 [sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_07nr0"]
+action = &"menu_page_previous"
+
+[sub_resource type="Shortcut" id="Shortcut_up2we"]
+events = [SubResource("InputEventAction_07nr0")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ii8cm"]
+action = &"menu_page_next"
+
+[sub_resource type="Shortcut" id="Shortcut_moe85"]
+events = [SubResource("InputEventAction_ii8cm")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qx5bf"]
+action = &"menu_page_last"
+
+[sub_resource type="Shortcut" id="Shortcut_q4p4b"]
+events = [SubResource("InputEventAction_qx5bf")]
 
 [node name="NanogameCollection" type="Control"]
 layout_mode = 3
@@ -116,6 +134,7 @@ layout_mode = 2
 tooltip_text = "Go to previous page."
 focus_neighbor_right = NodePath("../Next")
 disabled = true
+shortcut = SubResource("Shortcut_up2we")
 icon = ExtResource("3")
 
 [node name="Pages" type="Label" parent="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons"]
@@ -132,12 +151,14 @@ layout_mode = 2
 tooltip_text = "Go to next page."
 focus_neighbor_left = NodePath("../Previous")
 disabled = true
+shortcut = SubResource("Shortcut_moe85")
 icon = ExtResource("8")
 
 [node name="Last" type="Button" parent="HBoxContainer/NanogameSelector/VBoxContainer/PageButtons"]
 layout_mode = 2
 tooltip_text = "Go to last page."
 disabled = true
+shortcut = SubResource("Shortcut_q4p4b")
 icon = ExtResource("2")
 
 [node name="NanogamesSelected" type="PanelContainer" parent="HBoxContainer"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bgnbw4f1o2iib"]
 
-[ext_resource type="Script" path="res://nanogames/punchbag_wallop/boxer/boxer.gd" id="1"]
+[ext_resource type="Script" uid="uid://brhdlfuhr7dfd" path="res://nanogames/punchbag_wallop/boxer/boxer.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dmgjgq0fkt3tv" path="res://nanogames/punchbag_wallop/boxer/_assets/boxer.png" id="2"]
 [ext_resource type="AudioStream" uid="uid://mw2se5pad1tr" path="res://nanogames/punchbag_wallop/boxer/_assets/miss.wav" id="3"]
 
@@ -448,11 +448,11 @@ tracks/7/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q003r"]
 _data = {
-"RESET": SubResource("5"),
-"idle": SubResource("1"),
-"punch": SubResource("2"),
-"punch_fail": SubResource("3"),
-"win": SubResource("4")
+&"RESET": SubResource("5"),
+&"idle": SubResource("1"),
+&"punch": SubResource("2"),
+&"punch_fail": SubResource("3"),
+&"win": SubResource("4")
 }
 
 [node name="Boxer" type="CanvasGroup"]

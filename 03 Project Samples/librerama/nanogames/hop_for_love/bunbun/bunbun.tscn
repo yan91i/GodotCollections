@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cplrph58googo"]
 
 [ext_resource type="Texture2D" uid="uid://bf47siwnqo6yl" path="res://nanogames/hop_for_love/bunbun/_assets/bunbun.png" id="1"]
-[ext_resource type="Script" path="res://nanogames/hop_for_love/bunbun/bunbun.gd" id="2"]
+[ext_resource type="Script" uid="uid://bye16wri6ty0f" path="res://nanogames/hop_for_love/bunbun/bunbun.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://byr33wp16hwh1" path="res://nanogames/hop_for_love/_assets/blush.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://c4h3cwtqvbf2x" path="res://nanogames/hop_for_love/bunbun/_assets/heart.png" id="4"]
 [ext_resource type="AudioStream" uid="uid://xxu6kylkxj4o" path="res://nanogames/hop_for_love/bunbun/_assets/flourish.wav" id="5"]
@@ -168,9 +168,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qv7km"]
 _data = {
-"RESET": SubResource("7"),
-"blush": SubResource("5"),
-"laugh": SubResource("6")
+&"RESET": SubResource("7"),
+&"blush": SubResource("5"),
+&"laugh": SubResource("6")
 }
 
 [node name="Bunbun" type="Area2D"]

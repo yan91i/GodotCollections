@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -49,12 +49,12 @@ func renew_target(type: Types) -> void:
 		return
 
 	if _type == Types.NONE:
-		($Renew as AnimationPlayer).play("raise")
+		($Renew as AnimationPlayer).play(&"raise")
 	else:
-		($Renew as AnimationPlayer).play("lower")
+		($Renew as AnimationPlayer).play(&"lower")
 
 		if type != Types.NONE:
-			($Renew as AnimationPlayer).queue("raise")
+			($Renew as AnimationPlayer).queue(&"raise")
 
 	_type = type
 
@@ -83,7 +83,7 @@ func _on_hitbox_input_event(_viewport: Node, event: InputEvent) -> void:
 
 	($Effects as AudioStreamPlayer2D).play()
 
-	($Hit as AnimationPlayer).play("hit_right"
+	($Hit as AnimationPlayer).play(&"hit_right"
 			if event.position.x - get_canvas_transform().origin.x >
 					global_position.x else "hit_left")
 

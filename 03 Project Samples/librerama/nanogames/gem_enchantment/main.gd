@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -121,7 +121,7 @@ func nanogame_start() -> void:
 			tween.tween_method(_update_trajectory,
 					_trajectory.points[_trajectory.get_point_count() - 1],
 					i.global_position, ANIMATION_LENGTH)
-			tween.tween_property(trajectory_noise, "position",
+			tween.tween_property(trajectory_noise, ^"position",
 					i.global_position, ANIMATION_LENGTH)
 
 			await tween.finished
@@ -133,7 +133,7 @@ func nanogame_start() -> void:
 
 	if _debug_code != 1:
 		create_tween().tween_property(
-				_trajectory, "self_modulate:a", 0, ANIMATION_LENGTH)
+				_trajectory, ^"self_modulate:a", 0, ANIMATION_LENGTH)
 
 
 func _update_trajectory(point_position: Vector2) -> void:
@@ -144,18 +144,18 @@ func _update_trajectory(point_position: Vector2) -> void:
 func _light_gems(index: int, color: Color) -> void:
 	var tween: Tween = create_tween().set_parallel()
 	if index == -1:
-		tween.tween_property(_trail, "self_modulate", color, ANIMATION_LENGTH)
+		tween.tween_property(_trail, ^"self_modulate", color, ANIMATION_LENGTH)
 		tween.tween_property(
-				_trail_end, "self_modulate", color, ANIMATION_LENGTH)
+				_trail_end, ^"self_modulate", color, ANIMATION_LENGTH)
 
 		for i: Node in ($Gems as Node2D).get_children():
 			if i is InstancePlaceholder:
 				break
 
-			tween.tween_property(i, "gem_color", color, ANIMATION_LENGTH)
+			tween.tween_property(i, ^"gem_color", color, ANIMATION_LENGTH)
 	else:
 		tween.tween_property(($Gems as Node2D).get_child(index) as Area2D,
-				"gem_color", color, ANIMATION_LENGTH)
+				^"gem_color", color, ANIMATION_LENGTH)
 
 
 func _lose(gem_index: int) -> void:
@@ -171,7 +171,7 @@ func _lose(gem_index: int) -> void:
 
 	if _debug_code != 1:
 		create_tween().tween_property(
-			_trajectory, "self_modulate:a", 1, ANIMATION_LENGTH)
+			_trajectory, ^"self_modulate:a", 1, ANIMATION_LENGTH)
 
 
 func _on_gem_touched(index: int) -> void:

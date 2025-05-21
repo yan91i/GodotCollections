@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://costyv47tyfla"]
 
-[ext_resource type="Script" path="res://nanogames/garden_thyme/watering_can/watering_can.gd" id="1"]
+[ext_resource type="Script" uid="uid://bp0o7x5wlakkq" path="res://nanogames/garden_thyme/watering_can/watering_can.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://du38mx6hdepwm" path="res://nanogames/garden_thyme/watering_can/_assets/watering_can.png" id="2"]
-[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="3"]
+[ext_resource type="Shader" uid="uid://diibp64jakhtf" path="res://shaders/texture_wave.gdshader" id="3"]
 [ext_resource type="Texture2D" uid="uid://cb55pth3t1t6p" path="res://nanogames/garden_thyme/watering_can/_assets/water.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://bjeyab0ghv3l" path="res://nanogames/garden_thyme/watering_can/_assets/shadow.png" id="5"]
 
@@ -168,8 +168,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jxkq6"]
 _data = {
-"RESET": SubResource("7"),
-"tilt": SubResource("6")
+&"RESET": SubResource("7"),
+&"tilt": SubResource("6")
 }
 
 [node name="WateringCan" type="Area2D"]

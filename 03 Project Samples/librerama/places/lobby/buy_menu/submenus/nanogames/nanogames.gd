@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Control
 
@@ -119,43 +119,43 @@ func _update_text() -> void:
 	var random_info := $Buttons/BuyRandom/HBoxContainer/Info as RichTextLabel
 	random_info.clear()
 	random_info.push_bold()
-	random_info.add_text(tr("Buy a Random Nanogame"))
+	random_info.add_text(tr(&"Buy a Random Nanogame"))
 	random_info.pop()
 	random_info.newline()
-	random_info.add_text(tr("For those who aren't picky."))
+	random_info.add_text(tr(&"For those who aren't picky."))
 	random_info.newline()
 	random_info.push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT)
-	random_info.append_text(tr("Cost: [b]%d[/b]") % COST_RANDOM)
+	random_info.append_text(tr(&"Cost: [b]%d[/b]") % COST_RANDOM)
 
 	var type_info := $Buttons/BuyType/HBoxContainer/Info as RichTextLabel
 	type_info.clear()
 	type_info.push_bold()
-	type_info.add_text(tr("Buy a Type of Nanogame"))
+	type_info.add_text(tr(&"Buy a Type of Nanogame"))
 	type_info.pop()
 	type_info.newline()
-	type_info.add_text(tr("Everybody has a type, you know?"))
+	type_info.add_text(tr(&"Everybody has a type, you know?"))
 	type_info.newline()
 	type_info.push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT)
-	type_info.append_text(tr("Cost: [b]%d[/b]") % COST_TYPE)
+	type_info.append_text(tr(&"Cost: [b]%d[/b]") % COST_TYPE)
 
 	var specific_info :=\
 			$Buttons/BuySpecific/HBoxContainer/Info as RichTextLabel
 	specific_info.clear()
 	specific_info.push_bold()
-	specific_info.add_text(tr("Buy a Specific Nanogame"))
+	specific_info.add_text(tr(&"Buy a Specific Nanogame"))
 	specific_info.pop()
 	specific_info.newline()
-	specific_info.add_text(tr("But I want THAT one!"))
+	specific_info.add_text(tr(&"But I want THAT one!"))
 	specific_info.newline()
 	specific_info.push_paragraph(HORIZONTAL_ALIGNMENT_RIGHT)
-	specific_info.append_text(tr("Cost: [b]%d[/b]") % COST_SPECIFIC)
+	specific_info.append_text(tr(&"Cost: [b]%d[/b]") % COST_SPECIFIC)
 
 
 func _on_buy_random_pressed() -> void:
 	_nanogame_in_purchase = _nanogames_available.front()
 
 	purchase_requested.emit(
-			tr("A Random Nanogame"), COST_RANDOM, confirm_purchase)
+			tr(&"A Random Nanogame"), COST_RANDOM, confirm_purchase)
 
 
 func _on_type_modal_ok_pressed() -> void:
@@ -168,7 +168,7 @@ func _on_type_modal_ok_pressed() -> void:
 			break
 
 	purchase_requested.emit(
-			tr("A Type of Nanogame"), COST_TYPE, confirm_purchase)
+			tr(&"A Type of Nanogame"), COST_TYPE, confirm_purchase)
 
 
 func _on_specific_modal_nanogame_selected(nanogame: Nanogame) -> void:

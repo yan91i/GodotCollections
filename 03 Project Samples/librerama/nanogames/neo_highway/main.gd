@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -90,7 +90,7 @@ func _spawn_enemy() -> void:
 func _on_driver_hit() -> void:
 	($Music as AudioStreamPlayer).stop()
 
-	($AnimationPlayer as AnimationPlayer).play("crash")
+	($AnimationPlayer as AnimationPlayer).play(&"crash")
 
 	($EnemySpawn as Timer).stop()
 
@@ -106,6 +106,6 @@ func _on_enemy_spawn_timeout() -> void:
 	($Foreground/Enemy as TextureRect).position.y =\
 			(%WarningAnchor as Control).position.y
 
-	($AnimationPlayer as AnimationPlayer).play("enemy_move")
+	($AnimationPlayer as AnimationPlayer).play(&"enemy_move")
 
 	_spawn_enemy()

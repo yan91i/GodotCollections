@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bqsajlwwyx7bi"]
 
-[ext_resource type="Script" path="res://nanogames/thing_factory/thing/thing.gd" id="1"]
+[ext_resource type="Script" uid="uid://bvb1qwyswewkp" path="res://nanogames/thing_factory/thing/thing.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://derpy1h1k358o" path="res://nanogames/thing_factory/thing/_assets/things.svg" id="2"]
 [ext_resource type="Texture2D" uid="uid://gig7urr5mxad" path="res://nanogames/thing_factory/thing/_assets/piece.svg" id="3"]
 [ext_resource type="AudioStream" uid="uid://bbgmdiibluc4r" path="res://nanogames/thing_factory/thing/_assets/destroy.wav" id="4_86oty"]

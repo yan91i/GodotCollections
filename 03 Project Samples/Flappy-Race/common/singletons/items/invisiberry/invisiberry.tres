@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://common/singletons/items/invisiberry/invisiberry.png" type="Texture" id=1]
+[ext_resource path="res://common/singletons/items/item.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+name = "Invisiberry"
+icon = ExtResource( 1 )
+duration = 10
+distance_weights = {
+0: 1,
+400: 1,
+1000: 5,
+5000: 10,
+10000: 10,
+20000: 1,
+50000: 0
+}

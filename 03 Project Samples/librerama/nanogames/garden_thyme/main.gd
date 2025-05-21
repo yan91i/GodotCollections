@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -115,7 +115,7 @@ func _on_flower_area_entered() -> void:
 	($Sort/WateringCan as Area2D).set_physics_process(false)
 
 	($Victory as AudioStreamPlayer).play()
-	($AnimationPlayer as AnimationPlayer).play("win")
+	($AnimationPlayer as AnimationPlayer).play(&"win")
 
 	ended.emit(true)
 
@@ -126,6 +126,6 @@ func _on_dog_area_entered() -> void:
 	# Avoid hose from continuing moving after the game ends.
 	($Sort/WateringCan as Area2D).set_physics_process(false)
 
-	($AnimationPlayer as AnimationPlayer).play("lose")
+	($AnimationPlayer as AnimationPlayer).play(&"lose")
 
 	ended.emit(false)

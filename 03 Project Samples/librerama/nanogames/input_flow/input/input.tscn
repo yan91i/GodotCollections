@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cero272k8bwyn"]
 
-[ext_resource type="Script" path="res://nanogames/input_flow/input/input.gd" id="1"]
+[ext_resource type="Script" uid="uid://d07tp4ad0iani" path="res://nanogames/input_flow/input/input.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://8ud5iecsv6md" path="res://nanogames/input_flow/input/_assets/beat.wav" id="2"]
 
 [sub_resource type="Animation" id="5"]
@@ -88,9 +88,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pfd55"]
 _data = {
-"RESET": SubResource("5"),
-"pick": SubResource("2"),
-"show": SubResource("4")
+&"RESET": SubResource("5"),
+&"pick": SubResource("2"),
+&"show": SubResource("4")
 }
 
 [node name="Input" type="TextureRect"]

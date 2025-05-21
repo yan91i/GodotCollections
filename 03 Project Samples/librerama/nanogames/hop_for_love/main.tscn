@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://d3vkg7nbn0ru6"]
 
-[ext_resource type="Script" path="res://nanogames/hop_for_love/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://8ahgo1j86wb1" path="res://nanogames/hop_for_love/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dvv4n4cxc8ek1" path="res://nanogames/hop_for_love/hopper/hopper.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://cplrph58googo" path="res://nanogames/hop_for_love/bunbun/bunbun.tscn" id="3"]
 [ext_resource type="Shape2D" path="res://nanogames/hop_for_love/_resources/land_hitbox.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://0f04qoyud6wt" path="res://nanogames/hop_for_love/_assets/platforms.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://cy7v7865x2s13" path="res://nanogames/hop_for_love/_assets/water.png" id="6"]
-[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="7"]
+[ext_resource type="Shader" uid="uid://diibp64jakhtf" path="res://shaders/texture_wave.gdshader" id="7"]
 [ext_resource type="Texture2D" uid="uid://bts6oya301m6x" path="res://nanogames/hop_for_love/_assets/cliff.png" id="8"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="9"]
+[ext_resource type="Shader" uid="uid://ssqs6hgihrcf" path="res://shaders/texture_scroll.gdshader" id="9"]
 [ext_resource type="Texture2D" uid="uid://2620kmtpi40x" path="res://nanogames/hop_for_love/_assets/clouds.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://rdcq3y3o2ybm" path="res://nanogames/hop_for_love/_assets/music.ogg" id="11"]
 
@@ -17,7 +17,7 @@ shader = ExtResource("7")
 shader_parameter/speed = Vector2(5, 0)
 shader_parameter/waves = Vector2(2, 0)
 shader_parameter/strength = Vector2(3, 0)
-shader_parameter/interval = null
+shader_parameter/interval = 0.0
 
 [sub_resource type="ShaderMaterial" id="2"]
 shader = ExtResource("9")

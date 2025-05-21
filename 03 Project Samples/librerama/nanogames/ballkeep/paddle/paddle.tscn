@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vals7uoo71n5"]
 
-[ext_resource type="Script" path="res://nanogames/ballkeep/paddle/paddle.gd" id="1"]
+[ext_resource type="Script" uid="uid://j77lns3gdowr" path="res://nanogames/ballkeep/paddle/paddle.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ddrpv3uk8k6vy" path="res://nanogames/ballkeep/paddle/_assets/paddle.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://b4xl2625e8u2i" path="res://nanogames/ballkeep/paddle/_assets/arrow.png" id="3"]
 
@@ -62,8 +62,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i48s8"]
 _data = {
-"RESET": SubResource("2"),
-"hide_arrows": SubResource("1")
+&"RESET": SubResource("2"),
+&"hide_arrows": SubResource("1")
 }
 
 [node name="Paddle" type="StaticBody2D"]

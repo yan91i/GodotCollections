@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -34,7 +34,7 @@ func move(remote_target: NodePath) -> void:
 			remote_target
 
 	if randi() % 2 == 0:
-		($AnimationPlayer as AnimationPlayer).play("move")
+		($AnimationPlayer as AnimationPlayer).play(&"move")
 	else:
 		($AnimationPlayer as AnimationPlayer).play_backwards("move")
 

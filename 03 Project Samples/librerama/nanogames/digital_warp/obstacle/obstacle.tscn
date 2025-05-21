@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://ck8wy4obmyrr8"]
 
-[ext_resource type="Script" path="res://nanogames/digital_warp/obstacle/obstacle.gd" id="1"]
+[ext_resource type="Script" uid="uid://dkg7mde02dv87" path="res://nanogames/digital_warp/obstacle/obstacle.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ccd18hd1csyg" path="res://nanogames/digital_warp/obstacle/_assets/obstacle.svg" id="2"]
 
 [sub_resource type="Gradient" id="Gradient_glf21"]
@@ -112,8 +112,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p18yx"]
 _data = {
-"RESET": SubResource("8"),
-"travel": SubResource("7")
+&"RESET": SubResource("8"),
+&"travel": SubResource("7")
 }
 
 [node name="Obstacle" type="Area2D"]

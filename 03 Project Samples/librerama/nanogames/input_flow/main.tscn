@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bi0edi7g5f1f1"]
 
-[ext_resource type="Script" path="res://nanogames/input_flow/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://p1oypi7mwosp" path="res://nanogames/input_flow/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cero272k8bwyn" path="res://nanogames/input_flow/input/input.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://m2crigdaa6rp" path="res://nanogames/input_flow/_assets/particle.svg" id="4"]
 [ext_resource type="AudioStream" uid="uid://cl2mmisbrj8wr" path="res://nanogames/input_flow/_assets/fail.wav" id="5"]
@@ -164,12 +164,12 @@ tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fslqv"]
 _data = {
-"RESET": SubResource("15"),
-"fail": SubResource("10"),
-"match_input": SubResource("11"),
-"show_input": SubResource("12"),
-"start": SubResource("13"),
-"win": SubResource("14")
+&"RESET": SubResource("15"),
+&"fail": SubResource("10"),
+&"match_input": SubResource("11"),
+&"show_input": SubResource("12"),
+&"start": SubResource("13"),
+&"win": SubResource("14")
 }
 
 [node name="Main" type="Node2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://celcmdbaejijn"]
 
-[ext_resource type="Script" path="res://nanogames/void_avoider/spaceship/spaceship.gd" id="1"]
+[ext_resource type="Script" uid="uid://k4a8ievy3dw6" path="res://nanogames/void_avoider/spaceship/spaceship.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cpts4i7o84o10" path="res://nanogames/void_avoider/_assets/particle.svg" id="2"]
 [ext_resource type="Texture2D" uid="uid://td032tudx584" path="res://nanogames/void_avoider/spaceship/_assets/spaceship.svg" id="3"]
 [ext_resource type="AudioStream" uid="uid://yhavapj6r6le" path="res://nanogames/void_avoider/spaceship/_assets/die.wav" id="4"]
@@ -14,7 +14,7 @@ gradient = SubResource("Gradient_wh2be")
 width = 32
 
 [sub_resource type="Curve" id="3"]
-max_value = 0.5
+_limits = [0.0, 0.5, 0.0, 1.0]
 _data = [Vector2(0, 0.5), 0.0, -0.5, 0, 1, Vector2(1, 0), -0.5, 0.0, 1, 0]
 point_count = 2
 
@@ -127,9 +127,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jng35"]
 _data = {
-"RESET": SubResource("9"),
-"die": SubResource("7"),
-"idle": SubResource("8")
+&"RESET": SubResource("9"),
+&"die": SubResource("7"),
+&"idle": SubResource("8")
 }
 
 [node name="Spaceship" type="Area2D"]

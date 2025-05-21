@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://ek7qu7p6mlvm"]
 
-[ext_resource type="Script" path="res://nanogames/papercuts/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://c1md7431ot3m1" path="res://nanogames/papercuts/main.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cp028pmarj0p2" path="res://nanogames/papercuts/_assets/scissors.svg" id="2"]
 [ext_resource type="Texture2D" uid="uid://dh1w7uvdb57ys" path="res://nanogames/papercuts/_assets/valid_area.svg" id="3"]
 [ext_resource type="Texture2D" uid="uid://cw58ap0j738ja" path="res://nanogames/papercuts/_assets/paper.png" id="4"]
@@ -127,9 +127,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jkekq"]
 _data = {
-"RESET": SubResource("4"),
-"cutout_popout": SubResource("2"),
-"indicator_blink": SubResource("3")
+&"RESET": SubResource("4"),
+&"cutout_popout": SubResource("2"),
+&"indicator_blink": SubResource("3")
 }
 
 [node name="Main" type="Node2D"]
@@ -172,6 +172,8 @@ texture = ExtResource("2")
 [node name="AreaValid" type="Area2D" parent="."]
 monitoring = false
 monitorable = false
+metadata/joycursor_snap_ignore = true
+metadata/joycursor_precise = true
 
 [node name="Triangle" type="CollisionPolygon2D" parent="AreaValid"]
 visible = false

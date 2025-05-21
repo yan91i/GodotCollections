@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -48,7 +48,7 @@ func nanogame_prepare(difficulty: int, debug_code: int) -> void:
 
 	(($ToughtBubble/BaggageShader as SubViewportContainer).\
 			material as ShaderMaterial).set_shader_parameter(
-					"waves", BAGGAGE_SHADER_WAVES_BASE * difficulty)
+					&"waves", BAGGAGE_SHADER_WAVES_BASE * difficulty)
 
 	_baggage_correct_target =\
 			randi() % BAGGAGE_CORRECT_LENGTH + BAGGAGE_CORRECT_MIN
@@ -78,15 +78,15 @@ func _spawn_baggage() -> void:
 
 	var tween: Tween = create_tween()
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	tween.tween_property(baggage, "position:x",
+	tween.tween_property(baggage, ^"position:x",
 			($SpawnEnd as Marker2D).position.x, BAGGAGE_MOVE_DURATION)
 	tween.tween_callback(baggage.queue_free)
 
-	baggage.set_meta("tween", tween)
+	baggage.set_meta(&"tween", tween)
 
 
 func _on_baggage_picked(baggage: Area2D) -> void:
-	baggage.get_meta("tween").kill()
+	baggage.get_meta(&"tween").kill()
 
 	var baggage_position_old: Vector2 = baggage.global_position
 	($Conveyor/Baggages as Control).remove_child(baggage)
@@ -97,26 +97,27 @@ func _on_baggage_picked(baggage: Area2D) -> void:
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	var thought_bubble := $ToughtBubble as GPUParticles2D
 
-	tween.tween_property(
-			thought_bubble, "position:x", thought_bubble.position.x - 200, 0.2)
-	tween.tween_property(baggage, "position", Vector2(($Camera2D as Camera2D).\
-			position.x + 200, thought_bubble.position.y), 0.2)
+	tween.tween_property(thought_bubble, ^"position:x",
+			thought_bubble.position.x - 200, 0.2)
+	tween.tween_property(baggage, ^"position",
+			Vector2(($Camera2D as Camera2D).position.x + 200,
+			thought_bubble.position.y), 0.2)
 
 	if not ($ThoughtVanish as Timer).is_stopped():
 		($ThoughtVanish as Timer).stop()
 		($AnimationPlayer as AnimationPlayer).stop()
-	($AnimationPlayer as AnimationPlayer).play_backwards("thought_transition")
+	($AnimationPlayer as AnimationPlayer).play_backwards(&"thought_transition")
 
 	if baggage.get_looks().hash() == _baggage_correct.get_looks().hash():
 		tween.tween_property(
-				thought_bubble, "self_modulate", Color.SPRING_GREEN, 0.5)
+				thought_bubble, ^"self_modulate", Color.SPRING_GREEN, 0.5)
 
 		($Results as AudioStreamPlayer).stream = preload("_assets/correct.wav")
 
 		ended.emit(true)
 	else:
 		tween.tween_property(
-				thought_bubble, "self_modulate", Color.CRIMSON, 0.5)
+				thought_bubble, ^"self_modulate", Color.CRIMSON, 0.5)
 
 		($Results as AudioStreamPlayer).stream = preload("_assets/wrong.wav")
 

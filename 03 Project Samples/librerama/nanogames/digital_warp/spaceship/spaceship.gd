@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -43,7 +43,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	# Use `Input` instead of the received event so multiple actions can be
 	# detected at once. Not directly placed in `_physics_process()` as to not
 	# capture inputs when it shouldn't.
-	_direction_speed = int(Input.get_axis("nanogame_right", "nanogame_left"))
+	_direction_speed = int(Input.get_axis(&"nanogame_right", &"nanogame_left"))
 
 	# Toggle particles and fade in/out the movement volume.
 	if not _has_moved:
@@ -89,13 +89,13 @@ func _on_area_entered(_area: Area2D) -> void:
 	_direction_speed = 0
 
 	# Defer it, to avoid error about flushing queries in physical objects.
-	($CollisionShape2D as CollisionShape2D).set_deferred("disabled", true)
+	($CollisionShape2D as CollisionShape2D).set_deferred(&"disabled", true)
 
 	($CollisionShape2D/Trail as GPUParticles2D).emitting = true
 
 	_move.stop()
 
 	($CollisionShape2D/Die as AudioStreamPlayer2D).play()
-	($AnimationPlayer as AnimationPlayer).play("die")
+	($AnimationPlayer as AnimationPlayer).play(&"die")
 
 	hit.emit()

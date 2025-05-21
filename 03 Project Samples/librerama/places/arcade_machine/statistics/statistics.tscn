@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bsk3gcmo2ybty"]
 
-[ext_resource type="Script" path="res://places/arcade_machine/statistics/statistics.gd" id="2"]
+[ext_resource type="Script" uid="uid://c7lsa864cvdyt" path="res://places/arcade_machine/statistics/statistics.gd" id="2"]
 
 [node name="Statistics" type="PanelContainer"]
 anchors_preset = 15

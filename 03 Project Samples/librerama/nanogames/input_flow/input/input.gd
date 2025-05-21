@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends TextureRect
 
@@ -54,11 +54,11 @@ func show_input() -> void:
 
 	($Beat as AudioStreamPlayer2D).play()
 
-	($AnimationPlayer as AnimationPlayer).play("show")
+	($AnimationPlayer as AnimationPlayer).play(&"show")
 
 
 func try_input(event: InputEvent) -> bool:
-	($AnimationPlayer as AnimationPlayer).play("pick")
+	($AnimationPlayer as AnimationPlayer).play(&"pick")
 
 	if not event.is_action_pressed(_action):
 		return false

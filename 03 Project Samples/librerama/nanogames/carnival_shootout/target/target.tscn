@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dj00fd70djsmd"]
 
-[ext_resource type="Script" path="res://nanogames/carnival_shootout/target/target.gd" id="1"]
+[ext_resource type="Script" uid="uid://m8gsx3h46lmd" path="res://nanogames/carnival_shootout/target/target.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://c4i2pnbi55uwx" path="res://nanogames/carnival_shootout/target/_assets/target.png" id="2"]
 [ext_resource type="AudioStream" uid="uid://cjf08ddefi6be" path="res://nanogames/carnival_shootout/target/_assets/hit.wav" id="3"]
 
@@ -180,9 +180,9 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p73ee"]
 _data = {
-"RESET": SubResource("Animation_siq4i"),
-"lower": SubResource("2"),
-"raise": SubResource("3")
+&"RESET": SubResource("Animation_siq4i"),
+&"lower": SubResource("2"),
+&"raise": SubResource("3")
 }
 
 [sub_resource type="Animation" id="Animation_2hruf"]
@@ -345,9 +345,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fbmyn"]
 _data = {
-"RESET": SubResource("Animation_2hruf"),
-"hit_left": SubResource("4"),
-"hit_right": SubResource("5")
+&"RESET": SubResource("Animation_2hruf"),
+&"hit_left": SubResource("4"),
+&"hit_right": SubResource("5")
 }
 
 [node name="Target" type="Node2D"]

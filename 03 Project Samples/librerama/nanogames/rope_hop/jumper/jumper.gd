@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -49,14 +49,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 	# Use `Input` instead of the received event so multiple actions can be
 	# detected at once. Not directly placed in `_physics_process()` as to not
 	# capture inputs when it shouldn't.
-	_direction_speed = int(Input.get_axis("nanogame_left", "nanogame_right"))
+	_direction_speed = int(Input.get_axis(&"nanogame_left", &"nanogame_right"))
 
 	if not is_physics_processing() and\
-			Input.is_action_just_pressed("nanogame_action"):
+			Input.is_action_just_pressed(&"nanogame_action"):
 		set_physics_process(true)
 
-		($AnimationPlayer as AnimationPlayer).play("jump")
-		($AnimationPlayer as AnimationPlayer).queue("idle")
+		($AnimationPlayer as AnimationPlayer).play(&"jump")
+		($AnimationPlayer as AnimationPlayer).queue(&"idle")
 
 		jumped.emit()
 
@@ -89,6 +89,6 @@ func disable_hitbox() -> void:
 func _on_area_entered() -> void:
 	set_physics_process(false)
 
-	($AnimationPlayer as AnimationPlayer).play("fall")
+	($AnimationPlayer as AnimationPlayer).play(&"fall")
 
 	hit.emit()

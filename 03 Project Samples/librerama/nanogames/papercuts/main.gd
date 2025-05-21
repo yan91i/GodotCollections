@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -162,7 +162,7 @@ func _on_area_valid_input_event(
 					_cut_marks.points[-1].angle_to_point(event.position)
 			scissor_indicator.show()
 
-			($AnimationPlayer as AnimationPlayer).play("indicator_blink")
+			($AnimationPlayer as AnimationPlayer).play(&"indicator_blink")
 
 		return
 
@@ -228,7 +228,7 @@ func _on_area_valid_input_event(
 
 		_cut_marks.add_point(_cut_marks.points[0])
 
-		($AnimationPlayer as AnimationPlayer).play("cutout_popout")
+		($AnimationPlayer as AnimationPlayer).play(&"cutout_popout")
 
 		get_viewport().set_input_as_handled()
 

@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,12 +16,13 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 class_name NanogamePlayer
 extends SubViewportContainer
 
 
+signal pause_changed
 signal stopped
 
 signal kickoff_started
@@ -52,10 +53,12 @@ const ENERGY_LOSS = 4
 
 const VIEW_SIZE = Vector2(960, 720)
 
-const JOYSTICK_DEADZONE = 0.1
 const JOYCURSOR_SPEED = 750
+const JOYSTICK_DEADZONE = 0.2
 const JOYCURSOR_SNAP_RANGE = 150
 const JOYCURSOR_SNAP_DEPTH = 6.0
+const JOYCURSOR_SLOWDOWN_DISTANCE = 64
+const JOYCURSOR_SLOWDOWN_RATE = 2.5
 
 var difficulty: int = DIFFICULTY_MIN: set = set_difficulty
 var speed: int = SPEED_MIN: set = set_speed
@@ -73,6 +76,9 @@ var debug_code := 0
 
 var _is_playing := false
 var _is_receiving_inputs := false
+
+var _was_joycursor_used := false
+var _is_joycursor_precise := false
 
 var _joystick_direction := Vector2()
 var _joycursor_position := Vector2()
@@ -122,8 +128,12 @@ func _notification(what: int) -> void:
 
 			Engine.time_scale = 1
 			AudioServer.playback_speed_scale = 1
+
+			pause_changed.emit()
 		NOTIFICATION_UNPAUSED:
 			set_speed(speed)
+
+			pause_changed.emit()
 		NOTIFICATION_TRANSLATION_CHANGED:
 			if _nanogame_translation != null:
 				TranslationServer.remove_translation(_nanogame_translation)
@@ -153,24 +163,59 @@ func _physics_process(delta: float) -> void:
 		shape.radius = JOYCURSOR_SNAP_RANGE
 		_physics_shape_query.shape = shape
 
-	_joycursor_position += _joystick_direction * delta
+	var is_action_pressed: bool = Input.is_action_pressed(&"nanogame_action")
+	var result: Array[Dictionary] = []
+	var is_near_edge := true
+	var direction_adjusted: Vector2 = _joystick_direction
+
+	if is_action_pressed and _is_joycursor_precise and\
+			_joystick_direction != Vector2.ZERO:
+		# Slowdown joycursor speed if close to going outside a body.
+		_physics_point_query.position = _joycursor_position +\
+				_joystick_direction.normalized() *\
+				Vector2(JOYCURSOR_SLOWDOWN_DISTANCE,
+				JOYCURSOR_SLOWDOWN_DISTANCE) -\
+				_nanogame_viewport.canvas_transform.origin
+		result = _physics_space.intersect_point(_physics_point_query)
+		for i: Dictionary in result:
+			if result[0]["collider"].input_pickable:
+				is_near_edge = false
+
+				break
+
+		if is_near_edge:
+			var limit := Vector2(JOYCURSOR_SPEED, JOYCURSOR_SPEED) /\
+					JOYCURSOR_SLOWDOWN_RATE
+			direction_adjusted = _joystick_direction.clamp(-limit, limit)
+
+	var joycursor_position_old: Vector2 = _joycursor_position
+
+	_joycursor_position += direction_adjusted * delta / Engine.time_scale
 	# Keep the joycursor inside the screen.
 	_joycursor_position = _joycursor_position.clamp(
 			Vector2.ZERO, Vector2(size.x, VIEW_SIZE.y))
+
+	if is_action_pressed:
+		_joycursor_position_snapped = _joycursor_position
+		_was_joycursor_used = true
+	elif _joycursor_position != joycursor_position_old:
+		_was_joycursor_used = true
 
 	var is_inside_body := false
 
 	_physics_point_query.position = _joycursor_position -\
 			_nanogame_viewport.canvas_transform.origin
-	var result: Array[Dictionary] =\
-			_physics_space.intersect_point(_physics_point_query)
+	result = _physics_space.intersect_point(_physics_point_query)
 	for i: Dictionary in result:
 		if result[0]["collider"].input_pickable:
 			is_inside_body = true
+			if result[0]["collider"].has_meta(&"joycursor_precise"):
+				_is_joycursor_precise = true
 
 			break
 
-	if not is_inside_body:
+	if not is_action_pressed and not is_inside_body:
+		# Show available snapping position.
 		_physics_shape_query.transform.origin = _physics_point_query.position
 		var collisions: Array[Vector2] =\
 				_physics_space.collide_shape(_physics_shape_query)
@@ -193,7 +238,9 @@ func _physics_process(delta: float) -> void:
 			_physics_point_query.exclude = excluded
 			result = _physics_space.intersect_point(_physics_point_query, 1)
 			if not result.is_empty():
-				if result[0]["collider"].input_pickable:
+				var collider: CollisionObject2D = result[0]["collider"]
+				if collider.input_pickable and\
+						not collider.has_meta(&"joycursor_snap_ignore"):
 					var distance := int(joycursor_no_canvas.
 							distance_squared_to(collision_current))
 					if distance_closest == 0 or distance <= distance_closest:
@@ -205,7 +252,7 @@ func _physics_process(delta: float) -> void:
 						if collision == _joycursor_position_snapped:
 							has_previous_collision = true
 				else:
-					excluded.append(result[0]["collider"].get_rid())
+					excluded.append(collider.get_rid())
 
 		# Avoid constantly snapping between multiple targets with the same
 		# distance.
@@ -222,10 +269,17 @@ func _physics_process(delta: float) -> void:
 		_joycursor_position_snapped = _joycursor_position
 
 	var event: InputEventMouse
-	if Input.is_action_pressed("nanogame_action"):
+	if is_action_pressed:
 		event = InputEventMouseButton.new()
+		event.pressed = true
+		event.button_index = MOUSE_BUTTON_LEFT
 		event.button_mask = MOUSE_BUTTON_MASK_LEFT
 	else:
+		if not _was_joycursor_used:
+			return
+
+		_was_joycursor_used = false
+
 		event = InputEventMouseMotion.new()
 
 	event.position = _joycursor_position
@@ -241,49 +295,41 @@ func _propagate_input_event(event: InputEvent) -> bool:
 		Nanogame.Inputs.NAVIGATION:
 			match _nanogame_current.get_input_modifier():
 				Nanogame.InputModifiers.NONE:
-					if not event.is_action("nanogame_left") and\
-							not event.is_action("nanogame_right") and\
-							not event.is_action("nanogame_up") and\
-							not event.is_action("nanogame_down"):
+					if not event.is_action(&"nanogame_left") and\
+							not event.is_action(&"nanogame_right") and\
+							not event.is_action(&"nanogame_up") and\
+							not event.is_action(&"nanogame_down"):
 						return false
 				Nanogame.InputModifiers.HORIZONTAL:
-					if not event.is_action("nanogame_left") and\
-							not event.is_action("nanogame_right"):
+					if not event.is_action(&"nanogame_left") and\
+							not event.is_action(&"nanogame_right"):
 						return false
 				Nanogame.InputModifiers.VERTICAL:
-					if not event.is_action("nanogame_up") and\
-							not event.is_action("nanogame_down"):
+					if not event.is_action(&"nanogame_up") and\
+							not event.is_action(&"nanogame_down"):
 						return false
-
-			if event is InputEventJoypadMotion and\
-					absf(event.axis_value) < JOYSTICK_DEADZONE:
-				event.axis_value = 0
 		Nanogame.Inputs.ACTION:
-			if not event.is_action("nanogame_action"):
+			if not event.is_action(&"nanogame_action"):
 				return false
 		Nanogame.Inputs.NAVIGATION_ACTION:
 			match _nanogame_current.get_input_modifier():
 				Nanogame.InputModifiers.NONE:
-					if not event.is_action("nanogame_left") and\
-							not event.is_action("nanogame_right") and\
-							not event.is_action("nanogame_up") and\
-							not event.is_action("nanogame_down") and\
-							not event.is_action("nanogame_action"):
+					if not event.is_action(&"nanogame_left") and\
+							not event.is_action(&"nanogame_right") and\
+							not event.is_action(&"nanogame_up") and\
+							not event.is_action(&"nanogame_down") and\
+							not event.is_action(&"nanogame_action"):
 						return false
 				Nanogame.InputModifiers.HORIZONTAL:
-					if not event.is_action("nanogame_left") and\
-							not event.is_action("nanogame_right") and\
-							not event.is_action("nanogame_action"):
+					if not event.is_action(&"nanogame_left") and\
+							not event.is_action(&"nanogame_right") and\
+							not event.is_action(&"nanogame_action"):
 						return false
 				Nanogame.InputModifiers.VERTICAL:
-					if not event.is_action("nanogame_up") and\
-							not event.is_action("nanogame_down") and\
-							not event.is_action("nanogame_action"):
+					if not event.is_action(&"nanogame_up") and\
+							not event.is_action(&"nanogame_down") and\
+							not event.is_action(&"nanogame_action"):
 						return false
-
-			if event is InputEventJoypadMotion and\
-					absf(event.axis_value) < JOYSTICK_DEADZONE:
-				event.axis_value = 0
 		Nanogame.Inputs.DRAG_DROP:
 			if not joycursor_enabled:
 				if event is not InputEventMouse:
@@ -291,7 +337,7 @@ func _propagate_input_event(event: InputEvent) -> bool:
 			else:
 				# Transform the joypad event into a mouse event.
 				if event is InputEventJoypadButton:
-					if not event.is_action("nanogame_action"):
+					if not event.is_action(&"nanogame_action"):
 						return false
 
 					# Lie to the engine that the mouse is still inside the
@@ -299,10 +345,11 @@ func _propagate_input_event(event: InputEvent) -> bool:
 					_nanogame_viewport.notification(
 							NOTIFICATION_VP_MOUSE_ENTER)
 
-					if Input.is_action_just_pressed("nanogame_action"):
+					if Input.is_action_just_pressed(&"nanogame_action"):
 						_joycursor_position = _joycursor_position_snapped
 
 					var event_mouse := InputEventMouseButton.new()
+					event_mouse.button_index = MOUSE_BUTTON_LEFT
 					event_mouse.button_mask = MOUSE_BUTTON_MASK_LEFT
 					event_mouse.pressed = event.pressed
 					event_mouse.position = _joycursor_position;
@@ -363,6 +410,8 @@ func stop() -> void:
 
 	if _nanogame_current != null:
 		_is_receiving_inputs = false
+		_was_joycursor_used = false
+		_is_joycursor_precise = false
 		_joystick_direction = Vector2.ZERO
 
 		set_physics_process(false)
@@ -648,6 +697,8 @@ func _end_nanogame(has_won: bool) -> void:
 		return
 
 	_is_receiving_inputs = false
+	_was_joycursor_used = false
+	_is_joycursor_precise = false
 	_joystick_direction = Vector2.ZERO
 
 	set_physics_process(false)
@@ -748,6 +799,13 @@ func _lose_nanogame() -> void:
 
 func _on_kickoff_timeout() -> void:
 	_is_receiving_inputs = true
+
+	# Allow to buffer the direction which the joycursor will move at the start.
+	for i: int in [JOY_AXIS_LEFT_X, JOY_AXIS_LEFT_Y]:
+		var input := InputEventJoypadMotion.new()
+		input.axis = i as JoyAxis
+		input.axis_value = Input.get_joy_axis(0, i)
+		_propagate_input_event(input)
 
 	set_physics_process(joycursor_enabled)
 

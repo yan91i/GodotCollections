@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://b5skoxd5ien0g"]
 
-[ext_resource type="Script" path="res://nanogames/ballkeep/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://b0vwlrjvttp73" path="res://nanogames/ballkeep/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://vals7uoo71n5" path="res://nanogames/ballkeep/paddle/paddle.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://daocc88vbvjag" path="res://nanogames/ballkeep/ball/ball.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://dk2upicp6ice6" path="res://nanogames/ballkeep/_assets/track.png" id="4"]
@@ -56,8 +56,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nnvlm"]
 _data = {
-"RESET": SubResource("3"),
-"alarm": SubResource("2")
+&"RESET": SubResource("3"),
+&"alarm": SubResource("2")
 }
 
 [node name="Main" type="Node2D"]

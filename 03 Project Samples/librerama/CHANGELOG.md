@@ -15,9 +15,12 @@ The nanogame selection screen can still be accessed via the "Collection"
 button.
 - Add nanogames:
   - Swatter Swindler
-- Add snapping to the joystick cursor. Now if something that can be interacted
-with is close to the cursor, pressing the action command will snap it to that
-position and execute the action there.
+- Joystick cursor improvements:
+  - Snapping! Now if something that can be interacted with is close to the
+  cursor, pressing the action command will snap it to that position and
+  execute the action there.
+  - Slowdown near edges of nanogame elements that require precision.
+- Add joypad controls for paged UI sections.
 - Add Esperanto and Spanish translations (thanks to jorgesumle).
 - Add Turkish translation (thanks to furkanunsalan).
 - Add a bouncing animation when lobby assistants are speaking.
@@ -43,6 +46,7 @@ certain extent.
   - Void Avoider:
     - Limit width of playable area to a fixed size.
     - Make black holes reach top speed gradually instead of immediately.
+- Improve the coloration from the time of day in the lobby.
 - Make focused state of volume sliders clearer.
 
 ### Fixed
@@ -52,6 +56,9 @@ first nanogame.
 - Nanogames:
   - Anagogic Clock: Fix incorrect area of validation for the hour hand when the
   answer was 12 o'clock.
+- Fix joycursor speed changing with the nanogame speed.
+- Fix joycursor not moving to the direction of the joystick if it was moved
+before the kickoff ended.
 - Fix incorrect button theme being used when finishing the new player
 introduction dialog in the lobby.
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=23 format=3 uid="uid://d7wqn6einr4o"]
 
-[ext_resource type="Script" path="res://nanogames/garden_thyme/dog/dog.gd" id="1"]
+[ext_resource type="Script" uid="uid://e50tll8h4bgr" path="res://nanogames/garden_thyme/dog/dog.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://b8vcfwvhitk2j" path="res://nanogames/garden_thyme/dog/_assets/dog.png" id="2"]
-[ext_resource type="Shader" path="res://shaders/texture_wave.gdshader" id="3"]
+[ext_resource type="Shader" uid="uid://diibp64jakhtf" path="res://shaders/texture_wave.gdshader" id="3"]
 [ext_resource type="Texture2D" uid="uid://bvr3xut36n7kl" path="res://nanogames/garden_thyme/dog/_assets/sleep.png" id="4"]
 [ext_resource type="AudioStream" uid="uid://631s5t4g6r0h" path="res://nanogames/garden_thyme/dog/_assets/growl.wav" id="5"]
 [ext_resource type="AudioStream" uid="uid://dr3pdj8ki1ajo" path="res://nanogames/garden_thyme/dog/_assets/snore.wav" id="7"]
@@ -260,10 +260,10 @@ tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q3pvj"]
 _data = {
-"RESET": SubResource("15"),
-"growl": SubResource("10"),
-"sleep": SubResource("12"),
-"walk": SubResource("14")
+&"RESET": SubResource("15"),
+&"growl": SubResource("10"),
+&"sleep": SubResource("12"),
+&"walk": SubResource("14")
 }
 
 [node name="Dog" type="Area2D"]

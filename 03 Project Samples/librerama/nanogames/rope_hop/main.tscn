@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://bvogg2rg12fh6"]
 
-[ext_resource type="Script" path="res://nanogames/rope_hop/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://tuj1b2ynhcgk" path="res://nanogames/rope_hop/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bbtwlmrga56xs" path="res://nanogames/rope_hop/jumper/jumper.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://dwu5ksgr6376h" path="res://nanogames/rope_hop/_assets/rope.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://p4or3fl2oq5s" path="res://nanogames/rope_hop/_assets/music.ogg" id="4"]
@@ -225,10 +225,10 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_clau1"]
 _data = {
-"RESET": SubResource("7"),
-"idle": SubResource("2"),
-"move": SubResource("3"),
-"pre_idle": SubResource("4")
+&"RESET": SubResource("7"),
+&"idle": SubResource("2"),
+&"move": SubResource("3"),
+&"pre_idle": SubResource("4")
 }
 
 [sub_resource type="Animation" id="8"]
@@ -354,9 +354,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p2ys4"]
 _data = {
-"RESET": SubResource("8"),
-"idle": SubResource("5"),
-"stop": SubResource("6")
+&"RESET": SubResource("8"),
+&"idle": SubResource("5"),
+&"stop": SubResource("6")
 }
 
 [sub_resource type="Animation" id="Animation_0ouyy"]
@@ -519,9 +519,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tv382"]
 _data = {
-"RESET": SubResource("Animation_0ouyy"),
-"animate": SubResource("Animation_oiyxp"),
-"hide": SubResource("Animation_5n5hn")
+&"RESET": SubResource("Animation_0ouyy"),
+&"animate": SubResource("Animation_oiyxp"),
+&"hide": SubResource("Animation_5n5hn")
 }
 
 [node name="Main" type="Node2D"]

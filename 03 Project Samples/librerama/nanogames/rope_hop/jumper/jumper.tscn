@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bbtwlmrga56xs"]
 
-[ext_resource type="Script" path="res://nanogames/rope_hop/jumper/jumper.gd" id="1"]
+[ext_resource type="Script" uid="uid://b755pib6ne58m" path="res://nanogames/rope_hop/jumper/jumper.gd" id="1"]
 [ext_resource type="Animation" uid="uid://c0gavco7xdjno" path="res://nanogames/rope_hop/_resources/jump.tres" id="2"]
 [ext_resource type="Animation" uid="uid://br7bbt7hib1rr" path="res://nanogames/rope_hop/_resources/fall.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://bh33366duxknn" path="res://nanogames/rope_hop/jumper/_assets/jumper.png" id="4"]
@@ -13,10 +13,10 @@ size = Vector2(96, 256)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lk50h"]
 _data = {
-"RESET": ExtResource("7"),
-"fall": ExtResource("3"),
-"idle": ExtResource("5"),
-"jump": ExtResource("2")
+&"RESET": ExtResource("7"),
+&"fall": ExtResource("3"),
+&"idle": ExtResource("5"),
+&"jump": ExtResource("2")
 }
 
 [node name="Jumper" type="Area2D"]

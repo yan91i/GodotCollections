@@ -1,10 +1,10 @@
 [gd_scene load_steps=25 format=3 uid="uid://b01up4l05d8a5"]
 
-[ext_resource type="Script" path="res://nanogames/buzzing_lunch/frog/frog.gd" id="1"]
+[ext_resource type="Script" uid="uid://bdsxqexrr1qe0" path="res://nanogames/buzzing_lunch/frog/frog.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dyo46cn3b47fl" path="res://nanogames/buzzing_lunch/frog/_assets/tongue.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://d3e0joa11ktqh" path="res://nanogames/buzzing_lunch/frog/_assets/frog.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://dg4i4xned3ix1" path="res://nanogames/buzzing_lunch/frog/_assets/indicator.svg" id="4"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="5"]
+[ext_resource type="Shader" uid="uid://ssqs6hgihrcf" path="res://shaders/texture_scroll.gdshader" id="5"]
 [ext_resource type="AudioStream" uid="uid://bynvblucd5gue" path="res://nanogames/buzzing_lunch/frog/_assets/slurp.wav" id="6_53gpt"]
 [ext_resource type="AudioStream" uid="uid://cqyui66fv3b5j" path="res://nanogames/buzzing_lunch/frog/_assets/croak.wav" id="7"]
 [ext_resource type="AudioStream" uid="uid://c34tyw6th0nyk" path="res://nanogames/buzzing_lunch/frog/_assets/lick_lips.wav" id="9"]
@@ -302,11 +302,11 @@ tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vcyfb"]
 _data = {
-"RESET": SubResource("10"),
-"appear": SubResource("4"),
-"gulp": SubResource("5"),
-"lick_lips": SubResource("6"),
-"sicken": SubResource("7")
+&"RESET": SubResource("10"),
+&"appear": SubResource("4"),
+&"gulp": SubResource("5"),
+&"lick_lips": SubResource("6"),
+&"sicken": SubResource("7")
 }
 
 [sub_resource type="Animation" id="11"]
@@ -357,9 +357,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sjlyd"]
 _data = {
-"RESET": SubResource("11"),
-"fade_in": SubResource("8"),
-"fade_out": SubResource("9")
+&"RESET": SubResource("11"),
+&"fade_in": SubResource("8"),
+&"fade_out": SubResource("9")
 }
 
 [node name="Frog" type="Node2D"]

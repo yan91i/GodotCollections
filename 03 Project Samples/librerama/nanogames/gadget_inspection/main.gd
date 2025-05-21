@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -33,7 +33,7 @@ var _difficulty := 0
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("nanogame_action") or _difficulty < 1:
+	if not event.is_action_pressed(&"nanogame_action") or _difficulty < 1:
 		return
 
 	set_process_unhandled_input(false)
@@ -48,7 +48,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		correct_count += 1
 		if correct_count == _difficulty:
-			animation_player.play("light_dance")
+			animation_player.play(&"light_dance")
 
 			ended.emit(true)
 
@@ -69,12 +69,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		light_current.color = COLOR_WRONG
 
 		var pointer_time: float = animation_player.current_animation_position
-		animation_player.play("machine_shake")
+		animation_player.play(&"machine_shake")
 		await animation_player.animation_finished
 
 		light_current.color = COLOR_NEUTRAL
 
-		animation_player.play("pointer_move")
+		animation_player.play(&"pointer_move")
 		animation_player.seek(pointer_time)
 
 	($PointerCooldown as Timer).start()

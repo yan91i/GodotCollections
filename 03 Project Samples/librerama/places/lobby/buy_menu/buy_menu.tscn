@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://qexohkl4bnhi"]
 
-[ext_resource type="Script" path="res://places/lobby/buy_menu/buy_menu.gd" id="1"]
+[ext_resource type="Script" uid="uid://d4abug6ulf4i7" path="res://places/lobby/buy_menu/buy_menu.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://5et01c4w7eab" path="res://themes/_assets/back.svg" id="3"]
 [ext_resource type="Texture2D" uid="uid://log4u1l5ccxu" path="res://places/_assets/ticket.svg" id="4"]
 [ext_resource type="PackedScene" uid="uid://c1p06mkdldnyj" path="res://places/lobby/buy_menu/submenus/nanogames/nanogames.tscn" id="6"]
@@ -41,8 +41,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6dpyf"]
 _data = {
-"RESET": SubResource("2"),
-"tickets_spent": SubResource("1")
+&"RESET": SubResource("2"),
+&"tickets_spent": SubResource("1")
 }
 
 [node name="BuyMenu" type="Control"]

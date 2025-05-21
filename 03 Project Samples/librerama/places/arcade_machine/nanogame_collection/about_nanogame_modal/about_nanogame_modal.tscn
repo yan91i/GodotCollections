@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://4y3abds4vyia"]
 
 [ext_resource type="PackedScene" uid="uid://buutl05rvbhox" path="res://modals/tab_modal/tab_modal.tscn" id="1_nkd3q"]
-[ext_resource type="Script" path="res://places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd" id="2_7btm8"]
+[ext_resource type="Script" uid="uid://bxg2wy521vyc6" path="res://places/arcade_machine/nanogame_collection/about_nanogame_modal/about_nanogame_modal.gd" id="2_7btm8"]
 
 [node name="AboutNanogameModal" instance=ExtResource("1_nkd3q")]
 script = ExtResource("2_7btm8")

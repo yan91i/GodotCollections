@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -37,13 +37,13 @@ func _unhandled_input(_event: InputEvent) -> void:
 	# Use 'Input' instead of the received event so multiple actions can be
 	# detected at once. Not directly placed in '_physics_process()' as to not
 	# capture inputs when it shouldn't.
-	if Input.is_action_pressed("nanogame_left"):
+	if Input.is_action_pressed(&"nanogame_left"):
 		_direction_speed.x -= 1
-	if Input.is_action_pressed("nanogame_right"):
+	if Input.is_action_pressed(&"nanogame_right"):
 		_direction_speed.x += 1
-	if Input.is_action_pressed("nanogame_up"):
+	if Input.is_action_pressed(&"nanogame_up"):
 		_direction_speed.y -= 1
-	if Input.is_action_pressed("nanogame_down"):
+	if Input.is_action_pressed(&"nanogame_down"):
 		_direction_speed.y += 1
 
 	_direction_speed = _direction_speed.normalized() * SPEED
@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 
 func disappear() -> void:
 	# Defer it, to avoid error about flushing queries in physical objects.
-	($CollisionShape2D as CollisionShape2D).set_deferred("disabled", true)
+	($CollisionShape2D as CollisionShape2D).set_deferred(&"disabled", true)
 
 	($AnimationPlayer as AnimationPlayer).play_backwards("tilt")
 

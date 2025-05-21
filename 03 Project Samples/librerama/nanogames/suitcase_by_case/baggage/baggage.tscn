@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://1llpp7ge5h1k"]
 
-[ext_resource type="Script" path="res://nanogames/suitcase_by_case/baggage/baggage.gd" id="1"]
+[ext_resource type="Script" uid="uid://doeis6x2kr7hy" path="res://nanogames/suitcase_by_case/baggage/baggage.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cybhovpw3db77" path="res://nanogames/suitcase_by_case/baggage/_assets/decorations.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://blkqcht30m31h" path="res://nanogames/suitcase_by_case/baggage/_assets/baggages.png" id="3"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bw8ni4c31pfnv"]
 
-[ext_resource type="Script" path="res://nanogames/anagogic_clock/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://bq4m3reoi7uuy" path="res://nanogames/anagogic_clock/main.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://so50iip2e8rw" path="res://nanogames/anagogic_clock/_assets/music.ogg" id="2"]
 [ext_resource type="PackedScene" uid="uid://cs1twpwvkiciw" path="res://nanogames/anagogic_clock/hands/hour.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://h4h15kjderdl" path="res://nanogames/anagogic_clock/_assets/clock.png" id="4"]

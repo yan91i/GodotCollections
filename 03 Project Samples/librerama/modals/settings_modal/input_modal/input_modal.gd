@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 @tool
 extends Modal
@@ -66,7 +66,7 @@ func _input(event: InputEvent) -> void:
 	elif event is not InputEventKey:
 		return
 
-	if event.is_action("pause"):
+	if event.is_action(&"pause"):
 		_update_text(true)
 
 		return
@@ -74,9 +74,6 @@ func _input(event: InputEvent) -> void:
 	gui_release_focus()
 
 	if event is InputEventJoypadMotion:
-		if absf(event.axis_value) < NanogamePlayer.JOYSTICK_DEADZONE:
-			return
-
 		event.axis_value = -1 if event.axis_value < 0 else 1
 	else:
 		event.pressed = true
@@ -94,20 +91,20 @@ func _input(event: InputEvent) -> void:
 func _update_text(is_invalid:=false) -> void:
 	var instructions := ""
 	if is_invalid:
-		instructions = tr("Invalid input, try another.")
+		instructions = tr(&"Invalid input, try another.")
 	elif _event == null:
-		instructions = tr("Press the desired new input in your joypad.")\
+		instructions = tr(&"Press the desired new input in your joypad.")\
 				if _has_joypad else\
-				tr("Press the desired new input in your keyboard.")
+				tr(&"Press the desired new input in your keyboard.")
 	else:
-		instructions = tr("Is this the new desired input?")
+		instructions = tr(&"Is this the new desired input?")
 
 	var input_status := ""
 	if is_invalid:
 		input_status = "[color=#%s]%s[/color]" %\
-				[Color.TOMATO.to_html(), tr("[Invalid Input]")]
+				[Color.TOMATO.to_html(), tr(&"[Invalid Input]")]
 	elif _event == null:
-		input_status = "[color=silver]%s[/color]" % tr("[None Selected]")
+		input_status = "[color=silver]%s[/color]" % tr(&"[None Selected]")
 	else:
 		if GameManager.is_using_joypad():
 			input_status = format_joypad_input_text(_event)
@@ -115,7 +112,7 @@ func _update_text(is_invalid:=false) -> void:
 			input_status = _event.as_text_keycode()
 
 			if input_status == "Space":
-				input_status = tr("Space", "Keyboard")
+				input_status = tr(&"Space", "Keyboard")
 
 		_input_name = input_status
 

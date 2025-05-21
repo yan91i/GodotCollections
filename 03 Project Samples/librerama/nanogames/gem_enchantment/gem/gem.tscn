@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2gkeuwyjqgkl"]
 
 [ext_resource type="Texture2D" uid="uid://bu4tapk8jcfhf" path="res://nanogames/gem_enchantment/gem/_assets/gem.png" id="1"]
-[ext_resource type="Script" path="res://nanogames/gem_enchantment/gem/gem.gd" id="2"]
+[ext_resource type="Script" uid="uid://cjd8118l55tf1" path="res://nanogames/gem_enchantment/gem/gem.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bs21esudxfi2v" path="res://nanogames/gem_enchantment/gem/_assets/base.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://bi78pv4wb0in6" path="res://nanogames/gem_enchantment/gem/_assets/touch.wav" id="4"]
 

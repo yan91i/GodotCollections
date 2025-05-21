@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdefamk8oiv45"]
 
-[ext_resource type="Script" path="res://nanogame_player/nanogame_player.gd" id="1"]
+[ext_resource type="Script" uid="uid://ds6r6b516xp2p" path="res://nanogame_player/nanogame_player.gd" id="1"]
 
 [node name="NanogamePlayer" type="SubViewportContainer"]
 process_mode = 1

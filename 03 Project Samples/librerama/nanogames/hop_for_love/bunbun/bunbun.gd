@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -25,8 +25,8 @@ func love() -> void:
 	($Hearts as GPUParticles2D).emitting = true
 	($Flourish as AudioStreamPlayer2D).play()
 
-	($AnimationPlayer as AnimationPlayer).play("blush")
+	($AnimationPlayer as AnimationPlayer).play(&"blush")
 
 
 func laugh() -> void:
-	($AnimationPlayer as AnimationPlayer).play("laugh")
+	($AnimationPlayer as AnimationPlayer).play(&"laugh")

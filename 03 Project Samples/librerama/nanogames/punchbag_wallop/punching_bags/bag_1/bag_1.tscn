@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://dmx5tw2vikvoh" path="res://nanogames/punchbag_wallop/punching_bags/_assets/hit.wav" id="1"]
 [ext_resource type="AudioStream" uid="uid://d4h73j7lh35fr" path="res://nanogames/punchbag_wallop/punching_bags/_assets/break.wav" id="2"]
-[ext_resource type="Script" path="res://nanogames/punchbag_wallop/punching_bags/punching_bag.gd" id="3"]
+[ext_resource type="Script" uid="uid://cltevx17oe772" path="res://nanogames/punchbag_wallop/punching_bags/punching_bag.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://dyg83uuxt70ck" path="res://nanogames/punchbag_wallop/punching_bags/bag_1/_assets/punching_bag.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://cxdyem5e5h5g" path="res://nanogames/punchbag_wallop/punching_bags/_assets/rip_effect.png" id="5"]
 [ext_resource type="AudioStream" uid="uid://b0kddbr6x05sb" path="res://nanogames/punchbag_wallop/punching_bags/_assets/flinch_away.wav" id="6"]
@@ -287,15 +287,14 @@ tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eqgk7"]
 _data = {
-"RESET": SubResource("4"),
-"break": SubResource("1"),
-"flinch": SubResource("2"),
-"flinch_away": SubResource("3")
+&"RESET": SubResource("4"),
+&"break": SubResource("1"),
+&"flinch": SubResource("2"),
+&"flinch_away": SubResource("3")
 }
 
 [node name="Bag1" type="Node2D"]
 script = ExtResource("3")
-hits_to_break = 6
 hit_sways = 2
 
 [node name="PunchingBag" type="Sprite2D" parent="."]
@@ -321,6 +320,7 @@ offset = Vector2(0, 462)
 
 [node name="Effects" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, 400)
+bus = &"Effects"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

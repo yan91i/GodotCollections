@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 @tool
 extends TabModal
@@ -106,33 +106,33 @@ func _ready() -> void:
 
 	var everything_toggle := $Volume/Everything/EverythingToggle as CheckButton
 	everything_toggle.button_pressed =\
-			not AudioServer.is_bus_mute(everything_toggle.get_meta("bus"))
+			not AudioServer.is_bus_mute(everything_toggle.get_meta(&"bus"))
 	everything_toggle.toggled.connect(
 			_on_volume_toggle_toggled.bind(everything_toggle))
 	($Volume/EverythingSlider as HSlider).value_changed.connect(
 			_on_volume_slider_value_changed.bind(everything_toggle))
 	($Volume/EverythingSlider as HSlider).value = db_to_linear(AudioServer.
-			get_bus_volume_db(everything_toggle.get_meta("bus")))
+			get_bus_volume_db(everything_toggle.get_meta(&"bus")))
 
 	var music_toggle := $Volume/Music/MusicToggle as CheckButton
 	music_toggle.button_pressed =\
-			not AudioServer.is_bus_mute(music_toggle.get_meta("bus"))
+			not AudioServer.is_bus_mute(music_toggle.get_meta(&"bus"))
 	music_toggle.toggled.connect(
 			_on_volume_toggle_toggled.bind(music_toggle))
 	($Volume/MusicSlider as HSlider).value_changed.connect(
 			_on_volume_slider_value_changed.bind(music_toggle))
 	($Volume/MusicSlider as HSlider).value = db_to_linear(AudioServer.
-			get_bus_volume_db(everything_toggle.get_meta("bus")))
+			get_bus_volume_db(everything_toggle.get_meta(&"bus")))
 
 	var effects_toggle := $Volume/Effects/EffectsToggle as CheckButton
 	effects_toggle.button_pressed =\
-			not AudioServer.is_bus_mute(effects_toggle.get_meta("bus"))
+			not AudioServer.is_bus_mute(effects_toggle.get_meta(&"bus"))
 	effects_toggle.toggled.connect(
 			_on_volume_toggle_toggled.bind(effects_toggle))
 	($Volume/EffectsSlider as HSlider).value_changed.connect(
 			_on_volume_slider_value_changed.bind(effects_toggle))
 	($Volume/EffectsSlider as HSlider).value = db_to_linear(AudioServer.
-			get_bus_volume_db(everything_toggle.get_meta("bus")))
+			get_bus_volume_db(everything_toggle.get_meta(&"bus")))
 
 
 func _notification(what: int) -> void:
@@ -154,7 +154,7 @@ func _update_inputs_section() -> void:
 
 	var has_joypad: bool = GameManager.is_using_joypad()
 	for i: Button in _inputs_group.get_buttons():
-		for j: InputEvent in InputMap.action_get_events(i.get_meta("action")):
+		for j: InputEvent in InputMap.action_get_events(i.get_meta(&"action")):
 			if has_joypad:
 				if j is not InputEventJoypadButton and\
 						j is not InputEventJoypadMotion:
@@ -167,14 +167,14 @@ func _update_inputs_section() -> void:
 				i.text = j.as_text_keycode()
 
 				if i.text == "Space":
-					i.text = tr("Space", "Keyboard")
+					i.text = tr(&"Space", "Keyboard")
 
 				break
 
 
 func _update_volume_toggle_percentage(toggle: CheckButton) -> void:
 	toggle.text = str(int(db_to_linear(AudioServer.get_bus_volume_db(
-			toggle.get_meta("bus"))) * 100)) + "%"
+			toggle.get_meta(&"bus"))) * 100)) + "%"
 
 
 func _on_languages_item_selected(index: int) -> void:
@@ -237,7 +237,7 @@ func _on_switch_touch_controls_toggled(button_pressed: bool) -> void:
 
 func _on_volume_toggle_toggled(
 			button_pressed: bool, toggle: CheckButton) -> void:
-	AudioServer.set_bus_mute(toggle.get_meta("bus"), not button_pressed)
+	AudioServer.set_bus_mute(toggle.get_meta(&"bus"), not button_pressed)
 
 	GameManager.save_settings()
 
@@ -245,7 +245,7 @@ func _on_volume_toggle_toggled(
 func _on_volume_slider_value_changed(
 		value: float, toggle: CheckButton) -> void:
 
-	AudioServer.set_bus_volume_db(toggle.get_meta("bus"), linear_to_db(value))
+	AudioServer.set_bus_volume_db(toggle.get_meta(&"bus"), linear_to_db(value))
 
 	_update_volume_toggle_percentage(toggle)
 
@@ -255,7 +255,7 @@ func _on_volume_slider_value_changed(
 func _on_input_modal_ok_pressed() -> void:
 	var input_button: Button = _inputs_group.get_pressed_button()
 
-	var action_name: String = input_button.get_meta("action")
+	var action_name: String = input_button.get_meta(&"action")
 	if GameManager.get_control_type() == GameManager.ControlTypes.KEYBOARD:
 		var events: Array[InputEvent] = InputMap.action_get_events(action_name)
 		InputMap.action_erase_events(action_name)

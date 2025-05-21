@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -45,14 +45,14 @@ func flip_card(is_animating:=true) -> void:
 
 		return
 
-	($AnimationPlayer as AnimationPlayer).play("card_flip")
+	($AnimationPlayer as AnimationPlayer).play(&"card_flip")
 
 
 func set_selection(is_enabled: bool) -> void:
 	($CollisionShape2D as CollisionShape2D).disabled = not is_enabled
 
 	if is_enabled:
-		($AnimationPlayer as AnimationPlayer).play("highlight_blink")
+		($AnimationPlayer as AnimationPlayer).play(&"highlight_blink")
 	else:
 		($Highlight as Sprite2D).self_modulate.a = 0
 

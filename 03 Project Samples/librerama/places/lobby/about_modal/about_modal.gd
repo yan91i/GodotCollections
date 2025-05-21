@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 @tool
 extends TabModal
@@ -109,37 +109,38 @@ func _update_texts() -> void:
 			" v" + ProjectSettings.get_setting("application/config/version"))
 	_about.newline()
 
-	_about.add_text("Copyright © 2023 ")
+	_about.add_text("Copyright © 2020-present ")
 	_about.push_bold()
 	_about.push_meta(PERSONAL_WEBSITE_LINK)
 	_about.add_text("Michael Alexsander")
 	_about.pop()
 	_about.pop()
+	_about.add_text(".")
 	_about.newline()
 
 	_about.newline()
 
 	_about.push_italics()
 	_about.add_text(tr(
-			"A free/libre fast-paced arcade collection of mini-games."))
+			&"A free/libre fast-paced arcade collection of mini-games."))
 	_about.pop()
 	_about.newline()
 
 	_about.pop()
 	_about.newline()
 
-	_about.append_text(tr("This program is [url=%s]free software[/url]: you " +
-			"can redistribute it and/or modify it under the terms of the " +
-			"[url=%s]GNU General Public License[/url] as published by the " +
-			"Free Software Foundation, either version 3 of the License, or " +
-			"(at your option) any later version.") % [
-					"https://www.gnu.org/philosophy/free-sw.html",
+	_about.append_text(tr(&"This program is [url=%s]free software[/url]: " +
+			&"you can redistribute it and/or modify it under the terms of " +
+			&"the [url=%s]GNU General Public License[/url] as published by " +
+			&"the Free Software Foundation, either version 3 of the License, " +
+			&"or (at your option) any later version.") % [
+					&"https://www.gnu.org/philosophy/free-sw.html",
 					Nanogame.get_license_link(Nanogame.Licenses.GPL_3_LATER)])
 	_about.newline()
 
 	_about.newline()
 
-	_about.append_text(tr("The source code and assets can be found in its " +
+	_about.append_text(tr(&"The source code and assets can be found in its " +
 			"[url=%s]repository[/url].") % GameManager.REPOSITORY_LINK)
 
 
@@ -147,41 +148,43 @@ func _update_texts() -> void:
 
 	_donate.clear()
 
-	_donate.append_text(tr("Librerama is not just free as in " +
-			"[i]freedom[/i], but also free as in [i]free of charge[/i], so " +
-			"donations are very much welcomed!"))
+	_donate.append_text(tr(&"Librerama is not just free as in " +
+			&"[i]freedom[/i], but also free as in [i]free of charge[/i], so " +
+			&"donations are very much welcomed!"))
 	_donate.newline()
 
 	_donate.newline()
 
 	_donate.append_text(tr(
-			"You can donate to me via [url=%s]Liberapay[/url]. The money " +
-			"will be used to help me put more work not just into this game, " +
-			"but also my general work in free/libre gaming.") % DONATE_LINK)
+			&"You can donate to me via [url=%s]Liberapay[/url]. The money " +
+			&"will be used to help me put more work not just into this " +
+			&"game, but also my general work in free/libre gaming.") %
+			DONATE_LINK)
 
 
 	### Contributors ###
 
 	_contributors.clear()
 
-	_contributors.add_text(tr("The wonderful people listed below offered " +
-			"sizable contributions to the game. Make sure to check them out."))
+	_contributors.add_text(tr(&"The wonderful people listed below offered " +
+			&"sizable contributions to the game. Make sure to check them " +
+			&"out."))
 	_contributors.newline()
 
 	_contributors.newline()
 
 	_contributors.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER)
 	_contributors.push_bold()
-	_contributors.add_text(tr("Music"))
+	_contributors.add_text(tr(&"Music"))
 	_contributors.pop()
 	_contributors.pop()
 	_contributors.newline()
 
-	var bullet_point_colon := tr("• %s: ")
+	var bullet_point_colon := tr(&"• %s: ")
 
 	_contributors.push_bold()
 	_contributors.add_text(
-			bullet_point_colon % tr("Arcade Menu Theme and Jingles"))
+			bullet_point_colon % tr(&"Arcade Menu Theme and Jingles"))
 	_contributors.pop()
 
 	_contributors.push_meta("https://www.francescorrado.com")
@@ -193,42 +196,42 @@ func _update_texts() -> void:
 
 	_contributors.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER)
 	_contributors.push_bold()
-	_contributors.add_text(tr("Translation"))
+	_contributors.add_text(tr(&"Translation"))
 	_contributors.pop()
 	_contributors.pop()
 	_contributors.newline()
 
 	_contributors.push_bold()
-	_contributors.add_text(bullet_point_colon % tr("Dutch"))
+	_contributors.add_text(bullet_point_colon % tr(&"Dutch"))
 	_contributors.pop()
 	_contributors.add_text("Vistaus")
 	_contributors.newline()
 
 	_contributors.push_bold()
-	_contributors.add_text(bullet_point_colon % tr("Esperanto"))
+	_contributors.add_text(bullet_point_colon % tr(&"Esperanto"))
 	_contributors.pop()
 	_contributors.add_text("jorgesumle")
 	_contributors.newline()
 
 	_contributors.push_bold()
-	_contributors.add_text(bullet_point_colon % tr("German"))
+	_contributors.add_text(bullet_point_colon % tr(&"German"))
 	_contributors.pop()
 	_contributors.add_text("fnetX, HaSa, Wuzzy")
 	_contributors.newline()
 
 	_contributors.push_bold()
-	_contributors.add_text(bullet_point_colon % tr("Portuguese, Brazil"))
+	_contributors.add_text(bullet_point_colon % tr(&"Portuguese, Brazil"))
 	_contributors.pop()
 	_contributors.add_text("Cavernosa")
 
 	_contributors.push_bold()
-	_contributors.add_text(bullet_point_colon % tr("Spanish"))
+	_contributors.add_text(bullet_point_colon % tr(&"Spanish"))
 	_contributors.pop()
 	_contributors.add_text("jorgesumle")
 	_contributors.newline()
 
 	_contributors.push_bold()
-	_contributors.add_text(bullet_point_colon % tr("Turkish"))
+	_contributors.add_text(bullet_point_colon % tr(&"Turkish"))
 	_contributors.pop()
 	_contributors.add_text("furkanunsalan")
 
@@ -237,7 +240,7 @@ func _update_texts() -> void:
 
 	_thirdparty.clear()
 
-	var bullet_point := tr("• %s")
+	var bullet_point := tr(&"• %s")
 
 	for i: Array[String] in _thirdparty_elements:
 		_thirdparty.push_bold()
@@ -252,23 +255,23 @@ func _update_texts() -> void:
 
 		_thirdparty.push_indent(2)
 
-		_thirdparty.add_text(tr("By %s") % i[1])
+		_thirdparty.add_text(tr(&"By %s") % i[1])
 		_thirdparty.newline()
 		_thirdparty.push_meta(i[2])
 		_thirdparty.add_text(i[3])
 		_thirdparty.pop()
 		_thirdparty.newline()
 		_thirdparty.push_meta(i[4])
-		_thirdparty.add_text(tr("Source"))
+		_thirdparty.add_text(tr(&"Source"))
 		_thirdparty.pop()
 		_thirdparty.newline()
 
 		_thirdparty.pop()
 		_thirdparty.newline()
 
-	_thirdparty.add_text(tr("For the licenses of the third-party " +\
-			"components used by the nanogames themselves, check their " +\
-			'respective "About" information.'))
+	_thirdparty.add_text(tr(&"For the licenses of the third-party " +
+			&"components used by the nanogames themselves, check their " +
+			&'respective "About" information.'))
 
 
 func _on_rich_text_label_meta_clicked(meta: String) -> void:

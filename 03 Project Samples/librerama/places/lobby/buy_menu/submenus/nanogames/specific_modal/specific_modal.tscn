@@ -1,11 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcemrtgwt5l3i"]
+[gd_scene load_steps=11 format=3 uid="uid://dcemrtgwt5l3i"]
 
 [ext_resource type="PackedScene" uid="uid://b5frslx0xhpxc" path="res://modals/modal/modal.tscn" id="1_hdklq"]
-[ext_resource type="Script" path="res://places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.gd" id="2_fratf"]
+[ext_resource type="Script" uid="uid://cr1fadmfe8we6" path="res://places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.gd" id="2_fratf"]
 [ext_resource type="Texture2D" uid="uid://cm7bkf4nyxfyf" path="res://places/_assets/pagination/first_page.svg" id="3_a163h"]
 [ext_resource type="Texture2D" uid="uid://bu7lp4s66p63a" path="res://places/_assets/pagination/previous_page.svg" id="4_v3bwy"]
 [ext_resource type="Texture2D" uid="uid://d4csqaw6ukmfi" path="res://places/_assets/pagination/next_page.svg" id="5_3e5hn"]
 [ext_resource type="Texture2D" uid="uid://bvbpoo82ptuei" path="res://places/_assets/pagination/last_page.svg" id="6_50t4j"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_yayfh"]
+action = &"menu_page_previous"
+
+[sub_resource type="Shortcut" id="Shortcut_8iwtu"]
+events = [SubResource("InputEventAction_yayfh")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_m55lu"]
+action = &"menu_page_next"
+
+[sub_resource type="Shortcut" id="Shortcut_lcwx0"]
+events = [SubResource("InputEventAction_m55lu")]
 
 [node name="SpecificModal" instance=ExtResource("1_hdklq")]
 script = ExtResource("2_fratf")
@@ -62,6 +74,7 @@ icon = ExtResource("3_a163h")
 
 [node name="Previous" type="Button" parent="Contents/PageButtons" index="1"]
 layout_mode = 2
+shortcut = SubResource("Shortcut_8iwtu")
 icon = ExtResource("4_v3bwy")
 
 [node name="Pages" type="Label" parent="Contents/PageButtons" index="2"]
@@ -71,6 +84,7 @@ horizontal_alignment = 1
 
 [node name="Next" type="Button" parent="Contents/PageButtons" index="3"]
 layout_mode = 2
+shortcut = SubResource("Shortcut_lcwx0")
 icon = ExtResource("5_3e5hn")
 
 [node name="Last" type="Button" parent="Contents/PageButtons" index="4"]

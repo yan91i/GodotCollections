@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://0wlarpvgohpd"]
 
-[ext_resource type="Script" path="res://nanogames/neo_highway/driver/driver.gd" id="1"]
+[ext_resource type="Script" uid="uid://c0er7qbef0ar7" path="res://nanogames/neo_highway/driver/driver.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://85dxtj66hfy6" path="res://nanogames/neo_highway/driver/_assets/driver.png" id="2"]
 
 [sub_resource type="Gradient" id="Gradient_r1huh"]

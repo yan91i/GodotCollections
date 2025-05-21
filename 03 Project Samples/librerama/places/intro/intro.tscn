@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://7lwlyogg8nef"]
 
-[ext_resource type="Script" uid="uid://b8px7aoqc1xgy" path="res://places/intro/intro.gd" id="1"]
+[ext_resource type="Script" uid="uid://cbevxsu1eg3c4" path="res://places/intro/intro.gd" id="1"]
 [ext_resource type="Theme" uid="uid://bhgiqje5djp63" path="res://themes/theme_lobby.tres" id="2"]
 
 [node name="Intro" type="Control"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b682bygnrgs6b"]
 
-[ext_resource type="Script" path="res://nanogames/digital_warp/spaceship/spaceship.gd" id="1"]
+[ext_resource type="Script" uid="uid://dn3kxfgq33rru" path="res://nanogames/digital_warp/spaceship/spaceship.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://b4lpb478iblpf" path="res://nanogames/digital_warp/spaceship/_assets/spaceship.svg" id="2"]
 [ext_resource type="AudioStream" uid="uid://df86knej5xcca" path="res://nanogames/digital_warp/spaceship/_assets/alert.wav" id="3"]
 [ext_resource type="AudioStream" uid="uid://o4sire785oaj" path="res://nanogames/digital_warp/spaceship/_assets/move.wav" id="4"]
@@ -101,8 +101,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_76flv"]
 _data = {
-"RESET": SubResource("6"),
-"die": SubResource("5")
+&"RESET": SubResource("6"),
+&"die": SubResource("5")
 }
 
 [node name="Spaceship" type="Area2D"]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=19 format=3 uid="uid://6iy3u53ssy04"]
 
-[ext_resource type="Script" path="res://nanogames/neo_highway/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://d1hkwrwnj11ck" path="res://nanogames/neo_highway/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://0wlarpvgohpd" path="res://nanogames/neo_highway/driver/driver.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://hng1jifu5gsq" path="res://nanogames/neo_highway/_assets/obstacle.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://btpa2cpiol2n6" path="res://nanogames/neo_highway/_assets/warning.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://dmfpb434166b0" path="res://nanogames/neo_highway/_assets/enemy.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://dfmsnwfjusdgw" path="res://nanogames/neo_highway/_assets/background.png" id="6"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="7"]
+[ext_resource type="Shader" uid="uid://ssqs6hgihrcf" path="res://shaders/texture_scroll.gdshader" id="7"]
 [ext_resource type="AudioStream" uid="uid://chw2bs7gfrhtb" path="res://nanogames/neo_highway/_assets/music.ogg" id="8"]
 [ext_resource type="AudioStream" uid="uid://br0nhe8j4qu0o" path="res://nanogames/neo_highway/_assets/crash.wav" id="9"]
 [ext_resource type="AudioStream" uid="uid://dwweaid3pnoxv" path="res://nanogames/neo_highway/_assets/vroom.wav" id="10"]
@@ -141,9 +141,9 @@ tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1b5gd"]
 _data = {
-"RESET": SubResource("6"),
-"crash": SubResource("4"),
-"enemy_move": SubResource("5")
+&"RESET": SubResource("6"),
+&"crash": SubResource("4"),
+&"enemy_move": SubResource("5")
 }
 
 [node name="Main" type="Node2D"]

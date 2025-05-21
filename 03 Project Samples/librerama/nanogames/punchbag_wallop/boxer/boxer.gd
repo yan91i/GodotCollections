@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -30,14 +30,14 @@ var _is_waiting_hit_status := false
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("nanogame_action") or not _can_punch:
+	if not event.is_action_pressed(&"nanogame_action") or not _can_punch:
 		return
 
 	_can_punch = false
 
 	var anim_player := $AnimationPlayer as AnimationPlayer
 	anim_player.stop()
-	anim_player.play("punch")
+	anim_player.play(&"punch")
 
 
 func celebrate() -> void:
@@ -45,7 +45,7 @@ func celebrate() -> void:
 
 	_is_waiting_hit_status = false
 
-	($AnimationPlayer as AnimationPlayer).play("win")
+	($AnimationPlayer as AnimationPlayer).play(&"win")
 
 
 func set_punch_hit(has_hit: bool) -> void:
@@ -57,10 +57,10 @@ func set_punch_hit(has_hit: bool) -> void:
 	if has_hit:
 		_can_punch = true
 
-		($AnimationPlayer as AnimationPlayer).queue("idle")
+		($AnimationPlayer as AnimationPlayer).queue(&"idle")
 	else:
 		($Effects as AudioStreamPlayer).play()
-		($AnimationPlayer as AnimationPlayer).play("punch_fail")
+		($AnimationPlayer as AnimationPlayer).play(&"punch_fail")
 
 		punch_missed.emit()
 
@@ -77,4 +77,4 @@ func _on_AnimationPlayer_finished(anim_name: String) -> void:
 	if anim_name == "punch_fail":
 		_can_punch = true
 
-		($AnimationPlayer as AnimationPlayer).play("idle")
+		($AnimationPlayer as AnimationPlayer).play(&"idle")

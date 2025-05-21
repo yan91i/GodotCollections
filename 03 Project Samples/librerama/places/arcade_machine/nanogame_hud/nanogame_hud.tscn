@@ -1,11 +1,11 @@
 [gd_scene load_steps=36 format=3 uid="uid://dvn0ccbgksfbn"]
 
 [ext_resource type="AudioStream" uid="uid://bc86t80mxpk4b" path="res://places/arcade_machine/nanogame_hud/_assets/gate_noise.wav" id="2"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="3"]
+[ext_resource type="Shader" uid="uid://ssqs6hgihrcf" path="res://shaders/texture_scroll.gdshader" id="3"]
 [ext_resource type="Texture2D" uid="uid://bw6ufn1y6raq0" path="res://places/arcade_machine/nanogame_hud/_assets/input_elements/action.svg" id="3_3tny8"]
 [ext_resource type="AudioStream" uid="uid://cw7kwptfc56q" path="res://places/arcade_machine/nanogame_hud/_assets/player_start.ogg" id="4"]
 [ext_resource type="Texture2D" uid="uid://imiiteqyebnt" path="res://places/arcade_machine/nanogame_hud/_assets/input_elements/joycursor.svg" id="5"]
-[ext_resource type="Script" path="res://places/arcade_machine/nanogame_hud/nanogame_hud.gd" id="8"]
+[ext_resource type="Script" uid="uid://bcocfkc2mdarf" path="res://places/arcade_machine/nanogame_hud/nanogame_hud.gd" id="8"]
 [ext_resource type="Texture2D" uid="uid://b6ueywe4b30pr" path="res://places/arcade_machine/nanogame_hud/_assets/gate.svg" id="9"]
 [ext_resource type="Texture2D" uid="uid://dhh3v7aqw2efg" path="res://places/arcade_machine/nanogame_hud/_assets/status_difficulty.svg" id="10"]
 [ext_resource type="Texture2D" uid="uid://bfpmt8xvx63nk" path="res://places/arcade_machine/nanogame_hud/_assets/status_speed.svg" id="11"]
@@ -673,14 +673,14 @@ tracks/11/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_13fax"]
 _data = {
-"RESET": SubResource("13"),
-"close_gates": SubResource("4"),
-"hide_kickoff": SubResource("5"),
-"nanogame_result": SubResource("6"),
-"nanogame_start": SubResource("7"),
-"open_gates": SubResource("8"),
-"player_start": SubResource("9"),
-"player_stop": SubResource("10")
+&"RESET": SubResource("13"),
+&"close_gates": SubResource("4"),
+&"hide_kickoff": SubResource("5"),
+&"nanogame_result": SubResource("6"),
+&"nanogame_start": SubResource("7"),
+&"open_gates": SubResource("8"),
+&"player_start": SubResource("9"),
+&"player_stop": SubResource("10")
 }
 
 [sub_resource type="Animation" id="14"]
@@ -689,22 +689,10 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Joycursor:scale")
+tracks/0/path = NodePath("Joycursor:self_modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Joycursor:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -718,22 +706,10 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Joycursor:scale")
+tracks/0/path = NodePath("Joycursor:self_modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Joycursor:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -747,22 +723,10 @@ capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Joycursor:scale")
+tracks/0/path = NodePath("Joycursor:self_modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Joycursor:modulate:a")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "update": 2,
@@ -771,9 +735,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_stadp"]
 _data = {
-"RESET": SubResource("14"),
-"blink": SubResource("11"),
-"stop": SubResource("12")
+&"RESET": SubResource("14"),
+&"blink": SubResource("11"),
+&"stop": SubResource("12")
 }
 
 [node name="NanogameHUD" type="Control"]
@@ -859,7 +823,7 @@ action = "nanogame_action"
 
 [node name="Joycursor" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("5")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Joycursor"]
@@ -1260,12 +1224,12 @@ bus = &"Effects"
 
 [node name="HUDAnimations" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_13fax")
+&"": SubResource("AnimationLibrary_13fax")
 }
 
 [node name="JoycursorBlink" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_stadp")
+&"": SubResource("AnimationLibrary_stadp")
 }
 
 [connection signal="pressed" from="TouchNavigation/ExpandTouch" to="." method="_on_expand_touch_pressed"]

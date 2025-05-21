@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -71,7 +71,7 @@ func nanogame_prepare(difficulty: int, debug_code: int) -> void:
 		if debug_code == 1 and int(i.text) == _candy_quantity_answer:
 			i.self_modulate = Color.CORNFLOWER_BLUE
 
-	($AnimationPlayer as AnimationPlayer).queue("jar_shake")
+	($AnimationPlayer as AnimationPlayer).queue(&"jar_shake")
 
 
 func nanogame_start() -> void:
@@ -127,9 +127,9 @@ func nanogame_start() -> void:
 		var tween: Tween = create_tween()
 		tween.tween_interval(spawn_interval * i)
 		tween.tween_property(
-				candy, "position:y", spawn_end, CANDY_FALL_DURATION)
+				candy, ^"position:y", spawn_end, CANDY_FALL_DURATION)
 		tween.set_parallel()
-		tween.tween_property(candy, "rotation",
+		tween.tween_property(candy, ^"rotation",
 				(TAU if randi() % 2 == 0 else -TAU) / 2, CANDY_FALL_DURATION)
 
 		if i == candy_quantity - 1:
@@ -143,7 +143,7 @@ func nanogame_start() -> void:
 func _show_answers() -> void:
 	($GUI/Fade as ColorRect).show()
 
-	($AnimationPlayer as AnimationPlayer).play("show_answers")
+	($AnimationPlayer as AnimationPlayer).play(&"show_answers")
 
 
 func _on_answer_input_event(_viewport: Node, event: InputEvent) -> void:

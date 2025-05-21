@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Control
 
@@ -95,7 +95,7 @@ func _notification(what: int) -> void:
 			($PauseScreen/VBoxContainer/NanogameInfo/Name as Label).text =\
 					_nanogame.get_nanogame_name()\
 					if not _nanogame.get_nanogame_name().is_empty() else\
-					tr("[No Name]")
+					tr(&"[No Name]")
 			($PauseScreen/VBoxContainer/NanogameInfo/Name as Label).\
 					self_modulate = Color.WHITE\
 							if not _nanogame.get_nanogame_name().is_empty()\
@@ -104,7 +104,7 @@ func _notification(what: int) -> void:
 			($PauseScreen/VBoxContainer/NanogameInfo/Kickoff as Label).text =\
 					_nanogame.get_kickoff()\
 					if not _nanogame.get_kickoff().is_empty() else\
-					tr("[No Kickoff]")
+					tr(&"[No Kickoff]")
 			($PauseScreen/VBoxContainer/NanogameInfo/Kickoff as Label).\
 					self_modulate = Color.WHITE\
 							if not _nanogame.get_nanogame_name().is_empty()\
@@ -113,28 +113,28 @@ func _notification(what: int) -> void:
 			var input_icon: CompressedTexture2D
 			match _nanogame.get_input():
 				Nanogame.Inputs.NAVIGATION:
-					input_icon = preload("res://places/_assets/" +\
+					input_icon = preload("res://places/_assets/" +
 							"input_types_small/navigation.svg")
 				Nanogame.Inputs.ACTION:
-					input_icon = preload("res://places/_assets/" +\
+					input_icon = preload("res://places/_assets/" +
 							"input_types_small/action.svg")
 				Nanogame.Inputs.NAVIGATION_ACTION:
-					input_icon = preload("res://places/_assets/" +\
+					input_icon = preload("res://places/_assets/" +
 							"input_types_small/navigation_action.svg")
 				Nanogame.Inputs.DRAG_DROP:
-					input_icon = preload("res://places/_assets/" +\
+					input_icon = preload("res://places/_assets/" +
 							"input_types_small/drag_drop.svg")
 
 			($PauseScreen/VBoxContainer/NanogameInfo/Input as TextureRect).\
 					texture = input_icon
 			($PauseScreen/VBoxContainer/NanogameInfo/Input as TextureRect).\
-					tooltip_text = tr("Input: %s") %\
+					tooltip_text = tr(&"Input: %s") %\
 					tr(Nanogame.get_input_name(_nanogame.get_input()))
 
 			($PauseScreen/VBoxContainer/NanogameDescription as RichTextLabel).\
 					text = _nanogame.get_description()\
 					if not _nanogame.get_description().is_empty() else\
-					tr("[No Description]")
+					tr(&"[No Description]")
 			($PauseScreen/VBoxContainer/NanogameDescription as RichTextLabel).\
 					self_modulate = Color("white"
 							if not _nanogame.get_description().is_empty() else
@@ -149,7 +149,7 @@ func _notification(what: int) -> void:
 				return
 
 			($PauseScreen/VBoxContainer/NanogameInfo/Input as TextureRect).\
-					tooltip_text = tr("Input: %s") %\
+					tooltip_text = tr(&"Input: %s") %\
 					tr(Nanogame.get_input_name(_nanogame.get_input()))
 
 
@@ -172,7 +172,7 @@ func animate_player_start(starting_nanogame: Nanogame) -> void:
 
 	(%Icon as TextureRect).texture = preload("_assets/starting.svg")
 
-	(%State as Label).text = tr("Starting")
+	(%State as Label).text = tr(&"Starting")
 	(%Message as Label).text =\
 			_messages["start"][randi() % _messages["start"].size()]
 
@@ -184,8 +184,8 @@ func animate_player_start(starting_nanogame: Nanogame) -> void:
 			self_modulate = Color.WHITE
 	(%EnergyIconPause as TextureRect).self_modulate = Color.GOLD
 
-	($HUDAnimations as AnimationPlayer).play("close_gates")
-	($HUDAnimations as AnimationPlayer).queue("player_start")
+	($HUDAnimations as AnimationPlayer).play(&"close_gates")
+	($HUDAnimations as AnimationPlayer).queue(&"player_start")
 
 
 func animate_nanogame_start(nanogame: Nanogame) -> void:
@@ -195,14 +195,14 @@ func animate_nanogame_start(nanogame: Nanogame) -> void:
 
 	_nanogame = nanogame
 
-	($HUDAnimations as AnimationPlayer).queue("nanogame_start")
-	($HUDAnimations as AnimationPlayer).queue("open_gates")
+	($HUDAnimations as AnimationPlayer).queue(&"nanogame_start")
+	($HUDAnimations as AnimationPlayer).queue(&"open_gates")
 
 
 func animate_nanogame_won(next_nanogame: Nanogame, is_harder:=false) -> void:
 	(%Icon as TextureRect).texture = preload("_assets/victory.svg")
 
-	(%State as Label).text = tr("Victory!")
+	(%State as Label).text = tr(&"Victory!")
 	if not is_harder:
 		(%Message as Label).text =\
 				_messages["win"][randi() % _messages["win"].size()]
@@ -229,8 +229,8 @@ func animate_nanogame_won(next_nanogame: Nanogame, is_harder:=false) -> void:
 				($Music as AudioStreamPlayer).stream =\
 						preload("_assets/difficulty_increased_2.ogg")
 
-	($HUDAnimations as AnimationPlayer).play("close_gates")
-	($HUDAnimations as AnimationPlayer).queue("nanogame_result")
+	($HUDAnimations as AnimationPlayer).play(&"close_gates")
+	($HUDAnimations as AnimationPlayer).queue(&"nanogame_result")
 
 	animate_nanogame_start(next_nanogame)
 
@@ -238,7 +238,7 @@ func animate_nanogame_won(next_nanogame: Nanogame, is_harder:=false) -> void:
 func animate_nanogame_lost(next_nanogame: Nanogame) -> void:
 	(%Icon as TextureRect).texture = preload("_assets/failure.svg")
 
-	(%State as Label).text = tr("Failure!")
+	(%State as Label).text = tr(&"Failure!")
 	(%Message as Label).text =\
 			_messages["lose"][randi() % _messages["lose"].size()]
 
@@ -253,14 +253,14 @@ func animate_nanogame_lost(next_nanogame: Nanogame) -> void:
 			($Music as AudioStreamPlayer).stream =\
 					preload("_assets/nanogame_lost_3.ogg")
 
-	($HUDAnimations as AnimationPlayer).play("close_gates")
-	($HUDAnimations as AnimationPlayer).queue("nanogame_result")
+	($HUDAnimations as AnimationPlayer).play(&"close_gates")
+	($HUDAnimations as AnimationPlayer).queue(&"nanogame_result")
 
 	if next_nanogame != null:
 		animate_nanogame_start(next_nanogame)
 	else:
-		($HUDAnimations as AnimationPlayer).queue("player_stop")
-		($HUDAnimations as AnimationPlayer).queue("open_gates")
+		($HUDAnimations as AnimationPlayer).queue(&"player_stop")
+		($HUDAnimations as AnimationPlayer).queue(&"open_gates")
 
 
 func hide_kickoff() -> void:
@@ -275,7 +275,7 @@ func hide_kickoff() -> void:
 				input.pressed = true
 				Input.parse_input_event(input)
 
-	($HUDAnimations as AnimationPlayer).play("hide_kickoff")
+	($HUDAnimations as AnimationPlayer).play(&"hide_kickoff")
 
 
 func update_status_labels() -> void:
@@ -291,14 +291,14 @@ func update_status_labels() -> void:
 		_tweens.append(tween)
 
 		var difficulty_icon := %DifficultyIcon as TextureRect
-		tween.tween_property(difficulty_icon, "self_modulate",
+		tween.tween_property(difficulty_icon, ^"self_modulate",
 				Color.DODGER_BLUE, STATUS_TWEEN_SPEED_BASE)
 
 		tween.tween_method(_set_difficulty_label, difficulty_old, _difficulty,
 				minf(STATUS_TWEEN_SPEED_MAX, STATUS_TWEEN_SPEED_BASE *
 						absi(difficulty_old - _difficulty)))
 
-		tween.tween_property(difficulty_icon, "self_modulate",
+		tween.tween_property(difficulty_icon, ^"self_modulate",
 				Color.WHITE if _difficulty < NanogamePlayer.DIFFICULTY_MAX
 				else Color.GOLD, STATUS_TWEEN_SPEED_BASE)
 
@@ -313,14 +313,14 @@ func update_status_labels() -> void:
 		var tween: Tween = create_tween()
 		_tweens.append(tween)
 
-		tween.tween_property(%SpeedIcon as TextureRect, "self_modulate",
+		tween.tween_property(%SpeedIcon as TextureRect, ^"self_modulate",
 				Color.DODGER_BLUE, STATUS_TWEEN_SPEED_BASE)
 
 		tween.tween_method(_set_speed_label, speed_old, _speed,
 				minf(STATUS_TWEEN_SPEED_MAX, STATUS_TWEEN_SPEED_BASE *
 						absi(speed_old - _speed)))
 
-		tween.tween_property(%SpeedIcon as TextureRect, "self_modulate",
+		tween.tween_property(%SpeedIcon as TextureRect, ^"self_modulate",
 				Color.WHITE if _speed < NanogamePlayer.SPEED_MAX\
 						else Color.GOLD, STATUS_TWEEN_SPEED_BASE)
 
@@ -335,7 +335,7 @@ func update_status_labels() -> void:
 						speed_old == NanogamePlayer.SPEED_MAX):
 			var is_speed_max: bool = _speed == NanogamePlayer.SPEED_MAX
 			tween.tween_property(%DifficultyIcon as TextureRect,
-					"self_modulate", Color.PURPLE if is_speed_max
+					^"self_modulate", Color.PURPLE if is_speed_max
 							else Color.WHITE, STATUS_TWEEN_SPEED_BASE)
 
 			(%DifficultyIconPause as TextureRect).self_modulate =\
@@ -350,7 +350,7 @@ func update_status_labels() -> void:
 			var tween: Tween = create_tween()
 			_tweens.append(tween)
 
-			tween.tween_property(%EnergyIcon as TextureRect, "self_modulate",
+			tween.tween_property(%EnergyIcon as TextureRect, ^"self_modulate",
 					Color.LIME_GREEN if _energy > energy_old else Color.CRIMSON,
 					STATUS_TWEEN_SPEED_BASE)
 
@@ -365,7 +365,7 @@ func update_status_labels() -> void:
 				color = Color.GOLD
 			else:
 				color = Color.WHITE
-			tween.tween_property(%EnergyIcon as TextureRect, "self_modulate",
+			tween.tween_property(%EnergyIcon as TextureRect, ^"self_modulate",
 					color, STATUS_TWEEN_SPEED_BASE)
 
 			(%EnergyIconPause as TextureRect).self_modulate = color
@@ -382,13 +382,13 @@ func update_status_labels() -> void:
 			var tween: Tween = create_tween()
 			_tweens.append(tween)
 
-			tween.tween_property(score_gain_node, "self_modulate:a", 1,
+			tween.tween_property(score_gain_node, ^"self_modulate:a", 1,
 					STATUS_TWEEN_SPEED_BASE)
 
 			tween.tween_method(_set_score_label, score_old, _score,
 					STATUS_TWEEN_SPEED_MAX)
 
-			tween.tween_property(score_gain_node, "self_modulate:a", 0,
+			tween.tween_property(score_gain_node, ^"self_modulate:a", 0,
 					STATUS_TWEEN_SPEED_BASE)
 
 
@@ -454,10 +454,10 @@ func set_score(value: int) -> void:
 
 func set_joycursor_position(new_position: Vector2,\
 		snapped_position:=Vector2.INF) -> void:
-	if not _has_joycursor_moved:
+	if not _has_joycursor_moved and _joycursor.position != new_position:
 		_has_joycursor_moved = true
 
-		($JoycursorBlink as AnimationPlayer).play("stop")
+		($JoycursorBlink as AnimationPlayer).play(&"stop")
 
 	_joycursor.position = new_position
 
@@ -493,7 +493,7 @@ func _update_input_elements() -> void:
 	if _joycursor.visible:
 		_has_joycursor_moved = false
 
-		($JoycursorBlink as AnimationPlayer).play("blink")
+		($JoycursorBlink as AnimationPlayer).play(&"blink")
 	else:
 		($JoycursorBlink as AnimationPlayer).stop()
 
@@ -549,11 +549,11 @@ func _prepare_nanogame_start() -> void:
 	(%Icon as TextureRect).texture = nanogame_icon if nanogame_icon != null\
 			else preload("res://places/_assets/unknown.svg")
 
-	(%State as Label).text = tr("Up Next:")
+	(%State as Label).text = tr(&"Up Next:")
 
 	(%Message as Label).text = _nanogame.get_nanogame_name()\
 			if not _nanogame.get_nanogame_name().is_empty() else\
-			tr("[No Name]")
+			tr(&"[No Name]")
 	if _nanogame.get_nanogame_name().is_empty():
 		(%Message as Label).self_modulate = Color.SILVER
 
@@ -575,7 +575,7 @@ func _prepare_nanogame_start() -> void:
 
 	($KickoffScreen/VBoxContainer/Kickoff as Label).text =\
 			_nanogame.get_kickoff() if not _nanogame.get_kickoff().is_empty()\
-			else tr("[No Kickoff]")
+			else tr(&"[No Kickoff]")
 	($KickoffScreen/VBoxContainer/Kickoff as Label).self_modulate =\
 			Color.WHITE if not _nanogame.get_kickoff().is_empty()\
 			else Color.SILVER
@@ -592,7 +592,7 @@ func _prepare_nanogame_start() -> void:
 
 	($Timer/HBoxContainer/Type as TextureRect).texture = timer_icon
 	($Timer/HBoxContainer/Type as TextureRect).tooltip_text =\
-			tr("Timer:") + " " + Nanogame.get_timer_name(_nanogame.get_timer())
+			tr(&"Timer:") + " " + Nanogame.get_timer_name(_nanogame.get_timer())
 
 
 	### Music ###
@@ -619,7 +619,7 @@ func _prepare_player_stop() -> void:
 
 	(%Icon as TextureRect).texture = preload("_assets/stopping.svg")
 
-	(%State as Label).text = tr("Game Over")
+	(%State as Label).text = tr(&"Game Over")
 	(%Message as Label).text =\
 			_messages["stop"][randi() % _messages["stop"].size()]
 
@@ -683,8 +683,8 @@ func _on_stop_pressed() -> void:
 
 	($Pause as Button).hide()
 
-	($HUDAnimations as AnimationPlayer).play("player_stop")
-	($HUDAnimations as AnimationPlayer).queue("open_gates")
+	($HUDAnimations as AnimationPlayer).play(&"player_stop")
+	($HUDAnimations as AnimationPlayer).queue(&"open_gates")
 
 	stop_requested.emit()
 

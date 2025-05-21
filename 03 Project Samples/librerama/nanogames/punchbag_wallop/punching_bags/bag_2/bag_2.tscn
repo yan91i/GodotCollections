@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cetucgee0tors"]
 
-[ext_resource type="Script" path="res://nanogames/punchbag_wallop/punching_bags/punching_bag.gd" id="1_kj7pw"]
+[ext_resource type="Script" uid="uid://cltevx17oe772" path="res://nanogames/punchbag_wallop/punching_bags/punching_bag.gd" id="1_kj7pw"]
 [ext_resource type="AudioStream" uid="uid://dmx5tw2vikvoh" path="res://nanogames/punchbag_wallop/punching_bags/_assets/hit.wav" id="2"]
 [ext_resource type="AudioStream" uid="uid://d4h73j7lh35fr" path="res://nanogames/punchbag_wallop/punching_bags/_assets/break.wav" id="3"]
 [ext_resource type="Texture2D" uid="uid://cxdyem5e5h5g" path="res://nanogames/punchbag_wallop/punching_bags/_assets/rip_effect.png" id="4"]
@@ -287,10 +287,10 @@ tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bdt1j"]
 _data = {
-"RESET": SubResource("4"),
-"break": SubResource("1"),
-"flinch": SubResource("2"),
-"flinch_away": SubResource("3")
+&"RESET": SubResource("4"),
+&"break": SubResource("1"),
+&"flinch": SubResource("2"),
+&"flinch_away": SubResource("3")
 }
 
 [node name="Bag2" type="Node2D"]

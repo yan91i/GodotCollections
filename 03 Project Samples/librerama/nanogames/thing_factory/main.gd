@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -36,26 +36,24 @@ func nanogame_prepare(difficulty: int, debug_code: int) -> void:
 	### Conveyor Handling ###
 
 	if difficulty > 1:
-		($CanvasLayer/Conveyors/Conveyor2 as InstancePlaceholder).\
-				create_instance(true)
+		($Conveyors/Conveyor2 as InstancePlaceholder).create_instance(true)
 
 		if debug_code != 1:
 			# Connect signals in-script, as `InstancePlaceholder`s don't store
 			# connections for later.
-			($CanvasLayer/Conveyors/Conveyor2 as TextureRect).\
-					end_reached.connect(_on_conveyor_end_reached)
+			($Conveyors/Conveyor2 as TextureRect).end_reached.connect(
+					_on_conveyor_end_reached)
 
 		if difficulty == 3:
-			($CanvasLayer/Conveyors/Conveyor3 as InstancePlaceholder).\
-					create_instance(true)
+			($Conveyors/Conveyor3 as InstancePlaceholder).create_instance(true)
 
 			if debug_code != 1:
-				($CanvasLayer/Conveyors/Conveyor3 as TextureRect).\
-						end_reached.connect(_on_conveyor_end_reached)
+				($Conveyors/Conveyor3 as TextureRect).end_reached.connect(
+						_on_conveyor_end_reached)
 
 	if debug_code == 1:
-		($CanvasLayer/Conveyors/Conveyor as TextureRect).\
-				end_reached.disconnect(_on_conveyor_end_reached)
+		($Conveyors/Conveyor as TextureRect).end_reached.disconnect(
+				_on_conveyor_end_reached)
 
 
 	_thing_correct.thing_index =\
@@ -69,8 +67,7 @@ func nanogame_start() -> void:
 
 
 func _spawn_things() -> void:
-	var conveyors: Array[Node] =\
-			($CanvasLayer/Conveyors as VBoxContainer).get_children()
+	var conveyors: Array[Node] = ($Conveyors as VBoxContainer).get_children()
 	if _difficulty < 3:
 		# Remove placeholders.
 		for i: int in conveyors.size():
@@ -101,7 +98,7 @@ func _spawn_things() -> void:
 
 
 func _fail() -> void:
-	for i: Node in ($CanvasLayer/Conveyors as VBoxContainer).get_children():
+	for i: Node in ($Conveyors as VBoxContainer).get_children():
 		if i is InstancePlaceholder:
 			break
 
@@ -111,7 +108,7 @@ func _fail() -> void:
 
 	($Alarm as AudioStreamPlayer).play()
 
-	($AnimationPlayer as AnimationPlayer).play("fail")
+	($AnimationPlayer as AnimationPlayer).play(&"fail")
 
 	ended.emit(false)
 

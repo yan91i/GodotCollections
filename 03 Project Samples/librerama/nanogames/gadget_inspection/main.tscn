@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bn36l0fb8oq7k"]
 
 [ext_resource type="Texture2D" uid="uid://crwtfqpt7g3hj" path="res://nanogames/gadget_inspection/_assets/meter.png" id="1"]
-[ext_resource type="Script" path="res://nanogames/gadget_inspection/main.gd" id="2"]
+[ext_resource type="Script" uid="uid://dtua60inxb36a" path="res://nanogames/gadget_inspection/main.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bv28kkv77rg4c" path="res://nanogames/gadget_inspection/_assets/panel.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cpkd2ptmdxm0m" path="res://nanogames/gadget_inspection/_assets/light.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://bxryuucackcia" path="res://nanogames/gadget_inspection/_assets/pointer.png" id="5"]
@@ -224,10 +224,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l0pfb"]
 _data = {
-"RESET": SubResource("Animation_d5gk1"),
-"light_dance": SubResource("1"),
-"machine_shake": SubResource("2"),
-"pointer_move": SubResource("3")
+&"RESET": SubResource("Animation_d5gk1"),
+&"light_dance": SubResource("1"),
+&"machine_shake": SubResource("2"),
+&"pointer_move": SubResource("3")
 }
 
 [node name="Main" type="Node2D"]

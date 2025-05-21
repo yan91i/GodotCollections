@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 @tool
 extends TabModal
@@ -30,14 +30,14 @@ var _nanogame: Nanogame
 func _ready() -> void:
 	super()
 
-	set_tab_title(1, tr("Practice Mode"))
+	set_tab_title(1, tr(&"Practice Mode"))
 
 	if Engine.is_editor_hint():
 		return
 
 	var practice_popup :=\
 			($PracticeMode/Practice as MenuButton).get_popup() as PopupMenu
-	practice_popup.theme_type_variation = "PopupMenuPositive"
+	practice_popup.theme_type_variation = &"PopupMenuPositive"
 	practice_popup.visibility_changed.connect(
 			_on_practice_menu_visibility_changed)
 	practice_popup.id_pressed.connect(_on_practice_menu_id_pressed)
@@ -78,7 +78,7 @@ func popup_nanogame(nanogame: Nanogame) -> void:
 			if not nanogame.get_nanogame_name().is_empty() else Color.SILVER)
 	about.push_bold()
 	about.add_text(nanogame.get_nanogame_name(true) if not nanogame.\
-			get_nanogame_name().is_empty() else tr("[No Name]"))
+			get_nanogame_name().is_empty() else tr(&"[No Name]"))
 	about.pop()
 	about.pop()
 	about.newline()
@@ -86,26 +86,26 @@ func popup_nanogame(nanogame: Nanogame) -> void:
 	about.push_color(Color.WHITE if not nanogame.get_kickoff().is_empty()
 			else Color.SILVER)
 	about.push_italics()
-	about.add_text(tr('"%s"') % nanogame.get_kickoff(true)
-			if not nanogame.get_kickoff().is_empty() else tr("[No Kickoff]"))
+	about.add_text(tr(&'"%s"') % nanogame.get_kickoff(true)
+			if not nanogame.get_kickoff().is_empty() else tr(&"[No Kickoff]"))
 	about.pop()
 	about.pop()
 	about.newline()
 
 	about.push_color(Color.WHITE if not nanogame.get_author().is_empty()
 			else Color.SILVER)
-	about.add_text(tr("By %s") % nanogame.get_author()
-			if not nanogame.get_author().is_empty() else tr("[No Author]"))
+	about.add_text(tr(&"By %s") % nanogame.get_author()
+			if not nanogame.get_author().is_empty() else tr(&"[No Author]"))
 	about.pop()
 	about.newline()
 
 	if not nanogame.get_source().is_empty():
 		about.push_meta(nanogame.get_source())
-		about.add_text(tr("Source"))
+		about.add_text(tr(&"Source"))
 		about.pop()
 	else:
 		about.push_color(Color.SILVER)
-		about.add_text(tr("[No Source]"))
+		about.add_text(tr(&"[No Source]"))
 		about.pop()
 
 	about.pop()
@@ -116,28 +116,28 @@ func popup_nanogame(nanogame: Nanogame) -> void:
 	about.push_color(Color.WHITE if not nanogame.get_description().is_empty()
 			else Color.SILVER)
 	about.add_text(nanogame.get_description(true) if not nanogame.\
-			get_description().is_empty() else tr("[No Description]"))
+			get_description().is_empty() else tr(&"[No Description]"))
 	about.pop()
 	about.newline()
 
 	about.newline()
 
-	about.append_text(tr("[b]Input:[/b] %s") %
+	about.append_text(tr(&"[b]Input:[/b] %s") %
 			tr(Nanogame.get_input_name(nanogame.get_input())))
 	about.newline()
 
-	about.append_text(tr("[b]Timer:[/b] %s") %
+	about.append_text(tr(&"[b]Timer:[/b] %s") %
 			tr(Nanogame.get_timer_name(nanogame.get_timer())))
 	about.newline()
 
-	about.append_text(tr("[b]Tags:[/b] %s") %
+	about.append_text(tr(&"[b]Tags:[/b] %s") %
 			(nanogame.get_tags(ArcadeManager.community_mode or
 							TranslationServer.get_locale() != "en_US")
 					if not nanogame.get_tags().is_empty() else
-					"[color=silver]%s[/color]" % tr("[None]")))
+					"[color=silver]%s[/color]" % tr(&"[None]")))
 	about.newline()
 
-	about.append_text(tr("[b]Code License:[/b] %s") % ("[url=%s]%s[/url]" %
+	about.append_text(tr(&"[b]Code License:[/b] %s") % ("[url=%s]%s[/url]" %
 			[Nanogame.get_license_link(nanogame.get_license_code()),
 					Nanogame.get_license_name(nanogame.get_license_code())]
 			if not Nanogame.get_license_link(
@@ -145,7 +145,7 @@ func popup_nanogame(nanogame: Nanogame) -> void:
 			Nanogame.get_license_name(nanogame.get_license_code())))
 	about.newline()
 
-	about.append_text(tr("[b]Assets License:[/b] %s") % ("[url=%s]%s[/url]" %
+	about.append_text(tr(&"[b]Assets License:[/b] %s") % ("[url=%s]%s[/url]" %
 			[Nanogame.get_license_link(nanogame.get_license_assets()),
 					Nanogame.get_license_name(nanogame.get_license_assets())]
 			if not Nanogame.get_license_link(
@@ -170,14 +170,14 @@ func popup_nanogame(nanogame: Nanogame) -> void:
 		for i: Dictionary in nanogame.get_thirdparty():
 			thirdparty.push_bold()
 			thirdparty.add_text(bullet_point %
-					i["name"] if not i["name"].is_empty() else tr("[No Name]"))
+					i["name"] if not i["name"].is_empty() else tr(&"[No Name]"))
 			thirdparty.pop()
 			thirdparty.newline()
 
 			thirdparty.push_indent(2)
 
-			thirdparty.add_text(tr("By %s") % i["author"]
-					if not i["author"].is_empty() else tr("[No Author]"))
+			thirdparty.add_text(tr(&"By %s") % i["author"]
+					if not i["author"].is_empty() else tr(&"[No Author]"))
 			thirdparty.newline()
 
 			if not Nanogame.get_license_link(i["license"]).is_empty():
@@ -190,10 +190,10 @@ func popup_nanogame(nanogame: Nanogame) -> void:
 
 			if not i["source"].is_empty():
 				thirdparty.push_meta(i["source"])
-				thirdparty.add_text(tr("Source"))
+				thirdparty.add_text(tr(&"Source"))
 				thirdparty.pop()
 			else:
-				thirdparty.add_text(tr("[No Source]"))
+				thirdparty.add_text(tr(&"[No Source]"))
 
 			thirdparty.pop()
 
@@ -204,7 +204,7 @@ func popup_nanogame(nanogame: Nanogame) -> void:
 				index_current += 1
 	else:
 		thirdparty.push_paragraph(HORIZONTAL_ALIGNMENT_CENTER)
-		thirdparty.add_text(tr("No third-party resources used."))
+		thirdparty.add_text(tr(&"No third-party resources used."))
 		thirdparty.pop()
 
 	popup_centered()

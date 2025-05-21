@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhtj7ynfm8h4r"]
 
 [ext_resource type="PackedScene" uid="uid://buutl05rvbhox" path="res://modals/tab_modal/tab_modal.tscn" id="1_gmuv2"]
-[ext_resource type="Script" path="res://places/lobby/about_modal/about_modal.gd" id="2_dorbn"]
+[ext_resource type="Script" uid="uid://d3wuv0enqocc5" path="res://places/lobby/about_modal/about_modal.gd" id="2_dorbn"]
 
 [node name="AboutModal" instance=ExtResource("1_gmuv2")]
 script = ExtResource("2_dorbn")

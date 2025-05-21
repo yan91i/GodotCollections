@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://bioqbu4ur7xgc"]
 
-[ext_resource type="Script" path="res://nanogames/gravity_shift/robot/robot.gd" id="1"]
+[ext_resource type="Script" uid="uid://br3qjhkr4fmep" path="res://nanogames/gravity_shift/robot/robot.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cmla0mnkbh48w" path="res://nanogames/gravity_shift/robot/_assets/robot.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://b75h64umiuwyn" path="res://nanogames/gravity_shift/robot/_assets/scrap.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://d1sh4vu17fc0r" path="res://nanogames/gravity_shift/robot/_assets/shift.wav" id="4"]
@@ -15,8 +15,7 @@ gradient = SubResource("Gradient_tculj")
 width = 32
 
 [sub_resource type="Curve" id="3"]
-min_value = 1.0
-max_value = 3.0
+_limits = [0.99, 3.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 2.0, 0, 1, Vector2(1, 3), 2.0, 0.0, 1, 0]
 point_count = 2
 
@@ -58,7 +57,7 @@ gradient = SubResource("Gradient_yvwiy")
 width = 32
 
 [sub_resource type="Curve" id="Curve_0nkb7"]
-min_value = 0.3
+_limits = [0.3, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, -0.7, 0, 1, Vector2(1, 0.3), -0.7, 0.0, 1, 0]
 point_count = 2
 
@@ -352,11 +351,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h3dxj"]
 _data = {
-"RESET": SubResource("10"),
-"idle": SubResource("7"),
-"land": SubResource("8"),
-"scale_smoke": SubResource("Animation_4s0n4"),
-"shift": SubResource("9")
+&"RESET": SubResource("10"),
+&"idle": SubResource("7"),
+&"land": SubResource("8"),
+&"scale_smoke": SubResource("Animation_4s0n4"),
+&"shift": SubResource("9")
 }
 
 [node name="Robot" type="Area2D"]

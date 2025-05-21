@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -80,7 +80,7 @@ func enable_walk(movement_area: Rect2) -> void:
 	($ChangeDirection as Timer).start()
 	_on_change_direction_timeout()
 
-	($AnimationPlayer as AnimationPlayer).play("walk")
+	($AnimationPlayer as AnimationPlayer).play(&"walk")
 
 
 func disable_hitbox() -> void:
@@ -99,9 +99,9 @@ func _on_area_entered(_area: Area2D):
 			if _direction_speed.x != 0 else randi() % 2 == 0
 
 	# Defer it, to avoid error about flushing queries in physical objects.
-	($CollisionShape2D as CollisionShape2D).set_deferred("disabled", true)
+	($CollisionShape2D as CollisionShape2D).set_deferred(&"disabled", true)
 
-	($AnimationPlayer as AnimationPlayer).play("growl")
+	($AnimationPlayer as AnimationPlayer).play(&"growl")
 
 
 func _on_change_direction_timeout() -> void:

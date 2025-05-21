@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Control
 
@@ -45,8 +45,6 @@ var _is_player_starting := false
 var _was_player_error := false
 
 var _is_user_new := false
-
-var _has_joypad := false
 
 var _button_focus_last: Control
 
@@ -86,9 +84,9 @@ func _ready() -> void:
 #			ArcadeManager.THEMES_UNLOCK_NANOGAME_QUANTITY:
 	if true:
 		var customize := %Customize as Button
-		customize.text = tr("Coming Soon")
+		customize.text = tr(&"Coming Soon")
 		customize.disabled = true
-		customize.theme_type_variation = "ButtonLocked"
+		customize.theme_type_variation = &"ButtonLocked"
 
 	if ArcadeManager.community_mode:
 		var community_mode := $CommunityMode as CheckButton
@@ -97,9 +95,10 @@ func _ready() -> void:
 		community_mode.button_pressed = true
 		community_mode.set_block_signals(false)
 	elif ArcadeManager.has_highlighted_owned_nanogames():
-		(%Quickplay as Button).theme_type_variation = "ButtonPositiveHighlight"
+		(%Quickplay as Button).theme_type_variation =\
+				&"ButtonPositiveHighlight"
 		(%Collection as Button).theme_type_variation =\
-				"ButtonPositiveHighlight"
+				&"ButtonPositiveHighlight"
 
 	if not (ArcadeManager.get_owned_official_nanogames()
 			if not ArcadeManager.community_mode else
@@ -113,7 +112,7 @@ func _ready() -> void:
 
 	if ArcadeManager.is_statistics_highlighted():
 		var statistics_button := %Statistics as Button
-		statistics_button.theme_type_variation = "ButtonHighlight"
+		statistics_button.theme_type_variation = &"ButtonHighlight"
 
 		statistics_button.pressed.connect(
 			statistics_button.set_theme_type_variation.bind(""),
@@ -146,11 +145,9 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if _nanogame_player.is_playing():
-		if event.is_action_pressed("pause"):
+		if event.is_action_pressed(&"pause"):
 			get_tree().paused = not get_tree().paused
-
-			($MenuNoise as AudioStreamPlayer).play()
-	elif event.is_action_pressed("menu_back"):
+	elif event.is_action_pressed(&"menu_back"):
 		_hide_submenu()
 
 
@@ -161,7 +158,7 @@ func _process(_delta: float) -> void:
 
 		_nanogame_hud.set_time(time_adjusted)
 
-	if _has_joypad:
+	if _nanogame_player.joycursor_enabled:
 		_nanogame_hud.set_joycursor_position(
 			_nanogame_player.get_joycursor_position(),
 			_nanogame_player.get_joycursor_position_snapped())
@@ -370,10 +367,9 @@ func _on_nanogame_player_stopped() -> void:
 		if ArcadeManager.has_highlighted_owned_nanogames():
 			($SubmenuContext/Submenus/NanogameCollection as Control).\
 					clear_selected_highlight()
-
-			if not ArcadeManager.has_highlighted_owned_nanogames():
-				(%Quickplay as Button).theme_type_variation = "ButtonPositive"
-				(%Collection as Button).theme_type_variation = "ButtonPositive"
+		if not ArcadeManager.has_highlighted_owned_nanogames():
+			(%Quickplay as Button).theme_type_variation = &"ButtonPositive"
+			(%Collection as Button).theme_type_variation = &"ButtonPositive"
 
 	if _score > 0:
 		ArcadeManager.claim_best_score(_score)
@@ -387,7 +383,7 @@ func _on_nanogame_player_stopped() -> void:
 	if ArcadeManager.is_statistics_highlighted() and\
 			not statistics_button.pressed.is_connected(
 					statistics_button.set_theme_type_variation):
-		statistics_button.theme_type_variation = "ButtonHighlight"
+		statistics_button.theme_type_variation = &"ButtonHighlight"
 
 		statistics_button.pressed.connect(
 				statistics_button.set_theme_type_variation.bind(""),
@@ -408,22 +404,22 @@ func _on_nanogame_player_stopped() -> void:
 	gain.text = "+ " + str(ArcadeManager.tickets - tickets_old)
 
 	var tween: Tween = create_tween().set_parallel()
-	tween.tween_property($Tickets/Icon as TextureRect, "self_modulate",
+	tween.tween_property($Tickets/Icon as TextureRect, ^"self_modulate",
 			Color.LIME_GREEN, TWEEN_SPEED_TRANSITION)
 
 	tween.tween_method(_set_tickets_label, tickets_old, ArcadeManager.tickets,
 			TWEEN_SPEED_INTERPOLATION)
-	tween.tween_property(gain, "self_modulate:a", 1, TWEEN_SPEED_TRANSITION)
+	tween.tween_property(gain, ^"self_modulate:a", 1, TWEEN_SPEED_TRANSITION)
 
-	tween.chain().tween_property($Tickets/Icon as TextureRect, "self_modulate",
+	tween.chain().tween_property($Tickets/Icon as TextureRect, ^"self_modulate",
 			Color.WHITE, TWEEN_SPEED_TRANSITION)
-	tween.tween_property(gain, "self_modulate:a", 0, TWEEN_SPEED_TRANSITION)
+	tween.tween_property(gain, ^"self_modulate:a", 0, TWEEN_SPEED_TRANSITION)
 
 
 func _on_nanogame_player_timer_stopped() -> void:
 	set_process(false)
 
-	if _has_joypad:
+	if _nanogame_player.joycursor_enabled:
 		# Avoid corner cases where the joycursor may no be in the correct spot
 		# (e.g. when snapping into something that will end the nanogame).
 		_nanogame_hud.set_joycursor_position(
@@ -489,18 +485,18 @@ func _on_nanogame_player_error_occured(nanogame: Nanogame) -> void:
 	_was_player_error = true
 
 	var _nanogame_error_text := $NanogameError/RichTextLabel as RichTextLabel
-	_nanogame_error_text.text = tr("An error occured while attempting to " +
-			'load the nanogame "%s", likely caused by it not being properly ' +
-			"configured.") % nanogame.get_nanogame_name(true)
+	_nanogame_error_text.text = tr(&"An error occured while attempting to " +
+			&'load the nanogame "%s", likely caused by it not being ' +
+			&"properly configured.") % nanogame.get_nanogame_name(true)
 
 	if not ArcadeManager.community_mode:
-		_nanogame_error_text.text += tr("\n\nPlease open a bug report in " +
-				"the [url=%s]issue tracker[/url].") % ISSUE_TRACKER_LINK
+		_nanogame_error_text.text += tr(&"\n\nPlease open a bug report in " +
+				&"the [url=%s]issue tracker[/url].") % ISSUE_TRACKER_LINK
 	else:
-		_nanogame_error_text.text += tr("\n\n[b]Do not open a bug report " +
-				"in the issue tracker[/b], this is a community nanogame, " +
-				"so the bug should be reported to its creator(s). " +
-				'Check the nanogame\'s "About" information.')
+		_nanogame_error_text.text += tr(&"\n\n[b]Do not open a bug report " +
+				&"in the issue tracker[/b], this is a community nanogame, " +
+				&"so the bug should be reported to its creator(s). " +
+				&'Check the nanogame\'s "About" information.')
 
 	# Delay popup to ensure the close button grabs the focus.
 	await get_tree().process_frame
@@ -520,7 +516,7 @@ func _on_quickplay_pressed() -> void:
 			ArcadeManager.has_highlighted_owned_nanogames():
 		# Prioritize unplayed nanogames.
 		for i: Nanogame in nanogames_available:
-			if not i.has_meta("highlight"):
+			if not i.has_meta(&"highlight"):
 				break
 
 			nanogames_highlighted.append(i)
@@ -530,17 +526,21 @@ func _on_quickplay_pressed() -> void:
 
 			for i: Nanogame in nanogames_highlighted:
 				nanogames.append(i)
-				i.remove_meta("highlight")
+				i.remove_meta(&"highlight")
+
+				nanogames_available.erase(i)
 
 			ArcadeManager.sort_owned_official_nanogames()
 			($SubmenuContext/Submenus/NanogameCollection as Control).\
 					update_filtered_nanogames()
 
-	for i: int in min(nanogames_available.size(),
-			START_QUANTITY - nanogames_highlighted.size()):
-		nanogames.append(nanogames_available.pick_random())
+	if nanogames_highlighted.size() < START_QUANTITY:
+		nanogames_available.shuffle()
+		for i: int in min(nanogames_available.size(),
+				START_QUANTITY - nanogames_highlighted.size()):
+			nanogames.append(nanogames_available.pop_back())
 
-	_start_playing(nanogames_available)
+	_start_playing(nanogames)
 
 
 func _on_back_lobby_pressed() -> void:
@@ -586,16 +586,16 @@ func _on_community_mode_toggled(is_enabled: bool) -> void:
 			get_owned_official_nanogames() if not ArcadeManager.community_mode
 			else ArcadeManager.get_community_nanogames()).is_empty()
 
-	var button_variation: String = "ButtonPositiveHighlight"\
+	var button_variation:= &"ButtonPositiveHighlight"\
 			if not ArcadeManager.community_mode and ArcadeManager.\
-			has_highlighted_owned_nanogames() else "ButtonPositive"
+			has_highlighted_owned_nanogames() else &"ButtonPositive"
 	(%Collection as Button).theme_type_variation = button_variation
 
 	### Icon Particles Switch Fade ###
 
 	var tween: Tween = create_tween().set_parallel()
 	tween.tween_property(
-			$IconParticles as Control, "modulate:a", 0, TWEEN_SPEED_TRANSITION)
+			$IconParticles as Control, ^"modulate:a", 0, TWEEN_SPEED_TRANSITION)
 	tween.chain().tween_callback(_update_icon_particles)
 	tween.tween_callback(
 			($IconParticles as Control).set_modulate.bind(Color.WHITE))
@@ -613,28 +613,7 @@ func _on_game_manager_faded_out() -> void:
 
 
 func _on_game_manager_control_type_changed() -> void:
-	_has_joypad = GameManager.is_using_joypad()
-
-	if _has_joypad:
-		var focus_joypad: StyleBox =\
-				theme.get_stylebox("focus_joypad", "Focus")
-		theme.set_stylebox("focus", "Button", focus_joypad)
-		theme.set_stylebox("focus", "LineEdit", focus_joypad)
-		theme.set_stylebox("focus", "RichTextLabel", focus_joypad)
-	else:
-		var style_empty := StyleBoxEmpty.new()
-
-		if not OS.has_feature("mobile"):
-			theme.set_stylebox(
-					"focus", "Button", theme.get_stylebox("focus", "Focus"))
-		else:
-			theme.set_stylebox("focus", "Button", style_empty)
-
-		# Use the empty style, as the blinking caret is enough to indicate that
-		# it's focused.
-		theme.set_stylebox("focus", "LineEdit", style_empty)
-
-		theme.set_stylebox("focus", "RichTextLabel", style_empty)
+	GameManager.update_theme_focus_style(theme)
 
 	# Enable the joycursor only if the control type is joypad-only (without a
 	# touchscreen available).

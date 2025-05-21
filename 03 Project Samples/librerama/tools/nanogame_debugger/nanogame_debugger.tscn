@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://r315dx215gpi"]
+[gd_scene load_steps=13 format=3 uid="uid://r315dx215gpi"]
 
-[ext_resource type="Script" path="res://tools/nanogame_debugger/nanogame_debugger.gd" id="1"]
+[ext_resource type="Script" uid="uid://caipmkqunrx8a" path="res://tools/nanogame_debugger/nanogame_debugger.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cdefamk8oiv45" path="res://nanogame_player/nanogame_player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://jbvryolihli5" path="res://tools/nanogame_debugger/_assets/timer.svg" id="3"]
 [ext_resource type="Texture2D" uid="uid://c1q3u4nia1cx2" path="res://tools/nanogame_debugger/_assets/lock.svg" id="4"]
@@ -22,6 +22,17 @@ corner_radius_top_left = 73
 corner_radius_top_right = 73
 corner_radius_bottom_right = 73
 corner_radius_bottom_left = 73
+
+[sub_resource type="Gradient" id="Gradient_m1vqi"]
+offsets = PackedFloat32Array(0.15, 0.2, 0.4, 0.45)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ugv3m"]
+gradient = SubResource("Gradient_m1vqi")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="NanogameDebugger" type="Control"]
 process_mode = 3
@@ -85,6 +96,24 @@ offset_top = -229.0
 offset_right = -128.0
 offset_bottom = -83.0
 theme_override_styles/panel = SubResource("2")
+
+[node name="Joycursor" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("GradientTexture2D_ugv3m")
+
+[node name="SnapLine" type="Line2D" parent="Joycursor"]
+self_modulate = Color(1, 1, 1, 0.490196)
+show_behind_parent = true
+points = PackedVector2Array(0, 0, 0.001, 0)
+width = 31.0
+default_color = Color(0, 0, 0, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="JoycursorSnapped" type="Sprite2D" parent="Joycursor"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.490196)
+texture = SubResource("GradientTexture2D_ugv3m")
 
 [node name="KickoffDim" type="ColorRect" parent="."]
 visible = false
@@ -305,7 +334,7 @@ dialog_autowrap = true
 [connection signal="kickoff_ended" from="NanogamePlayer" to="KickoffDim" method="set_visible" binds= [false]]
 [connection signal="kickoff_started" from="NanogamePlayer" to="." method="_on_nanogame_player_kickoff_started"]
 [connection signal="stopped" from="NanogamePlayer" to="." method="_on_nanogame_player_stopped"]
-[connection signal="timer_stopped" from="NanogamePlayer" to="." method="set_process" binds= [false]]
+[connection signal="timer_stopped" from="NanogamePlayer" to="." method="_on_nanogame_player_timer_stopped"]
 [connection signal="mouse_entered" from="TopBar" to="." method="_on_bar_mouse_entered"]
 [connection signal="mouse_exited" from="TopBar" to="." method="_on_bar_mouse_exited"]
 [connection signal="toggled" from="TopBar/HBoxContainer/LockTimer" to="." method="_on_lock_timer_toggled"]

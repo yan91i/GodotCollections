@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://b302om51yx1wv"]
 
-[ext_resource type="Script" path="res://nanogames/gravity_shift/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://bwfwf8pbwk5ma" path="res://nanogames/gravity_shift/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bioqbu4ur7xgc" path="res://nanogames/gravity_shift/robot/robot.tscn" id="2"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="3"]
+[ext_resource type="Shader" uid="uid://ssqs6hgihrcf" path="res://shaders/texture_scroll.gdshader" id="3"]
 [ext_resource type="Texture2D" uid="uid://bm1cvcvw3b5ar" path="res://nanogames/gravity_shift/_assets/background.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://bgjcmnsr4mw11" path="res://nanogames/gravity_shift/_assets/floor.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://cnfemahdbl3m3" path="res://nanogames/gravity_shift/_assets/cables.png" id="6"]

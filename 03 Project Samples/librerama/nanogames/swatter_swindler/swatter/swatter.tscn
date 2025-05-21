@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://nqjl5erodhjp"]
 
-[ext_resource type="Script" path="res://nanogames/swatter_swindler/swatter/swatter.gd" id="1_8aqwu"]
+[ext_resource type="Script" uid="uid://bq51ycq1rm8uy" path="res://nanogames/swatter_swindler/swatter/swatter.gd" id="1_8aqwu"]
 [ext_resource type="Texture2D" uid="uid://d24gql7bcvlr5" path="res://nanogames/swatter_swindler/swatter/_assets/beam.svg" id="2_eneo6"]
 [ext_resource type="Texture2D" uid="uid://ckyfildutnkxk" path="res://nanogames/swatter_swindler/swatter/_assets/net.svg" id="2_kwerv"]
 [ext_resource type="AudioStream" uid="uid://xib44xagdb1b" path="res://nanogames/swatter_swindler/swatter/_assets/swat.wav" id="4_3o840"]
@@ -140,8 +140,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gjxay"]
 _data = {
-"RESET": SubResource("Animation_ap4bm"),
-"swat": SubResource("Animation_424vf")
+&"RESET": SubResource("Animation_ap4bm"),
+&"swat": SubResource("Animation_424vf")
 }
 
 [node name="Swatter" type="Area2D"]

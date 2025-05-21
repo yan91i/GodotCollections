@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends CanvasLayer
 
@@ -57,8 +57,7 @@ var main_control: int = ControlTypes.AUTOMATIC: set = set_main_control
 
 var dim := false: set = set_dim
 
-var _scene_loader := Thread.new()
-
+var _switching_scene := false
 var _previous_scene_name := ""
 
 var _system_locale := ""
@@ -193,9 +192,6 @@ func _notification(what: int) -> void:
 			if not OS.has_feature("mobile") and ProjectSettings.get_setting(
 					"game_settings/mute_focus_lost"):
 				AudioServer.set_bus_mute(0, true)
-		NOTIFICATION_WM_CLOSE_REQUEST:
-			if _scene_loader.is_started():
-				_scene_loader.wait_to_finish()
 		NOTIFICATION_TRANSLATION_CHANGED:
 			if not _is_turning_locale_system_default:
 				_is_locale_system_default = false
@@ -206,31 +202,36 @@ func _process(delta: float) -> void:
 		set_process(false)
 		return
 
-	if Input.is_action_pressed("menu_scroll_up"):
+	if Input.is_action_pressed(&"menu_scroll_up"):
 		_rtl_focused.get_v_scroll_bar().value -= JOYSTICK_SCROLL_SPEED *\
 				Input.get_action_strength("menu_scroll_up") * delta
-	elif Input.is_action_pressed("menu_scroll_down"):
+	elif Input.is_action_pressed(&"menu_scroll_down"):
 		_rtl_focused.get_v_scroll_bar().value += JOYSTICK_SCROLL_SPEED *\
 				Input.get_action_strength("menu_scroll_down") * delta
 
 
 func switch_main_scene(path: String) -> void:
-	if _scene_loader.is_started():
+	if _switching_scene:
 		push_error("The game manager is already switching the main scene.")
 
 		return
 
 	fade_in()
 
-	_scene_loader.start(_load_scene.bind(path))
+	_switching_scene = true
+
+	ResourceLoader.load_threaded_request(path, "PackedScene")
 
 	await faded_in
-	var scene: PackedScene = _scene_loader.wait_to_finish()
-
-	if scene != null:
+	var resource: Resource = ResourceLoader.load_threaded_get(path)
+	if resource == null or resource is not PackedScene:
+		push_error('Path "%s" is not a valid scene to be switched to.' % path)
+	else:
 		_previous_scene_name = get_tree().current_scene.get_name()
 
-		get_tree().change_scene_to_packed(scene)
+		get_tree().change_scene_to_packed(resource)
+
+	_switching_scene = false
 
 	fade_out()
 
@@ -278,7 +279,7 @@ func save_settings() -> void:
 
 
 func fade_in() -> void:
-	if _scene_loader.is_started():
+	if _switching_scene:
 		push_warning("The game manager has fading priority when switching " +\
 				"the main scene.")
 
@@ -292,28 +293,51 @@ func fade_in() -> void:
 		fade.get_viewport().gui_get_focus_owner().release_focus();
 
 	var tween: Tween = create_tween().set_parallel()
-	tween.tween_property(fade, "color:a", 1, FADE_SPEED)
+	tween.tween_property(fade, ^"color:a", 1, FADE_SPEED)
 	tween.tween_method(_update_volume_fade, 1.0, 0, FADE_SPEED)
-	tween.chain().tween_callback(emit_signal.bind("faded_in"))
+	tween.chain().tween_callback(emit_signal.bind(&"faded_in"))
 
 
 func fade_out() -> void:
-	if _scene_loader.is_started():
+	if _switching_scene:
 		push_warning("The game manager has fading priority when switching " +\
 				"the main scene.")
 
 		return
 
-	var tween: Tween = create_tween().set_parallel()
 	var fade := $Fade as ColorRect
-	tween.tween_property(fade, "color:a", 0, FADE_SPEED)
-	tween.tween_method(_update_volume_fade, 0.0, 1, FADE_SPEED)
-
 	if fade.mouse_filter == Control.MOUSE_FILTER_STOP:
-		tween.tween_callback(
-				fade.set_mouse_filter.bind(Control.MOUSE_FILTER_IGNORE))
+		fade.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 
-	tween.chain().tween_callback(emit_signal.bind("faded_out"))
+	var tween: Tween = create_tween().set_parallel()
+	tween.tween_property(fade, ^"color:a", 0, FADE_SPEED)
+	tween.tween_method(_update_volume_fade, 0.0, 1, FADE_SPEED)
+	tween.chain().tween_callback(emit_signal.bind(&"faded_out"))
+
+
+func update_theme_focus_style(theme: Theme) -> void:
+	if GameManager.is_using_joypad():
+		var focus_joypad: StyleBox =\
+				theme.get_stylebox(&"focus_joypad", &"Focus")
+		theme.set_stylebox(&"focus", &"Button", focus_joypad)
+		theme.set_stylebox(&"focus", &"LineEdit", focus_joypad)
+		theme.set_stylebox(&"focus", &"RichTextLabel", focus_joypad)
+
+		return
+
+	var style_empty := StyleBoxEmpty.new()
+
+	if not OS.has_feature("mobile"):
+		theme.set_stylebox(
+				&"focus", &"Button", theme.get_stylebox(&"focus", &"Focus"))
+	else:
+		theme.set_stylebox(&"focus", &"Button", style_empty)
+
+	# Use the empty style, as the blinking caret is enough to indicate that
+	# it's focused.
+	theme.set_stylebox(&"focus", &"LineEdit", style_empty)
+
+	theme.set_stylebox(&"focus", &"RichTextLabel", style_empty)
 
 
 func pass_focused_control_node(node: Control) -> void:
@@ -403,16 +427,6 @@ func get_locales() -> PackedStringArray:
 	locales.sort()
 
 	return locales
-
-
-func _load_scene(path: String) -> PackedScene:
-	var scene: Variant = load(path)
-	if scene is not PackedScene:
-		push_error('Path "%s" is not a scene to be switched to.' % path)
-
-		return null
-
-	return scene
 
 
 func _update_volume_fade(volume: float) -> void:

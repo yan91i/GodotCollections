@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 class_name Nanogame
 extends Resource
@@ -394,7 +394,7 @@ func get_tags(is_translated:=false) -> String:
 	tags_translated.sort()
 
 	var position: String =\
-			str(tags_translated).replace(", ", tr("%s, %s").replace("%s", ""))
+			str(tags_translated).replace(", ", tr(&"%s, %s").replace("%s", ""))
 
 	position = position.erase(0)
 	position = position.erase(position.length() - 1)

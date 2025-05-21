@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1p06mkdldnyj"]
 
 [ext_resource type="Texture2D" uid="uid://bme5pp1fy6bay" path="res://places/_assets/unknown.svg" id="1"]
-[ext_resource type="Script" path="res://places/lobby/buy_menu/submenus/nanogames/nanogames.gd" id="2"]
+[ext_resource type="Script" uid="uid://5q5gv0mpbpn7" path="res://places/lobby/buy_menu/submenus/nanogames/nanogames.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://bjhsg04wig6lm" path="res://places/lobby/buy_menu/submenus/nanogames/type_modal/type_modal.tscn" id="5_7ys08"]
 [ext_resource type="Texture2D" uid="uid://ci8ifpdhhiolv" path="res://places/lobby/buy_menu/submenus/nanogames/_assets/specific_nanogame.svg" id="6"]
 [ext_resource type="PackedScene" uid="uid://dcemrtgwt5l3i" path="res://places/lobby/buy_menu/submenus/nanogames/specific_modal/specific_modal.tscn" id="6_e3i70"]

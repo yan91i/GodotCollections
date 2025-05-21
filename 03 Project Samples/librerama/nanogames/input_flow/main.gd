@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -38,11 +38,11 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if _inputs.is_empty() or not event.is_action_type() or\
-			(not event.is_action_pressed("nanogame_up") and
-					not event.is_action_pressed("nanogame_down") and
-					not event.is_action_pressed("nanogame_left") and
-					not event.is_action_pressed("nanogame_right") and
-					not event.is_action_pressed("nanogame_action")):
+			(not event.is_action_pressed(&"nanogame_up") and
+					not event.is_action_pressed(&"nanogame_down") and
+					not event.is_action_pressed(&"nanogame_left") and
+					not event.is_action_pressed(&"nanogame_right") and
+					not event.is_action_pressed(&"nanogame_action")):
 		return
 
 	var input: TextureRect = _inputs.pop_front()
@@ -52,7 +52,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		($Music as AudioStreamPlayer).stop()
 
-		($AnimationPlayer as AnimationPlayer).play("fail")
+		($AnimationPlayer as AnimationPlayer).play(&"fail")
 
 		ended.emit(false)
 	else:
@@ -69,11 +69,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 			($Music as AudioStreamPlayer).stop()
 
-			($AnimationPlayer as AnimationPlayer).play("win")
+			($AnimationPlayer as AnimationPlayer).play(&"win")
 
 			return
 
-		($AnimationPlayer as AnimationPlayer).play("match_input")
+		($AnimationPlayer as AnimationPlayer).play(&"match_input")
 
 
 func nanogame_prepare(difficulty: int, _debug_code: int) -> void:
@@ -109,13 +109,13 @@ func nanogame_start() -> void:
 		# frames left.
 		animation_player.stop()
 
-		animation_player.play("show_input")
+		animation_player.play(&"show_input")
 
 		await i.animation_show_finished
 
 	set_process_unhandled_input(true)
 
-	animation_player.play("start")
+	animation_player.play(&"start")
 
 
 func _on_resize_delay_timeout() -> void:

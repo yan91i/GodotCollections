@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://daocc88vbvjag"]
 
-[ext_resource type="Script" path="res://nanogames/ballkeep/ball/ball.gd" id="1"]
+[ext_resource type="Script" uid="uid://ws0nat5ef7f" path="res://nanogames/ballkeep/ball/ball.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://beo4w51xbmmb2" path="res://nanogames/ballkeep/ball/_assets/ball.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://b2gr52njimvrp" path="res://nanogames/ballkeep/ball/_assets/spark.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://b271i6g8be7ul" path="res://nanogames/ballkeep/ball/_assets/bounce.wav" id="4"]

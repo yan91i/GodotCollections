@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -33,15 +33,15 @@ func burst() -> void:
 
 	($CollisionShape2D as CollisionShape2D).disabled = false
 
-	($AnimationPlayer as AnimationPlayer).play("burst")
-	($AnimationPlayer as AnimationPlayer).queue("idle")
+	($AnimationPlayer as AnimationPlayer).play(&"burst")
+	($AnimationPlayer as AnimationPlayer).queue(&"idle")
 
 
 func eat() -> void:
 	# Defer it, to avoid error about flushing queries in physical objects.
-	($CollisionShape2D as CollisionShape2D).set_deferred("disabled", true)
+	($CollisionShape2D as CollisionShape2D).set_deferred(&"disabled", true)
 
-	($AnimationPlayer as AnimationPlayer).play("remove")
+	($AnimationPlayer as AnimationPlayer).play(&"remove")
 
 
 func get_hitbox_radius() -> float:

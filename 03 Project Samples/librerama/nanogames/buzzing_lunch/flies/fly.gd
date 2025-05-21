@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends CharacterBody2D
 
@@ -60,14 +60,14 @@ func _physics_process(_delta: float) -> void:
 		_direction_speed.x *= -1
 		_body.scale.x = 1
 
-		($AnimationPlayer as AnimationPlayer).play("lean_right")
+		($AnimationPlayer as AnimationPlayer).play(&"lean_right")
 	elif position.x > _movement_area.end.x:
 		position.x = _movement_area.end.x
 
 		_direction_speed.x *= -1
 		_body.scale.x = -1
 
-		($AnimationPlayer as AnimationPlayer).play("lean_left")
+		($AnimationPlayer as AnimationPlayer).play(&"lean_left")
 	if position.y < _movement_area.position.y:
 		position.y = _movement_area.position.y
 
@@ -107,7 +107,7 @@ func _on_move_switch_timeout() -> void:
 
 	if is_physics_processing():
 		_direction_speed = Vector2.UP.rotated(TAU * randf()) * SPEED
-		if has_meta("poison"):
+		if has_meta(&"poison"):
 			_direction_speed *= 2
 
 		_body.scale.x = -1 if _direction_speed.x < 0 else 1

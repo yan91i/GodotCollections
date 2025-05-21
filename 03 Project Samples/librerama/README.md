@@ -30,8 +30,8 @@ The game is made using the
 needed to both edit the project and to export binaries to be played across
 multiple platforms. Suffice to say, knowledge in how to use it is necessary.
 
-The *minimum* engine version expected is **4.3.0**, but it's *recommended* to
-use the latest **4.3.\*** version if possible.
+The *minimum* engine version expected is **4.4.0**, but it's *recommended* to
+use the latest **4.4.\*** version if possible.
 
 ## Documentation
 

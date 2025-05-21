@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Librerama                                                                 //
-// Copyright (C) 2023 Michael Alexsander                                     //
+// Copyright (c) 2020-present Michael Alexsander.                            //
 //---------------------------------------------------------------------------//
 // This file is part of Librerama.                                           //
 //                                                                           //

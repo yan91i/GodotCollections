@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bu5mdikepevo"]
 
-[ext_resource type="Script" path="res://nanogames/gem_enchantment/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://dapthc6dpqb25" path="res://nanogames/gem_enchantment/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://b2gkeuwyjqgkl" path="res://nanogames/gem_enchantment/gem/gem.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://dfgax1d3si5sx" path="res://nanogames/gem_enchantment/_assets/slate.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://c3te7ndcmsh7y" path="res://nanogames/gem_enchantment/_assets/background.png" id="4"]

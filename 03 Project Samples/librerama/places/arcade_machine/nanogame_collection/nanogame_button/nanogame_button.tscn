@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1rdtpjh7f4g3"]
 
-[ext_resource type="Script" path="res://places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd" id="3"]
+[ext_resource type="Script" uid="uid://niey1862dtpg" path="res://places/arcade_machine/nanogame_collection/nanogame_button/nanogame_button.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://bax8nsgl8ai50" path="res://places/arcade_machine/nanogame_collection/nanogame_button/_assets/about.svg" id="4"]
 
 [node name="NanogameButton" type="Button"]

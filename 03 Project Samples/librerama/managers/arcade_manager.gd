@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node
 
@@ -147,7 +147,7 @@ func _init() -> void:
 						_nanogames_official_owned.append(j)
 
 						if nanogame_new_quantity > 0:
-							j.set_meta("highlight", true)
+							j.set_meta(&"highlight", true)
 
 						break
 
@@ -227,12 +227,12 @@ func own_official_nanogame(nanogame: Nanogame, is_highlighted:=true) -> void:
 		return
 
 	if is_highlighted:
-		nanogame.set_meta("highlight", true)
+		nanogame.set_meta(&"highlight", true)
 
 	# Place it at the start, together with other highlighted nanogames.
 	var nanogame_name: String = tr(nanogame.get_nanogame_name()).to_lower()
 	for i: int in _nanogames_official_owned.size():
-		if not _nanogames_official_owned[i].has_meta("highlight") or\
+		if not _nanogames_official_owned[i].has_meta(&"highlight") or\
 				nanogame_name < tr(_nanogames_official_owned[i].
 						get_nanogame_name()).to_lower():
 			_nanogames_official_owned.insert(i, nanogame)
@@ -250,14 +250,14 @@ func sort_owned_official_nanogames() -> void:
 
 	for i: Nanogame in _nanogames_official_owned:
 		var nanogame_name: String = tr(i.get_nanogame_name()).to_lower()
-		var is_highlighted: bool = i.has_meta("highlight")
+		var is_highlighted: bool = i.has_meta(&"highlight")
 		var is_inserted := false
 
 		for j: int in nanogames_sorted.size():
 			var is_index_before: bool = nanogame_name <\
 					tr(nanogames_sorted[j].get_nanogame_name()).to_lower()
 			var is_index_highlighted: bool =\
-					nanogames_sorted[j].has_meta("highlight")
+					nanogames_sorted[j].has_meta(&"highlight")
 
 			if not is_highlighted and not is_index_highlighted and\
 					is_index_before or is_highlighted and\
@@ -346,7 +346,7 @@ func save_data() -> void:
 	var nanogame_highlight_quantity := 0
 	for i: Nanogame in _nanogames_official_owned:
 		nanogame_names.append(i.get_nanogame_name())
-		if i.has_meta("highlight"):
+		if i.has_meta(&"highlight"):
 			nanogame_highlight_quantity += 1
 	config.set_value("arcade", "nanogames_owned", nanogame_names)
 	config.set_value(
@@ -402,7 +402,7 @@ func get_owned_official_nanogames() -> Array[Nanogame]:
 
 func has_highlighted_owned_nanogames() -> bool:
 	return not _nanogames_official_owned.is_empty() and\
-			_nanogames_official_owned.front().has_meta("highlight")
+			_nanogames_official_owned.front().has_meta(&"highlight")
 
 
 func get_best_scores() -> Array[int]:

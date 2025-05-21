@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -54,6 +54,6 @@ func _on_stay_body_exited() -> void:
 	($Paddle as StaticBody2D).set_physics_process(false)
 
 	($Alarm as AudioStreamPlayer).play()
-	($AnimationPlayer as AnimationPlayer).play("alarm")
+	($AnimationPlayer as AnimationPlayer).play(&"alarm")
 
 	ended.emit(false)

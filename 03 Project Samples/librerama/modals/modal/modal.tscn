@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5frslx0xhpxc"]
 
-[ext_resource type="Script" path="res://modals/modal/modal.gd" id="1_dtcqs"]
+[ext_resource type="Script" uid="uid://df56gxv08yqrp" path="res://modals/modal/modal.gd" id="1_dtcqs"]
 
 [node name="Modal" type="Window"]
 transparent_bg = true

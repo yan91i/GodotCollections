@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b00ndcy4og3ig"]
 
 [ext_resource type="PackedScene" uid="uid://buutl05rvbhox" path="res://modals/tab_modal/tab_modal.tscn" id="1_vlps4"]
-[ext_resource type="Script" path="res://modals/settings_modal/settings_modal.gd" id="2_0wwwk"]
+[ext_resource type="Script" uid="uid://cu6q88f5xgg1d" path="res://modals/settings_modal/settings_modal.gd" id="2_0wwwk"]
 [ext_resource type="PackedScene" uid="uid://b0uxsqjutbdky" path="res://modals/settings_modal/input_modal/input_modal.tscn" id="3_snmab"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_vrodu"]

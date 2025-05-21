@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 @tool
 extends Modal
@@ -49,10 +49,16 @@ func _notification(what: int) -> void:
 func _input(event: InputEvent) -> void:
 	super(event)
 
-	if event.is_action_pressed("menu_search"):
+	if event.is_action_pressed(&"menu_search"):
 		# Delay focus grab to avoid entering the typed key into the search box.
 		await get_tree().process_frame
 		(%Search as LineEdit).grab_focus()
+	elif event.is_action_pressed(&"menu_page_first"):
+		# Program the shortcut manually, as the `shortcut` property isn't
+		# working for this.
+		_on_first_pressed()
+	elif event.is_action_pressed(&"menu_page_last"):
+		_on_last_pressed() # Same as above.
 
 
 func set_nanogames(nanogames: Array[Nanogame]) -> void:

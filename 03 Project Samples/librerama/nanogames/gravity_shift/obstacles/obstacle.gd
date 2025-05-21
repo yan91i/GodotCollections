@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -26,7 +26,7 @@ const DIRECTION_SPEED = 600
 
 func activate() -> void:
 	($Lift as AudioStreamPlayer2D).play()
-	($AnimationPlayer as AnimationPlayer).play("activate")
+	($AnimationPlayer as AnimationPlayer).play(&"activate")
 
 
 func _physics_process(delta: float) -> void:

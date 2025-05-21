@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -71,9 +71,9 @@ func shuffle_cards() -> void:
 		card_2.z_index = 1
 
 		tween.tween_property(
-				card_1, "position", card_2.position, SHUFFLE_DURATION)
+				card_1, ^"position", card_2.position, SHUFFLE_DURATION)
 		tween.tween_property(
-				card_2, "position", card_1.position, SHUFFLE_DURATION)
+				card_2, ^"position", card_1.position, SHUFFLE_DURATION)
 
 		card_index += 2
 
@@ -107,6 +107,6 @@ func _on_card_selected(index: int) -> void:
 		ended.emit(true)
 	else:
 		($Cards as Node2D).get_child(index).animation_flip_ended.connect(
-				set.bind("_card_correct", "flip_card"))
+				set.bind(&"_card_correct", &"flip_card"))
 
 		ended.emit(false)

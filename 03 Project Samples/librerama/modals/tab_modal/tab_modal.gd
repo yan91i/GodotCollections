@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 @tool
 class_name TabModal
@@ -38,9 +38,9 @@ func _input(event: InputEvent) -> void:
 	super(event)
 
 	var tab_direction := 0
-	if event.is_action_pressed("menu_tab_left"):
+	if event.is_action_pressed(&"menu_page_previous"):
 		tab_direction -= 1
-	elif event.is_action_pressed("menu_tab_right"):
+	elif event.is_action_pressed(&"menu_page_next"):
 		tab_direction += 1
 
 	if tab_direction != 0:
@@ -95,10 +95,10 @@ func set_tab_title(index: int, tab_title: String) -> void:
 	var child: Control = _tab_bar.get_tab_metadata(index)
 
 	if child.name == tab_title:
-		if child.has_meta("tab_title"):
-			child.remove_meta("tab_title")
+		if child.has_meta(&"tab_title"):
+			child.remove_meta(&"tab_title")
 	else:
-		child.set_meta("tab_title", tab_title)
+		child.set_meta(&"tab_title", tab_title)
 
 
 func _sort_children_custom(children: Array[Node], control_rect: Rect2) -> void:
@@ -120,8 +120,8 @@ func _sort_children_custom(children: Array[Node], control_rect: Rect2) -> void:
 		if i is Control and not i.top_level:
 			i.hide()
 
-			_tab_bar.add_tab(i.name if not i.has_meta("tab_title")
-					else i.get_meta("tab_title"))
+			_tab_bar.add_tab(i.name if not i.has_meta(&"tab_title")
+					else i.get_meta(&"tab_title"))
 			_tab_bar.set_tab_metadata(_tab_bar.tab_count - 1, i)
 
 	if current_tab > 0 and current_tab >= _tab_bar.tab_count:
@@ -148,8 +148,8 @@ func _sort_children_custom(children: Array[Node], control_rect: Rect2) -> void:
 
 
 func _on_child_exiting_tree(node: Node) -> void:
-	if node.has_meta("tab_title"):
-		node.remove_meta("tab_title")
+	if node.has_meta(&"tab_title"):
+		node.remove_meta(&"tab_title")
 
 
 func _on_tab_bar_background_draw() -> void:

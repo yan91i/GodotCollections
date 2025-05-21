@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Control
 
@@ -30,6 +30,9 @@ const NIGHT_HOUR_START = 18
 const SPEAK_LETTER_TIME_VALUE = 0.02
 
 const ASSISTANT_FADE_LENGTH = 1.0
+
+## Overrides the time of the day if the value is positive.
+@export_range(-0.1, 1) var daytime_override := -0.1: set = set_daytime_override
 
 var _assistant_name := ""
 var _assistant_path := ""
@@ -57,21 +60,21 @@ func _ready() -> void:
 
 	if nanogames_owned == 0:
 		var arcade := %Arcade as Button
-		arcade.text = tr("Locked")
+		arcade.text = tr(&"Locked")
 		arcade.disabled = true
-		arcade.theme_type_variation = "ButtonLocked"
+		arcade.theme_type_variation = &"ButtonLocked"
 	else:
-		(%Arcade as Button).theme_type_variation = "ButtonPositiveHighlight"\
+		(%Arcade as Button).theme_type_variation = &"ButtonPositiveHighlight"\
 				if ArcadeManager.has_highlighted_owned_nanogames() or\
-				ArcadeManager.is_statistics_highlighted() else "ButtonPositive"
+				ArcadeManager.is_statistics_highlighted() else &"ButtonPositive"
 
 	# TODO: Uncomment once the feature is implemented.
 #	if nanogames_owned < ArcadeManager.PRIZES_UNLOCK_NANOGAME_QUANTITY:
 	if true:
 		var backpack := $Menu/Play/Backpack as Button
-		backpack.text = tr("Coming Soon")
+		backpack.text = tr(&"Coming Soon")
 		backpack.disabled = true
-		backpack.theme_type_variation = "ButtonLocked"
+		backpack.theme_type_variation = &"ButtonLocked"
 
 	if OS.has_feature("web"):
 		($Menu/Quit as Button).hide()
@@ -80,8 +83,8 @@ func _ready() -> void:
 		($Door as AudioStreamPlayer).play()
 
 	GameManager.control_type_changed.connect(
-			_on_game_manager_control_type_changed)
-	_on_game_manager_control_type_changed()
+			func() -> void: GameManager.update_theme_focus_style(theme))
+	GameManager.update_theme_focus_style(theme)
 
 	GameManager.dim_changed.connect(($MenuNoise as AudioStreamPlayer).play)
 	GameManager.faded_out.connect(_on_game_manager_faded_out)
@@ -106,9 +109,15 @@ func _input(event: InputEvent) -> void:
 		_yielder.resume()
 
 
+func set_daytime_override(value: float) -> void:
+	daytime_override = value
+	_update_day_state()
+
+
 func _update_day_state() -> void:
 	var time: Dictionary = Time.get_time_dict_from_system()
-	($DayColor as ColorRect).color = DAY_COLOR.sample(
+	($DayColor as ColorRect).color = DAY_COLOR.sample(daytime_override
+			if daytime_override > 0 else
 			1.0 / DAY_MINUTES * (time.hour * 60 + time.minute))
 
 	# TODO: Handle multiple staff once they are available.
@@ -153,27 +162,23 @@ func _update_day_state() -> void:
 #	_yielder.resume()
 #	($Speech as VBoxContainer).hide()
 #
-#	var tween := $Tween as Tween
-#	tween.interpolate_method(
-#			assistant, "self_modulate:a", 1, 0, ASSISTANT_FADE_LENGTH)
-#	tween.interpolate_callback(assistant, ASSISTANT_FADE_LENGTH,
-#			"set_texture", load(_assistant_path + "_assets/poses/idle.png"))
-#	tween.interpolate_method(assistant, "self_modulate:a", 0, 1,
-#			ASSISTANT_FADE_LENGTH, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT,
-#			ASSISTANT_FADE_LENGTH)
+#	var tween: Tween = create_tween()
+#	tween.tween_property(
+#			assistant, ^"self_modulate:a", 0, ASSISTANT_FADE_LENGTH)
+#	tween.tween_callback(assistant.texture.bind(
+#			load(_assistant_path.path_join("_assets/poses/idle.png"))))
+#	tween.tween_property(
+#			assistant, ^"self_modulate:a", 1, ASSISTANT_FADE_LENGTH)
 #
-#	tween.interpolate_method(
-#			self, "_set_volume_music", 1, 0, ASSISTANT_FADE_LENGTH)
-#	tween.interpolate_callback(_music, ASSISTANT_FADE_LENGTH, "set_stream",
-#			load(_assistant_path + "_assets/music.ogg"))
-#	tween.interpolate_method(self, "_set_volume_music", 0, 1,
-#			ASSISTANT_FADE_LENGTH, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT,
-#			ASSISTANT_FADE_LENGTH)
+#	tween = create_tween()
+#	tween.tween_interval(ASSISTANT_FADE_LENGTH)
+#	tween.tween_method(_update_volume_music, 1, 0, ASSISTANT_FADE_LENGTH)
+#	tween.tween_callback(_music.stream.bind(
+#			load(_assistant_path + "_assets/music.ogg")))
+#	tween.tween_method(_update_volume_music, 0, 1, ASSISTANT_FADE_LENGTH)
 #
-#	tween.interpolate_callback(
-#			self, ASSISTANT_FADE_LENGTH, "_start_dialog", "replacedAssistant")
-#	tween.interpolate_callback(
-#			$Speech as VBoxContainer, ASSISTANT_FADE_LENGTH, "show")
+#	tween.tween_callback(_start_dialog.bind("replacedAssistant"))
+#	tween.tween_callback(($Speech as VBoxContainer).show)
 
 
 func _start_dialog(topic: String, is_leaving:=false) -> void:
@@ -263,11 +268,11 @@ func _speak_dialog_text(text: String) -> void:
 	text_node.text = tr(text)
 
 	var tween: Tween = create_tween()
-	tween.tween_property(text_node, "visible_ratio", 1,
+	tween.tween_property(text_node, ^"visible_ratio", 1,
 			text.length() *  SPEAK_LETTER_TIME_VALUE).from(0.0)
 
 	($AssistantNoise as AudioStreamPlayer).play()
-	($AssistantPlayer as AnimationPlayer).play("speak")
+	($AssistantPlayer as AnimationPlayer).play(&"speak")
 
 	tween.finished.connect(_yielder.resume, CONNECT_ONE_SHOT)
 	_yielder.resumed.connect(tween.kill, CONNECT_ONE_SHOT)
@@ -277,7 +282,7 @@ func _speak_dialog_text(text: String) -> void:
 	# Either will resume the yield.
 	await _yielder.resumed
 
-	($AssistantPlayer as AnimationPlayer).play("speak_end")
+	($AssistantPlayer as AnimationPlayer).play(&"speak_end")
 
 	text_node.visible_ratio = 1
 
@@ -352,9 +357,10 @@ func _on_buy_menu_hidden() -> void:
 
 		_start_dialog("purchaseMade")
 
-		(%Arcade as Button).theme_type_variation = "ButtonPositiveHighlight"\
+		(%Arcade as Button).theme_type_variation = &"ButtonPositiveHighlight"\
 				if ArcadeManager.has_highlighted_owned_nanogames() or\
-				ArcadeManager.is_statistics_highlighted() else "ButtonPositive"
+				ArcadeManager.is_statistics_highlighted() else\
+				&"ButtonPositive"
 
 		(%Buy as Button).show()
 		if _can_talk:
@@ -388,7 +394,7 @@ func _on_game_manager_faded_out() -> void:
 
 			arcade.text = "Arcade"
 			arcade.disabled = false
-			arcade.theme_type_variation = "ButtonPositive"
+			arcade.theme_type_variation = &"ButtonPositive"
 			arcade.grab_focus()
 
 			return
@@ -403,26 +409,3 @@ func _on_game_manager_faded_out() -> void:
 	(%Talk as Button).show()
 
 	arcade.grab_focus()
-
-
-func _on_game_manager_control_type_changed() -> void:
-	if GameManager.is_using_joypad():
-		var focus_joypad: StyleBox =\
-				theme.get_stylebox("focus_joypad", "Focus")
-		theme.set_stylebox("focus", "Button", focus_joypad)
-		theme.set_stylebox("focus", "LineEdit", focus_joypad)
-		theme.set_stylebox("focus", "RichTextLabel", focus_joypad)
-	else:
-		var style_empty := StyleBoxEmpty.new()
-
-		if not OS.has_feature("mobile"):
-			theme.set_stylebox(
-					"focus", "Button", theme.get_stylebox("focus", "Focus"))
-		else:
-			theme.set_stylebox("focus", "Button", style_empty)
-
-		# Use the empty style, as the blinking caret is enough to indicate that
-		# it's focused.
-		theme.set_stylebox("focus", "LineEdit", style_empty)
-
-		theme.set_stylebox("focus", "RichTextLabel", style_empty)

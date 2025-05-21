@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Node2D
 
@@ -45,9 +45,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 	# Use `Input` instead of the received event so multiple actions can be
 	# detected at once. Not directly placed in `_physics_process()` as to not
 	# capture inputs when it shouldn't.
-	_direction_speed = int(Input.get_axis("nanogame_left", "nanogame_right"))
+	_direction_speed = int(Input.get_axis(&"nanogame_left", &"nanogame_right"))
 
-	if Input.is_action_just_pressed("nanogame_action") and _tween == null:
+	if Input.is_action_just_pressed(&"nanogame_action") and _tween == null:
 		_launch_tongue()
 
 		# Double speed to facilitate targetting good flies behind bad ones.
@@ -67,13 +67,13 @@ func _physics_process(delta: float) -> void:
 
 func _launch_tongue() -> void:
 	_tween = create_tween()
-	_tween.tween_property(_tongue, "size:y", SIZE_MAX, ANIMATION_LENGTH)
+	_tween.tween_property(_tongue, ^"size:y", SIZE_MAX, ANIMATION_LENGTH)
 	_tween.tween_callback(_retreat_tongue)
 
 	($Tongue/Anchor/FlyHitbox/Slurp as AudioStreamPlayer2D).play()
 
-	($FrogAnimation as AnimationPlayer).play("gulp")
-	($IndicatorAnimation as AnimationPlayer).play("fade_out")
+	($FrogAnimation as AnimationPlayer).play(&"gulp")
+	($IndicatorAnimation as AnimationPlayer).play(&"fade_out")
 
 
 func _retreat_tongue() -> void:
@@ -100,7 +100,7 @@ func _retreat_tongue() -> void:
 
 		_tween.tween_callback(_fly_caught.queue_free)
 
-		if _fly_caught.has_meta("poison"):
+		if _fly_caught.has_meta(&"poison"):
 			is_fly_bad = true
 
 			_tween.tween_callback(set.bind("_direction_speed", 0))
@@ -118,7 +118,7 @@ func _retreat_tongue() -> void:
 						queue.bind("lick_lips"))
 
 			# Defer it, so the tweens are set first.
-			emit_signal.call_deferred("eat")
+			emit_signal.call_deferred(&"eat")
 
 	if (not last_fly or _fly_caught == null) and not is_fly_bad:
 		_tween.tween_callback(
@@ -140,12 +140,12 @@ func _on_fly_hitbox_body_entered(body: CharacterBody2D) -> void:
 
 	# Defer it, to avoid error about flushing queries in physical objects.
 	($Tongue/Anchor/FlyHitbox/CollisionShape2D as CollisionShape2D).\
-			set_deferred("disabled", true)
+			set_deferred(&"disabled", true)
 
 	_retreat_tongue()
 
 	# Defer it, so it syncs with the disabling of the "FlyHitbox".
-	set_deferred("_fly_caught", null)
+	set_deferred(&"_fly_caught", null)
 
 
 func _on_frog_animation_animation_finished(anim_name: String) -> void:
@@ -155,4 +155,4 @@ func _on_frog_animation_animation_finished(anim_name: String) -> void:
 	set_physics_process(true)
 	set_process_unhandled_input(true)
 
-	($IndicatorAnimation as AnimationPlayer).play("fade_in")
+	($IndicatorAnimation as AnimationPlayer).play(&"fade_in")

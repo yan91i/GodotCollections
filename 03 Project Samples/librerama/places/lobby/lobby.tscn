@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://cxr5icpsn7k6w"]
 
-[ext_resource type="Script" path="res://places/lobby/lobby.gd" id="1"]
+[ext_resource type="Script" uid="uid://dl7uq5aacxm7w" path="res://places/lobby/lobby.gd" id="1"]
 [ext_resource type="Theme" uid="uid://bhgiqje5djp63" path="res://themes/theme_lobby.tres" id="6"]
 [ext_resource type="Texture2D" uid="uid://cqte5obyei3ha" path="res://places/lobby/_assets/next.svg" id="7"]
 [ext_resource type="PackedScene" uid="uid://qexohkl4bnhi" path="res://places/lobby/buy_menu/buy_menu.tscn" id="8"]
@@ -21,7 +21,7 @@ fill_from = Vector2(0.5, 0)
 fill_to = Vector2(0.5, 1)
 
 [sub_resource type="CanvasItemMaterial" id="1"]
-blend_mode = 1
+blend_mode = 3
 
 [sub_resource type="StyleBoxTexture" id="2"]
 content_margin_left = 12.0
@@ -98,9 +98,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57fnd"]
 _data = {
-"RESET": SubResource("Animation_llqej"),
-"speak": SubResource("Animation_7g1qy"),
-"speak_end": SubResource("Animation_y8s4v")
+&"RESET": SubResource("Animation_llqej"),
+&"speak": SubResource("Animation_7g1qy"),
+&"speak_end": SubResource("Animation_y8s4v")
 }
 
 [node name="Lobby" type="Control"]
@@ -139,7 +139,6 @@ unique_name_in_owner = true
 position = Vector2(704, 12)
 
 [node name="DayColor" type="ColorRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.0980392)
 material = SubResource("1")
 layout_mode = 0
 anchor_right = 1.0
@@ -179,6 +178,7 @@ visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../../Menu/Play/Arcade")
 icon = ExtResource("10")
 icon_alignment = 1
 
@@ -187,6 +187,7 @@ visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+focus_neighbor_left = NodePath("../../Menu/Play/Arcade")
 theme_type_variation = &"ButtonPositive"
 icon = ExtResource("7")
 icon_alignment = 1
@@ -195,6 +196,7 @@ icon_alignment = 1
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+focus_neighbor_left = NodePath("../Talk")
 theme_type_variation = &"ButtonPositive"
 text = "Buy"
 
@@ -202,6 +204,8 @@ text = "Buy"
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+focus_neighbor_left = NodePath("../../Menu/Play/Arcade")
+focus_neighbor_bottom = NodePath("../../Menu/Play/Arcade")
 text = "Talk"
 
 [node name="Menu" type="HBoxContainer" parent="."]
@@ -252,6 +256,7 @@ layout_mode = 2
 [node name="Settings" type="Button" parent="Menu/Misc"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../Quit")
 text = "Settings"
 
 [node name="About" type="Button" parent="Menu/Misc"]
@@ -291,7 +296,7 @@ autostart = true
 [node name="AssistantPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Balcony/Assistant")
 libraries = {
-"": SubResource("AnimationLibrary_57fnd")
+&"": SubResource("AnimationLibrary_57fnd")
 }
 
 [connection signal="meta_clicked" from="Speech/Bubble/Text" to="." method="_on_text_meta_clicked"]

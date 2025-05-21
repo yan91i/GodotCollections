@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c1otrpknian1b"]
 
-[ext_resource type="Script" path="res://nanogames/carnival_shootout/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://dou1qcmk58lnm" path="res://nanogames/carnival_shootout/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dj00fd70djsmd" path="res://nanogames/carnival_shootout/target/target.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://do7opnc2m0uqj" path="res://nanogames/carnival_shootout/_assets/scenary.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cfjsw2bn2wo4y" path="res://nanogames/carnival_shootout/_assets/light.png" id="4"]
@@ -35,7 +35,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1cowl"]
 _data = {
-"blink_lights": SubResource("3")
+&"blink_lights": SubResource("3")
 }
 
 [node name="Main" type="Node2D"]

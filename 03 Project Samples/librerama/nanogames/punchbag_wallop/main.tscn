@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://eb3xksjh53io"]
 
-[ext_resource type="Script" path="res://nanogames/punchbag_wallop/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://iv1k433vx6b5" path="res://nanogames/punchbag_wallop/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bgnbw4f1o2iib" path="res://nanogames/punchbag_wallop/boxer/boxer.tscn" id="2"]
 [ext_resource type="AudioStream" uid="uid://jwsohtgnvhjt" path="res://nanogames/punchbag_wallop/_assets/music.ogg" id="3"]
 [ext_resource type="AudioStream" uid="uid://dlo7bi3pxc1ru" path="res://nanogames/punchbag_wallop/_assets/gasp.wav" id="5"]
 [ext_resource type="Texture2D" uid="uid://pmn4pbasnf02" path="res://nanogames/punchbag_wallop/_assets/background.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://72xfwmo0nvpm" path="res://nanogames/punchbag_wallop/_assets/indicator.png" id="6_t8mt0"]
-[ext_resource type="Shader" path="res://shaders/noise_grain.gdshader" id="8"]
+[ext_resource type="Shader" uid="uid://qusga4j0q7a" path="res://shaders/noise_grain.gdshader" id="8"]
 
 [sub_resource type="Gradient" id="Gradient_p4aod"]
 offsets = PackedFloat32Array(0.3, 0.6, 0.8)

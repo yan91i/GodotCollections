@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://nndxdgduk1cb"]
 
-[ext_resource type="Script" path="res://nanogames/shuffle_dance/main.gd" id="1"]
+[ext_resource type="Script" uid="uid://bevlih8uub5w3" path="res://nanogames/shuffle_dance/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://b8uc7507jed3d" path="res://nanogames/shuffle_dance/card/card.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://b2m1p1js72huu" path="res://nanogames/shuffle_dance/_assets/background.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://duawgcslkx40r" path="res://nanogames/shuffle_dance/_assets/move.wav" id="4"]

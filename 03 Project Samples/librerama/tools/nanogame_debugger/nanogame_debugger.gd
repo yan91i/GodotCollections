@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Control
 
@@ -31,12 +31,17 @@ var _time_left := 0.0
 var _is_saving_blocked := false
 
 var _nanogame_path := ""
+var _nanogame_uses_joycursor := false
 
 var _is_auto_hiding := false
 
 @onready var _nanogame_player := $NanogamePlayer as NanogamePlayer
 
 @onready var _time := $TopBar/HBoxContainer/Time as Label
+
+@onready var _joycursor := $Joycursor as Sprite2D
+@onready var _snap_line := $Joycursor/SnapLine as Line2D
+@onready var _joycursor_snapped := $Joycursor/JoycursorSnapped as Sprite2D
 
 
 func _ready() -> void:
@@ -73,9 +78,13 @@ func _ready() -> void:
 		i.mouse_exited.connect(i.get_line_edit().release_focus)
 		i.get_line_edit().mouse_exited.connect(i.get_line_edit().release_focus)
 
+	GameManager.control_type_changed.connect(
+			_on_game_manager_control_type_changed)
+	_on_game_manager_control_type_changed()
+
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause") and _nanogame_player.is_playing():
+	if event.is_action_pressed(&"pause") and _nanogame_player.is_playing():
 		(%Pause as Button).button_pressed = not get_tree().paused
 
 
@@ -85,6 +94,10 @@ func _process(_delta: float) -> void:
 		_time_left = time_adjusted
 
 		_time.text = "%1.1f" % time_adjusted
+
+	if _nanogame_player.joycursor_enabled:
+		_set_joycursor_position(_nanogame_player.get_joycursor_position(),
+				_nanogame_player.get_joycursor_position_snapped())
 
 
 func _load_nanogame(path: String) -> int:
@@ -101,6 +114,9 @@ func _load_nanogame(path: String) -> int:
 
 	_nanogame_player.clear_nanogames()
 	_nanogame_player.add_nanogames([nanogame])
+
+	_nanogame_uses_joycursor =\
+			nanogame.get_input() == Nanogame.Inputs.DRAG_DROP
 
 	(%Start as Button).disabled = false
 
@@ -238,6 +254,21 @@ func _save_session() -> void:
 				str(error_code))
 
 
+func _set_joycursor_position(new_position: Vector2,\
+		snapped_position:=Vector2.INF) -> void:
+	_joycursor.position = new_position
+
+	if not snapped_position.is_finite() or new_position == snapped_position:
+		# Set the end of the line to be as close as possible to the beginning,
+		# but not in the exact place, as that would make the line not be drawn.
+		_snap_line.points[1] = Vector2(0.001, 0)
+		_joycursor_snapped.hide()
+	else:
+		_snap_line.points[1] = snapped_position - _snap_line.global_position
+		_joycursor_snapped.show()
+		_joycursor_snapped.global_position = snapped_position
+
+
 func _on_nanogame_player_stopped() -> void:
 	set_process(false)
 
@@ -245,6 +276,9 @@ func _on_nanogame_player_stopped() -> void:
 	($PauseReference as ColorRect).hide()
 	($TouchNavigationReference as Panel).hide()
 	($TouchActionReference as Panel).hide()
+
+	_joycursor.hide()
+
 	($KickoffDim as ColorRect).hide()
 
 	($TopBar as PanelContainer).modulate.a = 1
@@ -273,6 +307,19 @@ func _on_nanogame_player_kickoff_started() -> void:
 		(%Difficulty as SpinBox).value = _nanogame_player.difficulty
 	if not _nanogame_player.speed_lock:
 		(%Speed as SpinBox).value = _nanogame_player.speed
+
+	if _nanogame_player.joycursor_enabled:
+		_set_joycursor_position(_nanogame_player.get_joycursor_position())
+
+
+func _on_nanogame_player_timer_stopped() -> void:
+	set_process(false)
+
+	if _nanogame_player.joycursor_enabled:
+		# Avoid corner cases where the joycursor may no be in the correct spot
+		# (e.g. when snapping into something that will end the nanogame).
+		_set_joycursor_position(_nanogame_player.get_joycursor_position())
+
 
 
 func _on_bar_mouse_entered() -> void:
@@ -338,6 +385,9 @@ func _on_start_pressed() -> void:
 	if not _nanogame_player.is_playing():
 		return
 
+	_joycursor.visible = _nanogame_uses_joycursor and\
+			GameManager.get_control_type() == GameManager.ControlTypes.JOYPAD
+
 	($TopBar as PanelContainer).modulate.a = BARS_ALPHA_ON_PLAY
 	($BottomBar as PanelContainer).modulate.a = BARS_ALPHA_ON_PLAY
 
@@ -383,3 +433,13 @@ func _on_toggle_auto_hide_toggled(button_pressed: bool) -> void:
 	_is_auto_hiding = button_pressed
 
 	_save_session()
+
+
+func _on_game_manager_control_type_changed() -> void:
+	# Enable the joycursor only if the control type is joypad-only (without a
+	# touchscreen available).
+	_nanogame_player.joycursor_enabled =\
+			GameManager.get_control_type() == GameManager.ControlTypes.JOYPAD
+
+	_joycursor.visible =\
+			_nanogame_uses_joycursor and _nanogame_player.joycursor_enabled

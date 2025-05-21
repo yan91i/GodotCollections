@@ -1,10 +1,10 @@
 [gd_scene load_steps=25 format=3 uid="uid://bstyul0dwc1h"]
 
-[ext_resource type="Script" path="res://places/arcade_machine/arcade_machine.gd" id="2"]
+[ext_resource type="Script" uid="uid://dia2ijo7yn36m" path="res://places/arcade_machine/arcade_machine.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://bsk3gcmo2ybty" path="res://places/arcade_machine/statistics/statistics.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://b5frslx0xhpxc" path="res://modals/modal/modal.tscn" id="5"]
 [ext_resource type="Theme" uid="uid://bo8hqd7sq8q2o" path="res://themes/arcade/theme_default.tres" id="6"]
-[ext_resource type="Shader" path="res://shaders/texture_scroll.gdshader" id="8"]
+[ext_resource type="Shader" uid="uid://ssqs6hgihrcf" path="res://shaders/texture_scroll.gdshader" id="8"]
 [ext_resource type="Texture2D" uid="uid://dqp4cehf3qpca" path="res://places/arcade_machine/_assets/logo.svg" id="10"]
 [ext_resource type="Texture2D" uid="uid://dlsd3x8fyubea" path="res://places/arcade_machine/_assets/background.svg" id="11"]
 [ext_resource type="PackedScene" uid="uid://dvn0ccbgksfbn" path="res://places/arcade_machine/nanogame_hud/nanogame_hud.tscn" id="12"]
@@ -67,7 +67,6 @@ mouse_filter = 2
 theme = ExtResource("6")
 script = ExtResource("2")
 metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="NanogamePlayer" parent="." instance=ExtResource("14")]
 layout_mode = 1
@@ -97,10 +96,10 @@ metadata/_edit_group_ = true
 material = SubResource("2")
 position = Vector2(-100, 0)
 emitting = false
-process_material = SubResource("5")
 lifetime = 6.0
 visibility_rect = Rect2(100, -360, 550, 720)
 local_coords = true
+process_material = SubResource("5")
 
 [node name="Anchor" type="Control" parent="IconParticles"]
 anchors_preset = 0
@@ -114,10 +113,10 @@ material = SubResource("2")
 position = Vector2(100, 0)
 rotation = 3.14159
 emitting = false
-process_material = SubResource("5")
 lifetime = 6.0
 visibility_rect = Rect2(100, -360, 550, 720)
 local_coords = true
+process_material = SubResource("5")
 
 [node name="MainMenu" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -162,6 +161,7 @@ text = "Quickplay"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+focus_neighbor_right = NodePath("../../../Other/Settings")
 theme_type_variation = &"ButtonPositive"
 text = "Collection"
 clip_text = true
@@ -185,6 +185,7 @@ clip_text = true
 [node name="Settings" type="Button" parent="MainMenu/Main/Other"]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../Play/Contents/Collection")
 text = "Settings"
 clip_text = true
 
@@ -371,6 +372,7 @@ bus = &"Effects"
 [connection signal="nanogame_lost" from="NanogamePlayer" to="." method="_on_nanogame_player_nanogame_lost"]
 [connection signal="nanogame_won" from="NanogamePlayer" to="." method="_on_nanogame_player_nanogame_won"]
 [connection signal="next_nanogame_yielded" from="NanogamePlayer" to="." method="_on_nanogame_player_next_nanogame_yielded"]
+[connection signal="pause_changed" from="NanogamePlayer" to="MenuNoise" method="play"]
 [connection signal="stopped" from="NanogamePlayer" to="." method="_on_nanogame_player_stopped"]
 [connection signal="timer_stopped" from="NanogamePlayer" to="." method="_on_nanogame_player_timer_stopped"]
 [connection signal="pressed" from="MainMenu/Main/Play/Contents/Quickplay" to="." method="_on_quickplay_pressed"]

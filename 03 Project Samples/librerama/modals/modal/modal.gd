@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 @tool
 class_name Modal
@@ -111,7 +111,7 @@ func _input(event: InputEvent) -> void:
 	# Allow to focus to/away from the "Cancel" and "Close/OK" buttons. Since
 	# the neighbor focus system ignores simbling nodes when in a non-`Control`
 	# parent, some workarounds are necessary.
-	if event.is_action_pressed("ui_down"):
+	if event.is_action_pressed(&"ui_down"):
 		set_input_as_handled()
 
 		var focused: Control = gui_get_focus_owner()
@@ -130,7 +130,7 @@ func _input(event: InputEvent) -> void:
 			(%Cancel as Button).grab_focus()
 		else:
 			(%CloseOK as Button).grab_focus()
-	elif event.is_action_pressed("ui_up"):
+	elif event.is_action_pressed(&"ui_up"):
 		var focused: Control = gui_get_focus_owner()
 		if focused != (%Cancel as Button) and focused != (%CloseOK as Button):
 			return
@@ -140,22 +140,9 @@ func _input(event: InputEvent) -> void:
 		var internal_limit: int = ($Buttons as HBoxContainer).get_index()
 		for i: int in range(get_child_count() - 1, internal_limit, -1):
 			var node: Node = get_child(i)
-			if node is not Control:
-				continue
-
-			var control := node as Control
-			if control.top_level and not control.is_visible_in_tree():
-				continue
-
-			if control.focus_mode == Control.FOCUS_ALL:
-				control.grab_focus()
+			if node is Control and _find_valid_focus(node as Control, true):
 				break
-
-			control = control.find_prev_valid_focus()
-			if control != null:
-				control.grab_focus()
-				break
-	elif event.is_action_pressed("menu_back"):
+	elif event.is_action_pressed(&"menu_back"):
 		hide()
 
 
@@ -167,20 +154,7 @@ func update_focused_control() -> void:
 	for i: int in range(($Buttons as HBoxContainer).get_index() + 1,
 			get_child_count()):
 		var node: Node = get_child(i)
-		if node is not Control:
-			continue
-
-		var control := node as Control
-		if control.top_level or not control.is_visible_in_tree():
-			continue
-
-		if control.focus_mode == Control.FOCUS_ALL:
-			control.grab_focus()
-			return
-
-		control = control.find_next_valid_focus()
-		if control != null:
-			control.grab_focus()
+		if node is Control and _find_valid_focus(node as Control):
 			return
 
 	give_close_focus()
@@ -211,7 +185,7 @@ func set_confirmation_mode(is_enabled: bool) -> void:
 	(%Cancel as Button).visible = is_enabled
 	($Buttons/Space as Control).visible = is_enabled
 
-	(%CloseOK as Button).text = tr("Close") if not is_enabled else tr("OK")
+	(%CloseOK as Button).text = tr(&"Close") if not is_enabled else tr(&"OK")
 	(%CloseOK as Button).disabled =\
 			not ok_enabled if confirmation_mode else false
 
@@ -221,6 +195,23 @@ func set_ok_enabled(is_enabled: bool) -> void:
 
 	if confirmation_mode:
 		(%CloseOK as Button).disabled = not is_enabled
+
+
+func _find_valid_focus(control: Control, should_try_previous:=false) -> bool:
+	if control.top_level or not control.is_visible_in_tree():
+		return false
+
+	if control.focus_mode == Control.FOCUS_ALL:
+		control.grab_focus()
+		return true
+
+	control = control.find_prev_valid_focus() if should_try_previous\
+			else control.find_next_valid_focus()
+	if control != null:
+		control.grab_focus()
+		return true
+
+	return false
 
 
 func _update_panel() -> void:

@@ -1,6 +1,6 @@
-###############################################################################
+#=============================================================================#
 # Librerama                                                                   #
-# Copyright (C) 2023 Michael Alexsander                                       #
+# Copyright (c) 2020-present Michael Alexsander.                              #
 #-----------------------------------------------------------------------------#
 # This file is part of Librerama.                                             #
 #                                                                             #
@@ -16,7 +16,7 @@
 #                                                                             #
 # You should have received a copy of the GNU General Public License           #
 # along with Librerama.  If not, see <http://www.gnu.org/licenses/>.          #
-###############################################################################
+#=============================================================================#
 
 extends Area2D
 
@@ -29,9 +29,9 @@ const TRAVEL_DISTANCE = 340
 func travel(travel_rotation: float) -> void:
 	var tween: Tween = create_tween()
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	tween.tween_property(self, "position", position + Vector2.DOWN.rotated(
+	tween.tween_property(self, ^"position", position + Vector2.DOWN.rotated(
 			travel_rotation) * TRAVEL_DISTANCE, ($AnimationPlayer as
-					AnimationPlayer).get_animation("travel").length)
+					AnimationPlayer).get_animation(&"travel").length)
 
 	($Sprite2D as Sprite2D).rotation = travel_rotation
 
@@ -40,7 +40,7 @@ func travel(travel_rotation: float) -> void:
 		($Sprite2D as Sprite2D).flip_h = true
 		($Sprite2D/Trail as GPUParticles2D).scale.x = -1
 
-	($AnimationPlayer as AnimationPlayer).play("travel")
+	($AnimationPlayer as AnimationPlayer).play(&"travel")
 
 
 func _on_animation_player_animation_finished() -> void:

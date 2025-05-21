@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8uc7507jed3d"]
 
-[ext_resource type="Script" path="res://nanogames/shuffle_dance/card/card.gd" id="1"]
+[ext_resource type="Script" uid="uid://b38n62fdncm5r" path="res://nanogames/shuffle_dance/card/card.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cfln1n5ds2ol8" path="res://nanogames/shuffle_dance/card/_assets/faces.png" id="2"]
 [ext_resource type="AudioStream" uid="uid://c51kyy1hmabmp" path="res://nanogames/shuffle_dance/card/_assets/flip.wav" id="3"]
 
@@ -122,9 +122,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_11exi"]
 _data = {
-"RESET": SubResource("4"),
-"card_flip": SubResource("2"),
-"highlight_blink": SubResource("3")
+&"RESET": SubResource("4"),
+&"card_flip": SubResource("2"),
+&"highlight_blink": SubResource("3")
 }
 
 [node name="Card" type="Area2D"]
