@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://vd6e1ofpyhwd"]
+
+[ext_resource type="Script" uid="uid://paulxnd8hmgt" path="res://Games/Cube Scene/cube.gd" id="1_xfqds"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0bl4j"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_6qpvj"]
+sky_material = SubResource("ProceduralSkyMaterial_0bl4j")
+
+[sub_resource type="Environment" id="Environment_ebenn"]
+background_mode = 2
+sky = SubResource("Sky_6qpvj")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_m3ng8"]
+
+[node name="Cube Scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ebenn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_m3ng8")
+script = ExtResource("1_xfqds")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2, 4)
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -303.0
+offset_top = 28.0
+offset_right = 303.0
+offset_bottom = 163.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]This is a test scene for 3D viewports.
+Sadly the cube doesn't do anything. Carry on."
+fit_content = true

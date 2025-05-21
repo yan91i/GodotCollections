@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://gmc12dsm1usj"]
+
+[ext_resource type="Script" uid="uid://4bxqshfsr7cl" path="res://Scenes/Misc/Benchmark Tester/benchmark_test.gd" id="1_vxxfi"]
+
+[node name="Benchmark Test" type="Node"]
+script = ExtResource("1_vxxfi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(1, 0.156863, 0.235294, 1)
+offset_left = 131.0
+offset_right = 643.0
+offset_bottom = 171.0
+theme_override_font_sizes/normal_font_size = 48
+text = "Text"
