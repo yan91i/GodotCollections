@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drgy5ywjdpjnl"]
+
+[ext_resource type="Script" uid="uid://cwmu0xh1oxwk6" path="res://characters_utility/top_down_character_mover/top_down_character_mover.gd" id="1_j21uy"]
+
+[node name="TopDownCharacterMover" type="Node"]
+script = ExtResource("1_j21uy")

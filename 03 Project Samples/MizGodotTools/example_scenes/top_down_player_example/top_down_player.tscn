@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv3xqa7eu5hq2"]
+
+[ext_resource type="Script" uid="uid://dufdfer22yehx" path="res://example_scenes/top_down_player_example/top_down_player.gd" id="1_anvcl"]
+[ext_resource type="Texture2D" uid="uid://c485t74cvfska" path="res://effects/textures/white_circle.png" id="2_8i28y"]
+[ext_resource type="PackedScene" uid="uid://drgy5ywjdpjnl" path="res://characters_utility/top_down_character_mover/top_down_character_mover.tscn" id="3_s4iy0"]
+[ext_resource type="PackedScene" uid="uid://c2vvxd4ikbac6" path="res://input/top_down_input.tscn" id="4_dp1wd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1titp"]
+radius = 32.1403
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_anvcl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1titp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8i28y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(31, 0)
+scale = Vector2(0.78125, 0.3125)
+texture = ExtResource("2_8i28y")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TopDownCharacterMover" parent="." instance=ExtResource("3_s4iy0")]
+instantly_turn = true
+
+[node name="TopDownInput" parent="." instance=ExtResource("4_dp1wd")]

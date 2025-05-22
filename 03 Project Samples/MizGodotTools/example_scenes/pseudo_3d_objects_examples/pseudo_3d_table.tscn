@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dq7cs1jh2onwu"]
+
+[ext_resource type="PackedScene" uid="uid://c5dvgspqt34i2" path="res://effects/pseudo_3d/pseudo_3d_object_with_custom_layers.tscn" id="1_kaoxc"]
+[ext_resource type="Texture2D" uid="uid://c6b5ihc5jnyoh" path="res://effects/textures/white_sq.png" id="2_bdvwk"]
+[ext_resource type="PackedScene" uid="uid://bjkxb686j15uw" path="res://effects/drop_shadows/drop_shadow.tscn" id="3_hueo8"]
+[ext_resource type="Texture2D" uid="uid://c485t74cvfska" path="res://effects/textures/white_circle.png" id="4_5fsjs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esvqq"]
+radius = 98.4124
+
+[node name="Pseudo3DTable" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_esvqq")
+
+[node name="Pseudo3DObjectWithCustomLayers" parent="." instance=ExtResource("1_kaoxc")]
+check_parent_to_place_things_on_top_layer = true
+
+[node name="Base" type="Node2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers" index="0"]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/Base"]
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(1, 0.0625001)
+texture = ExtResource("2_bdvwk")
+
+[node name="DropShadow" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/Base/Sprite2D" instance=ExtResource("3_hueo8")]
+offset_amnt = 10
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/Base"]
+position = Vector2(0, 1.90735e-06)
+rotation = -1.5708
+scale = Vector2(1, 0.0625001)
+texture = ExtResource("2_bdvwk")
+
+[node name="DropShadow" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/Base/Sprite2D2" instance=ExtResource("3_hueo8")]
+offset_amnt = 10
+
+[node name="BlankLayer" type="Node2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers" index="1"]
+
+[node name="TableTop" type="Sprite2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers" index="2"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_5fsjs")
+
+[node name="DropShadow" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/TableTop" instance=ExtResource("3_hueo8")]
+
+[editable path="Pseudo3DObjectWithCustomLayers"]

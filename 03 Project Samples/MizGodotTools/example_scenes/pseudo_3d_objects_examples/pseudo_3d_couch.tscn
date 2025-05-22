@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://5t2rxe02mskq"]
+
+[ext_resource type="PackedScene" uid="uid://c5dvgspqt34i2" path="res://effects/pseudo_3d/pseudo_3d_object_with_custom_layers.tscn" id="1_pj8ff"]
+[ext_resource type="Texture2D" uid="uid://c6b5ihc5jnyoh" path="res://effects/textures/white_sq.png" id="2_38bdx"]
+[ext_resource type="PackedScene" uid="uid://bjkxb686j15uw" path="res://effects/drop_shadows/drop_shadow.tscn" id="3_b4i5o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj8ff"]
+size = Vector2(100, 186)
+
+[node name="Pseudo3DCouch" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_pj8ff")
+
+[node name="Pseudo3DObjectWithCustomLayers" parent="." instance=ExtResource("1_pj8ff")]
+check_parent_to_place_things_on_top_layer = true
+custom_top_layer_to_place_things_on = 1
+
+[node name="CouchBase" type="Sprite2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers" index="0"]
+position = Vector2(-8.49999, 1.43051e-06)
+scale = Vector2(2.51563, 4.5)
+texture = ExtResource("2_38bdx")
+
+[node name="DropShadow" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/CouchBase" instance=ExtResource("3_b4i5o")]
+offset_amnt = 30
+
+[node name="CouchBase2" type="Sprite2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers" index="1"]
+position = Vector2(-8.49999, 1.43051e-06)
+scale = Vector2(2.51563, 4.5)
+texture = ExtResource("2_38bdx")
+
+[node name="Node2D" type="Node2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers" index="2"]
+position = Vector2(-38, 0.500006)
+
+[node name="CouchBack" type="Sprite2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/Node2D"]
+position = Vector2(-25, 2.99999)
+scale = Vector2(0.625, 3.35937)
+texture = ExtResource("2_38bdx")
+
+[node name="CouchBack2" type="Sprite2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/Node2D"]
+position = Vector2(37.5263, -121.5)
+rotation = 1.5708
+scale = Vector2(0.625, 2.24918)
+texture = ExtResource("2_38bdx")
+
+[node name="CouchBack3" type="Sprite2D" parent="Pseudo3DObjectWithCustomLayers/CustomLayers/Node2D"]
+position = Vector2(37.5263, 124.5)
+rotation = 1.5708
+scale = Vector2(0.625, 2.24918)
+texture = ExtResource("2_38bdx")
+
+[editable path="Pseudo3DObjectWithCustomLayers"]

@@ -1,0 +1,280 @@
+[gd_scene load_steps=14 format=4 uid="uid://dx4o30cfw3f65"]
+
+[ext_resource type="Texture2D" uid="uid://c6b5ihc5jnyoh" path="res://effects/textures/white_sq.png" id="1_jhvfo"]
+[ext_resource type="Script" uid="uid://dsyjfyhywp7rq" path="res://effects/pseudo_3d/pseudo_3d_object.gd" id="2_17vpi"]
+[ext_resource type="Texture2D" uid="uid://c485t74cvfska" path="res://effects/textures/white_circle.png" id="3_cwl6o"]
+[ext_resource type="Texture2D" uid="uid://dmae8vc88qp25" path="res://effects/textures/round_walls.png" id="4_u48m2"]
+[ext_resource type="PackedScene" uid="uid://dq7cs1jh2onwu" path="res://example_scenes/pseudo_3d_objects_examples/pseudo_3d_table.tscn" id="5_s4lu1"]
+[ext_resource type="Texture2D" uid="uid://0jm4skwtv1vm" path="res://effects/textures/circle_16.png" id="6_17vpi"]
+[ext_resource type="PackedScene" uid="uid://bjkxb686j15uw" path="res://effects/drop_shadows/drop_shadow.tscn" id="7_cwl6o"]
+[ext_resource type="PackedScene" uid="uid://5t2rxe02mskq" path="res://example_scenes/pseudo_3d_objects_examples/pseudo_3d_couch.tscn" id="8_u48m2"]
+
+[sub_resource type="Animation" id="Animation_gm0ej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c3cl2"]
+resource_name = "move"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(105, -314)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ag1xi"]
+_data = {
+&"RESET": SubResource("Animation_gm0ej"),
+&"move": SubResource("Animation_c3cl2")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2byk1"]
+texture = ExtResource("4_u48m2")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0/terrains_peering_bit/right_side = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:0/0/terrains_peering_bit/bottom_side = 0
+3:0/0/terrains_peering_bit/left_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:1/0/terrains_peering_bit/right_side = 0
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/left_side = 0
+3:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:2/0/terrains_peering_bit/right_side = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:2/0/terrains_peering_bit/left_side = 0
+3:2/0/terrains_peering_bit/top_side = 0
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/terrain = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrain = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:3/0/terrains_peering_bit/right_side = 0
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrain = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:3/0/terrains_peering_bit/right_side = 0
+2:3/0/terrains_peering_bit/left_side = 0
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/terrain = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:3/0/terrains_peering_bit/left_side = 0
+
+[sub_resource type="TileSet" id="TileSet_esvqq"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/1 = SubResource("TileSetAtlasSource_2byk1")
+
+[node name="Pseudo3dObjectsExample" type="Node2D"]
+
+[node name="CameraBase" type="Node2D" parent="."]
+position = Vector2(798, 603)
+
+[node name="Camera2D" type="Camera2D" parent="CameraBase"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraBase"]
+libraries = {
+&"": SubResource("AnimationLibrary_ag1xi")
+}
+autoplay = "move"
+
+[node name="RegularPseudo3DObjects" type="Node2D" parent="."]
+position = Vector2(800, 600)
+
+[node name="Floor" type="Sprite2D" parent="RegularPseudo3DObjects"]
+self_modulate = Color(0.927031, 0.712505, 0.813032, 1)
+position = Vector2(-379, -54.9999)
+scale = Vector2(8.71875, 7.625)
+texture = ExtResource("1_jhvfo")
+script = ExtResource("2_17vpi")
+min_layer = -1
+max_layer = 0
+
+[node name="Pseudo3DObject" type="Node2D" parent="RegularPseudo3DObjects"]
+position = Vector2(-74, -252)
+script = ExtResource("2_17vpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="RegularPseudo3DObjects/Pseudo3DObject"]
+texture = ExtResource("3_cwl6o")
+
+[node name="Pseudo3DObjectBottomToTop" type="Node2D" parent="RegularPseudo3DObjects"]
+position = Vector2(-74, -119)
+script = ExtResource("2_17vpi")
+min_layer = -12
+
+[node name="Sprite2D" type="Sprite2D" parent="RegularPseudo3DObjects/Pseudo3DObjectBottomToTop"]
+texture = ExtResource("3_cwl6o")
+
+[node name="Pseudo3DObjectBelowFloor" type="Node2D" parent="RegularPseudo3DObjects"]
+position = Vector2(-74, 18)
+script = ExtResource("2_17vpi")
+min_layer = -12
+max_layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="RegularPseudo3DObjects/Pseudo3DObjectBelowFloor"]
+texture = ExtResource("3_cwl6o")
+
+[node name="Pseudo3DObjectFloating" type="Node2D" parent="RegularPseudo3DObjects"]
+position = Vector2(-74, 143)
+script = ExtResource("2_17vpi")
+min_layer = 2
+max_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="RegularPseudo3DObjects/Pseudo3DObjectFloating"]
+texture = ExtResource("3_cwl6o")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="RegularPseudo3DObjects"]
+tile_map_data = PackedByteArray("AAD9/wQAAQABAAMAAAD+/wQAAQACAAMAAAD//wQAAQACAAMAAAAAAAQAAQACAAMAAAABAAQAAQACAAMAAAACAAQAAQACAAMAAAADAAQAAQACAAMAAAAEAAQAAQADAAIAAAAEAAMAAQAAAAEAAAAEAAIAAQAAAAEAAAAEAAEAAQAAAAEAAAAEAAAAAQAAAAEAAAAEAP//AQAAAAEAAAAEAP7/AQABAAEAAAAEAP3/AQABAAEAAAAEAPr/AQABAAEAAAAEAPv/AQABAAEAAAAEAPz/AQABAAEAAAAEAPn/AQADAAAAAAADAPn/AQACAAMAAAACAPn/AQACAAMAAAABAPn/AQACAAMAAAAAAPn/AQACAAMAAAD///n/AQACAAMAAAD+//n/AQACAAMAAAD9//n/AQABAAMAAAAFAPr/AQADAAAAAAAFAPv/AQADAAEAAAAFAPz/AQACAAEAAAAFAP3/AQACAAEAAAAFAP7/AQADAAIAAAAGAP3/AQACAAIAAAAHAP3/AQACAAIAAAAIAP3/AQADAAIAAAAIAPz/AQADAAAAAAAHAPz/AQACAAAAAAAGAPz/AQACAAAAAAAHAAIAAQACAAAAAAAHAAMAAQACAAIAAAAGAAMAAQABAAIAAAAIAAMAAQADAAIAAAAIAAIAAQADAAAAAAAGAAIAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_esvqq")
+script = ExtResource("2_17vpi")
+
+[node name="CustomPseudo3DObjects" type="Node2D" parent="."]
+position = Vector2(800, 600)
+
+[node name="Label2" type="Label" parent="CustomPseudo3DObjects"]
+offset_left = -716.0
+offset_top = -296.0
+offset_right = -522.0
+offset_bottom = -201.0
+text = "Example pseudo 3d table"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="CustomPseudo3DObjects"]
+offset_left = -548.0
+offset_top = -3.0
+offset_right = -341.0
+offset_bottom = 92.0
+text = "Example pseudo 3d couch.
+note object on top is set to go on second layer"
+autowrap_mode = 2
+
+[node name="Pseudo3DTable" parent="CustomPseudo3DObjects" instance=ExtResource("5_s4lu1")]
+position = Vector2(-620, -168)
+
+[node name="ObjectOnTable" type="Sprite2D" parent="CustomPseudo3DObjects/Pseudo3DTable"]
+self_modulate = Color(0.376658, 0.376659, 0.376658, 1)
+z_index = 5
+position = Vector2(-44, 19)
+scale = Vector2(3, 3)
+texture = ExtResource("6_17vpi")
+
+[node name="DropShadow" parent="CustomPseudo3DObjects/Pseudo3DTable/ObjectOnTable" instance=ExtResource("7_cwl6o")]
+is_global = false
+offset_amnt = 10
+
+[node name="ObjectOnTable2" type="Sprite2D" parent="CustomPseudo3DObjects/Pseudo3DTable"]
+self_modulate = Color(0.376658, 0.376659, 0.376658, 1)
+z_index = 5
+position = Vector2(24, -34)
+rotation = -0.0930725
+scale = Vector2(3, 1.625)
+texture = ExtResource("6_17vpi")
+
+[node name="DropShadow" parent="CustomPseudo3DObjects/Pseudo3DTable/ObjectOnTable2" instance=ExtResource("7_cwl6o")]
+is_global = false
+offset_amnt = 10
+
+[node name="Pseudo3DCouch" parent="CustomPseudo3DObjects" instance=ExtResource("8_u48m2")]
+position = Vector2(-620, 155)
+rotation = -0.465812
+
+[node name="ObjectOnCouch" type="Sprite2D" parent="CustomPseudo3DObjects/Pseudo3DCouch"]
+self_modulate = Color(0.376658, 0.376659, 0.376658, 1)
+z_index = 5
+position = Vector2(18.4829, -67.9366)
+scale = Vector2(3, 3)
+texture = ExtResource("6_17vpi")
+
+[node name="DropShadow" parent="CustomPseudo3DObjects/Pseudo3DCouch/ObjectOnCouch" instance=ExtResource("7_cwl6o")]
+is_global = false
+offset_amnt = 10

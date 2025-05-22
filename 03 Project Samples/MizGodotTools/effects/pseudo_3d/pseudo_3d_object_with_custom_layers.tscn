@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5dvgspqt34i2"]
+
+[ext_resource type="Script" uid="uid://brfph4s7biuuv" path="res://effects/pseudo_3d/pseudo_3d_object_with_custom_layers.gd" id="1_vr8cu"]
+
+[node name="Pseudo3DObjectWithCustomLayers" type="Node2D"]
+script = ExtResource("1_vr8cu")
+
+[node name="CustomLayers" type="Node2D" parent="."]

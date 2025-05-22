@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm8pfjkajwgno"]
+
+[ext_resource type="PackedScene" uid="uid://cv3xqa7eu5hq2" path="res://example_scenes/top_down_player_example/top_down_player.tscn" id="1_8p6uh"]
+[ext_resource type="Texture2D" uid="uid://c6b5ihc5jnyoh" path="res://effects/textures/white_sq.png" id="5_3sbmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17rgx"]
+size = Vector2(64, 62)
+
+[node name="TopDownPlayerExampleScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_8p6uh")]
+
+[node name="Obstacle" type="StaticBody2D" parent="."]
+position = Vector2(97, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+shape = SubResource("RectangleShape2D_17rgx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle"]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("5_3sbmu")
+
+[node name="Obstacle2" type="StaticBody2D" parent="."]
+position = Vector2(-160, 206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
+shape = SubResource("RectangleShape2D_17rgx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle2"]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("5_3sbmu")
+
+[node name="Obstacle3" type="StaticBody2D" parent="."]
+position = Vector2(-151, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle3"]
+shape = SubResource("RectangleShape2D_17rgx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle3"]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("5_3sbmu")
+
+[node name="Obstacle4" type="StaticBody2D" parent="."]
+position = Vector2(259, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle4"]
+shape = SubResource("RectangleShape2D_17rgx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle4"]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("5_3sbmu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 270.0
+offset_top = 83.0
+offset_right = 733.0
+offset_bottom = 262.0
+text = "Example of Top Down Controller for a Player Node
+
+On TopDownCharacterMover try messing with these values:
+max_move_speed
+time_to_reach_max_speed
+time_to_stop_from_max_speed
+turn_speed (with 'instantly_turn' off)"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 166.0
+offset_top = -331.0
+offset_right = 518.0
+offset_bottom = -256.0
+text = "WASD or arrow keys movement + mouse look
+or 
+left joystick move right joystick turn"

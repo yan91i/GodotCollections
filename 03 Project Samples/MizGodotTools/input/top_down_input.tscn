@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2vvxd4ikbac6"]
+
+[ext_resource type="Script" uid="uid://dh0cbskgh3teg" path="res://input/top_down_input.gd" id="1_uitax"]
+
+[node name="TopDownInput" type="Node2D"]
+script = ExtResource("1_uitax")
