@@ -1,0 +1,668 @@
+[gd_scene load_steps=27 format=3 uid="uid://wo0hqxkst808"]
+
+[ext_resource type="Texture2D" uid="uid://cjrokejjsp5dm" path="res://assets/graphics/misc/horizontal_mirror_off.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://hiduvaa73fr6" path="res://assets/graphics/misc/vertical_mirror_off.png" id="2"]
+[ext_resource type="Script" uid="uid://d0y5cefhrvfm7" path="res://src/UI/GlobalToolOptions/GlobalToolOptions.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://ct8wn8m6x4m54" path="res://assets/graphics/misc/value_arrow.svg" id="3_faalk"]
+[ext_resource type="Texture2D" uid="uid://22h12g8p3jtd" path="res://assets/graphics/misc/pixel_perfect_off.png" id="4"]
+[ext_resource type="Script" uid="uid://tfdhqto6j5j0" path="res://src/UI/Nodes/Sliders/ValueSlider.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://dlxhm0ronna25" path="res://assets/graphics/misc/xy_mirror_off.png" id="5_hcmgx"]
+[ext_resource type="Texture2D" uid="uid://j8eywwy082a4" path="res://assets/graphics/misc/alpha_lock_off.png" id="5_jv20x"]
+[ext_resource type="Texture2D" uid="uid://dg3dumyfj1682" path="res://assets/graphics/misc/dynamics.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://1kj5gcswa3t2" path="res://assets/graphics/misc/x_minus_y_mirror_off.png" id="6_sw8fy"]
+[ext_resource type="Texture2D" uid="uid://di8au2u87jgv5" path="res://assets/graphics/misc/uncheck.png" id="7"]
+[ext_resource type="Script" uid="uid://c8iilx5w0hjf3" path="res://src/UI/GlobalToolOptions/DynamicsPanel.gd" id="7_iqcw1"]
+[ext_resource type="PackedScene" uid="uid://bmsc0s03pwji4" path="res://src/UI/Nodes/MaxMinEdit.tscn" id="8"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_4k08w"]
+action = &"horizontal_mirror"
+
+[sub_resource type="Shortcut" id="Shortcut_eld87"]
+events = [SubResource("InputEventAction_4k08w")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_24etr"]
+action = &"vertical_mirror"
+
+[sub_resource type="Shortcut" id="Shortcut_ai7qc"]
+events = [SubResource("InputEventAction_24etr")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_eokfu"]
+action = &"pixel_perfect"
+
+[sub_resource type="Shortcut" id="Shortcut_7kmom"]
+events = [SubResource("InputEventAction_eokfu")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ebgk6"]
+action = &"alpha_lock"
+
+[sub_resource type="Shortcut" id="Shortcut_vcyug"]
+events = [SubResource("InputEventAction_ebgk6")]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ahrcw"]
+allow_unpress = true
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_t01h7"]
+allow_unpress = true
+
+[sub_resource type="Gradient" id="3"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="4"]
+gradient = SubResource("3")
+
+[sub_resource type="GradientTexture2D" id="5"]
+gradient = SubResource("3")
+
+[node name="Global Tool Options" type="PanelContainer"]
+offset_left = 1.0
+offset_right = 195.0
+offset_bottom = 50.0
+script = ExtResource("3")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+columns = 5
+
+[node name="Horizontal" type="Button" parent="ScrollContainer/CenterContainer/GridContainer" groups=["UIButtons"]]
+custom_minimum_size = Vector2(46, 32)
+layout_mode = 2
+tooltip_text = "Enable horizontal mirrored drawing"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_eld87")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/Horizontal"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -10.0
+offset_right = 25.0
+offset_bottom = 11.0
+grow_vertical = 2
+texture = ExtResource("1")
+
+[node name="HorizontalMirrorOptions" type="MenuButton" parent="ScrollContainer/CenterContainer/GridContainer/Horizontal"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+item_count = 2
+popup/item_0/text = "Move to canvas center"
+popup/item_1/text = "Move to view center"
+popup/item_1/id = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/Horizontal/HorizontalMirrorOptions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_faalk")
+stretch_mode = 3
+
+[node name="Vertical" type="Button" parent="ScrollContainer/CenterContainer/GridContainer" groups=["UIButtons"]]
+custom_minimum_size = Vector2(46, 32)
+layout_mode = 2
+tooltip_text = "Enable vertical mirrored drawing"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_ai7qc")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/Vertical"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -10.0
+offset_right = 25.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("2")
+
+[node name="VerticalMirrorOptions" type="MenuButton" parent="ScrollContainer/CenterContainer/GridContainer/Vertical"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+item_count = 2
+popup/item_0/text = "Move to canvas center"
+popup/item_1/text = "Move to view center"
+popup/item_1/id = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/Vertical/VerticalMirrorOptions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_faalk")
+stretch_mode = 3
+
+[node name="DiagonalXY" type="Button" parent="ScrollContainer/CenterContainer/GridContainer" groups=["UIButtons"]]
+visible = false
+custom_minimum_size = Vector2(46, 32)
+layout_mode = 2
+tooltip_text = "Enable vertical mirrored drawing"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_ai7qc")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/DiagonalXY"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -10.0
+offset_right = 25.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("5_hcmgx")
+
+[node name="MirrorOptions" type="MenuButton" parent="ScrollContainer/CenterContainer/GridContainer/DiagonalXY"]
+visible = false
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+item_count = 2
+popup/item_0/text = "Move to canvas center"
+popup/item_1/text = "Move to view center"
+popup/item_1/id = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/DiagonalXY/MirrorOptions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_faalk")
+stretch_mode = 3
+
+[node name="DiagonalXMinusY" type="Button" parent="ScrollContainer/CenterContainer/GridContainer" groups=["UIButtons"]]
+visible = false
+custom_minimum_size = Vector2(46, 32)
+layout_mode = 2
+tooltip_text = "Enable vertical mirrored drawing"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_ai7qc")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/DiagonalXMinusY"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -10.0
+offset_right = 25.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture = ExtResource("6_sw8fy")
+
+[node name="MirrorOptions" type="MenuButton" parent="ScrollContainer/CenterContainer/GridContainer/DiagonalXMinusY"]
+visible = false
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+item_count = 2
+popup/item_0/text = "Move to canvas center"
+popup/item_1/text = "Move to view center"
+popup/item_1/id = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/DiagonalXMinusY/MirrorOptions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_faalk")
+stretch_mode = 3
+
+[node name="PixelPerfect" type="Button" parent="ScrollContainer/CenterContainer/GridContainer" groups=["UIButtons"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Pixel Perfect
+Makes lines smooth by removing the extra pixels on the edges"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_7kmom")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/PixelPerfect"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+texture = ExtResource("4")
+
+[node name="AlphaLock" type="Button" parent="ScrollContainer/CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Lock alpha"
+mouse_default_cursor_shape = 2
+toggle_mode = true
+shortcut = SubResource("Shortcut_vcyug")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/AlphaLock"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+texture = ExtResource("5_jv20x")
+
+[node name="Dynamics" type="Button" parent="ScrollContainer/CenterContainer/GridContainer" groups=["UIButtons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Dynamics"
+mouse_default_cursor_shape = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/CenterContainer/GridContainer/Dynamics"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 10.0
+texture = ExtResource("6")
+
+[node name="DynamicsPanel" type="PopupPanel" parent="."]
+canvas_item_default_texture_filter = 0
+size = Vector2i(300, 334)
+script = ExtResource("7_iqcw1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DynamicsPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 296.0
+offset_bottom = 330.0
+
+[node name="StabilizerContainer" type="HBoxContainer" parent="DynamicsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="EnableStabilizer" type="CheckButton" parent="DynamicsPanel/VBoxContainer/StabilizerContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Stabilizer"
+
+[node name="StabilizerValue" type="TextureProgressBar" parent="DynamicsPanel/VBoxContainer/StabilizerContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+min_value = 1.0
+max_value = 64.0
+value = 16.0
+allow_greater = true
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("5")
+
+[node name="DynamicsOptions" type="GridContainer" parent="DynamicsPanel/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Control" type="Control" parent="DynamicsPanel/VBoxContainer/DynamicsOptions"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PressureLabel" type="Label" parent="DynamicsPanel/VBoxContainer/DynamicsOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pressure"
+
+[node name="VelocityLabel" type="Label" parent="DynamicsPanel/VBoxContainer/DynamicsOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Velocity"
+
+[node name="AlphaLabel" type="Label" parent="DynamicsPanel/VBoxContainer/DynamicsOptions"]
+layout_mode = 2
+text = "Alpha"
+
+[node name="AlphaPressureButton" type="Button" parent="DynamicsPanel/VBoxContainer/DynamicsOptions" groups=["UIButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ahrcw")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="DynamicsPanel/VBoxContainer/DynamicsOptions/AlphaPressureButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("7")
+expand_mode = 1
+
+[node name="AlphaVelocityButton" type="Button" parent="DynamicsPanel/VBoxContainer/DynamicsOptions" groups=["UIButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ahrcw")
+
+[node name="TextureRect" type="TextureRect" parent="DynamicsPanel/VBoxContainer/DynamicsOptions/AlphaVelocityButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("7")
+expand_mode = 1
+
+[node name="SizeLabel" type="Label" parent="DynamicsPanel/VBoxContainer/DynamicsOptions"]
+layout_mode = 2
+text = "Size"
+
+[node name="SizePressureButton" type="Button" parent="DynamicsPanel/VBoxContainer/DynamicsOptions" groups=["UIButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_t01h7")
+
+[node name="TextureRect" type="TextureRect" parent="DynamicsPanel/VBoxContainer/DynamicsOptions/SizePressureButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("7")
+expand_mode = 1
+
+[node name="SizeVelocityButton" type="Button" parent="DynamicsPanel/VBoxContainer/DynamicsOptions" groups=["UIButtons"]]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_t01h7")
+
+[node name="TextureRect" type="TextureRect" parent="DynamicsPanel/VBoxContainer/DynamicsOptions/SizeVelocityButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("7")
+expand_mode = 1
+
+[node name="LimitsHeader" type="HBoxContainer" parent="DynamicsPanel/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DynamicsPanel/VBoxContainer/LimitsHeader"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Value limits"
+
+[node name="HSeparator" type="HSeparator" parent="DynamicsPanel/VBoxContainer/LimitsHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LimitContainer" type="GridContainer" parent="DynamicsPanel/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="AlphaLabel" type="Label" parent="DynamicsPanel/VBoxContainer/LimitContainer" groups=["VisibleOnAlpha"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Alpha"
+
+[node name="AlphaMin" type="TextureProgressBar" parent="DynamicsPanel/VBoxContainer/LimitContainer" groups=["VisibleOnAlpha"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+max_value = 1.0
+step = 0.01
+value = 0.1
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("5")
+prefix = "Start"
+snap_step = 0.1
+
+[node name="AlphaMax" type="TextureProgressBar" parent="DynamicsPanel/VBoxContainer/LimitContainer" groups=["VisibleOnAlpha"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+max_value = 1.0
+step = 0.01
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("5")
+prefix = "End"
+snap_step = 0.1
+
+[node name="SizeLabel" type="Label" parent="DynamicsPanel/VBoxContainer/LimitContainer" groups=["VisibleOnSize"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Size"
+
+[node name="SizeMin" type="TextureProgressBar" parent="DynamicsPanel/VBoxContainer/LimitContainer" groups=["VisibleOnSize"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+max_value = 25.0
+value = 1.0
+allow_greater = true
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("5")
+prefix = "Start"
+
+[node name="SizeMax" type="TextureProgressBar" parent="DynamicsPanel/VBoxContainer/LimitContainer" groups=["VisibleOnSize"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+max_value = 25.0
+value = 4.0
+allow_greater = true
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("5")
+prefix = "End"
+
+[node name="ThresholdsHeader" type="HBoxContainer" parent="DynamicsPanel/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="DynamicsPanel/VBoxContainer/ThresholdsHeader"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Thresholds"
+
+[node name="HSeparator" type="HSeparator" parent="DynamicsPanel/VBoxContainer/ThresholdsHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ThresholdContainer" type="GridContainer" parent="DynamicsPanel/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="ThresholdPressureLabel" type="Label" parent="DynamicsPanel/VBoxContainer/ThresholdContainer" groups=["VisibleOnPressure"]]
+visible = false
+layout_mode = 2
+text = "Pressure"
+
+[node name="ThresholdPressure" parent="DynamicsPanel/VBoxContainer/ThresholdContainer" groups=["VisibleOnPressure"] instance=ExtResource("8")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+start = 0.2
+end = 0.8
+
+[node name="TextureRect" parent="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdPressure" index="0"]
+texture = SubResource("4")
+
+[node name="PressurePreview" type="ProgressBar" parent="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdPressure/TextureRect" index="0"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.294118)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+max_value = 1.0
+step = 0.001
+value = 0.497
+
+[node name="Value" parent="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdPressure/TextureRect" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="ThresholdVelocityLabel" type="Label" parent="DynamicsPanel/VBoxContainer/ThresholdContainer" groups=["VisibleOnVelocity"]]
+visible = false
+layout_mode = 2
+text = "Velocity"
+
+[node name="ThresholdVelocity" parent="DynamicsPanel/VBoxContainer/ThresholdContainer" groups=["VisibleOnVelocity"] instance=ExtResource("8")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+start = 0.2
+end = 0.8
+
+[node name="TextureRect" parent="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdVelocity" index="0"]
+texture = SubResource("5")
+
+[node name="VelocityPreview" type="ProgressBar" parent="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdVelocity/TextureRect" index="0"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.294118)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+max_value = 1.0
+step = 0.001
+
+[node name="Value" parent="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdVelocity/TextureRect" index="1"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="toggled" from="ScrollContainer/CenterContainer/GridContainer/Horizontal" to="." method="_on_Horizontal_toggled"]
+[connection signal="toggled" from="ScrollContainer/CenterContainer/GridContainer/Vertical" to="." method="_on_Vertical_toggled"]
+[connection signal="toggled" from="ScrollContainer/CenterContainer/GridContainer/DiagonalXY" to="." method="_on_diagonal_xy_toggled"]
+[connection signal="toggled" from="ScrollContainer/CenterContainer/GridContainer/DiagonalXMinusY" to="." method="_on_diagonal_x_minus_y_toggled"]
+[connection signal="toggled" from="ScrollContainer/CenterContainer/GridContainer/PixelPerfect" to="." method="_on_PixelPerfect_toggled"]
+[connection signal="toggled" from="ScrollContainer/CenterContainer/GridContainer/AlphaLock" to="." method="_on_alpha_lock_toggled"]
+[connection signal="pressed" from="ScrollContainer/CenterContainer/GridContainer/Dynamics" to="." method="_on_Dynamics_pressed"]
+[connection signal="toggled" from="DynamicsPanel/VBoxContainer/StabilizerContainer/EnableStabilizer" to="DynamicsPanel" method="_on_enable_stabilizer_toggled"]
+[connection signal="value_changed" from="DynamicsPanel/VBoxContainer/StabilizerContainer/StabilizerValue" to="DynamicsPanel" method="_on_stabilizer_value_value_changed"]
+[connection signal="value_changed" from="DynamicsPanel/VBoxContainer/LimitContainer/AlphaMin" to="DynamicsPanel" method="_on_alpha_min_value_changed"]
+[connection signal="value_changed" from="DynamicsPanel/VBoxContainer/LimitContainer/AlphaMax" to="DynamicsPanel" method="_on_alpha_max_value_changed"]
+[connection signal="value_changed" from="DynamicsPanel/VBoxContainer/LimitContainer/SizeMin" to="DynamicsPanel" method="_on_size_min_value_changed"]
+[connection signal="value_changed" from="DynamicsPanel/VBoxContainer/LimitContainer/SizeMax" to="DynamicsPanel" method="_on_size_max_value_changed"]
+[connection signal="updated" from="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdPressure" to="DynamicsPanel" method="_on_threshold_pressure_updated"]
+[connection signal="updated" from="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdVelocity" to="DynamicsPanel" method="_on_threshold_velocity_updated"]
+
+[editable path="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdPressure"]
+[editable path="DynamicsPanel/VBoxContainer/ThresholdContainer/ThresholdVelocity"]

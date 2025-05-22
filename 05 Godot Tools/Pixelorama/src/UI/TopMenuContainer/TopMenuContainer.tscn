@@ -1,0 +1,155 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsgwar3l6qtgv"]
+
+[ext_resource type="Script" uid="uid://tfdhqto6j5j0" path="res://src/UI/Nodes/Sliders/ValueSlider.gd" id="1"]
+[ext_resource type="Script" uid="uid://bw54cqc214ur8" path="res://src/UI/TopMenuContainer/TopMenuContainer.gd" id="2"]
+
+[node name="TopMenuContainer" type="Panel"]
+custom_minimum_size = Vector2(0, 28)
+offset_right = 1280.0
+offset_bottom = 28.0
+script = ExtResource("2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(575, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="File" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+
+[node name="Edit" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+
+[node name="Select" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+
+[node name="Project" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+
+[node name="Effects" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+
+[node name="View" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+
+[node name="Window" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+
+[node name="Help" type="PopupMenu" parent="MarginContainer/HBoxContainer/MenuBar"]
+
+[node name="TopLabels" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="RotationSlider" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/TopLabels"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 20)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+min_value = -180.0
+max_value = 180.0
+step = 0.1
+allow_greater = true
+allow_lesser = true
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("1")
+suffix = "°"
+snap_step = 45.0
+
+[node name="ZoomSlider" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/TopLabels"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 20)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+min_value = 1.0
+max_value = 5000.0
+value = 50.0
+allow_greater = true
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("1")
+suffix = "%"
+snap_step = 100.0
+
+[node name="CursorPosition" type="Label" parent="MarginContainer/HBoxContainer/TopLabels"]
+layout_mode = 2
+text = "[64×64]"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CurrentFrame" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Current frame:"
+
+[node name="CurrentFrameMark" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "1/1"
+
+[node name="AddLayoutConfirmation" type="ConfirmationDialog" parent="."]
+auto_translate_mode = 1
+title = "Add Layout"
+size = Vector2i(246, 123)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddLayoutConfirmation"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 238.0
+offset_bottom = 74.0
+
+[node name="LayoutName" type="LineEdit" parent="AddLayoutConfirmation/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Insert name"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddLayoutConfirmation/VBoxContainer"]
+layout_mode = 2
+
+[node name="LayoutFromLabel" type="Label" parent="AddLayoutConfirmation/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Copy from"
+
+[node name="LayoutFrom" type="OptionButton" parent="AddLayoutConfirmation/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 1
+popup/item_0/text = "Current layout"
+popup/item_0/id = 0
+
+[node name="DeleteLayoutConfirmation" type="ConfirmationDialog" parent="."]
+auto_translate_mode = 1
+title = "Delete Layout"
+dialog_text = "Are you sure you want to delete this layout?"
+
+[connection signal="confirmed" from="AddLayoutConfirmation" to="." method="_on_add_layout_confirmation_confirmed"]
+[connection signal="visibility_changed" from="AddLayoutConfirmation" to="." method="_on_add_layout_confirmation_visibility_changed"]
+[connection signal="confirmed" from="DeleteLayoutConfirmation" to="." method="_on_delete_layout_confirmation_confirmed"]
+[connection signal="visibility_changed" from="DeleteLayoutConfirmation" to="." method="_on_delete_layout_confirmation_visibility_changed"]

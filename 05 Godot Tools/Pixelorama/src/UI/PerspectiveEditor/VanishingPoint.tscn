@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=3 uid="uid://calecly82t1aw"]
+
+[ext_resource type="PackedScene" uid="uid://yjhp0ssng2mp" path="res://src/UI/Nodes/Sliders/ValueSlider.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dngll5lpmi016" path="res://src/UI/PerspectiveEditor/VanishingPoint.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://ct8wn8m6x4m54" path="res://assets/graphics/misc/value_arrow.svg" id="4"]
+[ext_resource type="Script" uid="uid://36g7rc3uvfqv" path="res://src/UI/PerspectiveEditor/PointCollapseContainer.gd" id="5"]
+[ext_resource type="Script" uid="uid://cca0fmlwaqjh1" path="res://src/UI/Nodes/CollapsibleContainer.gd" id="5_xveuc"]
+
+[node name="VanishingPoint" type="VBoxContainer" groups=["Entry"]]
+offset_right = 261.0
+offset_bottom = 145.0
+script = ExtResource("2")
+
+[node name="TitleContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PointCollapseContainer" type="Button" parent="TitleContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_type_variation = &"CollapsibleCheckBox"
+toggle_mode = true
+script = ExtResource("5")
+
+[node name="TextureRect" type="TextureRect" parent="TitleContainer/PointCollapseContainer" groups=["UIButtons"]]
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -6.0
+offset_right = 14.0
+offset_bottom = 6.0
+pivot_offset = Vector2(6, 6)
+texture = ExtResource("4")
+
+[node name="Label" type="Label" parent="TitleContainer/PointCollapseContainer"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+theme_type_variation = &"HeaderSmall"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="TitleContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Content" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Content"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="BoundaryL" type="ColorRect" parent="Content"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PointInfo" type="HBoxContainer" parent="Content/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Content/VBoxContainer/PointInfo"]
+layout_mode = 2
+size_flags_vertical = 5
+text = "Position:"
+
+[node name="Position" type="VBoxContainer" parent="Content/VBoxContainer/PointInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="X" parent="Content/VBoxContainer/PointInfo/Position" instance=ExtResource("1")]
+unique_name_in_owner = true
+layout_mode = 2
+step = 0.5
+allow_greater = true
+allow_lesser = true
+prefix = "X :"
+
+[node name="Y" parent="Content/VBoxContainer/PointInfo/Position" instance=ExtResource("1")]
+unique_name_in_owner = true
+layout_mode = 2
+step = 0.5
+allow_greater = true
+allow_lesser = true
+prefix = "Y :"
+
+[node name="CollapsibleContainer" type="VBoxContainer" parent="Content/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"CollapsibleContainer"
+script = ExtResource("5_xveuc")
+text = "Lines"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/VBoxContainer/CollapsibleContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="Content/VBoxContainer/CollapsibleContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Content/VBoxContainer/CollapsibleContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="LinesContainer" type="VBoxContainer" parent="Content/VBoxContainer/CollapsibleContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddLine" type="Button" parent="Content/VBoxContainer/CollapsibleContainer/HBoxContainer/LinesContainer"]
+layout_mode = 2
+text = "Add Line"
+
+[node name="Delete" type="Button" parent="Content/VBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "Delete Point"
+
+[node name="BoundaryB" type="ColorRect" parent="Content/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="BoundaryR" type="ColorRect" parent="Content"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[connection signal="toggled" from="TitleContainer/PointCollapseContainer" to="TitleContainer/PointCollapseContainer" method="_on_Button_toggled"]
+[connection signal="pressed" from="Content/VBoxContainer/CollapsibleContainer/HBoxContainer/LinesContainer/AddLine" to="." method="_on_AddLine_pressed"]
+[connection signal="pressed" from="Content/VBoxContainer/Delete" to="." method="_on_Delete_pressed"]

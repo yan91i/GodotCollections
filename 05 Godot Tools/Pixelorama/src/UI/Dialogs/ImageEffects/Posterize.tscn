@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnryslyvxv4ye"]
+
+[ext_resource type="PackedScene" uid="uid://bybqhhayl5ay5" path="res://src/UI/Dialogs/ImageEffects/ImageEffectParent.tscn" id="1"]
+[ext_resource type="Script" uid="uid://tfdhqto6j5j0" path="res://src/UI/Nodes/Sliders/ValueSlider.gd" id="2"]
+[ext_resource type="Script" uid="uid://bexcvmnwffd4e" path="res://src/UI/Dialogs/ImageEffects/Posterize.gd" id="3"]
+
+[node name="Posterize" instance=ExtResource("1")]
+title = "Posterize"
+size = Vector2i(360, 348)
+script = ExtResource("3")
+
+[node name="VBoxContainer" parent="." index="3"]
+offset_bottom = 299.0
+
+[node name="ShowAnimate" parent="VBoxContainer" index="0"]
+visible = false
+
+[node name="LevelsSlider" type="TextureProgressBar" parent="VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+min_value = 2.0
+max_value = 256.0
+step = 0.01
+value = 3.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("2")
+prefix = "Posterize levels:"
+snap_by_default = true
+
+[node name="DitherSlider" type="TextureProgressBar" parent="VBoxContainer" index="3"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+focus_mode = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ValueSlider"
+max_value = 0.5
+step = 0.01
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+script = ExtResource("2")
+prefix = "Dither intensity:"
+snap_step = 0.1
+
+[connection signal="value_changed" from="VBoxContainer/LevelsSlider" to="." method="_on_LevelsSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/DitherSlider" to="." method="_on_DitherSlider_value_changed"]

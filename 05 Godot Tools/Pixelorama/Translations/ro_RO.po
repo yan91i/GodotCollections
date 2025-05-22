@@ -1,0 +1,3929 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
+"X-Crowdin-Project: pixelorama\n"
+"X-Crowdin-Project-ID: 385497\n"
+"X-Crowdin-Language: ro\n"
+"X-Crowdin-File: /master/Translations/Translations.pot\n"
+"X-Crowdin-File-ID: 5\n"
+"Project-Id-Version: pixelorama\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Romanian\n"
+"Language: ro_RO\n"
+"PO-Revision-Date: 2025-04-23 07:39\n"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Anulare"
+
+msgid "Open"
+msgstr "Deschide"
+
+msgid "Save"
+msgstr "Salvează"
+
+msgid "Please Confirm..."
+msgstr "Confirmă alegerea..."
+
+msgid "File Name:"
+msgstr "Numele fișierului:"
+
+msgid "Project Name:"
+msgstr "Numele proiectului:"
+
+msgid "Image Size"
+msgstr "Dimensiunea imaginii"
+
+msgid "Canvas Size"
+msgstr "Dimensiunea pânzei"
+
+msgid "Frame Size"
+msgstr "Dimensiunea cadrului"
+
+msgid "Size:"
+msgstr "Dimensiune:"
+
+msgid "Width:"
+msgstr "Lățime:"
+
+msgid "Height:"
+msgstr "Înălțime:"
+
+msgid "Center"
+msgstr "Centrare"
+
+msgid "File"
+msgstr "Fișier"
+
+msgid "Edit"
+msgstr "Editare"
+
+msgid "Select"
+msgstr "Selectare"
+
+msgid "View"
+msgstr "Vizualizare"
+
+msgid "Window"
+msgstr "Fereastră"
+
+msgid "Image"
+msgstr "Imagine"
+
+#. Noun, refers to a Pixelorama project.
+msgid "Project"
+msgstr "Proiect"
+
+msgid "Effects"
+msgstr "Efecte"
+
+msgid "Help"
+msgstr "Ajutor"
+
+msgid "New"
+msgstr "Nou"
+
+msgid "New..."
+msgstr "Nou..."
+
+msgid "Open..."
+msgstr "Deschidere..."
+
+msgid "Save..."
+msgstr "Salvare..."
+
+msgid "Save as..."
+msgstr "Salvare ca..."
+
+#. Checkbox found in the Save project dialog. If enabled, the final blended images are being stored also in the pxo, for each frame.
+msgid "Include blended images"
+msgstr "Include imaginile amestecate"
+
+#. Hint tooltip of the "Include blended images" checkbox found in the Save project dialog.
+msgid "If enabled, the final blended images are also being stored in the pxo, for each frame.\n"
+"This makes the pxo file larger and is useful for importing by third-party software\n"
+"or CLI exporting. Loading pxo files in Pixelorama does not need this option to be enabled."
+msgstr "Dacă opțiunea este activată, imaginile amestecate finale sunt, de asemenea, stocate în pxo pentru fiecare cadru. Acest lucru face fișierul pxo mai mare și este util pentru importul de programe informatice terțe sau exportul în CLI. Nu este obligatorie ca această opțiune să fie activată pentru încărcarea fișierelor pxo în Pixelorama."
+
+msgid "Import"
+msgstr "Importare"
+
+msgid "Export"
+msgstr "Exportare"
+
+msgid "Overwrite"
+msgstr "Suprascriere"
+
+msgid "Export..."
+msgstr "Exportare..."
+
+msgid "Export as..."
+msgstr "Exportare ca..."
+
+msgid "Export PNG..."
+msgstr "Exportare PNG..."
+
+msgid "Export PNG as..."
+msgstr "Exportare PNG ca..."
+
+msgid "Quit"
+msgstr "Ieșire"
+
+msgid "Undo"
+msgstr "Anulare"
+
+msgid "Redo"
+msgstr "Refacere"
+
+msgid "Copy"
+msgstr "Copiere"
+
+msgid "Cut"
+msgstr "Decupare"
+
+msgid "Paste"
+msgstr "Lipire"
+
+msgid "Paste in Place"
+msgstr "Lipire în loc"
+
+#. Found under the Edit menu. When selected, the image from the clipboard, if it exists, gets pasted into Pixelorama.
+msgid "Paste from Clipboard"
+msgstr "Lipire din memoria temporară"
+
+msgid "Delete"
+msgstr "Ștergere"
+
+msgid "Delete Permanently"
+msgstr "Ștergere permanenetă"
+
+#. Found when requesting to delete a palette or an extension. Refers to when you move something to recycle bin.
+msgid "Move to Trash"
+msgstr "Mutare în coșul de gunoi"
+
+msgid "New Brush"
+msgstr "Pensulă nouă"
+
+msgid "Scale Image"
+msgstr "Scalare imagine"
+
+msgid "Pixels"
+msgstr "Pixeli"
+
+msgid "Percentage"
+msgstr "Procentaj"
+
+#. Found in the create new image dialog. Allows users to change the color mode of the new project, such as RGBA or indexed mode.
+msgid "Color mode:"
+msgstr "Mod culoare:"
+
+#. Found in the image menu. A submenu that allows users to change the color mode of the project, such as RGBA or indexed mode.
+msgid "Color Mode"
+msgstr "Mod culoare"
+
+#. Found in the image menu, under the "Color Mode" submenu. Refers to the indexed color mode. See this wikipedia page for more information: https://en.wikipedia.org/wiki/Indexed_color
+msgid "Indexed"
+msgstr "Indexat"
+
+#. Found in the image menu. Sets the size of the project to be the same as the size of the active selection.
+msgid "Crop to Selection"
+msgstr "Trunchiere la selecție"
+
+#. Found in the image menu. Automatically trims out all the transparent pixels, making the image smaller.
+msgid "Crop to Content"
+msgstr "Trunchiere la conținut"
+
+msgid "Resize Canvas"
+msgstr "Redimensionare pânză"
+
+msgid "Offset Image"
+msgstr "Decalare imagine"
+
+msgid "Offset:"
+msgstr "Decalaj:"
+
+#. Found in the Offset Image dialog. It's a checkbox that, if enabled, wraps around the image if pixels go out of canvas bounds.
+msgid "Wrap around:"
+msgstr "Încapsulare:"
+
+#. Found in the menu that appears when you right click a frame button. Center is a verb, it is used to place the content of the frame to the center of the canvas.
+msgid "Center Frames"
+msgstr "Centrare cadre"
+
+msgid "Rotate Image"
+msgstr "Rotire imagine"
+
+msgid "Pivot x:"
+msgstr "Pivot x:"
+
+msgid "Pivot y:"
+msgstr "Pivot y:"
+
+msgid "Smear options:"
+msgstr "Animație prin efect de neclaritate:"
+
+msgid "Tolerance:"
+msgstr "Toleranță:"
+
+msgid "Initial angle:"
+msgstr "Unghi inițial:"
+
+#. Found under the Select menu, It's a checkbox that, if enabled, wraps around brush strokes if some part of them goes out of selection bounds.
+msgid "Wrap Strokes"
+msgstr "Încapsulare urme de pensulă"
+
+msgid "Clear"
+msgstr "Ștergere"
+
+msgid "Invert"
+msgstr "Inversare"
+
+#. Found under the Select menu. When selected, the area of non-transparent pixels in the cel is being selected.
+msgid "Select cel area"
+msgstr "Selectează zona celului"
+
+msgid "Modify"
+msgstr "Modificare"
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users expand the active selection.
+msgid "Expand"
+msgstr "Extindere"
+
+#. Title of a window that lets users expand the active selection.
+msgid "Expand Selection"
+msgstr "Extindere selecție"
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users shrink the active selection.
+msgid "Shrink"
+msgstr "Micșorare"
+
+#. Title of a window that lets users shrink the active selection.
+msgid "Shrink Selection"
+msgstr "Micșorare selecție"
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users create a border of the active selection.
+msgid "Border"
+msgstr "Margine"
+
+#. Title of a window that lets users create a border of the active selection.
+msgid "Border Selection"
+msgstr "Selecție margine"
+
+#. Refers to a diamond-like shape.
+msgid "Diamond"
+msgstr "Diamant"
+
+msgid "Circle"
+msgstr "Cerc"
+
+msgid "Square"
+msgstr "Pătrat"
+
+msgid "Grayscale View"
+msgstr "Vizualizare în tonuri de gri"
+
+msgid "Mirror Image"
+msgstr "Oglindire imagine"
+
+msgid "Flip Horizontal"
+msgstr "Răsturnare orizontală"
+
+msgid "Flip Vertical"
+msgstr "Răsturnare verticală"
+
+msgid "Preferences"
+msgstr "Preferințe"
+
+#. A submenu of the Effects menu. Contains effects that generate new pixels, such as outline, drop shadow and gradient.
+msgid "Procedural"
+msgstr "Procedural"
+
+#. Refers to effects that blur the image.
+msgid "Blur"
+msgstr "Estompare"
+
+#. A submenu of the Effects menu. Contains effects that have been loaded by the user.
+msgid "Loaded"
+msgstr "Încărcate"
+
+#. An option in the View menu. When selected, the canvas is being placed on the center of the screen.
+msgid "Center Canvas"
+msgstr "Centrare pânză"
+
+msgid "Tile Mode"
+msgstr "Mod mozaic"
+
+msgid "Tile Mode Offsets"
+msgstr "Decalaje mod mozaic"
+
+#. Found under "Tile Mode Offsets". Basis is a linear algebra term. https://en.wikipedia.org/wiki/Basis_(linear_algebra)
+msgid "X-basis:"
+msgstr "Bază X:"
+
+#. Found under "Tile Mode Offsets". Basis is a linear algebra term. https://en.wikipedia.org/wiki/Basis_(linear_algebra)
+msgid "Y-basis:"
+msgstr "Bază Y:"
+
+#. Found under "Tile Mode Offsets". It's a button that when pressed, enables masking for tile mode. Masking essentially limits drawing to the visible pixels of the image, thus preventing from drawing on transparent pixels.
+msgid "Masking:"
+msgstr "Mascare:"
+
+#. Verb, resets something.
+msgid "Reset"
+msgstr "Resetare"
+
+#. Verb, resets something.
+msgid "Reset %s"
+msgstr "Resetare %s"
+
+msgid "Use Current Frame"
+msgstr "Utilizare cadru actual"
+
+msgid "Reset Mask"
+msgstr "Resetare mască"
+
+msgid "Window Opacity"
+msgstr "Opacitatea ferestrei"
+
+msgid "Window opacity does not work on fullscreen mode."
+msgstr "Opacitatea ferestrei nu funcționează în modul ecran complet."
+
+msgid "Panel Layout"
+msgstr "Dispunerea panoului"
+
+msgid "Panels"
+msgstr "Panouri"
+
+msgid "Layouts"
+msgstr "Dispuneri"
+
+msgid "Moveable Panels"
+msgstr "Panouri mobile"
+
+#. Button found in the three vertical dots menu of any panel, when Moveable Panels is enabled in the Window menu. It "detaches" the panel, making it a floating window.
+msgid "Make Floating"
+msgstr "Devenire flotant"
+
+msgid "Manage Layouts"
+msgstr "Gestionare dispuneri"
+
+#. Noun, a preview of something
+msgid "Preview"
+msgstr "Previzualizare"
+
+msgid "Add"
+msgstr "Adăugare"
+
+msgid "Add Layout"
+msgstr "Adăugare dispunere"
+
+#. Verb, deletes something.
+msgid "Delete %s"
+msgstr "Ștergere %s"
+
+msgid "Copy from"
+msgstr "Copiere din"
+
+msgid "Rename"
+msgstr "Redenumire"
+
+msgid "Rename Layout"
+msgstr "Redenumire dispunere"
+
+#. Refers to the current layout of the user interface.
+msgid "Current layout"
+msgstr "Dispunere actuală"
+
+msgid "Are you sure you want to delete this layout?"
+msgstr "Sigur vrei să ștergi această dispunere?"
+
+msgid "Widescreen"
+msgstr "Ecran lat"
+
+msgid "Tallscreen"
+msgstr "Ecran înalt"
+
+msgid "Mirror View"
+msgstr "Vizualizare oglindită"
+
+msgid "Show Grid"
+msgstr "Afișare grilă"
+
+msgid "Show Pixel Grid"
+msgstr "Afișare grilă de pixeli"
+
+msgid "Show Rulers"
+msgstr "Afișare rigle"
+
+msgid "Show Guides"
+msgstr "Afișare ghidaje"
+
+#. Found under the View menu.
+msgid "Show Mouse Guides"
+msgstr "Afișare ghiduri maus"
+
+#. Found under the View menu.
+msgid "Show Reference Images"
+msgstr "Afișare imagini de referință"
+
+#. Found under the View menu. When enabled, non-destructive layer effects will be visible on the canvas.
+msgid "Display Layer Effects"
+msgstr "Afișare efecte strat"
+
+#. Found under the View menu.
+msgid "Snap To"
+msgstr "Fixare la"
+
+#. Found under the View menu.
+msgid "Snap to Rectangular Grid Boundary"
+msgstr "Fixare la limita grilei dreptunghiulare"
+
+#. Found under the View menu.
+msgid "Snap to Rectangular Grid Center"
+msgstr "Fixare la centrul grilei dreptunghiulare"
+
+#. Found under the View menu.
+msgid "Snap to Guides"
+msgstr "Fixare la ghiduri"
+
+#. Found under the View menu.
+msgid "Snap to Perspective Guides"
+msgstr "Fixare la ghiduri de perspectivă"
+
+msgid "Show Animation Timeline"
+msgstr "Afișare cronologia animației"
+
+msgid "Zen Mode"
+msgstr "Mod zen"
+
+msgid "Fullscreen Mode"
+msgstr "Mod ecran complet"
+
+msgid "Fill with color:"
+msgstr "Umplere cu culoare:"
+
+msgid "Open a File"
+msgstr "Deschide un fișier"
+
+msgid "Open File(s)"
+msgstr "Deschidere fișier(e)"
+
+msgid "Import Options"
+msgstr "Opțiuni de importare"
+
+msgid "Import as:"
+msgstr "Importare ca:"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Apply to all"
+msgstr "Aplicare la toate"
+
+msgid "Recent projects"
+msgstr "Proiecte recente"
+
+msgid "New project"
+msgstr "Proiect nou"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Spritesheet (new project)"
+msgstr "Foaie cu grafice bidimensionale (proiect nou)"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Spritesheet (new layer)"
+msgstr "Foaie cu grafice bidimensionale (strat nou)"
+
+msgid "New frame"
+msgstr "Cadru nou"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Replace cel"
+msgstr "Înlocuire cel"
+
+msgid "New layer"
+msgstr "Strat nou"
+
+msgid "New reference image"
+msgstr "Imagine de referință nouă"
+
+msgid "New palette"
+msgstr "Paletă nouă"
+
+msgid "New brush"
+msgstr "Pensulă nouă"
+
+msgid "New pattern"
+msgstr "Model nou"
+
+msgid "Horizontal frames:"
+msgstr "Cadre orizontale:"
+
+msgid "Vertical frames:"
+msgstr "Cadre verticale:"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet. If it's enabled, the software will slice it into frames automatically.
+msgid "Smart Slice"
+msgstr "Secționare inteligentă"
+
+#. A value that is a threshold
+msgid "Threshold:"
+msgstr "Prag:"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Hint tooltip of the "Threshold" value slider.
+msgid "Images that have any one side smaller than this value will cross the threshold"
+msgstr "Imaginile care au oricare dintre laturi mai mici decât această valoare vor depăși pragul"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Merge is an adjective, it refers to the distance where images get merged.
+msgid "Merge distance:"
+msgstr "Distanță de îmbinare:"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Hint tooltip of the "Merge distance" value slider.
+msgid "Images which crossed the threshold will get merged into a larger image, if they are within this distance"
+msgstr "Imaginile care au trecut de prag vor fi îmbinate într-o imagine mai mare, dacă se află în cadrul acestei distanțe"
+
+#. A button that, when pressed, refreshes something. Used to apply certain settings again after they changed. Currently it's only used in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled.
+msgid "Refresh"
+msgstr "Reîmprospătare"
+
+msgid "Start frame:"
+msgstr "Cadru de pornire:"
+
+msgid "End frame:"
+msgstr "Cadru de final:"
+
+msgid "At frame:"
+msgstr "La cadrul:"
+
+msgid "At layer:"
+msgstr "La stratul:"
+
+msgid "Brush type:"
+msgstr "Tip de pensulă:"
+
+msgid "File brush"
+msgstr "Pensulă de fișier"
+
+msgid "Project brush"
+msgstr "Pensulă de proiect"
+
+msgid "Random brush"
+msgstr "Pensulă aleatorie"
+
+msgid "Save Sprite as .pxo"
+msgstr "Salvare grafic bidimensional ca .pxo"
+
+msgid "Export Sprite as .png"
+msgstr "Exportare grafic bidimensional ca .png"
+
+msgid "Export Sprite"
+msgstr "Exportare grafic bidimensional"
+
+msgid "File Exists, Overwrite?"
+msgstr "Fișierul există deja. Suprascrii?"
+
+msgid "The following files already exist. Do you wish to overwrite them?\n"
+"%s"
+msgstr "Următoarele fișiere există deja. Dorești să le suprascrii?\n"
+"%s"
+
+msgid "Directory path is not valid!"
+msgstr "Calea directorului nu este validă!"
+
+msgid "File name is not valid!"
+msgstr "Numele fișierului nu este valid!"
+
+msgid "Directory path and file name are not valid!"
+msgstr "Calea directorului și numele fișierului nu sunt valide!"
+
+msgid "Exporting in progress..."
+msgstr "Exportare în desfășurare..."
+
+msgid "Can't load file '%s'."
+msgstr "Fișierul „%s” nu poate fi încărcat."
+
+msgid "Can't load file '%s'.\n"
+"Error code: %s"
+msgstr "Nu se poate încărca fișierul '%s'.\n"
+"Cod de eroare: %s"
+
+msgid "Can't load file '%s'.\n"
+"This is not a valid palette file."
+msgstr "Fișierul „%s” nu poate fi încărcat.\n"
+"Acesta nu este un fișier de paletă valid."
+
+msgid "Frame"
+msgstr "Cadru"
+
+msgid "Frames:"
+msgstr "Cadre:"
+
+msgid "All Frames"
+msgstr "Toate cadrele"
+
+msgid "Spritesheet"
+msgstr "Foaie cu grafice bidimensionale"
+
+msgid "Animation"
+msgstr "Animație"
+
+msgid "Preview:"
+msgstr "Previzualizare:"
+
+msgid "Frame:"
+msgstr "Cadru:"
+
+msgid "Orientation:"
+msgstr "Orientare:"
+
+msgid "Browse"
+msgstr "Răsfoire"
+
+msgid "Resize:"
+msgstr "Redimensionare:"
+
+#. Found in the export dialog, when exporting a jpeg file. Refers to the quality of the exported file.
+msgid "Quality:"
+msgstr "Calitate:"
+
+msgid "Cancel Export"
+msgstr "Anulare exportare"
+
+msgid "Alert!"
+msgstr "Alertă!"
+
+msgid "Select Current Folder"
+msgstr "Selectează dosarul actual"
+
+msgid "Open a Directory"
+msgstr "Deschide un director"
+
+msgid "Background:"
+msgstr "Fundal:"
+
+#. Found in the export dialog
+msgid "Selected frames"
+msgstr "Cadre selectate"
+
+msgid "Layers:"
+msgstr "Straturi:"
+
+#. Found in the export dialog
+msgid "Visible layers"
+msgstr "Straturi vizibile"
+
+#. Found in the export dialog
+msgid "Selected layers"
+msgstr "Straturi selectate"
+
+#. A type of layer. A pixel layer is the most common type of layer, which stores image data in pixels.
+msgid "Pixel layer:"
+msgstr "Strat de pixeli:"
+
+#. A type of layer. A group layer stores other layers as its children, similar to how a folder holds files.
+msgid "Group layer:"
+msgstr "Strat de grup:"
+
+#. A type of layer. A 3D layer contains data of 3D objects that are rasterized automatically by Pixelorama.
+msgid "3D layer:"
+msgstr "Strat 3D:"
+
+msgid "Direction:"
+msgstr "Direcție:"
+
+msgid "Forward"
+msgstr "Înainte"
+
+msgid "Backwards"
+msgstr "Înapoi"
+
+msgid "Ping-Pong"
+msgstr "Ping-Pong"
+
+msgid "Columns"
+msgstr "Coloane"
+
+msgid "Columns:"
+msgstr "Coloane:"
+
+msgid "Rows"
+msgstr "Rânduri"
+
+msgid "Rows:"
+msgstr "Rânduri:"
+
+#. Found in the export dialog, in the Spritesheet tab. An orientation option that splits the spritesheet by animation tags. Each tag creates a new column.
+msgid "Tags by column"
+msgstr "Etichete după coloană"
+
+#. Found in the export dialog, in the Spritesheet tab. An orientation option that splits the spritesheet by animation tags. Each tag creates a new row.
+msgid "Tags by row"
+msgstr "Etichete după rând"
+
+#. Found in the export dialog. It is a label that says the dimensions (widthxheight) of the exported image(s).
+msgid "Export dimensions:"
+msgstr "Dimensiuni de export:"
+
+msgid "Save a File"
+msgstr "Salvează un fișier"
+
+msgid "Go to previous folder."
+msgstr "Deplasează-te la dosarul anterior."
+
+msgid "Go to next folder."
+msgstr "Deplasează-te la dosarul următor."
+
+msgid "Go to parent folder."
+msgstr "Deplasează-te la dosarul părinte."
+
+msgid "Path:"
+msgstr "Cale:"
+
+msgid "Refresh files."
+msgstr "Reîmprospătează fișierele."
+
+msgid "Toggle the visibility of hidden files."
+msgstr "Comută vizibilitatea fișierelor ascunse."
+
+msgid "Directories & Files:"
+msgstr "Directoare și fișiere:"
+
+msgid "Create Folder"
+msgstr "Creare dosar"
+
+msgid "File:"
+msgstr "Fișier:"
+
+#. Found in "Open" and "Save" file dialogs. Searches all file types.
+msgid "All Files"
+msgstr "Toate fișierele"
+
+#. Found in the "Open" file dialog. Searches all file types supported by Pixelorama.
+msgid "All Recognized"
+msgstr "Toate recunoscute"
+
+#. Found in "Open" and "Save" file dialogs. Searches Pixelorama Project files only (.pxo).
+msgid "Pixelorama Project"
+msgstr "Proiect Pixelorama"
+
+#. Found in the "Open" file dialog. Searches PNG files only. (Note that PNG is a file type and should remain untranslated)
+msgid "PNG Image"
+msgstr "Imagine PNG"
+
+#. Found in the "Open" file dialog. Searches BMP files only. (Note that BMP is a file type and should remain untranslated)
+msgid "BMP Image"
+msgstr "Imagine BMP"
+
+#. Found in the "Open" file dialog. Searches "Radiance HDR" files only. (Note that "Radiance HDR" is a file type and is better untranslated)
+msgid "Radiance HDR Image"
+msgstr "Imagine Radiance HDR"
+
+#. Found in the "Open" file dialog. Searches JPEG files only. (Note that JPEG is a file type and should remain untranslated)
+msgid "JPEG Image"
+msgstr "Imagine JPEG"
+
+#. Found in the "Open" file dialog. Searches SVG files only. (Note that SVG is a file type and should remain untranslated)
+msgid "SVG Image"
+msgstr "Imagine SVG"
+
+#. Found in the "Open" file dialog. Searches TGA files only. (Note that TGA is a file type and should remain untranslated)
+msgid "TGA Image"
+msgstr "Imagine TGA"
+
+#. Found in the "Open" file dialog. Searches WebP files only. (Note that WebP is a file type and should remain untranslated)
+msgid "WebP Image"
+msgstr "Imagine WebP"
+
+#. Found in "Open" and "Save" file dialogs. Searches OpenRaster project files only (.ora). OpenRaster should remain untranslated. https://www.openraster.org/
+msgid "OpenRaster Project"
+msgstr ""
+
+#. Found in "Open" and "Save" file dialogs. Searches Aseprite project files only (.ase and .aseprite). Note that Aseprite is a software and should remain untranslated.
+msgid "Aseprite Project"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches Pixelorama palette files only (.json).
+msgid "Pixelorama palette"
+msgstr "Paletă Pixelorama"
+
+#. Found in the "Open" file dialog. Searches GIMP palette files only (.gpl). Note that GIMP is a software and should remain untranslated.
+msgid "GIMP palette"
+msgstr "Paletă GIMP"
+
+#. Found in the export dialog. It is a button that when pressed, shows more options.
+msgid "Advanced options"
+msgstr "Opțiuni avansate"
+
+msgid "Interpolation:"
+msgstr "Interpolare:"
+
+msgid "Nearest"
+msgstr "Cea mai apropiată"
+
+msgid "Bilinear"
+msgstr "Biliniară"
+
+msgid "Cubic"
+msgstr "Cubică"
+
+msgid "Trilinear"
+msgstr "Triliniară"
+
+msgid "Constant"
+msgstr "Constantă"
+
+#. Refers to https://en.wikipedia.org/wiki/Color_space
+msgid "Color space"
+msgstr "Spațiu de culoare"
+
+#. A type of color space.
+msgid "Linear sRGB"
+msgstr "sRGB liniar"
+
+msgid "General"
+msgstr "General"
+
+msgid "Startup"
+msgstr "Pornire"
+
+msgid "Language"
+msgstr "Limbă"
+
+msgid "Interface"
+msgstr "Interfață"
+
+msgid "Themes"
+msgstr "Teme"
+
+msgid "Canvas"
+msgstr "Pânză"
+
+#. Refers to the animation timeline.
+msgid "Timeline"
+msgstr "Cronologie"
+
+msgid "Selection"
+msgstr "Selecție"
+
+msgid "Shortcuts"
+msgstr "Comenzi rapide"
+
+msgid "Backup"
+msgstr "Copie de rezervă"
+
+msgid "Performance"
+msgstr "Performanță"
+
+#. Found in the preferences. Refers to device drivers, such as video drivers and tablet drivers.
+msgid "Drivers"
+msgstr "Drivere"
+
+msgid "Extensions"
+msgstr "Extensii"
+
+msgid "Cursors"
+msgstr "Cursoare"
+
+msgid "Indicators"
+msgstr "Indicatori"
+
+#. Found in the preferences. Used for options that require restart when they are changed.
+msgid "Pixelorama must be restarted for changes to take effect."
+msgstr "Pixelorama trebuie repornit pentru ca setările să aibă efect."
+
+msgid "On"
+msgstr "Pornit"
+
+msgid "Restore default value"
+msgstr "Resetare la valoarea implicită"
+
+#. Found in the preferences, under Canvas.
+msgid "Smooth Zoom"
+msgstr "Transfocare lentă"
+
+#. Found in the preferences, under Canvas. Hint tooltip of "Smooth Zoom".
+msgid "Adds a smoother transition when zooming in or out"
+msgstr "Adaugă o tranziție mai lentă la apropiere sau depărtare"
+
+#. Found in the preferences, under Canvas.
+msgid "Integer Zoom"
+msgstr "Număr întreg transfocare"
+
+#. Found in the preferences, under Canvas. Hint tooltip of "Integer Zoom".
+msgid "Restricts the value to be an integer multiple of 100%"
+msgstr "Restricționează valoarea la un multiplu întreg de 100%"
+
+msgid "Tablet pressure sensitivity:"
+msgstr "Sensibilitatea de apăsare a tabletei:"
+
+msgid "None"
+msgstr "Niciunul"
+
+msgid "Affect Brush's Alpha"
+msgstr "Afectează valoarea alfa a pensulei"
+
+msgid "Color:"
+msgstr "Culoare:"
+
+msgid "Guide color:"
+msgstr "Culoarea ghidajului:"
+
+msgid "System Language"
+msgstr "Limba sistemului"
+
+msgid "Display scale:"
+msgstr "Scară de afișare:"
+
+#. Refers to the font of a text.
+msgid "Font:"
+msgstr "Font:"
+
+#. Found in the preferences, under the interface section. Allows users to set the size of the font, ie the text.
+msgid "Font size:"
+msgstr "Dimensiunea fontului:"
+
+msgid "Dim interface on dialog popup"
+msgstr "Întunecă interfața la apariția ferestrei de dialog"
+
+#. Found in the preferences, under the interface section. If enabled, the notification labels appear in the canvas when performing an action, such as when undoing/redoing.
+msgid "Show notification labels"
+msgstr "Arată etichetele de notificare"
+
+#. Found in the preferences, under the interface section. When this setting is enabled, the native file dialogs of the operating system are being used, instead of Pixelorama's custom ones.
+msgid "Use native file dialogs"
+msgstr "Folosește dialoguri native de fișiere"
+
+#. Found in the preferences, tooltip of the "Use native file dialogs" option.
+msgid "When this setting is enabled, the native file dialogs of the operating system are being used, instead of Pixelorama's custom ones."
+msgstr "Când această setare este activată, sunt folosite dialogurile native de fişiere ale sistemului de operare, în loc de cele personalizate ale Pixelorama."
+
+#. Found in the preferences, under the interface section. When this setting is enabled, Pixelorama's subwindows will be embedded in the main window, otherwise each dialog will be its own separate window.
+msgid "Single window mode"
+msgstr "Mod fereastră simplă"
+
+#. Found in the preferences, tooltip of the "Single window mode" option.
+msgid "When this setting is enabled, Pixelorama's subwindows will be embedded in the main window, otherwise each dialog will be its own separate window."
+msgstr "Când această setare este activată, subferestrele aplicației Pixelorama vor fi încorporate în fereastra principală, în caz contrar fiecare dialog va fi în propria fereastră separată."
+
+msgid "Dark"
+msgstr "Întunecat"
+
+msgid "Gray"
+msgstr "Gri"
+
+msgid "Blue"
+msgstr "Albastru"
+
+msgid "Caramel"
+msgstr "Caramel"
+
+msgid "Light"
+msgstr "Luminos"
+
+msgid "Purple"
+msgstr "Mov"
+
+#. A theme. Rose refers to the color rose.
+msgid "Rose"
+msgstr "Trandafiriu"
+
+msgid "Theme"
+msgstr "Temă"
+
+msgid "Buttons"
+msgstr "Butoane"
+
+msgid "Icon color from:"
+msgstr "Culoarea pictogramei din:"
+
+msgid "Icon color:"
+msgstr "Culoarea pictogramei:"
+
+msgid "Background"
+msgstr "Fundal"
+
+msgid "Background color from:"
+msgstr "Culoare de fundal din:"
+
+msgid "Background color:"
+msgstr "Culoare de fundal:"
+
+#. Found in the preferences, under the Tools category.
+msgid "Share options between the left and the right tools"
+msgstr "Sincronizează opțiunile între instrumentele din stânga și cele din dreapta"
+
+#. Found in the preferences, under the Tools category. Tooltip of the "Share options between the left and the right tools" preference.
+msgid "If this is enabled, options will be synced between the left and the right tool.\n"
+"For example, both tools will share the same brush size, and changing it on one tool will instantly change on the other."
+msgstr "Dacă această setare este activată, opțiunile vor fi sincronizate între instrumentul din stânga și cel din dreapta.\n"
+"De exemplu, ambele instrumente vor folosi o pensulă de aceeași mărime, iar modificarea setării pentru un instrument se va aplica instantaneu și pentru cealaltă."
+
+msgid "Left tool color:"
+msgstr "Culoarea instrumentului din stânga:"
+
+msgid "Right tool color:"
+msgstr "Culoarea instrumentului din dreapta:"
+
+msgid "Tool button size:"
+msgstr "Mărimea butonului instrumentului:"
+
+msgid "Small"
+msgstr "Mică"
+
+msgid "Big"
+msgstr "Mare"
+
+msgid "Only affect selection"
+msgstr "Afectează doar selecția"
+
+msgid "Selected cels"
+msgstr "Celuri selectate"
+
+msgid "Current cel"
+msgstr "Celul actual"
+
+msgid "Current frame"
+msgstr "Cadrul actual"
+
+msgid "All frames"
+msgstr "Toate cadrele"
+
+msgid "All projects"
+msgstr "Toate proiectele"
+
+msgid "Invert Colors"
+msgstr "Inversare culori"
+
+msgid "Modify Red Channel"
+msgstr "Modificare canal roșu"
+
+msgid "Modify Green Channel"
+msgstr "Modificare canal verde"
+
+msgid "Modify Blue Channel"
+msgstr "Modificare canal albastru"
+
+msgid "Modify Alpha Channel"
+msgstr "Modificare canal alfa"
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Desaturation"
+msgstr "Desaturație"
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Outline"
+msgstr "Contur"
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Drop Shadow"
+msgstr "Umbră"
+
+msgid "Offset X:"
+msgstr "Decalaj X:"
+
+msgid "Offset Y:"
+msgstr "Decalaj Y:"
+
+msgid "Shadow color:"
+msgstr "Culoarea umbrei:"
+
+#. An image effect. https://en.wikipedia.org/wiki/Gaussian_blur
+msgid "Gaussian Blur"
+msgstr "Estompare gaussiană"
+
+#. The type of the Gaussian blur, an image effect.
+msgid "Blur type:"
+msgstr "Tip de estompare:"
+
+#. The applied amount of Gaussian blur, an image effect.
+msgid "Blur amount:"
+msgstr "Cantitate de estompare:"
+
+#. The applied radius of Gaussian blur, an image effect.
+msgid "Blur radius:"
+msgstr "Rază de estompare:"
+
+#. The applied direction of Gaussian blur, an image effect.
+msgid "Blur direction:"
+msgstr "Direcția de estompare:"
+
+msgid "Gradient"
+msgstr "Degrade"
+
+msgid "Gradient Map"
+msgstr "Hartă degrade"
+
+msgid "Interpolation"
+msgstr "Interpolare"
+
+#. Verb, refers to the action of reversing something.
+msgid "Reverse"
+msgstr "Inversare"
+
+#. An option found in gradient edit widgets. When selected, all points of a gradient are being evenly distributed across the gradient.
+msgid "Evenly distribute points"
+msgstr "Distribuie echivalent punctele"
+
+#. An option found in gradient edit widgets. When selected, the gradient is being split into equal parts.
+msgid "Divide into equal parts"
+msgstr "Împărțire în părți egale"
+
+msgid "Parts:"
+msgstr "Părți:"
+
+msgid "Add point at the end"
+msgstr "Adăugare punct la final"
+
+msgid "If this is enabled, the last point gets added at the end of the gradient.\n"
+"Disable this if you wish to convert the gradient to have constant interpolation, so that the last color will be taken into account."
+msgstr "Dacă această opțiune este activată, ultimul punct este adăugat la sfârșitul degradeului.\n"
+"Dezactivează opțiunea dacă dorești să convertești degradeul pentru a avea interpolare constantă, astfel încât să fie luată în considerare ultima culoare."
+
+#. A tooltip of a button found in gradient edit widgets. When the button is pressed, the gradient is saved to presets.
+msgid "Save to presets"
+msgstr "Salvare la prestabilite"
+
+msgid "Shape:"
+msgstr "Formă:"
+
+msgid "Linear"
+msgstr "Liniar"
+
+msgid "Radial"
+msgstr "Radial"
+
+#. Found in the Gradient dialog, under the image menu. Specifies if the gradient will repeat or not.
+msgid "Repeat:"
+msgstr "Repetare:"
+
+#. Found in the Gradient dialog, under the image menu. Specifies if the gradient will repeat or not.
+msgid "Repeat"
+msgstr "Repetare"
+
+#. Found in the Gradient dialog, under the image menu. It is one of the repeat options.
+msgid "Mirror"
+msgstr "Oglindire"
+
+#. Found in the Gradient dialog, under the image menu. It is one of the repeat options. If Truncate is selected, the gradient gets cut at the edges.
+msgid "Truncate"
+msgstr "Trunchiere"
+
+msgid "Transition size:"
+msgstr "Dimensiunea tranziției:"
+
+msgid "Center:"
+msgstr "Centru:"
+
+msgid "Dithering pattern:"
+msgstr "Model de intercalare a nuanțelor:"
+
+msgid "Type:"
+msgstr "Tip:"
+
+msgid "Angle:"
+msgstr "Unghi:"
+
+#. An image effect. Adjusts the hue, saturation and value of the colors of an image. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Adjust Hue/Saturation/Value"
+msgstr "Ajustare nuanță/saturație/valoare"
+
+#. HSV stands for Hue, Saturation & Value.
+msgid "Adjust HSV"
+msgstr "Ajustare NSV"
+
+#. Refers to the hue of the colors of an image.
+msgid "Hue:"
+msgstr "Nuanță:"
+
+#. Refers to the saturation of the colors of an image.
+msgid "Saturation:"
+msgstr "Saturație:"
+
+#. Refers to the value (as in HSV) of the colors of an image.
+msgid "Value:"
+msgstr "Valoare:"
+
+#. An image effect. Adjusts the brightness and contrast of the colors of an image.
+msgid "Adjust Brightness/Contrast"
+msgstr "Ajustare luminozitate/contrast"
+
+#. Refers to the brightness of the colors of an image.
+msgid "Brightness:"
+msgstr "Luminozitate:"
+
+#. Refers to the contrast of the colors of an image.
+msgid "Contrast:"
+msgstr "Contrast:"
+
+#. Refers to the red value of the colors of an image.
+msgid "Red value:"
+msgstr "Valoare roșie:"
+
+#. Refers to the green value of the colors of an image.
+msgid "Green value:"
+msgstr "Valoare verde:"
+
+#. Refers to the blue value of the colors of an image.
+msgid "Blue value:"
+msgstr "Valoare albastră:"
+
+#. Refers to a color that tints an image.
+msgid "Tint color:"
+msgstr "Culoare de nuanță:"
+
+#. Refers to the factor (how much) a color tints an image.
+msgid "Tint effect factor:"
+msgstr "Factor de efect de nuanță:"
+
+#. An image effect that adjusts the colors of the image by using curves.
+msgid "Color Curves"
+msgstr "Curbe de culoare"
+
+#. Refers to a color channel, such as the red, green, blue or alpha channels.
+msgid "Channel:"
+msgstr "Canal:"
+
+msgid "Red"
+msgstr "Roșu"
+
+msgid "Green"
+msgstr "Verde"
+
+#. Refers to the value (as in HSV) of the colors of an image.
+msgid "Value"
+msgstr "Valoare"
+
+msgid "Presets"
+msgstr "Valori prestabilite"
+
+msgid "Apply"
+msgstr "Aplicare"
+
+msgid "Diagonal"
+msgstr "Diagonală"
+
+msgid "Place inside image"
+msgstr "Așezare în interiorul imaginii"
+
+msgid "Thickness:"
+msgstr "Grosime:"
+
+msgid "Colors:"
+msgstr "Culori:"
+
+msgid "Steps:"
+msgstr "Pași:"
+
+#. An image effect. It maps the color of the input to the nearest color in the selected palette. Useful for limiting color in pixel art and for artistic effects. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Palettize"
+msgstr "Paletizare"
+
+#. An image effect. It makes the input image pixelated. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Pixelize"
+msgstr "Pixelizare"
+
+#. An image effect. For more details about what it does, you can refer to GIMP's documentation https://docs.gimp.org/2.8/en/gimp-tool-posterize.html
+msgid "Posterize"
+msgstr "Posterizare"
+
+#. An option for the posterize image effect. For more details about what it does, you can refer to GIMP's documentation https://docs.gimp.org/2.8/en/gimp-tool-posterize.html
+msgid "Posterize levels:"
+msgstr "Niveluri de posterizare:"
+
+#. An option for the posterize image effect.
+msgid "Dither intensity:"
+msgstr "Intensitate de intercalare a nuanțelor:"
+
+msgid "View Splash Screen"
+msgstr "Vizualizare ecran de întâmpinare"
+
+msgid "Online Docs"
+msgstr "Documentație virtuală"
+
+msgid "Issue Tracker"
+msgstr "Monitor de probleme"
+
+#. Found under the Help menu. When selected, it opens the folder where the application's data are being saved.
+msgid "Open Editor Data Folder"
+msgstr "Deschide dosarul cu datele editorului"
+
+msgid "Changelog"
+msgstr "Jurnal de modificări"
+
+msgid "About Pixelorama"
+msgstr "Despre Pixelorama"
+
+#. Found under the Help menu. When clicked, it opens the URL of Orama Interactive's patreon page.
+msgid "Support Pixelorama's Development"
+msgstr "Susține dezvoltarea aplicației Pixelorama"
+
+msgid "Pixelorama - Pixelate your dreams!"
+msgstr "Pixelorama – Pixelează-ți visele!"
+
+msgid "Developed by Orama Interactive"
+msgstr "Dezvoltat de Orama Interactive"
+
+msgid "©2019-present by Orama Interactive and contributors"
+msgstr "©2019-prezent de Orama Interactive și contribuitorii"
+
+msgid "Website"
+msgstr "Pagină de internet"
+
+#. Found in the About dialog. A button that, when you click it, it opens the URL of Pixelorama's source code.
+msgid "Source Code"
+msgstr "Cod sursă"
+
+msgid "Donate"
+msgstr "Donează"
+
+msgid "Developers"
+msgstr "Dezvoltatori"
+
+msgid "Contributors"
+msgstr "Contribuitori"
+
+msgid "Donors"
+msgstr "Donatori"
+
+msgid "Translators"
+msgstr "Traducători"
+
+#. Refers to software licenses. https://en.wikipedia.org/wiki/Software_license
+msgid "Licenses"
+msgstr "Licențe"
+
+#. Refers to a software license. https://en.wikipedia.org/wiki/Software_license
+msgid "License"
+msgstr "Licență"
+
+#. Refers to the licenses of the software that are used by the Godot Engine. https://en.wikipedia.org/wiki/Software_license
+msgid "Godot Licenses"
+msgstr "Licențe Godot"
+
+#. Refers to software licenses that are not a part of Pixelorama or Godot. https://en.wikipedia.org/wiki/Software_license
+msgid "Third-party Licenses"
+msgstr "Licențe terțe"
+
+msgid "English"
+msgstr "Engleză"
+
+msgid "Greek"
+msgstr "Greacă"
+
+msgid "French"
+msgstr "Franceză"
+
+msgid "German"
+msgstr "Germană"
+
+msgid "Polish"
+msgstr "Poloneză"
+
+msgid "Portuguese"
+msgstr "Portugheză"
+
+msgid "Brazilian Portuguese"
+msgstr "Portugheză braziliană"
+
+msgid "Russian"
+msgstr "Rusă"
+
+msgid "Chinese Simplified"
+msgstr "Chineză simplificată"
+
+msgid "Chinese Traditional"
+msgstr "Chineză tradițională"
+
+msgid "Italian"
+msgstr "Italiană"
+
+msgid "Latvian"
+msgstr "Letonă"
+
+msgid "Spanish"
+msgstr "Spaniolă"
+
+msgid "Catalan"
+msgstr "Catalană"
+
+msgid "Esperanto"
+msgstr "Esperanto"
+
+msgid "Indonesian"
+msgstr "Indoneziană"
+
+msgid "Czech"
+msgstr "Cehă"
+
+msgid "Arabic"
+msgstr "Arabă"
+
+msgid "Turkish"
+msgstr "Turcă"
+
+msgid "Norwegian Bokmål"
+msgstr "Bokmål"
+
+msgid "Korean"
+msgstr "Coreeană"
+
+msgid "Hungarian"
+msgstr "Maghiară"
+
+msgid "Romanian"
+msgstr "Română"
+
+msgid "Japanese"
+msgstr "Japoneză"
+
+msgid "Ukrainian"
+msgstr "Ucraineană"
+
+msgid "Danish"
+msgstr "Daneză"
+
+msgid "Swedish"
+msgstr "Suedeză"
+
+msgid "Serbian (Cyrillic)"
+msgstr "Sârbă (alfabet chirilic)"
+
+msgid "Dutch"
+msgstr "Neerlandeză"
+
+msgid "Belarusian"
+msgstr "Belarusă"
+
+#. Found in the About dialog.
+msgid "Lead Developer"
+msgstr "Dezvoltator principal"
+
+#. Found in the About dialog.
+msgid "UI Designer"
+msgstr "Proiectant UI"
+
+#. Found in the About dialog. Refers to the people who have contributed code to the project.
+msgid "Authors"
+msgstr "Autori"
+
+msgid "Art by: %s"
+msgstr "Artă realizată de: %s"
+
+msgid "untitled"
+msgstr "fără titlu"
+
+msgid "imported"
+msgstr "importat"
+
+msgid "copy"
+msgstr "copie"
+
+msgid "Are you sure you want to exit Pixelorama?"
+msgstr "Sigur dorești să ieși din Pixelorama?"
+
+msgid "Unsaved Image"
+msgstr "Imagine nesalvată"
+
+msgid "You have unsaved changes. If you proceed, the progress you have made will be lost."
+msgstr "Ai modificări nesalvate. Dacă continui, progresul efectuat va fi pierdut."
+
+msgid "Save before exiting?"
+msgstr "Salvezi înainte de ieșire?"
+
+msgid "Project %s has unsaved progress. How do you wish to proceed?"
+msgstr "Proiectul %s are progres nesalvat. Cum dorești să continui?"
+
+msgid "Save & Exit"
+msgstr "Salvare și ieșire"
+
+msgid "Exit without saving"
+msgstr "Ieșire fără salvare"
+
+msgid "Rectangular Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Selectare dreptunghiulară\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Elliptical Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Selectare eliptică\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Polygonal Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Double-click to connect the last point to the starting point"
+msgstr "Selectare poligonală\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului\n\n"
+"Dublu-clic pentru a conecta ultimul punct la punctul de pornire"
+
+msgid "Select By Color\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Selectare după culoare\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Magic Wand\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Baghetă magică\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Lasso / Free Select Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Lasou/instrument de selectare liberă\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Select by Drawing\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Selectare după desen\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Move\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Deplasare\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Zoom\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Transfocare\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Pan\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Panoramare\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Color Picker\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Select a color from a pixel of the sprite"
+msgstr "Selector de culoare\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului\n\n"
+"Selectează o culoare dintr-un pixel al graficului bidimensional"
+
+msgid "Crop\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Resize the canvas"
+msgstr "Decupare\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Pencil\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to make a line"
+msgstr "Creion\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului\n\n"
+"Ține apăsată tasta %s pentru a trasa o linie"
+
+msgid "Eraser\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to make a line"
+msgstr "Radieră\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului\n\n"
+"Ține apăsată tasta %s pentru a trasa o linie"
+
+msgid "Bucket\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Recipient\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Shading Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Instrument de umbrire\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Line Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to snap the angle of the line\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr "Instrument Linie\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului\n\n"
+"Ține apăsată tasta %s pentru a fixa unghiul liniei\n"
+"Ține apăsată tasta %s pentru a centra forma pe originea clicului\n"
+"Ține apăsată tasta %s pentru a deplasa originea formei"
+
+msgid "Curve Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Draws bezier curves\n"
+"Press %s/%s to add new points\n"
+"Double-click to finish drawing the curve\n"
+"Press and drag to control the curvature\n"
+"Press %s to remove the last added point"
+msgstr "Instrument Curbă\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului\n\n"
+"Desenează curbe Bézier\n"
+"Apasă %s/%s pentru a adăuga puncte noi\n"
+"Dă dublu clic pentru a finaliza desenarea curbei\n"
+"Apasă și glisează pentru a controla curbura\n"
+"Apasă %s pentru a elimina ultimul punct adăugat"
+
+msgid "Rectangle Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to create a 1:1 shape\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr "Instrument Dreptunghi\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului\n\n"
+"Ține apăsată tasta %s pentru a crea o formă 1:1\n"
+"Ține apăsată tasta %s pentru a centra forma pe originea clicului\n"
+"Ține apăsată tasta %s pentru a deplasa originea formei"
+
+msgid "Ellipse Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to create a 1:1 shape\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr "Instrument Elipsă\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului\n\n"
+"Ține apăsată tasta %s pentru a crea o formă 1:1\n"
+"Ține apăsată tasta %s pentru a centra forma pe originea clicului\n"
+"Ține apăsată tasta %s pentru a deplasa originea formei"
+
+msgid "Text\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Text\n\n"
+"%s pentru butonul din stânga al mausului\n"
+"%s pentru butonul din dreapta al mausului"
+
+msgid "Rectangle"
+msgstr "Dreptunghi"
+
+msgid "Ellipse"
+msgstr "Elipsă"
+
+msgid "Choose a color for the left tool"
+msgstr "Alege o culoare pentru instrumentul din stânga"
+
+msgid "Choose a color for the right tool"
+msgstr "Alege o culoare pentru instrumentul din dreapta"
+
+#. Tooltip of the switch colors button found in the color picker panel.
+msgid "Switch left and right colors."
+msgstr "Comută culorile din stânga și dreapta."
+
+#. Tooltip of the average color button, found in the color picker panel. Shows the average color between the two selected.
+msgid "Average Color:"
+msgstr "Culoare medie:"
+
+msgid "Reset the colors to their default state (black for left, white for right)"
+msgstr "Resetează culorile la starea lor implicită (negru pentru stânga, alb pentru dreapta)"
+
+#. Tooltip of the screen color picker button found in the color picker panel.
+msgid "Pick a color from the application window."
+msgstr "Alege o culoare din fereastra aplicației."
+
+#. Tooltip of the color text field found in the color picker panel that lets users change the color by hex code or english name ("red" cannot be translated).
+msgid "Enter a hex code (\"#ff0000\") or named color (\"red\")."
+msgstr "Introdu un cod hexazecimal („#ff0000”) sau numele culorii în engleză („red”)."
+
+#. Tooltip of the button found in the color picker panel that lets users change the shape of the color picker.
+msgid "Select a picker shape."
+msgstr "Selectează o formă pentru selector."
+
+#. Refers to color-related options such as sliders that set color channel values like R, G, B and A.
+msgid "Color options"
+msgstr "Opțiuni de culoare"
+
+#. Tooltip of the button with three dots found under color options in the color picker panel that lets users change the mode of the color picker/sliders.
+msgid "Select a picker mode."
+msgstr "Selectează un mod selector."
+
+#. Checkbox found in the menu of the button with three dots found under color options in the color picker panel.
+msgid "Colorized Sliders"
+msgstr "Glisoare colorate"
+
+#. Shows saved colors in certain color picker menus.
+msgid "Swatches"
+msgstr "Eșantioane"
+
+#. Found under color options in the color picker panel.
+msgid "Recent Colors"
+msgstr "Culori recente"
+
+msgid "Left tool"
+msgstr "Instrument stânga"
+
+msgid "Right tool"
+msgstr "Instrument dreapta"
+
+msgid "Left pixel indicator"
+msgstr "Indicator pixel stânga"
+
+msgid "Show left mouse pixel indicator or brush on the canvas when drawing"
+msgstr "Arată pe pânză pensula sau indicatorul pixel al butonului din stânga mausului atunci când se desenează"
+
+msgid "Right pixel indicator"
+msgstr "Indicator pixel dreapta"
+
+msgid "Show right mouse pixel indicator or brush on the canvas when drawing"
+msgstr "Arată pe pânză pensula sau indicatorul pixel al butonului din dreapta mausului atunci când se desenează"
+
+msgid "Show left tool icon"
+msgstr "Arată pictograma instrumentului din stânga"
+
+msgid "Displays an icon of the selected left tool next to the cursor on the canvas"
+msgstr "Afișează o pictogramă a instrumentului selectat din stânga de lângă cursorul de pe pânză"
+
+msgid "Show right tool icon"
+msgstr "Arată pictograma instrumentului din dreapta"
+
+msgid "Displays an icon of the selected right tool next to the cursor on the canvas"
+msgstr "Afișează o pictogramă a instrumentului selectat din dreapta de lângă cursorul de pe pânză"
+
+msgid "Use native mouse cursors"
+msgstr "Folosește cursoarele native ale mausului"
+
+msgid "Use cross cursor for the canvas"
+msgstr "Folosește cursorul încrucișat pentru pânză"
+
+msgid "Guides"
+msgstr "Ghidaje"
+
+msgid "Guides color:"
+msgstr "Culoare pentru ghidaje:"
+
+msgid "A color of ruler guides displayed on the canvas"
+msgstr "Culoarea ghidajelor de riglă afișate pe pânză"
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping.
+msgid "Snapping"
+msgstr "Ancorare"
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping.
+msgid "Snapping distance:"
+msgstr "Distanță de ancorare:"
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping. Hint tooltip of the snapping distance slider.
+msgid "This is the distance in screen pixels where guide and grid snapping gets activated."
+msgstr "Aceasta reprezintă distanța în pixeli unde ghidajul și fixarea la grilă sunt activate."
+
+msgid "Grid"
+msgstr "Grilă"
+
+msgid "Grid type:"
+msgstr "Tip de grilă:"
+
+msgid "Sets the type of the grid between rectangular, isometric or both"
+msgstr "Setează tipul de grilă dintre dreptunghiulară, izometrică sau ambele"
+
+msgid "Rectangular"
+msgstr "Dreptunghiulară"
+
+msgid "Isometric"
+msgstr "Izometrică"
+
+#. Refers to a hexagonal type of grid.
+msgid "Hexagonal"
+msgstr "Hexagonală"
+
+#. Refers to a hexagonal type of grid, with pointy-top orientation.
+msgid "Hexagonal (pointy-top)"
+msgstr "Hexagonală (cu vârf ascuțit)"
+
+#. Refers to a hexagonal type of grid, with flat-top orientation.
+msgid "Hexagonal (flat-top)"
+msgstr "Hexagonală (cu vârf plat)"
+
+msgid "All"
+msgstr "Toate"
+
+#. Found in the Preferences, in the Canvas category. Refers to the number of visible grids.
+msgid "Grids visible:"
+msgstr "Grile vizibile:"
+
+#. Found in the Preferences, in the Canvas category. Refers to the grid that is being edited.
+msgid "Editing grid:"
+msgstr "Grilă în editare:"
+
+#. Found in the Preferences, in the Canvas category.
+msgid "Grid size:"
+msgstr "Dimensiune grilă:"
+
+#. Found in the Preferences, in the Canvas category.
+msgid "Grid offset:"
+msgstr "Decalaj grilă:"
+
+#. Found in the Preferences, in the Canvas category. Hint tooltip of the grid offset value sliders.
+msgid "Sets grid's offset from the canvas origin (top left corner of the image)"
+msgstr "Setează decalajul grilei față de punctul de pornire al pânzei (colțul din partea din stânga sus a imaginii)"
+
+msgid "Draw over Tile Mode:"
+msgstr "Afișare peste modul mozaic:"
+
+msgid "If disabled, the grid will be drawn only over the original image"
+msgstr "Dacă opțiunea este dezactivată, grila va fi afișată doar peste imaginea originală"
+
+msgid "Grid color:"
+msgstr "Culoarea grilei:"
+
+msgid "A color of the grid"
+msgstr "Culoarea atribuită grilei"
+
+msgid "Pixel Grid"
+msgstr "Grilă de pixeli"
+
+msgid "Show at zoom:"
+msgstr "Afișare la transfocare:"
+
+msgid "Sets the minimal zoom at which pixel grid will be shown"
+msgstr "Setează nivelul minim de transfocare la care va fi afișată grila de pixeli"
+
+msgid "Pixel grid color:"
+msgstr "Culoarea grilei de pixeli:"
+
+msgid "A color of the pixel grid"
+msgstr "O culoare a grilei de pixeli"
+
+msgid "Transparency"
+msgstr "Transparență"
+
+msgid "Checker size:"
+msgstr "Dimensiunea carourilor:"
+
+msgid "Size of the transparent checker background"
+msgstr "Dimensiunea fundalului caroiat transparent"
+
+msgid "Checker color 1:"
+msgstr "Culoare carouri 1:"
+
+msgid "First color of the transparent checker background"
+msgstr "Prima culoare a fundalului caroiat transparent"
+
+msgid "Checker color 2:"
+msgstr "Culoare carouri 2:"
+
+msgid "Second color of the transparent checker background"
+msgstr "A doua culoare a fundalului caroiat transparent"
+
+msgid "Follow Canvas Movement"
+msgstr "Urmărește mișcarea pânzei"
+
+msgid "The transparent checker follow the movement of canvas"
+msgstr "Carourile transparente urmăresc mișcarea pânzei"
+
+msgid "Follow Canvas Zoom Level"
+msgstr "Urmărește nivelul de transfocare al pânzei"
+
+msgid "The transparent checker follow the zoom level of canvas"
+msgstr "Carourile transparente urmăresc nivelul de transfocare al pânzei"
+
+#. Found in the Preferences, under Timeline. If this is enabled, clicking on the layer buttons (such as lock, invisible etc) will automatically select that layer.
+msgid "Select layer when clicking on one of its buttons:"
+msgstr "Selectează stratul atunci când dai clic pe unul din butoanele acestuia:"
+
+#. Found in the Preferences, under Timeline. Changes the color of the past (previous) frames in onion skinning, if color mode is enabled.
+msgid "Onion skinning past color:"
+msgstr "Culoarea trecută a cadrelor multiple simultane:"
+
+#. Found in the Preferences, under Timeline. Changes the color of the past (previous) frames in onion skinning, if color mode is enabled.
+msgid "Onion skinning future color:"
+msgstr "Culoarea viitoare a cadrelor multiple simultane:"
+
+msgid "Animated selection borders"
+msgstr "Margini de selecție animate"
+
+msgid "Border color 1:"
+msgstr "Culoarea marginii 1:"
+
+msgid "Border color 2:"
+msgstr "Culoarea marginii 2:"
+
+msgid "Only custom preset can be modified"
+msgstr "Doar presetarea personalizată poate fi modificată"
+
+msgid "Set application FPS limit:"
+msgstr "Setare limită de cadre pe secundă pentru aplicație:"
+
+msgid "Sets the limit of the application's frames per second. The lower the number, the lower the CPU usage, but the application gets slower, choppier and unresponsive. 0 means that there is no limit."
+msgstr "Setează limita de cadre pe secundă a aplicației. Cu cât numărul este mai mic, cu atât utilizarea procesorului este mai redusă, însă aplicația devine mai lentă, variabilă și nereceptivă. 0 înseamnă că nu există limite."
+
+#. Found in the Preferences, under the Performance section. Changes the value of the maximum undo steps projects can use.
+msgid "Max undo steps:"
+msgstr "Pași max. de anulare:"
+
+#. An option found in the preferences, under the Performance section.
+msgid "Pause application when it loses focus"
+msgstr "Întrerupe aplicația atunci când pierde focalizarea"
+
+#. Found in the preferences, hint of the "Pause application when it loses focus" option.
+msgid "If this is toggled on, when the application's window loses focus, it gets paused. This helps lower CPU usage when idle. The application gets unpaused when the mouse enters the application's window."
+msgstr "Dacă această opțiune este activată, în momentul în care fereastra aplicației pierde focalizarea, aceasta este întreruptă. Acest lucru ajută la reducerea utilizării procesorului pe durata perioadei de inactivitate. Aplicația își reia activitatea atunci când mausul intră în fereastra aplicației."
+
+#. An option found in the preferences, under the Performance section. Refers to the screen being updated (redrawn) continuously.
+msgid "Update continuously"
+msgstr "Actualizare continuă"
+
+#. Found in the preferences, hint of the "Update continuously" option.
+msgid "If this is toggled on, the application will redraw the screen continuously, even while it's not used. Turning this off helps lower CPU and GPU usage when idle."
+msgstr "Dacă această opțiune este activată, aplicația va redesena ecranul continuu, chiar dacă nu este folosit. Dezactivarea acestei opțiuni ajută la reducerea gradului de utilizare a unității centrale de procesare și a unității de procesare grafică în perioadele de inactivitate."
+
+#. An option found in the preferences, under the Performance section.
+msgid "Enable window transparency"
+msgstr "Activează transparența ferestrei"
+
+#. Found in the preferences, hint of the "Enable window transparency" option.
+msgid "If enabled, the application window can become transparent. This affects performance, so keep it off if you don't need it."
+msgstr "Dacă opțiunea este activată, fereastra aplicației poate deveni transparentă. Aceasta afectează performanța, așa că este recomandată dezactivarea opțiunii dacă nu este necesară."
+
+#. An option found in the preferences, under the Performance section. A dummy driver is basically a driver that doesn't do anything. When this option is enabled, audio does not play, but it can help save some performance.
+msgid "Use dummy audio driver"
+msgstr "Folosire driver audio fictiv"
+
+#. Found in the Preferences, under Drivers. Specifies the renderer/video driver being used.
+msgid "Renderer:"
+msgstr "Randator:"
+
+#. Found in the Preferences, under Drivers. Hint tooltip of the renderer option.
+msgid "Specifies the renderer/video driver being used. GLES2 is better for older and low-end devices, but GLES3 may offer more features."
+msgstr "Specifică randatorul/driverul video utilizat. GLES2 este mai bun pentru dispozitivele mai vechi și cu o performanță mai redusă, dar GLES3 poate oferi mai multe caracteristici."
+
+#. Found in the Preferences, under Drivers. Specifies the tablet driver being used on Windows.
+msgid "Tablet driver:"
+msgstr "Driver tabletă:"
+
+#. Found in the Preferences, under Drivers. Hint tooltip of the tablet driver option.
+msgid "Specifies the tablet driver being used on Windows. If you have Windows Ink enabled, select winink."
+msgstr "Specifică driverul tabletei utilizat pe Windows. Dacă ai Windows Ink activat, selectează winink."
+
+#. Found in the Preferences, under Extensions.
+msgid "Add Extension"
+msgstr "Adăugare extensie"
+
+msgid "Enable"
+msgstr "Activare"
+
+msgid "Disable"
+msgstr "Dezactivare"
+
+msgid "Uninstall"
+msgstr "Dezinstalare"
+
+msgid "Open Folder"
+msgstr "Deschidere dosar"
+
+#. Found in the Preferences, under Extensions. It is a button that, when clicked, opens up the extension explorer which allows users to download extensions from the Internet.
+#: src/Preferences/PreferencesDialog.tscn
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Explore Online"
+msgstr "Explorează pe internet"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Title of the tab that shows the extension explorer, where you can download extensions.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Extension Explorer"
+msgstr "Explorator de extensii"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Text field to search for extensions.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Search..."
+msgstr "Căutare..."
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Refers to the tags used to filter extensions in the explorer.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Tags:"
+msgstr "Etichete:"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Report issue with an extension"
+msgstr "Raportează o problemă cu o extensie"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Button to download an extension.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Download"
+msgstr "Descărcare"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup, under Options. It's the section where you can add links to more extension repositories.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Repository links:"
+msgstr "Linkuri depozite:"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Fetching data from remote repository.\n"
+"Please wait."
+msgstr "Se preiau datele din depozitul la distanță.\n"
+"Te rugăm să aștepți."
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Flatpak is a utility for software deployment and package management for Linux, so this word should not be translated.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Unable to get info from remote repository.\n\n"
+"- Make sure you are connected to the internet.\n"
+"- If you are using the Flatpak version of Pixelorama, you need to grant it permission to connect to the internet. To do that, you can run the following command on your terminal:"
+msgstr "Nu se pot obține informații din depozitul la distanță.\n\n"
+"- Asigură-te că te-ai conectat la internet.\n"
+"- Dacă utilizezi versiunea Flatpak a Pixelorama, trebuie să îi acorzi permisiunea de a se conecta la internet. Pentru a face asta, poți rula următoarea comandă pe terminal:"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Flatpak is a utility for software deployment and package management for Linux and Flatseal is an application that manages permissions for Flatpak apps, so these words should not be translated.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Alternatively, you can download Flatseal and set permissions for Flatpak apps there."
+msgstr "Alternativ, poți descărca Flatseal și stabili acolo permisiunile pentru aplicațiile Flatpak."
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Unable to get info from remote repository."
+msgstr "Nu se pot obține informații din depozitul la distanță."
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup, under Options. Placeholder text for adding a link to an extensions repository. "Will be automatically removed" refers to the text field itself, if no link is entered.
+msgid "Paste repository link, given by the repository owner. If left empty, it will automatically be removed."
+msgstr "Adaugă linkul depozitului, oferit de proprietarul depozitului. Dacă este lăsat gol, acesta va fi eliminat automat."
+
+#. Found in the Preferences, under Extensions. This is the text of a confirmation dialog that appears when the user attempts to enable an extension.
+msgid "Are you sure you want to enable this extension? Make sure to only enable extensions from sources that you trust."
+msgstr "Sigur vrei să activezi această extensie? Asigură-te că activezi doar extensii din surse în care ai încredere."
+
+#. Found in the Preferences, under Extensions. This is the text of a confirmation dialog that appears when the user attempts to delete an extension.
+msgid "Are you sure you want to delete this extension?"
+msgstr "Sigur vrei să ștergi această extensie?"
+
+#. Hint tooltip of a button in the Global Tool Settings. "Dynamics" let users affect certain brush parameters, such as their size and alpha, based on the pressure of the tablet pen, the velocity of the mouse or the pen, and more in the future.
+msgid "Dynamics"
+msgstr "Dinamică"
+
+#. Found in the Dynamics options menu. A stabilizer is a feature that, when enabled, helps artists create smooth lines as they draw.
+msgid "Stabilizer"
+msgstr "Stabilizator"
+
+#. Found in the Dynamics options menu. Pressure refers to tablet pen pressure.
+msgid "Pressure"
+msgstr "Presiune"
+
+#. Found in the Dynamics options menu. Velocity refers to mouse or tablet pen velocity, meaning how fast it moves.
+msgid "Velocity"
+msgstr "Viteză"
+
+#. Refers to the alpha channel of the colors, in the RGBA color model. The alpha channel is responsible for the transparency of the color.
+msgid "Alpha"
+msgstr "Alfa"
+
+#. Refers to the size of a value, for example the size of a brush.
+msgid "Size"
+msgstr "Dimensiune"
+
+#. Found in the Dynamics options menu. Sets the limits of the brush property values, such as the minimum and maximum values of alpha and size.
+msgid "Value limits"
+msgstr "Limite de valoare"
+
+#. Found in the Dynamics options menu. Sets the thresholds of the dynamic properties, such as the minimum and maximum values of pressure and velocity.
+msgid "Thresholds"
+msgstr "Praguri"
+
+#. Noun, the start of something.
+msgid "Start"
+msgstr "Început"
+
+#. Noun, the end of something.
+msgid "End"
+msgstr "Sfârșit"
+
+msgid "Brush:"
+msgstr "Pensulă:"
+
+msgid "Select a brush"
+msgstr "Selectează o pensulă"
+
+#. Found when selecting a brush. It's a section that shows the default Pixelorama brushes.
+msgid "Default Brushes"
+msgstr "Pensule implicite"
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Pixel brush"
+msgstr "Pensulă cu pixeli"
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Circle brush"
+msgstr "Pensulă cu cerc"
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Filled circle brush"
+msgstr "Pensulă cu cerc umplut"
+
+#. Found when selecting a brush. It's a section that shows brushes the user has imported for the current project specifically.
+msgid "Project Brushes"
+msgstr "Pensule de proiect"
+
+#. Found when selecting a brush. It's a section that shows a few brushes that come with Pixelorama and brushes the user has imported from files (not project-specific).
+msgid "File Brushes"
+msgstr "Pensule de fișier"
+
+#. Found when selecting a brush. One of the file brushes that come with Pixelorama.
+msgid "Snow"
+msgstr "Zăpadă"
+
+#. Found when selecting a brush. It's a section that shows file brushes that are randomized.
+msgid "Random File Brushes"
+msgstr "Pensule de fișier aleatorii"
+
+#. Found when selecting a brush. One of the random brushes that come with Pixelorama.
+msgid "Grass"
+msgstr "Iarbă"
+
+#. Found when selecting a brush. One of the random brushes that come with Pixelorama.
+msgid "Star"
+msgstr "Stea"
+
+msgid "Custom brush"
+msgstr "Pensulă personalizată"
+
+msgid "Brush size:"
+msgstr "Dimensiunea pensulei:"
+
+#. Found in the pencil tool options, when you select a brush that isn't a default brush. It's a dropdown that shows rotation options for the brush.
+msgid "Rotation options"
+msgstr "Opțiuni de rotație"
+
+#. Found under "Rotation options" in the pencil tool options, when you select a brush that isn't a default brush. Property to flip the brush in the X or Y axis.
+msgid "Flip:"
+msgstr "Răsturnare:"
+
+#. Found under "Rotation options" in the pencil tool options, when you select a brush that isn't a default brush. Property to rotate the brush.
+msgid "Rotate:"
+msgstr "Rotire:"
+
+msgid "Overwrite color"
+msgstr "Suprascriere culoare"
+
+msgid "Overwrites color instead of blending it. This option is only relevant with colors that are not fully opaque"
+msgstr "Suprascrie culoarea în loc să o amestece. Această opțiune se aplică doar culorilor care nu sunt pe deplin opace"
+
+msgid "Pixel Perfect"
+msgstr "Pixel Perfect"
+
+msgid "Pixel Perfect\n"
+"Makes lines smooth by removing the extra pixels on the edges"
+msgstr "Pixel Perfect\n"
+"Netezește liniile prin eliminarea pixelilor suplimentari de pe margini"
+
+#. A button found in the global tool options. When enabled, the alpha value of the pixels being drawn is locked, meaning that the user can only draw on non-transparent pixels.
+msgid "Lock alpha"
+msgstr "Blocare valoare alfa"
+
+msgid "Fill inside"
+msgstr "Umplere pe interior"
+
+#. Found in the tool options of the Pencil tool, and refers to the spacing between brush strokes.
+msgid "Spacing"
+msgstr "Spațiere"
+
+#. Found in the tool options of the Pencil tool if "Spacing" is enabled, and refers to the horizontal gap between brush strokes.
+msgid "Gap X:"
+msgstr "Decalaj X:"
+
+#. Found in the tool options of the Pencil tool if "Spacing" is enabled, and refers to the vertical gap between brush strokes.
+msgid "Gap Y:"
+msgstr "Decalaj Y:"
+
+msgid "Fill Shape"
+msgstr "Umplere formă"
+
+msgid "Fills the drawn shape with color, instead of drawing a hollow shape"
+msgstr "În locul desenării unei forme goale, forma desenată este umplută cu culoare"
+
+#. Found in the tool options of the Pencil, Eraser and Shading tools. It is a percentage of how dense the brush is. 100% density means that the brush gets completely drawn, anything less leaves gaps inside the brush, acting like a spray tool.
+msgid "Density:"
+msgstr "Densitate:"
+
+#. Found in the pencil tool options, when you select a brush that isn't a default brush. Property to change the strength of the selected color in the selected brush (0: Color from the brush itself, 100: the currently selected color).
+msgid "Brush color from:"
+msgstr "Culoarea pensulei de la:"
+
+msgid "0: Color from the brush itself, 100: the currently selected color"
+msgstr "0: culoarea provenită din pensulă, 100: culoarea selectată în prezent"
+
+#. Found in the bucket tool options.
+msgid "Fill area:"
+msgstr "Zona de umplere:"
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Similar area"
+msgstr "Zonă similară"
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Similar colors"
+msgstr "Culori similare"
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Whole selection"
+msgstr "Selecția completă"
+
+msgid "Fill with:"
+msgstr "Umplere cu:"
+
+#. Found in the bucket tool options, one of the fill with options.
+msgid "Selected color"
+msgstr "Culoare selectată"
+
+#. Found in the bucket tool options, one of the fill with options.
+msgid "Pattern"
+msgstr "Model"
+
+msgid "Offset"
+msgstr "Decalaj"
+
+msgid "Simple Shading"
+msgstr "Umbrire simplă"
+
+msgid "Hue Shifting"
+msgstr "Schimbare de nuanță"
+
+msgid "Lighten"
+msgstr "Luminare"
+
+msgid "Darken"
+msgstr "Întunecare"
+
+msgid "Amount:"
+msgstr "Cantitate:"
+
+msgid "Lighten/Darken amount"
+msgstr "Cantitate luminare/întunecare"
+
+#. Found in the shading tool options. Mode to apply shading by replacing drawing's colors with the colors that are next to them in the selected palette.
+msgid "Color Replace"
+msgstr "Înlocuire culoare"
+
+msgid "Please select a color from the palette."
+msgstr "Selectează o culoare din paletă."
+
+#. Found in the shading tool options, in "Color Replace" mode. Parameter that specifies how many colors to the right of the selected color in the palette should be included for the shading.
+msgid "Colors right:"
+msgstr "Culori dreapta:"
+
+msgid "Pick for:"
+msgstr "Alege pentru:"
+
+msgid "Left Color"
+msgstr "Culoarea stângă"
+
+msgid "Right Color"
+msgstr "Culoarea dreaptă"
+
+#. Found in the color picker tool options. Specifies what mode should be used for picking a color.
+msgid "Pick mode:"
+msgstr "Mod alegere:"
+
+#. Found in the color picker tool options, as a pick mode. Picks the top color from the canvas in the selected pixel.
+msgid "Top Color"
+msgstr "Culoarea de sus"
+
+#. Found in the color picker tool options, as a pick mode. Picks the color from the currently selected layer in the selected pixel.
+msgid "Current Layer"
+msgstr "Strat actual"
+
+msgid "Mode:"
+msgstr "Mod:"
+
+msgid "Zoom in"
+msgstr "Apropiere"
+
+msgid "Zoom out"
+msgstr "Depărtare"
+
+#. Refers to a mode of the curve tool. Single mode mimics the Aseprite curve tool behavior.
+msgid "Single"
+msgstr "Unic"
+
+#. Refers to a mode of the curve tool. Chained mode mimics the Krita curve tool behavior.
+msgid "Chained"
+msgstr "Înlănțuit"
+
+#. Tooltip of the curve tool's "mode" option button.
+msgid "Chained: Makes a chain of multiple bezier curves, similar to Krita's curve tool.\n"
+"Single: Makes a single bezier curve, similar to Aseprite's curve tool."
+msgstr "Înlănțuit: creează o serie de curbe Bezier, asemănător instrumentului curbă Krita.\n"
+"Unic: creează o singură curbă bezier, asemănător instrumentului curbă Aseprite."
+
+msgid "Options"
+msgstr "Opțiuni"
+
+msgid "Options:"
+msgstr "Opțiuni:"
+
+msgid "Fit to frame"
+msgstr "Potrivire la cadru"
+
+msgid "100% Zoom"
+msgstr "Transfocare 100%"
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Replace selection"
+msgstr "Înlocuire selecție"
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Add to selection"
+msgstr "Adăugare la selecție"
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Subtract from selection"
+msgstr "Scădere din selecție"
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Intersection of selections"
+msgstr "Intersecția selecțiilor"
+
+#. Refers to the style of something, such as the style of a text, meaning whether it's regular, bold, italic, etc.
+msgid "Style:"
+msgstr "Stil:"
+
+#. Refers to the text. Regular means that the text is not bold or italic.
+msgid "Regular"
+msgstr "Obișnuit"
+
+#. Refers to text that is bold.
+msgid "Bold"
+msgstr "Aldin"
+
+#. Refers to text that is italic.
+msgid "Italic"
+msgstr "Cursiv"
+
+#. Refers to text that is bold and italic.
+msgid "Bold Italic"
+msgstr "Aldin Cursiv"
+
+#. https://en.wikipedia.org/wiki/Anti-aliasing
+msgid "Antialiasing"
+msgstr "Anticrenelaj"
+
+msgid "Grayscale"
+msgstr "Tonuri de gri"
+
+msgid "Mirroring"
+msgstr "Oglindire"
+
+msgid "Horizontal"
+msgstr "Orizontal"
+
+msgid "Enable horizontal mirrored drawing"
+msgstr "Activează desenul oglindit orizontal"
+
+msgid "Vertical"
+msgstr "Vertical"
+
+msgid "Enable vertical mirrored drawing"
+msgstr "Activează desenul oglindit vertical"
+
+#. Found in the global tool options, in the menu that appears next to each mirror button. It affects the position of a symmetry guide.
+msgid "Move to canvas center"
+msgstr "Mutare în centrul pânzei"
+
+#. Found in the global tool options, in the menu that appears next to each mirror button. It affects the position of a symmetry guide.
+msgid "Move to view center"
+msgstr "Mutare în centrul de vizualizare"
+
+msgid "Current frame:"
+msgstr "Cadrul actual:"
+
+msgid "Animation mode:"
+msgstr "Mod de animație:"
+
+msgid "Current frame as spritesheet"
+msgstr "Cadrul curent ca foaie cu grafice bidimensionale"
+
+msgid "Jump to the first frame"
+msgstr "Sari la primul cadru"
+
+msgid "Go to the previous frame"
+msgstr "Deplasează-te la cadrul anterior"
+
+msgid "Play the animation backwards"
+msgstr "Redă animația înapoi"
+
+msgid "Play the animation forward"
+msgstr "Redă animația înainte"
+
+msgid "Go to the next frame"
+msgstr "Deplasează-te la cadrul următor"
+
+msgid "Jump to the last frame"
+msgstr "Sari la ultimul cadru"
+
+msgid "Timeline settings"
+msgstr "Setări cronologie"
+
+msgid "Enable/disable Onion Skinning"
+msgstr "Activează/dezactivează cadrele multiple simultane"
+
+msgid "How many frames per second should the animation preview be?\n"
+"The more FPS, the faster the animation plays."
+msgstr "Câte cadre pe secundă ar trebui să aibă previzualizarea animației?\n"
+"Cu cât numărul de cadre pe secundă este mai mare, cu atât animația rulează mai repede."
+
+msgid "No loop"
+msgstr "Fără buclă"
+
+msgid "Cycle loop"
+msgstr "Buclă ciclică"
+
+msgid "Ping-pong loop"
+msgstr "Buclă ping-pong"
+
+msgid "Onion Skinning:"
+msgstr "Cadre multiple simultane:"
+
+msgid "Past Frames"
+msgstr "Cadre trecute"
+
+msgid "Future Frames"
+msgstr "Cadre viitoare"
+
+msgid "Manage frame tags"
+msgstr "Gestionează etichetele de cadru"
+
+msgid "Frame Tag Properties"
+msgstr "Proprietățile etichetelor de cadru"
+
+msgid "Add a new frame tag"
+msgstr "Adaugă o nouă etichetă de cadru"
+
+msgid "Name:"
+msgstr "Nume:"
+
+msgid "From:"
+msgstr "De la:"
+
+msgid "To:"
+msgstr "Până la:"
+
+msgid "Animation plays only on frames of the same tag"
+msgstr "Animația rulează doar pe cadrele din aceeași etichetă"
+
+msgid "Tag %s (Frame %s)"
+msgstr "Eticheta %s (cadrul %s)"
+
+msgid "Tag %s (Frames %s-%s)"
+msgstr "Eticheta %s (cadrele %s-%s)"
+
+msgid "If it's selected, the animation plays only on the frames that have the same tag.\n"
+"If it's not, the animation will play for all frames, ignoring tags."
+msgstr "Dacă opțiunea este selectată, animația va rula doar pe cadrele cu aceeași etichetă.\n"
+"În caz contrar, animația va rula pentru toate cadrele, ignorând etichetele."
+
+#. Found in the timeline, inside the timeline settings. It's a slider that sets the size of the cel buttons in the timeline.
+msgid "Cel size:"
+msgstr "Dimensiune celuri:"
+
+#. Found in the timeline, inside the timeline settings. If this is enabled, the past and future frames will have appear tinted.
+msgid "Color mode"
+msgstr "Mod culoare"
+
+msgid "Show past frames:"
+msgstr "Arată cadrele trecute:"
+
+msgid "Show future frames:"
+msgstr "Arată cadrele viitoare:"
+
+msgid "Above canvas"
+msgstr "Deasupra pânzei"
+
+msgid "Below canvas"
+msgstr "Sub pânză"
+
+msgid "If you want a layer to ignore onion skinning simply add the \"_io\" suffix in its name."
+msgstr "Dacă vrei ca un strat să ignore opțiunea pentru cadre multiple simultane, adaugă sufixul „_io” în numele acestuia."
+
+msgid "Add a new frame"
+msgstr "Adaugă un cadru nou"
+
+msgid "Remove Frame"
+msgstr "Elimină cadrul"
+
+msgid "Clone Frame"
+msgstr "Clonează cadrul"
+
+msgid "Move Left"
+msgstr "Deplasare la stânga"
+
+msgid "Move Right"
+msgstr "Deplasare la dreapta"
+
+msgid "Add Frame Tag"
+msgstr ""
+
+#. An option found in the right click menu of a cel. If selected, all non-transparent pixels of that cel get selected.
+msgid "Select pixels"
+msgstr "Selectare pixeli"
+
+#. An option found in the right click menu of a cel. If selected, all selected cels get linked together.
+msgid "Link cels to"
+msgstr "Conectare celuri la"
+
+#. An option found in the right click menu of a cel. If selected, all selected cels get unlinked.
+msgid "Unlink cels"
+msgstr "Deconectare celuri"
+
+#. An option found in the right click menu of an audio cel. If selected, the audio of the audio layer will start playing from this frame.
+msgid "Play audio here"
+msgstr "Redare audio aici"
+
+msgid "Properties"
+msgstr "Proprietăți"
+
+msgid "Project Properties"
+msgstr "Proprietățile proiectului"
+
+msgid "Frame properties"
+msgstr "Proprietățile cadrului"
+
+msgid "Layer properties"
+msgstr "Proprietățile stratului"
+
+msgid "Cel properties"
+msgstr "Proprietăți cel"
+
+msgid "Tag properties"
+msgstr "Proprietăți etichetă"
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, a new frame tag is added.
+msgid "New Tag"
+msgstr "Etichetă nouă"
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, it allows users to paste/import tags from other opened projects.
+msgid "Import Tag"
+msgstr "Importare etichetă"
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, the order of the selected frames is being reversed.
+msgid "Reverse Frames"
+msgstr "Inversare cadre"
+
+msgid "Layer"
+msgstr "Strat"
+
+msgid "Group"
+msgstr "Grup"
+
+#. A tilemap is a type of layer, which is divided by grid cells, the size of which is determined by the tileset it uses. Each grid cell is mapped to a tile in the tileset. Tilemaps can be used to create game levels and layouts.
+msgid "Tilemap"
+msgstr "Hartă de dale"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Layers"
+msgstr "Straturi"
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When enabled, the layer becomes a clipping mask.
+msgid "Clipping mask"
+msgstr "Mască de decupare"
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When clicked, the selected layers are being flattened into a single layer.
+msgid "Flatten"
+msgstr "Aplatizare"
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When clicked, the selected visible layers are being flattened into a single layer.
+msgid "Flatten visible"
+msgstr "Aplatizare straturi vizibile"
+
+#. Hint tooltip of the create new layer button, found on the left side of the timeline.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Create a new layer"
+msgstr "Creează un strat nou"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Pixel Layer"
+msgstr "Adăugare strat pixel"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Group Layer"
+msgstr "Adăugare strat grup"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add 3D Layer"
+msgstr "Adăugare strat 3D"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Tilemap Layer"
+msgstr "Adăugare strat cu hartă de dale"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Audio Layer"
+msgstr "Adăugare strat audio"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Remove current layer"
+msgstr "Elimină stratul actual"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Move up the current layer"
+msgstr "Deplasează în sus stratul actual"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Move down the current layer"
+msgstr "Deplasează în jos stratul actual"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Clone current layer"
+msgstr "Clonează stratul actual"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Merge current layer with the one below"
+msgstr "Îmbină stratul actual cu cel de mai jos"
+
+#. Found in the layer's section of the timeline. Refers to layer blend modes, for more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Blend mode:"
+msgstr "Mod amestecare:"
+
+#. Found in the layer's section of the timeline, as a blend mode option, only available for group layers. If enabled, group blending is disabled and the group simply acts as a way to organize layers instead of affecting blending.
+msgid "Pass through"
+msgstr "Trecere"
+
+#. Adjective, refers to something usual/regular, such as the normal blend mode.
+msgid "Normal"
+msgstr "Normal"
+
+#. Found in the layer's section of the timeline, as a blend mode option. Uses the opacity of pixels in this layer to erase pixels from the layers under it.
+msgid "Erase"
+msgstr "Ștergere"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Multiply"
+msgstr "Multiplicare"
+
+# .Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color burn"
+msgstr "Supraexpunere coloră"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Linear burn"
+msgstr "Supraexpunere liniară"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Screen"
+msgstr "Ecran"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color dodge"
+msgstr "Subexpunere coloră"
+
+#. Found in the layer's section of the timeline, as category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Contrast"
+msgstr "Contrast"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Overlay"
+msgstr "Suprapunere"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Soft light"
+msgstr "Lumină delicată"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Hard light"
+msgstr "Lumină dură"
+
+#. Found in the layer's section of the timeline, as a category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Inversion"
+msgstr "Inversare"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Difference"
+msgstr "Diferență"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Exclusion"
+msgstr "Excludere"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Subtract"
+msgstr "Scădere"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Divide"
+msgstr "Împărțire"
+
+#. Found in the layer's section of the timeline, as a category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Component"
+msgstr "Componentă"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Hue"
+msgstr "Nuanță"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Saturation"
+msgstr "Saturație"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color"
+msgstr "Culoare"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Luminosity"
+msgstr "Luminozitate"
+
+msgid "Opacity:"
+msgstr "Opacitate:"
+
+msgid "Tile mode opacity:"
+msgstr "Opacitatea modului mozaic:"
+
+msgid "Toggle layer's visibility"
+msgstr "Comută vizibilitatea stratului"
+
+msgid "Lock/unlock layer"
+msgstr "Blochează/deblochează stratul"
+
+msgid "Frame: %s, Layer: %s"
+msgstr "Cadru: %s, strat: %s"
+
+msgid "Enable/disable automatic linking of new cels when creating new frames\n\n"
+"Linked cels share content across multiple frames"
+msgstr "Activează/dezactivează automat conectarea de celuri noi la crearea de cadre noi\n\n"
+"Celurile conectate împărtășesc conținut între mai multe cadre"
+
+msgid "Expand/collapse group"
+msgstr "Extindere/restrânge grup"
+
+#. Refers to the audio file of an audio layer.
+msgid "Audio file:"
+msgstr "Fișier audio:"
+
+msgid "Load file"
+msgstr "Încărcare fișier"
+
+#. An option in the audio layer properties, allows users to play the audio starting from a specific frame.
+msgid "Play at frame:"
+msgstr "Redare la cadrul:"
+
+msgid "Palette"
+msgstr "Paletă"
+
+msgid "Palettes"
+msgstr "Palete"
+
+msgid "Add a new palette"
+msgstr "Adaugă o paletă nouă"
+
+msgid "Edit currently selected palette"
+msgstr "Editează paleta selectată în prezent"
+
+msgid "Choose a palette"
+msgstr "Alege o paletă"
+
+msgid "Undo: Draw"
+msgstr "Anulare: desenare"
+
+msgid "Redo: Draw"
+msgstr "Refacere: desenare"
+
+msgid "Undo: Select"
+msgstr "Anulare: selectare"
+
+msgid "Redo: Select"
+msgstr "Refacere: selectare"
+
+msgid "Undo: Scale"
+msgstr "Anulare: scalare"
+
+msgid "Redo: Scale"
+msgstr "Refacere: scalare"
+
+msgid "Undo: Add Layer"
+msgstr "Anulare: adăugare strat"
+
+msgid "Redo: Add Layer"
+msgstr "Refacere: adăugare strat"
+
+msgid "Undo: Remove Layer"
+msgstr "Anulare: eliminare strat"
+
+msgid "Redo: Remove Layer"
+msgstr "Refacere: eliminare strat"
+
+msgid "Undo: Merge Layer"
+msgstr "Anulare: îmbinare strat"
+
+msgid "Redo: Merge Layer"
+msgstr "Refacere: îmbinare strat"
+
+msgid "Undo: Change Layer Order"
+msgstr "Anulare: modificarea ordinii stratului"
+
+msgid "Redo: Change Layer Order"
+msgstr "Refacere: modificarea ordinii stratului"
+
+msgid "Undo: Add Frame"
+msgstr "Anulare: adăugare cadru"
+
+msgid "Redo: Add Frame"
+msgstr "Refacere: adăugare cadru"
+
+msgid "Undo: Remove Frame"
+msgstr "Anulare: eliminare cadru"
+
+msgid "Redo: Remove Frame"
+msgstr "Refacere: eliminare cadru"
+
+msgid "Undo: Change Frame Order"
+msgstr "Anulare: modificarea ordinii cadrului"
+
+msgid "Redo: Change Frame Order"
+msgstr "Refacere: modificarea ordinii cadrului"
+
+msgid "Undo: Delete Custom Brush"
+msgstr "Anulare: ștergere pensulă personalizată"
+
+msgid "Redo: Delete Custom Brush"
+msgstr "Refacere: ștergere pensulă personalizată"
+
+msgid "Undo: Modify Frame Tag"
+msgstr "Anulare: modificarea etichetei cadrului"
+
+msgid "Redo: Modify Frame Tag"
+msgstr "Refacere: modificarea etichetei cadrului"
+
+msgid "Undo: Delete Frame Tag"
+msgstr "Anulare: ștergerea etichetei cadrului"
+
+msgid "Redo: Delete Frame Tag"
+msgstr "Refacere: ștergerea etichetei cadrului"
+
+msgid "Undo: Change frame duration"
+msgstr "Anulare: modificarea duratei cadrului"
+
+msgid "Redo: Change frame duration"
+msgstr "Refacere: modificarea duratei cadrului"
+
+msgid "Move Guide"
+msgstr "Deplasare ghidaj"
+
+msgid "File saved"
+msgstr "Fișier salvat"
+
+#. A notification label that appears when the backup of the currently opened project gets saved.
+msgid "Backup saved"
+msgstr "Copie de rezervă salvată"
+
+msgid "File failed to open. Error code %s"
+msgstr "Fișierul nu a putut fi deschis. Cod de eroare %s"
+
+msgid "File failed to save. Error code %s"
+msgstr "Fișierul nu a putut fi salvat. Cod de eroare %s"
+
+#. Appears when the user attempts to export a project as a video, but the process fails. FFMPEG is the external software used to export videos.
+msgid "Video failed to export. Ensure that FFMPEG is installed correctly."
+msgstr "Exportarea videoclipului a eșuat. Asigură-te că FFMPEG este instalat corect."
+
+msgid "File(s) exported"
+msgstr "Fișier(e) exportat(e)"
+
+msgid "New Empty Palette"
+msgstr "Paletă nouă goală"
+
+msgid "Import Palette"
+msgstr "Importare paletă"
+
+msgid "Create Palette From Current Sprite"
+msgstr "Creare paletă din graficul bidimensional actual"
+
+msgid "Palette Name:"
+msgstr "Numele paletei:"
+
+msgid "Color Name:"
+msgstr "Numele culorii:"
+
+msgid "Use current left & right colors"
+msgstr "Folosește culorile din stânga și dreapta"
+
+msgid "Create a new empty palette?"
+msgstr "Creezi o paletă nouă goală?"
+
+msgid "Error"
+msgstr "Eroare"
+
+msgid "Error: Palette must have a valid name."
+msgstr "Eroare: paleta trebuie să aibă un nume valid."
+
+msgid "Invalid Palette file!"
+msgstr "Fișier de paletă invalid!"
+
+msgid "Edit Palette"
+msgstr "Editare paletă"
+
+msgid "Create colors with alpha component"
+msgstr "Creează culori cu componentă alfa"
+
+msgid "Get colors only from selection"
+msgstr "Obține culori doar din selecție"
+
+msgid "Get colors from"
+msgstr "Obține culori din"
+
+msgid "Patrons:"
+msgstr "Susținători:"
+
+msgid "Want your name or your company to be shown on the splash screen?"
+msgstr "Dorești ca numele tău sau al companiei tale să fie afișat pe ecranul de întâmpinare?"
+
+msgid "Become a Platinum Sponsor"
+msgstr "Devino susținător de top"
+
+msgid "Become a Gold Sponsor"
+msgstr "Devino susținător de vază"
+
+msgid "Become a Patron"
+msgstr "Devino susținător"
+
+msgid "Don't show again"
+msgstr "Nu mai arăta"
+
+msgid "Image Options"
+msgstr "Opțiuni pentru imagine"
+
+msgid "Default width:"
+msgstr "Lățime implicită:"
+
+msgid "A default width of a new image"
+msgstr "Lățimea implicită a unei imagini noi"
+
+msgid "Default height:"
+msgstr "Înălțime implicită:"
+
+msgid "A default height of a new image"
+msgstr "Înălțimea implicită a unei imagini noi"
+
+msgid "Default fill color:"
+msgstr "Culoare implicită de umplere:"
+
+msgid "A default background color of a new image"
+msgstr "Culoarea implicită de fundal a unei imagini noi"
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset all options available in the Preferences"
+msgstr "Resetează toate opțiunile disponibile în Preferințe"
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset timeline options"
+msgstr "Resetează opțiunile de cronologie"
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset all tool options"
+msgstr "Resetați toate opțiunile de instrumente"
+
+#. Found in the preferences, under the Reset category.
+msgid "Remove all extensions"
+msgstr "Elimină toate extensiile"
+
+#. Found in the preferences, under the Reset category.
+msgid "Clear the recently opened file list"
+msgstr "Șterge lista de fișiere recent deschisă"
+
+msgid "Lock aspect ratio"
+msgstr "Blocare raport aspect"
+
+msgid "Portrait"
+msgstr "Portret"
+
+msgid "Landscape"
+msgstr "Peisaj"
+
+msgid "Templates:"
+msgstr "Șabloane:"
+
+msgid "Preset"
+msgstr "Presetare"
+
+msgid "Preset:"
+msgstr "Presetare:"
+
+msgid "Default"
+msgstr "Implicită"
+
+msgid "Custom"
+msgstr "Personalizată"
+
+msgid "Rectangular Selection"
+msgstr "Selectare dreptunghiulară"
+
+msgid "Elliptical Selection"
+msgstr "Selectare eliptică"
+
+msgid "Polygonal Selection"
+msgstr "Selectare poligonală"
+
+msgid "Select By Color"
+msgstr "Selectare după culoare"
+
+msgid "Magic Wand"
+msgstr "Baghetă magică"
+
+msgid "Lasso / Free Select Tool"
+msgstr "Lasou/instrument de selectare liberă"
+
+msgid "Select by Drawing"
+msgstr "Selectare prin desenare"
+
+msgid "Move"
+msgstr "Deplasare"
+
+msgid "Zoom"
+msgstr "Transfocare"
+
+msgid "Pan"
+msgstr "Panoramare"
+
+msgid "Color Picker"
+msgstr "Selector de culoare"
+
+msgid "Pencil"
+msgstr "Creion"
+
+msgid "Eraser"
+msgstr "Radieră"
+
+msgid "Bucket"
+msgstr "Recipient"
+
+msgid "Shading Tool"
+msgstr "Instrument de umbrire"
+
+msgid "Line Tool"
+msgstr "Instrument Linie"
+
+msgid "Curve Tool"
+msgstr "Instrument Curbă"
+
+msgid "Rectangle Tool"
+msgstr "Instrument Dreptunghi"
+
+msgid "Ellipse Tool"
+msgstr "Instrument Elipsă"
+
+msgid "Switch Colors"
+msgstr "Comutare culori"
+
+msgid "Set the shortcut"
+msgstr "Setează comanda rapidă"
+
+msgid "Press a key or a key combination to set the shortcut"
+msgstr "Apasă o tastă sau o combinație de taste pentru a seta comanda rapidă"
+
+msgid "Already assigned"
+msgstr "Alocată deja"
+
+msgid "Left Tool:"
+msgstr "Instrumentul din stânga:"
+
+msgid "A tool assigned to the left mouse button"
+msgstr "Un instrument alocat butonului din stânga al masului"
+
+msgid "Right Tool:"
+msgstr "Instrumentul din dreapta:"
+
+msgid "A tool assigned to the right mouse button"
+msgstr "Un instrument alocat butonului din dreapta al masului"
+
+msgid "Cannot find last project file."
+msgstr "Ultimul fișier de proiect nu poate fi găsit."
+
+msgid "Cannot find project file."
+msgstr "Fișierul de proiect nu poate fi găsit."
+
+msgid "You haven't saved or opened any project in Pixelorama yet!"
+msgstr "Încă nu ai salvat sau deschis niciun proiect în Pixelorama!"
+
+msgid "Open Last Project"
+msgstr "Deschide ultimul proiect"
+
+msgid "Open last project..."
+msgstr "Deschide ultimul proiect..."
+
+msgid "Open last project on startup"
+msgstr "Deschide ultimul proiect la pornire"
+
+msgid "Opens last opened project on startup"
+msgstr "Deschide ultimul proiect deschis la pornire"
+
+msgid "Quit confirmation"
+msgstr "Confirmare ieșire"
+
+#. Found in the preferences, under the startup section. Path is a noun and it refers to the location in the device where FFMPEG is located at. FFMPEG is a software name and it should not be translated. See https://en.wikipedia.org/wiki/Path_(computing)
+msgid "FFMPEG path"
+msgstr "Cale FFMPEG"
+
+msgid "Enable autosave"
+msgstr "Activare autosalvare"
+
+msgid "Autosave interval:"
+msgstr "Interval de autosalvare:"
+
+msgid "minute(s)"
+msgstr "minut(e)"
+
+#. A setting found in the export dialog. When enabled, a JSON file containing the project's data is also being exported. JSON refers to this https://en.wikipedia.org/wiki/JSON
+msgid "Export JSON data"
+msgstr "Exportare date JSON"
+
+#. A setting found in the export dialog. When enabled, each layer is being exported as a different file, or as different frames if the target format is gif/apng/video.
+msgid "Split layers"
+msgstr "Divizare straturi"
+
+#. Found in the export dialog.
+msgid "Include frame tags in the file name"
+msgstr "Include etichetele cadrelor în numele fișierului"
+
+#. Found in the export dialog.
+msgid "Create new folder for each frame tag"
+msgstr "Creează un dosar nou pentru fiecare etichetă de cadru"
+
+#. Found in the export dialog, as a hint tooltip of the "Create new folder for each frame tag" button
+msgid "Creates multiple files but every file is stored in different folder that corresponds to its frame tag"
+msgstr "Creează mai multe fișiere, dar fiecare fișier este stocat în alt dosar care corespunde cu eticheta de cadru a acestuia"
+
+#. Found in the export dialog. Refers to text characters that acts as separators between text. For example, the "_" in "name_0001".
+msgid "Separator character(s):"
+msgstr "Caractere separatoare:"
+
+#. Found in the export dialog, as a hint tooltip of the separator character(s) text field.
+msgid "The character(s) that separate the file name and the frame number"
+msgstr "Caracterele care separă numele fișierului și numărul cadrului"
+
+#. Found in the export dialog. It is an option that removes the transparent area around non-transparent pixels of the exported images.
+msgid "Trim images"
+msgstr "Trunchiere imagini"
+
+#. Found in the export dialog. Tooltip of the "trim images" option.
+msgid "Trims the exported images to their visible portion, considering each pixel with a non-zero alpha channel as visible."
+msgstr "Trunchiază imaginile exportate până la porțiunea lor vizibilă, considerând fiecare pixel cu un canal alfa non-zero ca fiind vizibil."
+
+#. Found in the export dialog. It is an option that allows users to only export the portions of the images that are within the selected area.
+msgid "Clip image content to selection"
+msgstr "Decupează conținutul imaginii la selecție"
+
+#. Found in the export dialog. Tooltip of the "clip image content to selection" option.
+msgid "Only export content that is within the bounds of a selected area."
+msgstr "Exportă doar conținut care se află în limitele unei zone selectate."
+
+msgid "Close"
+msgstr "Închide"
+
+msgid "Discard All"
+msgstr "Renunțare la toate"
+
+msgid "Autosaved project(s) from a crashed session were found.\n"
+"Do you want to recover the data?"
+msgstr "Au fost găsite proiecte salvate automat de la o sesiune căzută.\n"
+"Dorești să recuperezi datele?"
+
+msgid "Backup reloaded"
+msgstr "Copie de rezervă reîncărcată"
+
+msgid "Remove currently selected palette"
+msgstr "Elimină paleta selectată în prezent"
+
+msgid "Are you sure you want to remove this palette? (Cannot be undone)"
+msgstr "Sigur vrei să elimini această paletă (nu va putea fi recuperată)?"
+
+msgid "You can't remove more palettes!"
+msgstr "Nu poți elimina mai multe palete!"
+
+msgid "Cannot remove the palette, because it doesn't exist!"
+msgstr "Paleta nu poate fi eliminată, deoarece nu există!"
+
+msgid "and"
+msgstr "și"
+
+msgid "Move the selected frame to the left."
+msgstr "Deplasează cadrul selectat la stânga."
+
+msgid "Move the selected frame to the right."
+msgstr "Deplasează cadrul selectat la dreapta."
+
+#. Refers to the duration of the frame. Found in the frame properties.
+msgid "Frame duration:"
+msgstr "Durata cadrului:"
+
+#. Refers to custom user defined data for projects, frames, cels, tags and layers, found in their respective properties.
+msgid "User data:"
+msgstr "Datele utilizatorului:"
+
+msgid "Duration"
+msgstr "Durată"
+
+msgid "Tiled In Both Axis"
+msgstr "Mozaicat pe ambele axe"
+
+msgid "Tiled In X Axis"
+msgstr "Mozaicat pe axa X"
+
+msgid "Tiled In Y Axis"
+msgstr "Mozaicat pe axa Y"
+
+msgid "Create a new palette"
+msgstr "Creează o paletă nouă"
+
+msgid "Comment:"
+msgstr "Comentariu:"
+
+msgid "Empty"
+msgstr "Goală"
+
+msgid "From Current Palette"
+msgstr "Din paleta actuală"
+
+msgid "From Current Sprite"
+msgstr "Din graficul bidimensional actual"
+
+msgid "From Current Selection"
+msgstr "Din selecția actuală"
+
+msgid "Add a new color"
+msgstr "Adaugă o culoare nouă"
+
+msgid "Remove a selected color"
+msgstr "Elimină o culoare selectată"
+
+#. Tooltip of the Sort button found in the palette panel.
+msgid "Sort palette"
+msgstr "Sortare paletă"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette get reversed.
+msgid "Reverse colors"
+msgstr "Inversare culori"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their hue.
+msgid "Sort by hue"
+msgstr "Sortare după nuanță"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their saturation.
+msgid "Sort by saturation"
+msgstr "Sortare după saturație"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their value.
+msgid "Sort by value"
+msgstr "Sortează după valoare"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their OKHSL Lightness.
+msgid "Sort by lightness"
+msgstr "Sortează după luminozitate"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their red channel value.
+msgid "Sort by red"
+msgstr "Sortare după roșu"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their green channel value.
+msgid "Sort by green"
+msgstr "Sortare după verde"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their blue channel value.
+msgid "Sort by blue"
+msgstr "Sortare după albastru"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their alpha channel value.
+msgid "Sort by alpha"
+msgstr "Sortare după alfa"
+
+msgid "Palette with the same name and path already exists!"
+msgstr "Există deja paleta cu același nume și aceeași cale!"
+
+msgid "Palette name is required!"
+msgstr "Denumirea paletei este necesară!"
+
+msgid "Reducing palette size will reset positions of colors.\n"
+"Colors that don't fit in new palette size will be lost!"
+msgstr "Reducerea dimensiunii paletei va reseta pozițiile culorilor.\n"
+"Culorile care nu se potrivesc cu dimensiunea paletei noi vor fi pierdute!"
+
+msgid "Position:"
+msgstr "Poziție:"
+
+msgid "Tools"
+msgstr "Instrumente"
+
+msgid "Main Canvas"
+msgstr "Pânză principală"
+
+msgid "Second Canvas"
+msgstr "Pânză secundară"
+
+msgid "Animation Timeline"
+msgstr "Cronologia animației"
+
+msgid "Canvas Preview"
+msgstr "Previzualizare pânză"
+
+msgid "Color Pickers"
+msgstr "Selectori de culori"
+
+msgid "Global Tool Options"
+msgstr "Opțiuni pentru instrumentul global"
+
+msgid "Left Tool Options"
+msgstr "Opțiuni pentru instrumentul din stânga"
+
+msgid "Right Tool Options"
+msgstr "Opțiuni pentru instrumentul din dreapta"
+
+msgid "Reference Images"
+msgstr "Imagini de referință"
+
+msgid "Perspective Editor"
+msgstr "Editor perspectivă"
+
+#. A UI panel. It is used to record the software in order to show the progress of art, usually in form of time lapses.
+msgid "Recorder"
+msgstr "Înregistrator"
+
+#. Tiles are images of a specific shape, usually rectangular, that are laid out in a grid. They are used in tile-based video games. https://en.wikipedia.org/wiki/Tile-based_video_game
+msgid "Tiles"
+msgstr "Dale"
+
+msgid "Crop"
+msgstr "Trunchiere"
+
+msgid "Resize the canvas"
+msgstr "Redimensionare pânză"
+
+msgid "Margins"
+msgstr "Margini"
+
+msgid "Position + Size"
+msgstr "Poziție + dimensiune"
+
+msgid "Locked Aspect Ratio"
+msgstr "Raport aspect blocat"
+
+msgid "Margins:"
+msgstr "Margini:"
+
+msgid "Aspect Ratio:"
+msgstr "Raport aspect:"
+
+msgid "Top:"
+msgstr "Sus:"
+
+msgid "Bottom:"
+msgstr "Jos:"
+
+msgid "Left:"
+msgstr "Stânga:"
+
+msgid "Right:"
+msgstr "Dreapta:"
+
+msgid "Locked size\n\n"
+"When enabled using the tool on the canvas will only move the cropping rectangle.\n\n"
+"When disabled using the tool on the canvas will draw the rectangle."
+msgstr "Dimensiune blocată\n\n"
+"Când este activată opțiunea, folosirea instrumentului pe pânză doar va muta dreptunghiul de trunchiere.\n\n"
+"Când este dezactivată opțiunea, folosirea uneltei pe pânză va desena dreptunghiul."
+
+#. A tool used in 3D layers, that edits 3D objects.
+msgid "3D Shape Edit"
+msgstr "Editare formă 3D"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Box"
+msgstr "Casetă"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Sphere"
+msgstr "Sferă"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Capsule"
+msgstr "Capsulă"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Cylinder"
+msgstr "Cilindru"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Prism"
+msgstr "Prismă"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Torus"
+msgstr "Tor"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Plane"
+msgstr "Plan"
+
+msgid "Text"
+msgstr "Text"
+
+#. Used in 3D layers. A type of light.
+msgid "Directional light"
+msgstr "Lumină direcțională"
+
+#. Used in 3D layers. A type of light.
+msgid "Spotlight"
+msgstr "Reflector"
+
+#. Used in 3D layers. A type of light.
+msgid "Point light"
+msgstr "Punct luminos"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Custom model"
+msgstr "Model personalizat"
+
+msgid "Selected object:"
+msgstr "Obiect selectat:"
+
+msgid "Add new object"
+msgstr "Adăugare obiect nou"
+
+msgid "Remove object"
+msgstr "Eliminare obiect"
+
+msgid "Camera"
+msgstr "Cameră"
+
+#. Found in the tool options of the 3D Shape Edit tool. Refers to camera projection mode.
+msgid "Projection:"
+msgstr "Proiecție:"
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Perspective"
+msgstr "Perspectivă"
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Orthogonal"
+msgstr "Ortogonală"
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Frustum"
+msgstr "Trunchi"
+
+msgid "Rotation:"
+msgstr "Rotație:"
+
+msgid "Scale:"
+msgstr "Scală:"
+
+#. Found in the tool options of the 3D Shape Edit tool.
+msgid "Environment"
+msgstr "Mediu"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Environment category.
+msgid "Ambient color:"
+msgstr "Culoare ambientală:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Environment category.
+msgid "Ambient color energy:"
+msgstr "Energia ambientală a culorii:"
+
+#. An option that toggles the visibility of something on or off. Found in the format of "Visible: on/off"
+msgid "Visible:"
+msgstr "Vizibil:"
+
+#. Refers to the transformation options of an object, such as its position, rotation and scale. For technical details, see https://docs.godotengine.org/en/stable/tutorials/math/matrices_and_transforms.html
+msgid "Transform"
+msgstr "Transformare"
+
+#. Found in the tool options of the 3D Shape Edit tool. A category with mesh-related options.
+msgid "Mesh"
+msgstr "Plasă"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Prism is selected. Refers to the displacement of the upper edge along the X axis.
+msgid "Left to right:"
+msgstr "De la stânga la dreapta:"
+
+#. Radius of a circle/spherical object.
+msgid "Radius:"
+msgstr "Rază:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a spherical object is selected.
+msgid "Radial segments:"
+msgstr "Segmentele radiale:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a spherical object is selected. Refers to the number of segments along the height of the sphere.
+msgid "Rings:"
+msgstr "Inele:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Sphere is selected. If true, a hemisphere is created rather than a full sphere.
+msgid "Is hemisphere:"
+msgstr "Este emisferă:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Cylinder is selected.
+msgid "Top radius:"
+msgstr "Rază superioară:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Cylinder is selected.
+msgid "Bottom radius:"
+msgstr "Rază inferioară:"
+
+msgid "Text:"
+msgstr "Text:"
+
+#. Refers to the depth of something, such as the depth of a 3D object.
+msgid "Depth:"
+msgstr "Adâncime:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Text object is selected. Refers to the size of one pixel's width on the text to scale it in 3D.
+msgid "Pixel size:"
+msgstr "Dimensiune pixeli:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Text object is selected. Step (in pixels) used to approximate Bézier curves.
+msgid "Curve step:"
+msgstr "Pasul curbei:"
+
+msgid "Horizontal alignment:"
+msgstr "Aliniere orizontală:"
+
+msgid "Vertical alignment:"
+msgstr "Aliniere verticală:"
+
+msgid "Left"
+msgstr "Stânga"
+
+msgid "Right"
+msgstr "Dreapta"
+
+#. Refers to the vertical space between lines in a text.
+msgid "Line spacing:"
+msgstr "Spațiere între linii:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Light category if a light is selected. Refers to the energy of the light. The more energy, the brighter it shines.
+msgid "Energy:"
+msgstr "Energie:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Light category if a light is selected. If true, the light's effect is reversed, darkening areas and casting bright shadows.
+msgid "Negative:"
+msgstr "Negativ:"
+
+msgid "Shadow:"
+msgstr "Umbră:"
+
+#. Refers to the range of something, like the range of a spotlight.
+msgid "Range:"
+msgstr "Rază de acțiune:"
+
+#. Found under certain image effects that support properties that can be animated.
+msgid "Animatable Properties"
+msgstr "Proprietățiile animării"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the frame that is currently being previewed.
+msgid "Preview frame:"
+msgstr "Ramă previzualizată:"
+
+#. Found under certain image effects that support properties that can be animated. It is a checkbox that toggles whether a property should be animated or not.
+msgid "Animate"
+msgstr "Animare"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the initial value of the property.
+msgid "Initial value:"
+msgstr "Valoare inițială:"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the final value of the property.
+msgid "Final value:"
+msgstr "Valoare finală:"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the easing function that should be used to animate the property. https://easings.net/
+msgid "Ease type:"
+msgstr "Tip de tranziție pentru animare:"
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Starts slowly and speeds up towards the end"
+msgstr "Pornește lent și accelerează spre final"
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Starts quickly and slows down towards the end"
+msgstr "Pornește repede și încetinește spre final"
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Slowest at both ends, fast at middle"
+msgstr "Lent la ambele capete, rapid la mijloc"
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Fast at both ends, slow at middle"
+msgstr "Rapid la ambele capete, lent la mijloc"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quadratic (power of 2)"
+msgstr "Pătratic (puterea lui 2)"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Cubic (power of 3)"
+msgstr "Cubic (puterea lui 3)"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quartic (power of 4)"
+msgstr "Cvartic (puterea lui 4)"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quintic (power of 5)"
+msgstr "Cvintic (puterea lui 6)"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Exponential (power of x)"
+msgstr "Exponențial (puterea lui x)"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Square root"
+msgstr "Rădăcină pătrată"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Sine"
+msgstr "Sinus"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Wiggling around the edges"
+msgstr "Balans în jurul marginilor"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Bouncing at the end"
+msgstr "În salt la capăt"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Backing out at ends"
+msgstr "În retragere la capete"
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Spring towards the end"
+msgstr "Salt spre final"
+
+#. Used to turn images into a singular color
+msgid "Monochrome"
+msgstr "Monocrom"
+
+#. Found in the Reference Images panel when no reference image has been imported.
+msgid "When opening an image, it may be imported as a reference."
+msgstr "La deschiderea unei imagini, aceasta poate fi importată ca referință."
+
+#. Found in the Reference Images panel after a reference image has been imported.
+msgid "Select an image below to change its properties.\n"
+"Note that you cannot draw while a reference image is selected."
+msgstr "Selectează o imagine de mai jos pentru a-i schimba proprietățile.\n"
+"Reține că nu poți desena cât timp este selectată o imagine de referință."
+
+#. Removes the selected reference image.
+msgid "Remove"
+msgstr "Elimină"
+
+#. A tooltip to tell users to hold the Shift key while clicking the remove button
+msgid "Hold Shift while pressing to instantly remove."
+msgstr "Ține apăsat Shift în timp ce apeși pentru a elimina instant."
+
+#. Shown in the confirmation dialog for removing a reference image.
+msgid "Are you sure you want to remove this reference image? It will not be deleted from your file system."
+msgstr "Sigur vrei să ștergi această imagine de referință? Nu va fi ștearsă din sistemul de fișiere."
+
+#. Moves the reference image up in the list
+msgid "Move the selected reference image to the right"
+msgstr "Deplasează imaginea de referință selectată la dreapta"
+
+#. Moves the reference image down in the list
+msgid "Move the selected reference image to the left"
+msgstr "Deplasează imaginea de referință selectată la stânga"
+
+#. Select a reference on the canvas
+msgid "Selects a reference image on the canvas"
+msgstr "Selectează o imagine de referință pe pânză"
+
+#. Moves the reference on the canvas
+msgid "Move the selected reference image"
+msgstr "Deplasează imaginea de referință selectată"
+
+#. Rotates the reference on the canvas
+msgid "Rotate the selected reference image"
+msgstr "Rotește imaginea de referință selectată"
+
+#. Rotates the reference on the canvas
+msgid "Scale the selected reference image"
+msgstr "Scalează imaginea de referință selectată"
+
+#. Button to select no reference images in the Reference Images panel.
+msgid "none"
+msgstr "niciuna"
+
+#. Resets the Transform of the selected reference image on the canvas.
+msgid "Reset Transform"
+msgstr "Resetează transformarea"
+
+#. Position of the selected reference image on the canvas.
+msgid "Position"
+msgstr "Poziție"
+
+#. Scale of the selected reference image on the canvas.
+msgid "Scale"
+msgstr "Scală"
+
+#. Rotation of the selected reference image on the canvas.
+msgid "Rotation"
+msgstr "Rotație"
+
+#. Toggle filter of the selected reference image on the canvas.
+msgid "Filter"
+msgstr "Filtru"
+
+#. Opacity of the selected reference image on the canvas.
+msgid "Opacity"
+msgstr "Opacitate"
+
+#. Color clamping of the selected reference image on the canvas.
+msgid "Color Clamping"
+msgstr "Limitarea valorilor de culoare"
+
+#. Used in checkbuttons (like on/off switches) that enable/disable something.
+msgid "Enabled"
+msgstr "Activat"
+
+#. Refers to non-destructive effects (such as outline, drop shadow etc) that are applied to layers. Found in the title of the layer effects dialog.
+msgid "Layer effects"
+msgstr "Efecte strat"
+
+#. A button that, when pressed, shows a list of effects to add. Found in the the layer effects dialog.
+msgid "Add effect"
+msgstr "Adăugare efect"
+
+#. Text from a confirmation dialog that appears when the user is attempting to drag and drop an image directly from the browser into Pixelorama.
+msgid "Do you want to download the image from %s?"
+msgstr "Vrei să descarci imaginea din %s?"
+
+#. A tileset is a collection of tiles.
+#: src/Classes/TileSetCustom.gd
+#: src/UI/Dialogs/ImportPreviewDialog.gd
+msgid "Tileset"
+msgstr "Set de dale"
+
+#. A tileset is a collection of tiles.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tileset:"
+msgstr "Set de dale:"
+
+#. A tileset is a collection of tiles.
+#: src/UI/Dialogs/ProjectProperties.tscn
+msgid "Tilesets"
+msgstr "Seturi de dale"
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+msgid "New tileset"
+msgstr "Set de dale nou"
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+msgid "Tileset name:"
+msgstr "Denumire set de dale:"
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile size:"
+msgstr "Dimensiune dală:"
+
+#. The shape of each tile in a tileset (rectangular, isometric, hexagonal).
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile shape:"
+msgstr "Formă dală:"
+
+#. The layout that the tiles appear in, in a non-rectangular grid.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile layout:"
+msgstr "Dispunere dală:"
+
+#. The offset axis (horizontal or vertical) of non-rectangular tiles.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile offset axis:"
+msgstr "Axă decalaj dală:"
+
+#. Tooltip of the "tile offset axis" option.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "For all half-offset shapes (Isometric & Hexagonal), determines the offset axis."
+msgstr "Pentru toate formele semidecalate (izometrice și hexagonale), determină axa de decalare."
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stacked"
+msgstr "Stivuit"
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stacked offset"
+msgstr "Decalaj stivuit"
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stairs right"
+msgstr "Scări dreapta"
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stairs down"
+msgstr "Scări jos"
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Diamond right"
+msgstr "Diamant dreapta"
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Diamond down"
+msgstr "Diamant jos"
+
+#. A button that toggles place-only mode on for a tilemap layer. This mode is used to only place tiles in a tilemap, without the ability to modify them.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Place-only mode:"
+msgstr "Mod doar plasare:"
+
+#. A confirmation dialog that appears when attempting to enable place-only mode in a tilemap layer.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Enabling place-only mode is a permanent action. Once activated, you will only be able to place tiles, and you won't be able to modify existing tiles anymore on this layer."
+msgstr "Activarea modului doar plasare este o acțiune permanentă. Odată activat, vei putea plasa doar dale și nu vei mai putea modifica dalele existente pe acest strat."
+
+#: src/UI/TilesPanel.gd
+msgid "Select a tile to place it on the canvas."
+msgstr "Selectează o dală pentru a o plasa pe pânză."
+
+#: src/UI/TilesPanel.gd
+msgid "Modify tiles on the canvas."
+msgstr "Modifică dalele de pe pânză."
+
+#: src/UI/TilesPanel.tscn
+msgid "Draw tiles"
+msgstr "Desenare dale"
+
+#: src/UI/TilesPanel.tscn
+msgid "Rotate tile left (counterclockwise)"
+msgstr "Rotire dală la stânga (în sens invers acelor de ceasornic)"
+
+#: src/UI/TilesPanel.tscn
+msgid "Rotate tile right (clockwise)"
+msgstr "Rotire dală la dreapta (în sensul acelor de ceasornic)"
+
+#: src/UI/TilesPanel.tscn
+msgid "Flip tile horizontally"
+msgstr "Răsturnare dală pe orizontală"
+
+#: src/UI/TilesPanel.tscn
+msgid "Flip tile vertically"
+msgstr "Răsturnare dală pe verticală"
+
+#. Refers to manual mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Manual"
+msgstr "Manual"
+
+#. Refers to auto (automatic) mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Auto"
+msgstr "Auto"
+
+#. Refers to stack mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Stack"
+msgstr "Stivă"
+
+#: src/UI/TilesPanel.tscn
+msgid "Tile button size:"
+msgstr "Mărimea butonului dalei:"
+
+#: src/UI/TilesPanel.tscn
+msgid "Show empty tile:"
+msgstr "Afișare dală goală:"
+
+#: src/UI/TilesPanel.tscn
+msgid "Tile properties"
+msgstr "Proprietăți dală"
+
+#: src/UI/TilesPanel.tscn
+msgid "Probability:"
+msgstr "Probabilitate:"
+

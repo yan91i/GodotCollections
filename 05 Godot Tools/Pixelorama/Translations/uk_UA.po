@@ -1,0 +1,3912 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: pixelorama\n"
+"X-Crowdin-Project-ID: 385497\n"
+"X-Crowdin-Language: uk\n"
+"X-Crowdin-File: /master/Translations/Translations.pot\n"
+"X-Crowdin-File-ID: 5\n"
+"Project-Id-Version: pixelorama\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Ukrainian\n"
+"Language: uk_UA\n"
+"PO-Revision-Date: 2025-04-23 00:53\n"
+
+msgid "OK"
+msgstr "Гаразд"
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "Open"
+msgstr "Відкрити"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "Please Confirm..."
+msgstr "Будь ласка, підтвердіть..."
+
+msgid "File Name:"
+msgstr "Ім'я файлу:"
+
+msgid "Project Name:"
+msgstr "Назва проєкту:"
+
+msgid "Image Size"
+msgstr "Розмір зображення"
+
+msgid "Canvas Size"
+msgstr "Розмір полотна"
+
+msgid "Frame Size"
+msgstr "Розмір кадру"
+
+msgid "Size:"
+msgstr "Розмір:"
+
+msgid "Width:"
+msgstr "Ширина:"
+
+msgid "Height:"
+msgstr "Висота:"
+
+msgid "Center"
+msgstr "По центру"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Edit"
+msgstr "Редагувати"
+
+msgid "Select"
+msgstr "Виділення"
+
+msgid "View"
+msgstr "Перегляд"
+
+msgid "Window"
+msgstr "Вікно"
+
+msgid "Image"
+msgstr "Зображення"
+
+#. Noun, refers to a Pixelorama project.
+msgid "Project"
+msgstr ""
+
+msgid "Effects"
+msgstr "Ефекти"
+
+msgid "Help"
+msgstr "Допомога"
+
+msgid "New"
+msgstr "Новий"
+
+msgid "New..."
+msgstr "Новий..."
+
+msgid "Open..."
+msgstr "Відкрити..."
+
+msgid "Save..."
+msgstr "Зберегти..."
+
+msgid "Save as..."
+msgstr "Зберегти як..."
+
+#. Checkbox found in the Save project dialog. If enabled, the final blended images are being stored also in the pxo, for each frame.
+msgid "Include blended images"
+msgstr "Включати змішані зображення"
+
+#. Hint tooltip of the "Include blended images" checkbox found in the Save project dialog.
+msgid "If enabled, the final blended images are also being stored in the pxo, for each frame.\n"
+"This makes the pxo file larger and is useful for importing by third-party software\n"
+"or CLI exporting. Loading pxo files in Pixelorama does not need this option to be enabled."
+msgstr "Якщо увімкнуто, остаточні змішані зображення також зберігатиметься в pxo, для кожного кадру.\n"
+"Це збільшує файл pxo, але корисно для імпорту стороннім програмним забезпеченням\n"
+"або експорту через CLI. Завантаження файлів pxo в Pixelorama не потребує цієї опції бути увімкненим."
+
+msgid "Import"
+msgstr "Імпортувати"
+
+msgid "Export"
+msgstr "Експортувати"
+
+msgid "Overwrite"
+msgstr "Перезапис"
+
+msgid "Export..."
+msgstr "Експортувати..."
+
+msgid "Export as..."
+msgstr "Експортувати як..."
+
+msgid "Export PNG..."
+msgstr "Експорт у PNG..."
+
+msgid "Export PNG as..."
+msgstr "Експорт в PNG як..."
+
+msgid "Quit"
+msgstr "Вийти"
+
+msgid "Undo"
+msgstr "Скасувати"
+
+msgid "Redo"
+msgstr "Відновити"
+
+msgid "Copy"
+msgstr "Копіювати"
+
+msgid "Cut"
+msgstr "Вирізати"
+
+msgid "Paste"
+msgstr "Вставити"
+
+msgid "Paste in Place"
+msgstr "Вставити на місце"
+
+#. Found under the Edit menu. When selected, the image from the clipboard, if it exists, gets pasted into Pixelorama.
+msgid "Paste from Clipboard"
+msgstr "Вставити з буфера обміну"
+
+msgid "Delete"
+msgstr "Вилучити"
+
+msgid "Delete Permanently"
+msgstr "Видалити назавжди"
+
+#. Found when requesting to delete a palette or an extension. Refers to when you move something to recycle bin.
+msgid "Move to Trash"
+msgstr "Перемістити в смітник"
+
+msgid "New Brush"
+msgstr "Новий пензель"
+
+msgid "Scale Image"
+msgstr "Масштабувати зображення"
+
+msgid "Pixels"
+msgstr "Пікселі"
+
+msgid "Percentage"
+msgstr "Відсоток"
+
+#. Found in the create new image dialog. Allows users to change the color mode of the new project, such as RGBA or indexed mode.
+msgid "Color mode:"
+msgstr "Режим кольору:"
+
+#. Found in the image menu. A submenu that allows users to change the color mode of the project, such as RGBA or indexed mode.
+msgid "Color Mode"
+msgstr "Режим Кольору"
+
+#. Found in the image menu, under the "Color Mode" submenu. Refers to the indexed color mode. See this wikipedia page for more information: https://en.wikipedia.org/wiki/Indexed_color
+msgid "Indexed"
+msgstr "Індексоване"
+
+#. Found in the image menu. Sets the size of the project to be the same as the size of the active selection.
+msgid "Crop to Selection"
+msgstr "Обрізати до виділеного"
+
+#. Found in the image menu. Automatically trims out all the transparent pixels, making the image smaller.
+msgid "Crop to Content"
+msgstr "Обрізати до вмісту"
+
+msgid "Resize Canvas"
+msgstr "Змінити розмір полотна"
+
+msgid "Offset Image"
+msgstr "Зсув Зображення"
+
+msgid "Offset:"
+msgstr "Зсув:"
+
+#. Found in the Offset Image dialog. It's a checkbox that, if enabled, wraps around the image if pixels go out of canvas bounds.
+msgid "Wrap around:"
+msgstr "Обгорнути:"
+
+#. Found in the menu that appears when you right click a frame button. Center is a verb, it is used to place the content of the frame to the center of the canvas.
+msgid "Center Frames"
+msgstr "Центрувати кадри"
+
+msgid "Rotate Image"
+msgstr "Повернути зображення"
+
+msgid "Pivot x:"
+msgstr "X центра:"
+
+msgid "Pivot y:"
+msgstr "Y центра:"
+
+msgid "Smear options:"
+msgstr "Параметри мазку:"
+
+msgid "Tolerance:"
+msgstr "Допустиме відхилення:"
+
+msgid "Initial angle:"
+msgstr "Початковий кут:"
+
+#. Found under the Select menu, It's a checkbox that, if enabled, wraps around brush strokes if some part of them goes out of selection bounds.
+msgid "Wrap Strokes"
+msgstr ""
+
+msgid "Clear"
+msgstr "Очистити"
+
+msgid "Invert"
+msgstr "Інвертувати"
+
+#. Found under the Select menu. When selected, the area of non-transparent pixels in the cel is being selected.
+msgid "Select cel area"
+msgstr ""
+
+msgid "Modify"
+msgstr "Змінити"
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users expand the active selection.
+msgid "Expand"
+msgstr "Розгорнути"
+
+#. Title of a window that lets users expand the active selection.
+msgid "Expand Selection"
+msgstr "Розширити виділення"
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users shrink the active selection.
+msgid "Shrink"
+msgstr "Зменшити"
+
+#. Title of a window that lets users shrink the active selection.
+msgid "Shrink Selection"
+msgstr "Зменшити виділене"
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users create a border of the active selection.
+msgid "Border"
+msgstr "Рамка"
+
+#. Title of a window that lets users create a border of the active selection.
+msgid "Border Selection"
+msgstr "Рамка виділеного"
+
+#. Refers to a diamond-like shape.
+msgid "Diamond"
+msgstr "Алмаз"
+
+msgid "Circle"
+msgstr "Коло"
+
+msgid "Square"
+msgstr "Квадрат"
+
+msgid "Grayscale View"
+msgstr "Сірий режим перегляду"
+
+msgid "Mirror Image"
+msgstr "Віддзеркалити зображення"
+
+msgid "Flip Horizontal"
+msgstr "Віддзеркалити по горизонталі"
+
+msgid "Flip Vertical"
+msgstr "Віддзеркалити по вертикалі"
+
+msgid "Preferences"
+msgstr "Налаштування"
+
+#. A submenu of the Effects menu. Contains effects that generate new pixels, such as outline, drop shadow and gradient.
+msgid "Procedural"
+msgstr "Процедурні"
+
+#. Refers to effects that blur the image.
+msgid "Blur"
+msgstr "Розмиття"
+
+#. A submenu of the Effects menu. Contains effects that have been loaded by the user.
+msgid "Loaded"
+msgstr "Завантажені"
+
+#. An option in the View menu. When selected, the canvas is being placed on the center of the screen.
+msgid "Center Canvas"
+msgstr "Відцентрувати Полотно"
+
+msgid "Tile Mode"
+msgstr "Безшовний режим"
+
+msgid "Tile Mode Offsets"
+msgstr "Зміщення в безшовному режимі"
+
+#. Found under "Tile Mode Offsets". Basis is a linear algebra term. https://en.wikipedia.org/wiki/Basis_(linear_algebra)
+msgid "X-basis:"
+msgstr "X-базис:"
+
+#. Found under "Tile Mode Offsets". Basis is a linear algebra term. https://en.wikipedia.org/wiki/Basis_(linear_algebra)
+msgid "Y-basis:"
+msgstr "Y-базис:"
+
+#. Found under "Tile Mode Offsets". It's a button that when pressed, enables masking for tile mode. Masking essentially limits drawing to the visible pixels of the image, thus preventing from drawing on transparent pixels.
+msgid "Masking:"
+msgstr "Маска:"
+
+#. Verb, resets something.
+msgid "Reset"
+msgstr "Скинути"
+
+#. Verb, resets something.
+msgid "Reset %s"
+msgstr "Скинути %s"
+
+msgid "Use Current Frame"
+msgstr "З поточного кадра"
+
+msgid "Reset Mask"
+msgstr "Скинути маску"
+
+msgid "Window Opacity"
+msgstr "Непрозорість вікна"
+
+msgid "Window opacity does not work on fullscreen mode."
+msgstr "Прозорість вікна не працює в повноекранному режимі."
+
+msgid "Panel Layout"
+msgstr "Позиція панелей"
+
+msgid "Panels"
+msgstr "Панелі"
+
+msgid "Layouts"
+msgstr "Розміщення"
+
+msgid "Moveable Panels"
+msgstr "Рухомі панелі"
+
+#. Button found in the three vertical dots menu of any panel, when Moveable Panels is enabled in the Window menu. It "detaches" the panel, making it a floating window.
+msgid "Make Floating"
+msgstr "Відокремити"
+
+msgid "Manage Layouts"
+msgstr "Керування розміщеннями"
+
+#. Noun, a preview of something
+msgid "Preview"
+msgstr "Перегляд"
+
+msgid "Add"
+msgstr "Додати"
+
+msgid "Add Layout"
+msgstr "Додати розміщення"
+
+#. Verb, deletes something.
+msgid "Delete %s"
+msgstr "Видалити %s"
+
+msgid "Copy from"
+msgstr "Копіювати з"
+
+msgid "Rename"
+msgstr "Перейменувати"
+
+msgid "Rename Layout"
+msgstr "Перейменувати розміщення"
+
+#. Refers to the current layout of the user interface.
+msgid "Current layout"
+msgstr "Поточне розміщення"
+
+msgid "Are you sure you want to delete this layout?"
+msgstr "Ви дійсно бажаєте видалити це розміщення?"
+
+msgid "Widescreen"
+msgstr "Для широкого екрана"
+
+msgid "Tallscreen"
+msgstr "Для високого екрана"
+
+msgid "Mirror View"
+msgstr "Дзеркальний перегляд"
+
+msgid "Show Grid"
+msgstr "Показати сітку"
+
+msgid "Show Pixel Grid"
+msgstr "Показати сітку пікселів"
+
+msgid "Show Rulers"
+msgstr "Показати лінійки"
+
+msgid "Show Guides"
+msgstr "Показати посібники"
+
+#. Found under the View menu.
+msgid "Show Mouse Guides"
+msgstr "Показати посібники з миші"
+
+#. Found under the View menu.
+msgid "Show Reference Images"
+msgstr "Показати еталонні зображення"
+
+#. Found under the View menu. When enabled, non-destructive layer effects will be visible on the canvas.
+msgid "Display Layer Effects"
+msgstr "Показати розміщення ефектів"
+
+#. Found under the View menu.
+msgid "Snap To"
+msgstr "Притягнути до"
+
+#. Found under the View menu.
+msgid "Snap to Rectangular Grid Boundary"
+msgstr "Прив'язати до меж прямокутної сітки"
+
+#. Found under the View menu.
+msgid "Snap to Rectangular Grid Center"
+msgstr "Прив'язати до центру прямокутної сітки"
+
+#. Found under the View menu.
+msgid "Snap to Guides"
+msgstr "Зафіксувати до напрямних"
+
+#. Found under the View menu.
+msgid "Snap to Perspective Guides"
+msgstr "Зафіксувати до перспективних напрямних"
+
+msgid "Show Animation Timeline"
+msgstr "Показувати шкалу часу анімацій"
+
+msgid "Zen Mode"
+msgstr "Режим \"Дзен\""
+
+msgid "Fullscreen Mode"
+msgstr "Повноекранний режим"
+
+msgid "Fill with color:"
+msgstr "Заливка кольором:"
+
+msgid "Open a File"
+msgstr "Відкрити файл"
+
+msgid "Open File(s)"
+msgstr "Відкрити файл(и)"
+
+msgid "Import Options"
+msgstr "Параметри імпорту"
+
+msgid "Import as:"
+msgstr "Імпортувати як:"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Apply to all"
+msgstr "Застосувати до всіх"
+
+msgid "Recent projects"
+msgstr "Нещодавні проєкти"
+
+msgid "New project"
+msgstr "Новий проєкт"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Spritesheet (new project)"
+msgstr "Таблиця спрайтів (новий проєкт)"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Spritesheet (new layer)"
+msgstr "Таблиця спрайтів (новий шар)"
+
+msgid "New frame"
+msgstr "Новий кадр"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Replace cel"
+msgstr "Замінити клітинку"
+
+msgid "New layer"
+msgstr "Новий шар"
+
+msgid "New reference image"
+msgstr "Нове еталонне зображення"
+
+msgid "New palette"
+msgstr "Нова палітра"
+
+msgid "New brush"
+msgstr "Новий пензель"
+
+msgid "New pattern"
+msgstr "Новий шаблон"
+
+msgid "Horizontal frames:"
+msgstr "Горизонтальні кадри:"
+
+msgid "Vertical frames:"
+msgstr "Вертикальні кадри:"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet. If it's enabled, the software will slice it into frames automatically.
+msgid "Smart Slice"
+msgstr "Розумний зріз"
+
+#. A value that is a threshold
+msgid "Threshold:"
+msgstr "Поріг:"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Hint tooltip of the "Threshold" value slider.
+msgid "Images that have any one side smaller than this value will cross the threshold"
+msgstr "Зображення, що мають будь-яку одну сторону меншу, ніж це значення, переступить поріг"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Merge is an adjective, it refers to the distance where images get merged.
+msgid "Merge distance:"
+msgstr "Об'єднати відстань:"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Hint tooltip of the "Merge distance" value slider.
+msgid "Images which crossed the threshold will get merged into a larger image, if they are within this distance"
+msgstr "Зображення, які перетнули цей поріг будуть об’єднуватися в більше зображення, якщо вони на цій відстані"
+
+#. A button that, when pressed, refreshes something. Used to apply certain settings again after they changed. Currently it's only used in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled.
+msgid "Refresh"
+msgstr "Оновити"
+
+msgid "Start frame:"
+msgstr "Початковий кадр:"
+
+msgid "End frame:"
+msgstr "Кінцевий кадр:"
+
+msgid "At frame:"
+msgstr "До кадру:"
+
+msgid "At layer:"
+msgstr "На шарі:"
+
+msgid "Brush type:"
+msgstr "Тип пензля:"
+
+msgid "File brush"
+msgstr "Файл щітки"
+
+msgid "Project brush"
+msgstr "Пензель проєкту"
+
+msgid "Random brush"
+msgstr "Випадковий пензель"
+
+msgid "Save Sprite as .pxo"
+msgstr "Зберегти спрайт як .pxo"
+
+msgid "Export Sprite as .png"
+msgstr "Експортувати спрайт в .png"
+
+msgid "Export Sprite"
+msgstr "Експортувати спрайт"
+
+msgid "File Exists, Overwrite?"
+msgstr "Файл існує, перезаписати?"
+
+msgid "The following files already exist. Do you wish to overwrite them?\n"
+"%s"
+msgstr "Вказані нижче файли вже існують. Перезаписати їх?\n"
+"%s"
+
+msgid "Directory path is not valid!"
+msgstr "Шлях до директорії неправильний!"
+
+msgid "File name is not valid!"
+msgstr "Назва файла неправильна!"
+
+msgid "Directory path and file name are not valid!"
+msgstr "Шлях до директорії і назва файла неправильні!"
+
+msgid "Exporting in progress..."
+msgstr "Виконується експорт..."
+
+msgid "Can't load file '%s'."
+msgstr "Не вдалося прочитати файл «%s»."
+
+msgid "Can't load file '%s'.\n"
+"Error code: %s"
+msgstr "Не вдалося завантажити файл '%s.\n"
+"Код помилки: %s"
+
+msgid "Can't load file '%s'.\n"
+"This is not a valid palette file."
+msgstr "Не вдалося прочитати файл «%s».\n"
+"Це не правильний файл палітри."
+
+msgid "Frame"
+msgstr "Кадр"
+
+msgid "Frames:"
+msgstr "Кадри:"
+
+msgid "All Frames"
+msgstr "Всі кадри"
+
+msgid "Spritesheet"
+msgstr "Таблиця спрайтів"
+
+msgid "Animation"
+msgstr "Анімація"
+
+msgid "Preview:"
+msgstr "Попередній перегляд:"
+
+msgid "Frame:"
+msgstr "Кадр:"
+
+msgid "Orientation:"
+msgstr "Орієнтація:"
+
+msgid "Browse"
+msgstr "Огляд"
+
+msgid "Resize:"
+msgstr "Змінити розмір:"
+
+#. Found in the export dialog, when exporting a jpeg file. Refers to the quality of the exported file.
+msgid "Quality:"
+msgstr "Якість:"
+
+msgid "Cancel Export"
+msgstr "Скасувати експорт"
+
+msgid "Alert!"
+msgstr "Увага!"
+
+msgid "Select Current Folder"
+msgstr "Виберіть поточний каталог"
+
+msgid "Open a Directory"
+msgstr "Відкрити каталог"
+
+msgid "Background:"
+msgstr "Фон:"
+
+#. Found in the export dialog
+msgid "Selected frames"
+msgstr "Вибрані кадри"
+
+msgid "Layers:"
+msgstr "Шари:"
+
+#. Found in the export dialog
+msgid "Visible layers"
+msgstr "Видимі шари"
+
+#. Found in the export dialog
+msgid "Selected layers"
+msgstr "Вибрані шари"
+
+#. A type of layer. A pixel layer is the most common type of layer, which stores image data in pixels.
+msgid "Pixel layer:"
+msgstr "Шар пікселів:"
+
+#. A type of layer. A group layer stores other layers as its children, similar to how a folder holds files.
+msgid "Group layer:"
+msgstr "Груповий шар:"
+
+#. A type of layer. A 3D layer contains data of 3D objects that are rasterized automatically by Pixelorama.
+msgid "3D layer:"
+msgstr "3D-шар:"
+
+msgid "Direction:"
+msgstr "Напрямок:"
+
+msgid "Forward"
+msgstr "Вперед"
+
+msgid "Backwards"
+msgstr "Назад"
+
+msgid "Ping-Pong"
+msgstr "Пінг-Понг"
+
+msgid "Columns"
+msgstr "Стовпці"
+
+msgid "Columns:"
+msgstr "Стовпці:"
+
+msgid "Rows"
+msgstr "Рядки"
+
+msgid "Rows:"
+msgstr "Рядки:"
+
+#. Found in the export dialog, in the Spritesheet tab. An orientation option that splits the spritesheet by animation tags. Each tag creates a new column.
+msgid "Tags by column"
+msgstr "Теги за стовпцем"
+
+#. Found in the export dialog, in the Spritesheet tab. An orientation option that splits the spritesheet by animation tags. Each tag creates a new row.
+msgid "Tags by row"
+msgstr "Теги за рядком"
+
+#. Found in the export dialog. It is a label that says the dimensions (widthxheight) of the exported image(s).
+msgid "Export dimensions:"
+msgstr "Розміри для експорту:"
+
+msgid "Save a File"
+msgstr "Зберегти файл"
+
+msgid "Go to previous folder."
+msgstr "Перейти до попереднього каталогу."
+
+msgid "Go to next folder."
+msgstr "Перейти до наступного каталогу."
+
+msgid "Go to parent folder."
+msgstr "Перейти до батьківського каталогу."
+
+msgid "Path:"
+msgstr "Шлях:"
+
+msgid "Refresh files."
+msgstr "Оновити файли."
+
+msgid "Toggle the visibility of hidden files."
+msgstr "Перемкнути видимість прихованих файлів."
+
+msgid "Directories & Files:"
+msgstr "Каталоги та файли:"
+
+msgid "Create Folder"
+msgstr "Створити каталог"
+
+msgid "File:"
+msgstr "Файл:"
+
+#. Found in "Open" and "Save" file dialogs. Searches all file types.
+msgid "All Files"
+msgstr "Усі файли"
+
+#. Found in the "Open" file dialog. Searches all file types supported by Pixelorama.
+msgid "All Recognized"
+msgstr "Усі розпізнавані"
+
+#. Found in "Open" and "Save" file dialogs. Searches Pixelorama Project files only (.pxo).
+msgid "Pixelorama Project"
+msgstr "Проєкт Pixelorama"
+
+#. Found in the "Open" file dialog. Searches PNG files only. (Note that PNG is a file type and should remain untranslated)
+msgid "PNG Image"
+msgstr "PNG Зображення"
+
+#. Found in the "Open" file dialog. Searches BMP files only. (Note that BMP is a file type and should remain untranslated)
+msgid "BMP Image"
+msgstr "BMP Зображення"
+
+#. Found in the "Open" file dialog. Searches "Radiance HDR" files only. (Note that "Radiance HDR" is a file type and is better untranslated)
+msgid "Radiance HDR Image"
+msgstr "Radiance HDR Зображення"
+
+#. Found in the "Open" file dialog. Searches JPEG files only. (Note that JPEG is a file type and should remain untranslated)
+msgid "JPEG Image"
+msgstr "JPEG Зображення"
+
+#. Found in the "Open" file dialog. Searches SVG files only. (Note that SVG is a file type and should remain untranslated)
+msgid "SVG Image"
+msgstr "SVG Зображення"
+
+#. Found in the "Open" file dialog. Searches TGA files only. (Note that TGA is a file type and should remain untranslated)
+msgid "TGA Image"
+msgstr "TGA Зображення"
+
+#. Found in the "Open" file dialog. Searches WebP files only. (Note that WebP is a file type and should remain untranslated)
+msgid "WebP Image"
+msgstr "WebP Зображення"
+
+#. Found in "Open" and "Save" file dialogs. Searches OpenRaster project files only (.ora). OpenRaster should remain untranslated. https://www.openraster.org/
+msgid "OpenRaster Project"
+msgstr ""
+
+#. Found in "Open" and "Save" file dialogs. Searches Aseprite project files only (.ase and .aseprite). Note that Aseprite is a software and should remain untranslated.
+msgid "Aseprite Project"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches Pixelorama palette files only (.json).
+msgid "Pixelorama palette"
+msgstr "Pixelorama палітра"
+
+#. Found in the "Open" file dialog. Searches GIMP palette files only (.gpl). Note that GIMP is a software and should remain untranslated.
+msgid "GIMP palette"
+msgstr "GIMP палітра"
+
+#. Found in the export dialog. It is a button that when pressed, shows more options.
+msgid "Advanced options"
+msgstr "Розширені опції"
+
+msgid "Interpolation:"
+msgstr "Інтерполяція:"
+
+msgid "Nearest"
+msgstr "Найближчі"
+
+msgid "Bilinear"
+msgstr "Білінійна"
+
+msgid "Cubic"
+msgstr "Кубічна"
+
+msgid "Trilinear"
+msgstr "Трилінійна"
+
+msgid "Constant"
+msgstr "Константа"
+
+#. Refers to https://en.wikipedia.org/wiki/Color_space
+msgid "Color space"
+msgstr "Колірний простір"
+
+#. A type of color space.
+msgid "Linear sRGB"
+msgstr "Лінійний sRGB"
+
+msgid "General"
+msgstr "Загальні"
+
+msgid "Startup"
+msgstr "Запуск"
+
+msgid "Language"
+msgstr "Мова"
+
+msgid "Interface"
+msgstr "Інтерфейс"
+
+msgid "Themes"
+msgstr "Теми"
+
+msgid "Canvas"
+msgstr "Полотно"
+
+#. Refers to the animation timeline.
+msgid "Timeline"
+msgstr "Шкала часу"
+
+msgid "Selection"
+msgstr "Виділення"
+
+msgid "Shortcuts"
+msgstr "Комбінації клавіш"
+
+msgid "Backup"
+msgstr "Резервна копія"
+
+msgid "Performance"
+msgstr "Продуктивність"
+
+#. Found in the preferences. Refers to device drivers, such as video drivers and tablet drivers.
+msgid "Drivers"
+msgstr "Драйвери"
+
+msgid "Extensions"
+msgstr "Розширення"
+
+msgid "Cursors"
+msgstr "Курсори"
+
+msgid "Indicators"
+msgstr "Індикатори"
+
+#. Found in the preferences. Used for options that require restart when they are changed.
+msgid "Pixelorama must be restarted for changes to take effect."
+msgstr "Треба перезапустити Pixeloram’у, щоб зміни набули чинності."
+
+msgid "On"
+msgstr "Вкл"
+
+msgid "Restore default value"
+msgstr "Відновити значення за замовчуванням"
+
+#. Found in the preferences, under Canvas.
+msgid "Smooth Zoom"
+msgstr "М'яке масштабування"
+
+#. Found in the preferences, under Canvas. Hint tooltip of "Smooth Zoom".
+msgid "Adds a smoother transition when zooming in or out"
+msgstr "Додає більш плавний перехід при масштабуванні"
+
+#. Found in the preferences, under Canvas.
+msgid "Integer Zoom"
+msgstr "Ціле масштабування"
+
+#. Found in the preferences, under Canvas. Hint tooltip of "Integer Zoom".
+msgid "Restricts the value to be an integer multiple of 100%"
+msgstr ""
+
+msgid "Tablet pressure sensitivity:"
+msgstr "Чутливість до натиску на планшет:"
+
+msgid "None"
+msgstr "Нічого"
+
+msgid "Affect Brush's Alpha"
+msgstr "Вплив на альфу пензля"
+
+msgid "Color:"
+msgstr "Колір:"
+
+msgid "Guide color:"
+msgstr "Колір напрямних:"
+
+msgid "System Language"
+msgstr "Мова системи"
+
+msgid "Display scale:"
+msgstr "Масштаб екрану:"
+
+#. Refers to the font of a text.
+msgid "Font:"
+msgstr "Шрифт:"
+
+#. Found in the preferences, under the interface section. Allows users to set the size of the font, ie the text.
+msgid "Font size:"
+msgstr "Розмір шрифту:"
+
+msgid "Dim interface on dialog popup"
+msgstr "Затемнити інтерфейс під діалоговими вікнами"
+
+#. Found in the preferences, under the interface section. If enabled, the notification labels appear in the canvas when performing an action, such as when undoing/redoing.
+msgid "Show notification labels"
+msgstr ""
+
+#. Found in the preferences, under the interface section. When this setting is enabled, the native file dialogs of the operating system are being used, instead of Pixelorama's custom ones.
+msgid "Use native file dialogs"
+msgstr "Використовувати нативні діалогові вікна"
+
+#. Found in the preferences, tooltip of the "Use native file dialogs" option.
+msgid "When this setting is enabled, the native file dialogs of the operating system are being used, instead of Pixelorama's custom ones."
+msgstr ""
+
+#. Found in the preferences, under the interface section. When this setting is enabled, Pixelorama's subwindows will be embedded in the main window, otherwise each dialog will be its own separate window.
+msgid "Single window mode"
+msgstr "Режим одного вікна"
+
+#. Found in the preferences, tooltip of the "Single window mode" option.
+msgid "When this setting is enabled, Pixelorama's subwindows will be embedded in the main window, otherwise each dialog will be its own separate window."
+msgstr ""
+
+msgid "Dark"
+msgstr "Темна"
+
+msgid "Gray"
+msgstr "Cіра"
+
+msgid "Blue"
+msgstr "Синя"
+
+msgid "Caramel"
+msgstr "Карамель"
+
+msgid "Light"
+msgstr "Світла"
+
+msgid "Purple"
+msgstr "Фіолетова"
+
+#. A theme. Rose refers to the color rose.
+msgid "Rose"
+msgstr ""
+
+msgid "Theme"
+msgstr "Тема"
+
+msgid "Buttons"
+msgstr "Кнопки"
+
+msgid "Icon color from:"
+msgstr "Колір значків з:"
+
+msgid "Icon color:"
+msgstr "Колір значків:"
+
+msgid "Background"
+msgstr "Фон"
+
+msgid "Background color from:"
+msgstr "Колір фону з:"
+
+msgid "Background color:"
+msgstr "Колір фону:"
+
+#. Found in the preferences, under the Tools category.
+msgid "Share options between the left and the right tools"
+msgstr "Ділитися налаштуваннями між лівими та правими інструментами"
+
+#. Found in the preferences, under the Tools category. Tooltip of the "Share options between the left and the right tools" preference.
+msgid "If this is enabled, options will be synced between the left and the right tool.\n"
+"For example, both tools will share the same brush size, and changing it on one tool will instantly change on the other."
+msgstr ""
+
+msgid "Left tool color:"
+msgstr "Колір лівого інструменту:"
+
+msgid "Right tool color:"
+msgstr "Колір правого інструменту:"
+
+msgid "Tool button size:"
+msgstr "Розмір кнопок інструментів:"
+
+msgid "Small"
+msgstr "Малий"
+
+msgid "Big"
+msgstr "Великий"
+
+msgid "Only affect selection"
+msgstr "Впливає лише на обране"
+
+msgid "Selected cels"
+msgstr "Вибрані клітинки"
+
+msgid "Current cel"
+msgstr "Поточна клітинка"
+
+msgid "Current frame"
+msgstr "Поточний кадр"
+
+msgid "All frames"
+msgstr "Всі кадри"
+
+msgid "All projects"
+msgstr "Всі проєкти"
+
+msgid "Invert Colors"
+msgstr "Інвертувати кольори"
+
+msgid "Modify Red Channel"
+msgstr "Змінити червоний канал"
+
+msgid "Modify Green Channel"
+msgstr "Змінити зелений канал"
+
+msgid "Modify Blue Channel"
+msgstr "Змінити синій канал"
+
+msgid "Modify Alpha Channel"
+msgstr "Змінити альфа-канал"
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Desaturation"
+msgstr "Знебарвлення"
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Outline"
+msgstr "Контур"
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Drop Shadow"
+msgstr "Тінь"
+
+msgid "Offset X:"
+msgstr "Зсув за X:"
+
+msgid "Offset Y:"
+msgstr "Зсув за Y:"
+
+msgid "Shadow color:"
+msgstr "Колір тіні:"
+
+#. An image effect. https://en.wikipedia.org/wiki/Gaussian_blur
+msgid "Gaussian Blur"
+msgstr ""
+
+#. The type of the Gaussian blur, an image effect.
+msgid "Blur type:"
+msgstr "Тип розмиття:"
+
+#. The applied amount of Gaussian blur, an image effect.
+msgid "Blur amount:"
+msgstr "Рівень розмиття:"
+
+#. The applied radius of Gaussian blur, an image effect.
+msgid "Blur radius:"
+msgstr "Радіус розмиття:"
+
+#. The applied direction of Gaussian blur, an image effect.
+msgid "Blur direction:"
+msgstr "Напрямок розмиття:"
+
+msgid "Gradient"
+msgstr "Градієнт"
+
+msgid "Gradient Map"
+msgstr "Карта градієнту"
+
+msgid "Interpolation"
+msgstr "Інтерполяція"
+
+#. Verb, refers to the action of reversing something.
+msgid "Reverse"
+msgstr "Розвернути"
+
+#. An option found in gradient edit widgets. When selected, all points of a gradient are being evenly distributed across the gradient.
+msgid "Evenly distribute points"
+msgstr ""
+
+#. An option found in gradient edit widgets. When selected, the gradient is being split into equal parts.
+msgid "Divide into equal parts"
+msgstr "Розділити на рівні частини"
+
+msgid "Parts:"
+msgstr "Частини:"
+
+msgid "Add point at the end"
+msgstr "Додати точку в кінці"
+
+msgid "If this is enabled, the last point gets added at the end of the gradient.\n"
+"Disable this if you wish to convert the gradient to have constant interpolation, so that the last color will be taken into account."
+msgstr "Якщо увімкнено, останню точку буде додано в кінець градієнту.\n"
+"Вимкніть, щоб перетворити градієнт таким чином, щоб в ньому була константна інтерполяція, щоб останній колір враховувався."
+
+#. A tooltip of a button found in gradient edit widgets. When the button is pressed, the gradient is saved to presets.
+msgid "Save to presets"
+msgstr "Зберегти до шаблонів"
+
+msgid "Shape:"
+msgstr "Форма:"
+
+msgid "Linear"
+msgstr "Лінійний"
+
+msgid "Radial"
+msgstr "Радіальний"
+
+#. Found in the Gradient dialog, under the image menu. Specifies if the gradient will repeat or not.
+msgid "Repeat:"
+msgstr "Повтор:"
+
+#. Found in the Gradient dialog, under the image menu. Specifies if the gradient will repeat or not.
+msgid "Repeat"
+msgstr "Повтор"
+
+#. Found in the Gradient dialog, under the image menu. It is one of the repeat options.
+msgid "Mirror"
+msgstr "Віддзеркалення"
+
+#. Found in the Gradient dialog, under the image menu. It is one of the repeat options. If Truncate is selected, the gradient gets cut at the edges.
+msgid "Truncate"
+msgstr "Усічення"
+
+msgid "Transition size:"
+msgstr "Розмір переходу:"
+
+msgid "Center:"
+msgstr "Центр:"
+
+msgid "Dithering pattern:"
+msgstr "Шаблон точок:"
+
+msgid "Type:"
+msgstr "Тип:"
+
+msgid "Angle:"
+msgstr "Кут:"
+
+#. An image effect. Adjusts the hue, saturation and value of the colors of an image. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Adjust Hue/Saturation/Value"
+msgstr "Змінити Відтінки/Насиченість/Яскравість"
+
+#. HSV stands for Hue, Saturation & Value.
+msgid "Adjust HSV"
+msgstr "Налаштування HSV"
+
+#. Refers to the hue of the colors of an image.
+msgid "Hue:"
+msgstr "Відтінок:"
+
+#. Refers to the saturation of the colors of an image.
+msgid "Saturation:"
+msgstr "Насиченість:"
+
+#. Refers to the value (as in HSV) of the colors of an image.
+msgid "Value:"
+msgstr "Яскравість:"
+
+#. An image effect. Adjusts the brightness and contrast of the colors of an image.
+msgid "Adjust Brightness/Contrast"
+msgstr ""
+
+#. Refers to the brightness of the colors of an image.
+msgid "Brightness:"
+msgstr "Яскравість:"
+
+#. Refers to the contrast of the colors of an image.
+msgid "Contrast:"
+msgstr "Контраст:"
+
+#. Refers to the red value of the colors of an image.
+msgid "Red value:"
+msgstr "Значення червоного:"
+
+#. Refers to the green value of the colors of an image.
+msgid "Green value:"
+msgstr "Значення зеленого:"
+
+#. Refers to the blue value of the colors of an image.
+msgid "Blue value:"
+msgstr "Значення синього:"
+
+#. Refers to a color that tints an image.
+msgid "Tint color:"
+msgstr "Колір відтінку:"
+
+#. Refers to the factor (how much) a color tints an image.
+msgid "Tint effect factor:"
+msgstr "Фактор ефекту відтінку:"
+
+#. An image effect that adjusts the colors of the image by using curves.
+msgid "Color Curves"
+msgstr "Криві Кольору"
+
+#. Refers to a color channel, such as the red, green, blue or alpha channels.
+msgid "Channel:"
+msgstr "Канал:"
+
+msgid "Red"
+msgstr "Червоний"
+
+msgid "Green"
+msgstr "Зелений"
+
+#. Refers to the value (as in HSV) of the colors of an image.
+msgid "Value"
+msgstr "Значення"
+
+msgid "Presets"
+msgstr "Шаблони"
+
+msgid "Apply"
+msgstr "Застосувати"
+
+msgid "Diagonal"
+msgstr "Діагональ"
+
+msgid "Place inside image"
+msgstr "Розмістити всередині зображення"
+
+msgid "Thickness:"
+msgstr "Товщина:"
+
+msgid "Colors:"
+msgstr "Кольори:"
+
+msgid "Steps:"
+msgstr "Кроки:"
+
+#. An image effect. It maps the color of the input to the nearest color in the selected palette. Useful for limiting color in pixel art and for artistic effects. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Palettize"
+msgstr ""
+
+#. An image effect. It makes the input image pixelated. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Pixelize"
+msgstr "Пікселізація"
+
+#. An image effect. For more details about what it does, you can refer to GIMP's documentation https://docs.gimp.org/2.8/en/gimp-tool-posterize.html
+msgid "Posterize"
+msgstr "Постеризація"
+
+#. An option for the posterize image effect. For more details about what it does, you can refer to GIMP's documentation https://docs.gimp.org/2.8/en/gimp-tool-posterize.html
+msgid "Posterize levels:"
+msgstr "Рівні постеризації:"
+
+#. An option for the posterize image effect.
+msgid "Dither intensity:"
+msgstr "Інтенсивність коливання:"
+
+msgid "View Splash Screen"
+msgstr "Переглянути екран привітання"
+
+msgid "Online Docs"
+msgstr "Онлайн документація"
+
+msgid "Issue Tracker"
+msgstr "Трекер помилок"
+
+#. Found under the Help menu. When selected, it opens the folder where the application's data are being saved.
+msgid "Open Editor Data Folder"
+msgstr "Відкрити теку з даними редактора"
+
+msgid "Changelog"
+msgstr "Список змін"
+
+msgid "About Pixelorama"
+msgstr "Про Pixelorama"
+
+#. Found under the Help menu. When clicked, it opens the URL of Orama Interactive's patreon page.
+msgid "Support Pixelorama's Development"
+msgstr "Підтримка розробки Pixelorama"
+
+msgid "Pixelorama - Pixelate your dreams!"
+msgstr "Pixelorama - пікселізуйте свої мрії!"
+
+msgid "Developed by Orama Interactive"
+msgstr "Розроблено Orama Interactive"
+
+msgid "©2019-present by Orama Interactive and contributors"
+msgstr "©2019-сьогодні Orama Interactive і учасники"
+
+msgid "Website"
+msgstr "Веб-сайт"
+
+#. Found in the About dialog. A button that, when you click it, it opens the URL of Pixelorama's source code.
+msgid "Source Code"
+msgstr "Вихідний код"
+
+msgid "Donate"
+msgstr "Підтримати"
+
+msgid "Developers"
+msgstr "Розробники"
+
+msgid "Contributors"
+msgstr "Учасники"
+
+msgid "Donors"
+msgstr "Спонсори"
+
+msgid "Translators"
+msgstr "Перекладачі"
+
+#. Refers to software licenses. https://en.wikipedia.org/wiki/Software_license
+msgid "Licenses"
+msgstr "Ліцензії"
+
+#. Refers to a software license. https://en.wikipedia.org/wiki/Software_license
+msgid "License"
+msgstr "Ліцензія"
+
+#. Refers to the licenses of the software that are used by the Godot Engine. https://en.wikipedia.org/wiki/Software_license
+msgid "Godot Licenses"
+msgstr ""
+
+#. Refers to software licenses that are not a part of Pixelorama or Godot. https://en.wikipedia.org/wiki/Software_license
+msgid "Third-party Licenses"
+msgstr ""
+
+msgid "English"
+msgstr "Англійська"
+
+msgid "Greek"
+msgstr "Грецька"
+
+msgid "French"
+msgstr "Французька"
+
+msgid "German"
+msgstr "Німецька"
+
+msgid "Polish"
+msgstr "Польська"
+
+msgid "Portuguese"
+msgstr "Португальська"
+
+msgid "Brazilian Portuguese"
+msgstr "Бразильська португальська"
+
+msgid "Russian"
+msgstr "Російська"
+
+msgid "Chinese Simplified"
+msgstr "Китайська спрощена"
+
+msgid "Chinese Traditional"
+msgstr "Китайська традиційна"
+
+msgid "Italian"
+msgstr "Італійська"
+
+msgid "Latvian"
+msgstr "Латвійська"
+
+msgid "Spanish"
+msgstr "Іспанська"
+
+msgid "Catalan"
+msgstr "Каталанська"
+
+msgid "Esperanto"
+msgstr "Есперанто"
+
+msgid "Indonesian"
+msgstr "Індонезійська"
+
+msgid "Czech"
+msgstr "Чеська"
+
+msgid "Arabic"
+msgstr "Арабська"
+
+msgid "Turkish"
+msgstr "Турецька"
+
+msgid "Norwegian Bokmål"
+msgstr "Норвезька (букмол)"
+
+msgid "Korean"
+msgstr "Корейська"
+
+msgid "Hungarian"
+msgstr "Венгерська"
+
+msgid "Romanian"
+msgstr "Румунська"
+
+msgid "Japanese"
+msgstr "Японська"
+
+msgid "Ukrainian"
+msgstr "Українська"
+
+msgid "Danish"
+msgstr "Датська"
+
+msgid "Swedish"
+msgstr "Шведська"
+
+msgid "Serbian (Cyrillic)"
+msgstr "Сербська (кирилиця)"
+
+msgid "Dutch"
+msgstr "Голландська"
+
+msgid "Belarusian"
+msgstr "Білоруська"
+
+#. Found in the About dialog.
+msgid "Lead Developer"
+msgstr "Головний розробник"
+
+#. Found in the About dialog.
+msgid "UI Designer"
+msgstr "UI дизайнер"
+
+#. Found in the About dialog. Refers to the people who have contributed code to the project.
+msgid "Authors"
+msgstr "Автори"
+
+msgid "Art by: %s"
+msgstr "Художник: %s"
+
+msgid "untitled"
+msgstr "без назви"
+
+msgid "imported"
+msgstr "імпортовано"
+
+msgid "copy"
+msgstr "копіювати"
+
+msgid "Are you sure you want to exit Pixelorama?"
+msgstr "Ви дійсно бажаєте вийти з Pixelorama?"
+
+msgid "Unsaved Image"
+msgstr "Незбережене зображення"
+
+msgid "You have unsaved changes. If you proceed, the progress you have made will be lost."
+msgstr "У вас є незбережені зміни. Якщо ви продовжите, прогрес буде втрачений."
+
+msgid "Save before exiting?"
+msgstr "Зберегти перед виходом?"
+
+msgid "Project %s has unsaved progress. How do you wish to proceed?"
+msgstr ""
+
+msgid "Save & Exit"
+msgstr "Зберегти та вийти"
+
+msgid "Exit without saving"
+msgstr "Вийти без збереження"
+
+msgid "Rectangular Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Прямокутне виділення\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Elliptical Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Еліптичне виділення\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Polygonal Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Double-click to connect the last point to the starting point"
+msgstr "Полігональне виділення\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші\n\n"
+"Двійне натиснення з'єднує останню точку з першою"
+
+msgid "Select By Color\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Вибір за кольором\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Magic Wand\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Чарівна паличка\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Lasso / Free Select Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Ласо / довільне виділення\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Select by Drawing\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Move\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Пересування\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Zoom\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Масштабування\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Pan\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Пересування\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Color Picker\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Select a color from a pixel of the sprite"
+msgstr "Піпетка\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші\n\n"
+"Вибрати колір пікселя зі спрайта"
+
+msgid "Crop\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Resize the canvas"
+msgstr ""
+
+msgid "Pencil\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to make a line"
+msgstr "Олівець\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші\n\n"
+"Утримуйте %s, щоб намалювати лінію"
+
+msgid "Eraser\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to make a line"
+msgstr "Гумка\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші\n\n"
+"Утримуйте %s, щоб стерти лінію"
+
+msgid "Bucket\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Заливка\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Shading Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "Інструмент світла/тіні\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші"
+
+msgid "Line Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to snap the angle of the line\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr "Лінія\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші\n\n"
+"Утримуйте %s, щоб зафіксувати кут лінії\n"
+"Утримуйте %s, щоб встановити центр лінії в місці початку малювання\n"
+"Утримуйте %s, щоб пересувати початкову точку фігури"
+
+msgid "Curve Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Draws bezier curves\n"
+"Press %s/%s to add new points\n"
+"Double-click to finish drawing the curve\n"
+"Press and drag to control the curvature\n"
+"Press %s to remove the last added point"
+msgstr ""
+
+msgid "Rectangle Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to create a 1:1 shape\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr "Прямокутник\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші\n\n"
+"Утримуйте %s, щоб створити квадрат 1:1\n"
+"Утримуйте %s, щоб встановити центр лінії в місці початку малювання\n"
+"Утримуйте %s, щоб пересувати початкову точку фігури"
+
+msgid "Ellipse Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to create a 1:1 shape\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr "Еліпс\n\n"
+"%s для лівої кнопки миші\n"
+"%s для правої кнопки миші\n\n"
+"Утримуйте %s, щоб створити круг 1:1\n"
+"Утримуйте %s, щоб встановити центр лінії в місці початку малювання\n"
+"Утримуйте %s, щоб пересувати початкову точку фігури"
+
+msgid "Text\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Rectangle"
+msgstr "Прямокутник"
+
+msgid "Ellipse"
+msgstr "Еліпс"
+
+msgid "Choose a color for the left tool"
+msgstr "Вибрати колір для лівого інструмента"
+
+msgid "Choose a color for the right tool"
+msgstr "Вибрати колір для правого інструмента"
+
+#. Tooltip of the switch colors button found in the color picker panel.
+msgid "Switch left and right colors."
+msgstr ""
+
+#. Tooltip of the average color button, found in the color picker panel. Shows the average color between the two selected.
+msgid "Average Color:"
+msgstr ""
+
+msgid "Reset the colors to their default state (black for left, white for right)"
+msgstr "Скинути кольори до стандартних (зліва чорний, справа білий)"
+
+#. Tooltip of the screen color picker button found in the color picker panel.
+msgid "Pick a color from the application window."
+msgstr ""
+
+#. Tooltip of the color text field found in the color picker panel that lets users change the color by hex code or english name ("red" cannot be translated).
+msgid "Enter a hex code (\"#ff0000\") or named color (\"red\")."
+msgstr "Введіть шістнадцятковий код (\"#ff0000\") або назву кольору (\"red\")."
+
+#. Tooltip of the button found in the color picker panel that lets users change the shape of the color picker.
+msgid "Select a picker shape."
+msgstr "Виберіть форму піпетки."
+
+#. Refers to color-related options such as sliders that set color channel values like R, G, B and A.
+msgid "Color options"
+msgstr "Налаштування кольору"
+
+#. Tooltip of the button with three dots found under color options in the color picker panel that lets users change the mode of the color picker/sliders.
+msgid "Select a picker mode."
+msgstr "Перейдіть до режиму вибору."
+
+#. Checkbox found in the menu of the button with three dots found under color options in the color picker panel.
+msgid "Colorized Sliders"
+msgstr "Кольорові повзунки"
+
+#. Shows saved colors in certain color picker menus.
+msgid "Swatches"
+msgstr ""
+
+#. Found under color options in the color picker panel.
+msgid "Recent Colors"
+msgstr ""
+
+msgid "Left tool"
+msgstr "Лівий інструмент"
+
+msgid "Right tool"
+msgstr "Правий інструмент"
+
+msgid "Left pixel indicator"
+msgstr "Лівий індикатор пікселя"
+
+msgid "Show left mouse pixel indicator or brush on the canvas when drawing"
+msgstr "Показати на полотні індикатор пікселя або пензель для лівої кнопки миші при малюванні"
+
+msgid "Right pixel indicator"
+msgstr "Правий індикатор пікселя"
+
+msgid "Show right mouse pixel indicator or brush on the canvas when drawing"
+msgstr "Показати на полотні індикатор пікселя або пензель для правої кнопки миші при малюванні"
+
+msgid "Show left tool icon"
+msgstr "Показувати значок лівого інструмента"
+
+msgid "Displays an icon of the selected left tool next to the cursor on the canvas"
+msgstr "Показує значок вибраного лівого інструмента поруч з курсором на полотні"
+
+msgid "Show right tool icon"
+msgstr "Показувати значок правого інструмента"
+
+msgid "Displays an icon of the selected right tool next to the cursor on the canvas"
+msgstr "Показує значок вибраного правого інструмента поруч з курсором на полотні"
+
+msgid "Use native mouse cursors"
+msgstr "Використовувати системні курсори миші"
+
+msgid "Use cross cursor for the canvas"
+msgstr "Використовувати перехресний курсор на полотні"
+
+msgid "Guides"
+msgstr "Напрямні лінії"
+
+msgid "Guides color:"
+msgstr "Колір напрямних:"
+
+msgid "A color of ruler guides displayed on the canvas"
+msgstr "Колір напрямних ліній на полотні"
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping.
+msgid "Snapping"
+msgstr "Прив'язка"
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping.
+msgid "Snapping distance:"
+msgstr "Відстань прив'язки:"
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping. Hint tooltip of the snapping distance slider.
+msgid "This is the distance in screen pixels where guide and grid snapping gets activated."
+msgstr ""
+
+msgid "Grid"
+msgstr "Сітка"
+
+msgid "Grid type:"
+msgstr "Тип сітки:"
+
+msgid "Sets the type of the grid between rectangular, isometric or both"
+msgstr "Встановлює тип сітки між прямокутником, ізометричним або обидва"
+
+msgid "Rectangular"
+msgstr "Прямокутна"
+
+msgid "Isometric"
+msgstr "Ізометрична"
+
+#. Refers to a hexagonal type of grid.
+msgid "Hexagonal"
+msgstr ""
+
+#. Refers to a hexagonal type of grid, with pointy-top orientation.
+msgid "Hexagonal (pointy-top)"
+msgstr ""
+
+#. Refers to a hexagonal type of grid, with flat-top orientation.
+msgid "Hexagonal (flat-top)"
+msgstr ""
+
+msgid "All"
+msgstr "Усі"
+
+#. Found in the Preferences, in the Canvas category. Refers to the number of visible grids.
+msgid "Grids visible:"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category. Refers to the grid that is being edited.
+msgid "Editing grid:"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category.
+msgid "Grid size:"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category.
+msgid "Grid offset:"
+msgstr "Зміщення сітки:"
+
+#. Found in the Preferences, in the Canvas category. Hint tooltip of the grid offset value sliders.
+msgid "Sets grid's offset from the canvas origin (top left corner of the image)"
+msgstr "Встановлює зсув сітки від початку координат (верхній лівий кут зображення)"
+
+msgid "Draw over Tile Mode:"
+msgstr "Малювати в безшовному режимі:"
+
+msgid "If disabled, the grid will be drawn only over the original image"
+msgstr "Якщо вимкнено, сітка буде показуватися тільки над оригінальним зображенням"
+
+msgid "Grid color:"
+msgstr "Колір сітки:"
+
+msgid "A color of the grid"
+msgstr "Колір, який матиме сітка"
+
+msgid "Pixel Grid"
+msgstr "Сітка пікселів"
+
+msgid "Show at zoom:"
+msgstr "Показати при збільшенні:"
+
+msgid "Sets the minimal zoom at which pixel grid will be shown"
+msgstr "Встановлює мінімальне масштабування, при якому буде відображатися сітка для пікселів"
+
+msgid "Pixel grid color:"
+msgstr "Колір піксельної сітки:"
+
+msgid "A color of the pixel grid"
+msgstr "Колір піксельної сітки"
+
+msgid "Transparency"
+msgstr "Прозорість"
+
+msgid "Checker size:"
+msgstr "Розмір шахового фону:"
+
+msgid "Size of the transparent checker background"
+msgstr "Розмір шахового узору для прозорого фону"
+
+msgid "Checker color 1:"
+msgstr "Шаховий колір 1:"
+
+msgid "First color of the transparent checker background"
+msgstr "Перший колір шахового узору для прозорого фону"
+
+msgid "Checker color 2:"
+msgstr "Шаховий колір 2:"
+
+msgid "Second color of the transparent checker background"
+msgstr "Другий колір шахового узору для прозорого фону"
+
+msgid "Follow Canvas Movement"
+msgstr "Рухати з полотном"
+
+msgid "The transparent checker follow the movement of canvas"
+msgstr "Шаховий фон рухається з полотном"
+
+msgid "Follow Canvas Zoom Level"
+msgstr "Міняти розмір за масштабом"
+
+msgid "The transparent checker follow the zoom level of canvas"
+msgstr "Шаховий фон міняє розмір за масштабом"
+
+#. Found in the Preferences, under Timeline. If this is enabled, clicking on the layer buttons (such as lock, invisible etc) will automatically select that layer.
+msgid "Select layer when clicking on one of its buttons:"
+msgstr ""
+
+#. Found in the Preferences, under Timeline. Changes the color of the past (previous) frames in onion skinning, if color mode is enabled.
+msgid "Onion skinning past color:"
+msgstr ""
+
+#. Found in the Preferences, under Timeline. Changes the color of the past (previous) frames in onion skinning, if color mode is enabled.
+msgid "Onion skinning future color:"
+msgstr ""
+
+msgid "Animated selection borders"
+msgstr "Анімовані межі виділення"
+
+msgid "Border color 1:"
+msgstr "Колір рамки 1:"
+
+msgid "Border color 2:"
+msgstr "Колір рамки 2:"
+
+msgid "Only custom preset can be modified"
+msgstr "Можна міняти тільки користувацький набір налаштувань"
+
+msgid "Set application FPS limit:"
+msgstr "Встановити обмеження FPS додатку:"
+
+msgid "Sets the limit of the application's frames per second. The lower the number, the lower the CPU usage, but the application gets slower, choppier and unresponsive. 0 means that there is no limit."
+msgstr "Встановлює обмеження кадрів в секунду. Чим нижче значення, ти менше додаток використовує CPU, але програма починає працювати повільніше, стає менш стабільною і може не реагувати. 0 означає, що немає ніяких обмежень."
+
+#. Found in the Preferences, under the Performance section. Changes the value of the maximum undo steps projects can use.
+msgid "Max undo steps:"
+msgstr ""
+
+#. An option found in the preferences, under the Performance section.
+msgid "Pause application when it loses focus"
+msgstr "Призупиняти програму, коли вона не має фокусу"
+
+#. Found in the preferences, hint of the "Pause application when it loses focus" option.
+msgid "If this is toggled on, when the application's window loses focus, it gets paused. This helps lower CPU usage when idle. The application gets unpaused when the mouse enters the application's window."
+msgstr "Якщо вибрано цей параметр, коли вікно програми губитиме фокус, програма призупинятиметься. Це допомагає не використовувати процесор дарма. Програма буде знов активована, коли курсор миші буде рухатися в вікні програми."
+
+#. An option found in the preferences, under the Performance section. Refers to the screen being updated (redrawn) continuously.
+msgid "Update continuously"
+msgstr "Завжди оновлювати"
+
+#. Found in the preferences, hint of the "Update continuously" option.
+msgid "If this is toggled on, the application will redraw the screen continuously, even while it's not used. Turning this off helps lower CPU and GPU usage when idle."
+msgstr "Якщо це увімкнено, програма буде перемалювати екран постійно, навіть поки його не використовується. Вимкнення цього дозволяє знизити навантаження на процесор та відеокарту при простої."
+
+#. An option found in the preferences, under the Performance section.
+msgid "Enable window transparency"
+msgstr "Увімкнути прозорість вікна"
+
+#. Found in the preferences, hint of the "Enable window transparency" option.
+msgid "If enabled, the application window can become transparent. This affects performance, so keep it off if you don't need it."
+msgstr "Якщо увімкнуто, вікно програми може стати прозорим. Це впливає на продуктивність, тому тримайте його виключеним, якщо вам не потрібно."
+
+#. An option found in the preferences, under the Performance section. A dummy driver is basically a driver that doesn't do anything. When this option is enabled, audio does not play, but it can help save some performance.
+msgid "Use dummy audio driver"
+msgstr ""
+
+#. Found in the Preferences, under Drivers. Specifies the renderer/video driver being used.
+msgid "Renderer:"
+msgstr "Рендерер:"
+
+#. Found in the Preferences, under Drivers. Hint tooltip of the renderer option.
+msgid "Specifies the renderer/video driver being used. GLES2 is better for older and low-end devices, but GLES3 may offer more features."
+msgstr "Вказує, який використовуватиметься рендерер/відеодрайвер. GLES2 кращий для старіших та менш потужних пристроїв, а в GLES3 більше можливостей."
+
+#. Found in the Preferences, under Drivers. Specifies the tablet driver being used on Windows.
+msgid "Tablet driver:"
+msgstr "Драйвер планшету:"
+
+#. Found in the Preferences, under Drivers. Hint tooltip of the tablet driver option.
+msgid "Specifies the tablet driver being used on Windows. If you have Windows Ink enabled, select winink."
+msgstr "В Windows вказує, який використовується драйвер планшета. Якщо увімкнено Windows Ink, оберіть winink."
+
+#. Found in the Preferences, under Extensions.
+msgid "Add Extension"
+msgstr "Додати розширення"
+
+msgid "Enable"
+msgstr "Увімкнути"
+
+msgid "Disable"
+msgstr "Вимкнути"
+
+msgid "Uninstall"
+msgstr "Видалити"
+
+msgid "Open Folder"
+msgstr "Відкрити директорію"
+
+#. Found in the Preferences, under Extensions. It is a button that, when clicked, opens up the extension explorer which allows users to download extensions from the Internet.
+#: src/Preferences/PreferencesDialog.tscn
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Explore Online"
+msgstr "Переглянути Онлайн"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Title of the tab that shows the extension explorer, where you can download extensions.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Extension Explorer"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Text field to search for extensions.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Search..."
+msgstr "Пошук..."
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Refers to the tags used to filter extensions in the explorer.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Tags:"
+msgstr "Теги:"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Report issue with an extension"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Button to download an extension.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Download"
+msgstr "Завантажити"
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup, under Options. It's the section where you can add links to more extension repositories.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Repository links:"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Fetching data from remote repository.\n"
+"Please wait."
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Flatpak is a utility for software deployment and package management for Linux, so this word should not be translated.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Unable to get info from remote repository.\n\n"
+"- Make sure you are connected to the internet.\n"
+"- If you are using the Flatpak version of Pixelorama, you need to grant it permission to connect to the internet. To do that, you can run the following command on your terminal:"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Flatpak is a utility for software deployment and package management for Linux and Flatseal is an application that manages permissions for Flatpak apps, so these words should not be translated.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Alternatively, you can download Flatseal and set permissions for Flatpak apps there."
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Unable to get info from remote repository."
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup, under Options. Placeholder text for adding a link to an extensions repository. "Will be automatically removed" refers to the text field itself, if no link is entered.
+msgid "Paste repository link, given by the repository owner. If left empty, it will automatically be removed."
+msgstr ""
+
+#. Found in the Preferences, under Extensions. This is the text of a confirmation dialog that appears when the user attempts to enable an extension.
+msgid "Are you sure you want to enable this extension? Make sure to only enable extensions from sources that you trust."
+msgstr "Ви впевнені, що хочете включити це розширення? Переконайтеся, що розширення з джерел, яким ви довіряєте."
+
+#. Found in the Preferences, under Extensions. This is the text of a confirmation dialog that appears when the user attempts to delete an extension.
+msgid "Are you sure you want to delete this extension?"
+msgstr "Ви дійсно бажаєте видалити це розширення?"
+
+#. Hint tooltip of a button in the Global Tool Settings. "Dynamics" let users affect certain brush parameters, such as their size and alpha, based on the pressure of the tablet pen, the velocity of the mouse or the pen, and more in the future.
+msgid "Dynamics"
+msgstr "Динаміка"
+
+#. Found in the Dynamics options menu. A stabilizer is a feature that, when enabled, helps artists create smooth lines as they draw.
+msgid "Stabilizer"
+msgstr "Стабілізатор"
+
+#. Found in the Dynamics options menu. Pressure refers to tablet pen pressure.
+msgid "Pressure"
+msgstr "Натиск"
+
+#. Found in the Dynamics options menu. Velocity refers to mouse or tablet pen velocity, meaning how fast it moves.
+msgid "Velocity"
+msgstr "Швидкість"
+
+#. Refers to the alpha channel of the colors, in the RGBA color model. The alpha channel is responsible for the transparency of the color.
+msgid "Alpha"
+msgstr "Альфа"
+
+#. Refers to the size of a value, for example the size of a brush.
+msgid "Size"
+msgstr "Розмір"
+
+#. Found in the Dynamics options menu. Sets the limits of the brush property values, such as the minimum and maximum values of alpha and size.
+msgid "Value limits"
+msgstr "Ліміти значень"
+
+#. Found in the Dynamics options menu. Sets the thresholds of the dynamic properties, such as the minimum and maximum values of pressure and velocity.
+msgid "Thresholds"
+msgstr "Пороги"
+
+#. Noun, the start of something.
+msgid "Start"
+msgstr "Початок"
+
+#. Noun, the end of something.
+msgid "End"
+msgstr "Кінець"
+
+msgid "Brush:"
+msgstr "Пензель:"
+
+msgid "Select a brush"
+msgstr "Вибрати пензель"
+
+#. Found when selecting a brush. It's a section that shows the default Pixelorama brushes.
+msgid "Default Brushes"
+msgstr "Типовий пензлик"
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Pixel brush"
+msgstr "Піксельний пензель"
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Circle brush"
+msgstr "Пензель-коло"
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Filled circle brush"
+msgstr "Пензель—заповнене коло"
+
+#. Found when selecting a brush. It's a section that shows brushes the user has imported for the current project specifically.
+msgid "Project Brushes"
+msgstr "Пензлі проєкту"
+
+#. Found when selecting a brush. It's a section that shows a few brushes that come with Pixelorama and brushes the user has imported from files (not project-specific).
+msgid "File Brushes"
+msgstr "Пензлі файлу"
+
+#. Found when selecting a brush. One of the file brushes that come with Pixelorama.
+msgid "Snow"
+msgstr "Сніг"
+
+#. Found when selecting a brush. It's a section that shows file brushes that are randomized.
+msgid "Random File Brushes"
+msgstr ""
+
+#. Found when selecting a brush. One of the random brushes that come with Pixelorama.
+msgid "Grass"
+msgstr "Трава"
+
+#. Found when selecting a brush. One of the random brushes that come with Pixelorama.
+msgid "Star"
+msgstr "Зірка"
+
+msgid "Custom brush"
+msgstr "Користувацький пензель"
+
+msgid "Brush size:"
+msgstr "Розмір пензля:"
+
+#. Found in the pencil tool options, when you select a brush that isn't a default brush. It's a dropdown that shows rotation options for the brush.
+msgid "Rotation options"
+msgstr "Параметри обертання"
+
+#. Found under "Rotation options" in the pencil tool options, when you select a brush that isn't a default brush. Property to flip the brush in the X or Y axis.
+msgid "Flip:"
+msgstr "Віддзеркалити:"
+
+#. Found under "Rotation options" in the pencil tool options, when you select a brush that isn't a default brush. Property to rotate the brush.
+msgid "Rotate:"
+msgstr "Повернути:"
+
+msgid "Overwrite color"
+msgstr "Перезапис кольору"
+
+msgid "Overwrites color instead of blending it. This option is only relevant with colors that are not fully opaque"
+msgstr "Переписує колір замість змішування кольорів. Ця опція має сенс лише для частково прозорих кольорів"
+
+msgid "Pixel Perfect"
+msgstr "Піксельна точність"
+
+msgid "Pixel Perfect\n"
+"Makes lines smooth by removing the extra pixels on the edges"
+msgstr "Піксельна точність\n"
+"Робить лініі плавними, забираючи зайві пікселі по краях"
+
+#. A button found in the global tool options. When enabled, the alpha value of the pixels being drawn is locked, meaning that the user can only draw on non-transparent pixels.
+msgid "Lock alpha"
+msgstr "Зафіксувати прозорість"
+
+msgid "Fill inside"
+msgstr "Заливка всередині"
+
+#. Found in the tool options of the Pencil tool, and refers to the spacing between brush strokes.
+msgid "Spacing"
+msgstr "Інтервал"
+
+#. Found in the tool options of the Pencil tool if "Spacing" is enabled, and refers to the horizontal gap between brush strokes.
+msgid "Gap X:"
+msgstr "Пропуск X:"
+
+#. Found in the tool options of the Pencil tool if "Spacing" is enabled, and refers to the vertical gap between brush strokes.
+msgid "Gap Y:"
+msgstr "Пропуск Y:"
+
+msgid "Fill Shape"
+msgstr "Залити фігуру"
+
+msgid "Fills the drawn shape with color, instead of drawing a hollow shape"
+msgstr "Заливає намальовану фігуру кольором замість того, щоб малювати лише контур"
+
+#. Found in the tool options of the Pencil, Eraser and Shading tools. It is a percentage of how dense the brush is. 100% density means that the brush gets completely drawn, anything less leaves gaps inside the brush, acting like a spray tool.
+msgid "Density:"
+msgstr "Щільність:"
+
+#. Found in the pencil tool options, when you select a brush that isn't a default brush. Property to change the strength of the selected color in the selected brush (0: Color from the brush itself, 100: the currently selected color).
+msgid "Brush color from:"
+msgstr "Колір пензля з:"
+
+msgid "0: Color from the brush itself, 100: the currently selected color"
+msgstr "0: Колір з самого пензля, 100: поточний колір"
+
+#. Found in the bucket tool options.
+msgid "Fill area:"
+msgstr "Область заповнення:"
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Similar area"
+msgstr "Подібна область"
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Similar colors"
+msgstr "Подібні кольори"
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Whole selection"
+msgstr "Все виділення"
+
+msgid "Fill with:"
+msgstr "Чим залити:"
+
+#. Found in the bucket tool options, one of the fill with options.
+msgid "Selected color"
+msgstr "Вибраній колір"
+
+#. Found in the bucket tool options, one of the fill with options.
+msgid "Pattern"
+msgstr "Шаблон"
+
+msgid "Offset"
+msgstr "Зсування"
+
+msgid "Simple Shading"
+msgstr "Просте світло"
+
+msgid "Hue Shifting"
+msgstr "Зсування відтінку"
+
+msgid "Lighten"
+msgstr "Освітлити"
+
+msgid "Darken"
+msgstr "Затемнити"
+
+msgid "Amount:"
+msgstr "Сила:"
+
+msgid "Lighten/Darken amount"
+msgstr "Сила освітлення/затемнення"
+
+#. Found in the shading tool options. Mode to apply shading by replacing drawing's colors with the colors that are next to them in the selected palette.
+msgid "Color Replace"
+msgstr "Заміна кольору"
+
+msgid "Please select a color from the palette."
+msgstr "Будь ласка, виберіть колір із палітри."
+
+#. Found in the shading tool options, in "Color Replace" mode. Parameter that specifies how many colors to the right of the selected color in the palette should be included for the shading.
+msgid "Colors right:"
+msgstr "Кольори справа:"
+
+msgid "Pick for:"
+msgstr "Вибрати для:"
+
+msgid "Left Color"
+msgstr "Лівий колір"
+
+msgid "Right Color"
+msgstr "Правий колір"
+
+#. Found in the color picker tool options. Specifies what mode should be used for picking a color.
+msgid "Pick mode:"
+msgstr "Режим Вибору:"
+
+#. Found in the color picker tool options, as a pick mode. Picks the top color from the canvas in the selected pixel.
+msgid "Top Color"
+msgstr "Верхній колір"
+
+#. Found in the color picker tool options, as a pick mode. Picks the color from the currently selected layer in the selected pixel.
+msgid "Current Layer"
+msgstr "Поточний Шар"
+
+msgid "Mode:"
+msgstr "Режим:"
+
+msgid "Zoom in"
+msgstr "Збільшити масштаб"
+
+msgid "Zoom out"
+msgstr "Зменшити масштаб"
+
+#. Refers to a mode of the curve tool. Single mode mimics the Aseprite curve tool behavior.
+msgid "Single"
+msgstr ""
+
+#. Refers to a mode of the curve tool. Chained mode mimics the Krita curve tool behavior.
+msgid "Chained"
+msgstr ""
+
+#. Tooltip of the curve tool's "mode" option button.
+msgid "Chained: Makes a chain of multiple bezier curves, similar to Krita's curve tool.\n"
+"Single: Makes a single bezier curve, similar to Aseprite's curve tool."
+msgstr ""
+
+msgid "Options"
+msgstr "Параметри"
+
+msgid "Options:"
+msgstr "Опції:"
+
+msgid "Fit to frame"
+msgstr "За розміром кадру"
+
+msgid "100% Zoom"
+msgstr "100% масштаб"
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Replace selection"
+msgstr "Замінити виділення"
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Add to selection"
+msgstr "Додати до виділення"
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Subtract from selection"
+msgstr "Відняти від виділення"
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Intersection of selections"
+msgstr "Перетинання виділень"
+
+#. Refers to the style of something, such as the style of a text, meaning whether it's regular, bold, italic, etc.
+msgid "Style:"
+msgstr "Стиль:"
+
+#. Refers to the text. Regular means that the text is not bold or italic.
+msgid "Regular"
+msgstr "Звичайний"
+
+#. Refers to text that is bold.
+msgid "Bold"
+msgstr "Жирний"
+
+#. Refers to text that is italic.
+msgid "Italic"
+msgstr "Курсив"
+
+#. Refers to text that is bold and italic.
+msgid "Bold Italic"
+msgstr "Жирний курсив"
+
+#. https://en.wikipedia.org/wiki/Anti-aliasing
+msgid "Antialiasing"
+msgstr "Згладжування"
+
+msgid "Grayscale"
+msgstr "Відтінки сірого"
+
+msgid "Mirroring"
+msgstr "Віддзеркалення"
+
+msgid "Horizontal"
+msgstr "Горизонтально"
+
+msgid "Enable horizontal mirrored drawing"
+msgstr "Увімкнути горизонтальне віддзеркалення для малювання"
+
+msgid "Vertical"
+msgstr "Вертикально"
+
+msgid "Enable vertical mirrored drawing"
+msgstr "Увімкнути вертикальне віддзеркалення для малювання"
+
+#. Found in the global tool options, in the menu that appears next to each mirror button. It affects the position of a symmetry guide.
+msgid "Move to canvas center"
+msgstr "Перемістити в центр полотна"
+
+#. Found in the global tool options, in the menu that appears next to each mirror button. It affects the position of a symmetry guide.
+msgid "Move to view center"
+msgstr "Перемістити в центр перегляду"
+
+msgid "Current frame:"
+msgstr "Поточний кадр:"
+
+msgid "Animation mode:"
+msgstr "Режим анімації:"
+
+msgid "Current frame as spritesheet"
+msgstr "Поточний кадр як таблиця спрайтів"
+
+msgid "Jump to the first frame"
+msgstr "Перейти до першого кадру"
+
+msgid "Go to the previous frame"
+msgstr "Перейти до попереднього кадру"
+
+msgid "Play the animation backwards"
+msgstr "Відтворити анімацію назад"
+
+msgid "Play the animation forward"
+msgstr "Відтворити анімацію вперед"
+
+msgid "Go to the next frame"
+msgstr "Перейти до наступного кадру"
+
+msgid "Jump to the last frame"
+msgstr "Перейти до останнього кадру"
+
+msgid "Timeline settings"
+msgstr "Налаштування часової шкали"
+
+msgid "Enable/disable Onion Skinning"
+msgstr "Увімкнути/вимкнути шлейф сусідніх кадрів"
+
+msgid "How many frames per second should the animation preview be?\n"
+"The more FPS, the faster the animation plays."
+msgstr "Скільки кадрів у секунду показувати при програванні анімації?\n"
+"Чим більше кадрів у секунду, тим швидшою буде анімація."
+
+msgid "No loop"
+msgstr "Без зациклення"
+
+msgid "Cycle loop"
+msgstr "Кругове зациклення"
+
+msgid "Ping-pong loop"
+msgstr "Зациклення туди-назад"
+
+msgid "Onion Skinning:"
+msgstr "Шлейф сусідніх кадрів:"
+
+msgid "Past Frames"
+msgstr "Минулі кадри"
+
+msgid "Future Frames"
+msgstr "Майбутні кадри"
+
+msgid "Manage frame tags"
+msgstr "Керування тегами кадрів"
+
+msgid "Frame Tag Properties"
+msgstr "Властивості тегу кадрів"
+
+msgid "Add a new frame tag"
+msgstr "Додати новий тег кадрів"
+
+msgid "Name:"
+msgstr "Назва:"
+
+msgid "From:"
+msgstr "З:"
+
+msgid "To:"
+msgstr "До:"
+
+msgid "Animation plays only on frames of the same tag"
+msgstr "Анімація відтворюється тільки на кадрах того ж тегу"
+
+msgid "Tag %s (Frame %s)"
+msgstr "Тег %s (Кадр %s)"
+
+msgid "Tag %s (Frames %s-%s)"
+msgstr "Тег %s (Кадри %s—%s)"
+
+msgid "If it's selected, the animation plays only on the frames that have the same tag.\n"
+"If it's not, the animation will play for all frames, ignoring tags."
+msgstr "Якщо вибрано цю опцію, анімація буде програватися тільки на кадрах з одним і тим же тегом.\n"
+"Якщо не вибрано, анімація буде програватися на всіх кадрах, ігноруючи теги."
+
+#. Found in the timeline, inside the timeline settings. It's a slider that sets the size of the cel buttons in the timeline.
+msgid "Cel size:"
+msgstr "Розмір клітинки:"
+
+#. Found in the timeline, inside the timeline settings. If this is enabled, the past and future frames will have appear tinted.
+msgid "Color mode"
+msgstr "Режим кольору"
+
+msgid "Show past frames:"
+msgstr "Показ минулих кадрів:"
+
+msgid "Show future frames:"
+msgstr "Показ майбутніх кадрів:"
+
+msgid "Above canvas"
+msgstr "Над полотном"
+
+msgid "Below canvas"
+msgstr "Під полотном"
+
+msgid "If you want a layer to ignore onion skinning simply add the \"_io\" suffix in its name."
+msgstr "Якщо ви хочете, щоб шар ігнорував шлейф сусідніх кадрів, просто додайте до назви суфікс «_io» латиницею."
+
+msgid "Add a new frame"
+msgstr "Додати новий кадр"
+
+msgid "Remove Frame"
+msgstr "Видалити кадр"
+
+msgid "Clone Frame"
+msgstr "Клонувати кадр"
+
+msgid "Move Left"
+msgstr "Перейти вліво"
+
+msgid "Move Right"
+msgstr "Перейти вправо"
+
+msgid "Add Frame Tag"
+msgstr ""
+
+#. An option found in the right click menu of a cel. If selected, all non-transparent pixels of that cel get selected.
+msgid "Select pixels"
+msgstr ""
+
+#. An option found in the right click menu of a cel. If selected, all selected cels get linked together.
+msgid "Link cels to"
+msgstr ""
+
+#. An option found in the right click menu of a cel. If selected, all selected cels get unlinked.
+msgid "Unlink cels"
+msgstr ""
+
+#. An option found in the right click menu of an audio cel. If selected, the audio of the audio layer will start playing from this frame.
+msgid "Play audio here"
+msgstr "Відтворити аудіо тут"
+
+msgid "Properties"
+msgstr "Властивості"
+
+msgid "Project Properties"
+msgstr ""
+
+msgid "Frame properties"
+msgstr "Властивості кадру"
+
+msgid "Layer properties"
+msgstr ""
+
+msgid "Cel properties"
+msgstr ""
+
+msgid "Tag properties"
+msgstr ""
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, a new frame tag is added.
+msgid "New Tag"
+msgstr ""
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, it allows users to paste/import tags from other opened projects.
+msgid "Import Tag"
+msgstr ""
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, the order of the selected frames is being reversed.
+msgid "Reverse Frames"
+msgstr "Зворотний порядок кадрів"
+
+msgid "Layer"
+msgstr "Шар"
+
+msgid "Group"
+msgstr "Група"
+
+#. A tilemap is a type of layer, which is divided by grid cells, the size of which is determined by the tileset it uses. Each grid cell is mapped to a tile in the tileset. Tilemaps can be used to create game levels and layouts.
+msgid "Tilemap"
+msgstr ""
+
+msgid "Audio"
+msgstr ""
+
+msgid "Layers"
+msgstr "Шари"
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When enabled, the layer becomes a clipping mask.
+msgid "Clipping mask"
+msgstr ""
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When clicked, the selected layers are being flattened into a single layer.
+msgid "Flatten"
+msgstr ""
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When clicked, the selected visible layers are being flattened into a single layer.
+msgid "Flatten visible"
+msgstr ""
+
+#. Hint tooltip of the create new layer button, found on the left side of the timeline.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Create a new layer"
+msgstr "Створити новий шар"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Pixel Layer"
+msgstr "Додати шар пікселів"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Group Layer"
+msgstr "Додати груповий шар"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add 3D Layer"
+msgstr "Додати 3D-шар"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Tilemap Layer"
+msgstr ""
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Audio Layer"
+msgstr ""
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Remove current layer"
+msgstr "Видалити поточний шар"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Move up the current layer"
+msgstr "Підняти поточний шар"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Move down the current layer"
+msgstr "Опустити поточний шар"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Clone current layer"
+msgstr "Клонувати поточний шар"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Merge current layer with the one below"
+msgstr "Об’єднати поточний шар з шаром під ним"
+
+#. Found in the layer's section of the timeline. Refers to layer blend modes, for more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Blend mode:"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option, only available for group layers. If enabled, group blending is disabled and the group simply acts as a way to organize layers instead of affecting blending.
+msgid "Pass through"
+msgstr ""
+
+#. Adjective, refers to something usual/regular, such as the normal blend mode.
+msgid "Normal"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. Uses the opacity of pixels in this layer to erase pixels from the layers under it.
+msgid "Erase"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Multiply"
+msgstr ""
+
+# .Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color burn"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Linear burn"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Screen"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color dodge"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Contrast"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Overlay"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Soft light"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Hard light"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Inversion"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Difference"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Exclusion"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Subtract"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Divide"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Component"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Hue"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Saturation"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Luminosity"
+msgstr ""
+
+msgid "Opacity:"
+msgstr "Непрозорість:"
+
+msgid "Tile mode opacity:"
+msgstr "Прозорість безшовного режиму:"
+
+msgid "Toggle layer's visibility"
+msgstr "Перемкнути видимість шару"
+
+msgid "Lock/unlock layer"
+msgstr "Заблокувати/розблокувати шар"
+
+msgid "Frame: %s, Layer: %s"
+msgstr "Кадр: %s, шар: %s"
+
+msgid "Enable/disable automatic linking of new cels when creating new frames\n\n"
+"Linked cels share content across multiple frames"
+msgstr "Увімкнути/вимкнути автоматичне зв'язання нових клітинок при створенні нових кадрів\n\n"
+"Пов'язані клітинки будуть одночасно використовуватися в різних кадрах"
+
+msgid "Expand/collapse group"
+msgstr "Розгорнути/згорнути групу"
+
+#. Refers to the audio file of an audio layer.
+msgid "Audio file:"
+msgstr ""
+
+msgid "Load file"
+msgstr ""
+
+#. An option in the audio layer properties, allows users to play the audio starting from a specific frame.
+msgid "Play at frame:"
+msgstr ""
+
+msgid "Palette"
+msgstr "Палітра"
+
+msgid "Palettes"
+msgstr "Палітри"
+
+msgid "Add a new palette"
+msgstr "Додати нову палітру"
+
+msgid "Edit currently selected palette"
+msgstr "Редагувати вибрану палітру"
+
+msgid "Choose a palette"
+msgstr "Вибір палітри"
+
+msgid "Undo: Draw"
+msgstr "Скасувати: малювання"
+
+msgid "Redo: Draw"
+msgstr "Повторити: малювання"
+
+msgid "Undo: Select"
+msgstr "Скасувати: виділення"
+
+msgid "Redo: Select"
+msgstr "Повторити: виділення"
+
+msgid "Undo: Scale"
+msgstr "Скасувати: масштабування"
+
+msgid "Redo: Scale"
+msgstr "Повторити: масштабування"
+
+msgid "Undo: Add Layer"
+msgstr "Скасувати: додавання шару"
+
+msgid "Redo: Add Layer"
+msgstr "Повторити: додавання шару"
+
+msgid "Undo: Remove Layer"
+msgstr "Скасувати: видалення шару"
+
+msgid "Redo: Remove Layer"
+msgstr "Повторити: видалення шару"
+
+msgid "Undo: Merge Layer"
+msgstr "Скасувати: об’єднання шару"
+
+msgid "Redo: Merge Layer"
+msgstr "Повторити: об’єднання шару"
+
+msgid "Undo: Change Layer Order"
+msgstr "Скасувати: зміна порядку шарів"
+
+msgid "Redo: Change Layer Order"
+msgstr "Повторити: зміна порядку шарів"
+
+msgid "Undo: Add Frame"
+msgstr "Скасувати: додавання кадру"
+
+msgid "Redo: Add Frame"
+msgstr "Повторити: додавання кадру"
+
+msgid "Undo: Remove Frame"
+msgstr "Скасувати: видалення кадру"
+
+msgid "Redo: Remove Frame"
+msgstr "Повторити: видалення кадру"
+
+msgid "Undo: Change Frame Order"
+msgstr "Скасувати: зміна порядку кадрів"
+
+msgid "Redo: Change Frame Order"
+msgstr "Повторити: зміна порядку кадрів"
+
+msgid "Undo: Delete Custom Brush"
+msgstr "Скасувати: видалення користувацького пензля"
+
+msgid "Redo: Delete Custom Brush"
+msgstr "Повторити: видалення користувацького пензля"
+
+msgid "Undo: Modify Frame Tag"
+msgstr "Скасувати: зміна тегу кадру"
+
+msgid "Redo: Modify Frame Tag"
+msgstr "Повторити: зміна тегу кадру"
+
+msgid "Undo: Delete Frame Tag"
+msgstr "Скасувати: видалення тегу кадру"
+
+msgid "Redo: Delete Frame Tag"
+msgstr "Повторити: видалення тегу кадру"
+
+msgid "Undo: Change frame duration"
+msgstr "Скасувати: зміна тривалості кадру"
+
+msgid "Redo: Change frame duration"
+msgstr "Повторити: зміна тривалості кадру"
+
+msgid "Move Guide"
+msgstr "Пересунути керівну"
+
+msgid "File saved"
+msgstr "Файл збережено"
+
+#. A notification label that appears when the backup of the currently opened project gets saved.
+msgid "Backup saved"
+msgstr ""
+
+msgid "File failed to open. Error code %s"
+msgstr "Не вдалося відкрити файл. Код помилки %s"
+
+msgid "File failed to save. Error code %s"
+msgstr "Не вдалося зберегти файл. Код помилки %s"
+
+#. Appears when the user attempts to export a project as a video, but the process fails. FFMPEG is the external software used to export videos.
+msgid "Video failed to export. Ensure that FFMPEG is installed correctly."
+msgstr ""
+
+msgid "File(s) exported"
+msgstr "Файл(и) експортовано"
+
+msgid "New Empty Palette"
+msgstr "Нова пуста палітра"
+
+msgid "Import Palette"
+msgstr "Імпортувати палітру"
+
+msgid "Create Palette From Current Sprite"
+msgstr "Створити палітру з поточного спрайту"
+
+msgid "Palette Name:"
+msgstr "Назва палітри:"
+
+msgid "Color Name:"
+msgstr "Назва кольору:"
+
+msgid "Use current left & right colors"
+msgstr "Використовувати поточні лівий і правий кольори"
+
+msgid "Create a new empty palette?"
+msgstr "Створити нову пусту палітру?"
+
+msgid "Error"
+msgstr "Помилка"
+
+msgid "Error: Palette must have a valid name."
+msgstr "Помилка: у палітри має бути правильна назва."
+
+msgid "Invalid Palette file!"
+msgstr "Неправильний файл палітри!"
+
+msgid "Edit Palette"
+msgstr "Редагувати палітру"
+
+msgid "Create colors with alpha component"
+msgstr "Створювати кольори з альфа-компонентом"
+
+msgid "Get colors only from selection"
+msgstr "Брати кольори тільки з виділення"
+
+msgid "Get colors from"
+msgstr "Брати кольори з"
+
+msgid "Patrons:"
+msgstr "Меценати:"
+
+msgid "Want your name or your company to be shown on the splash screen?"
+msgstr "Хочете, щоб ваше ім’я або назва вашої компанії була на екрані завантаження?"
+
+msgid "Become a Platinum Sponsor"
+msgstr "Стати платиновим спонсором"
+
+msgid "Become a Gold Sponsor"
+msgstr "Стати золотим спонсором"
+
+msgid "Become a Patron"
+msgstr "Стати меценатом"
+
+msgid "Don't show again"
+msgstr "Не показувати знову"
+
+msgid "Image Options"
+msgstr "Опції зображення"
+
+msgid "Default width:"
+msgstr "Стандартна ширина:"
+
+msgid "A default width of a new image"
+msgstr "Стандартна ширина для нового зображення"
+
+msgid "Default height:"
+msgstr "Стандартна висота:"
+
+msgid "A default height of a new image"
+msgstr "Стандартна висота для нового зображення"
+
+msgid "Default fill color:"
+msgstr "Стандартний колір заливки:"
+
+msgid "A default background color of a new image"
+msgstr "Стандартний фоновий колір нового зображення"
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset all options available in the Preferences"
+msgstr ""
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset timeline options"
+msgstr ""
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset all tool options"
+msgstr ""
+
+#. Found in the preferences, under the Reset category.
+msgid "Remove all extensions"
+msgstr ""
+
+#. Found in the preferences, under the Reset category.
+msgid "Clear the recently opened file list"
+msgstr ""
+
+msgid "Lock aspect ratio"
+msgstr "Зафіксувати співвідношення сторін"
+
+msgid "Portrait"
+msgstr "Вертикальна орієнтація"
+
+msgid "Landscape"
+msgstr "Горизонтальна орієнтація"
+
+msgid "Templates:"
+msgstr "Шаблони:"
+
+msgid "Preset"
+msgstr "Набір налаштувань"
+
+msgid "Preset:"
+msgstr "Набір налаштувань:"
+
+msgid "Default"
+msgstr "Стандартно"
+
+msgid "Custom"
+msgstr "Користувацьке"
+
+msgid "Rectangular Selection"
+msgstr "Прямокутне виділення"
+
+msgid "Elliptical Selection"
+msgstr "Еліптичне виділення"
+
+msgid "Polygonal Selection"
+msgstr "Полігональне виділення"
+
+msgid "Select By Color"
+msgstr "Вибір за кольором"
+
+msgid "Magic Wand"
+msgstr "Чарівна паличка"
+
+msgid "Lasso / Free Select Tool"
+msgstr "Ласо / довільне виділення"
+
+msgid "Select by Drawing"
+msgstr ""
+
+msgid "Move"
+msgstr "Пересування"
+
+msgid "Zoom"
+msgstr "Масштаб"
+
+msgid "Pan"
+msgstr "Пересування"
+
+msgid "Color Picker"
+msgstr "Піпетка"
+
+msgid "Pencil"
+msgstr "Олівець"
+
+msgid "Eraser"
+msgstr "Гумка"
+
+msgid "Bucket"
+msgstr "Заливка"
+
+msgid "Shading Tool"
+msgstr "Інструмент світла/тіні"
+
+msgid "Line Tool"
+msgstr "Лінія"
+
+msgid "Curve Tool"
+msgstr ""
+
+msgid "Rectangle Tool"
+msgstr "Прямокутник"
+
+msgid "Ellipse Tool"
+msgstr "Еліпс"
+
+msgid "Switch Colors"
+msgstr "Поміняти кольори місцями"
+
+msgid "Set the shortcut"
+msgstr "Асоціювати клавішу"
+
+msgid "Press a key or a key combination to set the shortcut"
+msgstr "Натисніть клавішу або комбінацію клавіш, щоб асоціювати її з дією"
+
+msgid "Already assigned"
+msgstr "Вже призначене"
+
+msgid "Left Tool:"
+msgstr "Лівий інструмент:"
+
+msgid "A tool assigned to the left mouse button"
+msgstr "Інструмент, який встановлено для лівої кнопки миші"
+
+msgid "Right Tool:"
+msgstr "Правий інструмент:"
+
+msgid "A tool assigned to the right mouse button"
+msgstr "Інструмент, який встановлено для правої кнопки миші"
+
+msgid "Cannot find last project file."
+msgstr "Неможливо знайти останній файл проєкту."
+
+msgid "Cannot find project file."
+msgstr "Неможливо знайти файл проєкту."
+
+msgid "You haven't saved or opened any project in Pixelorama yet!"
+msgstr "Ви ще не зберегли та не відкрили в Pixelorama жодного проєкту!"
+
+msgid "Open Last Project"
+msgstr "Відкрити останній проєкт"
+
+msgid "Open last project..."
+msgstr "Відкрити останній проєкт..."
+
+msgid "Open last project on startup"
+msgstr "Відкривати останній проєкт при запуску"
+
+msgid "Opens last opened project on startup"
+msgstr "Відкривати проєкт, який було останнім відкрито, при запуску програми"
+
+msgid "Quit confirmation"
+msgstr "Підтвердження виходу"
+
+#. Found in the preferences, under the startup section. Path is a noun and it refers to the location in the device where FFMPEG is located at. FFMPEG is a software name and it should not be translated. See https://en.wikipedia.org/wiki/Path_(computing)
+msgid "FFMPEG path"
+msgstr ""
+
+msgid "Enable autosave"
+msgstr "Увімкнути автозбереження"
+
+msgid "Autosave interval:"
+msgstr "Інтервал автозбереження:"
+
+msgid "minute(s)"
+msgstr "хв."
+
+#. A setting found in the export dialog. When enabled, a JSON file containing the project's data is also being exported. JSON refers to this https://en.wikipedia.org/wiki/JSON
+msgid "Export JSON data"
+msgstr ""
+
+#. A setting found in the export dialog. When enabled, each layer is being exported as a different file, or as different frames if the target format is gif/apng/video.
+msgid "Split layers"
+msgstr ""
+
+#. Found in the export dialog.
+msgid "Include frame tags in the file name"
+msgstr "Включати теги кадрів в назву файлу"
+
+#. Found in the export dialog.
+msgid "Create new folder for each frame tag"
+msgstr "Створити по каталогу для тегу кадрів"
+
+#. Found in the export dialog, as a hint tooltip of the "Create new folder for each frame tag" button
+msgid "Creates multiple files but every file is stored in different folder that corresponds to its frame tag"
+msgstr "Створює декілька файлів, але кожен файл буде зберігатися в окремому каталозі, відповідно до тегу кадрів"
+
+#. Found in the export dialog. Refers to text characters that acts as separators between text. For example, the "_" in "name_0001".
+msgid "Separator character(s):"
+msgstr "Роздільні символ(и):"
+
+#. Found in the export dialog, as a hint tooltip of the separator character(s) text field.
+msgid "The character(s) that separate the file name and the frame number"
+msgstr "Символ(и), що розділяють назву файлу та номер кадра"
+
+#. Found in the export dialog. It is an option that removes the transparent area around non-transparent pixels of the exported images.
+msgid "Trim images"
+msgstr "Обрізати зображення"
+
+#. Found in the export dialog. Tooltip of the "trim images" option.
+msgid "Trims the exported images to their visible portion, considering each pixel with a non-zero alpha channel as visible."
+msgstr "Обрізати експортовані зображення до їх видимої частини, розглядаючи кожен піксель з ненульовим альфа-каналом як видимий."
+
+#. Found in the export dialog. It is an option that allows users to only export the portions of the images that are within the selected area.
+msgid "Clip image content to selection"
+msgstr "Обрізати вміст зображення до виділеного"
+
+#. Found in the export dialog. Tooltip of the "clip image content to selection" option.
+msgid "Only export content that is within the bounds of a selected area."
+msgstr "Експортувати лише вміст у межах виділеної області."
+
+msgid "Close"
+msgstr "Закрити"
+
+msgid "Discard All"
+msgstr "Відкинути все"
+
+msgid "Autosaved project(s) from a crashed session were found.\n"
+"Do you want to recover the data?"
+msgstr "Знайдено автоматично записаний проєкт/проєкти з аварійно закінченої сесії.\n"
+"Відновити дані?"
+
+msgid "Backup reloaded"
+msgstr "Завантажено резервну копію"
+
+msgid "Remove currently selected palette"
+msgstr "Видалити вибрану палітру"
+
+msgid "Are you sure you want to remove this palette? (Cannot be undone)"
+msgstr "Ви впевнені, що хочете видалити цю палітру? (Цю дію неможливо скасувати)"
+
+msgid "You can't remove more palettes!"
+msgstr "Неможливо видалити більш палітр!"
+
+msgid "Cannot remove the palette, because it doesn't exist!"
+msgstr "Неможливо видалити палітру, бо вона не існує!"
+
+msgid "and"
+msgstr "і"
+
+msgid "Move the selected frame to the left."
+msgstr "Пересунути виділений кадр вліво."
+
+msgid "Move the selected frame to the right."
+msgstr "Пересунути виділений кадр вправо."
+
+#. Refers to the duration of the frame. Found in the frame properties.
+msgid "Frame duration:"
+msgstr "Тривалість кадру:"
+
+#. Refers to custom user defined data for projects, frames, cels, tags and layers, found in their respective properties.
+msgid "User data:"
+msgstr "Дані користувача:"
+
+msgid "Duration"
+msgstr "Тривалість"
+
+msgid "Tiled In Both Axis"
+msgstr "Повтори по обидвох осях"
+
+msgid "Tiled In X Axis"
+msgstr "Повтори по осі X"
+
+msgid "Tiled In Y Axis"
+msgstr "Повтори по осі Y"
+
+msgid "Create a new palette"
+msgstr "Створити нову палітру"
+
+msgid "Comment:"
+msgstr "Коментар:"
+
+msgid "Empty"
+msgstr "Пуста"
+
+msgid "From Current Palette"
+msgstr "З поточної палітри"
+
+msgid "From Current Sprite"
+msgstr "З поточного спрайту"
+
+msgid "From Current Selection"
+msgstr "З поточного виділення"
+
+msgid "Add a new color"
+msgstr "Додати новий колір"
+
+msgid "Remove a selected color"
+msgstr "Видалити вибраний колір"
+
+#. Tooltip of the Sort button found in the palette panel.
+msgid "Sort palette"
+msgstr "Сортувати палітру"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette get reversed.
+msgid "Reverse colors"
+msgstr "Зворотні кольори"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their hue.
+msgid "Sort by hue"
+msgstr "Сортувати за відтінком"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their saturation.
+msgid "Sort by saturation"
+msgstr "Сортувати за насиченістю"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their value.
+msgid "Sort by value"
+msgstr "Сортувати за значенням"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their OKHSL Lightness.
+msgid "Sort by lightness"
+msgstr "Сортувати за яскравістю"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their red channel value.
+msgid "Sort by red"
+msgstr "Сортувати за червоним"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their green channel value.
+msgid "Sort by green"
+msgstr "Сортувати за зеленим"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their blue channel value.
+msgid "Sort by blue"
+msgstr "Сортувати за синім"
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their alpha channel value.
+msgid "Sort by alpha"
+msgstr "Сортувати за прозорістю"
+
+msgid "Palette with the same name and path already exists!"
+msgstr "Палітра з такою назвою та шляхом вже існує!"
+
+msgid "Palette name is required!"
+msgstr "Назва палітри обов’язкова!"
+
+msgid "Reducing palette size will reset positions of colors.\n"
+"Colors that don't fit in new palette size will be lost!"
+msgstr "Зменшення розміру палітри призведе до скидання позицій кольорів.\n"
+"Кольори які не відповідають новій палітрі, будуть втрачені!"
+
+msgid "Position:"
+msgstr "Позиція:"
+
+msgid "Tools"
+msgstr "Інструменти"
+
+msgid "Main Canvas"
+msgstr "Основне полотно"
+
+msgid "Second Canvas"
+msgstr "Друге полотно"
+
+msgid "Animation Timeline"
+msgstr "Шкала часу анімацій"
+
+msgid "Canvas Preview"
+msgstr "Попередній перегляд полотна"
+
+msgid "Color Pickers"
+msgstr "Піпетки"
+
+msgid "Global Tool Options"
+msgstr "Глобальні параметри інструментів"
+
+msgid "Left Tool Options"
+msgstr "Параметри лівого інструмента"
+
+msgid "Right Tool Options"
+msgstr "Параметри правого інструмента"
+
+msgid "Reference Images"
+msgstr "Еталонні зображення"
+
+msgid "Perspective Editor"
+msgstr "Редактор перспективи"
+
+#. A UI panel. It is used to record the software in order to show the progress of art, usually in form of time lapses.
+msgid "Recorder"
+msgstr "Записувач"
+
+#. Tiles are images of a specific shape, usually rectangular, that are laid out in a grid. They are used in tile-based video games. https://en.wikipedia.org/wiki/Tile-based_video_game
+msgid "Tiles"
+msgstr "Плитки"
+
+msgid "Crop"
+msgstr "Обрізати"
+
+msgid "Resize the canvas"
+msgstr "Змінити розмір полотна"
+
+msgid "Margins"
+msgstr "Поля"
+
+msgid "Position + Size"
+msgstr "Положення + розмір"
+
+msgid "Locked Aspect Ratio"
+msgstr "Фіксовані пропорції"
+
+msgid "Margins:"
+msgstr "Поля:"
+
+msgid "Aspect Ratio:"
+msgstr "Пропорції:"
+
+msgid "Top:"
+msgstr "Верх:"
+
+msgid "Bottom:"
+msgstr "Низ:"
+
+msgid "Left:"
+msgstr "Ліво:"
+
+msgid "Right:"
+msgstr "Право:"
+
+msgid "Locked size\n\n"
+"When enabled using the tool on the canvas will only move the cropping rectangle.\n\n"
+"When disabled using the tool on the canvas will draw the rectangle."
+msgstr "Фіксований розмір\n\n"
+"Якщо вибрано, при використанні цього інструменту на полотні, він лише пересуне прямокутник, вибраний для обрізання.\n\n"
+"Якщо не вибрано, при використанні інструменту на полотні буде намальований прямокутник."
+
+#. A tool used in 3D layers, that edits 3D objects.
+msgid "3D Shape Edit"
+msgstr "Редагування 3D-форми"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Box"
+msgstr "Куб"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Sphere"
+msgstr "Сфера"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Capsule"
+msgstr "Капсула"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Cylinder"
+msgstr "Циліндр"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Prism"
+msgstr "Призма"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Torus"
+msgstr "Тор"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Plane"
+msgstr "Площина"
+
+msgid "Text"
+msgstr "Текст"
+
+#. Used in 3D layers. A type of light.
+msgid "Directional light"
+msgstr "Спрямоване світло"
+
+#. Used in 3D layers. A type of light.
+msgid "Spotlight"
+msgstr "Прожектор"
+
+#. Used in 3D layers. A type of light.
+msgid "Point light"
+msgstr "Світлова точка"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Custom model"
+msgstr "Користувацька модель"
+
+msgid "Selected object:"
+msgstr "Виділений об'єкт:"
+
+msgid "Add new object"
+msgstr "Додати новий об'єкт"
+
+msgid "Remove object"
+msgstr "Видалити об'єкт"
+
+msgid "Camera"
+msgstr "Камера"
+
+#. Found in the tool options of the 3D Shape Edit tool. Refers to camera projection mode.
+msgid "Projection:"
+msgstr "Проєкція:"
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Perspective"
+msgstr "Перспектива"
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Orthogonal"
+msgstr "Ортогональне"
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Frustum"
+msgstr "Пірамідальна"
+
+msgid "Rotation:"
+msgstr "Поворот:"
+
+msgid "Scale:"
+msgstr "Масштаб:"
+
+#. Found in the tool options of the 3D Shape Edit tool.
+msgid "Environment"
+msgstr "Навколишнє середовище"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Environment category.
+msgid "Ambient color:"
+msgstr "Колір оточення:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Environment category.
+msgid "Ambient color energy:"
+msgstr "Енергія кольору оточення:"
+
+#. An option that toggles the visibility of something on or off. Found in the format of "Visible: on/off"
+msgid "Visible:"
+msgstr "Видимий:"
+
+#. Refers to the transformation options of an object, such as its position, rotation and scale. For technical details, see https://docs.godotengine.org/en/stable/tutorials/math/matrices_and_transforms.html
+msgid "Transform"
+msgstr "Трансформація"
+
+#. Found in the tool options of the 3D Shape Edit tool. A category with mesh-related options.
+msgid "Mesh"
+msgstr "Сітка"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Prism is selected. Refers to the displacement of the upper edge along the X axis.
+msgid "Left to right:"
+msgstr "Зліва направо:"
+
+#. Radius of a circle/spherical object.
+msgid "Radius:"
+msgstr "Радіус:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a spherical object is selected.
+msgid "Radial segments:"
+msgstr "Радіальні сегменти:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a spherical object is selected. Refers to the number of segments along the height of the sphere.
+msgid "Rings:"
+msgstr "Кільця:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Sphere is selected. If true, a hemisphere is created rather than a full sphere.
+msgid "Is hemisphere:"
+msgstr "Це півкуля:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Cylinder is selected.
+msgid "Top radius:"
+msgstr "Верхній радіус:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Cylinder is selected.
+msgid "Bottom radius:"
+msgstr "Нижній радіус:"
+
+msgid "Text:"
+msgstr "Текст:"
+
+#. Refers to the depth of something, such as the depth of a 3D object.
+msgid "Depth:"
+msgstr "Глибина:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Text object is selected. Refers to the size of one pixel's width on the text to scale it in 3D.
+msgid "Pixel size:"
+msgstr "Розмір пікселя:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Text object is selected. Step (in pixels) used to approximate Bézier curves.
+msgid "Curve step:"
+msgstr "Крок кривої:"
+
+msgid "Horizontal alignment:"
+msgstr "Горизонтальне вирівнювання:"
+
+msgid "Vertical alignment:"
+msgstr "Вирівнювання по вертикалі:"
+
+msgid "Left"
+msgstr "Вліво"
+
+msgid "Right"
+msgstr "Вправо"
+
+#. Refers to the vertical space between lines in a text.
+msgid "Line spacing:"
+msgstr "Міжрядковий інтервал:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Light category if a light is selected. Refers to the energy of the light. The more energy, the brighter it shines.
+msgid "Energy:"
+msgstr "Енергія:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Light category if a light is selected. If true, the light's effect is reversed, darkening areas and casting bright shadows.
+msgid "Negative:"
+msgstr "Негативне:"
+
+msgid "Shadow:"
+msgstr "Тінь:"
+
+#. Refers to the range of something, like the range of a spotlight.
+msgid "Range:"
+msgstr "Діапазон:"
+
+#. Found under certain image effects that support properties that can be animated.
+msgid "Animatable Properties"
+msgstr "Анімовані властивості"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the frame that is currently being previewed.
+msgid "Preview frame:"
+msgstr "Попередній перегляд кадру:"
+
+#. Found under certain image effects that support properties that can be animated. It is a checkbox that toggles whether a property should be animated or not.
+msgid "Animate"
+msgstr "Анімувати"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the initial value of the property.
+msgid "Initial value:"
+msgstr "Початкове значення:"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the final value of the property.
+msgid "Final value:"
+msgstr "Остаточне значення:"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the easing function that should be used to animate the property. https://easings.net/
+msgid "Ease type:"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Starts slowly and speeds up towards the end"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Starts quickly and slows down towards the end"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Slowest at both ends, fast at middle"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Fast at both ends, slow at middle"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quadratic (power of 2)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Cubic (power of 3)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quartic (power of 4)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quintic (power of 5)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Exponential (power of x)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Square root"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Sine"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Wiggling around the edges"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Bouncing at the end"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Backing out at ends"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Spring towards the end"
+msgstr ""
+
+#. Used to turn images into a singular color
+msgid "Monochrome"
+msgstr ""
+
+#. Found in the Reference Images panel when no reference image has been imported.
+msgid "When opening an image, it may be imported as a reference."
+msgstr ""
+
+#. Found in the Reference Images panel after a reference image has been imported.
+msgid "Select an image below to change its properties.\n"
+"Note that you cannot draw while a reference image is selected."
+msgstr ""
+
+#. Removes the selected reference image.
+msgid "Remove"
+msgstr ""
+
+#. A tooltip to tell users to hold the Shift key while clicking the remove button
+msgid "Hold Shift while pressing to instantly remove."
+msgstr ""
+
+#. Shown in the confirmation dialog for removing a reference image.
+msgid "Are you sure you want to remove this reference image? It will not be deleted from your file system."
+msgstr ""
+
+#. Moves the reference image up in the list
+msgid "Move the selected reference image to the right"
+msgstr ""
+
+#. Moves the reference image down in the list
+msgid "Move the selected reference image to the left"
+msgstr ""
+
+#. Select a reference on the canvas
+msgid "Selects a reference image on the canvas"
+msgstr ""
+
+#. Moves the reference on the canvas
+msgid "Move the selected reference image"
+msgstr ""
+
+#. Rotates the reference on the canvas
+msgid "Rotate the selected reference image"
+msgstr ""
+
+#. Rotates the reference on the canvas
+msgid "Scale the selected reference image"
+msgstr ""
+
+#. Button to select no reference images in the Reference Images panel.
+msgid "none"
+msgstr ""
+
+#. Resets the Transform of the selected reference image on the canvas.
+msgid "Reset Transform"
+msgstr ""
+
+#. Position of the selected reference image on the canvas.
+msgid "Position"
+msgstr ""
+
+#. Scale of the selected reference image on the canvas.
+msgid "Scale"
+msgstr ""
+
+#. Rotation of the selected reference image on the canvas.
+msgid "Rotation"
+msgstr ""
+
+#. Toggle filter of the selected reference image on the canvas.
+msgid "Filter"
+msgstr ""
+
+#. Opacity of the selected reference image on the canvas.
+msgid "Opacity"
+msgstr "Прозорість"
+
+#. Color clamping of the selected reference image on the canvas.
+msgid "Color Clamping"
+msgstr ""
+
+#. Used in checkbuttons (like on/off switches) that enable/disable something.
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#. Refers to non-destructive effects (such as outline, drop shadow etc) that are applied to layers. Found in the title of the layer effects dialog.
+msgid "Layer effects"
+msgstr ""
+
+#. A button that, when pressed, shows a list of effects to add. Found in the the layer effects dialog.
+msgid "Add effect"
+msgstr "Додати ефект"
+
+#. Text from a confirmation dialog that appears when the user is attempting to drag and drop an image directly from the browser into Pixelorama.
+msgid "Do you want to download the image from %s?"
+msgstr ""
+
+#. A tileset is a collection of tiles.
+#: src/Classes/TileSetCustom.gd
+#: src/UI/Dialogs/ImportPreviewDialog.gd
+msgid "Tileset"
+msgstr ""
+
+#. A tileset is a collection of tiles.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tileset:"
+msgstr ""
+
+#. A tileset is a collection of tiles.
+#: src/UI/Dialogs/ProjectProperties.tscn
+msgid "Tilesets"
+msgstr ""
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+msgid "New tileset"
+msgstr ""
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+msgid "Tileset name:"
+msgstr ""
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile size:"
+msgstr ""
+
+#. The shape of each tile in a tileset (rectangular, isometric, hexagonal).
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile shape:"
+msgstr ""
+
+#. The layout that the tiles appear in, in a non-rectangular grid.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile layout:"
+msgstr ""
+
+#. The offset axis (horizontal or vertical) of non-rectangular tiles.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile offset axis:"
+msgstr ""
+
+#. Tooltip of the "tile offset axis" option.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "For all half-offset shapes (Isometric & Hexagonal), determines the offset axis."
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stacked"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stacked offset"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stairs right"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stairs down"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Diamond right"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Diamond down"
+msgstr ""
+
+#. A button that toggles place-only mode on for a tilemap layer. This mode is used to only place tiles in a tilemap, without the ability to modify them.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Place-only mode:"
+msgstr ""
+
+#. A confirmation dialog that appears when attempting to enable place-only mode in a tilemap layer.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Enabling place-only mode is a permanent action. Once activated, you will only be able to place tiles, and you won't be able to modify existing tiles anymore on this layer."
+msgstr ""
+
+#: src/UI/TilesPanel.gd
+msgid "Select a tile to place it on the canvas."
+msgstr ""
+
+#: src/UI/TilesPanel.gd
+msgid "Modify tiles on the canvas."
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Draw tiles"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Rotate tile left (counterclockwise)"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Rotate tile right (clockwise)"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Flip tile horizontally"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Flip tile vertically"
+msgstr ""
+
+#. Refers to manual mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Manual"
+msgstr ""
+
+#. Refers to auto (automatic) mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Auto"
+msgstr "Автоматична"
+
+#. Refers to stack mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Stack"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Tile button size:"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Show empty tile:"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Tile properties"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Probability:"
+msgstr ""
+

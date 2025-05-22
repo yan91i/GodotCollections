@@ -1,0 +1,3867 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Crowdin-Project: pixelorama\n"
+"X-Crowdin-Project-ID: 385497\n"
+"X-Crowdin-Language: ar\n"
+"X-Crowdin-File: /master/Translations/Translations.pot\n"
+"X-Crowdin-File-ID: 5\n"
+"Project-Id-Version: pixelorama\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Arabic\n"
+"Language: ar_SA\n"
+"PO-Revision-Date: 2025-04-23 00:53\n"
+
+msgid "OK"
+msgstr "حسنا"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Open"
+msgstr "فتح"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Please Confirm..."
+msgstr "الرجاء التأكيد..."
+
+msgid "File Name:"
+msgstr "اسم الملف:"
+
+msgid "Project Name:"
+msgstr "اسم المشروع:"
+
+msgid "Image Size"
+msgstr "حجم الصورة"
+
+msgid "Canvas Size"
+msgstr "حجم الكانفاس"
+
+msgid "Frame Size"
+msgstr "حجم الإطار"
+
+msgid "Size:"
+msgstr "الحجم:"
+
+msgid "Width:"
+msgstr "العرض:"
+
+msgid "Height:"
+msgstr "الطول:"
+
+msgid "Center"
+msgstr "في المنتصف"
+
+msgid "File"
+msgstr "الملف"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Select"
+msgstr "تحديد"
+
+msgid "View"
+msgstr "عرض"
+
+msgid "Window"
+msgstr "النافذة"
+
+msgid "Image"
+msgstr "الصورة"
+
+#. Noun, refers to a Pixelorama project.
+msgid "Project"
+msgstr ""
+
+msgid "Effects"
+msgstr "التأثيرات"
+
+msgid "Help"
+msgstr "مساعدة"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "New..."
+msgstr "جديد..."
+
+msgid "Open..."
+msgstr "فتح..."
+
+msgid "Save..."
+msgstr "حفظ..."
+
+msgid "Save as..."
+msgstr "حفظ باسم..."
+
+#. Checkbox found in the Save project dialog. If enabled, the final blended images are being stored also in the pxo, for each frame.
+msgid "Include blended images"
+msgstr "تضمين الصور المختلطة"
+
+#. Hint tooltip of the "Include blended images" checkbox found in the Save project dialog.
+msgid "If enabled, the final blended images are also being stored in the pxo, for each frame.\n"
+"This makes the pxo file larger and is useful for importing by third-party software\n"
+"or CLI exporting. Loading pxo files in Pixelorama does not need this option to be enabled."
+msgstr ""
+
+msgid "Import"
+msgstr "استيراد"
+
+msgid "Export"
+msgstr "تصدير"
+
+msgid "Overwrite"
+msgstr "إستبدال"
+
+msgid "Export..."
+msgstr "تصدير..."
+
+msgid "Export as..."
+msgstr "تصدير باسم..."
+
+msgid "Export PNG..."
+msgstr "تصدير PNG..."
+
+msgid "Export PNG as..."
+msgstr "تصدير PNG باسم..."
+
+msgid "Quit"
+msgstr "خروج"
+
+msgid "Undo"
+msgstr "التراجع"
+
+msgid "Redo"
+msgstr "إعادة"
+
+msgid "Copy"
+msgstr "نسخ"
+
+msgid "Cut"
+msgstr "قص"
+
+msgid "Paste"
+msgstr "لصق"
+
+msgid "Paste in Place"
+msgstr "لصق في المكان"
+
+#. Found under the Edit menu. When selected, the image from the clipboard, if it exists, gets pasted into Pixelorama.
+msgid "Paste from Clipboard"
+msgstr ""
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Delete Permanently"
+msgstr "حذف بشكل نهائي"
+
+#. Found when requesting to delete a palette or an extension. Refers to when you move something to recycle bin.
+msgid "Move to Trash"
+msgstr "نقل إلى سلة المهملات"
+
+msgid "New Brush"
+msgstr "فرشاة جديدة"
+
+msgid "Scale Image"
+msgstr "تغيير مقياس الصورة"
+
+msgid "Pixels"
+msgstr "النقاط"
+
+msgid "Percentage"
+msgstr "نسبة"
+
+#. Found in the create new image dialog. Allows users to change the color mode of the new project, such as RGBA or indexed mode.
+msgid "Color mode:"
+msgstr ""
+
+#. Found in the image menu. A submenu that allows users to change the color mode of the project, such as RGBA or indexed mode.
+msgid "Color Mode"
+msgstr ""
+
+#. Found in the image menu, under the "Color Mode" submenu. Refers to the indexed color mode. See this wikipedia page for more information: https://en.wikipedia.org/wiki/Indexed_color
+msgid "Indexed"
+msgstr ""
+
+#. Found in the image menu. Sets the size of the project to be the same as the size of the active selection.
+msgid "Crop to Selection"
+msgstr ""
+
+#. Found in the image menu. Automatically trims out all the transparent pixels, making the image smaller.
+msgid "Crop to Content"
+msgstr ""
+
+msgid "Resize Canvas"
+msgstr "تغيير حجم الكانفاس"
+
+msgid "Offset Image"
+msgstr ""
+
+msgid "Offset:"
+msgstr ""
+
+#. Found in the Offset Image dialog. It's a checkbox that, if enabled, wraps around the image if pixels go out of canvas bounds.
+msgid "Wrap around:"
+msgstr "لف حول:"
+
+#. Found in the menu that appears when you right click a frame button. Center is a verb, it is used to place the content of the frame to the center of the canvas.
+msgid "Center Frames"
+msgstr "توسيط الإطار"
+
+msgid "Rotate Image"
+msgstr "تدوير الصورة"
+
+msgid "Pivot x:"
+msgstr ""
+
+msgid "Pivot y:"
+msgstr ""
+
+msgid "Smear options:"
+msgstr ""
+
+msgid "Tolerance:"
+msgstr ""
+
+msgid "Initial angle:"
+msgstr "الزاوية الأولية:"
+
+#. Found under the Select menu, It's a checkbox that, if enabled, wraps around brush strokes if some part of them goes out of selection bounds.
+msgid "Wrap Strokes"
+msgstr ""
+
+msgid "Clear"
+msgstr "مسح"
+
+msgid "Invert"
+msgstr "عكس"
+
+#. Found under the Select menu. When selected, the area of non-transparent pixels in the cel is being selected.
+msgid "Select cel area"
+msgstr ""
+
+msgid "Modify"
+msgstr ""
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users expand the active selection.
+msgid "Expand"
+msgstr ""
+
+#. Title of a window that lets users expand the active selection.
+msgid "Expand Selection"
+msgstr ""
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users shrink the active selection.
+msgid "Shrink"
+msgstr ""
+
+#. Title of a window that lets users shrink the active selection.
+msgid "Shrink Selection"
+msgstr ""
+
+#. Found under the Select menu, in the Modify submenu. When selected, it shows a window that lets users create a border of the active selection.
+msgid "Border"
+msgstr ""
+
+#. Title of a window that lets users create a border of the active selection.
+msgid "Border Selection"
+msgstr ""
+
+#. Refers to a diamond-like shape.
+msgid "Diamond"
+msgstr ""
+
+msgid "Circle"
+msgstr ""
+
+msgid "Square"
+msgstr ""
+
+msgid "Grayscale View"
+msgstr "العرض الرمادي"
+
+msgid "Mirror Image"
+msgstr ""
+
+msgid "Flip Horizontal"
+msgstr "التدوير بشكل أفقي"
+
+msgid "Flip Vertical"
+msgstr "التدوير بشكل عمودي"
+
+msgid "Preferences"
+msgstr "خيارات"
+
+#. A submenu of the Effects menu. Contains effects that generate new pixels, such as outline, drop shadow and gradient.
+msgid "Procedural"
+msgstr ""
+
+#. Refers to effects that blur the image.
+msgid "Blur"
+msgstr ""
+
+#. A submenu of the Effects menu. Contains effects that have been loaded by the user.
+msgid "Loaded"
+msgstr ""
+
+#. An option in the View menu. When selected, the canvas is being placed on the center of the screen.
+msgid "Center Canvas"
+msgstr ""
+
+msgid "Tile Mode"
+msgstr "وضع البلاط"
+
+msgid "Tile Mode Offsets"
+msgstr ""
+
+#. Found under "Tile Mode Offsets". Basis is a linear algebra term. https://en.wikipedia.org/wiki/Basis_(linear_algebra)
+msgid "X-basis:"
+msgstr ""
+
+#. Found under "Tile Mode Offsets". Basis is a linear algebra term. https://en.wikipedia.org/wiki/Basis_(linear_algebra)
+msgid "Y-basis:"
+msgstr ""
+
+#. Found under "Tile Mode Offsets". It's a button that when pressed, enables masking for tile mode. Masking essentially limits drawing to the visible pixels of the image, thus preventing from drawing on transparent pixels.
+msgid "Masking:"
+msgstr ""
+
+#. Verb, resets something.
+msgid "Reset"
+msgstr ""
+
+#. Verb, resets something.
+msgid "Reset %s"
+msgstr ""
+
+msgid "Use Current Frame"
+msgstr "إستخدام الإطار الحالي"
+
+msgid "Reset Mask"
+msgstr ""
+
+msgid "Window Opacity"
+msgstr "شفافية النافذة"
+
+msgid "Window opacity does not work on fullscreen mode."
+msgstr ""
+
+msgid "Panel Layout"
+msgstr ""
+
+msgid "Panels"
+msgstr ""
+
+msgid "Layouts"
+msgstr "المخططات"
+
+msgid "Moveable Panels"
+msgstr ""
+
+#. Button found in the three vertical dots menu of any panel, when Moveable Panels is enabled in the Window menu. It "detaches" the panel, making it a floating window.
+msgid "Make Floating"
+msgstr ""
+
+msgid "Manage Layouts"
+msgstr "إدارة المخططات"
+
+#. Noun, a preview of something
+msgid "Preview"
+msgstr "معاينة"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Add Layout"
+msgstr "إضافة تخطيط"
+
+#. Verb, deletes something.
+msgid "Delete %s"
+msgstr ""
+
+msgid "Copy from"
+msgstr "نسخ من"
+
+msgid "Rename"
+msgstr "إعادة تسمية"
+
+msgid "Rename Layout"
+msgstr "تسمية التخطيط"
+
+#. Refers to the current layout of the user interface.
+msgid "Current layout"
+msgstr "التخطيط الحالي"
+
+msgid "Are you sure you want to delete this layout?"
+msgstr "هل تريد فعلا القيام بحذف هذا التخطيط؟"
+
+msgid "Widescreen"
+msgstr "شاشة عريضة"
+
+msgid "Tallscreen"
+msgstr "شاشة طويلة"
+
+msgid "Mirror View"
+msgstr "عرض المرآة"
+
+msgid "Show Grid"
+msgstr "إظهار الشبكة"
+
+msgid "Show Pixel Grid"
+msgstr "إظهار شبكة بكسل"
+
+msgid "Show Rulers"
+msgstr "إظهار المسطرة"
+
+msgid "Show Guides"
+msgstr "إظهار الإرشادات"
+
+#. Found under the View menu.
+msgid "Show Mouse Guides"
+msgstr "إظهار أدلة الفأرة"
+
+#. Found under the View menu.
+msgid "Show Reference Images"
+msgstr ""
+
+#. Found under the View menu. When enabled, non-destructive layer effects will be visible on the canvas.
+msgid "Display Layer Effects"
+msgstr "عرض تأثيرات الطبقة"
+
+#. Found under the View menu.
+msgid "Snap To"
+msgstr "حصر إلي"
+
+#. Found under the View menu.
+msgid "Snap to Rectangular Grid Boundary"
+msgstr ""
+
+#. Found under the View menu.
+msgid "Snap to Rectangular Grid Center"
+msgstr ""
+
+#. Found under the View menu.
+msgid "Snap to Guides"
+msgstr ""
+
+#. Found under the View menu.
+msgid "Snap to Perspective Guides"
+msgstr ""
+
+msgid "Show Animation Timeline"
+msgstr "إظهار الخيط الزمني للرسوم المتحركة"
+
+msgid "Zen Mode"
+msgstr "وضع التأمل"
+
+msgid "Fullscreen Mode"
+msgstr "وضع ملء الشاشة"
+
+msgid "Fill with color:"
+msgstr "الملئ باللون:"
+
+msgid "Open a File"
+msgstr "فتح ملف"
+
+msgid "Open File(s)"
+msgstr "فتح ملفات"
+
+msgid "Import Options"
+msgstr "خيارات الإستيراد"
+
+msgid "Import as:"
+msgstr "إستيراد كـ:"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Apply to all"
+msgstr "تطبيق على الكل"
+
+msgid "Recent projects"
+msgstr "المشاريع الأخيرة"
+
+msgid "New project"
+msgstr "مشروع جديد"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Spritesheet (new project)"
+msgstr "مصفوفة الكائنات (مشروع جديد)"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Spritesheet (new layer)"
+msgstr ""
+
+msgid "New frame"
+msgstr "إطار جديد"
+
+#. Found in the preview image dialog, which appears when importing an image file.
+msgid "Replace cel"
+msgstr "إستبدال العنصر"
+
+msgid "New layer"
+msgstr "طبقة جديدة"
+
+msgid "New reference image"
+msgstr "صورة مرجعية جديدة"
+
+msgid "New palette"
+msgstr "لوحة جديدة"
+
+msgid "New brush"
+msgstr "فرشاة جديدة"
+
+msgid "New pattern"
+msgstr "نمط جديد"
+
+msgid "Horizontal frames:"
+msgstr "الأطر الأفقية:"
+
+msgid "Vertical frames:"
+msgstr "الأطر العمودية:"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet. If it's enabled, the software will slice it into frames automatically.
+msgid "Smart Slice"
+msgstr "تقطيع ذكي"
+
+#. A value that is a threshold
+msgid "Threshold:"
+msgstr ""
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Hint tooltip of the "Threshold" value slider.
+msgid "Images that have any one side smaller than this value will cross the threshold"
+msgstr ""
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Merge is an adjective, it refers to the distance where images get merged.
+msgid "Merge distance:"
+msgstr "مسافة الدمج:"
+
+#. Found in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled. Hint tooltip of the "Merge distance" value slider.
+msgid "Images which crossed the threshold will get merged into a larger image, if they are within this distance"
+msgstr ""
+
+#. A button that, when pressed, refreshes something. Used to apply certain settings again after they changed. Currently it's only used in the preview image dialog, which appears when importing an image file. This option appears when the image is being imported as a spritesheet, if "smart slice" is enabled.
+msgid "Refresh"
+msgstr "تحديث"
+
+msgid "Start frame:"
+msgstr "إطار البداية:"
+
+msgid "End frame:"
+msgstr "إطار النهاية:"
+
+msgid "At frame:"
+msgstr "عند الإطار:"
+
+msgid "At layer:"
+msgstr "عند الطبقة:"
+
+msgid "Brush type:"
+msgstr "نوع الفرشاة:"
+
+msgid "File brush"
+msgstr "إستعمال صورة كفرشاة"
+
+msgid "Project brush"
+msgstr "إستعمال فرشاة شخصية"
+
+msgid "Random brush"
+msgstr "فرشاة عشوائية"
+
+msgid "Save Sprite as .pxo"
+msgstr "حفظ سبريت ك.pxo"
+
+msgid "Export Sprite as .png"
+msgstr "تصدير سبريت ك.png"
+
+msgid "Export Sprite"
+msgstr "تصدير سبريت"
+
+msgid "File Exists, Overwrite?"
+msgstr "الملف موجود، هل تريد إستبداله؟"
+
+msgid "The following files already exist. Do you wish to overwrite them?\n"
+"%s"
+msgstr ""
+
+msgid "Directory path is not valid!"
+msgstr ""
+
+msgid "File name is not valid!"
+msgstr "إسم الملف غير صالح!"
+
+msgid "Directory path and file name are not valid!"
+msgstr "مسار المجلد أو اسم الملف غير صالح!"
+
+msgid "Exporting in progress..."
+msgstr "جاري التصدير..."
+
+msgid "Can't load file '%s'."
+msgstr "لا يمكن تحميل الملف '%s'."
+
+msgid "Can't load file '%s'.\n"
+"Error code: %s"
+msgstr "لا يمكن تحميل الملف '%s'.\n"
+"رمز الخطأ: %s"
+
+msgid "Can't load file '%s'.\n"
+"This is not a valid palette file."
+msgstr "لا يمكن تحميل الملف '%s'.\n"
+"هذا ملف غير صالح للوحة الألوان."
+
+msgid "Frame"
+msgstr "الإطار"
+
+msgid "Frames:"
+msgstr "إطارات:"
+
+msgid "All Frames"
+msgstr "كل الإطارات"
+
+msgid "Spritesheet"
+msgstr "ورقة السبريت"
+
+msgid "Animation"
+msgstr "الرسوم المتحركة"
+
+msgid "Preview:"
+msgstr "معاينة:"
+
+msgid "Frame:"
+msgstr "الإطار:"
+
+msgid "Orientation:"
+msgstr "الإتجاه:"
+
+msgid "Browse"
+msgstr "تصفّح"
+
+msgid "Resize:"
+msgstr "تغيير الحجم:"
+
+#. Found in the export dialog, when exporting a jpeg file. Refers to the quality of the exported file.
+msgid "Quality:"
+msgstr ""
+
+msgid "Cancel Export"
+msgstr "إلغاء التصدير"
+
+msgid "Alert!"
+msgstr "تنبيه!"
+
+msgid "Select Current Folder"
+msgstr "اختر المجلد الحالي"
+
+msgid "Open a Directory"
+msgstr "فتح الدليل"
+
+msgid "Background:"
+msgstr "الخلفيّة:"
+
+#. Found in the export dialog
+msgid "Selected frames"
+msgstr "الإطارات المختارة"
+
+msgid "Layers:"
+msgstr "الطبقات:"
+
+#. Found in the export dialog
+msgid "Visible layers"
+msgstr "الطبقات الظاهرة"
+
+#. Found in the export dialog
+msgid "Selected layers"
+msgstr "الإطارات المختارة"
+
+#. A type of layer. A pixel layer is the most common type of layer, which stores image data in pixels.
+msgid "Pixel layer:"
+msgstr "طبقة البكسل:"
+
+#. A type of layer. A group layer stores other layers as its children, similar to how a folder holds files.
+msgid "Group layer:"
+msgstr "جامع الطبقات:"
+
+#. A type of layer. A 3D layer contains data of 3D objects that are rasterized automatically by Pixelorama.
+msgid "3D layer:"
+msgstr "طبقة ثلاثية الأبعاد:"
+
+msgid "Direction:"
+msgstr "الاتجاه:"
+
+msgid "Forward"
+msgstr "إلى الأمام"
+
+msgid "Backwards"
+msgstr "إلى الوراء"
+
+msgid "Ping-Pong"
+msgstr "بينغ بونغ"
+
+msgid "Columns"
+msgstr "الخانات"
+
+msgid "Columns:"
+msgstr "الخانات:"
+
+msgid "Rows"
+msgstr "الصفوف"
+
+msgid "Rows:"
+msgstr "الصفوف:"
+
+#. Found in the export dialog, in the Spritesheet tab. An orientation option that splits the spritesheet by animation tags. Each tag creates a new column.
+msgid "Tags by column"
+msgstr ""
+
+#. Found in the export dialog, in the Spritesheet tab. An orientation option that splits the spritesheet by animation tags. Each tag creates a new row.
+msgid "Tags by row"
+msgstr ""
+
+#. Found in the export dialog. It is a label that says the dimensions (widthxheight) of the exported image(s).
+msgid "Export dimensions:"
+msgstr ""
+
+msgid "Save a File"
+msgstr ""
+
+msgid "Go to previous folder."
+msgstr ""
+
+msgid "Go to next folder."
+msgstr ""
+
+msgid "Go to parent folder."
+msgstr ""
+
+msgid "Path:"
+msgstr "المسار:"
+
+msgid "Refresh files."
+msgstr ""
+
+msgid "Toggle the visibility of hidden files."
+msgstr ""
+
+msgid "Directories & Files:"
+msgstr "المجلدات والملفات:"
+
+msgid "Create Folder"
+msgstr "إنشاء مجلد"
+
+msgid "File:"
+msgstr "الملف:"
+
+#. Found in "Open" and "Save" file dialogs. Searches all file types.
+msgid "All Files"
+msgstr "جميع الملفات"
+
+#. Found in the "Open" file dialog. Searches all file types supported by Pixelorama.
+msgid "All Recognized"
+msgstr ""
+
+#. Found in "Open" and "Save" file dialogs. Searches Pixelorama Project files only (.pxo).
+msgid "Pixelorama Project"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches PNG files only. (Note that PNG is a file type and should remain untranslated)
+msgid "PNG Image"
+msgstr "صورة PNG"
+
+#. Found in the "Open" file dialog. Searches BMP files only. (Note that BMP is a file type and should remain untranslated)
+msgid "BMP Image"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches "Radiance HDR" files only. (Note that "Radiance HDR" is a file type and is better untranslated)
+msgid "Radiance HDR Image"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches JPEG files only. (Note that JPEG is a file type and should remain untranslated)
+msgid "JPEG Image"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches SVG files only. (Note that SVG is a file type and should remain untranslated)
+msgid "SVG Image"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches TGA files only. (Note that TGA is a file type and should remain untranslated)
+msgid "TGA Image"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches WebP files only. (Note that WebP is a file type and should remain untranslated)
+msgid "WebP Image"
+msgstr ""
+
+#. Found in "Open" and "Save" file dialogs. Searches OpenRaster project files only (.ora). OpenRaster should remain untranslated. https://www.openraster.org/
+msgid "OpenRaster Project"
+msgstr ""
+
+#. Found in "Open" and "Save" file dialogs. Searches Aseprite project files only (.ase and .aseprite). Note that Aseprite is a software and should remain untranslated.
+msgid "Aseprite Project"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches Pixelorama palette files only (.json).
+msgid "Pixelorama palette"
+msgstr ""
+
+#. Found in the "Open" file dialog. Searches GIMP palette files only (.gpl). Note that GIMP is a software and should remain untranslated.
+msgid "GIMP palette"
+msgstr ""
+
+#. Found in the export dialog. It is a button that when pressed, shows more options.
+msgid "Advanced options"
+msgstr "الخيارات المتقدمة"
+
+msgid "Interpolation:"
+msgstr "الفلتر:"
+
+msgid "Nearest"
+msgstr "الأقرب"
+
+msgid "Bilinear"
+msgstr "ثنائي"
+
+msgid "Cubic"
+msgstr "مكعبي"
+
+msgid "Trilinear"
+msgstr "ثلاثي"
+
+msgid "Constant"
+msgstr "ثابت"
+
+#. Refers to https://en.wikipedia.org/wiki/Color_space
+msgid "Color space"
+msgstr ""
+
+#. A type of color space.
+msgid "Linear sRGB"
+msgstr "خطي sRGB"
+
+msgid "General"
+msgstr "عام"
+
+msgid "Startup"
+msgstr ""
+
+msgid "Language"
+msgstr "اللغة"
+
+msgid "Interface"
+msgstr "الواجهة"
+
+msgid "Themes"
+msgstr "السمات"
+
+msgid "Canvas"
+msgstr ""
+
+#. Refers to the animation timeline.
+msgid "Timeline"
+msgstr "الجدول الزمني"
+
+msgid "Selection"
+msgstr "تحديد"
+
+msgid "Shortcuts"
+msgstr "اختصارات"
+
+msgid "Backup"
+msgstr "نسخ إحتياطي"
+
+msgid "Performance"
+msgstr "الأداء"
+
+#. Found in the preferences. Refers to device drivers, such as video drivers and tablet drivers.
+msgid "Drivers"
+msgstr "معرف الأنظمة"
+
+msgid "Extensions"
+msgstr "الإضافات"
+
+msgid "Cursors"
+msgstr "مؤشرات الفأرة"
+
+msgid "Indicators"
+msgstr "المؤشرات"
+
+#. Found in the preferences. Used for options that require restart when they are changed.
+msgid "Pixelorama must be restarted for changes to take effect."
+msgstr "يجب إعادة تشغيل Pixelorama لتفعيل التغييرات."
+
+msgid "On"
+msgstr "مفعل"
+
+msgid "Restore default value"
+msgstr "إستعادة القيمة الإفتراضية"
+
+#. Found in the preferences, under Canvas.
+msgid "Smooth Zoom"
+msgstr "التكبير السلس"
+
+#. Found in the preferences, under Canvas. Hint tooltip of "Smooth Zoom".
+msgid "Adds a smoother transition when zooming in or out"
+msgstr ""
+
+#. Found in the preferences, under Canvas.
+msgid "Integer Zoom"
+msgstr "تكبير بعدد صحيح"
+
+#. Found in the preferences, under Canvas. Hint tooltip of "Integer Zoom".
+msgid "Restricts the value to be an integer multiple of 100%"
+msgstr ""
+
+msgid "Tablet pressure sensitivity:"
+msgstr ""
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "Affect Brush's Alpha"
+msgstr ""
+
+msgid "Color:"
+msgstr "اللون:"
+
+msgid "Guide color:"
+msgstr "دليل الألوان:"
+
+msgid "System Language"
+msgstr "لغة النظام"
+
+msgid "Display scale:"
+msgstr "مقياس العرض:"
+
+#. Refers to the font of a text.
+msgid "Font:"
+msgstr ""
+
+#. Found in the preferences, under the interface section. Allows users to set the size of the font, ie the text.
+msgid "Font size:"
+msgstr "حجم الخط:"
+
+msgid "Dim interface on dialog popup"
+msgstr ""
+
+#. Found in the preferences, under the interface section. If enabled, the notification labels appear in the canvas when performing an action, such as when undoing/redoing.
+msgid "Show notification labels"
+msgstr ""
+
+#. Found in the preferences, under the interface section. When this setting is enabled, the native file dialogs of the operating system are being used, instead of Pixelorama's custom ones.
+msgid "Use native file dialogs"
+msgstr "استخدام نوافذ نظام التشغيل الأصلية"
+
+#. Found in the preferences, tooltip of the "Use native file dialogs" option.
+msgid "When this setting is enabled, the native file dialogs of the operating system are being used, instead of Pixelorama's custom ones."
+msgstr ""
+
+#. Found in the preferences, under the interface section. When this setting is enabled, Pixelorama's subwindows will be embedded in the main window, otherwise each dialog will be its own separate window.
+msgid "Single window mode"
+msgstr "وضع النافذة الفردية"
+
+#. Found in the preferences, tooltip of the "Single window mode" option.
+msgid "When this setting is enabled, Pixelorama's subwindows will be embedded in the main window, otherwise each dialog will be its own separate window."
+msgstr ""
+
+msgid "Dark"
+msgstr "غامق"
+
+msgid "Gray"
+msgstr "رمادي"
+
+msgid "Blue"
+msgstr "أزرق"
+
+msgid "Caramel"
+msgstr "كراميل"
+
+msgid "Light"
+msgstr "فاتح"
+
+msgid "Purple"
+msgstr "بنفسجي"
+
+#. A theme. Rose refers to the color rose.
+msgid "Rose"
+msgstr "وردي"
+
+msgid "Theme"
+msgstr "المظهر"
+
+msgid "Buttons"
+msgstr "الأزرار"
+
+msgid "Icon color from:"
+msgstr "لون الأيقونة من:"
+
+msgid "Icon color:"
+msgstr "لون الأيقونة:"
+
+msgid "Background"
+msgstr "الخلفية"
+
+msgid "Background color from:"
+msgstr "لون الخلفية من:"
+
+msgid "Background color:"
+msgstr "لون الخلفية"
+
+#. Found in the preferences, under the Tools category.
+msgid "Share options between the left and the right tools"
+msgstr ""
+
+#. Found in the preferences, under the Tools category. Tooltip of the "Share options between the left and the right tools" preference.
+msgid "If this is enabled, options will be synced between the left and the right tool.\n"
+"For example, both tools will share the same brush size, and changing it on one tool will instantly change on the other."
+msgstr ""
+
+msgid "Left tool color:"
+msgstr "لون الأداة اليسري:"
+
+msgid "Right tool color:"
+msgstr "لون الأداة اليمنى:"
+
+msgid "Tool button size:"
+msgstr "حجم زر الأداة:"
+
+msgid "Small"
+msgstr "صغير"
+
+msgid "Big"
+msgstr "كبير"
+
+msgid "Only affect selection"
+msgstr "التأثير على المحدد فقط"
+
+msgid "Selected cels"
+msgstr "القطع المحددة"
+
+msgid "Current cel"
+msgstr "القطعة الحالية"
+
+msgid "Current frame"
+msgstr "الإطار الحالي"
+
+msgid "All frames"
+msgstr "كل الإطارات"
+
+msgid "All projects"
+msgstr "كل المشاريع"
+
+msgid "Invert Colors"
+msgstr "عكس الألوان"
+
+msgid "Modify Red Channel"
+msgstr "تعديل القناة الحمراء"
+
+msgid "Modify Green Channel"
+msgstr "تعديل القناة الخضراء"
+
+msgid "Modify Blue Channel"
+msgstr "تعديل القناة الزرقاء"
+
+msgid "Modify Alpha Channel"
+msgstr "تعديل قناة الشفافية"
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Desaturation"
+msgstr ""
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Outline"
+msgstr "تحديد خارجي"
+
+#. An image effect. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Drop Shadow"
+msgstr "ظل خلفي"
+
+msgid "Offset X:"
+msgstr ""
+
+msgid "Offset Y:"
+msgstr ""
+
+msgid "Shadow color:"
+msgstr "لون الظل:"
+
+#. An image effect. https://en.wikipedia.org/wiki/Gaussian_blur
+msgid "Gaussian Blur"
+msgstr ""
+
+#. The type of the Gaussian blur, an image effect.
+msgid "Blur type:"
+msgstr ""
+
+#. The applied amount of Gaussian blur, an image effect.
+msgid "Blur amount:"
+msgstr ""
+
+#. The applied radius of Gaussian blur, an image effect.
+msgid "Blur radius:"
+msgstr ""
+
+#. The applied direction of Gaussian blur, an image effect.
+msgid "Blur direction:"
+msgstr ""
+
+msgid "Gradient"
+msgstr ""
+
+msgid "Gradient Map"
+msgstr ""
+
+msgid "Interpolation"
+msgstr ""
+
+#. Verb, refers to the action of reversing something.
+msgid "Reverse"
+msgstr ""
+
+#. An option found in gradient edit widgets. When selected, all points of a gradient are being evenly distributed across the gradient.
+msgid "Evenly distribute points"
+msgstr ""
+
+#. An option found in gradient edit widgets. When selected, the gradient is being split into equal parts.
+msgid "Divide into equal parts"
+msgstr "تقسيم إلى أجزاء متساوية"
+
+msgid "Parts:"
+msgstr "الأجزاء:"
+
+msgid "Add point at the end"
+msgstr ""
+
+msgid "If this is enabled, the last point gets added at the end of the gradient.\n"
+"Disable this if you wish to convert the gradient to have constant interpolation, so that the last color will be taken into account."
+msgstr ""
+
+#. A tooltip of a button found in gradient edit widgets. When the button is pressed, the gradient is saved to presets.
+msgid "Save to presets"
+msgstr ""
+
+msgid "Shape:"
+msgstr "الشكل:"
+
+msgid "Linear"
+msgstr "خطي"
+
+msgid "Radial"
+msgstr ""
+
+#. Found in the Gradient dialog, under the image menu. Specifies if the gradient will repeat or not.
+msgid "Repeat:"
+msgstr "التكرار:"
+
+#. Found in the Gradient dialog, under the image menu. Specifies if the gradient will repeat or not.
+msgid "Repeat"
+msgstr "تكرار"
+
+#. Found in the Gradient dialog, under the image menu. It is one of the repeat options.
+msgid "Mirror"
+msgstr "انعكاس"
+
+#. Found in the Gradient dialog, under the image menu. It is one of the repeat options. If Truncate is selected, the gradient gets cut at the edges.
+msgid "Truncate"
+msgstr ""
+
+msgid "Transition size:"
+msgstr ""
+
+msgid "Center:"
+msgstr "المركز:"
+
+msgid "Dithering pattern:"
+msgstr ""
+
+msgid "Type:"
+msgstr "النوع:"
+
+msgid "Angle:"
+msgstr "الزاوية:"
+
+#. An image effect. Adjusts the hue, saturation and value of the colors of an image. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Adjust Hue/Saturation/Value"
+msgstr ""
+
+#. HSV stands for Hue, Saturation & Value.
+msgid "Adjust HSV"
+msgstr ""
+
+#. Refers to the hue of the colors of an image.
+msgid "Hue:"
+msgstr ""
+
+#. Refers to the saturation of the colors of an image.
+msgid "Saturation:"
+msgstr "التشبع:"
+
+#. Refers to the value (as in HSV) of the colors of an image.
+msgid "Value:"
+msgstr "القيمة:"
+
+#. An image effect. Adjusts the brightness and contrast of the colors of an image.
+msgid "Adjust Brightness/Contrast"
+msgstr "ضبط السطوع/التباين"
+
+#. Refers to the brightness of the colors of an image.
+msgid "Brightness:"
+msgstr "السطوع:"
+
+#. Refers to the contrast of the colors of an image.
+msgid "Contrast:"
+msgstr "التباين:"
+
+#. Refers to the red value of the colors of an image.
+msgid "Red value:"
+msgstr "قيمة الأحمر:"
+
+#. Refers to the green value of the colors of an image.
+msgid "Green value:"
+msgstr "قيمة الأخضر:"
+
+#. Refers to the blue value of the colors of an image.
+msgid "Blue value:"
+msgstr "قيمة الأزرق:"
+
+#. Refers to a color that tints an image.
+msgid "Tint color:"
+msgstr ""
+
+#. Refers to the factor (how much) a color tints an image.
+msgid "Tint effect factor:"
+msgstr ""
+
+#. An image effect that adjusts the colors of the image by using curves.
+msgid "Color Curves"
+msgstr ""
+
+#. Refers to a color channel, such as the red, green, blue or alpha channels.
+msgid "Channel:"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+#. Refers to the value (as in HSV) of the colors of an image.
+msgid "Value"
+msgstr ""
+
+msgid "Presets"
+msgstr ""
+
+msgid "Apply"
+msgstr "تطبيق"
+
+msgid "Diagonal"
+msgstr ""
+
+msgid "Place inside image"
+msgstr "وضع داخل الصورة"
+
+msgid "Thickness:"
+msgstr "السماكة:"
+
+msgid "Colors:"
+msgstr "الألوان:"
+
+msgid "Steps:"
+msgstr "الخطوات:"
+
+#. An image effect. It maps the color of the input to the nearest color in the selected palette. Useful for limiting color in pixel art and for artistic effects. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Palettize"
+msgstr ""
+
+#. An image effect. It makes the input image pixelated. See Pixelorama's documentation page for more information: https://www.oramainteractive.com/Pixelorama-Docs/user_manual/image_effects
+msgid "Pixelize"
+msgstr ""
+
+#. An image effect. For more details about what it does, you can refer to GIMP's documentation https://docs.gimp.org/2.8/en/gimp-tool-posterize.html
+msgid "Posterize"
+msgstr ""
+
+#. An option for the posterize image effect. For more details about what it does, you can refer to GIMP's documentation https://docs.gimp.org/2.8/en/gimp-tool-posterize.html
+msgid "Posterize levels:"
+msgstr ""
+
+#. An option for the posterize image effect.
+msgid "Dither intensity:"
+msgstr ""
+
+msgid "View Splash Screen"
+msgstr "عرض شاشة البداية"
+
+msgid "Online Docs"
+msgstr "التعليمات عبر الانترنت"
+
+msgid "Issue Tracker"
+msgstr "متعقب المشاكل"
+
+#. Found under the Help menu. When selected, it opens the folder where the application's data are being saved.
+msgid "Open Editor Data Folder"
+msgstr ""
+
+msgid "Changelog"
+msgstr "سِجل التغييرات"
+
+msgid "About Pixelorama"
+msgstr "حول Pixelorama"
+
+#. Found under the Help menu. When clicked, it opens the URL of Orama Interactive's patreon page.
+msgid "Support Pixelorama's Development"
+msgstr "دعم تطوير بيكسلوراما"
+
+msgid "Pixelorama - Pixelate your dreams!"
+msgstr "بيكسلوراما - بيكسل أحلامك!"
+
+msgid "Developed by Orama Interactive"
+msgstr "تم تطويره بواسطة Orama Interactive"
+
+msgid "©2019-present by Orama Interactive and contributors"
+msgstr "حقوق الطبع والنشر ©2019 مملوكة الي أوراما انتراكتيف والمساهمين"
+
+msgid "Website"
+msgstr "الموقع"
+
+#. Found in the About dialog. A button that, when you click it, it opens the URL of Pixelorama's source code.
+msgid "Source Code"
+msgstr "مصدر أكواد المشروع"
+
+msgid "Donate"
+msgstr "تبرّع"
+
+msgid "Developers"
+msgstr "المبرمجون"
+
+msgid "Contributors"
+msgstr "المُساهمون"
+
+msgid "Donors"
+msgstr "المتبرعون"
+
+msgid "Translators"
+msgstr "المترجمون"
+
+#. Refers to software licenses. https://en.wikipedia.org/wiki/Software_license
+msgid "Licenses"
+msgstr "التراخيص"
+
+#. Refers to a software license. https://en.wikipedia.org/wiki/Software_license
+msgid "License"
+msgstr ""
+
+#. Refers to the licenses of the software that are used by the Godot Engine. https://en.wikipedia.org/wiki/Software_license
+msgid "Godot Licenses"
+msgstr ""
+
+#. Refers to software licenses that are not a part of Pixelorama or Godot. https://en.wikipedia.org/wiki/Software_license
+msgid "Third-party Licenses"
+msgstr ""
+
+msgid "English"
+msgstr "الإنجليزية"
+
+msgid "Greek"
+msgstr "اليونانية"
+
+msgid "French"
+msgstr "الفرنسية"
+
+msgid "German"
+msgstr "الألمانية"
+
+msgid "Polish"
+msgstr "اليولندية"
+
+msgid "Portuguese"
+msgstr "البرتغالية"
+
+msgid "Brazilian Portuguese"
+msgstr "البرتغالية البرازلية"
+
+msgid "Russian"
+msgstr "الروسية"
+
+msgid "Chinese Simplified"
+msgstr "الصينية المبسّطة"
+
+msgid "Chinese Traditional"
+msgstr "الصينية التقليدية"
+
+msgid "Italian"
+msgstr "الإيطالية"
+
+msgid "Latvian"
+msgstr "اللاتفية"
+
+msgid "Spanish"
+msgstr "الإسبانية"
+
+msgid "Catalan"
+msgstr "الكاتالونية"
+
+msgid "Esperanto"
+msgstr "إسبرانتو"
+
+msgid "Indonesian"
+msgstr "الإندونيسية"
+
+msgid "Czech"
+msgstr "التشيكية"
+
+msgid "Arabic"
+msgstr "العربيّة"
+
+msgid "Turkish"
+msgstr "التركية"
+
+msgid "Norwegian Bokmål"
+msgstr ""
+
+msgid "Korean"
+msgstr "الكورية"
+
+msgid "Hungarian"
+msgstr "الهنغارية"
+
+msgid "Romanian"
+msgstr "الرومانية"
+
+msgid "Japanese"
+msgstr "اليابانية"
+
+msgid "Ukrainian"
+msgstr "الأوكرانية"
+
+msgid "Danish"
+msgstr "الدنماركية"
+
+msgid "Swedish"
+msgstr "السويدية"
+
+msgid "Serbian (Cyrillic)"
+msgstr "الصربية (السيريلية)"
+
+msgid "Dutch"
+msgstr "الهولندية"
+
+msgid "Belarusian"
+msgstr ""
+
+#. Found in the About dialog.
+msgid "Lead Developer"
+msgstr "المطور الرائد"
+
+#. Found in the About dialog.
+msgid "UI Designer"
+msgstr "مصمم UI"
+
+#. Found in the About dialog. Refers to the people who have contributed code to the project.
+msgid "Authors"
+msgstr "الناشرون"
+
+msgid "Art by: %s"
+msgstr "الفن بواسطة: %s"
+
+msgid "untitled"
+msgstr "غير معنون"
+
+msgid "imported"
+msgstr "مستورد"
+
+msgid "copy"
+msgstr "نسخ"
+
+msgid "Are you sure you want to exit Pixelorama?"
+msgstr "هل أنت متأكد من أنك تريد الخروج من Pixelorama؟"
+
+msgid "Unsaved Image"
+msgstr "صورة غير محفوظة"
+
+msgid "You have unsaved changes. If you proceed, the progress you have made will be lost."
+msgstr "لديك تغييرات غير محفوظة. إذا قمت بالمتابعة، سيتم فقدان التقدم الذي حققته."
+
+msgid "Save before exiting?"
+msgstr "حفظ قبل الخروج؟"
+
+msgid "Project %s has unsaved progress. How do you wish to proceed?"
+msgstr "لم تقم بحفظ التغييرات. كيف ترغب في المتابعة؟"
+
+msgid "Save & Exit"
+msgstr "حفظ وخروج"
+
+msgid "Exit without saving"
+msgstr "الخروج دون حفظ"
+
+msgid "Rectangular Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "التحديد المستطيلى\n\n"
+"%s لزر الفأرة الأيسر\n"
+"%s لزر الفأرة الأيمن"
+
+msgid "Elliptical Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "التحديد الدائرى\n\n"
+"%s لزر الفأرة الأيسر\n"
+"%s لزر الفأرة الأيمن"
+
+msgid "Polygonal Selection\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Double-click to connect the last point to the starting point"
+msgstr ""
+
+msgid "Select By Color\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Magic Wand\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Lasso / Free Select Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Select by Drawing\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Move\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Zoom\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "تكبير\n\n"
+"%s لزر الماوس الأيسر\n"
+"%s لزر الماوس الأيمن"
+
+msgid "Pan\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Color Picker\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Select a color from a pixel of the sprite"
+msgstr ""
+
+msgid "Crop\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Resize the canvas"
+msgstr ""
+
+msgid "Pencil\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to make a line"
+msgstr "القلم\n\n"
+"%s لزر الماوس الأيسر\n"
+"%s لزر الماوس الأيمن\n\n"
+"اضغط %s لإنشاء سطر"
+
+msgid "Eraser\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to make a line"
+msgstr "الممحاة\n\n"
+"%s لزر الماوس الأيسر\n"
+"%s لزر الماوس الأيمن\n\n"
+"اضغط على %s لإنشاء سطر"
+
+msgid "Bucket\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr "دلو\n\n"
+"%s لزر الماوس الأيسر\n"
+"%s لزر الماوس الأيمن"
+
+msgid "Shading Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Line Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to snap the angle of the line\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr ""
+
+msgid "Curve Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Draws bezier curves\n"
+"Press %s/%s to add new points\n"
+"Double-click to finish drawing the curve\n"
+"Press and drag to control the curvature\n"
+"Press %s to remove the last added point"
+msgstr ""
+
+msgid "Rectangle Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to create a 1:1 shape\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr ""
+
+msgid "Ellipse Tool\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button\n\n"
+"Hold %s to create a 1:1 shape\n"
+"Hold %s to center the shape on the click origin\n"
+"Hold %s to displace the shape's origin"
+msgstr ""
+
+msgid "Text\n\n"
+"%s for left mouse button\n"
+"%s for right mouse button"
+msgstr ""
+
+msgid "Rectangle"
+msgstr "مستطيل"
+
+msgid "Ellipse"
+msgstr "بيضاوي"
+
+msgid "Choose a color for the left tool"
+msgstr "اختر لون الأداة اليسرى"
+
+msgid "Choose a color for the right tool"
+msgstr "اختر لون الأداة اليمنى"
+
+#. Tooltip of the switch colors button found in the color picker panel.
+msgid "Switch left and right colors."
+msgstr "تبديل بين اللون الأيسر و الأيمن."
+
+#. Tooltip of the average color button, found in the color picker panel. Shows the average color between the two selected.
+msgid "Average Color:"
+msgstr ""
+
+msgid "Reset the colors to their default state (black for left, white for right)"
+msgstr "إعادة تعيين الألوان إلى حالتها الافتراضية (أسود لليسار، أبيض لليمين)"
+
+#. Tooltip of the screen color picker button found in the color picker panel.
+msgid "Pick a color from the application window."
+msgstr ""
+
+#. Tooltip of the color text field found in the color picker panel that lets users change the color by hex code or english name ("red" cannot be translated).
+msgid "Enter a hex code (\"#ff0000\") or named color (\"red\")."
+msgstr ""
+
+#. Tooltip of the button found in the color picker panel that lets users change the shape of the color picker.
+msgid "Select a picker shape."
+msgstr ""
+
+#. Refers to color-related options such as sliders that set color channel values like R, G, B and A.
+msgid "Color options"
+msgstr "إعدادات الألوان"
+
+#. Tooltip of the button with three dots found under color options in the color picker panel that lets users change the mode of the color picker/sliders.
+msgid "Select a picker mode."
+msgstr ""
+
+#. Checkbox found in the menu of the button with three dots found under color options in the color picker panel.
+msgid "Colorized Sliders"
+msgstr ""
+
+#. Shows saved colors in certain color picker menus.
+msgid "Swatches"
+msgstr ""
+
+#. Found under color options in the color picker panel.
+msgid "Recent Colors"
+msgstr ""
+
+msgid "Left tool"
+msgstr "الأداة اليسرى"
+
+msgid "Right tool"
+msgstr "الأداة اليمنى"
+
+msgid "Left pixel indicator"
+msgstr "مؤشر البكسل الأيسر"
+
+msgid "Show left mouse pixel indicator or brush on the canvas when drawing"
+msgstr "إظهار مؤشر الماوس الأيسر بكسل أو الفرشاة على الكانفا عند الرسم"
+
+msgid "Right pixel indicator"
+msgstr "مؤشر البكسل الأيمن"
+
+msgid "Show right mouse pixel indicator or brush on the canvas when drawing"
+msgstr ""
+
+msgid "Show left tool icon"
+msgstr "إظهار أيقونة الأداة اليسرى"
+
+msgid "Displays an icon of the selected left tool next to the cursor on the canvas"
+msgstr ""
+
+msgid "Show right tool icon"
+msgstr "إظهار أيقونة الأداة اليمنى"
+
+msgid "Displays an icon of the selected right tool next to the cursor on the canvas"
+msgstr ""
+
+msgid "Use native mouse cursors"
+msgstr "استخدام مؤشرات فأرة نظام التشغيل"
+
+msgid "Use cross cursor for the canvas"
+msgstr ""
+
+msgid "Guides"
+msgstr "خطوط الإرشاد"
+
+msgid "Guides color:"
+msgstr "لون خطوط الإرشاد:"
+
+msgid "A color of ruler guides displayed on the canvas"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping.
+msgid "Snapping"
+msgstr "الاجتذاب"
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping.
+msgid "Snapping distance:"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category. Refers to grid and guide snapping. Hint tooltip of the snapping distance slider.
+msgid "This is the distance in screen pixels where guide and grid snapping gets activated."
+msgstr ""
+
+msgid "Grid"
+msgstr "الشبكة"
+
+msgid "Grid type:"
+msgstr "نوع الشبكة:"
+
+msgid "Sets the type of the grid between rectangular, isometric or both"
+msgstr ""
+
+msgid "Rectangular"
+msgstr "مستطيلة"
+
+msgid "Isometric"
+msgstr ""
+
+#. Refers to a hexagonal type of grid.
+msgid "Hexagonal"
+msgstr ""
+
+#. Refers to a hexagonal type of grid, with pointy-top orientation.
+msgid "Hexagonal (pointy-top)"
+msgstr ""
+
+#. Refers to a hexagonal type of grid, with flat-top orientation.
+msgid "Hexagonal (flat-top)"
+msgstr ""
+
+msgid "All"
+msgstr "الكل"
+
+#. Found in the Preferences, in the Canvas category. Refers to the number of visible grids.
+msgid "Grids visible:"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category. Refers to the grid that is being edited.
+msgid "Editing grid:"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category.
+msgid "Grid size:"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category.
+msgid "Grid offset:"
+msgstr ""
+
+#. Found in the Preferences, in the Canvas category. Hint tooltip of the grid offset value sliders.
+msgid "Sets grid's offset from the canvas origin (top left corner of the image)"
+msgstr ""
+
+msgid "Draw over Tile Mode:"
+msgstr ""
+
+msgid "If disabled, the grid will be drawn only over the original image"
+msgstr ""
+
+msgid "Grid color:"
+msgstr ""
+
+msgid "A color of the grid"
+msgstr ""
+
+msgid "Pixel Grid"
+msgstr ""
+
+msgid "Show at zoom:"
+msgstr ""
+
+msgid "Sets the minimal zoom at which pixel grid will be shown"
+msgstr ""
+
+msgid "Pixel grid color:"
+msgstr ""
+
+msgid "A color of the pixel grid"
+msgstr ""
+
+msgid "Transparency"
+msgstr "الشفافية"
+
+msgid "Checker size:"
+msgstr ""
+
+msgid "Size of the transparent checker background"
+msgstr ""
+
+msgid "Checker color 1:"
+msgstr ""
+
+msgid "First color of the transparent checker background"
+msgstr ""
+
+msgid "Checker color 2:"
+msgstr ""
+
+msgid "Second color of the transparent checker background"
+msgstr ""
+
+msgid "Follow Canvas Movement"
+msgstr ""
+
+msgid "The transparent checker follow the movement of canvas"
+msgstr ""
+
+msgid "Follow Canvas Zoom Level"
+msgstr ""
+
+msgid "The transparent checker follow the zoom level of canvas"
+msgstr ""
+
+#. Found in the Preferences, under Timeline. If this is enabled, clicking on the layer buttons (such as lock, invisible etc) will automatically select that layer.
+msgid "Select layer when clicking on one of its buttons:"
+msgstr ""
+
+#. Found in the Preferences, under Timeline. Changes the color of the past (previous) frames in onion skinning, if color mode is enabled.
+msgid "Onion skinning past color:"
+msgstr ""
+
+#. Found in the Preferences, under Timeline. Changes the color of the past (previous) frames in onion skinning, if color mode is enabled.
+msgid "Onion skinning future color:"
+msgstr ""
+
+msgid "Animated selection borders"
+msgstr ""
+
+msgid "Border color 1:"
+msgstr "لون الحدود 1:"
+
+msgid "Border color 2:"
+msgstr "لون الحدود 2:"
+
+msgid "Only custom preset can be modified"
+msgstr ""
+
+msgid "Set application FPS limit:"
+msgstr ""
+
+msgid "Sets the limit of the application's frames per second. The lower the number, the lower the CPU usage, but the application gets slower, choppier and unresponsive. 0 means that there is no limit."
+msgstr ""
+
+#. Found in the Preferences, under the Performance section. Changes the value of the maximum undo steps projects can use.
+msgid "Max undo steps:"
+msgstr ""
+
+#. An option found in the preferences, under the Performance section.
+msgid "Pause application when it loses focus"
+msgstr "إيقاف مؤقت للتطبيق عند تغيير النوافذ"
+
+#. Found in the preferences, hint of the "Pause application when it loses focus" option.
+msgid "If this is toggled on, when the application's window loses focus, it gets paused. This helps lower CPU usage when idle. The application gets unpaused when the mouse enters the application's window."
+msgstr ""
+
+#. An option found in the preferences, under the Performance section. Refers to the screen being updated (redrawn) continuously.
+msgid "Update continuously"
+msgstr ""
+
+#. Found in the preferences, hint of the "Update continuously" option.
+msgid "If this is toggled on, the application will redraw the screen continuously, even while it's not used. Turning this off helps lower CPU and GPU usage when idle."
+msgstr ""
+
+#. An option found in the preferences, under the Performance section.
+msgid "Enable window transparency"
+msgstr "تمكين شفافية النافذة"
+
+#. Found in the preferences, hint of the "Enable window transparency" option.
+msgid "If enabled, the application window can become transparent. This affects performance, so keep it off if you don't need it."
+msgstr ""
+
+#. An option found in the preferences, under the Performance section. A dummy driver is basically a driver that doesn't do anything. When this option is enabled, audio does not play, but it can help save some performance.
+msgid "Use dummy audio driver"
+msgstr ""
+
+#. Found in the Preferences, under Drivers. Specifies the renderer/video driver being used.
+msgid "Renderer:"
+msgstr ""
+
+#. Found in the Preferences, under Drivers. Hint tooltip of the renderer option.
+msgid "Specifies the renderer/video driver being used. GLES2 is better for older and low-end devices, but GLES3 may offer more features."
+msgstr ""
+
+#. Found in the Preferences, under Drivers. Specifies the tablet driver being used on Windows.
+msgid "Tablet driver:"
+msgstr "مشغل الجهاز اللوحي:"
+
+#. Found in the Preferences, under Drivers. Hint tooltip of the tablet driver option.
+msgid "Specifies the tablet driver being used on Windows. If you have Windows Ink enabled, select winink."
+msgstr ""
+
+#. Found in the Preferences, under Extensions.
+msgid "Add Extension"
+msgstr "إضافة ملحق"
+
+msgid "Enable"
+msgstr "تفعيل"
+
+msgid "Disable"
+msgstr "تعطيل"
+
+msgid "Uninstall"
+msgstr "إلغاء التثبيت"
+
+msgid "Open Folder"
+msgstr "فتح المجلد"
+
+#. Found in the Preferences, under Extensions. It is a button that, when clicked, opens up the extension explorer which allows users to download extensions from the Internet.
+#: src/Preferences/PreferencesDialog.tscn
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Explore Online"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Title of the tab that shows the extension explorer, where you can download extensions.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Extension Explorer"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Text field to search for extensions.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Search..."
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Refers to the tags used to filter extensions in the explorer.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Tags:"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Report issue with an extension"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Button to download an extension.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Download"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup, under Options. It's the section where you can add links to more extension repositories.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Repository links:"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Fetching data from remote repository.\n"
+"Please wait."
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Flatpak is a utility for software deployment and package management for Linux, so this word should not be translated.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Unable to get info from remote repository.\n\n"
+"- Make sure you are connected to the internet.\n"
+"- If you are using the Flatpak version of Pixelorama, you need to grant it permission to connect to the internet. To do that, you can run the following command on your terminal:"
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup. Flatpak is a utility for software deployment and package management for Linux and Flatseal is an application that manages permissions for Flatpak apps, so these words should not be translated.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Alternatively, you can download Flatseal and set permissions for Flatpak apps there."
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup.
+#: src/UI/ExtensionExplorer/ExtensionExplorer.tscn
+msgid "Unable to get info from remote repository."
+msgstr ""
+
+#. Found in the Preferences, under Extensions, in the "Explore Online" popup, under Options. Placeholder text for adding a link to an extensions repository. "Will be automatically removed" refers to the text field itself, if no link is entered.
+msgid "Paste repository link, given by the repository owner. If left empty, it will automatically be removed."
+msgstr ""
+
+#. Found in the Preferences, under Extensions. This is the text of a confirmation dialog that appears when the user attempts to enable an extension.
+msgid "Are you sure you want to enable this extension? Make sure to only enable extensions from sources that you trust."
+msgstr ""
+
+#. Found in the Preferences, under Extensions. This is the text of a confirmation dialog that appears when the user attempts to delete an extension.
+msgid "Are you sure you want to delete this extension?"
+msgstr ""
+
+#. Hint tooltip of a button in the Global Tool Settings. "Dynamics" let users affect certain brush parameters, such as their size and alpha, based on the pressure of the tablet pen, the velocity of the mouse or the pen, and more in the future.
+msgid "Dynamics"
+msgstr ""
+
+#. Found in the Dynamics options menu. A stabilizer is a feature that, when enabled, helps artists create smooth lines as they draw.
+msgid "Stabilizer"
+msgstr ""
+
+#. Found in the Dynamics options menu. Pressure refers to tablet pen pressure.
+msgid "Pressure"
+msgstr "الضغط"
+
+#. Found in the Dynamics options menu. Velocity refers to mouse or tablet pen velocity, meaning how fast it moves.
+msgid "Velocity"
+msgstr ""
+
+#. Refers to the alpha channel of the colors, in the RGBA color model. The alpha channel is responsible for the transparency of the color.
+msgid "Alpha"
+msgstr "الشفافية"
+
+#. Refers to the size of a value, for example the size of a brush.
+msgid "Size"
+msgstr "الحجم"
+
+#. Found in the Dynamics options menu. Sets the limits of the brush property values, such as the minimum and maximum values of alpha and size.
+msgid "Value limits"
+msgstr "حدود القيمة"
+
+#. Found in the Dynamics options menu. Sets the thresholds of the dynamic properties, such as the minimum and maximum values of pressure and velocity.
+msgid "Thresholds"
+msgstr ""
+
+#. Noun, the start of something.
+msgid "Start"
+msgstr "البداية"
+
+#. Noun, the end of something.
+msgid "End"
+msgstr "النهاية"
+
+msgid "Brush:"
+msgstr "الفرشاة:"
+
+msgid "Select a brush"
+msgstr ""
+
+#. Found when selecting a brush. It's a section that shows the default Pixelorama brushes.
+msgid "Default Brushes"
+msgstr ""
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Pixel brush"
+msgstr "الفرشاة"
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Circle brush"
+msgstr "فرشاة الدائرة"
+
+#. Found when selecting a brush. One of the default brushes that come with Pixelorama.
+msgid "Filled circle brush"
+msgstr ""
+
+#. Found when selecting a brush. It's a section that shows brushes the user has imported for the current project specifically.
+msgid "Project Brushes"
+msgstr ""
+
+#. Found when selecting a brush. It's a section that shows a few brushes that come with Pixelorama and brushes the user has imported from files (not project-specific).
+msgid "File Brushes"
+msgstr ""
+
+#. Found when selecting a brush. One of the file brushes that come with Pixelorama.
+msgid "Snow"
+msgstr ""
+
+#. Found when selecting a brush. It's a section that shows file brushes that are randomized.
+msgid "Random File Brushes"
+msgstr ""
+
+#. Found when selecting a brush. One of the random brushes that come with Pixelorama.
+msgid "Grass"
+msgstr ""
+
+#. Found when selecting a brush. One of the random brushes that come with Pixelorama.
+msgid "Star"
+msgstr ""
+
+msgid "Custom brush"
+msgstr "فرشاة مخصصة"
+
+msgid "Brush size:"
+msgstr "حجم الفرشاة:"
+
+#. Found in the pencil tool options, when you select a brush that isn't a default brush. It's a dropdown that shows rotation options for the brush.
+msgid "Rotation options"
+msgstr ""
+
+#. Found under "Rotation options" in the pencil tool options, when you select a brush that isn't a default brush. Property to flip the brush in the X or Y axis.
+msgid "Flip:"
+msgstr ""
+
+#. Found under "Rotation options" in the pencil tool options, when you select a brush that isn't a default brush. Property to rotate the brush.
+msgid "Rotate:"
+msgstr ""
+
+msgid "Overwrite color"
+msgstr "إستبدال اللون"
+
+msgid "Overwrites color instead of blending it. This option is only relevant with colors that are not fully opaque"
+msgstr ""
+
+msgid "Pixel Perfect"
+msgstr ""
+
+msgid "Pixel Perfect\n"
+"Makes lines smooth by removing the extra pixels on the edges"
+msgstr ""
+
+#. A button found in the global tool options. When enabled, the alpha value of the pixels being drawn is locked, meaning that the user can only draw on non-transparent pixels.
+msgid "Lock alpha"
+msgstr "قفل الشفافية"
+
+msgid "Fill inside"
+msgstr "ملء داخلي"
+
+#. Found in the tool options of the Pencil tool, and refers to the spacing between brush strokes.
+msgid "Spacing"
+msgstr "التباعد"
+
+#. Found in the tool options of the Pencil tool if "Spacing" is enabled, and refers to the horizontal gap between brush strokes.
+msgid "Gap X:"
+msgstr ""
+
+#. Found in the tool options of the Pencil tool if "Spacing" is enabled, and refers to the vertical gap between brush strokes.
+msgid "Gap Y:"
+msgstr ""
+
+msgid "Fill Shape"
+msgstr "ملء الشكل"
+
+msgid "Fills the drawn shape with color, instead of drawing a hollow shape"
+msgstr ""
+
+#. Found in the tool options of the Pencil, Eraser and Shading tools. It is a percentage of how dense the brush is. 100% density means that the brush gets completely drawn, anything less leaves gaps inside the brush, acting like a spray tool.
+msgid "Density:"
+msgstr ""
+
+#. Found in the pencil tool options, when you select a brush that isn't a default brush. Property to change the strength of the selected color in the selected brush (0: Color from the brush itself, 100: the currently selected color).
+msgid "Brush color from:"
+msgstr ""
+
+msgid "0: Color from the brush itself, 100: the currently selected color"
+msgstr ""
+
+#. Found in the bucket tool options.
+msgid "Fill area:"
+msgstr "ملء المساحة:"
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Similar area"
+msgstr ""
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Similar colors"
+msgstr "الألوان المماثلة"
+
+#. Found in the bucket tool options, one of the fill area options.
+msgid "Whole selection"
+msgstr "جميع المحدد"
+
+msgid "Fill with:"
+msgstr "املأ بـ:"
+
+#. Found in the bucket tool options, one of the fill with options.
+msgid "Selected color"
+msgstr "اللون المحدد"
+
+#. Found in the bucket tool options, one of the fill with options.
+msgid "Pattern"
+msgstr ""
+
+msgid "Offset"
+msgstr ""
+
+msgid "Simple Shading"
+msgstr ""
+
+msgid "Hue Shifting"
+msgstr ""
+
+msgid "Lighten"
+msgstr "تفتيح"
+
+msgid "Darken"
+msgstr "تعتيم"
+
+msgid "Amount:"
+msgstr "الكمية:"
+
+msgid "Lighten/Darken amount"
+msgstr ""
+
+#. Found in the shading tool options. Mode to apply shading by replacing drawing's colors with the colors that are next to them in the selected palette.
+msgid "Color Replace"
+msgstr ""
+
+msgid "Please select a color from the palette."
+msgstr ""
+
+#. Found in the shading tool options, in "Color Replace" mode. Parameter that specifies how many colors to the right of the selected color in the palette should be included for the shading.
+msgid "Colors right:"
+msgstr ""
+
+msgid "Pick for:"
+msgstr ""
+
+msgid "Left Color"
+msgstr "اللون الأيسر"
+
+msgid "Right Color"
+msgstr "اللون الأيمن"
+
+#. Found in the color picker tool options. Specifies what mode should be used for picking a color.
+msgid "Pick mode:"
+msgstr ""
+
+#. Found in the color picker tool options, as a pick mode. Picks the top color from the canvas in the selected pixel.
+msgid "Top Color"
+msgstr ""
+
+#. Found in the color picker tool options, as a pick mode. Picks the color from the currently selected layer in the selected pixel.
+msgid "Current Layer"
+msgstr ""
+
+msgid "Mode:"
+msgstr "النمط:"
+
+msgid "Zoom in"
+msgstr "تكبير"
+
+msgid "Zoom out"
+msgstr "تصغير"
+
+#. Refers to a mode of the curve tool. Single mode mimics the Aseprite curve tool behavior.
+msgid "Single"
+msgstr ""
+
+#. Refers to a mode of the curve tool. Chained mode mimics the Krita curve tool behavior.
+msgid "Chained"
+msgstr ""
+
+#. Tooltip of the curve tool's "mode" option button.
+msgid "Chained: Makes a chain of multiple bezier curves, similar to Krita's curve tool.\n"
+"Single: Makes a single bezier curve, similar to Aseprite's curve tool."
+msgstr ""
+
+msgid "Options"
+msgstr "الخيارات"
+
+msgid "Options:"
+msgstr "الخيارات:"
+
+msgid "Fit to frame"
+msgstr ""
+
+msgid "100% Zoom"
+msgstr ""
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Replace selection"
+msgstr ""
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Add to selection"
+msgstr ""
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Subtract from selection"
+msgstr ""
+
+#. One of the modes of a selection tool. Found in the tool options, when a selection tool is active.
+msgid "Intersection of selections"
+msgstr ""
+
+#. Refers to the style of something, such as the style of a text, meaning whether it's regular, bold, italic, etc.
+msgid "Style:"
+msgstr ""
+
+#. Refers to the text. Regular means that the text is not bold or italic.
+msgid "Regular"
+msgstr ""
+
+#. Refers to text that is bold.
+msgid "Bold"
+msgstr ""
+
+#. Refers to text that is italic.
+msgid "Italic"
+msgstr ""
+
+#. Refers to text that is bold and italic.
+msgid "Bold Italic"
+msgstr ""
+
+#. https://en.wikipedia.org/wiki/Anti-aliasing
+msgid "Antialiasing"
+msgstr ""
+
+msgid "Grayscale"
+msgstr ""
+
+msgid "Mirroring"
+msgstr ""
+
+msgid "Horizontal"
+msgstr "أفقي"
+
+msgid "Enable horizontal mirrored drawing"
+msgstr ""
+
+msgid "Vertical"
+msgstr "رأسي"
+
+msgid "Enable vertical mirrored drawing"
+msgstr ""
+
+#. Found in the global tool options, in the menu that appears next to each mirror button. It affects the position of a symmetry guide.
+msgid "Move to canvas center"
+msgstr ""
+
+#. Found in the global tool options, in the menu that appears next to each mirror button. It affects the position of a symmetry guide.
+msgid "Move to view center"
+msgstr ""
+
+msgid "Current frame:"
+msgstr "الإطار الحالي:"
+
+msgid "Animation mode:"
+msgstr "وضع الرسوم المتحركة:"
+
+msgid "Current frame as spritesheet"
+msgstr ""
+
+msgid "Jump to the first frame"
+msgstr ""
+
+msgid "Go to the previous frame"
+msgstr ""
+
+msgid "Play the animation backwards"
+msgstr ""
+
+msgid "Play the animation forward"
+msgstr ""
+
+msgid "Go to the next frame"
+msgstr ""
+
+msgid "Jump to the last frame"
+msgstr ""
+
+msgid "Timeline settings"
+msgstr ""
+
+msgid "Enable/disable Onion Skinning"
+msgstr ""
+
+msgid "How many frames per second should the animation preview be?\n"
+"The more FPS, the faster the animation plays."
+msgstr ""
+
+msgid "No loop"
+msgstr ""
+
+msgid "Cycle loop"
+msgstr ""
+
+msgid "Ping-pong loop"
+msgstr ""
+
+msgid "Onion Skinning:"
+msgstr ""
+
+msgid "Past Frames"
+msgstr "الإطارات السابقة"
+
+msgid "Future Frames"
+msgstr "الإطارات المقبلة"
+
+msgid "Manage frame tags"
+msgstr ""
+
+msgid "Frame Tag Properties"
+msgstr ""
+
+msgid "Add a new frame tag"
+msgstr ""
+
+msgid "Name:"
+msgstr "الاسم:"
+
+msgid "From:"
+msgstr "من:"
+
+msgid "To:"
+msgstr " إلى:"
+
+msgid "Animation plays only on frames of the same tag"
+msgstr ""
+
+msgid "Tag %s (Frame %s)"
+msgstr ""
+
+msgid "Tag %s (Frames %s-%s)"
+msgstr ""
+
+msgid "If it's selected, the animation plays only on the frames that have the same tag.\n"
+"If it's not, the animation will play for all frames, ignoring tags."
+msgstr ""
+
+#. Found in the timeline, inside the timeline settings. It's a slider that sets the size of the cel buttons in the timeline.
+msgid "Cel size:"
+msgstr ""
+
+#. Found in the timeline, inside the timeline settings. If this is enabled, the past and future frames will have appear tinted.
+msgid "Color mode"
+msgstr ""
+
+msgid "Show past frames:"
+msgstr ""
+
+msgid "Show future frames:"
+msgstr ""
+
+msgid "Above canvas"
+msgstr ""
+
+msgid "Below canvas"
+msgstr ""
+
+msgid "If you want a layer to ignore onion skinning simply add the \"_io\" suffix in its name."
+msgstr ""
+
+msgid "Add a new frame"
+msgstr "إضافة إطار جديد"
+
+msgid "Remove Frame"
+msgstr "إزالة الإطار"
+
+msgid "Clone Frame"
+msgstr ""
+
+msgid "Move Left"
+msgstr "تحريك لليسار"
+
+msgid "Move Right"
+msgstr "تحريك لليمين"
+
+msgid "Add Frame Tag"
+msgstr ""
+
+#. An option found in the right click menu of a cel. If selected, all non-transparent pixels of that cel get selected.
+msgid "Select pixels"
+msgstr ""
+
+#. An option found in the right click menu of a cel. If selected, all selected cels get linked together.
+msgid "Link cels to"
+msgstr ""
+
+#. An option found in the right click menu of a cel. If selected, all selected cels get unlinked.
+msgid "Unlink cels"
+msgstr ""
+
+#. An option found in the right click menu of an audio cel. If selected, the audio of the audio layer will start playing from this frame.
+msgid "Play audio here"
+msgstr ""
+
+msgid "Properties"
+msgstr "الخصائص"
+
+msgid "Project Properties"
+msgstr ""
+
+msgid "Frame properties"
+msgstr ""
+
+msgid "Layer properties"
+msgstr ""
+
+msgid "Cel properties"
+msgstr ""
+
+msgid "Tag properties"
+msgstr ""
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, a new frame tag is added.
+msgid "New Tag"
+msgstr ""
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, it allows users to paste/import tags from other opened projects.
+msgid "Import Tag"
+msgstr ""
+
+#. Found on the popup menu that appears when a user right-clicks on a frame button. When clicked, the order of the selected frames is being reversed.
+msgid "Reverse Frames"
+msgstr ""
+
+msgid "Layer"
+msgstr "الطبقة"
+
+msgid "Group"
+msgstr "المجموعة"
+
+#. A tilemap is a type of layer, which is divided by grid cells, the size of which is determined by the tileset it uses. Each grid cell is mapped to a tile in the tileset. Tilemaps can be used to create game levels and layouts.
+msgid "Tilemap"
+msgstr ""
+
+msgid "Audio"
+msgstr ""
+
+msgid "Layers"
+msgstr "الطبقات"
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When enabled, the layer becomes a clipping mask.
+msgid "Clipping mask"
+msgstr ""
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When clicked, the selected layers are being flattened into a single layer.
+msgid "Flatten"
+msgstr ""
+
+#. Found in the layer menu which appears when right clicking on a layer button in the timeline. When clicked, the selected visible layers are being flattened into a single layer.
+msgid "Flatten visible"
+msgstr ""
+
+#. Hint tooltip of the create new layer button, found on the left side of the timeline.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Create a new layer"
+msgstr "إنشاء طبقة جديدة"
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Pixel Layer"
+msgstr ""
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Group Layer"
+msgstr ""
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add 3D Layer"
+msgstr ""
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Tilemap Layer"
+msgstr ""
+
+#. One of the options of the create new layer button.
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Add Audio Layer"
+msgstr ""
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Remove current layer"
+msgstr ""
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Move up the current layer"
+msgstr ""
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Move down the current layer"
+msgstr ""
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Clone current layer"
+msgstr "إستنساخ الطبقة الحالية"
+
+#: src/UI/Timeline/AnimationTimeline.tscn
+msgid "Merge current layer with the one below"
+msgstr ""
+
+#. Found in the layer's section of the timeline. Refers to layer blend modes, for more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Blend mode:"
+msgstr "وضع المزج:"
+
+#. Found in the layer's section of the timeline, as a blend mode option, only available for group layers. If enabled, group blending is disabled and the group simply acts as a way to organize layers instead of affecting blending.
+msgid "Pass through"
+msgstr ""
+
+#. Adjective, refers to something usual/regular, such as the normal blend mode.
+msgid "Normal"
+msgstr "عادي"
+
+#. Found in the layer's section of the timeline, as a blend mode option. Uses the opacity of pixels in this layer to erase pixels from the layers under it.
+msgid "Erase"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Multiply"
+msgstr "مضاعفة"
+
+# .Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color burn"
+msgstr "إحراق اللون"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Linear burn"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Screen"
+msgstr "الشاشة"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color dodge"
+msgstr "مراوغة اللون"
+
+#. Found in the layer's section of the timeline, as category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Contrast"
+msgstr "التباين"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Overlay"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Soft light"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Hard light"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Inversion"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Difference"
+msgstr "الفارق"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Exclusion"
+msgstr "إقصاء"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Subtract"
+msgstr "الطرح"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Divide"
+msgstr "القسمة"
+
+#. Found in the layer's section of the timeline, as a category of blend modes. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Component"
+msgstr "العنصر"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Hue"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Saturation"
+msgstr ""
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Color"
+msgstr "اللون"
+
+#. Found in the layer's section of the timeline, as a blend mode option. For more info refer to: https://en.wikipedia.org/wiki/Blend_modes
+msgid "Luminosity"
+msgstr ""
+
+msgid "Opacity:"
+msgstr "الشفافية:"
+
+msgid "Tile mode opacity:"
+msgstr ""
+
+msgid "Toggle layer's visibility"
+msgstr ""
+
+msgid "Lock/unlock layer"
+msgstr ""
+
+msgid "Frame: %s, Layer: %s"
+msgstr ""
+
+msgid "Enable/disable automatic linking of new cels when creating new frames\n\n"
+"Linked cels share content across multiple frames"
+msgstr ""
+
+msgid "Expand/collapse group"
+msgstr ""
+
+#. Refers to the audio file of an audio layer.
+msgid "Audio file:"
+msgstr ""
+
+msgid "Load file"
+msgstr ""
+
+#. An option in the audio layer properties, allows users to play the audio starting from a specific frame.
+msgid "Play at frame:"
+msgstr ""
+
+msgid "Palette"
+msgstr ""
+
+msgid "Palettes"
+msgstr ""
+
+msgid "Add a new palette"
+msgstr ""
+
+msgid "Edit currently selected palette"
+msgstr ""
+
+msgid "Choose a palette"
+msgstr ""
+
+msgid "Undo: Draw"
+msgstr ""
+
+msgid "Redo: Draw"
+msgstr ""
+
+msgid "Undo: Select"
+msgstr ""
+
+msgid "Redo: Select"
+msgstr ""
+
+msgid "Undo: Scale"
+msgstr ""
+
+msgid "Redo: Scale"
+msgstr ""
+
+msgid "Undo: Add Layer"
+msgstr ""
+
+msgid "Redo: Add Layer"
+msgstr ""
+
+msgid "Undo: Remove Layer"
+msgstr ""
+
+msgid "Redo: Remove Layer"
+msgstr ""
+
+msgid "Undo: Merge Layer"
+msgstr ""
+
+msgid "Redo: Merge Layer"
+msgstr ""
+
+msgid "Undo: Change Layer Order"
+msgstr ""
+
+msgid "Redo: Change Layer Order"
+msgstr ""
+
+msgid "Undo: Add Frame"
+msgstr ""
+
+msgid "Redo: Add Frame"
+msgstr ""
+
+msgid "Undo: Remove Frame"
+msgstr ""
+
+msgid "Redo: Remove Frame"
+msgstr ""
+
+msgid "Undo: Change Frame Order"
+msgstr ""
+
+msgid "Redo: Change Frame Order"
+msgstr ""
+
+msgid "Undo: Delete Custom Brush"
+msgstr ""
+
+msgid "Redo: Delete Custom Brush"
+msgstr ""
+
+msgid "Undo: Modify Frame Tag"
+msgstr ""
+
+msgid "Redo: Modify Frame Tag"
+msgstr ""
+
+msgid "Undo: Delete Frame Tag"
+msgstr ""
+
+msgid "Redo: Delete Frame Tag"
+msgstr ""
+
+msgid "Undo: Change frame duration"
+msgstr ""
+
+msgid "Redo: Change frame duration"
+msgstr ""
+
+msgid "Move Guide"
+msgstr ""
+
+msgid "File saved"
+msgstr "تم حفظ الملف"
+
+#. A notification label that appears when the backup of the currently opened project gets saved.
+msgid "Backup saved"
+msgstr ""
+
+msgid "File failed to open. Error code %s"
+msgstr ""
+
+msgid "File failed to save. Error code %s"
+msgstr ""
+
+#. Appears when the user attempts to export a project as a video, but the process fails. FFMPEG is the external software used to export videos.
+msgid "Video failed to export. Ensure that FFMPEG is installed correctly."
+msgstr ""
+
+msgid "File(s) exported"
+msgstr "تم تصدير الملف/الملفات"
+
+msgid "New Empty Palette"
+msgstr ""
+
+msgid "Import Palette"
+msgstr ""
+
+msgid "Create Palette From Current Sprite"
+msgstr ""
+
+msgid "Palette Name:"
+msgstr ""
+
+msgid "Color Name:"
+msgstr "اسم اللون:"
+
+msgid "Use current left & right colors"
+msgstr ""
+
+msgid "Create a new empty palette?"
+msgstr ""
+
+msgid "Error"
+msgstr "خطأ"
+
+msgid "Error: Palette must have a valid name."
+msgstr ""
+
+msgid "Invalid Palette file!"
+msgstr ""
+
+msgid "Edit Palette"
+msgstr ""
+
+msgid "Create colors with alpha component"
+msgstr ""
+
+msgid "Get colors only from selection"
+msgstr ""
+
+msgid "Get colors from"
+msgstr "الحصول على الألوان من"
+
+msgid "Patrons:"
+msgstr "الرعاة:"
+
+msgid "Want your name or your company to be shown on the splash screen?"
+msgstr ""
+
+msgid "Become a Platinum Sponsor"
+msgstr "كن راعياً بلاتيني"
+
+msgid "Become a Gold Sponsor"
+msgstr "كن راعياً ذهبياً"
+
+msgid "Become a Patron"
+msgstr "كن راعيًا لنا"
+
+msgid "Don't show again"
+msgstr "عدم العرض مرة أخرى"
+
+msgid "Image Options"
+msgstr "خيارات الصورة"
+
+msgid "Default width:"
+msgstr "العرض الافتراضي:"
+
+msgid "A default width of a new image"
+msgstr "العرض الافتراضي للصور الجديدة"
+
+msgid "Default height:"
+msgstr "الارتفاع الافتراضي:"
+
+msgid "A default height of a new image"
+msgstr "الارتفاع الافتراضي للصور الجديدة"
+
+msgid "Default fill color:"
+msgstr "لون الملء الافتراضي:"
+
+msgid "A default background color of a new image"
+msgstr "لون الخلفية الافتراضي للصور الجديدة"
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset all options available in the Preferences"
+msgstr ""
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset timeline options"
+msgstr ""
+
+#. Found in the preferences, under the Reset category.
+msgid "Reset all tool options"
+msgstr ""
+
+#. Found in the preferences, under the Reset category.
+msgid "Remove all extensions"
+msgstr ""
+
+#. Found in the preferences, under the Reset category.
+msgid "Clear the recently opened file list"
+msgstr ""
+
+msgid "Lock aspect ratio"
+msgstr ""
+
+msgid "Portrait"
+msgstr ""
+
+msgid "Landscape"
+msgstr ""
+
+msgid "Templates:"
+msgstr ""
+
+msgid "Preset"
+msgstr ""
+
+msgid "Preset:"
+msgstr ""
+
+msgid "Default"
+msgstr "الافتراضي"
+
+msgid "Custom"
+msgstr ""
+
+msgid "Rectangular Selection"
+msgstr ""
+
+msgid "Elliptical Selection"
+msgstr ""
+
+msgid "Polygonal Selection"
+msgstr ""
+
+msgid "Select By Color"
+msgstr ""
+
+msgid "Magic Wand"
+msgstr ""
+
+msgid "Lasso / Free Select Tool"
+msgstr ""
+
+msgid "Select by Drawing"
+msgstr ""
+
+msgid "Move"
+msgstr "تحريك"
+
+msgid "Zoom"
+msgstr "تكبير"
+
+msgid "Pan"
+msgstr "تحريك جانبي"
+
+msgid "Color Picker"
+msgstr ""
+
+msgid "Pencil"
+msgstr "قلم"
+
+msgid "Eraser"
+msgstr "ممحاة"
+
+msgid "Bucket"
+msgstr ""
+
+msgid "Shading Tool"
+msgstr "أداة التظليل"
+
+msgid "Line Tool"
+msgstr "أداة الخط"
+
+msgid "Curve Tool"
+msgstr ""
+
+msgid "Rectangle Tool"
+msgstr "أداة المستطيل"
+
+msgid "Ellipse Tool"
+msgstr "أداة الدوائر"
+
+msgid "Switch Colors"
+msgstr "تبديل الألوان"
+
+msgid "Set the shortcut"
+msgstr "تعيين الاختصار"
+
+msgid "Press a key or a key combination to set the shortcut"
+msgstr "اضغط على مفتاح أو مجموعة مفاتيح لتعيين الاختصار"
+
+msgid "Already assigned"
+msgstr ""
+
+msgid "Left Tool:"
+msgstr "الأداة اليسرى:"
+
+msgid "A tool assigned to the left mouse button"
+msgstr ""
+
+msgid "Right Tool:"
+msgstr "الأداة اليمنى:"
+
+msgid "A tool assigned to the right mouse button"
+msgstr ""
+
+msgid "Cannot find last project file."
+msgstr ""
+
+msgid "Cannot find project file."
+msgstr "لا يمكن العثور على ملف المشروع."
+
+msgid "You haven't saved or opened any project in Pixelorama yet!"
+msgstr ""
+
+msgid "Open Last Project"
+msgstr "فتح آخر مشروع"
+
+msgid "Open last project..."
+msgstr "فتح آخر مشروع..."
+
+msgid "Open last project on startup"
+msgstr "فتح آخر مشروع عند بدء التشغيل"
+
+msgid "Opens last opened project on startup"
+msgstr ""
+
+msgid "Quit confirmation"
+msgstr "تأكيد الخروج"
+
+#. Found in the preferences, under the startup section. Path is a noun and it refers to the location in the device where FFMPEG is located at. FFMPEG is a software name and it should not be translated. See https://en.wikipedia.org/wiki/Path_(computing)
+msgid "FFMPEG path"
+msgstr ""
+
+msgid "Enable autosave"
+msgstr "تفعيل الحفظ التلقائي"
+
+msgid "Autosave interval:"
+msgstr "الفاصل للحفظ التلقائي:"
+
+msgid "minute(s)"
+msgstr "دقيقة(دقائق)"
+
+#. A setting found in the export dialog. When enabled, a JSON file containing the project's data is also being exported. JSON refers to this https://en.wikipedia.org/wiki/JSON
+msgid "Export JSON data"
+msgstr ""
+
+#. A setting found in the export dialog. When enabled, each layer is being exported as a different file, or as different frames if the target format is gif/apng/video.
+msgid "Split layers"
+msgstr "تقسيم الطبقات"
+
+#. Found in the export dialog.
+msgid "Include frame tags in the file name"
+msgstr ""
+
+#. Found in the export dialog.
+msgid "Create new folder for each frame tag"
+msgstr ""
+
+#. Found in the export dialog, as a hint tooltip of the "Create new folder for each frame tag" button
+msgid "Creates multiple files but every file is stored in different folder that corresponds to its frame tag"
+msgstr ""
+
+#. Found in the export dialog. Refers to text characters that acts as separators between text. For example, the "_" in "name_0001".
+msgid "Separator character(s):"
+msgstr ""
+
+#. Found in the export dialog, as a hint tooltip of the separator character(s) text field.
+msgid "The character(s) that separate the file name and the frame number"
+msgstr ""
+
+#. Found in the export dialog. It is an option that removes the transparent area around non-transparent pixels of the exported images.
+msgid "Trim images"
+msgstr ""
+
+#. Found in the export dialog. Tooltip of the "trim images" option.
+msgid "Trims the exported images to their visible portion, considering each pixel with a non-zero alpha channel as visible."
+msgstr ""
+
+#. Found in the export dialog. It is an option that allows users to only export the portions of the images that are within the selected area.
+msgid "Clip image content to selection"
+msgstr ""
+
+#. Found in the export dialog. Tooltip of the "clip image content to selection" option.
+msgid "Only export content that is within the bounds of a selected area."
+msgstr ""
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Discard All"
+msgstr "تجاهل الكل"
+
+msgid "Autosaved project(s) from a crashed session were found.\n"
+"Do you want to recover the data?"
+msgstr ""
+
+msgid "Backup reloaded"
+msgstr ""
+
+msgid "Remove currently selected palette"
+msgstr ""
+
+msgid "Are you sure you want to remove this palette? (Cannot be undone)"
+msgstr ""
+
+msgid "You can't remove more palettes!"
+msgstr ""
+
+msgid "Cannot remove the palette, because it doesn't exist!"
+msgstr ""
+
+msgid "and"
+msgstr "و"
+
+msgid "Move the selected frame to the left."
+msgstr ""
+
+msgid "Move the selected frame to the right."
+msgstr ""
+
+#. Refers to the duration of the frame. Found in the frame properties.
+msgid "Frame duration:"
+msgstr ""
+
+#. Refers to custom user defined data for projects, frames, cels, tags and layers, found in their respective properties.
+msgid "User data:"
+msgstr ""
+
+msgid "Duration"
+msgstr "المدة"
+
+msgid "Tiled In Both Axis"
+msgstr ""
+
+msgid "Tiled In X Axis"
+msgstr ""
+
+msgid "Tiled In Y Axis"
+msgstr ""
+
+msgid "Create a new palette"
+msgstr ""
+
+msgid "Comment:"
+msgstr "تعليق:"
+
+msgid "Empty"
+msgstr "فارغ"
+
+msgid "From Current Palette"
+msgstr ""
+
+msgid "From Current Sprite"
+msgstr ""
+
+msgid "From Current Selection"
+msgstr ""
+
+msgid "Add a new color"
+msgstr "إضافة لون جديد"
+
+msgid "Remove a selected color"
+msgstr ""
+
+#. Tooltip of the Sort button found in the palette panel.
+msgid "Sort palette"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette get reversed.
+msgid "Reverse colors"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their hue.
+msgid "Sort by hue"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their saturation.
+msgid "Sort by saturation"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their value.
+msgid "Sort by value"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their OKHSL Lightness.
+msgid "Sort by lightness"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their red channel value.
+msgid "Sort by red"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their green channel value.
+msgid "Sort by green"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their blue channel value.
+msgid "Sort by blue"
+msgstr ""
+
+#. An option of the Sort palette button found in the palette panel. When selected, the colors of the palette are being sorted based on their alpha channel value.
+msgid "Sort by alpha"
+msgstr ""
+
+msgid "Palette with the same name and path already exists!"
+msgstr ""
+
+msgid "Palette name is required!"
+msgstr ""
+
+msgid "Reducing palette size will reset positions of colors.\n"
+"Colors that don't fit in new palette size will be lost!"
+msgstr ""
+
+msgid "Position:"
+msgstr "الموقع:"
+
+msgid "Tools"
+msgstr "الأدوات"
+
+msgid "Main Canvas"
+msgstr ""
+
+msgid "Second Canvas"
+msgstr ""
+
+msgid "Animation Timeline"
+msgstr ""
+
+msgid "Canvas Preview"
+msgstr ""
+
+msgid "Color Pickers"
+msgstr ""
+
+msgid "Global Tool Options"
+msgstr ""
+
+msgid "Left Tool Options"
+msgstr "خيارات الأداة اليسرى"
+
+msgid "Right Tool Options"
+msgstr "خيارات الأداة اليمنى"
+
+msgid "Reference Images"
+msgstr ""
+
+msgid "Perspective Editor"
+msgstr ""
+
+#. A UI panel. It is used to record the software in order to show the progress of art, usually in form of time lapses.
+msgid "Recorder"
+msgstr ""
+
+#. Tiles are images of a specific shape, usually rectangular, that are laid out in a grid. They are used in tile-based video games. https://en.wikipedia.org/wiki/Tile-based_video_game
+msgid "Tiles"
+msgstr ""
+
+msgid "Crop"
+msgstr "قص"
+
+msgid "Resize the canvas"
+msgstr ""
+
+msgid "Margins"
+msgstr ""
+
+msgid "Position + Size"
+msgstr ""
+
+msgid "Locked Aspect Ratio"
+msgstr ""
+
+msgid "Margins:"
+msgstr ""
+
+msgid "Aspect Ratio:"
+msgstr ""
+
+msgid "Top:"
+msgstr "أعلى:"
+
+msgid "Bottom:"
+msgstr "أسفل:"
+
+msgid "Left:"
+msgstr "يسار:"
+
+msgid "Right:"
+msgstr "يمين:"
+
+msgid "Locked size\n\n"
+"When enabled using the tool on the canvas will only move the cropping rectangle.\n\n"
+"When disabled using the tool on the canvas will draw the rectangle."
+msgstr ""
+
+#. A tool used in 3D layers, that edits 3D objects.
+msgid "3D Shape Edit"
+msgstr "تحرير الشكل ثلاثي الأبعاد"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Box"
+msgstr "صندوق"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Sphere"
+msgstr "كرة"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Capsule"
+msgstr "كبسولة"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Cylinder"
+msgstr "إسطوانة"
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Prism"
+msgstr ""
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Torus"
+msgstr ""
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Plane"
+msgstr "مسطح"
+
+msgid "Text"
+msgstr "نص"
+
+#. Used in 3D layers. A type of light.
+msgid "Directional light"
+msgstr ""
+
+#. Used in 3D layers. A type of light.
+msgid "Spotlight"
+msgstr ""
+
+#. Used in 3D layers. A type of light.
+msgid "Point light"
+msgstr ""
+
+#. Used in 3D layers. A type of 3D object.
+msgid "Custom model"
+msgstr ""
+
+msgid "Selected object:"
+msgstr "الكائن المحدد:"
+
+msgid "Add new object"
+msgstr "إضافة كائن جديد"
+
+msgid "Remove object"
+msgstr "حذف الكائن"
+
+msgid "Camera"
+msgstr "الكاميرا"
+
+#. Found in the tool options of the 3D Shape Edit tool. Refers to camera projection mode.
+msgid "Projection:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Perspective"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Orthogonal"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool. One of the modes of camera projection.
+msgid "Frustum"
+msgstr ""
+
+msgid "Rotation:"
+msgstr ""
+
+msgid "Scale:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool.
+msgid "Environment"
+msgstr "البيئة"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Environment category.
+msgid "Ambient color:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Environment category.
+msgid "Ambient color energy:"
+msgstr ""
+
+#. An option that toggles the visibility of something on or off. Found in the format of "Visible: on/off"
+msgid "Visible:"
+msgstr "مرئي:"
+
+#. Refers to the transformation options of an object, such as its position, rotation and scale. For technical details, see https://docs.godotengine.org/en/stable/tutorials/math/matrices_and_transforms.html
+msgid "Transform"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool. A category with mesh-related options.
+msgid "Mesh"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Prism is selected. Refers to the displacement of the upper edge along the X axis.
+msgid "Left to right:"
+msgstr ""
+
+#. Radius of a circle/spherical object.
+msgid "Radius:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a spherical object is selected.
+msgid "Radial segments:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a spherical object is selected. Refers to the number of segments along the height of the sphere.
+msgid "Rings:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Sphere is selected. If true, a hemisphere is created rather than a full sphere.
+msgid "Is hemisphere:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Cylinder is selected.
+msgid "Top radius:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Cylinder is selected.
+msgid "Bottom radius:"
+msgstr ""
+
+msgid "Text:"
+msgstr "النص:"
+
+#. Refers to the depth of something, such as the depth of a 3D object.
+msgid "Depth:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Text object is selected. Refers to the size of one pixel's width on the text to scale it in 3D.
+msgid "Pixel size:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Mesh category if a Text object is selected. Step (in pixels) used to approximate Bézier curves.
+msgid "Curve step:"
+msgstr ""
+
+msgid "Horizontal alignment:"
+msgstr ""
+
+msgid "Vertical alignment:"
+msgstr ""
+
+msgid "Left"
+msgstr "يسار"
+
+msgid "Right"
+msgstr "يمين"
+
+#. Refers to the vertical space between lines in a text.
+msgid "Line spacing:"
+msgstr ""
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Light category if a light is selected. Refers to the energy of the light. The more energy, the brighter it shines.
+msgid "Energy:"
+msgstr "الطاقة:"
+
+#. Found in the tool options of the 3D Shape Edit tool, under the Light category if a light is selected. If true, the light's effect is reversed, darkening areas and casting bright shadows.
+msgid "Negative:"
+msgstr ""
+
+msgid "Shadow:"
+msgstr "الظل:"
+
+#. Refers to the range of something, like the range of a spotlight.
+msgid "Range:"
+msgstr "المدى:"
+
+#. Found under certain image effects that support properties that can be animated.
+msgid "Animatable Properties"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. Refers to the frame that is currently being previewed.
+msgid "Preview frame:"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. It is a checkbox that toggles whether a property should be animated or not.
+msgid "Animate"
+msgstr "تحريك"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the initial value of the property.
+msgid "Initial value:"
+msgstr "القيمة الأولية:"
+
+#. Found under certain image effects that support properties that can be animated. Refers to the final value of the property.
+msgid "Final value:"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. Refers to the easing function that should be used to animate the property. https://easings.net/
+msgid "Ease type:"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Starts slowly and speeds up towards the end"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Starts quickly and slows down towards the end"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Slowest at both ends, fast at middle"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of easing function.
+msgid "Fast at both ends, slow at middle"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quadratic (power of 2)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Cubic (power of 3)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quartic (power of 4)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Quintic (power of 5)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Exponential (power of x)"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Square root"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Sine"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Wiggling around the edges"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Bouncing at the end"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Backing out at ends"
+msgstr ""
+
+#. Found under certain image effects that support properties that can be animated. A type of interpolation.
+msgid "Spring towards the end"
+msgstr ""
+
+#. Used to turn images into a singular color
+msgid "Monochrome"
+msgstr ""
+
+#. Found in the Reference Images panel when no reference image has been imported.
+msgid "When opening an image, it may be imported as a reference."
+msgstr ""
+
+#. Found in the Reference Images panel after a reference image has been imported.
+msgid "Select an image below to change its properties.\n"
+"Note that you cannot draw while a reference image is selected."
+msgstr ""
+
+#. Removes the selected reference image.
+msgid "Remove"
+msgstr ""
+
+#. A tooltip to tell users to hold the Shift key while clicking the remove button
+msgid "Hold Shift while pressing to instantly remove."
+msgstr ""
+
+#. Shown in the confirmation dialog for removing a reference image.
+msgid "Are you sure you want to remove this reference image? It will not be deleted from your file system."
+msgstr ""
+
+#. Moves the reference image up in the list
+msgid "Move the selected reference image to the right"
+msgstr ""
+
+#. Moves the reference image down in the list
+msgid "Move the selected reference image to the left"
+msgstr ""
+
+#. Select a reference on the canvas
+msgid "Selects a reference image on the canvas"
+msgstr ""
+
+#. Moves the reference on the canvas
+msgid "Move the selected reference image"
+msgstr ""
+
+#. Rotates the reference on the canvas
+msgid "Rotate the selected reference image"
+msgstr ""
+
+#. Rotates the reference on the canvas
+msgid "Scale the selected reference image"
+msgstr ""
+
+#. Button to select no reference images in the Reference Images panel.
+msgid "none"
+msgstr ""
+
+#. Resets the Transform of the selected reference image on the canvas.
+msgid "Reset Transform"
+msgstr ""
+
+#. Position of the selected reference image on the canvas.
+msgid "Position"
+msgstr ""
+
+#. Scale of the selected reference image on the canvas.
+msgid "Scale"
+msgstr ""
+
+#. Rotation of the selected reference image on the canvas.
+msgid "Rotation"
+msgstr ""
+
+#. Toggle filter of the selected reference image on the canvas.
+msgid "Filter"
+msgstr ""
+
+#. Opacity of the selected reference image on the canvas.
+msgid "Opacity"
+msgstr ""
+
+#. Color clamping of the selected reference image on the canvas.
+msgid "Color Clamping"
+msgstr ""
+
+#. Used in checkbuttons (like on/off switches) that enable/disable something.
+msgid "Enabled"
+msgstr "مفعل"
+
+#. Refers to non-destructive effects (such as outline, drop shadow etc) that are applied to layers. Found in the title of the layer effects dialog.
+msgid "Layer effects"
+msgstr "تأثيرات الطبقة"
+
+#. A button that, when pressed, shows a list of effects to add. Found in the the layer effects dialog.
+msgid "Add effect"
+msgstr "إضافة تأثير"
+
+#. Text from a confirmation dialog that appears when the user is attempting to drag and drop an image directly from the browser into Pixelorama.
+msgid "Do you want to download the image from %s?"
+msgstr ""
+
+#. A tileset is a collection of tiles.
+#: src/Classes/TileSetCustom.gd
+#: src/UI/Dialogs/ImportPreviewDialog.gd
+msgid "Tileset"
+msgstr ""
+
+#. A tileset is a collection of tiles.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tileset:"
+msgstr ""
+
+#. A tileset is a collection of tiles.
+#: src/UI/Dialogs/ProjectProperties.tscn
+msgid "Tilesets"
+msgstr ""
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+msgid "New tileset"
+msgstr ""
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+msgid "Tileset name:"
+msgstr ""
+
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile size:"
+msgstr ""
+
+#. The shape of each tile in a tileset (rectangular, isometric, hexagonal).
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile shape:"
+msgstr ""
+
+#. The layout that the tiles appear in, in a non-rectangular grid.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile layout:"
+msgstr ""
+
+#. The offset axis (horizontal or vertical) of non-rectangular tiles.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Tile offset axis:"
+msgstr ""
+
+#. Tooltip of the "tile offset axis" option.
+#: src/UI/Timeline/NewTileMapLayerDialog.tscn
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "For all half-offset shapes (Isometric & Hexagonal), determines the offset axis."
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stacked"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stacked offset"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stairs right"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Stairs down"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Diamond right"
+msgstr ""
+
+#. A tile layout option.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Diamond down"
+msgstr ""
+
+#. A button that toggles place-only mode on for a tilemap layer. This mode is used to only place tiles in a tilemap, without the ability to modify them.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Place-only mode:"
+msgstr ""
+
+#. A confirmation dialog that appears when attempting to enable place-only mode in a tilemap layer.
+#: src/UI/Timeline/LayerProperties.tscn
+msgid "Enabling place-only mode is a permanent action. Once activated, you will only be able to place tiles, and you won't be able to modify existing tiles anymore on this layer."
+msgstr ""
+
+#: src/UI/TilesPanel.gd
+msgid "Select a tile to place it on the canvas."
+msgstr ""
+
+#: src/UI/TilesPanel.gd
+msgid "Modify tiles on the canvas."
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Draw tiles"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Rotate tile left (counterclockwise)"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Rotate tile right (clockwise)"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Flip tile horizontally"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Flip tile vertically"
+msgstr ""
+
+#. Refers to manual mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Manual"
+msgstr ""
+
+#. Refers to auto (automatic) mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Auto"
+msgstr "تلقائي"
+
+#. Refers to stack mode, one of the three modes of tilemap layer pixel drawing.
+#: src/UI/TilesPanel.tscn
+msgid "Stack"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Tile button size:"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Show empty tile:"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Tile properties"
+msgstr ""
+
+#: src/UI/TilesPanel.tscn
+msgid "Probability:"
+msgstr ""
+

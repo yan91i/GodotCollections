@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bccayivs7v851"
+path="res://.godot/imported/circle_9x9.png-775114b180b1f2b8d06dc42243fc410b.image"
+
+[deps]
+
+source_file="res://assets/graphics/circle_9x9.png"
+dest_files=["res://.godot/imported/circle_9x9.png-775114b180b1f2b8d06dc42243fc410b.image"]
+
+[params]
+
